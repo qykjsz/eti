@@ -1,0 +1,1726 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		047A9DE023700A5900FB5132 /* HSEther.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DBF23700A5900FB5132 /* HSEther.m */; };
+		047A9DE123700A5900FB5132 /* Wallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DC023700A5900FB5132 /* Wallet.m */; };
+		047A9DE223700A5900FB5132 /* CachedDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DC323700A5900FB5132 /* CachedDataStore.m */; };
+		047A9DE323700A5900FB5132 /* SignedRemoteDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DC423700A5900FB5132 /* SignedRemoteDictionary.m */; };
+		047A9DE423700A5900FB5132 /* UIColor+hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DC723700A5900FB5132 /* UIColor+hex.m */; };
+		047A9DE523700A5900FB5132 /* IndexPathArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DCA23700A5900FB5132 /* IndexPathArray.m */; };
+		047A9DE623700A5900FB5132 /* IconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DCC23700A5900FB5132 /* IconFont.m */; };
+		047A9DE723700A5900FB5132 /* IconInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DCD23700A5900FB5132 /* IconInfo.m */; };
+		047A9DE823700A5900FB5132 /* UIImage+IconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DCE23700A5900FB5132 /* UIImage+IconFont.m */; };
+		047A9DE923700A5900FB5132 /* SharedDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DD423700A5900FB5132 /* SharedDefaults.m */; };
+		047A9DEA23700A5900FB5132 /* AsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DD623700A5900FB5132 /* AsyncOperation.m */; };
+		047A9DEB23700A5900FB5132 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DD723700A5900FB5132 /* Utilities.m */; };
+		047A9DEC23700A5900FB5132 /* Signer.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DDA23700A5900FB5132 /* Signer.m */; };
+		047A9DED23700A5900FB5132 /* CloudKeychainSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DDB23700A5900FB5132 /* CloudKeychainSigner.m */; };
+		047A9DEE23700A5900FB5132 /* UIImage+resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DDE23700A5900FB5132 /* UIImage+resize.m */; };
+		047A9DF823700A9200FB5132 /* ethers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047A9DF523700A5F00FB5132 /* ethers.framework */; };
+		4F117509236C267E0042CDFD /* ETRecordSegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F117508236C267E0042CDFD /* ETRecordSegmentController.m */; };
+		4F128C592367D1CE0004284D /* UIViewController+NaviBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C582367D1CE0004284D /* UIViewController+NaviBarButton.m */; };
+		4F128C5F2367D75D0004284D /* ETNoticeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C5E2367D75D0004284D /* ETNoticeScrollView.m */; };
+		4F128C622367D83B0004284D /* HomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C612367D83B0004284D /* HomeHeaderView.m */; };
+		4F128C662367D96F0004284D /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C652367D96F0004284D /* UIButton+ImageTitleSpacing.m */; };
+		4F128C692367E1A00004284D /* ETHomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C682367E1A00004284D /* ETHomeTableHeaderView.m */; };
+		4F128C6F23680D120004284D /* ETTableHeaderSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C6E23680D120004284D /* ETTableHeaderSelectView.m */; };
+		4F128C73236813580004284D /* ETConiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C71236813580004284D /* ETConiCell.m */; };
+		4F128C7F236820320004284D /* backUpMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F128C76236820320004284D /* backUpMoneyViewController.xib */; };
+		4F128C80236820320004284D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C77236820320004284D /* ViewController.m */; };
+		4F128C81236820320004284D /* titleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C78236820320004284D /* titleCell.m */; };
+		4F128C82236820320004284D /* backUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C7C236820320004284D /* backUpViewController.m */; };
+		4F128C83236820320004284D /* backUpMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C7E236820320004284D /* backUpMoneyViewController.m */; };
+		4F128C86236820580004284D /* EqualSpaceFlowLayoutEvolve.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C85236820580004284D /* EqualSpaceFlowLayoutEvolve.m */; };
+		4F128C89236822610004284D /* ETTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C88236822610004284D /* ETTransferViewController.m */; };
+		4F128C8C236826710004284D /* ETTransferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C8B236826710004284D /* ETTransferCell.m */; };
+		4F128C90236826FC0004284D /* ETTransferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C8F236826FC0004284D /* ETTransferView.m */; };
+		4F128C94236834EB0004284D /* AppDelegate+ET_VCSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C93236834EB0004284D /* AppDelegate+ET_VCSetting.m */; };
+		4F128C9B236836040004284D /* ETDirectTransferController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C9A236836040004284D /* ETDirectTransferController.m */; };
+		4F128C9F236839610004284D /* ETDirectTranAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C9D236839610004284D /* ETDirectTranAddressCell.m */; };
+		4F128CA0236839610004284D /* ETDirectTranAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F128C9E236839610004284D /* ETDirectTranAddressCell.xib */; };
+		4F128CA423683BF70004284D /* ETDirectCountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128CA223683BF70004284D /* ETDirectCountCell.m */; };
+		4F128CA523683BF70004284D /* ETDirectCountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F128CA323683BF70004284D /* ETDirectCountCell.xib */; };
+		4F128CA923683EE70004284D /* ETDirectLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128CA723683EE70004284D /* ETDirectLeftCell.m */; };
+		4F128CAA23683EE70004284D /* ETDirectLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F128CA823683EE70004284D /* ETDirectLeftCell.xib */; };
+		4F128CAE236840120004284D /* ETDirectNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128CAC236840120004284D /* ETDirectNormalCell.m */; };
+		4F128CAF236840120004284D /* ETDirectNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F128CAD236840120004284D /* ETDirectNormalCell.xib */; };
+		4F14FAF5236924770008C50A /* ETMyContactsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FAF4236924770008C50A /* ETMyContactsController.m */; };
+		4F14FAF9236924B30008C50A /* ETMyContactsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FAF7236924B30008C50A /* ETMyContactsCell.m */; };
+		4F14FAFA236924B30008C50A /* ETMyContactsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F14FAF8236924B30008C50A /* ETMyContactsCell.xib */; };
+		4F14FAFD23692BB70008C50A /* ETAddContactsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FAFC23692BB70008C50A /* ETAddContactsController.m */; };
+		4F14FB0123692CF30008C50A /* ETAddContactsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FAFF23692CF30008C50A /* ETAddContactsCell.m */; };
+		4F14FB0223692CF30008C50A /* ETAddContactsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F14FB0023692CF30008C50A /* ETAddContactsCell.xib */; };
+		4F14FB0C23693CE40008C50A /* UIImage+GIFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FB0623693CE40008C50A /* UIImage+GIFImage.m */; };
+		4F14FB0D23693CE40008C50A /* UIImage+Watermark.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FB0723693CE40008C50A /* UIImage+Watermark.m */; };
+		4F14FB0E23693CE40008C50A /* UIImage+Zoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FB0823693CE40008C50A /* UIImage+Zoom.m */; };
+		4F14FB0F23693CE40008C50A /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FB0B23693CE40008C50A /* UIImage+Color.m */; };
+		4F14FB1323693CFC0008C50A /* KMPProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FB1123693CFC0008C50A /* KMPProgressHUD.m */; };
+		4F14FB1623695F0C0008C50A /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FB1523695F0C0008C50A /* Tools.m */; };
+		4F14FB19236960A20008C50A /* ETMyWalletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FB18236960A20008C50A /* ETMyWalletView.m */; };
+		4F14FB1D236966C10008C50A /* ETMyWalletIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FB1B236966C10008C50A /* ETMyWalletIconCell.m */; };
+		4F14FB22236966E10008C50A /* ETMyWalletDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FB20236966E10008C50A /* ETMyWalletDetailCell.m */; };
+		4F14FB23236966E10008C50A /* ETMyWalletDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F14FB21236966E10008C50A /* ETMyWalletDetailCell.xib */; };
+		4F14FB26236975890008C50A /* ETMyWalletLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FB25236975890008C50A /* ETMyWalletLeftModel.m */; };
+		4F14FB29236985420008C50A /* ETCreatWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FB28236985420008C50A /* ETCreatWalletViewController.m */; };
+		4F14FB2D23698BA30008C50A /* ETCreatWalletCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14FB2B23698BA30008C50A /* ETCreatWalletCell.m */; };
+		4F1942CD236D21DD00AD907E /* ETWalletDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942CC236D21DD00AD907E /* ETWalletDetailController.m */; };
+		4F1942D1236D22E900AD907E /* ETWalletDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942CF236D22E900AD907E /* ETWalletDetailCell.m */; };
+		4F1942D2236D22E900AD907E /* ETWalletDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1942D0236D22E900AD907E /* ETWalletDetailCell.xib */; };
+		4F1942D5236D2A0800AD907E /* ETWalletDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942D4236D2A0800AD907E /* ETWalletDetailView.m */; };
+		4F1942D8236D2F4600AD907E /* ETSyoImportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942D7236D2F4600AD907E /* ETSyoImportView.m */; };
+		4F1942DB236D2F7000AD907E /* ETQcodeImportView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942DA236D2F7000AD907E /* ETQcodeImportView.m */; };
+		4F1942DF236D306800AD907E /* ETWalletImportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942DD236D306800AD907E /* ETWalletImportCell.m */; };
+		4F1942E0236D306800AD907E /* ETWalletImportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1942DE236D306800AD907E /* ETWalletImportCell.xib */; };
+		4F1942E3236D358A00AD907E /* ETImportSyaoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942E2236D358A00AD907E /* ETImportSyaoController.m */; };
+		4F1942E6236D5E1A00AD907E /* ETKeystoreImportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942E5236D5E1A00AD907E /* ETKeystoreImportController.m */; };
+		4F1942E9236D5E5800AD907E /* ETKeystoreImporView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942E8236D5E5800AD907E /* ETKeystoreImporView.m */; };
+		4F1942EC236D5E6900AD907E /* ETKeystoreQcodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942EB236D5E6900AD907E /* ETKeystoreQcodeView.m */; };
+		4F1942EF236D61EC00AD907E /* ETChangePassWordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942EE236D61EC00AD907E /* ETChangePassWordController.m */; };
+		4F1942F2236D69E100AD907E /* ETVerifyPassWrodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942F1236D69E100AD907E /* ETVerifyPassWrodView.m */; };
+		4F1942F5236D69FB00AD907E /* ETBackUpWalletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942F4236D69FB00AD907E /* ETBackUpWalletView.m */; };
+		4F2306C72366DE9D0046A136 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2306C62366DE9D0046A136 /* AppDelegate.m */; };
+		4F2306CD2366DE9D0046A136 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2306CB2366DE9D0046A136 /* Main.storyboard */; };
+		4F2306CF2366DE9F0046A136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F2306CE2366DE9F0046A136 /* Assets.xcassets */; };
+		4F2306D22366DE9F0046A136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2306D02366DE9F0046A136 /* LaunchScreen.storyboard */; };
+		4F2306D52366DE9F0046A136 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2306D42366DE9F0046A136 /* main.m */; };
+		4F2306DF2366DE9F0046A136 /* ProjectETTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2306DE2366DE9F0046A136 /* ProjectETTests.m */; };
+		4F2306EA2366DE9F0046A136 /* ProjectETUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2306E92366DE9F0046A136 /* ProjectETUITests.m */; };
+		4F2307032366EB120046A136 /* ETRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2307022366EB120046A136 /* ETRootViewController.m */; };
+		4F2307062366EB600046A136 /* ETAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2307052366EB600046A136 /* ETAssetsViewController.m */; };
+		4F3F9030236A7E83009AAA24 /* ETCreatWalletInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F902E236A7E83009AAA24 /* ETCreatWalletInfoCell.m */; };
+		4F3F9031236A7E83009AAA24 /* ETCreatWalletInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3F902F236A7E83009AAA24 /* ETCreatWalletInfoCell.xib */; };
+		4F3F9035236A7F04009AAA24 /* ETCreatWalletInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9033236A7F04009AAA24 /* ETCreatWalletInputCell.m */; };
+		4F3F9036236A7F04009AAA24 /* ETCreatWalletInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3F9034236A7F04009AAA24 /* ETCreatWalletInputCell.xib */; };
+		4F3F9039236A804B009AAA24 /* ETCreatYYViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9038236A804B009AAA24 /* ETCreatYYViewCell.m */; };
+		4F3F903D236A8415009AAA24 /* ETSecretImportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F903C236A8415009AAA24 /* ETSecretImportController.m */; };
+		4F3F9040236A9535009AAA24 /* ETRememberCardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F903F236A9535009AAA24 /* ETRememberCardController.m */; };
+		4F3F9043236AB22B009AAA24 /* ETColdWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9042236AB22B009AAA24 /* ETColdWalletViewController.m */; };
+		4F3F9046236AB672009AAA24 /* ETKeyStoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9045236AB672009AAA24 /* ETKeyStoreController.m */; };
+		4F3F9049236ABAD9009AAA24 /* ETSecertCreatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9048236ABAD9009AAA24 /* ETSecertCreatView.m */; };
+		4F3F904C236ACE72009AAA24 /* ETCreatMyWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F904B236ACE72009AAA24 /* ETCreatMyWalletViewController.m */; };
+		4F3F904F236AE073009AAA24 /* ETCoinMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F904E236AE073009AAA24 /* ETCoinMainViewController.m */; };
+		4F3F9052236AE241009AAA24 /* ETChooseWalletcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9051236AE240009AAA24 /* ETChooseWalletcell.m */; };
+		4F3F9055236AE62A009AAA24 /* ETCoinListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9054236AE62A009AAA24 /* ETCoinListViewController.m */; };
+		4F3F9058236AEB93009AAA24 /* Tools+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9057236AEB93009AAA24 /* Tools+Image.m */; };
+		4F3F905C236BCB4B009AAA24 /* ETGatheringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F905B236BCB4B009AAA24 /* ETGatheringViewController.m */; };
+		4F3F9060236BD9F3009AAA24 /* KMPQRCodeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F905E236BD9F3009AAA24 /* KMPQRCodeManager.m */; };
+		4F3F9063236C0F5E009AAA24 /* ETRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9062236C0F5E009AAA24 /* ETRecordDetailViewController.m */; };
+		4F3F9066236C1046009AAA24 /* ETRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9065236C1046009AAA24 /* ETRecordCell.m */; };
+		4F3F9069236C128D009AAA24 /* ETRecordHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9068236C128D009AAA24 /* ETRecordHeaderView.m */; };
+		4FA0A305236FCA270038F880 /* WMZPageLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A2F4236FCA270038F880 /* WMZPageLoopView.m */; };
+		4FA0A306236FCA270038F880 /* WMZPageNaviBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A2F5236FCA270038F880 /* WMZPageNaviBtn.m */; };
+		4FA0A308236FCA270038F880 /* NSObject+SafeKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A2FB236FCA270038F880 /* NSObject+SafeKVO.m */; };
+		4FA0A309236FCA270038F880 /* WMZPageParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A2FC236FCA270038F880 /* WMZPageParam.m */; };
+		4FA0A30A236FCA270038F880 /* WMZPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A2FF236FCA270038F880 /* WMZPageController.m */; };
+		4FA0A30B236FCA270038F880 /* WMZPageScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A300236FCA270038F880 /* WMZPageScroller.m */; };
+		4FA0A30F236FD0690038F880 /* HoverPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A30D236FD0680038F880 /* HoverPageViewController.m */; };
+		4FA0A314236FFF440038F880 /* ETWalletManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A313236FFF440038F880 /* ETWalletManger.m */; };
+		4FA0A319237013D10038F880 /* ETWalletModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A318237013D10038F880 /* ETWalletModel.m */; };
+		4FA0A32723717A8A0038F880 /* ETScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A32623717A8A0038F880 /* ETScanViewController.m */; };
+		4FA0A32B23717ACF0038F880 /* ET_ScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A32A23717ACF0038F880 /* ET_ScaningView.m */; };
+		658EFA9763BC24E969103719 /* Pods_ProjectET_ProjectETUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A224CC41A5867B4A06D4BE24 /* Pods_ProjectET_ProjectETUITests.framework */; };
+		6A90619DC84BDE4BF253E0AF /* Pods_ProjectETTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590DE355526C79E021DE22B4 /* Pods_ProjectETTests.framework */; };
+		A9E72CB71DD272820A53863B /* Pods_ProjectET.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538F76165E482E5E17D51186 /* Pods_ProjectET.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		047A9DF423700A5F00FB5132 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 047A9DEF23700A5F00FB5132 /* ethers.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E2317E631E3191AC00DBE3E4;
+			remoteInfo = ethers;
+		};
+		047A9DF623700A5F00FB5132 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 047A9DEF23700A5F00FB5132 /* ethers.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E2317E6C1E3191AC00DBE3E4;
+			remoteInfo = ethersTests;
+		};
+		4F2306DB2366DE9F0046A136 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F2306BA2366DE9D0046A136 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F2306C12366DE9D0046A136;
+			remoteInfo = ProjectET;
+		};
+		4F2306E62366DE9F0046A136 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F2306BA2366DE9D0046A136 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F2306C12366DE9D0046A136;
+			remoteInfo = ProjectET;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		047A9DBF23700A5900FB5132 /* HSEther.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSEther.m; sourceTree = "<group>"; };
+		047A9DC023700A5900FB5132 /* Wallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wallet.m; sourceTree = "<group>"; };
+		047A9DC123700A5900FB5132 /* HSEther.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSEther.h; sourceTree = "<group>"; };
+		047A9DC323700A5900FB5132 /* CachedDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CachedDataStore.m; sourceTree = "<group>"; };
+		047A9DC423700A5900FB5132 /* SignedRemoteDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignedRemoteDictionary.m; sourceTree = "<group>"; };
+		047A9DC523700A5900FB5132 /* AsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncOperation.h; sourceTree = "<group>"; };
+		047A9DC623700A5900FB5132 /* SharedDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedDefaults.h; sourceTree = "<group>"; };
+		047A9DC723700A5900FB5132 /* UIColor+hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+hex.m"; sourceTree = "<group>"; };
+		047A9DC823700A5900FB5132 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		047A9DC923700A5900FB5132 /* UIImage+resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+resize.h"; sourceTree = "<group>"; };
+		047A9DCA23700A5900FB5132 /* IndexPathArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexPathArray.m; sourceTree = "<group>"; };
+		047A9DCC23700A5900FB5132 /* IconFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconFont.m; sourceTree = "<group>"; };
+		047A9DCD23700A5900FB5132 /* IconInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconInfo.m; sourceTree = "<group>"; };
+		047A9DCE23700A5900FB5132 /* UIImage+IconFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+IconFont.m"; sourceTree = "<group>"; };
+		047A9DCF23700A5900FB5132 /* UIImage+IconFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+IconFont.h"; sourceTree = "<group>"; };
+		047A9DD023700A5900FB5132 /* IconInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconInfo.h; sourceTree = "<group>"; };
+		047A9DD123700A5900FB5132 /* IconFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconFont.h; sourceTree = "<group>"; };
+		047A9DD223700A5900FB5132 /* CachedDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CachedDataStore.h; sourceTree = "<group>"; };
+		047A9DD323700A5900FB5132 /* UIColor+hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+hex.h"; sourceTree = "<group>"; };
+		047A9DD423700A5900FB5132 /* SharedDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedDefaults.m; sourceTree = "<group>"; };
+		047A9DD523700A5900FB5132 /* SignedRemoteDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignedRemoteDictionary.h; sourceTree = "<group>"; };
+		047A9DD623700A5900FB5132 /* AsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncOperation.m; sourceTree = "<group>"; };
+		047A9DD723700A5900FB5132 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		047A9DD923700A5900FB5132 /* CloudKeychainSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudKeychainSigner.h; sourceTree = "<group>"; };
+		047A9DDA23700A5900FB5132 /* Signer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Signer.m; sourceTree = "<group>"; };
+		047A9DDB23700A5900FB5132 /* CloudKeychainSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudKeychainSigner.m; sourceTree = "<group>"; };
+		047A9DDC23700A5900FB5132 /* Signer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signer.h; sourceTree = "<group>"; };
+		047A9DDD23700A5900FB5132 /* IndexPathArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexPathArray.h; sourceTree = "<group>"; };
+		047A9DDE23700A5900FB5132 /* UIImage+resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+resize.m"; sourceTree = "<group>"; };
+		047A9DDF23700A5900FB5132 /* Wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wallet.h; sourceTree = "<group>"; };
+		047A9DEF23700A5F00FB5132 /* ethers.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ethers.xcodeproj; path = "ethers.objc-master/ethers.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		172FA16F06F30E4F663C3530 /* Pods-ProjectET.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET.debug.xcconfig"; path = "Target Support Files/Pods-ProjectET/Pods-ProjectET.debug.xcconfig"; sourceTree = "<group>"; };
+		4F1174F4236C23C10042CDFD /* OCExample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		4F117507236C267E0042CDFD /* ETRecordSegmentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETRecordSegmentController.h; sourceTree = "<group>"; };
+		4F117508236C267E0042CDFD /* ETRecordSegmentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRecordSegmentController.m; sourceTree = "<group>"; };
+		4F128C572367D1CE0004284D /* UIViewController+NaviBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NaviBarButton.h"; sourceTree = "<group>"; };
+		4F128C582367D1CE0004284D /* UIViewController+NaviBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NaviBarButton.m"; sourceTree = "<group>"; };
+		4F128C5D2367D75D0004284D /* ETNoticeScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNoticeScrollView.h; sourceTree = "<group>"; };
+		4F128C5E2367D75D0004284D /* ETNoticeScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNoticeScrollView.m; sourceTree = "<group>"; };
+		4F128C602367D83B0004284D /* HomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHeaderView.h; sourceTree = "<group>"; };
+		4F128C612367D83B0004284D /* HomeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderView.m; sourceTree = "<group>"; };
+		4F128C642367D96F0004284D /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
+		4F128C652367D96F0004284D /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
+		4F128C672367E19F0004284D /* ETHomeTableHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETHomeTableHeaderView.h; sourceTree = "<group>"; };
+		4F128C682367E1A00004284D /* ETHomeTableHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETHomeTableHeaderView.m; sourceTree = "<group>"; };
+		4F128C6D23680D120004284D /* ETTableHeaderSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTableHeaderSelectView.h; sourceTree = "<group>"; };
+		4F128C6E23680D120004284D /* ETTableHeaderSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTableHeaderSelectView.m; sourceTree = "<group>"; };
+		4F128C70236813580004284D /* ETConiCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETConiCell.h; sourceTree = "<group>"; };
+		4F128C71236813580004284D /* ETConiCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETConiCell.m; sourceTree = "<group>"; };
+		4F128C76236820320004284D /* backUpMoneyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = backUpMoneyViewController.xib; sourceTree = "<group>"; };
+		4F128C77236820320004284D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4F128C78236820320004284D /* titleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = titleCell.m; sourceTree = "<group>"; };
+		4F128C79236820320004284D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4F128C7A236820320004284D /* backUpMoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = backUpMoneyViewController.h; sourceTree = "<group>"; };
+		4F128C7B236820320004284D /* backUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = backUpViewController.h; sourceTree = "<group>"; };
+		4F128C7C236820320004284D /* backUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = backUpViewController.m; sourceTree = "<group>"; };
+		4F128C7D236820320004284D /* titleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = titleCell.h; sourceTree = "<group>"; };
+		4F128C7E236820320004284D /* backUpMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = backUpMoneyViewController.m; sourceTree = "<group>"; };
+		4F128C84236820580004284D /* EqualSpaceFlowLayoutEvolve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EqualSpaceFlowLayoutEvolve.h; sourceTree = "<group>"; };
+		4F128C85236820580004284D /* EqualSpaceFlowLayoutEvolve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EqualSpaceFlowLayoutEvolve.m; sourceTree = "<group>"; };
+		4F128C87236822610004284D /* ETTransferViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransferViewController.h; sourceTree = "<group>"; };
+		4F128C88236822610004284D /* ETTransferViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTransferViewController.m; sourceTree = "<group>"; };
+		4F128C8A236826710004284D /* ETTransferCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransferCell.h; sourceTree = "<group>"; };
+		4F128C8B236826710004284D /* ETTransferCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTransferCell.m; sourceTree = "<group>"; };
+		4F128C8E236826FC0004284D /* ETTransferView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransferView.h; sourceTree = "<group>"; };
+		4F128C8F236826FC0004284D /* ETTransferView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTransferView.m; sourceTree = "<group>"; };
+		4F128C92236834EB0004284D /* AppDelegate+ET_VCSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ET_VCSetting.h"; sourceTree = "<group>"; };
+		4F128C93236834EB0004284D /* AppDelegate+ET_VCSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ET_VCSetting.m"; sourceTree = "<group>"; };
+		4F128C99236836040004284D /* ETDirectTransferController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETDirectTransferController.h; sourceTree = "<group>"; };
+		4F128C9A236836040004284D /* ETDirectTransferController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETDirectTransferController.m; sourceTree = "<group>"; };
+		4F128C9C236839610004284D /* ETDirectTranAddressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETDirectTranAddressCell.h; sourceTree = "<group>"; };
+		4F128C9D236839610004284D /* ETDirectTranAddressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETDirectTranAddressCell.m; sourceTree = "<group>"; };
+		4F128C9E236839610004284D /* ETDirectTranAddressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETDirectTranAddressCell.xib; sourceTree = "<group>"; };
+		4F128CA123683BF70004284D /* ETDirectCountCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETDirectCountCell.h; sourceTree = "<group>"; };
+		4F128CA223683BF70004284D /* ETDirectCountCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETDirectCountCell.m; sourceTree = "<group>"; };
+		4F128CA323683BF70004284D /* ETDirectCountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETDirectCountCell.xib; sourceTree = "<group>"; };
+		4F128CA623683EE70004284D /* ETDirectLeftCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETDirectLeftCell.h; sourceTree = "<group>"; };
+		4F128CA723683EE70004284D /* ETDirectLeftCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETDirectLeftCell.m; sourceTree = "<group>"; };
+		4F128CA823683EE70004284D /* ETDirectLeftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETDirectLeftCell.xib; sourceTree = "<group>"; };
+		4F128CAB236840120004284D /* ETDirectNormalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETDirectNormalCell.h; sourceTree = "<group>"; };
+		4F128CAC236840120004284D /* ETDirectNormalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETDirectNormalCell.m; sourceTree = "<group>"; };
+		4F128CAD236840120004284D /* ETDirectNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETDirectNormalCell.xib; sourceTree = "<group>"; };
+		4F14FAF3236924770008C50A /* ETMyContactsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETMyContactsController.h; sourceTree = "<group>"; };
+		4F14FAF4236924770008C50A /* ETMyContactsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETMyContactsController.m; sourceTree = "<group>"; };
+		4F14FAF6236924B30008C50A /* ETMyContactsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETMyContactsCell.h; sourceTree = "<group>"; };
+		4F14FAF7236924B30008C50A /* ETMyContactsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETMyContactsCell.m; sourceTree = "<group>"; };
+		4F14FAF8236924B30008C50A /* ETMyContactsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETMyContactsCell.xib; sourceTree = "<group>"; };
+		4F14FAFB23692BB70008C50A /* ETAddContactsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAddContactsController.h; sourceTree = "<group>"; };
+		4F14FAFC23692BB70008C50A /* ETAddContactsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAddContactsController.m; sourceTree = "<group>"; };
+		4F14FAFE23692CF30008C50A /* ETAddContactsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAddContactsCell.h; sourceTree = "<group>"; };
+		4F14FAFF23692CF30008C50A /* ETAddContactsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAddContactsCell.m; sourceTree = "<group>"; };
+		4F14FB0023692CF30008C50A /* ETAddContactsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETAddContactsCell.xib; sourceTree = "<group>"; };
+		4F14FB0423693CE40008C50A /* UIImage+Zoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Zoom.h"; sourceTree = "<group>"; };
+		4F14FB0523693CE40008C50A /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		4F14FB0623693CE40008C50A /* UIImage+GIFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIFImage.m"; sourceTree = "<group>"; };
+		4F14FB0723693CE40008C50A /* UIImage+Watermark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Watermark.m"; sourceTree = "<group>"; };
+		4F14FB0823693CE40008C50A /* UIImage+Zoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Zoom.m"; sourceTree = "<group>"; };
+		4F14FB0923693CE40008C50A /* UIImage+Watermark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Watermark.h"; sourceTree = "<group>"; };
+		4F14FB0A23693CE40008C50A /* UIImage+GIFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIFImage.h"; sourceTree = "<group>"; };
+		4F14FB0B23693CE40008C50A /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		4F14FB1123693CFC0008C50A /* KMPProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMPProgressHUD.m; sourceTree = "<group>"; };
+		4F14FB1223693CFC0008C50A /* KMPProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPProgressHUD.h; sourceTree = "<group>"; };
+		4F14FB1423695F0C0008C50A /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		4F14FB1523695F0C0008C50A /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
+		4F14FB17236960A20008C50A /* ETMyWalletView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETMyWalletView.h; sourceTree = "<group>"; };
+		4F14FB18236960A20008C50A /* ETMyWalletView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETMyWalletView.m; sourceTree = "<group>"; };
+		4F14FB1A236966C10008C50A /* ETMyWalletIconCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETMyWalletIconCell.h; sourceTree = "<group>"; };
+		4F14FB1B236966C10008C50A /* ETMyWalletIconCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETMyWalletIconCell.m; sourceTree = "<group>"; };
+		4F14FB1F236966E10008C50A /* ETMyWalletDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETMyWalletDetailCell.h; sourceTree = "<group>"; };
+		4F14FB20236966E10008C50A /* ETMyWalletDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETMyWalletDetailCell.m; sourceTree = "<group>"; };
+		4F14FB21236966E10008C50A /* ETMyWalletDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETMyWalletDetailCell.xib; sourceTree = "<group>"; };
+		4F14FB24236975890008C50A /* ETMyWalletLeftModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETMyWalletLeftModel.h; sourceTree = "<group>"; };
+		4F14FB25236975890008C50A /* ETMyWalletLeftModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETMyWalletLeftModel.m; sourceTree = "<group>"; };
+		4F14FB27236985420008C50A /* ETCreatWalletViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCreatWalletViewController.h; sourceTree = "<group>"; };
+		4F14FB28236985420008C50A /* ETCreatWalletViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCreatWalletViewController.m; sourceTree = "<group>"; };
+		4F14FB2A23698BA30008C50A /* ETCreatWalletCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCreatWalletCell.h; sourceTree = "<group>"; };
+		4F14FB2B23698BA30008C50A /* ETCreatWalletCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCreatWalletCell.m; sourceTree = "<group>"; };
+		4F1942CB236D21DD00AD907E /* ETWalletDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETWalletDetailController.h; sourceTree = "<group>"; };
+		4F1942CC236D21DD00AD907E /* ETWalletDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETWalletDetailController.m; sourceTree = "<group>"; };
+		4F1942CE236D22E900AD907E /* ETWalletDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETWalletDetailCell.h; sourceTree = "<group>"; };
+		4F1942CF236D22E900AD907E /* ETWalletDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETWalletDetailCell.m; sourceTree = "<group>"; };
+		4F1942D0236D22E900AD907E /* ETWalletDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETWalletDetailCell.xib; sourceTree = "<group>"; };
+		4F1942D3236D2A0800AD907E /* ETWalletDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETWalletDetailView.h; sourceTree = "<group>"; };
+		4F1942D4236D2A0800AD907E /* ETWalletDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETWalletDetailView.m; sourceTree = "<group>"; };
+		4F1942D6236D2F4600AD907E /* ETSyoImportView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSyoImportView.h; sourceTree = "<group>"; };
+		4F1942D7236D2F4600AD907E /* ETSyoImportView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSyoImportView.m; sourceTree = "<group>"; };
+		4F1942D9236D2F7000AD907E /* ETQcodeImportView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETQcodeImportView.h; sourceTree = "<group>"; };
+		4F1942DA236D2F7000AD907E /* ETQcodeImportView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETQcodeImportView.m; sourceTree = "<group>"; };
+		4F1942DC236D306800AD907E /* ETWalletImportCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETWalletImportCell.h; sourceTree = "<group>"; };
+		4F1942DD236D306800AD907E /* ETWalletImportCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETWalletImportCell.m; sourceTree = "<group>"; };
+		4F1942DE236D306800AD907E /* ETWalletImportCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETWalletImportCell.xib; sourceTree = "<group>"; };
+		4F1942E1236D358A00AD907E /* ETImportSyaoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETImportSyaoController.h; sourceTree = "<group>"; };
+		4F1942E2236D358A00AD907E /* ETImportSyaoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETImportSyaoController.m; sourceTree = "<group>"; };
+		4F1942E4236D5E1A00AD907E /* ETKeystoreImportController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETKeystoreImportController.h; sourceTree = "<group>"; };
+		4F1942E5236D5E1A00AD907E /* ETKeystoreImportController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETKeystoreImportController.m; sourceTree = "<group>"; };
+		4F1942E7236D5E5800AD907E /* ETKeystoreImporView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETKeystoreImporView.h; sourceTree = "<group>"; };
+		4F1942E8236D5E5800AD907E /* ETKeystoreImporView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETKeystoreImporView.m; sourceTree = "<group>"; };
+		4F1942EA236D5E6900AD907E /* ETKeystoreQcodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETKeystoreQcodeView.h; sourceTree = "<group>"; };
+		4F1942EB236D5E6900AD907E /* ETKeystoreQcodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETKeystoreQcodeView.m; sourceTree = "<group>"; };
+		4F1942ED236D61EC00AD907E /* ETChangePassWordController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETChangePassWordController.h; sourceTree = "<group>"; };
+		4F1942EE236D61EC00AD907E /* ETChangePassWordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETChangePassWordController.m; sourceTree = "<group>"; };
+		4F1942F0236D69E100AD907E /* ETVerifyPassWrodView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETVerifyPassWrodView.h; sourceTree = "<group>"; };
+		4F1942F1236D69E100AD907E /* ETVerifyPassWrodView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETVerifyPassWrodView.m; sourceTree = "<group>"; };
+		4F1942F3236D69FB00AD907E /* ETBackUpWalletView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETBackUpWalletView.h; sourceTree = "<group>"; };
+		4F1942F4236D69FB00AD907E /* ETBackUpWalletView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETBackUpWalletView.m; sourceTree = "<group>"; };
+		4F2306C22366DE9D0046A136 /* ProjectET.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectET.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F2306C52366DE9D0046A136 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4F2306C62366DE9D0046A136 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4F2306CC2366DE9D0046A136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4F2306CE2366DE9F0046A136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F2306D12366DE9F0046A136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4F2306D32366DE9F0046A136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F2306D42366DE9F0046A136 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4F2306DA2366DE9F0046A136 /* ProjectETTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectETTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F2306DE2366DE9F0046A136 /* ProjectETTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectETTests.m; sourceTree = "<group>"; };
+		4F2306E02366DE9F0046A136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F2306E52366DE9F0046A136 /* ProjectETUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectETUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F2306E92366DE9F0046A136 /* ProjectETUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectETUITests.m; sourceTree = "<group>"; };
+		4F2306EB2366DE9F0046A136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F2306F72366E41C0046A136 /* PrefixETHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixETHeader.pch; sourceTree = "<group>"; };
+		4F2306FA2366E9DE0046A136 /* UtilsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsHeader.h; sourceTree = "<group>"; };
+		4F2307012366EB120046A136 /* ETRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETRootViewController.h; sourceTree = "<group>"; };
+		4F2307022366EB120046A136 /* ETRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRootViewController.m; sourceTree = "<group>"; };
+		4F2307042366EB600046A136 /* ETAssetsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAssetsViewController.h; sourceTree = "<group>"; };
+		4F2307052366EB600046A136 /* ETAssetsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAssetsViewController.m; sourceTree = "<group>"; };
+		4F2307082366EBFC0046A136 /* WeakDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeakDefine.h; sourceTree = "<group>"; };
+		4F2307092366EBFC0046A136 /* CommonMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonMacro.h; sourceTree = "<group>"; };
+		4F23070A2366EBFC0046A136 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		4F23070D2366ECB20046A136 /* ETMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMacro.h; sourceTree = "<group>"; };
+		4F23070E2366ED290046A136 /* ETExpandHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETExpandHeader.h; sourceTree = "<group>"; };
+		4F3F902D236A7E83009AAA24 /* ETCreatWalletInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCreatWalletInfoCell.h; sourceTree = "<group>"; };
+		4F3F902E236A7E83009AAA24 /* ETCreatWalletInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCreatWalletInfoCell.m; sourceTree = "<group>"; };
+		4F3F902F236A7E83009AAA24 /* ETCreatWalletInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETCreatWalletInfoCell.xib; sourceTree = "<group>"; };
+		4F3F9032236A7F04009AAA24 /* ETCreatWalletInputCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCreatWalletInputCell.h; sourceTree = "<group>"; };
+		4F3F9033236A7F04009AAA24 /* ETCreatWalletInputCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCreatWalletInputCell.m; sourceTree = "<group>"; };
+		4F3F9034236A7F04009AAA24 /* ETCreatWalletInputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETCreatWalletInputCell.xib; sourceTree = "<group>"; };
+		4F3F9037236A804B009AAA24 /* ETCreatYYViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCreatYYViewCell.h; sourceTree = "<group>"; };
+		4F3F9038236A804B009AAA24 /* ETCreatYYViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCreatYYViewCell.m; sourceTree = "<group>"; };
+		4F3F903B236A8415009AAA24 /* ETSecretImportController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSecretImportController.h; sourceTree = "<group>"; };
+		4F3F903C236A8415009AAA24 /* ETSecretImportController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSecretImportController.m; sourceTree = "<group>"; };
+		4F3F903E236A9535009AAA24 /* ETRememberCardController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETRememberCardController.h; sourceTree = "<group>"; };
+		4F3F903F236A9535009AAA24 /* ETRememberCardController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRememberCardController.m; sourceTree = "<group>"; };
+		4F3F9041236AB22B009AAA24 /* ETColdWalletViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETColdWalletViewController.h; sourceTree = "<group>"; };
+		4F3F9042236AB22B009AAA24 /* ETColdWalletViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETColdWalletViewController.m; sourceTree = "<group>"; };
+		4F3F9044236AB672009AAA24 /* ETKeyStoreController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETKeyStoreController.h; sourceTree = "<group>"; };
+		4F3F9045236AB672009AAA24 /* ETKeyStoreController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETKeyStoreController.m; sourceTree = "<group>"; };
+		4F3F9047236ABAD9009AAA24 /* ETSecertCreatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSecertCreatView.h; sourceTree = "<group>"; };
+		4F3F9048236ABAD9009AAA24 /* ETSecertCreatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSecertCreatView.m; sourceTree = "<group>"; };
+		4F3F904A236ACE72009AAA24 /* ETCreatMyWalletViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCreatMyWalletViewController.h; sourceTree = "<group>"; };
+		4F3F904B236ACE72009AAA24 /* ETCreatMyWalletViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCreatMyWalletViewController.m; sourceTree = "<group>"; };
+		4F3F904D236AE073009AAA24 /* ETCoinMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCoinMainViewController.h; sourceTree = "<group>"; };
+		4F3F904E236AE073009AAA24 /* ETCoinMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCoinMainViewController.m; sourceTree = "<group>"; };
+		4F3F9050236AE240009AAA24 /* ETChooseWalletcell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETChooseWalletcell.h; sourceTree = "<group>"; };
+		4F3F9051236AE240009AAA24 /* ETChooseWalletcell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETChooseWalletcell.m; sourceTree = "<group>"; };
+		4F3F9053236AE62A009AAA24 /* ETCoinListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCoinListViewController.h; sourceTree = "<group>"; };
+		4F3F9054236AE62A009AAA24 /* ETCoinListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCoinListViewController.m; sourceTree = "<group>"; };
+		4F3F9056236AEB92009AAA24 /* Tools+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tools+Image.h"; sourceTree = "<group>"; };
+		4F3F9057236AEB93009AAA24 /* Tools+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tools+Image.m"; sourceTree = "<group>"; };
+		4F3F905A236BCB4B009AAA24 /* ETGatheringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETGatheringViewController.h; sourceTree = "<group>"; };
+		4F3F905B236BCB4B009AAA24 /* ETGatheringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETGatheringViewController.m; sourceTree = "<group>"; };
+		4F3F905E236BD9F3009AAA24 /* KMPQRCodeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMPQRCodeManager.m; sourceTree = "<group>"; };
+		4F3F905F236BD9F3009AAA24 /* KMPQRCodeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMPQRCodeManager.h; sourceTree = "<group>"; };
+		4F3F9061236C0F5E009AAA24 /* ETRecordDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETRecordDetailViewController.h; sourceTree = "<group>"; };
+		4F3F9062236C0F5E009AAA24 /* ETRecordDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRecordDetailViewController.m; sourceTree = "<group>"; };
+		4F3F9064236C1046009AAA24 /* ETRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETRecordCell.h; sourceTree = "<group>"; };
+		4F3F9065236C1046009AAA24 /* ETRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRecordCell.m; sourceTree = "<group>"; };
+		4F3F9067236C128D009AAA24 /* ETRecordHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETRecordHeaderView.h; sourceTree = "<group>"; };
+		4F3F9068236C128D009AAA24 /* ETRecordHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRecordHeaderView.m; sourceTree = "<group>"; };
+		4FA0A2F2236FCA270038F880 /* WMZPageLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageLoopView.h; sourceTree = "<group>"; };
+		4FA0A2F3236FCA270038F880 /* WMZPageNaviBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageNaviBtn.h; sourceTree = "<group>"; };
+		4FA0A2F4236FCA270038F880 /* WMZPageLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageLoopView.m; sourceTree = "<group>"; };
+		4FA0A2F5236FCA270038F880 /* WMZPageNaviBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageNaviBtn.m; sourceTree = "<group>"; };
+		4FA0A2F8236FCA270038F880 /* WMZPageScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageScroller.h; sourceTree = "<group>"; };
+		4FA0A2F9236FCA270038F880 /* WMZPageConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageConfig.h; sourceTree = "<group>"; };
+		4FA0A2FA236FCA270038F880 /* WMZPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageController.h; sourceTree = "<group>"; };
+		4FA0A2FB236FCA270038F880 /* NSObject+SafeKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SafeKVO.m"; sourceTree = "<group>"; };
+		4FA0A2FC236FCA270038F880 /* WMZPageParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageParam.m; sourceTree = "<group>"; };
+		4FA0A2FD236FCA270038F880 /* test2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test2ViewController.h; sourceTree = "<group>"; };
+		4FA0A2FE236FCA270038F880 /* WMZPageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageProtocol.h; sourceTree = "<group>"; };
+		4FA0A2FF236FCA270038F880 /* WMZPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageController.m; sourceTree = "<group>"; };
+		4FA0A300236FCA270038F880 /* WMZPageScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageScroller.m; sourceTree = "<group>"; };
+		4FA0A301236FCA270038F880 /* testViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
+		4FA0A302236FCA270038F880 /* NSObject+SafeKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SafeKVO.h"; sourceTree = "<group>"; };
+		4FA0A303236FCA270038F880 /* WMZPageParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageParam.h; sourceTree = "<group>"; };
+		4FA0A30D236FD0680038F880 /* HoverPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoverPageViewController.m; sourceTree = "<group>"; };
+		4FA0A30E236FD0680038F880 /* HoverPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoverPageViewController.h; sourceTree = "<group>"; };
+		4FA0A312236FFF440038F880 /* ETWalletManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETWalletManger.h; sourceTree = "<group>"; };
+		4FA0A313236FFF440038F880 /* ETWalletManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETWalletManger.m; sourceTree = "<group>"; };
+		4FA0A317237013D10038F880 /* ETWalletModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETWalletModel.h; sourceTree = "<group>"; };
+		4FA0A318237013D10038F880 /* ETWalletModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETWalletModel.m; sourceTree = "<group>"; };
+		4FA0A32523717A8A0038F880 /* ETScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETScanViewController.h; sourceTree = "<group>"; };
+		4FA0A32623717A8A0038F880 /* ETScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETScanViewController.m; sourceTree = "<group>"; };
+		4FA0A32923717ACF0038F880 /* ET_ScaningView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ET_ScaningView.h; sourceTree = "<group>"; };
+		4FA0A32A23717ACF0038F880 /* ET_ScaningView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ET_ScaningView.m; sourceTree = "<group>"; };
+		538F76165E482E5E17D51186 /* Pods_ProjectET.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectET.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		590DE355526C79E021DE22B4 /* Pods_ProjectETTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectETTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F8CE32C24AC41FF7C2D546B /* Pods-ProjectET-ProjectETUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET-ProjectETUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectET-ProjectETUITests/Pods-ProjectET-ProjectETUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		71BF457FE4D184D7CB86E10F /* Pods-ProjectET-ProjectETUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET-ProjectETUITests.release.xcconfig"; path = "Target Support Files/Pods-ProjectET-ProjectETUITests/Pods-ProjectET-ProjectETUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8DEA859CD113E49D14CD6446 /* Pods-ProjectETTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectETTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectETTests/Pods-ProjectETTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A224CC41A5867B4A06D4BE24 /* Pods_ProjectET_ProjectETUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectET_ProjectETUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAEF493952AAEB65DFE33AF9 /* Pods-ProjectETTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectETTests.release.xcconfig"; path = "Target Support Files/Pods-ProjectETTests/Pods-ProjectETTests.release.xcconfig"; sourceTree = "<group>"; };
+		AE00EDB48D338D590FABFDDB /* Pods-ProjectET.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET.release.xcconfig"; path = "Target Support Files/Pods-ProjectET/Pods-ProjectET.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F2306BF2366DE9D0046A136 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047A9DF823700A9200FB5132 /* ethers.framework in Frameworks */,
+				A9E72CB71DD272820A53863B /* Pods_ProjectET.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F2306D72366DE9F0046A136 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A90619DC84BDE4BF253E0AF /* Pods_ProjectETTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F2306E22366DE9F0046A136 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				658EFA9763BC24E969103719 /* Pods_ProjectET_ProjectETUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		047A9DBE23700A5900FB5132 /* ethers */ = {
+			isa = PBXGroup;
+			children = (
+				047A9DBF23700A5900FB5132 /* HSEther.m */,
+				047A9DC023700A5900FB5132 /* Wallet.m */,
+				047A9DC123700A5900FB5132 /* HSEther.h */,
+				047A9DC223700A5900FB5132 /* Utilities */,
+				047A9DDF23700A5900FB5132 /* Wallet.h */,
+			);
+			path = ethers;
+			sourceTree = "<group>";
+		};
+		047A9DC223700A5900FB5132 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				047A9DC323700A5900FB5132 /* CachedDataStore.m */,
+				047A9DC423700A5900FB5132 /* SignedRemoteDictionary.m */,
+				047A9DC523700A5900FB5132 /* AsyncOperation.h */,
+				047A9DC623700A5900FB5132 /* SharedDefaults.h */,
+				047A9DC723700A5900FB5132 /* UIColor+hex.m */,
+				047A9DC823700A5900FB5132 /* Utilities.h */,
+				047A9DC923700A5900FB5132 /* UIImage+resize.h */,
+				047A9DCA23700A5900FB5132 /* IndexPathArray.m */,
+				047A9DCB23700A5900FB5132 /* IconFont */,
+				047A9DD223700A5900FB5132 /* CachedDataStore.h */,
+				047A9DD323700A5900FB5132 /* UIColor+hex.h */,
+				047A9DD423700A5900FB5132 /* SharedDefaults.m */,
+				047A9DD523700A5900FB5132 /* SignedRemoteDictionary.h */,
+				047A9DD623700A5900FB5132 /* AsyncOperation.m */,
+				047A9DD723700A5900FB5132 /* Utilities.m */,
+				047A9DD823700A5900FB5132 /* Signers */,
+				047A9DDD23700A5900FB5132 /* IndexPathArray.h */,
+				047A9DDE23700A5900FB5132 /* UIImage+resize.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		047A9DCB23700A5900FB5132 /* IconFont */ = {
+			isa = PBXGroup;
+			children = (
+				047A9DCC23700A5900FB5132 /* IconFont.m */,
+				047A9DCD23700A5900FB5132 /* IconInfo.m */,
+				047A9DCE23700A5900FB5132 /* UIImage+IconFont.m */,
+				047A9DCF23700A5900FB5132 /* UIImage+IconFont.h */,
+				047A9DD023700A5900FB5132 /* IconInfo.h */,
+				047A9DD123700A5900FB5132 /* IconFont.h */,
+			);
+			path = IconFont;
+			sourceTree = "<group>";
+		};
+		047A9DD823700A5900FB5132 /* Signers */ = {
+			isa = PBXGroup;
+			children = (
+				047A9DD923700A5900FB5132 /* CloudKeychainSigner.h */,
+				047A9DDA23700A5900FB5132 /* Signer.m */,
+				047A9DDB23700A5900FB5132 /* CloudKeychainSigner.m */,
+				047A9DDC23700A5900FB5132 /* Signer.h */,
+			);
+			path = Signers;
+			sourceTree = "<group>";
+		};
+		047A9DF023700A5F00FB5132 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				047A9DF523700A5F00FB5132 /* ethers.framework */,
+				047A9DF723700A5F00FB5132 /* ethersTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E2D92EDFC2E29D9F702BA5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				538F76165E482E5E17D51186 /* Pods_ProjectET.framework */,
+				A224CC41A5867B4A06D4BE24 /* Pods_ProjectET_ProjectETUITests.framework */,
+				590DE355526C79E021DE22B4 /* Pods_ProjectETTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		38C391462142FA54A3800BA2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				172FA16F06F30E4F663C3530 /* Pods-ProjectET.debug.xcconfig */,
+				AE00EDB48D338D590FABFDDB /* Pods-ProjectET.release.xcconfig */,
+				6F8CE32C24AC41FF7C2D546B /* Pods-ProjectET-ProjectETUITests.debug.xcconfig */,
+				71BF457FE4D184D7CB86E10F /* Pods-ProjectET-ProjectETUITests.release.xcconfig */,
+				8DEA859CD113E49D14CD6446 /* Pods-ProjectETTests.debug.xcconfig */,
+				AAEF493952AAEB65DFE33AF9 /* Pods-ProjectETTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4F128C552367D1C50004284D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4F14FB0323693CE40008C50A /* UIImage */,
+				4F128C562367D1CE0004284D /* BackBarButton */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		4F128C562367D1CE0004284D /* BackBarButton */ = {
+			isa = PBXGroup;
+			children = (
+				4F128C572367D1CE0004284D /* UIViewController+NaviBarButton.h */,
+				4F128C582367D1CE0004284D /* UIViewController+NaviBarButton.m */,
+			);
+			path = BackBarButton;
+			sourceTree = "<group>";
+		};
+		4F128C5A2367D7210004284D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F128C8E236826FC0004284D /* ETTransferView.h */,
+				4F128C8F236826FC0004284D /* ETTransferView.m */,
+				4F128C8A236826710004284D /* ETTransferCell.h */,
+				4F128C8B236826710004284D /* ETTransferCell.m */,
+				4F128C5D2367D75D0004284D /* ETNoticeScrollView.h */,
+				4F128C5E2367D75D0004284D /* ETNoticeScrollView.m */,
+				4F128C602367D83B0004284D /* HomeHeaderView.h */,
+				4F128C612367D83B0004284D /* HomeHeaderView.m */,
+				4F128C6D23680D120004284D /* ETTableHeaderSelectView.h */,
+				4F128C6E23680D120004284D /* ETTableHeaderSelectView.m */,
+				4F128C672367E19F0004284D /* ETHomeTableHeaderView.h */,
+				4F128C682367E1A00004284D /* ETHomeTableHeaderView.m */,
+				4F128C70236813580004284D /* ETConiCell.h */,
+				4F128C71236813580004284D /* ETConiCell.m */,
+				4F128C9C236839610004284D /* ETDirectTranAddressCell.h */,
+				4F128CA623683EE70004284D /* ETDirectLeftCell.h */,
+				4F128CA723683EE70004284D /* ETDirectLeftCell.m */,
+				4F128CA823683EE70004284D /* ETDirectLeftCell.xib */,
+				4F128C9D236839610004284D /* ETDirectTranAddressCell.m */,
+				4F128C9E236839610004284D /* ETDirectTranAddressCell.xib */,
+				4F128CA123683BF70004284D /* ETDirectCountCell.h */,
+				4F128CA223683BF70004284D /* ETDirectCountCell.m */,
+				4F128CA323683BF70004284D /* ETDirectCountCell.xib */,
+				4F128CAB236840120004284D /* ETDirectNormalCell.h */,
+				4F128CAC236840120004284D /* ETDirectNormalCell.m */,
+				4F128CAD236840120004284D /* ETDirectNormalCell.xib */,
+				4F14FB17236960A20008C50A /* ETMyWalletView.h */,
+				4F14FB18236960A20008C50A /* ETMyWalletView.m */,
+				4F14FB1F236966E10008C50A /* ETMyWalletDetailCell.h */,
+				4F14FB20236966E10008C50A /* ETMyWalletDetailCell.m */,
+				4F14FB21236966E10008C50A /* ETMyWalletDetailCell.xib */,
+				4F14FB1A236966C10008C50A /* ETMyWalletIconCell.h */,
+				4F14FB1B236966C10008C50A /* ETMyWalletIconCell.m */,
+				4F1942F0236D69E100AD907E /* ETVerifyPassWrodView.h */,
+				4F1942F1236D69E100AD907E /* ETVerifyPassWrodView.m */,
+				4F1942F3236D69FB00AD907E /* ETBackUpWalletView.h */,
+				4F1942F4236D69FB00AD907E /* ETBackUpWalletView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4F128C5B2367D7250004284D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4F14FB24236975890008C50A /* ETMyWalletLeftModel.h */,
+				4F14FB25236975890008C50A /* ETMyWalletLeftModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4F128C5C2367D72E0004284D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F2307042366EB600046A136 /* ETAssetsViewController.h */,
+				4F2307052366EB600046A136 /* ETAssetsViewController.m */,
+				4F3F905A236BCB4B009AAA24 /* ETGatheringViewController.h */,
+				4F3F905B236BCB4B009AAA24 /* ETGatheringViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4F128C632367D95D0004284D /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				4F3F9056236AEB92009AAA24 /* Tools+Image.h */,
+				4F3F9057236AEB93009AAA24 /* Tools+Image.m */,
+				4F14FB1423695F0C0008C50A /* Tools.h */,
+				4F14FB1523695F0C0008C50A /* Tools.m */,
+				4F128C642367D96F0004284D /* UIButton+ImageTitleSpacing.h */,
+				4F128C652367D96F0004284D /* UIButton+ImageTitleSpacing.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		4F128C7523681FF60004284D /* CreatWallet(创建钱包) */ = {
+			isa = PBXGroup;
+			children = (
+				4F3F903A236A83CB009AAA24 /* Controller */,
+				4F128C8D236826B20004284D /* View */,
+			);
+			path = "CreatWallet(创建钱包)";
+			sourceTree = "<group>";
+		};
+		4F128C8D236826B20004284D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F128C84236820580004284D /* EqualSpaceFlowLayoutEvolve.h */,
+				4F128C85236820580004284D /* EqualSpaceFlowLayoutEvolve.m */,
+				4F128C7D236820320004284D /* titleCell.h */,
+				4F128C78236820320004284D /* titleCell.m */,
+				4F3F902D236A7E83009AAA24 /* ETCreatWalletInfoCell.h */,
+				4F3F902E236A7E83009AAA24 /* ETCreatWalletInfoCell.m */,
+				4F3F902F236A7E83009AAA24 /* ETCreatWalletInfoCell.xib */,
+				4F3F9032236A7F04009AAA24 /* ETCreatWalletInputCell.h */,
+				4F3F9033236A7F04009AAA24 /* ETCreatWalletInputCell.m */,
+				4F3F9034236A7F04009AAA24 /* ETCreatWalletInputCell.xib */,
+				4F3F9037236A804B009AAA24 /* ETCreatYYViewCell.h */,
+				4F3F9038236A804B009AAA24 /* ETCreatYYViewCell.m */,
+				4F3F9047236ABAD9009AAA24 /* ETSecertCreatView.h */,
+				4F3F9048236ABAD9009AAA24 /* ETSecertCreatView.m */,
+				4F3F9064236C1046009AAA24 /* ETRecordCell.h */,
+				4F3F9065236C1046009AAA24 /* ETRecordCell.m */,
+				4F3F9067236C128D009AAA24 /* ETRecordHeaderView.h */,
+				4F3F9068236C128D009AAA24 /* ETRecordHeaderView.m */,
+				4F1942CE236D22E900AD907E /* ETWalletDetailCell.h */,
+				4F1942CF236D22E900AD907E /* ETWalletDetailCell.m */,
+				4F1942D0236D22E900AD907E /* ETWalletDetailCell.xib */,
+				4F1942D3236D2A0800AD907E /* ETWalletDetailView.h */,
+				4F1942D4236D2A0800AD907E /* ETWalletDetailView.m */,
+				4F1942D6236D2F4600AD907E /* ETSyoImportView.h */,
+				4F1942D7236D2F4600AD907E /* ETSyoImportView.m */,
+				4F1942E7236D5E5800AD907E /* ETKeystoreImporView.h */,
+				4F1942E8236D5E5800AD907E /* ETKeystoreImporView.m */,
+				4F1942EA236D5E6900AD907E /* ETKeystoreQcodeView.h */,
+				4F1942EB236D5E6900AD907E /* ETKeystoreQcodeView.m */,
+				4F1942D9236D2F7000AD907E /* ETQcodeImportView.h */,
+				4F1942DA236D2F7000AD907E /* ETQcodeImportView.m */,
+				4F1942DC236D306800AD907E /* ETWalletImportCell.h */,
+				4F1942DD236D306800AD907E /* ETWalletImportCell.m */,
+				4F1942DE236D306800AD907E /* ETWalletImportCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4F128C91236834CA0004284D /* VCSetting */ = {
+			isa = PBXGroup;
+			children = (
+				4F128C92236834EB0004284D /* AppDelegate+ET_VCSetting.h */,
+				4F128C93236834EB0004284D /* AppDelegate+ET_VCSetting.m */,
+			);
+			path = VCSetting;
+			sourceTree = "<group>";
+		};
+		4F14FAEE2369240F0008C50A /* Transfer(转账) */ = {
+			isa = PBXGroup;
+			children = (
+				4F14FAF2236924420008C50A /* Controller */,
+				4F14FAF1236924390008C50A /* Model */,
+				4F14FAEF2369242E0008C50A /* View */,
+			);
+			path = "Transfer(转账)";
+			sourceTree = "<group>";
+		};
+		4F14FAEF2369242E0008C50A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F14FAF6236924B30008C50A /* ETMyContactsCell.h */,
+				4F14FAF7236924B30008C50A /* ETMyContactsCell.m */,
+				4F14FAF8236924B30008C50A /* ETMyContactsCell.xib */,
+				4F14FAFE23692CF30008C50A /* ETAddContactsCell.h */,
+				4F14FAFF23692CF30008C50A /* ETAddContactsCell.m */,
+				4F14FB0023692CF30008C50A /* ETAddContactsCell.xib */,
+				4F14FB2A23698BA30008C50A /* ETCreatWalletCell.h */,
+				4F14FB2B23698BA30008C50A /* ETCreatWalletCell.m */,
+				4F3F9050236AE240009AAA24 /* ETChooseWalletcell.h */,
+				4F3F9051236AE240009AAA24 /* ETChooseWalletcell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4F14FAF1236924390008C50A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4F14FAF2236924420008C50A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F128C87236822610004284D /* ETTransferViewController.h */,
+				4F128C88236822610004284D /* ETTransferViewController.m */,
+				4F128C99236836040004284D /* ETDirectTransferController.h */,
+				4F128C9A236836040004284D /* ETDirectTransferController.m */,
+				4F14FAF3236924770008C50A /* ETMyContactsController.h */,
+				4F14FAF4236924770008C50A /* ETMyContactsController.m */,
+				4F14FAFB23692BB70008C50A /* ETAddContactsController.h */,
+				4F14FAFC23692BB70008C50A /* ETAddContactsController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4F14FB0323693CE40008C50A /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				4F14FB0423693CE40008C50A /* UIImage+Zoom.h */,
+				4F14FB0523693CE40008C50A /* UIImage+Color.h */,
+				4F14FB0623693CE40008C50A /* UIImage+GIFImage.m */,
+				4F14FB0723693CE40008C50A /* UIImage+Watermark.m */,
+				4F14FB0823693CE40008C50A /* UIImage+Zoom.m */,
+				4F14FB0923693CE40008C50A /* UIImage+Watermark.h */,
+				4F14FB0A23693CE40008C50A /* UIImage+GIFImage.h */,
+				4F14FB0B23693CE40008C50A /* UIImage+Color.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		4F14FB1023693CFC0008C50A /* KMPProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				4F14FB1123693CFC0008C50A /* KMPProgressHUD.m */,
+				4F14FB1223693CFC0008C50A /* KMPProgressHUD.h */,
+			);
+			path = KMPProgressHUD;
+			sourceTree = "<group>";
+		};
+		4F2306B92366DE9D0046A136 = {
+			isa = PBXGroup;
+			children = (
+				4F2306C42366DE9D0046A136 /* ProjectET */,
+				4F2306DD2366DE9F0046A136 /* ProjectETTests */,
+				4F2306E82366DE9F0046A136 /* ProjectETUITests */,
+				4F2306C32366DE9D0046A136 /* Products */,
+				38C391462142FA54A3800BA2 /* Pods */,
+				2E2D92EDFC2E29D9F702BA5B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4F2306C32366DE9D0046A136 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F2306C22366DE9D0046A136 /* ProjectET.app */,
+				4F2306DA2366DE9F0046A136 /* ProjectETTests.xctest */,
+				4F2306E52366DE9F0046A136 /* ProjectETUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F2306C42366DE9D0046A136 /* ProjectET */ = {
+			isa = PBXGroup;
+			children = (
+				4F2306FD2366EA8D0046A136 /* AppDelegate */,
+				4F2306FE2366EA9A0046A136 /* Class */,
+				4F23070B2366EC8C0046A136 /* Expand */,
+				4F2306F92366E9BE0046A136 /* Utils */,
+				4F2306D32366DE9F0046A136 /* Info.plist */,
+				4F2306F82366E44B0046A136 /* Supporting Files */,
+			);
+			path = ProjectET;
+			sourceTree = "<group>";
+		};
+		4F2306DD2366DE9F0046A136 /* ProjectETTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F2306DE2366DE9F0046A136 /* ProjectETTests.m */,
+				4F2306E02366DE9F0046A136 /* Info.plist */,
+			);
+			path = ProjectETTests;
+			sourceTree = "<group>";
+		};
+		4F2306E82366DE9F0046A136 /* ProjectETUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4F2306E92366DE9F0046A136 /* ProjectETUITests.m */,
+				4F2306EB2366DE9F0046A136 /* Info.plist */,
+			);
+			path = ProjectETUITests;
+			sourceTree = "<group>";
+		};
+		4F2306F82366E44B0046A136 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F1174F4236C23C10042CDFD /* OCExample-Bridging-Header.h */,
+				4F2306F72366E41C0046A136 /* PrefixETHeader.pch */,
+				4F2306CB2366DE9D0046A136 /* Main.storyboard */,
+				4F2306D42366DE9F0046A136 /* main.m */,
+				4F2306D02366DE9F0046A136 /* LaunchScreen.storyboard */,
+				4F2306CE2366DE9F0046A136 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F2306F92366E9BE0046A136 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4F128C632367D95D0004284D /* Tools */,
+				4F128C552367D1C50004284D /* UI */,
+				4F2307072366EBFC0046A136 /* Macro */,
+				4F2306FA2366E9DE0046A136 /* UtilsHeader.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4F2306FD2366EA8D0046A136 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				4F128C91236834CA0004284D /* VCSetting */,
+				4F2306C52366DE9D0046A136 /* AppDelegate.h */,
+				4F2306C62366DE9D0046A136 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		4F2306FE2366EA9A0046A136 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				4FA0A31F23717A0D0038F880 /* ScanController */,
+				4F128C7523681FF60004284D /* CreatWallet(创建钱包) */,
+				4F2306FF2366EAB30046A136 /* Home(资产) */,
+				4F2307002366EAF70046A136 /* RootViewController */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		4F2306FF2366EAB30046A136 /* Home(资产) */ = {
+			isa = PBXGroup;
+			children = (
+				4F14FAEE2369240F0008C50A /* Transfer(转账) */,
+				4F128C5C2367D72E0004284D /* Controller */,
+				4F128C5B2367D7250004284D /* Model */,
+				4F128C5A2367D7210004284D /* View */,
+			);
+			path = "Home(资产)";
+			sourceTree = "<group>";
+		};
+		4F2307002366EAF70046A136 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4F2307012366EB120046A136 /* ETRootViewController.h */,
+				4F2307022366EB120046A136 /* ETRootViewController.m */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		4F2307072366EBFC0046A136 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				4F2307082366EBFC0046A136 /* WeakDefine.h */,
+				4F2307092366EBFC0046A136 /* CommonMacro.h */,
+				4F23070A2366EBFC0046A136 /* Singleton.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		4F23070B2366EC8C0046A136 /* Expand */ = {
+			isa = PBXGroup;
+			children = (
+				047A9DEF23700A5F00FB5132 /* ethers.xcodeproj */,
+				047A9DBE23700A5900FB5132 /* ethers */,
+				4FA0A311236FFF270038F880 /* ETManger */,
+				4FA0A30E236FD0680038F880 /* HoverPageViewController.h */,
+				4FA0A30D236FD0680038F880 /* HoverPageViewController.m */,
+				4FA0A2F0236FCA270038F880 /* WMZPageController */,
+				4F3F905D236BD9F3009AAA24 /* QRCodeExpand */,
+				4F14FB1023693CFC0008C50A /* KMPProgressHUD */,
+				4F23070C2366EC930046A136 /* MacroExpand */,
+				4F23070E2366ED290046A136 /* ETExpandHeader.h */,
+			);
+			path = Expand;
+			sourceTree = "<group>";
+		};
+		4F23070C2366EC930046A136 /* MacroExpand */ = {
+			isa = PBXGroup;
+			children = (
+				4F23070D2366ECB20046A136 /* ETMacro.h */,
+			);
+			path = MacroExpand;
+			sourceTree = "<group>";
+		};
+		4F3F903A236A83CB009AAA24 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F14FB27236985420008C50A /* ETCreatWalletViewController.h */,
+				4F14FB28236985420008C50A /* ETCreatWalletViewController.m */,
+				4F128C7A236820320004284D /* backUpMoneyViewController.h */,
+				4F128C7E236820320004284D /* backUpMoneyViewController.m */,
+				4F128C76236820320004284D /* backUpMoneyViewController.xib */,
+				4F128C7B236820320004284D /* backUpViewController.h */,
+				4F128C7C236820320004284D /* backUpViewController.m */,
+				4F128C79236820320004284D /* ViewController.h */,
+				4F128C77236820320004284D /* ViewController.m */,
+				4F3F903B236A8415009AAA24 /* ETSecretImportController.h */,
+				4F3F903C236A8415009AAA24 /* ETSecretImportController.m */,
+				4F3F903E236A9535009AAA24 /* ETRememberCardController.h */,
+				4F3F903F236A9535009AAA24 /* ETRememberCardController.m */,
+				4F3F9041236AB22B009AAA24 /* ETColdWalletViewController.h */,
+				4F3F9042236AB22B009AAA24 /* ETColdWalletViewController.m */,
+				4F3F9044236AB672009AAA24 /* ETKeyStoreController.h */,
+				4F3F9045236AB672009AAA24 /* ETKeyStoreController.m */,
+				4F3F904A236ACE72009AAA24 /* ETCreatMyWalletViewController.h */,
+				4F3F904B236ACE72009AAA24 /* ETCreatMyWalletViewController.m */,
+				4F3F904D236AE073009AAA24 /* ETCoinMainViewController.h */,
+				4F3F904E236AE073009AAA24 /* ETCoinMainViewController.m */,
+				4F3F9053236AE62A009AAA24 /* ETCoinListViewController.h */,
+				4F3F9054236AE62A009AAA24 /* ETCoinListViewController.m */,
+				4F3F9061236C0F5E009AAA24 /* ETRecordDetailViewController.h */,
+				4F3F9062236C0F5E009AAA24 /* ETRecordDetailViewController.m */,
+				4F117507236C267E0042CDFD /* ETRecordSegmentController.h */,
+				4F117508236C267E0042CDFD /* ETRecordSegmentController.m */,
+				4F1942CB236D21DD00AD907E /* ETWalletDetailController.h */,
+				4F1942CC236D21DD00AD907E /* ETWalletDetailController.m */,
+				4F1942E1236D358A00AD907E /* ETImportSyaoController.h */,
+				4F1942E2236D358A00AD907E /* ETImportSyaoController.m */,
+				4F1942E4236D5E1A00AD907E /* ETKeystoreImportController.h */,
+				4F1942E5236D5E1A00AD907E /* ETKeystoreImportController.m */,
+				4F1942ED236D61EC00AD907E /* ETChangePassWordController.h */,
+				4F1942EE236D61EC00AD907E /* ETChangePassWordController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4F3F905D236BD9F3009AAA24 /* QRCodeExpand */ = {
+			isa = PBXGroup;
+			children = (
+				4F3F905E236BD9F3009AAA24 /* KMPQRCodeManager.m */,
+				4F3F905F236BD9F3009AAA24 /* KMPQRCodeManager.h */,
+			);
+			path = QRCodeExpand;
+			sourceTree = "<group>";
+		};
+		4FA0A2F0236FCA270038F880 /* WMZPageController */ = {
+			isa = PBXGroup;
+			children = (
+				4FA0A2F1236FCA270038F880 /* Navi */,
+				4FA0A2F6236FCA270038F880 /* Controller */,
+			);
+			path = WMZPageController;
+			sourceTree = "<group>";
+		};
+		4FA0A2F1236FCA270038F880 /* Navi */ = {
+			isa = PBXGroup;
+			children = (
+				4FA0A2F2236FCA270038F880 /* WMZPageLoopView.h */,
+				4FA0A2F3236FCA270038F880 /* WMZPageNaviBtn.h */,
+				4FA0A2F4236FCA270038F880 /* WMZPageLoopView.m */,
+				4FA0A2F5236FCA270038F880 /* WMZPageNaviBtn.m */,
+			);
+			path = Navi;
+			sourceTree = "<group>";
+		};
+		4FA0A2F6236FCA270038F880 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4FA0A2F8236FCA270038F880 /* WMZPageScroller.h */,
+				4FA0A2F9236FCA270038F880 /* WMZPageConfig.h */,
+				4FA0A2FA236FCA270038F880 /* WMZPageController.h */,
+				4FA0A2FB236FCA270038F880 /* NSObject+SafeKVO.m */,
+				4FA0A2FC236FCA270038F880 /* WMZPageParam.m */,
+				4FA0A2FD236FCA270038F880 /* test2ViewController.h */,
+				4FA0A2FE236FCA270038F880 /* WMZPageProtocol.h */,
+				4FA0A2FF236FCA270038F880 /* WMZPageController.m */,
+				4FA0A300236FCA270038F880 /* WMZPageScroller.m */,
+				4FA0A301236FCA270038F880 /* testViewController.h */,
+				4FA0A302236FCA270038F880 /* NSObject+SafeKVO.h */,
+				4FA0A303236FCA270038F880 /* WMZPageParam.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4FA0A311236FFF270038F880 /* ETManger */ = {
+			isa = PBXGroup;
+			children = (
+				4FA0A312236FFF440038F880 /* ETWalletManger.h */,
+				4FA0A313236FFF440038F880 /* ETWalletManger.m */,
+				4FA0A317237013D10038F880 /* ETWalletModel.h */,
+				4FA0A318237013D10038F880 /* ETWalletModel.m */,
+			);
+			path = ETManger;
+			sourceTree = "<group>";
+		};
+		4FA0A31F23717A0D0038F880 /* ScanController */ = {
+			isa = PBXGroup;
+			children = (
+				4FA0A32823717AAD0038F880 /* View */,
+				4FA0A32523717A8A0038F880 /* ETScanViewController.h */,
+				4FA0A32623717A8A0038F880 /* ETScanViewController.m */,
+			);
+			path = ScanController;
+			sourceTree = "<group>";
+		};
+		4FA0A32823717AAD0038F880 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4FA0A32923717ACF0038F880 /* ET_ScaningView.h */,
+				4FA0A32A23717ACF0038F880 /* ET_ScaningView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F2306C12366DE9D0046A136 /* ProjectET */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F2306EE2366DE9F0046A136 /* Build configuration list for PBXNativeTarget "ProjectET" */;
+			buildPhases = (
+				F3385358CCB0B1B2A3448D4D /* [CP] Check Pods Manifest.lock */,
+				4F2306BE2366DE9D0046A136 /* Sources */,
+				4F2306BF2366DE9D0046A136 /* Frameworks */,
+				4F2306C02366DE9D0046A136 /* Resources */,
+				C3BC53C8913E9B28B4564BD0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProjectET;
+			productName = ProjectET;
+			productReference = 4F2306C22366DE9D0046A136 /* ProjectET.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4F2306D92366DE9F0046A136 /* ProjectETTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F2306F12366DE9F0046A136 /* Build configuration list for PBXNativeTarget "ProjectETTests" */;
+			buildPhases = (
+				7D5590D9BB61E6F40B9ACDAB /* [CP] Check Pods Manifest.lock */,
+				4F2306D62366DE9F0046A136 /* Sources */,
+				4F2306D72366DE9F0046A136 /* Frameworks */,
+				4F2306D82366DE9F0046A136 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F2306DC2366DE9F0046A136 /* PBXTargetDependency */,
+			);
+			name = ProjectETTests;
+			productName = ProjectETTests;
+			productReference = 4F2306DA2366DE9F0046A136 /* ProjectETTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4F2306E42366DE9F0046A136 /* ProjectETUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F2306F42366DE9F0046A136 /* Build configuration list for PBXNativeTarget "ProjectETUITests" */;
+			buildPhases = (
+				3AF0D8D939E0113D504218F7 /* [CP] Check Pods Manifest.lock */,
+				4F2306E12366DE9F0046A136 /* Sources */,
+				4F2306E22366DE9F0046A136 /* Frameworks */,
+				4F2306E32366DE9F0046A136 /* Resources */,
+				B37650F81398D5ECB4E17D8E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F2306E72366DE9F0046A136 /* PBXTargetDependency */,
+			);
+			name = ProjectETUITests;
+			productName = ProjectETUITests;
+			productReference = 4F2306E52366DE9F0046A136 /* ProjectETUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F2306BA2366DE9D0046A136 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = LightCould;
+				TargetAttributes = {
+					4F2306C12366DE9D0046A136 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					4F2306D92366DE9F0046A136 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 4F2306C12366DE9D0046A136;
+					};
+					4F2306E42366DE9F0046A136 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 4F2306C12366DE9D0046A136;
+					};
+				};
+			};
+			buildConfigurationList = 4F2306BD2366DE9D0046A136 /* Build configuration list for PBXProject "ProjectET" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F2306B92366DE9D0046A136;
+			productRefGroup = 4F2306C32366DE9D0046A136 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 047A9DF023700A5F00FB5132 /* Products */;
+					ProjectRef = 047A9DEF23700A5F00FB5132 /* ethers.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				4F2306C12366DE9D0046A136 /* ProjectET */,
+				4F2306D92366DE9F0046A136 /* ProjectETTests */,
+				4F2306E42366DE9F0046A136 /* ProjectETUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		047A9DF523700A5F00FB5132 /* ethers.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ethers.framework;
+			remoteRef = 047A9DF423700A5F00FB5132 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		047A9DF723700A5F00FB5132 /* ethersTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ethersTests.xctest;
+			remoteRef = 047A9DF623700A5F00FB5132 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F2306C02366DE9D0046A136 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F14FB23236966E10008C50A /* ETMyWalletDetailCell.xib in Resources */,
+				4F2306D22366DE9F0046A136 /* LaunchScreen.storyboard in Resources */,
+				4F14FB0223692CF30008C50A /* ETAddContactsCell.xib in Resources */,
+				4F128CA523683BF70004284D /* ETDirectCountCell.xib in Resources */,
+				4F14FAFA236924B30008C50A /* ETMyContactsCell.xib in Resources */,
+				4F128CAA23683EE70004284D /* ETDirectLeftCell.xib in Resources */,
+				4F2306CF2366DE9F0046A136 /* Assets.xcassets in Resources */,
+				4F128CAF236840120004284D /* ETDirectNormalCell.xib in Resources */,
+				4F2306CD2366DE9D0046A136 /* Main.storyboard in Resources */,
+				4F128C7F236820320004284D /* backUpMoneyViewController.xib in Resources */,
+				4F1942D2236D22E900AD907E /* ETWalletDetailCell.xib in Resources */,
+				4F3F9036236A7F04009AAA24 /* ETCreatWalletInputCell.xib in Resources */,
+				4F1942E0236D306800AD907E /* ETWalletImportCell.xib in Resources */,
+				4F128CA0236839610004284D /* ETDirectTranAddressCell.xib in Resources */,
+				4F3F9031236A7E83009AAA24 /* ETCreatWalletInfoCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F2306D82366DE9F0046A136 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F2306E32366DE9F0046A136 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3AF0D8D939E0113D504218F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProjectET-ProjectETUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D5590D9BB61E6F40B9ACDAB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProjectETTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B37650F81398D5ECB4E17D8E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectET-ProjectETUITests/Pods-ProjectET-ProjectETUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectET-ProjectETUITests/Pods-ProjectET-ProjectETUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectET-ProjectETUITests/Pods-ProjectET-ProjectETUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3BC53C8913E9B28B4564BD0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectET/Pods-ProjectET-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectET/Pods-ProjectET-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectET/Pods-ProjectET-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3385358CCB0B1B2A3448D4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProjectET-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F2306BE2366DE9D0046A136 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F128C73236813580004284D /* ETConiCell.m in Sources */,
+				4F3F903D236A8415009AAA24 /* ETSecretImportController.m in Sources */,
+				4FA0A32B23717ACF0038F880 /* ET_ScaningView.m in Sources */,
+				4FA0A30F236FD0690038F880 /* HoverPageViewController.m in Sources */,
+				4F128C90236826FC0004284D /* ETTransferView.m in Sources */,
+				4F128C9F236839610004284D /* ETDirectTranAddressCell.m in Sources */,
+				4F14FB1623695F0C0008C50A /* Tools.m in Sources */,
+				4F14FB0F23693CE40008C50A /* UIImage+Color.m in Sources */,
+				047A9DE523700A5900FB5132 /* IndexPathArray.m in Sources */,
+				047A9DE723700A5900FB5132 /* IconInfo.m in Sources */,
+				047A9DEC23700A5900FB5132 /* Signer.m in Sources */,
+				4F1942CD236D21DD00AD907E /* ETWalletDetailController.m in Sources */,
+				4F128CA423683BF70004284D /* ETDirectCountCell.m in Sources */,
+				4F3F9069236C128D009AAA24 /* ETRecordHeaderView.m in Sources */,
+				4F14FAF5236924770008C50A /* ETMyContactsController.m in Sources */,
+				4F2307032366EB120046A136 /* ETRootViewController.m in Sources */,
+				4F3F9063236C0F5E009AAA24 /* ETRecordDetailViewController.m in Sources */,
+				4FA0A30B236FCA270038F880 /* WMZPageScroller.m in Sources */,
+				4FA0A30A236FCA270038F880 /* WMZPageController.m in Sources */,
+				4F128C86236820580004284D /* EqualSpaceFlowLayoutEvolve.m in Sources */,
+				4F3F9043236AB22B009AAA24 /* ETColdWalletViewController.m in Sources */,
+				4F14FAF9236924B30008C50A /* ETMyContactsCell.m in Sources */,
+				4FA0A305236FCA270038F880 /* WMZPageLoopView.m in Sources */,
+				4F14FB0D23693CE40008C50A /* UIImage+Watermark.m in Sources */,
+				047A9DE223700A5900FB5132 /* CachedDataStore.m in Sources */,
+				4F1942EC236D5E6900AD907E /* ETKeystoreQcodeView.m in Sources */,
+				4FA0A319237013D10038F880 /* ETWalletModel.m in Sources */,
+				4F128C6F23680D120004284D /* ETTableHeaderSelectView.m in Sources */,
+				4F128C83236820320004284D /* backUpMoneyViewController.m in Sources */,
+				047A9DED23700A5900FB5132 /* CloudKeychainSigner.m in Sources */,
+				4F3F905C236BCB4B009AAA24 /* ETGatheringViewController.m in Sources */,
+				4F2306D52366DE9F0046A136 /* main.m in Sources */,
+				4F14FB1323693CFC0008C50A /* KMPProgressHUD.m in Sources */,
+				4F14FB2D23698BA30008C50A /* ETCreatWalletCell.m in Sources */,
+				4FA0A308236FCA270038F880 /* NSObject+SafeKVO.m in Sources */,
+				4F1942F2236D69E100AD907E /* ETVerifyPassWrodView.m in Sources */,
+				4F2307062366EB600046A136 /* ETAssetsViewController.m in Sources */,
+				4F3F904F236AE073009AAA24 /* ETCoinMainViewController.m in Sources */,
+				4F3F9055236AE62A009AAA24 /* ETCoinListViewController.m in Sources */,
+				4FA0A306236FCA270038F880 /* WMZPageNaviBtn.m in Sources */,
+				4F128CAE236840120004284D /* ETDirectNormalCell.m in Sources */,
+				4F3F9039236A804B009AAA24 /* ETCreatYYViewCell.m in Sources */,
+				4F117509236C267E0042CDFD /* ETRecordSegmentController.m in Sources */,
+				4F128C622367D83B0004284D /* HomeHeaderView.m in Sources */,
+				4F3F9030236A7E83009AAA24 /* ETCreatWalletInfoCell.m in Sources */,
+				4F3F9060236BD9F3009AAA24 /* KMPQRCodeManager.m in Sources */,
+				047A9DEA23700A5900FB5132 /* AsyncOperation.m in Sources */,
+				4F1942E6236D5E1A00AD907E /* ETKeystoreImportController.m in Sources */,
+				4F1942D5236D2A0800AD907E /* ETWalletDetailView.m in Sources */,
+				4F14FB1D236966C10008C50A /* ETMyWalletIconCell.m in Sources */,
+				047A9DE423700A5900FB5132 /* UIColor+hex.m in Sources */,
+				4F128C82236820320004284D /* backUpViewController.m in Sources */,
+				4F128CA923683EE70004284D /* ETDirectLeftCell.m in Sources */,
+				047A9DE123700A5900FB5132 /* Wallet.m in Sources */,
+				4F1942F5236D69FB00AD907E /* ETBackUpWalletView.m in Sources */,
+				047A9DE323700A5900FB5132 /* SignedRemoteDictionary.m in Sources */,
+				4F1942DB236D2F7000AD907E /* ETQcodeImportView.m in Sources */,
+				4F128C80236820320004284D /* ViewController.m in Sources */,
+				4F3F9049236ABAD9009AAA24 /* ETSecertCreatView.m in Sources */,
+				4F14FB19236960A20008C50A /* ETMyWalletView.m in Sources */,
+				4F3F904C236ACE72009AAA24 /* ETCreatMyWalletViewController.m in Sources */,
+				4F14FB22236966E10008C50A /* ETMyWalletDetailCell.m in Sources */,
+				4FA0A314236FFF440038F880 /* ETWalletManger.m in Sources */,
+				4F3F9058236AEB93009AAA24 /* Tools+Image.m in Sources */,
+				4FA0A309236FCA270038F880 /* WMZPageParam.m in Sources */,
+				4F128C592367D1CE0004284D /* UIViewController+NaviBarButton.m in Sources */,
+				047A9DE823700A5900FB5132 /* UIImage+IconFont.m in Sources */,
+				4F3F9040236A9535009AAA24 /* ETRememberCardController.m in Sources */,
+				4F3F9035236A7F04009AAA24 /* ETCreatWalletInputCell.m in Sources */,
+				4F14FB0E23693CE40008C50A /* UIImage+Zoom.m in Sources */,
+				047A9DEE23700A5900FB5132 /* UIImage+resize.m in Sources */,
+				4F1942D1236D22E900AD907E /* ETWalletDetailCell.m in Sources */,
+				4F3F9052236AE241009AAA24 /* ETChooseWalletcell.m in Sources */,
+				4F14FB0123692CF30008C50A /* ETAddContactsCell.m in Sources */,
+				4F14FB26236975890008C50A /* ETMyWalletLeftModel.m in Sources */,
+				4F128C5F2367D75D0004284D /* ETNoticeScrollView.m in Sources */,
+				4F14FB0C23693CE40008C50A /* UIImage+GIFImage.m in Sources */,
+				4F128C662367D96F0004284D /* UIButton+ImageTitleSpacing.m in Sources */,
+				047A9DEB23700A5900FB5132 /* Utilities.m in Sources */,
+				4F1942E9236D5E5800AD907E /* ETKeystoreImporView.m in Sources */,
+				4F128C8C236826710004284D /* ETTransferCell.m in Sources */,
+				4F3F9046236AB672009AAA24 /* ETKeyStoreController.m in Sources */,
+				4F128C692367E1A00004284D /* ETHomeTableHeaderView.m in Sources */,
+				4FA0A32723717A8A0038F880 /* ETScanViewController.m in Sources */,
+				4F2306C72366DE9D0046A136 /* AppDelegate.m in Sources */,
+				047A9DE923700A5900FB5132 /* SharedDefaults.m in Sources */,
+				4F1942EF236D61EC00AD907E /* ETChangePassWordController.m in Sources */,
+				4F3F9066236C1046009AAA24 /* ETRecordCell.m in Sources */,
+				047A9DE623700A5900FB5132 /* IconFont.m in Sources */,
+				4F1942D8236D2F4600AD907E /* ETSyoImportView.m in Sources */,
+				4F128C9B236836040004284D /* ETDirectTransferController.m in Sources */,
+				047A9DE023700A5900FB5132 /* HSEther.m in Sources */,
+				4F14FAFD23692BB70008C50A /* ETAddContactsController.m in Sources */,
+				4F14FB29236985420008C50A /* ETCreatWalletViewController.m in Sources */,
+				4F128C81236820320004284D /* titleCell.m in Sources */,
+				4F1942DF236D306800AD907E /* ETWalletImportCell.m in Sources */,
+				4F128C89236822610004284D /* ETTransferViewController.m in Sources */,
+				4F128C94236834EB0004284D /* AppDelegate+ET_VCSetting.m in Sources */,
+				4F1942E3236D358A00AD907E /* ETImportSyaoController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F2306D62366DE9F0046A136 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2306DF2366DE9F0046A136 /* ProjectETTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F2306E12366DE9F0046A136 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2306EA2366DE9F0046A136 /* ProjectETUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4F2306DC2366DE9F0046A136 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F2306C12366DE9D0046A136 /* ProjectET */;
+			targetProxy = 4F2306DB2366DE9F0046A136 /* PBXContainerItemProxy */;
+		};
+		4F2306E72366DE9F0046A136 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F2306C12366DE9D0046A136 /* ProjectET */;
+			targetProxy = 4F2306E62366DE9F0046A136 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4F2306CB2366DE9D0046A136 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F2306CC2366DE9D0046A136 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4F2306D02366DE9F0046A136 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F2306D12366DE9F0046A136 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F2306EC2366DE9F0046A136 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4F2306ED2366DE9F0046A136 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F2306EF2366DE9F0046A136 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 172FA16F06F30E4F663C3530 /* Pods-ProjectET.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2LML59W777;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectET/Supporting Files/PrefixETHeader.pch";
+				INFOPLIST_FILE = ProjectET/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectET;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F2306F02366DE9F0046A136 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE00EDB48D338D590FABFDDB /* Pods-ProjectET.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2LML59W777;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectET/Supporting Files/PrefixETHeader.pch";
+				INFOPLIST_FILE = ProjectET/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectET;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4F2306F22366DE9F0046A136 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DEA859CD113E49D14CD6446 /* Pods-ProjectETTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ProjectETTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectETTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjectET.app/ProjectET";
+			};
+			name = Debug;
+		};
+		4F2306F32366DE9F0046A136 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAEF493952AAEB65DFE33AF9 /* Pods-ProjectETTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ProjectETTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectETTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjectET.app/ProjectET";
+			};
+			name = Release;
+		};
+		4F2306F52366DE9F0046A136 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F8CE32C24AC41FF7C2D546B /* Pods-ProjectET-ProjectETUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ProjectETUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectETUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ProjectET;
+			};
+			name = Debug;
+		};
+		4F2306F62366DE9F0046A136 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71BF457FE4D184D7CB86E10F /* Pods-ProjectET-ProjectETUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ProjectETUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectETUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ProjectET;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F2306BD2366DE9D0046A136 /* Build configuration list for PBXProject "ProjectET" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F2306EC2366DE9F0046A136 /* Debug */,
+				4F2306ED2366DE9F0046A136 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F2306EE2366DE9F0046A136 /* Build configuration list for PBXNativeTarget "ProjectET" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F2306EF2366DE9F0046A136 /* Debug */,
+				4F2306F02366DE9F0046A136 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F2306F12366DE9F0046A136 /* Build configuration list for PBXNativeTarget "ProjectETTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F2306F22366DE9F0046A136 /* Debug */,
+				4F2306F32366DE9F0046A136 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F2306F42366DE9F0046A136 /* Build configuration list for PBXNativeTarget "ProjectETUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F2306F52366DE9F0046A136 /* Debug */,
+				4F2306F62366DE9F0046A136 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F2306BA2366DE9D0046A136 /* Project object */;
+}

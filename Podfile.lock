@@ -1,0 +1,93 @@
+PODS:
+  - AFNetworking (3.2.0):
+    - AFNetworking/NSURLSession (= 3.2.0)
+    - AFNetworking/Reachability (= 3.2.0)
+    - AFNetworking/Security (= 3.2.0)
+    - AFNetworking/Serialization (= 3.2.0)
+    - AFNetworking/UIKit (= 3.2.0)
+  - AFNetworking/NSURLSession (3.2.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.0)
+  - AFNetworking/Security (3.2.0)
+  - AFNetworking/Serialization (3.2.0)
+  - AFNetworking/UIKit (3.2.0):
+    - AFNetworking/NSURLSession
+  - AspectsV1.4.2 (1.4.2)
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - IQKeyboardManager (4.0.6)
+  - LTScrollView (0.2.1)
+  - Masonry (1.1.0)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.15.3)
+  - SDWebImage (5.0.1):
+    - SDWebImage/Core (= 5.0.1)
+  - SDWebImage/Core (5.0.1)
+  - SVProgressHUD (2.2.5)
+  - WMPageController (2.3.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - AFNetworking (= 3.2.0)
+  - AspectsV1.4.2 (= 1.4.2)
+  - BlocksKit (= 2.2.5)
+  - IQKeyboardManager
+  - LTScrollView
+  - Masonry
+  - MJExtension (= 3.0.13)
+  - MJRefresh (= 3.1.15.3)
+  - SDWebImage (= 5.0.1)
+  - SVProgressHUD (= 2.2.5)
+  - WMPageController (= 2.3.0)
+  - YYKit
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - AspectsV1.4.2
+    - BlocksKit
+    - IQKeyboardManager
+    - LTScrollView
+    - Masonry
+    - MJRefresh
+    - SDWebImage
+    - SVProgressHUD
+    - WMPageController
+    - YYKit
+  trunk:
+    - MJExtension
+
+SPEC CHECKSUMS:
+  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  AspectsV1.4.2: a8b168606776215f5ba4790b95ff315df336aca9
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  IQKeyboardManager: c52debb1967799ae7addb98eab0cf328083a874f
+  LTScrollView: 93fff4aed9f9545f541a99b320b27808f5307c12
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  SDWebImage: 27dd2c9ea07a2252f94557c9fbb6105ee94b74c9
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  WMPageController: 9f219bb8912a1a1f51af11fde61e2682a7b7e7f2
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: d9427ca898b0937cb7b9b9f02bc82d293cc40e4b
+
+COCOAPODS: 1.8.0.beta.1

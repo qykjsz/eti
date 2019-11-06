@@ -1,0 +1,46 @@
+//
+//  PrefixETHeader.pch
+//  ProjectET
+//
+//  Created by hufeng on 2019/10/28.
+//  Copyright © 2019 LightCould. All rights reserved.
+//
+
+#ifndef PrefixETHeader_pch
+#define PrefixETHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+
+//#import <tingyunApp/NBSAppAgent.h>//听云SDK
+
+//第三方
+#import <BlocksKit/BlocksKit.h>
+#import <BlocksKit/BlocksKit+UIKit.h>
+#import <Masonry/Masonry.h>
+#import "HSEther.h"
+#import "ETWalletManger.h"
+#import "ETWalletModel.h"
+//#import <SDWebImage/UIImageView+WebCache.h>
+//#import <SDWebImage/SDWebImage.h>
+#import <MJExtension/MJExtension.h>
+//#import <MJRefresh/MJRefresh.h>
+//#import <LYEmptyView/LYEmptyViewHeader.h>
+//
+////UM
+//#import <UMCommon/UMCommon.h>
+//#import <UMAnalytics/MobClick.h>
+//
+//#import "KMPAddressModel.h"//地址data
+
+#import "UtilsHeader.h"//通用工具
+
+#import "ETExpandHeader.h"//KMP扩展
+
+#endif
+
+//#endif /* KMPharmacy_Prefix_pch */
+
+#endif /* PrefixETHeader_pch */

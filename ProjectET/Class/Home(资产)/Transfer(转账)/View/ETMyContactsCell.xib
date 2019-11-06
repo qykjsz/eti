@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ETMyContactsCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zjzz_lxr" translatesAutoresizingMaskIntoConstraints="NO" id="BpW-2r-MIg">
+                        <rect key="frame" x="15" y="15" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="uVf-ih-wEB"/>
+                            <constraint firstAttribute="width" constant="40" id="wNt-u3-mVU"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vbciuw90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z04-qS-swq">
+                        <rect key="frame" x="70" y="26.5" width="63.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uW-rI-xGl">
+                        <rect key="frame" x="148.5" y="17" width="73" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="2V5-Sf-NFd"/>
+                            <constraint firstAttribute="width" constant="73" id="kgA-dn-2gp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="以太坊" backgroundImage="lxr_jianb"/>
+                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wd_gd_icon" translatesAutoresizingMaskIntoConstraints="NO" id="BbM-bz-HgC">
+                        <rect key="frame" x="298" y="29" width="7" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="7" id="Odr-Fz-DAQ"/>
+                            <constraint firstAttribute="height" constant="12" id="uIt-VV-Jf0"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="BpW-2r-MIg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="G4Q-6T-T7S"/>
+                    <constraint firstItem="4uW-rI-xGl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="O3g-OX-DLZ"/>
+                    <constraint firstItem="Z04-qS-swq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Rtj-ot-Uhm"/>
+                    <constraint firstItem="Z04-qS-swq" firstAttribute="leading" secondItem="BpW-2r-MIg" secondAttribute="trailing" constant="15" id="ZjZ-E6-TI8"/>
+                    <constraint firstAttribute="trailing" secondItem="BbM-bz-HgC" secondAttribute="trailing" constant="15" id="gUG-Ro-Hpe"/>
+                    <constraint firstItem="4uW-rI-xGl" firstAttribute="leading" secondItem="Z04-qS-swq" secondAttribute="trailing" constant="15" id="nsx-Z4-qVb"/>
+                    <constraint firstItem="BbM-bz-HgC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xSl-t1-CDH"/>
+                    <constraint firstItem="BpW-2r-MIg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="xwJ-6q-bmD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="iconImage" destination="BpW-2r-MIg" id="Io5-RT-KNX"/>
+                <outlet property="nameLb" destination="Z04-qS-swq" id="Nx7-sE-ISI"/>
+            </connections>
+            <point key="canvasLocation" x="-145" y="27"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="lxr_jianb" width="73.5" height="36"/>
+        <image name="wd_gd_icon" width="7" height="11"/>
+        <image name="zjzz_lxr" width="14" height="14"/>
+    </resources>
+</document>
