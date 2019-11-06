@@ -84,6 +84,11 @@
 		4F1942EF236D61EC00AD907E /* ETChangePassWordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942EE236D61EC00AD907E /* ETChangePassWordController.m */; };
 		4F1942F2236D69E100AD907E /* ETVerifyPassWrodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942F1236D69E100AD907E /* ETVerifyPassWrodView.m */; };
 		4F1942F5236D69FB00AD907E /* ETBackUpWalletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942F4236D69FB00AD907E /* ETBackUpWalletView.m */; };
+		4F1A22332372BF5500FDD5D9 /* MJExtensionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A22252372BF5500FDD5D9 /* MJExtensionConfig.m */; };
+		4F1A22342372BF5500FDD5D9 /* HTTPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A22262372BF5500FDD5D9 /* HTTPTool.m */; };
+		4F1A22352372BF5500FDD5D9 /* XMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A222A2372BF5500FDD5D9 /* XMEngine.m */; };
+		4F1A22362372BF5500FDD5D9 /* XMCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A222B2372BF5500FDD5D9 /* XMCenter.m */; };
+		4F1A22372372BF5500FDD5D9 /* XMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A222C2372BF5500FDD5D9 /* XMRequest.m */; };
 		4F2306C72366DE9D0046A136 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2306C62366DE9D0046A136 /* AppDelegate.m */; };
 		4F2306CD2366DE9D0046A136 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2306CB2366DE9D0046A136 /* Main.storyboard */; };
 		4F2306CF2366DE9F0046A136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F2306CE2366DE9F0046A136 /* Assets.xcassets */; };
@@ -306,6 +311,18 @@
 		4F1942F1236D69E100AD907E /* ETVerifyPassWrodView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETVerifyPassWrodView.m; sourceTree = "<group>"; };
 		4F1942F3236D69FB00AD907E /* ETBackUpWalletView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETBackUpWalletView.h; sourceTree = "<group>"; };
 		4F1942F4236D69FB00AD907E /* ETBackUpWalletView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETBackUpWalletView.m; sourceTree = "<group>"; };
+		4F1A22222372BF5500FDD5D9 /* HTTPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPTool.h; sourceTree = "<group>"; };
+		4F1A22242372BF5500FDD5D9 /* MJExtensionConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConfig.h; sourceTree = "<group>"; };
+		4F1A22252372BF5500FDD5D9 /* MJExtensionConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConfig.m; sourceTree = "<group>"; };
+		4F1A22262372BF5500FDD5D9 /* HTTPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPTool.m; sourceTree = "<group>"; };
+		4F1A22292372BF5500FDD5D9 /* XMConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMConst.h; sourceTree = "<group>"; };
+		4F1A222A2372BF5500FDD5D9 /* XMEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMEngine.m; sourceTree = "<group>"; };
+		4F1A222B2372BF5500FDD5D9 /* XMCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMCenter.m; sourceTree = "<group>"; };
+		4F1A222C2372BF5500FDD5D9 /* XMRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMRequest.m; sourceTree = "<group>"; };
+		4F1A222D2372BF5500FDD5D9 /* XMEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMEngine.h; sourceTree = "<group>"; };
+		4F1A222E2372BF5500FDD5D9 /* XMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMRequest.h; sourceTree = "<group>"; };
+		4F1A222F2372BF5500FDD5D9 /* XMCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMCenter.h; sourceTree = "<group>"; };
+		4F1A22302372BF5500FDD5D9 /* XMNetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMNetWorking.h; sourceTree = "<group>"; };
 		4F2306C22366DE9D0046A136 /* ProjectET.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectET.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2306C52366DE9D0046A136 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F2306C62366DE9D0046A136 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -754,6 +771,49 @@
 			path = KMPProgressHUD;
 			sourceTree = "<group>";
 		};
+		4F1A22212372BF5500FDD5D9 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A22222372BF5500FDD5D9 /* HTTPTool.h */,
+				4F1A22232372BF5500FDD5D9 /* MJExtensionConfig */,
+				4F1A22262372BF5500FDD5D9 /* HTTPTool.m */,
+				4F1A22272372BF5500FDD5D9 /* XMNet */,
+			);
+			path = Net;
+			sourceTree = "<group>";
+		};
+		4F1A22232372BF5500FDD5D9 /* MJExtensionConfig */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A22242372BF5500FDD5D9 /* MJExtensionConfig.h */,
+				4F1A22252372BF5500FDD5D9 /* MJExtensionConfig.m */,
+			);
+			path = MJExtensionConfig;
+			sourceTree = "<group>";
+		};
+		4F1A22272372BF5500FDD5D9 /* XMNet */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A22282372BF5500FDD5D9 /* Core */,
+				4F1A22302372BF5500FDD5D9 /* XMNetWorking.h */,
+			);
+			path = XMNet;
+			sourceTree = "<group>";
+		};
+		4F1A22282372BF5500FDD5D9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A22292372BF5500FDD5D9 /* XMConst.h */,
+				4F1A222A2372BF5500FDD5D9 /* XMEngine.m */,
+				4F1A222B2372BF5500FDD5D9 /* XMCenter.m */,
+				4F1A222C2372BF5500FDD5D9 /* XMRequest.m */,
+				4F1A222D2372BF5500FDD5D9 /* XMEngine.h */,
+				4F1A222E2372BF5500FDD5D9 /* XMRequest.h */,
+				4F1A222F2372BF5500FDD5D9 /* XMCenter.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		4F2306B92366DE9D0046A136 = {
 			isa = PBXGroup;
 			children = (
@@ -823,6 +883,7 @@
 		4F2306F92366E9BE0046A136 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4F1A22212372BF5500FDD5D9 /* Net */,
 				4F128C632367D95D0004284D /* Tools */,
 				4F128C552367D1C50004284D /* UI */,
 				4F2307072366EBFC0046A136 /* Macro */,
@@ -1304,6 +1365,7 @@
 				4F3F903D236A8415009AAA24 /* ETSecretImportController.m in Sources */,
 				4FA0A32B23717ACF0038F880 /* ET_ScaningView.m in Sources */,
 				4FA0A30F236FD0690038F880 /* HoverPageViewController.m in Sources */,
+				4F1A22372372BF5500FDD5D9 /* XMRequest.m in Sources */,
 				4F128C90236826FC0004284D /* ETTransferView.m in Sources */,
 				4F128C9F236839610004284D /* ETDirectTranAddressCell.m in Sources */,
 				4F14FB1623695F0C0008C50A /* Tools.m in Sources */,
@@ -1337,6 +1399,7 @@
 				4FA0A308236FCA270038F880 /* NSObject+SafeKVO.m in Sources */,
 				4F1942F2236D69E100AD907E /* ETVerifyPassWrodView.m in Sources */,
 				4F2307062366EB600046A136 /* ETAssetsViewController.m in Sources */,
+				4F1A22342372BF5500FDD5D9 /* HTTPTool.m in Sources */,
 				4F3F904F236AE073009AAA24 /* ETCoinMainViewController.m in Sources */,
 				4F3F9055236AE62A009AAA24 /* ETCoinListViewController.m in Sources */,
 				4FA0A306236FCA270038F880 /* WMZPageNaviBtn.m in Sources */,
@@ -1348,6 +1411,7 @@
 				4F3F9060236BD9F3009AAA24 /* KMPQRCodeManager.m in Sources */,
 				047A9DEA23700A5900FB5132 /* AsyncOperation.m in Sources */,
 				4F1942E6236D5E1A00AD907E /* ETKeystoreImportController.m in Sources */,
+				4F1A22332372BF5500FDD5D9 /* MJExtensionConfig.m in Sources */,
 				4F1942D5236D2A0800AD907E /* ETWalletDetailView.m in Sources */,
 				4F14FB1D236966C10008C50A /* ETMyWalletIconCell.m in Sources */,
 				047A9DE423700A5900FB5132 /* UIColor+hex.m in Sources */,
@@ -1378,6 +1442,7 @@
 				4F128C5F2367D75D0004284D /* ETNoticeScrollView.m in Sources */,
 				4F14FB0C23693CE40008C50A /* UIImage+GIFImage.m in Sources */,
 				4F128C662367D96F0004284D /* UIButton+ImageTitleSpacing.m in Sources */,
+				4F1A22352372BF5500FDD5D9 /* XMEngine.m in Sources */,
 				047A9DEB23700A5900FB5132 /* Utilities.m in Sources */,
 				4F1942E9236D5E5800AD907E /* ETKeystoreImporView.m in Sources */,
 				4F128C8C236826710004284D /* ETTransferCell.m in Sources */,
@@ -1388,6 +1453,7 @@
 				047A9DE923700A5900FB5132 /* SharedDefaults.m in Sources */,
 				4F1942EF236D61EC00AD907E /* ETChangePassWordController.m in Sources */,
 				4F3F9066236C1046009AAA24 /* ETRecordCell.m in Sources */,
+				4F1A22362372BF5500FDD5D9 /* XMCenter.m in Sources */,
 				047A9DE623700A5900FB5132 /* IconFont.m in Sources */,
 				4F1942D8236D2F4600AD907E /* ETSyoImportView.m in Sources */,
 				4F128C9B236836040004284D /* ETDirectTransferController.m in Sources */,

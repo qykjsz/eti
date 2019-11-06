@@ -16,6 +16,7 @@ target 'ProjectET' do
     pod 'LTScrollView'
     pod 'WMPageController', '2.3.0'
     pod 'MJExtension', '3.0.13'
+    pod 'Reachability', '3.2'
   # Pods for ProjectET
 
   target 'ProjectETTests' do
