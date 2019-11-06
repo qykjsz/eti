@@ -89,6 +89,7 @@
 		4F1A22352372BF5500FDD5D9 /* XMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A222A2372BF5500FDD5D9 /* XMEngine.m */; };
 		4F1A22362372BF5500FDD5D9 /* XMCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A222B2372BF5500FDD5D9 /* XMCenter.m */; };
 		4F1A22372372BF5500FDD5D9 /* XMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A222C2372BF5500FDD5D9 /* XMRequest.m */; };
+		4F1A223B2372C66700FDD5D9 /* sss.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A223A2372C66700FDD5D9 /* sss.m */; };
 		4F2306C72366DE9D0046A136 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2306C62366DE9D0046A136 /* AppDelegate.m */; };
 		4F2306CD2366DE9D0046A136 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2306CB2366DE9D0046A136 /* Main.storyboard */; };
 		4F2306CF2366DE9F0046A136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F2306CE2366DE9F0046A136 /* Assets.xcassets */; };
@@ -323,6 +324,8 @@
 		4F1A222E2372BF5500FDD5D9 /* XMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMRequest.h; sourceTree = "<group>"; };
 		4F1A222F2372BF5500FDD5D9 /* XMCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMCenter.h; sourceTree = "<group>"; };
 		4F1A22302372BF5500FDD5D9 /* XMNetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMNetWorking.h; sourceTree = "<group>"; };
+		4F1A22392372C66700FDD5D9 /* sss.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sss.h; sourceTree = "<group>"; };
+		4F1A223A2372C66700FDD5D9 /* sss.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sss.m; sourceTree = "<group>"; };
 		4F2306C22366DE9D0046A136 /* ProjectET.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectET.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2306C52366DE9D0046A136 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F2306C62366DE9D0046A136 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -898,6 +901,8 @@
 				4F128C91236834CA0004284D /* VCSetting */,
 				4F2306C52366DE9D0046A136 /* AppDelegate.h */,
 				4F2306C62366DE9D0046A136 /* AppDelegate.m */,
+				4F1A22392372C66700FDD5D9 /* sss.h */,
+				4F1A223A2372C66700FDD5D9 /* sss.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -1439,6 +1444,7 @@
 				4F3F9052236AE241009AAA24 /* ETChooseWalletcell.m in Sources */,
 				4F14FB0123692CF30008C50A /* ETAddContactsCell.m in Sources */,
 				4F14FB26236975890008C50A /* ETMyWalletLeftModel.m in Sources */,
+				4F1A223B2372C66700FDD5D9 /* sss.m in Sources */,
 				4F128C5F2367D75D0004284D /* ETNoticeScrollView.m in Sources */,
 				4F14FB0C23693CE40008C50A /* UIImage+GIFImage.m in Sources */,
 				4F128C662367D96F0004284D /* UIButton+ImageTitleSpacing.m in Sources */,
