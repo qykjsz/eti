@@ -1,2 +1,0 @@
-# eti
-et ios
