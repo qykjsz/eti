@@ -64,6 +64,22 @@
     return self;
 }
 
+- (void)setModel:(glodData *)model {
+
+    
+    _model = model;
+
+    if ([model.name isEqualToString:@"ETH"]) {
+        self.coninImage.image = [UIImage imageNamed:@"sy_eth"];
+    }else  {
+        self.coninImage.image = [UIImage imageNamed:@"sy_usdt"];
+    }
+    
+//    self.topDollor.text = model.number;
+//    self.bottomDollor.text = [NSString stringWithFormat:@"$ %@",model.usdtnumber];
+    
+}
+
 - (UILabel *)coninName {
     
     if (!_coninName) {

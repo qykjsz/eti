@@ -8,6 +8,7 @@
 
 #import "ETRecordDetailViewController.h"
 
+
 #import "ETRecordHeaderView.h"
 #import "ETRecordCell.h"
 
@@ -15,6 +16,8 @@
 @interface ETRecordDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *detailTab;
+
+@property (nonatomic,assign) BOOL isOpen;
 
 @end
 
@@ -43,25 +46,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.detailTab.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    self.isOpen = YES;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eyeAction:) name:@"RECODEREYEACTION" object:nil];
+    
+    self.detailTab.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-85);
     
     [self.view addSubview:self.detailTab];
-//    [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
-//
-//        make.top.equalTo(self.view.mas_top).offset(44);
-//        make.left.right.bottom.equalTo(self.view);
-//
-//    }];
     
 }
 
 
+#pragma mark - Noticfication
+- (void)eyeAction:(NSNotification *)sender {
+    
+    if ([sender.object[@"isOpen"] boolValue]) {
+        
+        self.isOpen = YES;
+    }else {
+        
+        self.isOpen = NO;
+        
+    }
+    
+    [self.detailTab reloadData];
+}
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 15;
+    return 12;
     
 }
 
@@ -73,6 +87,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ETRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETRecordCell"];
+    if (self.isOpen) {
+        cell.moneydetail.text = @"289.8493";
+        cell.statusDetail.text = @"已完成";
+        cell.timeDetail.text = @"2019/10/22 12:23";
+    }else {
+        cell.moneydetail.text = @"***.**";
+        cell.statusDetail.text = @"***";
+        cell.timeDetail.text = @"****/**/** **:**";
+    }
     return cell;
     
 }

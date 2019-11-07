@@ -23,6 +23,8 @@
 		047A9DED23700A5900FB5132 /* CloudKeychainSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DDB23700A5900FB5132 /* CloudKeychainSigner.m */; };
 		047A9DEE23700A5900FB5132 /* UIImage+resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DDE23700A5900FB5132 /* UIImage+resize.m */; };
 		047A9DF823700A9200FB5132 /* ethers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047A9DF523700A5F00FB5132 /* ethers.framework */; };
+		4F0E4D8D2373B3FC00E83618 /* ETHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */; };
+		4F0E4D932373EFF000E83618 /* ETTransferDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D922373EFF000E83618 /* ETTransferDetailViewController.m */; };
 		4F117509236C267E0042CDFD /* ETRecordSegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F117508236C267E0042CDFD /* ETRecordSegmentController.m */; };
 		4F128C592367D1CE0004284D /* UIViewController+NaviBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C582367D1CE0004284D /* UIViewController+NaviBarButton.m */; };
 		4F128C5F2367D75D0004284D /* ETNoticeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C5E2367D75D0004284D /* ETNoticeScrollView.m */; };
@@ -202,6 +204,10 @@
 		047A9DDF23700A5900FB5132 /* Wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wallet.h; sourceTree = "<group>"; };
 		047A9DEF23700A5F00FB5132 /* ethers.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ethers.xcodeproj; path = "ethers.objc-master/ethers.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		172FA16F06F30E4F663C3530 /* Pods-ProjectET.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET.debug.xcconfig"; path = "Target Support Files/Pods-ProjectET/Pods-ProjectET.debug.xcconfig"; sourceTree = "<group>"; };
+		4F0E4D8B2373B3FC00E83618 /* ETHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETHomeModel.h; sourceTree = "<group>"; };
+		4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETHomeModel.m; sourceTree = "<group>"; };
+		4F0E4D912373EFF000E83618 /* ETTransferDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransferDetailViewController.h; sourceTree = "<group>"; };
+		4F0E4D922373EFF000E83618 /* ETTransferDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTransferDetailViewController.m; sourceTree = "<group>"; };
 		4F1174F4236C23C10042CDFD /* OCExample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		4F117507236C267E0042CDFD /* ETRecordSegmentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETRecordSegmentController.h; sourceTree = "<group>"; };
 		4F117508236C267E0042CDFD /* ETRecordSegmentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRecordSegmentController.m; sourceTree = "<group>"; };
@@ -624,6 +630,8 @@
 			children = (
 				4F14FB24236975890008C50A /* ETMyWalletLeftModel.h */,
 				4F14FB25236975890008C50A /* ETMyWalletLeftModel.m */,
+				4F0E4D8B2373B3FC00E83618 /* ETHomeModel.h */,
+				4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -756,6 +764,8 @@
 				4F14FAF4236924770008C50A /* ETMyContactsController.m */,
 				4F14FAFB23692BB70008C50A /* ETAddContactsController.h */,
 				4F14FAFC23692BB70008C50A /* ETAddContactsController.m */,
+				4F0E4D912373EFF000E83618 /* ETTransferDetailViewController.h */,
+				4F0E4D922373EFF000E83618 /* ETTransferDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1459,7 +1469,9 @@
 				4FA0A306236FCA270038F880 /* WMZPageNaviBtn.m in Sources */,
 				4F128CAE236840120004284D /* ETDirectNormalCell.m in Sources */,
 				4F3F9039236A804B009AAA24 /* ETCreatYYViewCell.m in Sources */,
+				4F0E4D8D2373B3FC00E83618 /* ETHomeModel.m in Sources */,
 				4F117509236C267E0042CDFD /* ETRecordSegmentController.m in Sources */,
+				4F0E4D932373EFF000E83618 /* ETTransferDetailViewController.m in Sources */,
 				88A5D0422372CFBC0012EE0B /* ClassBaseTools.m in Sources */,
 				4F128C622367D83B0004284D /* HomeHeaderView.m in Sources */,
 				4F3F9030236A7E83009AAA24 /* ETCreatWalletInfoCell.m in Sources */,

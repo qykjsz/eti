@@ -17,8 +17,9 @@
 #import "ETGatheringViewController.h"
 #import "ETWalletDetailController.h"
 #import "ETWalletDetailController.h"
+#import "ETRecordSegmentController.h"
 #import "ETMyWalletView.h"
-
+#import "ETHomeModel.h"
 @interface ETAssetsViewController ()<UITableViewDelegate,UITableViewDataSource,HomeHeaderViewDelegate,ETMyWalletViewDelegate,ETHomeTableHeaderViewDelegate>
 
 @property (nonatomic,strong) UITableView *detailTab;
@@ -29,6 +30,7 @@
 
 @property (nonatomic,assign) BOOL isOpen;
 
+@property (nonatomic,strong) ETHomeModel *homeModel;
 @end
 
 @implementation ETAssetsViewController
@@ -36,7 +38,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    
+    [self homeRequest];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
@@ -87,22 +89,14 @@
         
     }];
     
-    NSMutableArray *arr = [[NSMutableArray alloc]init];
-    [arr addObject:@"0.03"];
-    [arr addObject:@"0.06"];
-    [arr addObject:@"0.11"];
-    [arr addObject:@"0.8"];
+    
    
    
     
     
-    ETHomeTableHeaderView *tableVIew = [[ETHomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 370) andProgress:arr];
-    tableVIew.delegate = self;
-    tableVIew.clipsToBounds = YES;
-    tableVIew.layer.cornerRadius = 25;
+    
     
     [self.view addSubview:self.detailTab];
-    self.detailTab.tableHeaderView = tableVIew;
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.top.equalTo(headerView.mas_bottom).offset(-20);
@@ -110,6 +104,35 @@
         
     }];
     
+   
+    
+}
+
+
+#pragma mark - NET
+
+- (void)homeRequest {
+    [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":@"0xa51c50c880d389b5bbd1c76308d3b544f54f39a4"} type:kPOST success:^(id responseObject) {
+        self.homeModel = [ETHomeModel mj_objectWithKeyValues:responseObject];
+        
+        NSLog(@"%@",responseObject);
+        
+        NSMutableArray *arr = [[NSMutableArray alloc]init];
+        for (glodData *data in self.homeModel.data.glod) {
+            [arr addObject:data.proportion];
+        }
+        
+        ETHomeTableHeaderView *tableVIew = [[ETHomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 370) andProgress:arr];
+        tableVIew.delegate = self;
+        tableVIew.clipsToBounds = YES;
+        tableVIew.layer.cornerRadius = 25;
+        self.detailTab.tableHeaderView = tableVIew;
+        
+        [self.detailTab reloadData];
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 #pragma mark - NoticeAction
@@ -185,29 +208,23 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 10;
+    return self.homeModel.data.glod.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ETConiCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETConiCell"];
+    glodData *data = self.homeModel.data.glod[indexPath.row];
+    
+    cell.model = self.homeModel.data.glod[indexPath.row];
     if (!self.isOpen) {
         cell.topDollor.text = @"****.**";
         cell.bottomDollor.text = @"****.**";
     }else {
-        cell.topDollor.text = @"22.8862";
-        cell.bottomDollor.text = @"$ 8.61";
+        cell.topDollor.text = data.number;
+        cell.bottomDollor.text = [NSString stringWithFormat:@"$ %@",data.usdtnumber];
     }
-    if (indexPath.row == 0) {
-        cell.coninImage.image = [UIImage imageNamed:@"sy_eth"];
-        cell.coninName.text = @"ET";
-    }else if (indexPath.row == 1) {
-        cell.coninImage.image = [UIImage imageNamed:@"sy_eth"];
-        cell.coninName.text = @"ETH";
-    }else {
-        cell.coninImage.image = [UIImage imageNamed:@"sy_usdt"];
-        cell.coninName.text = @"USDT";
-    }
+    
     return  cell;
 }
 
@@ -263,7 +280,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    ETWalletDetailController *dVC = [ETWalletDetailController new];
+    ETRecordSegmentController *dVC = [ETRecordSegmentController new];
     dVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:dVC animated:YES];
     

@@ -134,8 +134,8 @@
     
     if (!_eyeBtn) {
         _eyeBtn = [[UIButton alloc]init];
-        [_eyeBtn setImage:[UIImage imageNamed:@"zjc_nxs"] forState:UIControlStateNormal];
-        [_eyeBtn setImage:[UIImage imageNamed:@"key_xian"] forState:UIControlStateSelected];
+        [_eyeBtn setImage:[UIImage imageNamed:@"sy_yincang"] forState:UIControlStateNormal];
+        [_eyeBtn setImage:[UIImage imageNamed:@"sy_xianshi"] forState:UIControlStateSelected];
         _eyeBtn.selected = YES;
         [_eyeBtn addTarget:self action:@selector(eyeAction:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -145,7 +145,7 @@
 - (void)eyeAction:(UIButton *)sender {
     
     sender.selected = !sender.selected;
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"RECODEREYEACTION" object:@{@"isOpen":@(sender.selected)}];
 }
 
 - (UILabel *)todayLb {

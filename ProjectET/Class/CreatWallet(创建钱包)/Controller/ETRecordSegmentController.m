@@ -3,6 +3,8 @@
 #import "ETRecordSegmentController.h"
 #import "HoverPageViewController.h"
 #import "ETRecordDetailViewController.h"
+#import "ETGatheringViewController.h"
+#import "ETDirectTransferController.h"
 #import "ETRecordHeaderView.h"
 
 @interface ETRecordSegmentController ()<HoverPageViewControllerDelegate>
@@ -12,6 +14,8 @@
 @property (nonatomic,strong) UIButton *selectBtn;
 
 @property (nonatomic,strong) UIView *pageTitleView;
+
+@property (nonatomic,strong) ETRecordHeaderView *headerView;
 
 @end
 
@@ -36,6 +40,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eyeAction:) name:@"RECODEREYEACTION" object:nil];
     
     self.view.backgroundColor = [UIColor whiteColor];
     UIImageView *topImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zz_top_bg"]];
@@ -73,7 +79,7 @@
     }];
     
     
-    ETRecordHeaderView * headerView = [[ETRecordHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 190)];
+    self.headerView = [[ETRecordHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 190)];
     
     
     /// 指示器
@@ -142,11 +148,28 @@
     CGFloat barHeight = [UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.frame.size.height;
     
     /// 添加分页控制器
-    self.hoverPageViewController = [HoverPageViewController viewControllers:viewControllers headerView:headerView pageTitleView:self.pageTitleView];
-    self.hoverPageViewController.view.frame = CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - barHeight);
+    self.hoverPageViewController = [HoverPageViewController viewControllers:viewControllers headerView:self.headerView pageTitleView:self.pageTitleView];
+    self.hoverPageViewController.view.frame = CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - barHeight - 84);
     self.hoverPageViewController.delegate = self;
     [self addChildViewController:self.hoverPageViewController];
     [self.view addSubview:self.hoverPageViewController.view];
+    
+    [self.view addSubview:[self footerView]];
+}
+
+- (void)eyeAction:(NSNotification *)sender {
+    
+    if ([sender.object[@"isOpen"] boolValue]) {
+        
+        self.headerView.moneyLb.text = @"999.99";
+        self.headerView.subMoneyLb.text = @"≈$ 638383.7889";
+        self.headerView.todayLb.text = @"今日 +120.36";
+    }else {
+        
+        self.headerView.moneyLb.text = @"***.**";
+        self.headerView.subMoneyLb.text = @"≈$ ***.**";
+        self.headerView.todayLb.text = @"******";
+    }
 }
 
 - (void)buttonClick:(UIButton *)btn{
@@ -220,5 +243,63 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (UIView *)footerView {
+    
+    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 84, SCREEN_WIDTH, 84)];
+    
+    UIButton *leftBtn = [[UIButton alloc]init];
+    leftBtn.clipsToBounds = YES;
+    leftBtn.layer.cornerRadius = 5;
+    leftBtn.tag = 0;
+    [leftBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
+    [leftBtn setTitle:@"转账" forState:UIControlStateNormal];
+    [leftBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+    leftBtn.titleLabel.font = [UIFont systemFontOfSize:16];
+    leftBtn.backgroundColor = UIColorFromHEX(0x00B792, 1);
+    [backView addSubview:leftBtn];
+    [leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.equalTo(backView.mas_left).offset(15);
+        make.centerY.equalTo(backView.mas_centerY);
+        make.width.equalTo(@((SCREEN_WIDTH-55)/2));
+        make.height.mas_equalTo(44);
+        
+    }];
+    
+    UIButton *rightBtn = [[UIButton alloc]init];
+    rightBtn.clipsToBounds = YES;
+    rightBtn.layer.cornerRadius = 5;
+    rightBtn.tag = 1;
+    [rightBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
+    [rightBtn setTitle:@"收款" forState:UIControlStateNormal];
+    [rightBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+    rightBtn.titleLabel.font = [UIFont systemFontOfSize:16];
+    rightBtn.backgroundColor = UIColorFromHEX(0x1D57FF, 1);
+    [backView addSubview:rightBtn];
+    [rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.right.equalTo(backView.mas_right).offset(-15);
+        make.centerY.equalTo(backView.mas_centerY);
+        make.width.equalTo(@((SCREEN_WIDTH-55)/2));
+        make.height.mas_equalTo(44);
+        
+    }];
+    
+    return backView;
+    
+}
+
+- (void)clickAction:(UIButton *)sender {
+    
+    if (sender.tag == 0) {
+        ETDirectTransferController *dVC = [ETDirectTransferController new];
+        [self.navigationController pushViewController:dVC animated:YES];
+    }else {
+        ETGatheringViewController *gVC = [ETGatheringViewController new];
+        [self.navigationController pushViewController:gVC animated:YES];
+    }
+}
+
 
 @end

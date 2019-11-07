@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ProjectET/Expand/NetExpand/DOTNET/HTTPTool+KMP_DOTNETRequest.m"
-            timestampString = "594730380.4633549"
+            filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Controller/ETAssetsViewController.m"
+            timestampString = "594800498.20671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "+requestWithAccessToken:URLString:parameters:type:success:failure:"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "-homeRequest"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

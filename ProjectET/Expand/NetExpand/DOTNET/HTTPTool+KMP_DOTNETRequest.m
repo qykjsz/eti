@@ -69,17 +69,17 @@
             return ;
         }
         
-        if (baseModel.code != 0) {
-            NSLog(@"\n===========\n%@\n response data :\n%@\n===========",[NSString stringWithFormat:@"%@%@",APP_DOMAIN,URLString],responseObject);
-            //数据异常失败，走failure方法
-            if (failure) {
-                NSError * error = [[NSError alloc] initWithDomain:@"FAILURE" code:baseModel.code userInfo:@{NSLocalizedDescriptionKey:baseModel.message,NSLocalizedFailureReasonErrorKey:baseModel.message,NSLocalizedRecoverySuggestionErrorKey:baseModel.message}];
-                failure(error);
-            }
-            return ;
-        }
+//        if (baseModel.code != 0) {
+//            NSLog(@"\n===========\n%@\n response data :\n%@\n===========",[NSString stringWithFormat:@"%@%@",APP_DOMAIN,URLString],responseObject);
+//            //数据异常失败，走failure方法
+//            if (failure) {
+//                NSError * error = [[NSError alloc] initWithDomain:@"FAILURE" code:baseModel.code userInfo:@{NSLocalizedDescriptionKey:baseModel.message,NSLocalizedFailureReasonErrorKey:baseModel.message,NSLocalizedRecoverySuggestionErrorKey:baseModel.message}];
+//                failure(error);
+//            }
+//            return ;
+//        }
         
-        if (baseModel.code == 0) {
+        if (baseModel.code == 200) {
             //成功
             
             if (success) {
