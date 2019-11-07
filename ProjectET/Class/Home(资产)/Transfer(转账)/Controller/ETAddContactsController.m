@@ -38,6 +38,13 @@
         
     }];
     
+    
+    [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":@"0xa51c50c880d389b5bbd1c76308d3b544f54f39a4"} type:kPOST success:^(id responseObject) {
+        NSLog(@"111");
+    } failure:^(NSError *error) {
+        NSLog(@"222");
+    }];
+    
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource

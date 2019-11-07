@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HTTPTool+DomainAPI.h"//网络配置
 #import "ETRootViewController.h"
 #import "AppDelegate+ET_VCSetting.h"
 #import "ETCoinMainViewController.h"
@@ -36,7 +37,9 @@
         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[ETCoinMainViewController new]];
             self.window.rootViewController = nav;
     }
-
+    
+    //网络配置
+    [HTTPTool getDomain];
     
   
     

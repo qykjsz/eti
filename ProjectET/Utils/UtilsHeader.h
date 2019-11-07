@@ -21,7 +21,7 @@
 #import "WeakDefine.h"
 #import "Singleton.h"//单例宏
 
-//#import "HTTPTool.h"
+#import "HTTPTool.h"
 
 
 #import "Tools.h"

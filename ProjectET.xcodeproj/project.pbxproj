@@ -89,6 +89,9 @@
 		4F1A22352372BF5500FDD5D9 /* XMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A222A2372BF5500FDD5D9 /* XMEngine.m */; };
 		4F1A22362372BF5500FDD5D9 /* XMCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A222B2372BF5500FDD5D9 /* XMCenter.m */; };
 		4F1A22372372BF5500FDD5D9 /* XMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A222C2372BF5500FDD5D9 /* XMRequest.m */; };
+		4F1A224A2372CF8100FDD5D9 /* HTTPTool+KMP_DOTNETRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A22482372CF8100FDD5D9 /* HTTPTool+KMP_DOTNETRequest.m */; };
+		4F1A224B2372CF8100FDD5D9 /* KMP_DOTNETModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A22492372CF8100FDD5D9 /* KMP_DOTNETModel.m */; };
+		4F1A22502372D04500FDD5D9 /* HTTPTool+DomainAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A224D2372D04500FDD5D9 /* HTTPTool+DomainAPI.m */; };
 		4F2306C72366DE9D0046A136 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2306C62366DE9D0046A136 /* AppDelegate.m */; };
 		4F2306CD2366DE9D0046A136 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2306CB2366DE9D0046A136 /* Main.storyboard */; };
 		4F2306CF2366DE9F0046A136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F2306CE2366DE9F0046A136 /* Assets.xcassets */; };
@@ -323,6 +326,13 @@
 		4F1A222E2372BF5500FDD5D9 /* XMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMRequest.h; sourceTree = "<group>"; };
 		4F1A222F2372BF5500FDD5D9 /* XMCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMCenter.h; sourceTree = "<group>"; };
 		4F1A22302372BF5500FDD5D9 /* XMNetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMNetWorking.h; sourceTree = "<group>"; };
+		4F1A22462372CF8100FDD5D9 /* HTTPTool+KMP_DOTNETRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPTool+KMP_DOTNETRequest.h"; sourceTree = "<group>"; };
+		4F1A22472372CF8100FDD5D9 /* KMP_DOTNETModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMP_DOTNETModel.h; sourceTree = "<group>"; };
+		4F1A22482372CF8100FDD5D9 /* HTTPTool+KMP_DOTNETRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPTool+KMP_DOTNETRequest.m"; sourceTree = "<group>"; };
+		4F1A22492372CF8100FDD5D9 /* KMP_DOTNETModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMP_DOTNETModel.m; sourceTree = "<group>"; };
+		4F1A224D2372D04500FDD5D9 /* HTTPTool+DomainAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPTool+DomainAPI.m"; sourceTree = "<group>"; };
+		4F1A224E2372D04500FDD5D9 /* NetMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetMacro.h; sourceTree = "<group>"; };
+		4F1A224F2372D04500FDD5D9 /* HTTPTool+DomainAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPTool+DomainAPI.h"; sourceTree = "<group>"; };
 		4F2306C22366DE9D0046A136 /* ProjectET.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectET.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2306C52366DE9D0046A136 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F2306C62366DE9D0046A136 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -775,8 +785,8 @@
 			isa = PBXGroup;
 			children = (
 				4F1A22222372BF5500FDD5D9 /* HTTPTool.h */,
-				4F1A22232372BF5500FDD5D9 /* MJExtensionConfig */,
 				4F1A22262372BF5500FDD5D9 /* HTTPTool.m */,
+				4F1A22232372BF5500FDD5D9 /* MJExtensionConfig */,
 				4F1A22272372BF5500FDD5D9 /* XMNet */,
 			);
 			path = Net;
@@ -812,6 +822,36 @@
 				4F1A222F2372BF5500FDD5D9 /* XMCenter.h */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		4F1A22442372CF7100FDD5D9 /* NetExpand */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A224C2372D04500FDD5D9 /* Domain */,
+				4F1A22452372CF8100FDD5D9 /* DOTNET */,
+			);
+			path = NetExpand;
+			sourceTree = "<group>";
+		};
+		4F1A22452372CF8100FDD5D9 /* DOTNET */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A22462372CF8100FDD5D9 /* HTTPTool+KMP_DOTNETRequest.h */,
+				4F1A22482372CF8100FDD5D9 /* HTTPTool+KMP_DOTNETRequest.m */,
+				4F1A22472372CF8100FDD5D9 /* KMP_DOTNETModel.h */,
+				4F1A22492372CF8100FDD5D9 /* KMP_DOTNETModel.m */,
+			);
+			path = DOTNET;
+			sourceTree = "<group>";
+		};
+		4F1A224C2372D04500FDD5D9 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A224F2372D04500FDD5D9 /* HTTPTool+DomainAPI.h */,
+				4F1A224D2372D04500FDD5D9 /* HTTPTool+DomainAPI.m */,
+				4F1A224E2372D04500FDD5D9 /* NetMacro.h */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		4F2306B92366DE9D0046A136 = {
@@ -946,6 +986,7 @@
 		4F23070B2366EC8C0046A136 /* Expand */ = {
 			isa = PBXGroup;
 			children = (
+				4F1A22442372CF7100FDD5D9 /* NetExpand */,
 				047A9DEF23700A5F00FB5132 /* ethers.xcodeproj */,
 				047A9DBE23700A5900FB5132 /* ethers */,
 				4FA0A311236FFF270038F880 /* ETManger */,
@@ -1419,6 +1460,7 @@
 				4F128CA923683EE70004284D /* ETDirectLeftCell.m in Sources */,
 				047A9DE123700A5900FB5132 /* Wallet.m in Sources */,
 				4F1942F5236D69FB00AD907E /* ETBackUpWalletView.m in Sources */,
+				4F1A224B2372CF8100FDD5D9 /* KMP_DOTNETModel.m in Sources */,
 				047A9DE323700A5900FB5132 /* SignedRemoteDictionary.m in Sources */,
 				4F1942DB236D2F7000AD907E /* ETQcodeImportView.m in Sources */,
 				4F128C80236820320004284D /* ViewController.m in Sources */,
@@ -1438,6 +1480,7 @@
 				4F1942D1236D22E900AD907E /* ETWalletDetailCell.m in Sources */,
 				4F3F9052236AE241009AAA24 /* ETChooseWalletcell.m in Sources */,
 				4F14FB0123692CF30008C50A /* ETAddContactsCell.m in Sources */,
+				4F1A22502372D04500FDD5D9 /* HTTPTool+DomainAPI.m in Sources */,
 				4F14FB26236975890008C50A /* ETMyWalletLeftModel.m in Sources */,
 				4F128C5F2367D75D0004284D /* ETNoticeScrollView.m in Sources */,
 				4F14FB0C23693CE40008C50A /* UIImage+GIFImage.m in Sources */,
@@ -1451,6 +1494,7 @@
 				4FA0A32723717A8A0038F880 /* ETScanViewController.m in Sources */,
 				4F2306C72366DE9D0046A136 /* AppDelegate.m in Sources */,
 				047A9DE923700A5900FB5132 /* SharedDefaults.m in Sources */,
+				4F1A224A2372CF8100FDD5D9 /* HTTPTool+KMP_DOTNETRequest.m in Sources */,
 				4F1942EF236D61EC00AD907E /* ETChangePassWordController.m in Sources */,
 				4F3F9066236C1046009AAA24 /* ETRecordCell.m in Sources */,
 				4F1A22362372BF5500FDD5D9 /* XMCenter.m in Sources */,
