@@ -29,23 +29,22 @@
 #pragma mark -
 - (void)setupViewControllers {
     
-    //药品快送-首页
+
     ETAssetsViewController *homeVC = [ETAssetsViewController new];
     UINavigationController * homeNav = [[UINavigationController alloc] initWithRootViewController:homeVC];
     
-    //商城购药
+    
     ETAssetsViewController * mallVC = [ETAssetsViewController new];
     UINavigationController * mallNav = [[UINavigationController alloc] initWithRootViewController:mallVC];
     
-    //中药国医
+    
     ETAssetsViewController * medicineVC = [ETAssetsViewController new];
     UINavigationController * medicineNav = [[UINavigationController alloc] initWithRootViewController:medicineVC];
     
-    //购物车
+    
     ETAssetsViewController * shoppingCartListVc  = [ETAssetsViewController new];
     UINavigationController * shoppingCartListNav = [[UINavigationController alloc] initWithRootViewController:shoppingCartListVc];
     
-    //我的
     ETAssetsViewController * meVC = [ETAssetsViewController new];
     UINavigationController * meNav = [[UINavigationController alloc] initWithRootViewController:meVC];
     
