@@ -134,6 +134,7 @@
 		4FA0A32B23717ACF0038F880 /* ET_ScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A32A23717ACF0038F880 /* ET_ScaningView.m */; };
 		658EFA9763BC24E969103719 /* Pods_ProjectET_ProjectETUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A224CC41A5867B4A06D4BE24 /* Pods_ProjectET_ProjectETUITests.framework */; };
 		6A90619DC84BDE4BF253E0AF /* Pods_ProjectETTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590DE355526C79E021DE22B4 /* Pods_ProjectETTests.framework */; };
+		88A5D0422372CFBC0012EE0B /* ClassBaseTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A5D0412372CFBC0012EE0B /* ClassBaseTools.m */; };
 		A9E72CB71DD272820A53863B /* Pods_ProjectET.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538F76165E482E5E17D51186 /* Pods_ProjectET.framework */; };
 /* End PBXBuildFile section */
 
@@ -426,6 +427,8 @@
 		590DE355526C79E021DE22B4 /* Pods_ProjectETTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectETTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F8CE32C24AC41FF7C2D546B /* Pods-ProjectET-ProjectETUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET-ProjectETUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectET-ProjectETUITests/Pods-ProjectET-ProjectETUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		71BF457FE4D184D7CB86E10F /* Pods-ProjectET-ProjectETUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET-ProjectETUITests.release.xcconfig"; path = "Target Support Files/Pods-ProjectET-ProjectETUITests/Pods-ProjectET-ProjectETUITests.release.xcconfig"; sourceTree = "<group>"; };
+		88A5D0402372CFBC0012EE0B /* ClassBaseTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassBaseTools.h; sourceTree = "<group>"; };
+		88A5D0412372CFBC0012EE0B /* ClassBaseTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassBaseTools.m; sourceTree = "<group>"; };
 		8DEA859CD113E49D14CD6446 /* Pods-ProjectETTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectETTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectETTests/Pods-ProjectETTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A224CC41A5867B4A06D4BE24 /* Pods_ProjectET_ProjectETUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectET_ProjectETUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEF493952AAEB65DFE33AF9 /* Pods-ProjectETTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectETTests.release.xcconfig"; path = "Target Support Files/Pods-ProjectETTests/Pods-ProjectETTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -923,6 +926,7 @@
 		4F2306F92366E9BE0046A136 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				88A5D03D2372CF980012EE0B /* ClassBaseTools */,
 				4F1A22212372BF5500FDD5D9 /* Net */,
 				4F128C632367D95D0004284D /* Tools */,
 				4F128C552367D1C50004284D /* UI */,
@@ -1127,6 +1131,15 @@
 				4FA0A32A23717ACF0038F880 /* ET_ScaningView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		88A5D03D2372CF980012EE0B /* ClassBaseTools */ = {
+			isa = PBXGroup;
+			children = (
+				88A5D0402372CFBC0012EE0B /* ClassBaseTools.h */,
+				88A5D0412372CFBC0012EE0B /* ClassBaseTools.m */,
+			);
+			path = ClassBaseTools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1447,6 +1460,7 @@
 				4F128CAE236840120004284D /* ETDirectNormalCell.m in Sources */,
 				4F3F9039236A804B009AAA24 /* ETCreatYYViewCell.m in Sources */,
 				4F117509236C267E0042CDFD /* ETRecordSegmentController.m in Sources */,
+				88A5D0422372CFBC0012EE0B /* ClassBaseTools.m in Sources */,
 				4F128C622367D83B0004284D /* HomeHeaderView.m in Sources */,
 				4F3F9030236A7E83009AAA24 /* ETCreatWalletInfoCell.m in Sources */,
 				4F3F9060236BD9F3009AAA24 /* KMPQRCodeManager.m in Sources */,
