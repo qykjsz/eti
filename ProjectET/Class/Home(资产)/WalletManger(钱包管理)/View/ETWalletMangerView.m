@@ -182,6 +182,12 @@
         
         self.titleLb.text = self.coinNameArr[indexPath.row];
         [self.leftTab reloadData];
+    }else {
+        
+        NSMutableArray *arr = WALLET_ARR;
+        if ([self.delegate respondsToSelector:@selector(ETWalletMangerViewDelegateDidSelect:model:)]) {
+            [self.delegate ETWalletMangerViewDelegateDidSelect:indexPath model:arr[indexPath.row]];
+        }
     }
     
     

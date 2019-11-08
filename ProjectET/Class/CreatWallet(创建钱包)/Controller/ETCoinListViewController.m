@@ -13,6 +13,7 @@
 #import "ETColdWalletViewController.h"
 #import "ETKeyStoreController.h"
 #import "ETCreatMyWalletViewController.h"
+#import "ETCreatWalletViewController.h"
 #import "ETChooseWalletcell.h"
 
 @interface ETCoinListViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -108,10 +109,17 @@
      self.coninSubNameArr = @[@"EOS底层",@"以太坊底层",@"IOST底层",@"Tron底层",@"Binance底层",@"BOS底层",@"COSMOS底层",@"墨客底层"];
     NSString *name = self.coninSubNameArr[indexPath.row];
     if (indexPath.row == 1) {
-        if (self.block) {
-            self.block(name);
+        
+        if (self.isCreatWallet) {
+            ETCreatWalletViewController *cVC = [ETCreatWalletViewController new];
+            [self.navigationController pushViewController:cVC animated:YES];
+        }else {
+            if (self.block) {
+                self.block(name);
+            }
+            [self.navigationController popViewControllerAnimated:YES];
         }
-        [self.navigationController popViewControllerAnimated:YES];
+       
     }else {
         [KMPProgressHUD showText:@"暂未开放"];
     }

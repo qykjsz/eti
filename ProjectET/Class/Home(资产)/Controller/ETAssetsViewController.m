@@ -21,6 +21,9 @@
 #import "ETWalletSearchController.h"
 #import "ETWalletMangerController.h"
 #import "backUpMoneyViewController.h"
+#import "ETCoinListViewController.h"
+#import "ETScanViewController.h"
+
 #import "ETMyWalletView.h"
 #import "ETHomeModel.h"
 #import "ETBackUpWalletView.h"
@@ -246,8 +249,7 @@
 #pragma mark - HomeHeaderViewDelegate
 
 -(void)HomeHeaderViewDelegateWithClickTag:(NSInteger)tag {
-    
-    
+
     switch (tag) {
         case 0: {
             ETMyWalletView *view = [[ETMyWalletView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
@@ -257,13 +259,15 @@
             break;
         }
         case 1: {
-            backUpViewController *backVC = [backUpViewController new];
+            ETCoinListViewController *backVC = [ETCoinListViewController new];
+            backVC.isCreatWallet = YES;
             backVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:backVC animated:YES];
             break;
         }
         case 2: {
-            ETCreatWalletViewController *cVC = [ETCreatWalletViewController new];
+            ETScanViewController *cVC = [ETScanViewController new];
+            cVC.isDirection = YES;
             cVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:cVC animated:YES];
             break;

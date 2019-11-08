@@ -16,6 +16,8 @@ typedef void(^chooseCoin)(NSString *name);
 
 @property (nonatomic,strong) chooseCoin block;
 
+@property (nonatomic,assign) BOOL isCreatWallet;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,6 +12,8 @@
 
 - (void)ETWalletMangerViewDelegateAddWallet;
 
+- (void)ETWalletMangerViewDelegateDidSelect:(NSIndexPath *)path model:(ETWalletModel *)model;
+
 @end
 
 @interface ETWalletMangerView : UIView
