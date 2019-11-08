@@ -26,6 +26,8 @@
 
 @property (nonatomic,strong) NSMutableArray *walletArr;
 
+@property (nonatomic,assign) NSInteger currentSelect;
+
 
 @end
 
@@ -41,8 +43,11 @@
     
     if (self = [super initWithFrame:frame]) {
         
+        
+        self.currentSelect = 1;
         NSArray *normalNameArr = @[@"qbgl_eos",@"qbgl_eth",@"qbgl_iost",@"qbgl_tron",@"qbgl_binance",@"qbgl_bos",@"qbgl_cosmos",@"qbgl_moac"];
         NSArray *seledctNameArr = @[@"qbgl_eos_xz",@"qbgl_eth_xz",@"qbgl_iost_xz",@"qbgl_tron_xz",@"qbgl_binance_xz",@"qbgl_bos_xz",@"qbgl_cosmos_xz",@"qbgl_moac_xz"];
+    
         
         self.coinNameArr = [NSMutableArray arrayWithObjects:@"EOS",@"ETH",@"IOST",@"Tron",@"BINANCE",@"BOS",@"COSMOS",@"MOAC", nil];
         self.coinModelArr = [NSMutableArray array];
@@ -125,6 +130,10 @@
     if (tableView == self.leftTab) {
         return self.coinModelArr.count;
     }else {
+        
+        if (self.currentSelect != 1) {
+            return 0;
+        }
         return self.walletArr.count;
     }
     
@@ -139,6 +148,7 @@
     }else {
         ETMyWalletDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETMyWalletDetailCell"];
         cell.model = self.walletArr[indexPath.row];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
 }
@@ -148,6 +158,8 @@
     if (tableView == self.leftTab) {
         return 60;
     }else {
+        
+       
         return  140;
     }
     
@@ -155,13 +167,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (tableView == self.leftTab) {
         
         for (ETMyWalletLeftModel *model in self.coinModelArr) {
             model.isSelect = NO;
         }
+        
+        self.currentSelect = indexPath.row;
+        [self.rightTab reloadData];
         
         ETMyWalletLeftModel *model = self.coinModelArr[indexPath.row];
         model.isSelect = YES;
@@ -212,6 +226,8 @@
     }
 
 }
+
+
 
 
 @end

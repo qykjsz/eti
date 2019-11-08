@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol ETBackUpWalletViewDelegate <NSObject>
 
-- (void)ETBackUpWalletViewDelegateDeletAction;
+- (void)ETBackUpWalletViewDelegateDeletAction:(ETWalletModel *)model;
 
-- (void)ETBackUpWalletViewDelegateBackUpAction;
+- (void)ETBackUpWalletViewDelegateBackUpAction:(ETWalletModel *)model;
 
 
 @end
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) id <ETBackUpWalletViewDelegate> delegate;
 
-
+@property (nonatomic,strong) ETWalletModel *model;
 @end
 
 NS_ASSUME_NONNULL_END

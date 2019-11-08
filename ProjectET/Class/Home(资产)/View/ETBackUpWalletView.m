@@ -130,16 +130,16 @@
         
         [self dismissAction];
         
-        if ([self.delegate respondsToSelector:@selector(ETBackUpWalletViewDelegateDeletAction)]) {
-            [self.delegate ETBackUpWalletViewDelegateDeletAction];
+        if ([self.delegate respondsToSelector:@selector(ETBackUpWalletViewDelegateDeletAction:)]) {
+            [self.delegate ETBackUpWalletViewDelegateDeletAction:self.model];
         }
         
     }else {
         
         [self dismissAction];
         
-        if ([self.delegate respondsToSelector:@selector(ETBackUpWalletViewDelegateBackUpAction)]) {
-            [self.delegate ETBackUpWalletViewDelegateBackUpAction];
+        if ([self.delegate respondsToSelector:@selector(ETBackUpWalletViewDelegateBackUpAction:)]) {
+            [self.delegate ETBackUpWalletViewDelegateBackUpAction:self.model];
         }
         
     }

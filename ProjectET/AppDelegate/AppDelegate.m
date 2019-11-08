@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HTTPTool+DomainAPI.h"//网络配置
+#import "AppDelegate+SVPSetting.h" //Toast设置
 #import "ETRootViewController.h"
 #import "AppDelegate+ET_VCSetting.h"
 #import "ETCoinMainViewController.h"
@@ -40,8 +41,8 @@
     
     //网络配置
     [HTTPTool getDomain];
-    
-  
+    //Toast设置
+    [self svpSetting];
     
     [[IQKeyboardManager sharedManager] setEnableAutoToolbar:YES];
     [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];

@@ -19,6 +19,7 @@
 @property (nonatomic,strong) UICollectionView *topCollectionView;
 @property (nonatomic,strong) NSMutableArray *array;
 @property (nonatomic,strong) NSMutableArray *topArray;
+@property (nonatomic,strong) NSMutableArray *realArr;
 
 @end
 
@@ -44,10 +45,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+   // ETWalletModel *model = [ETWalletManger getCurrentWallet];
     
     self.array = [[NSMutableArray alloc]init];
-    [self.array addObjectsFromArray:[self randamArry:model.mnemonicPhrase]];
+    self.realArr = [NSMutableArray arrayWithArray:self.model.mnemonicPhrase];
+    [self.array addObjectsFromArray:[self randamArry:self.model.mnemonicPhrase]];
 
     
     self.topArray = [[NSMutableArray alloc]init];
@@ -133,11 +135,16 @@
 #pragma mark - Action
 - (void)clickAction {
     
-    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    if (self.realArr.count != self.topArray.count) {
+        [SVProgressHUD showInfoWithStatus:@"请选择完整的助记词"];
+        return;
+    }
+    
+   
     for (int i = 0; i<self.array.count; i++) {
         
-        NSString *name = model.mnemonicPhrase[i];
-        NSString *tempName = self.array[i];
+        NSString *name = self.realArr[i];
+        NSString *tempName = self.topArray[i];
         
         if (name != tempName) {
             [KMPProgressHUD showText:@"两次顺序不一样，请重新选择"];
@@ -145,9 +152,11 @@
         }
     }
     
-    model.isBackUp = YES;
     
-    [ETWalletManger updateWallet:model];
+    
+    self.model.isBackUp = YES;
+
+    [ETWalletManger updateWallet:self.model];
     
     [KMPProgressHUD showText:@"备份成功"];
     

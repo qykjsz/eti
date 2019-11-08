@@ -36,6 +36,7 @@
 - (void)backAction {
     
     backUpViewController *backVC = [backUpViewController new];
+    backVC.model = self.model;
     [self.navigationController pushViewController:backVC animated:YES];
     
 }

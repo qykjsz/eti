@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)ETMyWalletViewDelegateWalletManger;
 
+- (void)ETMyWalletViewDelegateDidSelect:(NSIndexPath *)indexPath;
+
 @end
 
 @interface ETMyWalletView : UIView

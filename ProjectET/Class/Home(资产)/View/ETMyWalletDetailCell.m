@@ -27,7 +27,6 @@
     
     self.bottoLb.textColor = UIColorFromHEX(0xB7BCDC, 1);
     
-    
 }
 
 - (void)setModel:(ETWalletModel *)model {
@@ -36,6 +35,22 @@
     
     self.walletName.text = model.walletName;
     self.bottoLb.text = model.address;
+    
+    if (model.isBackUp) {
+        [self.statusBtn setTitle:@"已备份" forState:UIControlStateNormal];
+    }else {
+        [self.statusBtn setTitle:@"未备份" forState:UIControlStateNormal];
+    }
+    
+    if (model.isCurrentWallet) {
+        self.topleftLb.hidden = NO;
+        self.topLbWidth.constant = 32;
+        self.statusBtnLeftSpace.constant = 15;
+    }else {
+        self.statusBtnLeftSpace.constant = 0;
+        self.topLbWidth.constant = 0;
+        self.topleftLb.hidden = YES;
+    }
     
 }
 

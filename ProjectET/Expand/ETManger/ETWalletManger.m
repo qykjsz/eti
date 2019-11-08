@@ -12,9 +12,22 @@
 
 + (ETWalletModel *)getCurrentWallet {
     
+//    bool isHaveCurrentModel = NO;
+    
     NSMutableArray *arr = WALLET_ARR;
     if (arr.count != 0) {
-        return arr[0];
+        for (ETWalletModel *model in arr) {
+            if (model.isCurrentWallet == YES) {
+                return model;
+            }
+        }
+    }
+    
+    /*如果删除的是当前钱包，把数组第一个置为当前钱包*/
+    if (arr.count != 0) {
+        ETWalletModel *model = arr[0];
+        model.isCurrentWallet = YES;
+        [ETWalletManger updateWallet:model];
     }
     return nil;
 }
@@ -98,4 +111,28 @@
     
 }
 
+/*
+ 重新排序，将isCurretnModel置为数组第一位
+ */
++ (void)reloadData {
+    
+    
+    NSMutableArray *arr = WALLET_ARR;
+    
+    if (arr.count != 0) {
+        for (int i = 0; i<arr.count; i++) {
+            
+            ETWalletModel *model = arr[i];
+            if (model.isCurrentWallet) {
+                [arr exchangeObjectAtIndex:0 withObjectAtIndex:i];
+            }
+        }
+        
+        NSString *file = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/WalletData.data"];
+        [NSKeyedArchiver archiveRootObject:arr toFile:file];
+    }
+    
+    
+    
+}
 @end

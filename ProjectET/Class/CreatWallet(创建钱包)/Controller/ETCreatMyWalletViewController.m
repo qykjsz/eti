@@ -275,8 +275,11 @@
             arr = [NSMutableArray array];
         }
         
+        if (arr.count == 0) {
+            model.isCurrentWallet = YES;
+        }
         [arr addObject:model];
-        
+
         //保存登录信息
         NSString *file = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/WalletData.data"];
         [NSKeyedArchiver archiveRootObject:arr toFile:file];
@@ -289,6 +292,7 @@
         }];
         
         backUpMoneyViewController *backVC = [backUpMoneyViewController new];
+        backVC.model = model;
         [self.navigationController pushViewController:backVC animated:YES];
         
     }];

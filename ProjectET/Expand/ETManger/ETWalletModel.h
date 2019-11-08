@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,assign) BOOL isBackUp;
 
+@property (nonatomic,assign) bool isCurrentWallet;
+
 @end
 
 NS_ASSUME_NONNULL_END

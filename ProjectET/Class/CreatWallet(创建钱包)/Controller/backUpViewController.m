@@ -29,9 +29,10 @@
     
     self.title = @"备份助记词";
     self.view.backgroundColor = UIColor.whiteColor;
-    ETWalletModel *arr = [ETWalletManger getCurrentWallet];
+//    ETWalletModel *arr = [ETWalletManger getCurrentWallet];
+    
     self.array = [[NSMutableArray alloc]init];
-    [self.array addObjectsFromArray:arr.mnemonicPhrase];
+    [self.array addObjectsFromArray:self.model.mnemonicPhrase];
     
 
     
@@ -99,6 +100,7 @@
 - (void)clickAction {
     
     ViewController *bcVC = [ViewController new];
+    bcVC.model = self.model;
     [self.navigationController pushViewController:bcVC animated:YES];
     
 }

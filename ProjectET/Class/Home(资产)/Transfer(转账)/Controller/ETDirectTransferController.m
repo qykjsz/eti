@@ -158,12 +158,12 @@
         STRONG_SELF(self);
         
         if ([Tools checkStringIsEmpty:self.address]) {
-            [KMPProgressHUD showText:@"转账地址不能为空"];
+            [SVProgressHUD showInfoWithStatus:@"转账地址不能为空"];
             return;
         }
         
         if ([Tools checkStringIsEmpty:self.countString]) {
-            [KMPProgressHUD showText:@"转账数量不能为空"];
+            [SVProgressHUD showInfoWithStatus:@"转账数量不能为空"];
             return;
         }
         

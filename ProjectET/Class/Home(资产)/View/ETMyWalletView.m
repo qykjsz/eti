@@ -30,6 +30,8 @@
 
 @property (nonatomic,assign) NSInteger selectPage;
 
+@property (nonatomic,strong) UIButton *clickBtn;
+
 
 @end
 
@@ -42,6 +44,8 @@
         self.selectPage = 1;
         NSArray *normalNameArr = @[@"qbgl_eos",@"qbgl_eth",@"qbgl_iost",@"qbgl_tron",@"qbgl_binance",@"qbgl_bos",@"qbgl_cosmos",@"qbgl_moac"];
         NSArray *seledctNameArr = @[@"qbgl_eos_xz",@"qbgl_eth_xz",@"qbgl_iost_xz",@"qbgl_tron_xz",@"qbgl_binance_xz",@"qbgl_bos_xz",@"qbgl_cosmos_xz",@"qbgl_moac_xz"];
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissAction)];
+//        [self addGestureRecognizer:tap];
         
         self.coinNameArr = [NSMutableArray arrayWithObjects:@"EOS",@"ETH",@"IOST",@"Tron",@"BINANCE",@"BOS",@"COSMOS",@"MOAC", nil];
         self.coinModelArr = [NSMutableArray array];
@@ -141,11 +145,13 @@
     
     if (tableView == self.leftTab) {
         ETMyWalletIconCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETMyWalletIconCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.model = self.coinModelArr[indexPath.row];
         return cell;
     }else {
         ETMyWalletDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETMyWalletDetailCell"];
         cell.model = self.walletArr[indexPath.row];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
 }
@@ -161,8 +167,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     
     if (tableView == self.leftTab) {
         
@@ -177,7 +182,20 @@
         model.isSelect = YES;
         
         self.titleLb.text = self.coinNameArr[indexPath.row];
+        if (indexPath.row != 1) {
+            self.clickBtn.hidden = YES;
+        }else {
+            self.clickBtn.hidden = NO;
+        }
         [self.leftTab reloadData];
+    }else {
+        
+        [self cancelAction:^{
+            if ([self.delegate respondsToSelector:@selector(ETMyWalletViewDelegateDidSelect:)]) {
+                [self.delegate ETMyWalletViewDelegateDidSelect:indexPath];
+            }
+        }];
+        
     }
     
    
@@ -251,11 +269,11 @@
         
     }];
     
-    UIButton *clickBtn = [[UIButton alloc]init];
-    [clickBtn setImage:[UIImage imageNamed:@"qblb_tianjia"] forState:UIControlStateNormal];
-    [clickBtn addTarget:self action:@selector(addAction) forControlEvents:UIControlEventTouchUpInside];
-    [backView addSubview:clickBtn];
-    [clickBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.clickBtn = [[UIButton alloc]init];
+    [self.clickBtn setImage:[UIImage imageNamed:@"qblb_tianjia"] forState:UIControlStateNormal];
+    [self.clickBtn addTarget:self action:@selector(addAction) forControlEvents:UIControlEventTouchUpInside];
+    [backView addSubview:self.clickBtn];
+    [self.clickBtn mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.right.top.bottom.equalTo(backView);
         make.width.mas_equalTo(44);
@@ -356,6 +374,28 @@
     
 }
 
+- (void)dismissAction {
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        self.holeView.frame = CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 420);
+        
+    } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            
+            self.alpha = 0;
+            
+        } completion:^(BOOL finished) {
+            
+            [self removeFromSuperview];
+            
+    
+        }];
+        
+    }];
+    
+}
 
 - (void)show {
     

@@ -13,7 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ETMyWalletDetailCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIButton *clickBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLbWidth;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *statusBtnLeftSpace;
 @property (nonatomic,strong) ETWalletModel *model;
 @property (weak, nonatomic) IBOutlet UILabel *topleftLb;
 @property (weak, nonatomic) IBOutlet UIButton *statusBtn;

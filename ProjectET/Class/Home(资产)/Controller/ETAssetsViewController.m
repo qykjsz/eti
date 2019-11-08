@@ -20,9 +20,11 @@
 #import "ETRecordSegmentController.h"
 #import "ETWalletSearchController.h"
 #import "ETWalletMangerController.h"
+#import "backUpMoneyViewController.h"
 #import "ETMyWalletView.h"
 #import "ETHomeModel.h"
-@interface ETAssetsViewController ()<UITableViewDelegate,UITableViewDataSource,HomeHeaderViewDelegate,ETMyWalletViewDelegate,ETHomeTableHeaderViewDelegate>
+#import "ETBackUpWalletView.h"
+@interface ETAssetsViewController ()<UITableViewDelegate,UITableViewDataSource,HomeHeaderViewDelegate,ETMyWalletViewDelegate,ETHomeTableHeaderViewDelegate,ETBackUpWalletViewDelegate>
 
 @property (nonatomic,strong) UITableView *detailTab;
 
@@ -102,7 +104,17 @@
         
     }];
     
-   
+//    NSMutableArray *arr = WALLET_ARR;
+//
+//    for (int i = 0; i<arr.count; i++) {
+//        ETWalletModel *model = arr[i];
+//        if (i == 0) {
+//            model.isCurrentWallet = YES;
+//        }else {
+//            model.isCurrentWallet = NO;
+//        }
+//        [ETWalletManger updateWallet:model];
+//    }
     
 }
 
@@ -293,7 +305,44 @@
     
 }
 
+- (void)ETMyWalletViewDelegateDidSelect:(NSIndexPath *)indexPath {
+    
+    NSMutableArray *arr = WALLET_ARR;
+    ETWalletModel *model = arr[indexPath.row];
+    if (!model.isBackUp) {
+        ETBackUpWalletView *backView = [[ETBackUpWalletView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        backView.delegate = self;
+        backView.model = model;
+        [[UIApplication sharedApplication].keyWindow addSubview:backView];
+    }else {
+        /*--------------这一步是先取出当前钱包把当前状态改成不是当前的------------*/
+        ETWalletModel *currentModel = [ETWalletManger getCurrentWallet];
+        currentModel.isCurrentWallet = false;
+        [ETWalletManger updateWallet:currentModel];
+        /*--------------这一步是把点击选中的钱包置为当前钱包------------*/
+        model.isCurrentWallet = YES;
+        [ETWalletManger updateWallet:model];
+        
+        [ETWalletManger reloadData];
+    }
+}
 
+#pragma mark - ETBackUpWalletViewDelegate
+- (void)ETBackUpWalletViewDelegateDeletAction:(ETWalletModel *)model {
+    
+    [ETWalletManger deleWallet:model];
+    [SVProgressHUD showInfoWithStatus:@"删除成功"];
+    
+}
+
+- (void)ETBackUpWalletViewDelegateBackUpAction:(ETWalletModel *)model {
+    
+    backUpMoneyViewController *bcVC = [backUpMoneyViewController new];
+    bcVC.model = model;
+    bcVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:bcVC animated:YES];
+    
+}
 
 #pragma mark - Action
 - (void)pushToListAction {

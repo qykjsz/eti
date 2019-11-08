@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface backUpMoneyViewController : UIViewController
 
+@property (nonatomic,strong) ETWalletModel *model;
+
 @end
 
 NS_ASSUME_NONNULL_END
