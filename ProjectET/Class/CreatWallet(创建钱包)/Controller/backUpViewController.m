@@ -33,18 +33,7 @@
     self.array = [[NSMutableArray alloc]init];
     [self.array addObjectsFromArray:arr.mnemonicPhrase];
     
-//    [self.array addObject:@"very"];
-//    [self.array addObject:@"sunny"];
-//    [self.array addObject:@"harsh"];
-//    [self.array addObject:@"member"];
-//    [self.array addObject:@"child"];
-//    [self.array addObject:@"final"];
-//    [self.array addObject:@"bag"];
-//    [self.array addObject:@"village"];
-//    [self.array addObject:@"impose"];
-//    [self.array addObject:@"visual"];
-//    [self.array addObject:@"blue"];
-//    [self.array addObject:@"visual"];
+
     
     UILabel *tipsLb = [[UILabel alloc]init];
     tipsLb.text = @"请确认你的钱包助记词";

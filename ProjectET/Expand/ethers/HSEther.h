@@ -113,7 +113,20 @@ typedef NS_ENUM(NSInteger, HSWalletError) {
 
 
 
-
+/**
+ 转账
+ 
+ @param toAddress 转入地址
+ @param money 转入金额
+ @param tokenETH 代币token 传nil默认为eth
+ @param decimal 小数位数
+ @param keyStore keyStore
+ @param pwd 密码
+ @param gasPrice gasPrice （建议10-20）建议传nil，默认位当前节点安全gasPrice
+ @param gasLimit gasLimit 不传 默认eth 21000 token 60000
+ @param block 回调
+ */
++(void)ETTest_hs_sendToAssress:(NSString *)toAddress money:(NSString *)money tokenETH:(NSString *)tokenETH decimal:(NSString *)decimal currentKeyStore:(NSString *)keyStore pwd:(NSString *)pwd gasPrice:(NSString *)gasPrice gasLimit:(NSString *)gasLimit block:(void(^)(NSString *hashStr,BOOL suc,HSWalletError error))block;
 
 
 

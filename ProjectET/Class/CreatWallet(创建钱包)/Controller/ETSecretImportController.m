@@ -287,9 +287,16 @@
         [ETWalletManger addWallet:model];
         
         [KMPProgressHUD showText:@"导入成功"];
+        
+        
+        
         [self.navigationController popViewControllerAnimated:YES];
         
+        
+        
     }];
+    
+    
     
     
     

@@ -74,7 +74,7 @@
     }else  {
         self.coninImage.image = [UIImage imageNamed:@"sy_usdt"];
     }
-    
+//    self.coninImage
 //    self.topDollor.text = model.number;
 //    self.bottomDollor.text = [NSString stringWithFormat:@"$ %@",model.usdtnumber];
     

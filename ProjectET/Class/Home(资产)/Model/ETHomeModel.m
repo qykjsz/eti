@@ -21,7 +21,7 @@
 
 + (NSDictionary *)mj_objectClassInArray {
     
-    return @{@"glod":[glodData class]};
+    return @{@"glod":[glodData class],@"proportion":[proportionData class]};
 }
 
 
@@ -29,5 +29,9 @@
 
 
 @implementation glodData
+
+@end
+
+@implementation proportionData
 
 @end

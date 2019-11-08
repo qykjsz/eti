@@ -7,7 +7,7 @@
 //
 
 #import "ETRecordDetailViewController.h"
-
+#import "ETTransferDetailViewController.h"
 
 #import "ETRecordHeaderView.h"
 #import "ETRecordCell.h"
@@ -103,7 +103,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    ETTransferDetailViewController *tVC = [ETTransferDetailViewController new];
+    [self.navigationController pushViewController:tVC animated:YES];
 }
 
 #pragma mark - lazy load

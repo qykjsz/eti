@@ -201,7 +201,7 @@
 /**
 检验字符串是否为空
 */
-+ (BOOL)checkStringLength:(NSString *)string;
++ (BOOL)checkStringIsEmpty:(NSString *)string;
 
 @end
 

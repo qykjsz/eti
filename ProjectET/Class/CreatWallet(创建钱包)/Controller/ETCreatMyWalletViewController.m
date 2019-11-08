@@ -68,6 +68,7 @@
     
 
         ETCreatWalletInputCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETCreatWalletInputCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.rowPath = indexPath;
         cell.delegate = self;
         switch (indexPath.row) {
@@ -281,7 +282,11 @@
         [NSKeyedArchiver archiveRootObject:arr toFile:file];
         
      //   [UIApplication sharedApplication].delegate.window.rootViewController = [[ETRootViewController alloc]init];
-       
+        [HTTPTool requestDotNetWithURLString:@"et_import" parameters:@{@"address":address} type:kPOST success:^(id responseObject) {
+            NSLog(@"%@",responseObject);
+        } failure:^(NSError *error) {
+            
+        }];
         
         backUpMoneyViewController *backVC = [backUpMoneyViewController new];
         [self.navigationController pushViewController:backVC animated:YES];

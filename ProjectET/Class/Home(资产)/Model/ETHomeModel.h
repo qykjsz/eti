@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class homeData,glodData;
+@class homeData,glodData,proportionData;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ETHomeModel : NSObject
@@ -29,10 +29,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSMutableArray <glodData *> *glod;
 
+@property (nonatomic,strong) proportionData *proportion;
+
+
+@end
+
+@interface proportionData : NSObject
+
+@property (nonatomic,strong) NSString *ETH;
+
+@property (nonatomic,strong) NSString *HOPE;
+
+@property (nonatomic,strong) NSString *USDT;
+
+@property (nonatomic,strong) NSString *translate;
 
 @end
 
 @interface glodData : NSObject
+
+@property (nonatomic,strong) NSString *img;
 
 @property (nonatomic,strong) NSString *name;
 

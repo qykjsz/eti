@@ -18,6 +18,8 @@
 #import "ETWalletDetailController.h"
 #import "ETWalletDetailController.h"
 #import "ETRecordSegmentController.h"
+#import "ETWalletSearchController.h"
+#import "ETWalletMangerController.h"
 #import "ETMyWalletView.h"
 #import "ETHomeModel.h"
 @interface ETAssetsViewController ()<UITableViewDelegate,UITableViewDataSource,HomeHeaderViewDelegate,ETMyWalletViewDelegate,ETHomeTableHeaderViewDelegate>
@@ -31,6 +33,8 @@
 @property (nonatomic,assign) BOOL isOpen;
 
 @property (nonatomic,strong) ETHomeModel *homeModel;
+
+@property (nonatomic,strong) NSMutableArray *dataArr;
 @end
 
 @implementation ETAssetsViewController
@@ -70,8 +74,8 @@
 
     self.title = @"资产";
     self.isOpen = YES;
-    
     self.model = [ETWalletManger getCurrentWallet];
+    self.dataArr = [NSMutableArray array];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hiddenAction:) name:@"HIDDENDATA" object:nil];
     
@@ -90,12 +94,6 @@
     }];
     
     
-   
-   
-    
-    
-    
-    
     [self.view addSubview:self.detailTab];
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
        
@@ -112,7 +110,11 @@
 #pragma mark - NET
 
 - (void)homeRequest {
+    
+    
     [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":@"0xa51c50c880d389b5bbd1c76308d3b544f54f39a4"} type:kPOST success:^(id responseObject) {
+        
+        [self.dataArr removeAllObjects];
         self.homeModel = [ETHomeModel mj_objectWithKeyValues:responseObject];
         
         NSLog(@"%@",responseObject);
@@ -121,6 +123,7 @@
         for (glodData *data in self.homeModel.data.glod) {
             [arr addObject:data.proportion];
         }
+        [self.dataArr addObjectsFromArray:self.homeModel.data.glod];
         
         ETHomeTableHeaderView *tableVIew = [[ETHomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 370) andProgress:arr];
         tableVIew.delegate = self;
@@ -135,10 +138,88 @@
     }];
 }
 
-#pragma mark - NoticeAction
-- (void)hiddenAction:(NSNotification *)notice {
-    self.isOpen = [notice.object[@"isOpen"] boolValue];
-    [self.detailTab reloadData];
+#pragma mark - UITableViewDelegate,UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.dataArr.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ETConiCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETConiCell"];
+    glodData *data = self.dataArr[indexPath.row];
+    
+    cell.model = self.dataArr[indexPath.row];
+    if (!self.isOpen) {
+        cell.topDollor.text = @"****.**";
+        cell.bottomDollor.text = @"****.**";
+    }else {
+        cell.topDollor.text = data.number;
+        cell.bottomDollor.text = [NSString stringWithFormat:@"$ %@",data.usdtnumber];
+        cell.coninName.text = data.name;
+    }
+    
+    return  cell;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 75;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+
+    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
+    backView.backgroundColor = UIColor.whiteColor;
+    self.clickBtn = [[UIButton alloc]initWithFrame:CGRectMake(-15, 0, 150, 44)];
+    [self.clickBtn setTitle:@"全部资产" forState:UIControlStateNormal];
+    [self.clickBtn setTitleColor:UIColorFromHEX(0x333333, 1) forState:UIControlStateNormal];
+    self.clickBtn.titleLabel.font = [UIFont systemFontOfSize:16];
+    [self.clickBtn setImage:[UIImage imageNamed:@"sy_xiajt"] forState:UIControlStateNormal];
+    [self.clickBtn layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleRight imageTitleSpace:10];
+    [backView addSubview:self.clickBtn];
+    
+    UIButton *rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 39, 10, 24, 24)];
+    [rightBtn setImage:[UIImage imageNamed:@"sy_jia"] forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(pushToListAction) forControlEvents:UIControlEventTouchUpInside];
+    [backView addSubview:rightBtn];
+    
+    UITextField *textField = [[UITextField alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 54  - 85, 10, 85, 24)];
+    UIView *TbackView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 26, 15)];
+    UIImageView *image = [[UIImageView alloc]initWithFrame:CGRectMake(10, 0, 13, 15)];
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:@"搜索" attributes:
+                                             @{NSForegroundColorAttributeName:UIColorFromHEX(0xc2c2c2, 1),
+                                               NSFontAttributeName:[UIFont boldSystemFontOfSize:12]}
+                                             ];
+    textField.attributedPlaceholder = attrString;
+    [TbackView addSubview:image];
+    image.image = [UIImage imageNamed:@"zc_sousuo"];
+    textField.leftView = TbackView;
+    textField.backgroundColor = UIColorFromHEX(0xF5F5F5, 1);
+    textField.clipsToBounds = YES;
+    textField.layer.cornerRadius = 12;
+    textField.leftViewMode = UITextFieldViewModeAlways;
+    [textField addTarget:self action:@selector(coninSearch:) forControlEvents:UIControlEventEditingChanged];
+    [backView addSubview:textField];
+    
+    return backView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+
+    return 44;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    ETRecordSegmentController *dVC = [ETRecordSegmentController new];
+    dVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:dVC animated:YES];
+    
 }
 
 #pragma mark - ETHomeTableHeaderViewDelegate
@@ -204,92 +285,47 @@
     
 }
 
-#pragma mark - UITableViewDelegate,UITableViewDataSource
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (void)ETMyWalletViewDelegateWalletManger {
     
-    return self.homeModel.data.glod.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    ETConiCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETConiCell"];
-    glodData *data = self.homeModel.data.glod[indexPath.row];
-    
-    cell.model = self.homeModel.data.glod[indexPath.row];
-    if (!self.isOpen) {
-        cell.topDollor.text = @"****.**";
-        cell.bottomDollor.text = @"****.**";
-    }else {
-        cell.topDollor.text = data.number;
-        cell.bottomDollor.text = [NSString stringWithFormat:@"$ %@",data.usdtnumber];
-    }
-    
-    return  cell;
-}
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return 75;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-
-    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
-    backView.backgroundColor = UIColor.whiteColor;
-    self.clickBtn = [[UIButton alloc]initWithFrame:CGRectMake(-15, 0, 150, 44)];
-    [self.clickBtn setTitle:@"全部资产" forState:UIControlStateNormal];
-    [self.clickBtn setTitleColor:UIColorFromHEX(0x333333, 1) forState:UIControlStateNormal];
-    self.clickBtn.titleLabel.font = [UIFont systemFontOfSize:16];
-    [self.clickBtn setImage:[UIImage imageNamed:@"sy_xiajt"] forState:UIControlStateNormal];
-    [self.clickBtn layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleRight imageTitleSpace:10];
-    [backView addSubview:self.clickBtn];
-    
-    UIButton *rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 39, 10, 24, 24)];
-    [rightBtn setImage:[UIImage imageNamed:@"sy_jia"] forState:UIControlStateNormal];
-    [rightBtn addTarget:self action:@selector(pushToListAction) forControlEvents:UIControlEventTouchUpInside];
-    [backView addSubview:rightBtn];
-    
-    UITextField *textField = [[UITextField alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 54  - 85, 10, 85, 24)];
-    UIView *TbackView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 26, 15)];
-    UIImageView *image = [[UIImageView alloc]initWithFrame:CGRectMake(10, 0, 13, 15)];
-    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:@"搜索" attributes:
-                                             @{NSForegroundColorAttributeName:UIColorFromHEX(0xc2c2c2, 1),
-                                               NSFontAttributeName:[UIFont boldSystemFontOfSize:12]}
-                                             ];
-    textField.attributedPlaceholder = attrString;
-    [TbackView addSubview:image];
-    image.image = [UIImage imageNamed:@"zc_sousuo"];
-    textField.leftView = TbackView;
-    textField.backgroundColor = UIColorFromHEX(0xF5F5F5, 1);
-    textField.clipsToBounds = YES;
-    textField.layer.cornerRadius = 12;
-    textField.leftViewMode = UITextFieldViewModeAlways;
-    [backView addSubview:textField];
-    
-    return backView;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-
-    return 44;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    ETRecordSegmentController *dVC = [ETRecordSegmentController new];
-    dVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:dVC animated:YES];
+    ETWalletMangerController *mVC = [ETWalletMangerController new];
+    mVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:mVC animated:YES];
     
 }
+
+
 
 #pragma mark - Action
 - (void)pushToListAction {
     
-    NSLog(@"pushToListAction");
+    ETWalletSearchController *sVC = [ETWalletSearchController new];
+    sVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:sVC animated:YES];
+    
+}
+
+#pragma mark - NoticeAction
+- (void)hiddenAction:(NSNotification *)notice {
+    self.isOpen = [notice.object[@"isOpen"] boolValue];
+    [self.detailTab reloadData];
+}
+
+
+- (void)coninSearch:(UITextField *)textfiled {
+
+    [self.dataArr removeAllObjects];
+    for (glodData *data in self.homeModel.data.glod) {
+        
+        if ([data.name isEqualToString:[textfiled.text uppercaseString]]) {
+            [self.dataArr addObject:data];
+        }
+    }
+    
+    if ([Tools checkStringIsEmpty:textfiled.text]) {
+        [self.dataArr removeAllObjects];
+        [self.dataArr addObjectsFromArray:self.homeModel.data.glod];
+    }
+    [self.detailTab reloadData];
 }
 
 @end

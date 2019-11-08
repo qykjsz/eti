@@ -13,6 +13,7 @@
 #import "ETKeyStoreController.h"
 #import "ETCreatMyWalletViewController.h"
 #import "ETChooseWalletcell.h"
+#import "ETCreatWalletViewController.h"
 #import "ETCoinListViewController.h"
 
 @interface ETCoinMainViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -111,15 +112,16 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    if (indexPath.section == 0) {
+    if (indexPath.section == 1) {
         switch (indexPath.row) {
             case 0: {
-                ETCoinListViewController *sVC = [ETCoinListViewController new];
-                [self.navigationController pushViewController:sVC animated:YES];
+                ETCreatWalletViewController *cVC = [ETCreatWalletViewController new];
+                [self.navigationController pushViewController:cVC animated:YES];
             }
                 break;
             case 1: {
-                [KMPProgressHUD showText:@"暂未开放"];
+                ETCreatMyWalletViewController *cVC = [ETCreatMyWalletViewController new];
+                [self.navigationController pushViewController:cVC animated:YES];
             }
                 break;
             case 2: {
@@ -127,25 +129,12 @@
                 [self.navigationController pushViewController:cVC animated:YES];
             }
                 break;
-            case 3: {
-                ETRememberCardController *rVC = [ETRememberCardController new];
-                [self.navigationController pushViewController:rVC animated:YES];
-            }
-                break;
-            case 4: {
-                ETKeyStoreController *kVC = [ETKeyStoreController new];
-                [self.navigationController pushViewController:kVC animated:YES];
-            }
-                break;
-                
             default:
                 break;
         }
     }else {
-        
-        ETCreatMyWalletViewController *cVC = [ETCreatMyWalletViewController new];
-        [self.navigationController pushViewController:cVC animated:YES];
-        
+        ETCoinListViewController *sVC = [ETCoinListViewController new];
+        [self.navigationController pushViewController:sVC animated:YES];
     }
     
     

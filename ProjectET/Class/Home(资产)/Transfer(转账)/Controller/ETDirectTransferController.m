@@ -61,6 +61,7 @@
         
         ETDirectCountCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETDirectCountCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textfiled.keyboardType = UIKeyboardTypeDecimalPad;
         cell.delegate = self;
         return cell;
         
@@ -144,20 +145,47 @@
     
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 180)];
     view.backgroundColor = [UIColor whiteColor];
-    UIButton *clickBtn = [[UIButton alloc]initWithFrame:CGRectMake(15, 150, SCREEN_WIDTH - 30, 30)];
+    UIButton *clickBtn = [[UIButton alloc]initWithFrame:CGRectMake(15, 150, SCREEN_WIDTH - 30, 44)];
     [clickBtn setTitle:@"确认" forState:UIControlStateNormal];
     [clickBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     clickBtn.backgroundColor = UIColorFromHEX(0x1D57FF, 1);
+    clickBtn.clipsToBounds = YES;
+    clickBtn.layer.cornerRadius = 5;
     
+   
+    WEAK_SELF(self);
     [clickBtn bk_whenTapped:^{
-    
+        STRONG_SELF(self);
+        
+        if ([Tools checkStringIsEmpty:self.address]) {
+            [KMPProgressHUD showText:@"转账地址不能为空"];
+            return;
+        }
+        
+        if ([Tools checkStringIsEmpty:self.countString]) {
+            [KMPProgressHUD showText:@"转账数量不能为空"];
+            return;
+        }
+        
+        
+//        [HSEther hs_sendToAssress:self.address ip:@"https://ropsten.infura.io/v3/bb770b6135ec434e9259072aee28efe0" money:self.countString tokenETH:nil decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:nil gasLimit:nil block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
+//
+//        }];
+        [SVProgressHUD showWithStatus:@"正在转账"];
+        ETWalletModel *model = [ETWalletManger getCurrentWallet];
+        [HSEther ETTest_hs_sendToAssress:self.address money:self.countString tokenETH:nil decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:nil gasLimit:nil block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
+            
+            if (suc) {
+                [KMPProgressHUD showProgressWithText:@"转账成功"];
+            }else {
+                 [KMPProgressHUD showProgressWithText:@"转账失败"];
+            }
+            
+        }];
        
     }];
-    ETWalletModel *model = [ETWalletManger getCurrentWallet];
-
-    [HSEther hs_sendToAssress:self.address ip:nil money:self.countString tokenETH:nil decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:nil gasLimit:nil block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
-        
-    }];
+   
+    
     [view addSubview:clickBtn];
     return view;
 }
@@ -169,6 +197,7 @@
         _detailTab = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         _detailTab.delegate = self;
         _detailTab.dataSource = self;
+        _detailTab.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
         _detailTab.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_detailTab registerNib:[UINib nibWithNibName:@"ETDirectTranAddressCell" bundle:nil] forCellReuseIdentifier:@"ETDirectTranAddressCell"];
         [_detailTab registerNib:[UINib nibWithNibName:@"ETDirectCountCell" bundle:nil] forCellReuseIdentifier:@"ETDirectCountCell"];
@@ -176,6 +205,7 @@
         [_detailTab registerNib:[UINib nibWithNibName:@"ETDirectNormalCell" bundle:nil] forCellReuseIdentifier:@"ETDirectNormalCell"];
         _detailTab.clipsToBounds = YES;
         _detailTab.layer.cornerRadius = 25;
+        _detailTab.tableFooterView = [self footerView];
     }
     return _detailTab;
 }

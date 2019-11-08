@@ -382,4 +382,160 @@
     }];
 }
 
++(void)ETTest_hs_sendToAssress:(NSString *)toAddress money:(NSString *)money tokenETH:(NSString *)tokenETH decimal:(NSString *)decimal currentKeyStore:(NSString *)keyStore pwd:(NSString *)pwd gasPrice:(NSString *)gasPrice gasLimit:(NSString *)gasLimit block:(void(^)(NSString *hashStr,BOOL suc,HSWalletError error))block {
+    
+    __block Account *a;
+    //提供3种方式  1 以太坊官方限流配置   2 web3配置  3 infura配置  本方式使用以太坊官方限流配置RCWEX6WYBXMJZHD5FD617NZ99TZADKBEDJ
+    //假如你要用 web3 你就新建 __block JsonRpcProvider e = [[JsonRpcProvider alloc]initWithChainId:测试还是正式枚举 url:你公司后台web3地址]
+    //同理 infura 用InfuraProvider.h类库新建即可
+    //    __block EtherscanProvider *e = [[EtherscanProvider alloc]initWithChainId:ChainIdHomestead apiKey:@"RCWEX6WYBXMJZHD5FD617NZ99TZADKBEDJ"];
+    
+    __block JsonRpcProvider *e =[[JsonRpcProvider alloc]initWithChainId:ChianIdAny url:[[NSURL alloc]initWithString:@"https://ropsten.infura.io/v3/bb770b6135ec434e9259072aee28efe0"]];
+    
+    NSData *jsonData = [keyStore dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    //地址
+    __block NSString *addressStr = [NSString stringWithFormat:@"0x%@",dic[@"address"]];
+    
+    __block Transaction *transaction = [Transaction transactionWithFromAddress:[Address addressWithString:addressStr]];
+    //
+    //1 account自己解密
+    
+    NSLog(@"1 开始新建钱包");
+    [Account decryptSecretStorageJSON:keyStore password:pwd callback:^(Account *account, NSError *NSError) {
+        if (NSError == nil){
+            a = account;
+            NSLog(@"2 新建钱包成功 开始获取nonce");
+            [[e getTransactionCount:transaction.fromAddress] onCompletion:^(IntegerPromise *pro) {
+                if (pro.error != nil) {
+                    NSLog(@"%@获取nonce失败",pro.error);
+                    
+                    block(@"",NO,HSWalletErrorNotNonce);
+                }else{
+                    
+                    NSLog(@"3 获取nonce成功 值为%ld",pro.value);
+                    transaction.nonce = pro.value;
+                    
+                    
+                    
+                    NSLog(@"4 开始获取gasPrice");
+                    [[e getGasPrice] onCompletion:^(BigNumberPromise *proGasPrice) {
+                        if (proGasPrice.error == nil) {
+                            
+                            NSLog(@"5 获取gasPrice成功 值为%@",proGasPrice.value.decimalString);
+                            
+                            if (gasPrice == nil) {
+                                
+                                transaction.gasPrice = proGasPrice.value;
+                            }else{
+                                NSLog(@"手动设置了gasPrice = %@",gasPrice);
+                                
+                                transaction.gasPrice = [[BigNumber bigNumberWithDecimalString:gasPrice] mul:[BigNumber bigNumberWithDecimalString:@"1000000000"]];
+                            }
+                            
+                            
+                            transaction.chainId = e.chainId;
+                            
+                            transaction.toAddress = [Address addressWithString:toAddress];
+                            
+                            //转账金额  原来的方法会越界NSInteger  建议使用Payment转换后 再用BigNumber里面的加减乘除运算方法
+                            //                            NSInteger i = money.doubleValue * pow(10.0, decimal.integerValue);
+                            //                            BigNumber *b = [BigNumber bigNumberWithInteger:i];
+                            //                            transaction.value = b;
+                            
+                            transaction.value = [[Payment parseEther:money] div:[BigNumber bigNumberWithInteger:pow(10.0, 18 - decimal.integerValue)]];
+                            
+                            
+                            
+                            if (tokenETH == nil) {//默认eth
+                                
+                                if (gasLimit == nil) {
+                                    
+                                    transaction.gasLimit = [BigNumber bigNumberWithDecimalString:@"21000"];
+                                }else{
+                                    
+                                    NSLog(@"手动设置了gasLimit = %@",gasLimit);
+                                    transaction.gasLimit = [BigNumber bigNumberWithDecimalString:gasLimit];
+                                }
+                                
+                                
+                                transaction.data = [SecureData secureDataWithCapacity:0].data;
+                                
+                            }else{
+                                
+                                if (gasLimit == nil) {
+                                    
+                                    transaction.gasLimit = [BigNumber bigNumberWithDecimalString:@"60000"];
+                                }else{
+                                    
+                                    NSLog(@"手动设置了gasLimit = %@",gasLimit);
+                                    transaction.gasLimit = [BigNumber bigNumberWithDecimalString:gasLimit];
+                                }
+                                SecureData *data = [SecureData secureDataWithCapacity:68];
+                                [data appendData:[SecureData hexStringToData:@"0xa9059cbb"]];
+                                
+                                NSData *dataAddress = transaction.toAddress.data;//转入地址（真实代币转入地址添加到data里面）
+                                for (int i=0; i < 32 - dataAddress.length; i++) {
+                                    [data appendByte:'\0'];
+                                }
+                                [data appendData:dataAddress];
+                                
+                                NSData *valueData = transaction.value.data;//真实代币交易数量添加到data里面
+                                for (int i=0; i < 32 - valueData.length; i++) {
+                                    [data appendByte:'\0'];
+                                }
+                                [data appendData:valueData];
+                                
+                                transaction.value = [BigNumber constantZero];
+                                transaction.data = data.data;
+                                transaction.toAddress = [Address addressWithString:tokenETH];//合约地址（代币交易 转入地址为合约地址）
+                                
+                                
+                            }
+                            //签名
+                            [a sign:transaction];
+                            //发送
+                            NSData *signedTransaction = [transaction serialize];
+                            
+                            NSLog(@"6 开始转账");
+                            [[e sendTransaction:signedTransaction] onCompletion:^(HashPromise *pro) {
+                                
+                                NSLog(@"CloudKeychainSigner: Sent - signed=%@ hash=%@ error=%@", signedTransaction, pro.value, pro.error);
+                                
+                                if (pro.error == nil){
+                                    NSLog(@"\n---------------【生成转账交易成功！！！！】--------------\n哈希值 = %@\n",transaction.transactionHash.hexString);
+                                    NSLog(@" 7成功 哈希值 =  %@",pro.value.hexString);
+                                    
+                                    block(pro.value.hexString,YES,HSWalletSucSend);
+                                    [[e getTransaction:pro.value]onCompletion:^(TransactionInfoPromise *info) {
+                                        if (info.error == nil) {
+                                            NSLog(@"===%@",info.value.transactionHash.hexString);
+                                        }else{
+                                            
+                                            NSLog(@" 9查询哈希%@失败 %@",pro.value.hexString,pro.error);
+                                        }
+                                    }];
+                                    
+                                }else{
+                                    NSLog(@" 8转账失败 %@",pro.error);
+                                    block(@"",NO,HSWalletErrorSend);
+                                }
+                            }];
+                        }else{
+                            
+                            block(@"",NO,HSWalletErrorNotGasPrice);
+                        }
+                    }];
+                }
+            }];
+        }else{
+            NSLog(@"密码错误%@",NSError);
+            block(@"",NO,HSWalletErrorPWD);
+        }
+    }];
+}
+
 @end

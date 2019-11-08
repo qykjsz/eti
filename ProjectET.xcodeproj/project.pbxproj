@@ -25,6 +25,11 @@
 		047A9DF823700A9200FB5132 /* ethers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047A9DF523700A5F00FB5132 /* ethers.framework */; };
 		4F0E4D8D2373B3FC00E83618 /* ETHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */; };
 		4F0E4D932373EFF000E83618 /* ETTransferDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D922373EFF000E83618 /* ETTransferDetailViewController.m */; };
+		4F0E4D992373F5BB00E83618 /* ETTransferDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D982373F5BB00E83618 /* ETTransferDetailCell.m */; };
+		4F0E4D9F2374044700E83618 /* ETWalletSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D9E2374044700E83618 /* ETWalletSearchController.m */; };
+		4F0E4DA523740AA900E83618 /* ETWalletSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4DA423740AA900E83618 /* ETWalletSearchCell.m */; };
+		4F0E4DAB237502B600E83618 /* ETWalletMangerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4DAA237502B600E83618 /* ETWalletMangerController.m */; };
+		4F0E4DB0237502EC00E83618 /* ETWalletMangerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4DAF237502EC00E83618 /* ETWalletMangerView.m */; };
 		4F117509236C267E0042CDFD /* ETRecordSegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F117508236C267E0042CDFD /* ETRecordSegmentController.m */; };
 		4F128C592367D1CE0004284D /* UIViewController+NaviBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C582367D1CE0004284D /* UIViewController+NaviBarButton.m */; };
 		4F128C5F2367D75D0004284D /* ETNoticeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C5E2367D75D0004284D /* ETNoticeScrollView.m */; };
@@ -208,6 +213,16 @@
 		4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETHomeModel.m; sourceTree = "<group>"; };
 		4F0E4D912373EFF000E83618 /* ETTransferDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransferDetailViewController.h; sourceTree = "<group>"; };
 		4F0E4D922373EFF000E83618 /* ETTransferDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTransferDetailViewController.m; sourceTree = "<group>"; };
+		4F0E4D972373F5BB00E83618 /* ETTransferDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransferDetailCell.h; sourceTree = "<group>"; };
+		4F0E4D982373F5BB00E83618 /* ETTransferDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTransferDetailCell.m; sourceTree = "<group>"; };
+		4F0E4D9D2374044700E83618 /* ETWalletSearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETWalletSearchController.h; sourceTree = "<group>"; };
+		4F0E4D9E2374044700E83618 /* ETWalletSearchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETWalletSearchController.m; sourceTree = "<group>"; };
+		4F0E4DA323740AA900E83618 /* ETWalletSearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETWalletSearchCell.h; sourceTree = "<group>"; };
+		4F0E4DA423740AA900E83618 /* ETWalletSearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETWalletSearchCell.m; sourceTree = "<group>"; };
+		4F0E4DA9237502B600E83618 /* ETWalletMangerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETWalletMangerController.h; sourceTree = "<group>"; };
+		4F0E4DAA237502B600E83618 /* ETWalletMangerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETWalletMangerController.m; sourceTree = "<group>"; };
+		4F0E4DAE237502EC00E83618 /* ETWalletMangerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETWalletMangerView.h; sourceTree = "<group>"; };
+		4F0E4DAF237502EC00E83618 /* ETWalletMangerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETWalletMangerView.m; sourceTree = "<group>"; };
 		4F1174F4236C23C10042CDFD /* OCExample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		4F117507236C267E0042CDFD /* ETRecordSegmentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETRecordSegmentController.h; sourceTree = "<group>"; };
 		4F117508236C267E0042CDFD /* ETRecordSegmentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRecordSegmentController.m; sourceTree = "<group>"; };
@@ -563,6 +578,33 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4F0E4DA82375023200E83618 /* WalletManger(钱包管理) */ = {
+			isa = PBXGroup;
+			children = (
+				4F0E4DAD237502CF00E83618 /* View */,
+				4F0E4DAC237502C700E83618 /* Controller */,
+			);
+			path = "WalletManger(钱包管理)";
+			sourceTree = "<group>";
+		};
+		4F0E4DAC237502C700E83618 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F0E4DA9237502B600E83618 /* ETWalletMangerController.h */,
+				4F0E4DAA237502B600E83618 /* ETWalletMangerController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4F0E4DAD237502CF00E83618 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F0E4DAE237502EC00E83618 /* ETWalletMangerView.h */,
+				4F0E4DAF237502EC00E83618 /* ETWalletMangerView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4F128C552367D1C50004284D /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +663,8 @@
 				4F1942F1236D69E100AD907E /* ETVerifyPassWrodView.m */,
 				4F1942F3236D69FB00AD907E /* ETBackUpWalletView.h */,
 				4F1942F4236D69FB00AD907E /* ETBackUpWalletView.m */,
+				4F0E4DA323740AA900E83618 /* ETWalletSearchCell.h */,
+				4F0E4DA423740AA900E83618 /* ETWalletSearchCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -643,6 +687,8 @@
 				4F2307052366EB600046A136 /* ETAssetsViewController.m */,
 				4F3F905A236BCB4B009AAA24 /* ETGatheringViewController.h */,
 				4F3F905B236BCB4B009AAA24 /* ETGatheringViewController.m */,
+				4F0E4D9D2374044700E83618 /* ETWalletSearchController.h */,
+				4F0E4D9E2374044700E83618 /* ETWalletSearchController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -742,6 +788,8 @@
 				4F14FB2B23698BA30008C50A /* ETCreatWalletCell.m */,
 				4F3F9050236AE240009AAA24 /* ETChooseWalletcell.h */,
 				4F3F9051236AE240009AAA24 /* ETChooseWalletcell.m */,
+				4F0E4D972373F5BB00E83618 /* ETTransferDetailCell.h */,
+				4F0E4D982373F5BB00E83618 /* ETTransferDetailCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -970,6 +1018,7 @@
 		4F2306FF2366EAB30046A136 /* Home(资产) */ = {
 			isa = PBXGroup;
 			children = (
+				4F0E4DA82375023200E83618 /* WalletManger(钱包管理) */,
 				4F14FAEE2369240F0008C50A /* Transfer(转账) */,
 				4F128C5C2367D72E0004284D /* Controller */,
 				4F128C5B2367D7250004284D /* Model */,
@@ -1442,6 +1491,7 @@
 				4F3F9069236C128D009AAA24 /* ETRecordHeaderView.m in Sources */,
 				4F14FAF5236924770008C50A /* ETMyContactsController.m in Sources */,
 				4F2307032366EB120046A136 /* ETRootViewController.m in Sources */,
+				4F0E4D992373F5BB00E83618 /* ETTransferDetailCell.m in Sources */,
 				4F3F9063236C0F5E009AAA24 /* ETRecordDetailViewController.m in Sources */,
 				4FA0A30B236FCA270038F880 /* WMZPageScroller.m in Sources */,
 				4FA0A30A236FCA270038F880 /* WMZPageController.m in Sources */,
@@ -1451,12 +1501,14 @@
 				4FA0A305236FCA270038F880 /* WMZPageLoopView.m in Sources */,
 				4F14FB0D23693CE40008C50A /* UIImage+Watermark.m in Sources */,
 				047A9DE223700A5900FB5132 /* CachedDataStore.m in Sources */,
+				4F0E4DA523740AA900E83618 /* ETWalletSearchCell.m in Sources */,
 				4F1942EC236D5E6900AD907E /* ETKeystoreQcodeView.m in Sources */,
 				4FA0A319237013D10038F880 /* ETWalletModel.m in Sources */,
 				4F128C6F23680D120004284D /* ETTableHeaderSelectView.m in Sources */,
 				4F128C83236820320004284D /* backUpMoneyViewController.m in Sources */,
 				047A9DED23700A5900FB5132 /* CloudKeychainSigner.m in Sources */,
 				4F3F905C236BCB4B009AAA24 /* ETGatheringViewController.m in Sources */,
+				4F0E4D9F2374044700E83618 /* ETWalletSearchController.m in Sources */,
 				4F2306D52366DE9F0046A136 /* main.m in Sources */,
 				4F14FB1323693CFC0008C50A /* KMPProgressHUD.m in Sources */,
 				4F14FB2D23698BA30008C50A /* ETCreatWalletCell.m in Sources */,
@@ -1484,6 +1536,7 @@
 				047A9DE423700A5900FB5132 /* UIColor+hex.m in Sources */,
 				4F128C82236820320004284D /* backUpViewController.m in Sources */,
 				4F128CA923683EE70004284D /* ETDirectLeftCell.m in Sources */,
+				4F0E4DB0237502EC00E83618 /* ETWalletMangerView.m in Sources */,
 				047A9DE123700A5900FB5132 /* Wallet.m in Sources */,
 				4F1942F5236D69FB00AD907E /* ETBackUpWalletView.m in Sources */,
 				4F1A224B2372CF8100FDD5D9 /* KMP_DOTNETModel.m in Sources */,
@@ -1531,6 +1584,7 @@
 				4F14FAFD23692BB70008C50A /* ETAddContactsController.m in Sources */,
 				4F14FB29236985420008C50A /* ETCreatWalletViewController.m in Sources */,
 				4F128C81236820320004284D /* titleCell.m in Sources */,
+				4F0E4DAB237502B600E83618 /* ETWalletMangerController.m in Sources */,
 				4F1942DF236D306800AD907E /* ETWalletImportCell.m in Sources */,
 				4F128C89236822610004284D /* ETTransferViewController.m in Sources */,
 				4F128C94236834EB0004284D /* AppDelegate+ET_VCSetting.m in Sources */,
