@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ETPlatformGlodModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol ETWalletSearchCellDelegate <NSObject>
@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) UIButton *clickBtn;
 
 @property (nonatomic,weak) id <ETWalletSearchCellDelegate> delegate;
+
+@property (nonatomic,strong) ETPlatformGlodData *model;
 
 @end
 

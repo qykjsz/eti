@@ -8,9 +8,16 @@
 
 #import "ETWalletSearchController.h"
 #import "ETWalletSearchCell.h"
+
+#import "ETPlatformGlodModel.h"
+
 @interface ETWalletSearchController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *detailTab;
+
+@property (nonatomic,strong) NSMutableArray *dataArray;
+
+@property (nonatomic,strong) ETPlatformGlodModel *model;
 
 @end
 
@@ -19,6 +26,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    [self platformGlodRequest];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
@@ -33,6 +41,7 @@
     [super viewDidLoad];
     
     [self pageLayout];
+    self.dataArray = [NSMutableArray array];
     
     [self.view addSubview:self.detailTab];
     WEAK_SELF(self);
@@ -46,16 +55,35 @@
     
 }
 
+#pragma mark - NET
+- (void)platformGlodRequest {
+    
+    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    
+    [HTTPTool requestDotNetWithURLString:@"et_platformglod" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
+        
+        [self.dataArray removeAllObjects];
+        self.model = [ETPlatformGlodModel mj_objectWithKeyValues:responseObject];
+        [self.dataArray addObjectsFromArray:self.model.data];
+        [self.detailTab reloadData];
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    
+}
+
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 10;
+    return self.dataArray.count;
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ETWalletSearchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETWalletSearchCell"];
+    cell.model = self.dataArray[indexPath.row];
     return cell;
     
 }
@@ -132,9 +160,20 @@
     
 }
 
-- (void)textfieldDidChange:(UITextField *)text {
+- (void)textfieldDidChange:(UITextField *)textfiled {
     
-    NSLog(@"%@",text.text);
+    [self.dataArray removeAllObjects];
+    for (ETPlatformGlodData *data in self.model.data) {
+        if ([data.name isEqualToString:[textfiled.text uppercaseString]]) {
+            [self.dataArray addObject:data];
+        }
+    }
+    
+    if ([Tools checkStringIsEmpty:textfiled.text]) {
+        [self.dataArray addObjectsFromArray:self.model.data];
+    }
+    
+    [self.detailTab reloadData];
 }
 
 #pragma mark - lazy load

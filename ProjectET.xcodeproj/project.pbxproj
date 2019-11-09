@@ -31,6 +31,7 @@
 		4F0E4DAB237502B600E83618 /* ETWalletMangerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4DAA237502B600E83618 /* ETWalletMangerController.m */; };
 		4F0E4DB0237502EC00E83618 /* ETWalletMangerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4DAF237502EC00E83618 /* ETWalletMangerView.m */; };
 		4F0E4DB423751F6700E83618 /* AppDelegate+SVPSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4DB323751F6700E83618 /* AppDelegate+SVPSetting.m */; };
+		4F10A7B52376B35C00EBF377 /* ETPlatformGlodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F10A7B42376B35C00EBF377 /* ETPlatformGlodModel.m */; };
 		4F117509236C267E0042CDFD /* ETRecordSegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F117508236C267E0042CDFD /* ETRecordSegmentController.m */; };
 		4F128C592367D1CE0004284D /* UIViewController+NaviBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C582367D1CE0004284D /* UIViewController+NaviBarButton.m */; };
 		4F128C5F2367D75D0004284D /* ETNoticeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F128C5E2367D75D0004284D /* ETNoticeScrollView.m */; };
@@ -226,6 +227,8 @@
 		4F0E4DAF237502EC00E83618 /* ETWalletMangerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETWalletMangerView.m; sourceTree = "<group>"; };
 		4F0E4DB223751F6700E83618 /* AppDelegate+SVPSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+SVPSetting.h"; sourceTree = "<group>"; };
 		4F0E4DB323751F6700E83618 /* AppDelegate+SVPSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+SVPSetting.m"; sourceTree = "<group>"; };
+		4F10A7B32376B35C00EBF377 /* ETPlatformGlodModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETPlatformGlodModel.h; sourceTree = "<group>"; };
+		4F10A7B42376B35C00EBF377 /* ETPlatformGlodModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETPlatformGlodModel.m; sourceTree = "<group>"; };
 		4F1174F4236C23C10042CDFD /* OCExample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		4F117507236C267E0042CDFD /* ETRecordSegmentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETRecordSegmentController.h; sourceTree = "<group>"; };
 		4F117508236C267E0042CDFD /* ETRecordSegmentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRecordSegmentController.m; sourceTree = "<group>"; };
@@ -679,6 +682,8 @@
 				4F14FB25236975890008C50A /* ETMyWalletLeftModel.m */,
 				4F0E4D8B2373B3FC00E83618 /* ETHomeModel.h */,
 				4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */,
+				4F10A7B32376B35C00EBF377 /* ETPlatformGlodModel.h */,
+				4F10A7B42376B35C00EBF377 /* ETPlatformGlodModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1481,6 +1486,7 @@
 			files = (
 				4F128C73236813580004284D /* ETConiCell.m in Sources */,
 				4F3F903D236A8415009AAA24 /* ETSecretImportController.m in Sources */,
+				4F10A7B52376B35C00EBF377 /* ETPlatformGlodModel.m in Sources */,
 				4FA0A32B23717ACF0038F880 /* ET_ScaningView.m in Sources */,
 				4FA0A30F236FD0690038F880 /* HoverPageViewController.m in Sources */,
 				4F1A22372372BF5500FDD5D9 /* XMRequest.m in Sources */,

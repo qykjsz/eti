@@ -68,6 +68,16 @@
     
 }
 
+- (void)setModel:(ETPlatformGlodData *)model {
+    
+    _model = model;
+    
+    [self.iconImage sd_setImageWithURL:[NSURL URLWithString:model.img]];
+    self.titleLb.text = model.name;
+    self.subTitleLb.text = model.hyaddress;
+    
+}
+
 #pragma mark - lazy load
 - (UIImageView *)iconImage {
     
