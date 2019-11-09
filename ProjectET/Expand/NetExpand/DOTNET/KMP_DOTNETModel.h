@@ -14,7 +14,7 @@
 
 @property (nonatomic, assign) NSInteger code;
 
-@property (nonatomic, copy  ) NSString  *message;
+@property (nonatomic, copy  ) NSString  *msg;
 
 @property (nonatomic, strong) KMP_DOTNETModelData  *data;
 

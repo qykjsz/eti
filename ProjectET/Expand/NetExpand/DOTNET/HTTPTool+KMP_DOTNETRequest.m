@@ -63,14 +63,14 @@
             NSLog(@"\n===========\n%@\n response data :\n%@\n===========",[NSString stringWithFormat:@"%@%@",APP_DOMAIN,URLString],responseObject);
             //登录信息异常，走failure
             if (failure) {
-                NSError * error = [[NSError alloc] initWithDomain:@"TOKEN_FAILURE" code:-2 userInfo:@{NSLocalizedDescriptionKey:baseModel.message,NSLocalizedFailureReasonErrorKey:@"Token无效或为空",NSLocalizedRecoverySuggestionErrorKey:@"重新登录"}];
+                NSError * error = [[NSError alloc] initWithDomain:@"TOKEN_FAILURE" code:-2 userInfo:@{NSLocalizedDescriptionKey:baseModel.msg,NSLocalizedFailureReasonErrorKey:@"Token无效或为空",NSLocalizedRecoverySuggestionErrorKey:@"重新登录"}];
                 failure(error);
             }
             return ;
         }
         
         if (baseModel.code == 400) {
-            NSError * error = [[NSError alloc] initWithDomain:@"TOKEN_FAILURE" code:baseModel.code userInfo:@{NSLocalizedDescriptionKey:baseModel.message,NSLocalizedFailureReasonErrorKey:@"Token无效或为空",NSLocalizedRecoverySuggestionErrorKey:@"重新登录"}];
+            NSError * error = [[NSError alloc] initWithDomain:@"TOKEN_FAILURE" code:baseModel.code userInfo:@{NSLocalizedDescriptionKey:baseModel.msg,NSLocalizedFailureReasonErrorKey:@"Token无效或为空",NSLocalizedRecoverySuggestionErrorKey:@"重新登录"}];
             failure(error);
         }
 //        if (baseModel.code != 0) {

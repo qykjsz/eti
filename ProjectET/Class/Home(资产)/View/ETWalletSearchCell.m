@@ -75,6 +75,13 @@
     [self.iconImage sd_setImageWithURL:[NSURL URLWithString:model.img]];
     self.titleLb.text = model.name;
     self.subTitleLb.text = model.hyaddress;
+    // 1是有  2是没有
+    if ([model.have isEqualToString:@"1"]) {
+        self.clickBtn.selected = YES;
+    }else {
+        self.clickBtn.selected = NO;
+    }
+    
     
 }
 
@@ -115,6 +122,7 @@
     if (!_clickBtn) {
         _clickBtn = [[UIButton alloc]init];
         [_clickBtn setImage:[UIImage imageNamed:@"sousuo_jia"] forState:UIControlStateNormal];
+        [_clickBtn setImage:[UIImage imageNamed:@"ss_jian"] forState:UIControlStateSelected];
     }
     return _clickBtn;
 }

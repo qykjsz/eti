@@ -97,6 +97,24 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    ETPlatformGlodData *data = self.dataArray[indexPath.row];
+    
+    NSString *status = nil;
+    if ([data.have isEqualToString:@"1"]) {
+        status = @"2";
+    }else {
+        status = @"1";
+    }
+    ETWalletModel *wModel = [ETWalletManger getCurrentWallet];
+    
+    [HTTPTool requestDotNetWithURLString:@"et_glodoperation" parameters:@{@"address":wModel.address,@"glodid":data.Id,@"operationtype":status} type:kPOST success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        [self platformGlodRequest];
+        [self.detailTab reloadData];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    
 }
 
 - (void)pageLayout {
