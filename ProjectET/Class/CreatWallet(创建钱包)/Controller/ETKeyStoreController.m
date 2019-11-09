@@ -8,7 +8,7 @@
 
 #import "ETKeyStoreController.h"
 #import "ETScanViewController.h"
-
+#import "ETRootViewController.h"
 // cell
 #import "ETCreatYYViewCell.h"
 #import "ETCreatWalletInputCell.h"
@@ -246,19 +246,39 @@
         
         self.view.userInteractionEnabled = YES;
         
-        ETWalletModel *model = [[ETWalletModel alloc]init];
-        model.password = self.setPassWord;
-        model.walletName = self.walletName;
-        model.keyStore = keyStore;
-        model.address = address;
-        model.mnemonicPhrase = [mnemonicPhrase componentsSeparatedByString:@" "];
-        model.privateKey = privateKey;
-        model.walletType = @"以太坊";
-        
-        [ETWalletManger addWallet:model];
-        
-        [KMPProgressHUD showText:@"导入成功"];
-        [self.navigationController popViewControllerAnimated:YES];
+        if (suc) {
+            ETWalletModel *model = [[ETWalletModel alloc]init];
+            model.password = self.setPassWord;
+            model.walletName = self.walletName;
+            model.keyStore = keyStore;
+            model.address = address;
+            model.mnemonicPhrase = [mnemonicPhrase componentsSeparatedByString:@" "];
+            model.privateKey = privateKey;
+            model.walletType = @"以太坊";
+            
+            [HTTPTool requestDotNetWithURLString:@"et_import" parameters:@{@"address":address} type:kPOST success:^(id responseObject) {
+                
+                [ETWalletManger addWallet:model];
+                
+                [KMPProgressHUD showText:@"导入成功"];
+                
+                NSMutableArray *arr = WALLET_ARR;
+                if (arr.count == 1) {
+                    [UIApplication sharedApplication].delegate.window.rootViewController = [ETRootViewController new];
+                }else {
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                }
+                
+            } failure:^(NSError *error) {
+                
+                [SVProgressHUD showInfoWithStatus:@"导入失败"];
+            }];
+
+            
+        }else {
+            [SVProgressHUD showInfoWithStatus:@"导入失败"];
+        }
+       
         
     }];
 }

@@ -167,21 +167,27 @@
             return;
         }
         
-        
-//        [HSEther hs_sendToAssress:self.address ip:@"https://ropsten.infura.io/v3/bb770b6135ec434e9259072aee28efe0" money:self.countString tokenETH:nil decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:nil gasLimit:nil block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
-//
-//        }];
         [SVProgressHUD showWithStatus:@"正在转账"];
         ETWalletModel *model = [ETWalletManger getCurrentWallet];
-        [HSEther ETTest_hs_sendToAssress:self.address money:self.countString tokenETH:nil decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:nil gasLimit:nil block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
-            
+        [HSEther hs_sendToAssress:self.address ip:@"http://47.75.96.111:6666" money:self.countString tokenETH:nil decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:nil gasLimit:nil block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
             if (suc) {
                 [KMPProgressHUD showProgressWithText:@"转账成功"];
             }else {
-                 [KMPProgressHUD showProgressWithText:@"转账失败"];
+                [KMPProgressHUD showProgressWithText:@"转账失败"];
             }
-            
         }];
+
+//        [SVProgressHUD showWithStatus:@"正在转账"];
+//        ETWalletModel *model = [ETWalletManger getCurrentWallet];
+//        [HSEther ETTest_hs_sendToAssress:self.address money:self.countString tokenETH:nil decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:nil gasLimit:nil block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
+//
+//            if (suc) {
+//                [KMPProgressHUD showProgressWithText:@"转账成功"];
+//            }else {
+//                 [KMPProgressHUD showProgressWithText:@"转账失败"];
+//            }
+//
+//        }];
        
     }];
    

@@ -40,6 +40,11 @@
 @property (nonatomic,strong) ETHomeModel *homeModel;
 
 @property (nonatomic,strong) NSMutableArray *dataArr;
+
+@property (nonatomic,strong) ETHomeTableHeaderView *headerView;
+
+@property (nonatomic,strong) HomeHeaderView *homeHeader;
+
 @end
 
 @implementation ETAssetsViewController
@@ -84,13 +89,14 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hiddenAction:) name:@"HIDDENDATA" object:nil];
     
-    HomeHeaderView *headerView = [[HomeHeaderView alloc]init];
-    [headerView.topLeftBtn setTitle:[NSString stringWithFormat:@"%@ >",self.model.walletName] forState:UIControlStateNormal];
+    ETWalletModel *walletModel = [ETWalletManger getCurrentWallet];
+    self.homeHeader = [[HomeHeaderView alloc]init];
+    [self.homeHeader.topLeftBtn setTitle:[NSString stringWithFormat:@"%@ >",walletModel.walletName] forState:UIControlStateNormal];
     
-    headerView.delegate = self;
-    [self.view addSubview:headerView];
+    self.homeHeader.delegate = self;
+    [self.view addSubview:self.homeHeader];
     
-    [headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.homeHeader mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.top.equalTo(self.view.mas_top);
         make.right.left.equalTo(self.view);
@@ -102,7 +108,7 @@
     [self.view addSubview:self.detailTab];
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.top.equalTo(headerView.mas_bottom).offset(-20);
+        make.top.equalTo(self.homeHeader.mas_bottom).offset(-20);
         make.left.right.bottom.equalTo(self.view);
         
     }];
@@ -125,9 +131,16 @@
 #pragma mark - NET
 
 - (void)homeRequest {
+//     ETWalletModel *model1 = [ETWalletManger getCurrentWallet];
+//    [HTTPTool requestDotNetWithURLString:@"et_import" parameters:@{@"address":model1.address} type:kPOST success:^(id responseObject) {
+//        NSLog(@"%@",responseObject);
+//    } failure:^(NSError *error) {
+//        NSLog(@"%@",error);
+//    }];
+//    return;
     
-    
-    [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":@"0xa51c50c880d389b5bbd1c76308d3b544f54f39a4"} type:kPOST success:^(id responseObject) {
+    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
         
         [self.dataArr removeAllObjects];
         self.homeModel = [ETHomeModel mj_objectWithKeyValues:responseObject];
@@ -140,11 +153,12 @@
         }
         [self.dataArr addObjectsFromArray:self.homeModel.data.glod];
         
-        ETHomeTableHeaderView *tableVIew = [[ETHomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 370) andProgress:arr];
-        tableVIew.delegate = self;
-        tableVIew.clipsToBounds = YES;
-        tableVIew.layer.cornerRadius = 25;
-        self.detailTab.tableHeaderView = tableVIew;
+        self.headerView = [[ETHomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 370) andProgress:arr];
+        self.headerView.delegate = self;
+        self.headerView.clipsToBounds = YES;
+        self.headerView.layer.cornerRadius = 25;
+        self.detailTab.tableHeaderView = self.headerView;
+        self.headerView.moneyLb.text = self.homeModel.data.allnumber;
         
         [self.detailTab reloadData];
         
@@ -313,12 +327,16 @@
     
     NSMutableArray *arr = WALLET_ARR;
     ETWalletModel *model = arr[indexPath.row];
-    if (!model.isBackUp) {
-        ETBackUpWalletView *backView = [[ETBackUpWalletView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-        backView.delegate = self;
-        backView.model = model;
-        [[UIApplication sharedApplication].keyWindow addSubview:backView];
-    }else {
+    
+        if (!model.isBackUp) {
+        
+            ETBackUpWalletView *backView = [[ETBackUpWalletView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+            backView.delegate = self;
+            backView.model = model;
+            [[UIApplication sharedApplication].keyWindow addSubview:backView];
+        
+       }
+    
         /*--------------这一步是先取出当前钱包把当前状态改成不是当前的------------*/
         ETWalletModel *currentModel = [ETWalletManger getCurrentWallet];
         currentModel.isCurrentWallet = false;
@@ -328,7 +346,13 @@
         [ETWalletManger updateWallet:model];
         
         [ETWalletManger reloadData];
-    }
+        
+        self.headerView.moneyLb.text = self.homeModel.data.allnumber;
+        [self.homeHeader.topLeftBtn setTitle:[NSString stringWithFormat:@"%@ >",model.walletName] forState:UIControlStateNormal];
+        [self homeRequest];
+    
+    
+
 }
 
 #pragma mark - ETBackUpWalletViewDelegate

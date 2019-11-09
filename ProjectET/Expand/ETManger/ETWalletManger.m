@@ -71,6 +71,9 @@
     
     NSMutableArray *arr = WALLET_ARR;
     
+    if (arr == nil) {
+        arr = [NSMutableArray array];
+    }
     
     if (arr.count != 0) {
         for (int i = 0; i<arr.count; i++) {

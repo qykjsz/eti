@@ -59,7 +59,7 @@
     } onSuccess:^(id responseObject) {
         
         KMP_DOTNETModel *baseModel = [KMP_DOTNETModel mj_objectWithKeyValues:responseObject];
-        if (baseModel.code == -2) {
+        if (baseModel.code != 200) {
             NSLog(@"\n===========\n%@\n response data :\n%@\n===========",[NSString stringWithFormat:@"%@%@",APP_DOMAIN,URLString],responseObject);
             //登录信息异常，走failure
             if (failure) {
@@ -69,6 +69,10 @@
             return ;
         }
         
+        if (baseModel.code == 400) {
+            NSError * error = [[NSError alloc] initWithDomain:@"TOKEN_FAILURE" code:baseModel.code userInfo:@{NSLocalizedDescriptionKey:baseModel.message,NSLocalizedFailureReasonErrorKey:@"Token无效或为空",NSLocalizedRecoverySuggestionErrorKey:@"重新登录"}];
+            failure(error);
+        }
 //        if (baseModel.code != 0) {
 //            NSLog(@"\n===========\n%@\n response data :\n%@\n===========",[NSString stringWithFormat:@"%@%@",APP_DOMAIN,URLString],responseObject);
 //            //数据异常失败，走failure方法
