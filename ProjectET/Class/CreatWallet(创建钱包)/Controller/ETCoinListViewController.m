@@ -79,6 +79,7 @@
     
 
     ETChooseWalletcell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETChooseWalletcell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.subTtitlLb.font = [UIFont systemFontOfSize:14];
     cell.subTtitlLb.textColor = UIColorFromHEX(0x000000, 1);
     cell.titleLb.text = self.coninNameArr[indexPath.row];
