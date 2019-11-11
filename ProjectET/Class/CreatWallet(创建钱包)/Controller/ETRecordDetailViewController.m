@@ -13,11 +13,18 @@
 #import "ETRecordCell.h"
 
 #import "ETMyContactsCell.h"
+
+#import "ETTransListModel.h"
+
 @interface ETRecordDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *detailTab;
 
 @property (nonatomic,assign) BOOL isOpen;
+
+@property (nonatomic,strong) NSMutableArray *dataArr;
+
+@property (nonatomic,assign) NSInteger curretnPage;
 
 @end
 
@@ -47,14 +54,22 @@
     [super viewDidLoad];
     
     self.isOpen = YES;
+    self.dataArr = [NSMutableArray array];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eyeAction:) name:@"RECODEREYEACTION" object:nil];
     
-    self.detailTab.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-85);
+    self.detailTab.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 85 - 64 - 50);
     
     [self.view addSubview:self.detailTab];
     
 }
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    [self listRequest];
+}
 
 #pragma mark - Noticfication
 - (void)eyeAction:(NSNotification *)sender {
@@ -71,11 +86,47 @@
     [self.detailTab reloadData];
 }
 
+#pragma Mark- NET
+- (void)listRequest {
+    
+    /*
+     address 复制    [string]    是    地址
+     page    [string]    是    当前页数 从0开始
+     glod    [string]    是    查询币种 如 ETH 传0为全部币种
+     type    [string]    是    交易类型 1.转入 2.转入 3.全部
+     */
+    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:model.address forKey:@"address"];
+    [dict setValue:@(self.curretnPage) forKey:@"page"];
+    [dict setValue:@"0" forKey:@"glod"];
+    [dict setValue:self.type forKey:@"type"];
+    [HTTPTool requestDotNetWithURLString:@"et_recordorder" parameters:dict type:kPOST success:^(id responseObject) {
+        
+        
+        if (self.curretnPage == 0) {
+            [self.dataArr removeAllObjects];
+        }
+        ETTransListModel *model = [ETTransListModel mj_objectWithKeyValues:responseObject];
+        
+        [self.dataArr addObjectsFromArray:model.data.order];
+        
+        if (self.dataArr.count == [model.data.pages integerValue]) {
+            [self.detailTab.mj_footer endRefreshingWithNoMoreData];
+        }
+        
+        [self.detailTab reloadData];
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 12;
+    return self.dataArr.count;
     
 }
 
@@ -88,6 +139,8 @@
     
     ETRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETRecordCell"];
     if (self.isOpen) {
+        orderData *data = self.dataArr[indexPath.row];
+        cell.model = data;
         cell.moneydetail.text = @"289.8493";
         cell.statusDetail.text = @"已完成";
         cell.timeDetail.text = @"2019/10/22 12:23";
@@ -103,7 +156,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    orderData *data = self.dataArr[indexPath.row];
     ETTransferDetailViewController *tVC = [ETTransferDetailViewController new];
+    tVC.Id = data.Id;
+    tVC.glod = data.name;
     [self.navigationController pushViewController:tVC animated:YES];
 }
 
@@ -119,6 +175,23 @@
         [_detailTab registerClass:[ETRecordCell class] forCellReuseIdentifier:@"ETRecordCell"];
         _detailTab.clipsToBounds = YES;
         _detailTab.layer.cornerRadius = 25;
+        
+        WEAK_SELF(self);
+        _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            
+            STRONG_SELF(self);
+            self.curretnPage = 0;
+            [self.detailTab.mj_header endRefreshing];
+            [self listRequest];
+        }];
+        
+        _detailTab.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            
+            STRONG_SELF(self);
+            [self.detailTab.mj_footer endRefreshing];
+            self.curretnPage += 1;
+            [self listRequest];
+        }];
     }
     return _detailTab;
 }

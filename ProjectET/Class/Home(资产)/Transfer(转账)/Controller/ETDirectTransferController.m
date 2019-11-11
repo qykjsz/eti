@@ -167,27 +167,43 @@
             return;
         }
         
-        [SVProgressHUD showWithStatus:@"正在转账"];
-        ETWalletModel *model = [ETWalletManger getCurrentWallet];
-        [HSEther hs_sendToAssress:self.address ip:@"http://47.75.96.111:6666" money:self.countString tokenETH:nil decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:nil gasLimit:nil block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
-            if (suc) {
-                [KMPProgressHUD showProgressWithText:@"转账成功"];
-            }else {
-                [KMPProgressHUD showProgressWithText:@"转账失败"];
-            }
-        }];
+       
+        
+        [HTTPTool requestDotNetWithURLString:@"et_node" parameters:nil type:kPOST success:^(id responseObject) {
+            NSLog(@"%@",responseObject);
+            
 
+            NSString *urlString = responseObject[@"data"];
+            NSLog(@"%@",urlString);
+            
+            [SVProgressHUD showWithStatus:@"正在转账"];
+            ETWalletModel *model = [ETWalletManger getCurrentWallet];
+            [HSEther ETTest_hs_sendToAssress:self.address money:self.countString tokenETH:nil decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:nil gasLimit:nil block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
+
+                if (suc) {
+                    [KMPProgressHUD showProgressWithText:@"转账成功"];
+                }else {
+                    [KMPProgressHUD showProgressWithText:@"转账失败"];
+                }
+
+            }];
+            
+        } failure:^(NSError *error) {
+            
+        }];
+//
+        
 //        [SVProgressHUD showWithStatus:@"正在转账"];
 //        ETWalletModel *model = [ETWalletManger getCurrentWallet];
-//        [HSEther ETTest_hs_sendToAssress:self.address money:self.countString tokenETH:nil decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:nil gasLimit:nil block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
-//
+//        [HSEther hs_sendToAssress:self.address ip:@"http://47.75.96.111:6666" money:self.countString tokenETH:nil decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:nil gasLimit:nil block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
 //            if (suc) {
 //                [KMPProgressHUD showProgressWithText:@"转账成功"];
 //            }else {
-//                 [KMPProgressHUD showProgressWithText:@"转账失败"];
+//                [KMPProgressHUD showProgressWithText:@"转账失败"];
 //            }
-//
 //        }];
+
+
        
     }];
    

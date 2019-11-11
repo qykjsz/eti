@@ -10,7 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ETTransferDetailViewController : UIViewController
+@interface ETTransferDetailViewController : UIViewController\
+
+//glod 复制    [string]    是    币种
+//id    [string]    是    交易记录id
+
+@property (nonatomic,strong) NSString *glod;
+
+@property (nonatomic,strong) NSString *Id;
 
 @end
 

@@ -8,6 +8,13 @@
 
 #import "ETRecordCell.h"
 
+@interface ETRecordCell()
+
+@property (nonatomic,strong) UILabel *topLB;
+
+
+@end
+
 @implementation ETRecordCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -15,12 +22,12 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
         
-        UILabel *topLB = [[UILabel alloc]init];
-        topLB.text = @"转出ETH";
-        topLB.font = [UIFont systemFontOfSize:14];
-        topLB.textColor = UIColorFromHEX(0x00C176, 1);
-        [self.contentView addSubview:topLB];
-        [topLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        self.topLB = [[UILabel alloc]init];
+        self.topLB.text = @"转出ETH";
+        self.topLB.font = [UIFont systemFontOfSize:14];
+        self.topLB.textColor = UIColorFromHEX(0x00C176, 1);
+        [self.contentView addSubview:self.topLB];
+        [self.topLB mas_makeConstraints:^(MASConstraintMaker *make) {
            
             make.left.equalTo(self.contentView.mas_left).offset(15);
             make.top.equalTo(self.contentView.mas_top).offset(15);
@@ -51,7 +58,7 @@
         [moneyLb mas_makeConstraints:^(MASConstraintMaker *make) {
             
             make.left.equalTo(self.contentView.mas_left).offset(15);
-            make.top.equalTo(topLB.mas_bottom).offset(15);
+            make.top.equalTo(self.topLB.mas_bottom).offset(15);
             
         }];
         
@@ -128,6 +135,30 @@
     }
     
     return  self;
+}
+
+- (void)setModel:(orderData *)model {
+    // order->type    [string]    是    类型 1.转入 2.转出
+    _model = model;
+    if ([model.type isEqualToString:@"1"]) {
+        self.topLB.textColor = UIColorFromHEX(0x1D57FF, 1);
+        self.topLB.text = [NSString stringWithFormat:@"转入%@",model.name];
+    }else {
+         self.topLB.textColor = UIColorFromHEX(0x00C176, 1);
+        self.topLB.text = [NSString stringWithFormat:@"转入%@",model.name];
+    }
+    
+    self.moneydetail.text = model.amount;
+//    order->status    [string]    是    状态 1.成功 2.失败
+    NSInteger status = [model.status integerValue];
+    if (status == 1) {
+        self.statusDetail.text = @"已完成";
+    }else {
+        self.statusDetail.text = @"失败";
+    }
+    
+    self.timeDetail.text = model.time;
+    
 }
 
 @end

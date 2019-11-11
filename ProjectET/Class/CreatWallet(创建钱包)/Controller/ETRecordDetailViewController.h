@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ETRecordDetailViewController : HoverChildViewController
 
+//交易类型 1.转入 2.转入 3.全部
+@property (nonatomic,strong) NSString *type;
+
 @end
 
 NS_ASSUME_NONNULL_END

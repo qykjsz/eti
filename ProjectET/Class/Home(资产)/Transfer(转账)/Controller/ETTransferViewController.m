@@ -10,6 +10,7 @@
 #import "ETDirectTransferController.h"
 #import "ETScanViewController.h"
 #import "ETMyContactsController.h"
+#import "ETTransferDetailViewController.h"
 
 #import "ETTransferView.h"
 #import "ETTransferCell.h"
@@ -49,6 +50,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.dataArr = [NSMutableArray array];
     self.view.backgroundColor = [UIColor whiteColor];
     UIImageView *topImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zz_top_bg"]];
     topImage.userInteractionEnabled = YES;
@@ -159,6 +161,15 @@
     orderData *data = self.dataArr[indexPath.row];
     cell.model = data;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    orderData *data = self.dataArr[indexPath.row];
+    ETTransferDetailViewController *dVC = [ETTransferDetailViewController new];
+    dVC.Id = data.Id;
+    dVC.glod = data.name;
+    [self.navigationController pushViewController:dVC animated:YES];
 }
 
 #pragma mark - ETTransferViewDelegate

@@ -138,8 +138,11 @@
     /// 添加子控制器
     NSMutableArray *viewControllers = [NSMutableArray array];
     ETRecordDetailViewController *vc1 = [[ETRecordDetailViewController alloc]init];
+    vc1.type = @"3";
     ETRecordDetailViewController *vc2 = [[ETRecordDetailViewController alloc]init];
+    vc2.type = @"1";
     ETRecordDetailViewController *vc3 = [[ETRecordDetailViewController alloc]init];
+    vc3.type = @"2";
     [viewControllers addObject:vc1];
     [viewControllers addObject:vc2];
     [viewControllers addObject:vc3];
