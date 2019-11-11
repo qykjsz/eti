@@ -18,6 +18,9 @@
 
 @property (nonatomic,strong) UITableView *detailTab;
 
+@property (nonatomic,strong) NSMutableArray *dataArr;
+
+@property (nonatomic,assign) NSInteger curretnPage;
 
 
 @end
@@ -43,13 +46,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    
     self.view.backgroundColor = [UIColor whiteColor];
     UIImageView *topImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zz_top_bg"]];
     topImage.userInteractionEnabled = YES;
     [self.view addSubview:topImage];
     [topImage mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.left.top.right.equalTo(self.view);
         
     }];
@@ -61,7 +64,7 @@
     [popBtn addTarget:self action:@selector(popAction) forControlEvents:UIControlEventTouchUpInside];
     [topImage addSubview:popBtn];
     [popBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.top.equalTo(topImage.mas_top).offset(20);
         make.width.height.equalTo(@44);
         
@@ -73,7 +76,7 @@
     titleLb.textColor = UIColor.whiteColor;
     [topImage addSubview:titleLb];
     [titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.centerX.equalTo(topImage.mas_centerX);
         make.centerY.equalTo(popBtn.mas_centerY);
         
@@ -84,13 +87,30 @@
     [self.view addSubview:self.detailTab];
     self.detailTab.tableHeaderView = headerView;
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.top.equalTo(topImage.mas_bottom).offset(-20);
         make.left.right.bottom.equalTo(self.view);
         
     }];
     
-    
+    /*
+     address 复制    [string]    是    地址
+     page    [string]    是    当前页数 从0开始
+     glod    [string]    是    查询币种 如 ETH 传0为全部币种
+     type    [string]    是    交易类型 1.转入 2.转入 3.全部
+     */
+    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:model.address forKey:@"address"];
+    [dict setValue:@(self.curretnPage) forKey:@"page"];
+    [dict setValue:@"0" forKey:@"glod"];
+    [dict setValue:@"3" forKey:@"type"];
+    [HTTPTool requestDotNetWithURLString:@"et_recordorder" parameters:dict type:kPOST success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)popAction {
@@ -146,6 +166,21 @@
         [_detailTab registerClass:[ETTransferCell class] forCellReuseIdentifier:@"ETTransferCell"];
         _detailTab.clipsToBounds = YES;
         _detailTab.layer.cornerRadius = 25;
+        
+        WEAK_SELF(self);
+        _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            
+            STRONG_SELF(self);
+            [self.detailTab.mj_header endRefreshing];
+            
+        }];
+        
+        _detailTab.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            
+            STRONG_SELF(self);
+            [self.detailTab.mj_footer endRefreshing];
+            
+        }];
     }
     return _detailTab;
 }

@@ -64,6 +64,7 @@
             <connections>
                 <outlet property="iconImage" destination="BpW-2r-MIg" id="Io5-RT-KNX"/>
                 <outlet property="nameLb" destination="Z04-qS-swq" id="Nx7-sE-ISI"/>
+                <outlet property="walletTypeBtn" destination="4uW-rI-xGl" id="gvu-zg-RmZ"/>
             </connections>
             <point key="canvasLocation" x="-145" y="27"/>
         </tableViewCell>

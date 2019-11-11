@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class homeData,glodData,proportionData;
+@class homeData,glodData,proportionData,newsData;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ETHomeModel : NSObject
@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) NSString *allnumber;
 
 @property (nonatomic,strong) NSMutableArray <glodData *> *glod;
+
+@property (nonatomic,strong) NSMutableArray <newsData *> *news;
 
 @property (nonatomic,strong) proportionData *proportion;
 
@@ -57,6 +59,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) NSString *proportion;
 
 @property (nonatomic,strong) NSString *usdtnumber;
+
+@end
+
+@interface newsData : NSObject
+
+@property (nonatomic,strong) NSString *Id;
+
+@property (nonatomic,strong) NSString *name;
+
 
 @end
 NS_ASSUME_NONNULL_END

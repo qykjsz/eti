@@ -21,7 +21,7 @@
 
 + (NSDictionary *)mj_objectClassInArray {
     
-    return @{@"glod":[glodData class],@"proportion":[proportionData class]};
+    return @{@"glod":[glodData class],@"proportion":[proportionData class],@"news":[newsData class]};
 }
 
 
@@ -35,3 +35,14 @@
 @implementation proportionData
 
 @end
+
+@implementation newsData
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+    
+    return @{@"ID":@"id"};
+    
+}
+
+@end
+

@@ -10,15 +10,25 @@
 #import "ETAddContactsController.h"
 
 #import "ETMyContactsCell.h"
-
+#import "ETMycontactListModel.h"
 
 @interface ETMyContactsController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *detailTab;
 
+@property (nonatomic,strong) ETMycontactListModel *model;
+
 @end
 
 @implementation ETMyContactsController
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    [self listRequest];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,22 +37,42 @@
     self.title = @"联系人";
     [self.view addSubview:self.detailTab];
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.edges.equalTo(self.view);
         
     }];
+    
+}
+
+#pragma mark - NET
+
+- (void)listRequest {
+    
+    NSUUID *uuid = [UIDevice currentDevice].identifierForVendor;
+    [HTTPTool requestDotNetWithURLString:@"et_contactsall" parameters:@{@"contacts":uuid.UUIDString} type:kPOST success:^(id responseObject) {
+        
+        self.model = [ETMycontactListModel mj_objectWithKeyValues:responseObject];
+        [self.detailTab reloadData];
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 3;
+    return self.model.data.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ETMyContactsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETMyContactsCell"];
+    contactData *data = self.model.data[indexPath.row];
+    cell.nameLb.text = data.name;
+    [cell.walletTypeBtn setTitle:data.wallettype forState:UIControlStateNormal];
     return cell;
     
 }

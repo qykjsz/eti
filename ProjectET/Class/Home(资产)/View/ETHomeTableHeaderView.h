@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ETNoticeScrollView.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol ETHomeTableHeaderViewDelegate <NSObject>
@@ -37,6 +37,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithFrame:(CGRect)frame andProgress:(NSMutableArray *)progress;
 
 @property (nonatomic,weak) id <ETHomeTableHeaderViewDelegate> delegate;
+
+@property (nonatomic,strong) NSArray *contentArr;
+
+@property (nonatomic,strong) ETNoticeScrollView *scrollView;
 
 @end
 

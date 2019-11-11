@@ -81,7 +81,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.title = @"资产";
     self.isOpen = YES;
     self.model = [ETWalletManger getCurrentWallet];
@@ -97,7 +97,7 @@
     [self.view addSubview:self.homeHeader];
     
     [self.homeHeader mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.top.equalTo(self.view.mas_top);
         make.right.left.equalTo(self.view);
         make.height.mas_equalTo(164);
@@ -107,23 +107,23 @@
     
     [self.view addSubview:self.detailTab];
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.top.equalTo(self.homeHeader.mas_bottom).offset(-20);
         make.left.right.bottom.equalTo(self.view);
         
     }];
     
-//    NSMutableArray *arr = WALLET_ARR;
-//
-//    for (int i = 0; i<arr.count; i++) {
-//        ETWalletModel *model = arr[i];
-//        if (i == 0) {
-//            model.isCurrentWallet = YES;
-//        }else {
-//            model.isCurrentWallet = NO;
-//        }
-//        [ETWalletManger updateWallet:model];
-//    }
+    //    NSMutableArray *arr = WALLET_ARR;
+    //
+    //    for (int i = 0; i<arr.count; i++) {
+    //        ETWalletModel *model = arr[i];
+    //        if (i == 0) {
+    //            model.isCurrentWallet = YES;
+    //        }else {
+    //            model.isCurrentWallet = NO;
+    //        }
+    //        [ETWalletManger updateWallet:model];
+    //    }
     
 }
 
@@ -131,13 +131,13 @@
 #pragma mark - NET
 
 - (void)homeRequest {
-//     ETWalletModel *model1 = [ETWalletManger getCurrentWallet];
-//    [HTTPTool requestDotNetWithURLString:@"et_import" parameters:@{@"address":model1.address} type:kPOST success:^(id responseObject) {
-//        NSLog(@"%@",responseObject);
-//    } failure:^(NSError *error) {
-//        NSLog(@"%@",error);
-//    }];
-//    return;
+    //     ETWalletModel *model1 = [ETWalletManger getCurrentWallet];
+    //    [HTTPTool requestDotNetWithURLString:@"et_import" parameters:@{@"address":model1.address} type:kPOST success:^(id responseObject) {
+    //        NSLog(@"%@",responseObject);
+    //    } failure:^(NSError *error) {
+    //        NSLog(@"%@",error);
+    //    }];
+    //    return;
     
     ETWalletModel *model = [ETWalletManger getCurrentWallet];
     [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
@@ -154,6 +154,15 @@
         [self.dataArr addObjectsFromArray:self.homeModel.data.glod];
         
         self.headerView = [[ETHomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 370) andProgress:arr];
+        
+        NSMutableArray *dataArr = [NSMutableArray array];
+        if (self.homeModel.data.news.count != 0 ) {
+            for (newsData *data in self.homeModel.data.news) {
+                [dataArr addObject:data.name];
+            }
+            [self.headerView setContentArr:dataArr];
+        }
+        
         self.headerView.delegate = self;
         self.headerView.clipsToBounds = YES;
         self.headerView.layer.cornerRadius = 25;
@@ -199,7 +208,7 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-
+    
     UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
     backView.backgroundColor = UIColor.whiteColor;
     self.clickBtn = [[UIButton alloc]initWithFrame:CGRectMake(-15, 0, 150, 44)];
@@ -237,7 +246,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-
+    
     return 44;
 }
 
@@ -263,7 +272,7 @@
 #pragma mark - HomeHeaderViewDelegate
 
 -(void)HomeHeaderViewDelegateWithClickTag:(NSInteger)tag {
-
+    
     switch (tag) {
         case 0: {
             ETMyWalletView *view = [[ETMyWalletView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
@@ -328,31 +337,31 @@
     NSMutableArray *arr = WALLET_ARR;
     ETWalletModel *model = arr[indexPath.row];
     
-        if (!model.isBackUp) {
+    if (!model.isBackUp) {
         
-            ETBackUpWalletView *backView = [[ETBackUpWalletView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-            backView.delegate = self;
-            backView.model = model;
-            [[UIApplication sharedApplication].keyWindow addSubview:backView];
+        ETBackUpWalletView *backView = [[ETBackUpWalletView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        backView.delegate = self;
+        backView.model = model;
+        [[UIApplication sharedApplication].keyWindow addSubview:backView];
         
-       }
+    }
     
-        /*--------------这一步是先取出当前钱包把当前状态改成不是当前的------------*/
-        ETWalletModel *currentModel = [ETWalletManger getCurrentWallet];
-        currentModel.isCurrentWallet = false;
-        [ETWalletManger updateWallet:currentModel];
-        /*--------------这一步是把点击选中的钱包置为当前钱包------------*/
-        model.isCurrentWallet = YES;
-        [ETWalletManger updateWallet:model];
-        
-        [ETWalletManger reloadData];
-        
-        self.headerView.moneyLb.text = self.homeModel.data.allnumber;
-        [self.homeHeader.topLeftBtn setTitle:[NSString stringWithFormat:@"%@ >",model.walletName] forState:UIControlStateNormal];
-        [self homeRequest];
+    /*--------------这一步是先取出当前钱包把当前状态改成不是当前的------------*/
+    ETWalletModel *currentModel = [ETWalletManger getCurrentWallet];
+    currentModel.isCurrentWallet = false;
+    [ETWalletManger updateWallet:currentModel];
+    /*--------------这一步是把点击选中的钱包置为当前钱包------------*/
+    model.isCurrentWallet = YES;
+    [ETWalletManger updateWallet:model];
+    
+    [ETWalletManger reloadData];
+    
+    self.headerView.moneyLb.text = self.homeModel.data.allnumber;
+    [self.homeHeader.topLeftBtn setTitle:[NSString stringWithFormat:@"%@ >",model.walletName] forState:UIControlStateNormal];
+    [self homeRequest];
     
     
-
+    
 }
 
 #pragma mark - ETBackUpWalletViewDelegate
@@ -389,7 +398,7 @@
 
 
 - (void)coninSearch:(UITextField *)textfiled {
-
+    
     [self.dataArr removeAllObjects];
     for (glodData *data in self.homeModel.data.glod) {
         

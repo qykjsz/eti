@@ -30,7 +30,7 @@
         UIImageView *backImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"sy_qb_bg"]];
         [self addSubview:backImage];
         [backImage mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+            
             make.left.equalTo(self.mas_left).offset(15);
             make.top.equalTo(self.mas_top).offset(20);
             make.width.mas_equalTo(SCREEN_WIDTH - 30);
@@ -44,7 +44,7 @@
         titleLb.textColor = UIColorFromHEX(0x1A59FB, 1);
         [backImage addSubview:titleLb];
         [titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+            
             make.right.equalTo(backImage.mas_right).offset(-10);
             make.top.equalTo(backImage.mas_top);
             make.height.mas_equalTo(35);
@@ -54,7 +54,7 @@
         UIImageView *titileImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"sy_anquan"]];
         [backImage addSubview:titileImage];
         [titileImage mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+            
             make.centerY.equalTo(titleLb.mas_centerY);
             make.width.mas_equalTo(13);
             make.height.mas_equalTo(15);
@@ -64,7 +64,7 @@
         
         [self addSubview:self.tipsLb];
         [self.tipsLb mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+            
             make.top.equalTo(backImage.mas_top).offset(40);
             make.left.equalTo(backImage.mas_left).offset(15);
             
@@ -72,7 +72,7 @@
         
         [self addSubview:self.eyeBtn];
         [self.eyeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+            
             make.centerY.equalTo(self.tipsLb.mas_centerY);
             make.left.equalTo(self.tipsLb.mas_right).offset(10);
             make.width.mas_equalTo(50);
@@ -82,7 +82,7 @@
         
         [self addSubview:self.moneyLb];
         [self.moneyLb mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+            
             make.top.equalTo(self.tipsLb.mas_bottom).offset(15);
             make.left.equalTo(backImage.mas_left).offset(15);
             
@@ -91,7 +91,7 @@
         UIImageView *iamge = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"sy_yjt"]];
         [backImage addSubview:iamge];
         [iamge mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+            
             make.bottom.equalTo(self.moneyLb.mas_bottom);
             make.width.height.mas_equalTo(22);
             make.right.equalTo(backImage.mas_right).offset(-15);
@@ -100,7 +100,7 @@
         
         [self addSubview:self.todayLb];
         [self.todayLb mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+            
             make.top.equalTo(self.moneyLb.mas_bottom).offset(22);
             make.left.equalTo(backImage.mas_left).offset(15);
             
@@ -154,7 +154,7 @@
         
         [backImage addSubview:self.ETLB];
         [self.ETLB mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+            
             make.left.equalTo(backImage.mas_left).offset(15);
             make.top.equalTo(backImage.mas_top).offset(185);
             
@@ -162,7 +162,7 @@
         
         [backImage addSubview:self.ETHLB];
         [self.ETHLB mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+            
             make.left.equalTo(self.ETLB.mas_right).offset(10);
             make.centerY.equalTo(self.ETLB.mas_centerY);
             
@@ -191,7 +191,7 @@
         UIImageView *lunboImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"sy_gong"]];
         [self addSubview:lunboImage];
         [lunboImage mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+            
             make.left.equalTo(self.mas_left).offset(15);
             make.top.equalTo(backImage.mas_bottom).offset(20);
             make.width.mas_equalTo(57);
@@ -200,10 +200,10 @@
         }];
         
         
-        ETNoticeScrollView *scrollView = [[ETNoticeScrollView alloc]initWithFrame:CGRectMake(82, 260, 220, 15)];
-        scrollView.contents = @[@"暂无内容",@"暂无内容2",@"暂无内容3"];
-        [self addSubview:scrollView];
-
+        self.scrollView = [[ETNoticeScrollView alloc]initWithFrame:CGRectMake(82, 260, 220, 15)];
+        //        scrollView.contents = @[@"暂无内容",@"暂无内容2",@"暂无内容3"];
+        [self addSubview:self.scrollView];
+        
         
         UIButton *moreBtn = [[UIButton alloc]init];
         moreBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -60);
@@ -213,7 +213,7 @@
         [moreBtn addTarget:self action:@selector(moreClick) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:moreBtn];
         [moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+            
             make.right.equalTo(self.mas_right).offset(-10);
             make.centerY.equalTo(lunboImage.mas_centerY);
             make.width.equalTo(@100);
@@ -223,7 +223,7 @@
         ETTableHeaderSelectView *selectView = [ETTableHeaderSelectView new];
         [self addSubview:selectView];
         [selectView mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+            
             make.left.equalTo(self.mas_left);
             make.top.equalTo(lunboImage.mas_bottom).offset(10);
             make.right.equalTo(self.mas_right);
@@ -238,6 +238,14 @@
     
 }
 
+
+- (void)setContentArr:(NSArray *)contentArr {
+    
+    _contentArr = contentArr;
+    
+    [self.scrollView setContents:contentArr];
+    
+}
 
 #pragma Mark -lazy load
 - (UILabel *)tipsLb {

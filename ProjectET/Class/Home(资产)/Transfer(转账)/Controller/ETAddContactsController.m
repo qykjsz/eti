@@ -25,11 +25,15 @@
 
 @end
 
+
+
 @implementation ETAddContactsController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.title = @"新建联系人";
     [self.view addSubview:self.detailTab];
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -39,11 +43,7 @@
     }];
     
     
-    [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":@"0xa51c50c880d389b5bbd1c76308d3b544f54f39a4"} type:kPOST success:^(id responseObject) {
-        NSLog(@"111");
-    } failure:^(NSError *error) {
-        NSLog(@"222");
-    }];
+    
     
 }
 
@@ -64,17 +64,26 @@
         cell.textfiled.placeholder = @"请输入名字";
         cell.arrowImage.hidden = true;
         cell.scanBtn.hidden = true;
+        if (self.nameString) {
+            cell.textfiled.text = self.nameString;
+        }
     }else if (indexPath.row == 1) {
         cell.titleLb.text = @"备注";
         cell.textfiled.placeholder = @"选填";
         cell.arrowImage.hidden = true;
         cell.scanBtn.hidden = true;
+        if (self.backUpString) {
+            cell.textfiled.text = self.backUpString;
+        }
     }else if (indexPath.row == 2) {
         cell.titleLb.text = @"钱包底层";
         cell.arrowImage.hidden = false;
         cell.scanBtn.hidden = true;
         cell.textfiled.placeholder = @"请选择钱包底层";
         cell.textfiled.userInteractionEnabled = false;
+        if (self.bottomAddress) {
+            cell.textfiled.text = self.bottomAddress;
+        }
     }else if (indexPath.row == 3) {
         cell.titleLb.text = @"钱包地址";
         cell.arrowImage.hidden = true;
@@ -84,7 +93,7 @@
         }
     }
     return cell;
-
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -95,9 +104,10 @@
         ETCoinListViewController *lVC = [ETCoinListViewController new];
         WEAK_SELF(self)
         [lVC setBlock:^(NSString * _Nonnull name) {
-           
+            
             STRONG_SELF(self);
-            self.bottomAddress = name;
+            // 暂时写死
+            self.bottomAddress = @"ETH";
             [self.detailTab reloadData];
         }];
         [self.navigationController pushViewController:lVC animated:YES];
@@ -126,6 +136,52 @@
 
 
 - (void)clickAction {
+    NSUUID *uuid = [UIDevice currentDevice].identifierForVendor;
+    //    NSLog(@"uuid 1 = %@",uuid.UUIDString);
+    if ([Tools checkStringIsEmpty:self.nameString]) {
+        [SVProgressHUD showInfoWithStatus:@"请输入名字"];
+        return;
+    }
+    
+    //    if ([Tools checkStringIsEmpty:self.nameString]) {
+    //        [SVProgressHUD showInfoWithStatus:@"请输入名字"];
+    //        return;
+    //    }
+    
+    if ([Tools checkStringIsEmpty:self.bottomAddress]) {
+        [SVProgressHUD showInfoWithStatus:@"请选择底层"];
+        return;
+    }
+    
+    if ([Tools checkStringIsEmpty:self.walletAddress]) {
+        [SVProgressHUD showInfoWithStatus:@"请输入钱包地址"];
+        return;
+    }
+    /*
+     contacts 复制    [string]    是    设备号
+     name    [string]    是    联系人姓名
+     remarks    [string]    是    备注（可以为空）
+     wallettype    [string]    是    不知道你们怎么选 后台只能添加ETH
+     address    [string]    是    地址
+     */
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:uuid.UUIDString forKey:@"contacts"];
+    [dict setValue:self.nameString forKey:@"name"];
+    [dict setValue:self.backUpString forKey:@"remarks"];
+    [dict setValue:self.bottomAddress forKey:@"wallettype"];
+    [dict setValue:self.walletAddress forKey:@"address"];
+    [HTTPTool requestDotNetWithURLString:@"et_addcontacts" parameters:dict type:kPOST success:^(id responseObject) {
+        
+        [SVProgressHUD showInfoWithStatus:@"创建成功"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
+        
+    } failure:^(NSError *error) {
+        [SVProgressHUD showInfoWithStatus:@"创建失败"];
+    }];
+    
     
     
 }
@@ -143,7 +199,7 @@
         }
             break;
         case 2: {
-            
+            //            self.
         }
             break;
         case 3: {

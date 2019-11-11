@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ETMyContactsCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *iconImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLb;
-
+@property (weak, nonatomic) IBOutlet UIButton *walletTypeBtn;
 @end
 
 NS_ASSUME_NONNULL_END
