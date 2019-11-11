@@ -88,6 +88,13 @@
     [self.detailTab reloadData];
 }
 
+
+- (void)setTemg:(NSString *)temg {
+    
+    _temg = temg;
+    
+    NSLog("%@",temg);
+}
 #pragma Mark- NET
 - (void)listRequest {
     

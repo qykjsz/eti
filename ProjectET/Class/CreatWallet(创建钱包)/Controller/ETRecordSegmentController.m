@@ -19,6 +19,7 @@
 
 @property (nonatomic,strong) ETTransListModel *model;
 
+@property (nonatomic,strong) ETRecordDetailViewController *vc1;
 @end
 
 @implementation ETRecordSegmentController
@@ -102,7 +103,7 @@
     }];
     
     UILabel *titleLb = [[UILabel alloc]init];
-    titleLb.text = @"ETH";
+    titleLb.text = self.coinName;
     titleLb.font = [UIFont systemFontOfSize:18];
     titleLb.textColor = UIColor.whiteColor;
     [topImage addSubview:titleLb];
@@ -130,6 +131,7 @@
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:@"搜索" attributes:
                                              @{NSForegroundColorAttributeName:UIColorFromHEX(0xc2c2c2, 1),
                                                NSFontAttributeName:[UIFont boldSystemFontOfSize:12]}];
+    [textField addTarget:self action:@selector(textfieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     textField.attributedPlaceholder = attrString;
     textField.backgroundColor = UIColorFromHEX(0xF5F5F5, 1);
     textField.clipsToBounds = YES;
@@ -172,16 +174,16 @@
     
     /// 添加子控制器
     NSMutableArray *viewControllers = [NSMutableArray array];
-    ETRecordDetailViewController *vc1 = [[ETRecordDetailViewController alloc]init];
-    vc1.type = @"3";
-    vc1.coinName = self.coinName;
+    self.vc1 = [[ETRecordDetailViewController alloc]init];
+    self.vc1.type = @"3";
+    self.vc1.coinName = self.coinName;
     ETRecordDetailViewController *vc2 = [[ETRecordDetailViewController alloc]init];
     vc2.type = @"1";
     vc2.coinName = self.coinName;
     ETRecordDetailViewController *vc3 = [[ETRecordDetailViewController alloc]init];
     vc3.type = @"2";
     vc3.coinName = self.coinName;
-    [viewControllers addObject:vc1];
+    [viewControllers addObject:self.vc1];
     [viewControllers addObject:vc2];
     [viewControllers addObject:vc3];
     
@@ -198,6 +200,11 @@
     [self.view addSubview:[self footerView]];
     
       [self listRequest];
+}
+
+- (void)textfieldDidChange:(UITextField *)textfiled {
+    
+    self.vc1.temg = textfiled.text;
 }
 
 - (void)eyeAction:(NSNotification *)sender {

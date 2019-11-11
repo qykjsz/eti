@@ -168,8 +168,14 @@
 #pragma mark - ETTransferDetailCellDelegate
 - (void)ETTransferDetailCellDelegateWithRowPath:(NSIndexPath *)rowPath {
     
-    [Tools copyClickWithText:@"宝宝"];
-
+    if (rowPath.row == 2) {
+         [Tools copyClickWithText:self.model.data.otheraddress];
+    }else if (rowPath.row == 3) {
+         [Tools copyClickWithText:self.model.data.address];
+    }else {
+         [Tools copyClickWithText:self.model.data.hashString];
+    }
+   
 }
 
 #pragma mark - lazy load

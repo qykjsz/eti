@@ -7,7 +7,7 @@
 //
 
 #import "ETWalletDetailView.h"
-
+#import "ETHomeModel.h"
 @implementation ETWalletDetailView
 
 - (instancetype)initWithFrame:(CGRect)frame andProgress:(NSMutableArray *)progress {
@@ -88,81 +88,156 @@
         NSInteger lineWidth = SCREEN_WIDTH - 70;
         NSInteger curretnX = 0;
         
-        for (int i = 0; i < progress.count; i++) {
-            
-            CGFloat pro = [progress[i] floatValue];
-            
-            switch (i) {
-                case 0: {
-                    UIView *lineView = [[UIView alloc] init];
-                    lineView.frame = CGRectMake(left, top, lineWidth, 4);
-                    lineView.backgroundColor = UIColorFromHEX(0xEA566D, 1);
-                    curretnX = 20 + lineWidth*pro;
-                    [self addSubview:lineView];
-                    break;
-                }
-                case 1:{
-                    UIView *lineView = [[UIView alloc] init];
-                    lineView.frame = CGRectMake(left, top, (lineWidth*(1.0-pro)), 4);
-                    lineView.backgroundColor = UIColorFromHEX(0xFFB632, 1);
-                    [self addSubview:lineView];
-                    curretnX = curretnX + lineWidth*pro;
-                    break;
-                }
-                case 2:{
-                    UIView *lineView = [[UIView alloc] init];
-                    lineView.frame = CGRectMake(left, top, lineWidth-(lineWidth*(pro)), 4);
-                    lineView.backgroundColor = UIColorFromHEX(0x93AEFC, 1);
-                    [self addSubview:lineView];
-                    curretnX = curretnX + lineWidth*pro;
-                    break;
-                }
-                case 3:{
-                    UIView *lineView = [[UIView alloc] init];
-                    lineView.frame = CGRectMake(left, top, (lineWidth*(pro)), 4);
-                    lineView.backgroundColor = UIColor.whiteColor;
-                    [self addSubview:lineView];
-                    break;
-                }
-                default:
-                    break;
+        NSMutableArray *colorArr = [NSMutableArray array];
+        for (int i = 0; i<progress.count; i++) {
+            proportionData *data = progress[i];
+            UIColor *color = [Tools getRandomColor];
+            [colorArr addObject:color];
+            data.color = color;
+            if (i == 0) {
+                data.bili = [NSString stringWithFormat:@"%.1f",12.0];
+            }else if (i == 1) {
+                data.bili = [NSString stringWithFormat:@"%.1f",30.0];
+            }else {
+                data.bili = [NSString stringWithFormat:@"%.1f",58.0];
             }
+            
+            
+        }
+        // 第一根背景色为黑色的进度条，只做展示，方便后面的叠加
+        UIView *grayView = [[UIView alloc]initWithFrame:CGRectMake(left, top, lineWidth, 4)];
+        grayView.clipsToBounds = YES;
+        grayView.layer.cornerRadius = 2;
+        grayView.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.3];
+        [self addSubview:grayView];
+        
+        // 为数组排序,把最大的放在第一个
+        NSArray *resultStrArray = [progress sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            proportionData *model1 = obj1;
+            proportionData *model2 = obj2;
+            NSComparisonResult result = [model1.bili localizedStandardCompare:model2.bili];
+            return  result == NSOrderedAscending; // 升序
+            //        return  result == NSOrderedSame; // 不变
+            //        return result == NSOrderedAscending;  // 降序
+        }];
+        NSLog(@"%@",resultStrArray);
+        
+        for (int i = 0 ; i<resultStrArray.count; i++) {
+            proportionData *data = resultStrArray[i];
+            CGFloat width = [data.bili floatValue]/100;
+            UIView *lineView = [[UIView alloc] init];
+            lineView.frame = CGRectMake(0, 0, width*lineWidth, 4);
+            lineView.backgroundColor = data.color;
+            [grayView addSubview:lineView];
         }
         
-        [backImage addSubview:self.ETLB];
-        [self.ETLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        for (int i = 0; i<progress.count; i++) {
             
-            make.left.equalTo(backImage.mas_left).offset(15);
-            make.top.equalTo(backImage.mas_top).offset(185);
             
-        }];
+            
+            proportionData *data = progress[i];
+            
+            NSString *textString = [NSString stringWithFormat:@"·%@ %@%%",data.name,data.bili];
+            UILabel *detailLb = [[UILabel alloc]init];
+            
+            detailLb.textColor = UIColorFromHEX(0xF5F5F5, 1);
+            detailLb.font = [UIFont systemFontOfSize:10];
+            //            detailLb.textAlignment = NSTextAlignmentCenter;
+            NSMutableAttributedString *AttributedStr = [[NSMutableAttributedString alloc] initWithString:textString];
+            [AttributedStr addAttribute:NSForegroundColorAttributeName
+                                  value:colorArr[i]
+                                  range:NSMakeRange(0, 1)];
+            [AttributedStr addAttribute:NSForegroundColorAttributeName
+                                  value:UIColor.whiteColor
+                                  range:NSMakeRange(1, textString.length - 1)];
+            [AttributedStr addAttribute:NSFontAttributeName
+                                  value:[UIFont systemFontOfSize:10]
+                                  range:NSMakeRange(0 , textString.length - 1)];
+            [AttributedStr addAttribute:NSFontAttributeName
+                                  value:[UIFont systemFontOfSize:30]
+                                  range:NSMakeRange(0 , 1)];
+            [AttributedStr addAttribute:NSBaselineOffsetAttributeName value:@(-7) range:NSMakeRange(0, 1)];
+            detailLb.attributedText = AttributedStr;
+            detailLb.frame = CGRectMake(30 + i*10 + 78*i, 200, 78, 25);
+            [self addSubview:detailLb];
+            
+        }
         
-        [backImage addSubview:self.ETHLB];
-        [self.ETHLB mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.left.equalTo(self.ETLB.mas_right).offset(10);
-            make.centerY.equalTo(self.ETLB.mas_centerY);
-            
-            
-        }];
-        
-        [backImage addSubview:self.USDTLB];
-        [self.USDTLB mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.left.equalTo(self.ETHLB.mas_right).offset(10);
-            make.centerY.equalTo(self.ETHLB.mas_centerY);
-            
-            
-        }];
-        
-        [backImage addSubview:self.EOSLB];
-        [self.EOSLB mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.left.equalTo(self.USDTLB.mas_right).offset(10);
-            make.centerY.equalTo(self.USDTLB.mas_centerY);
-            
-            
-        }];
+//        for (int i = 0; i < progress.count; i++) {
+//
+//            CGFloat pro = [progress[i] floatValue];
+//
+//            switch (i) {
+//                case 0: {
+//                    UIView *lineView = [[UIView alloc] init];
+//                    lineView.frame = CGRectMake(left, top, lineWidth, 4);
+//                    lineView.backgroundColor = UIColorFromHEX(0xEA566D, 1);
+//                    curretnX = 20 + lineWidth*pro;
+//                    [self addSubview:lineView];
+//                    break;
+//                }
+//                case 1:{
+//                    UIView *lineView = [[UIView alloc] init];
+//                    lineView.frame = CGRectMake(left, top, (lineWidth*(1.0-pro)), 4);
+//                    lineView.backgroundColor = UIColorFromHEX(0xFFB632, 1);
+//                    [self addSubview:lineView];
+//                    curretnX = curretnX + lineWidth*pro;
+//                    break;
+//                }
+//                case 2:{
+//                    UIView *lineView = [[UIView alloc] init];
+//                    lineView.frame = CGRectMake(left, top, lineWidth-(lineWidth*(pro)), 4);
+//                    lineView.backgroundColor = UIColorFromHEX(0x93AEFC, 1);
+//                    [self addSubview:lineView];
+//                    curretnX = curretnX + lineWidth*pro;
+//                    break;
+//                }
+//                case 3:{
+//                    UIView *lineView = [[UIView alloc] init];
+//                    lineView.frame = CGRectMake(left, top, (lineWidth*(pro)), 4);
+//                    lineView.backgroundColor = UIColor.whiteColor;
+//                    [self addSubview:lineView];
+//                    break;
+//                }
+//                default:
+//                    break;
+//            }
+//        }
+//
+//        [backImage addSubview:self.ETLB];
+//        [self.ETLB mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//            make.left.equalTo(backImage.mas_left).offset(15);
+//            make.top.equalTo(backImage.mas_top).offset(185);
+//
+//        }];
+//
+//        [backImage addSubview:self.ETHLB];
+//        [self.ETHLB mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//            make.left.equalTo(self.ETLB.mas_right).offset(10);
+//            make.centerY.equalTo(self.ETLB.mas_centerY);
+//
+//
+//        }];
+//
+//        [backImage addSubview:self.USDTLB];
+//        [self.USDTLB mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//            make.left.equalTo(self.ETHLB.mas_right).offset(10);
+//            make.centerY.equalTo(self.ETHLB.mas_centerY);
+//
+//
+//        }];
+//
+//        [backImage addSubview:self.EOSLB];
+//        [self.EOSLB mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//            make.left.equalTo(self.USDTLB.mas_right).offset(10);
+//            make.centerY.equalTo(self.USDTLB.mas_centerY);
+//
+//
+//        }];
     }
     
     return self;

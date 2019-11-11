@@ -14,6 +14,8 @@
 #import "ETChangePassWordController.h"
 #import "ETVerifyPassWrodView.h"
 
+#import "ETHomeModel.h"
+
 @interface ETWalletDetailController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *detailTab;
@@ -21,6 +23,10 @@
 @property (nonatomic,strong) NSString *walletName;
 
 @property (nonatomic,assign) BOOL isOpen;
+
+@property (nonatomic,strong) ETHomeModel *homeModel;
+
+@property (nonatomic,strong) ETWalletDetailView *headerView;
 
 @end
 
@@ -41,6 +47,47 @@
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
     
+}
+
+#pragma mark - NET
+
+- (void)homeRequest {
+    //     ETWalletModel *model1 = [ETWalletManger getCurrentWallet];
+    //    [HTTPTool requestDotNetWithURLString:@"et_import" parameters:@{@"address":model1.address} type:kPOST success:^(id responseObject) {
+    //        NSLog(@"%@",responseObject);
+    //    } failure:^(NSError *error) {
+    //        NSLog(@"%@",error);
+    //    }];
+    //    return;
+    
+    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
+        
+       
+        self.homeModel = [ETHomeModel mj_objectWithKeyValues:responseObject];
+        
+        NSLog(@"%@",responseObject);
+        
+        
+        self.headerView = [[ETWalletDetailView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 240) andProgress:self.homeModel.data.proportion];
+        self.headerView.clipsToBounds = YES;
+        self.headerView.layer.cornerRadius = 25;
+        self.detailTab.tableHeaderView = self.headerView;
+        self.headerView.clipsToBounds = YES;
+        self.headerView.layer.cornerRadius = 25;
+        self.detailTab.tableHeaderView = self.headerView;
+        self.headerView.moneyLb.text = self.homeModel.data.allnumber;
+        if ([self.homeModel.data.today floatValue] >= 0) {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.homeModel.data.today];
+        }else {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 -%@",self.homeModel.data.today];
+        }
+        
+        [self.detailTab reloadData];
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)viewDidLoad {
@@ -85,20 +132,10 @@
         
     }];
     
-    NSMutableArray *arr = [[NSMutableArray alloc]init];
-    [arr addObject:@"0.03"];
-    [arr addObject:@"0.06"];
-    [arr addObject:@"0.11"];
-    [arr addObject:@"0.8"];
-    
-    
-    ETWalletDetailView *headerView = [[ETWalletDetailView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 230) andProgress:arr];
-    headerView.clipsToBounds = YES;
-    headerView.layer.cornerRadius = 25;
+   
     
   
     [self.view addSubview:self.detailTab];
-    self.detailTab.tableHeaderView = headerView;
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.equalTo(topImage.mas_bottom).offset(-20);
@@ -118,6 +155,9 @@
         make.left.right.bottom.equalTo(self.view);
         make.height.mas_equalTo(44);
     }];
+    
+    [self homeRequest];
+    
 }
 
 
