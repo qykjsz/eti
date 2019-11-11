@@ -153,7 +153,7 @@
         }
         [self.dataArr addObjectsFromArray:self.homeModel.data.glod];
         
-        self.headerView = [[ETHomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 370) andProgress:arr];
+        self.headerView = [[ETHomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 370) andProgress:self.homeModel.data.proportion];
         
         NSMutableArray *dataArr = [NSMutableArray array];
         if (self.homeModel.data.news.count != 0 ) {
@@ -168,7 +168,12 @@
         self.headerView.layer.cornerRadius = 25;
         self.detailTab.tableHeaderView = self.headerView;
         self.headerView.moneyLb.text = self.homeModel.data.allnumber;
-        
+        if ([self.homeModel.data.today floatValue] >= 0) {
+             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.homeModel.data.today];
+        }else {
+             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 -%@",self.homeModel.data.today];
+        }
+       
         [self.detailTab reloadData];
         
     } failure:^(NSError *error) {

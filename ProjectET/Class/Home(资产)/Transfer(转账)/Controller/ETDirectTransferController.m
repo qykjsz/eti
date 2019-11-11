@@ -116,6 +116,15 @@
 - (void)ETDirectTranAddressCellDelegateAddressClick {
     
     ETMyContactsController *cVC = [ETMyContactsController new];
+    WEAK_SELF(self);
+    [cVC setAddressBlcok:^(NSString * _Nonnull address) {
+       
+        STRONG_SELF(self);
+        self.address = address;
+        [self.detailTab reloadData];
+        
+    }];
+    
     [self.navigationController pushViewController:cVC animated:YES];
     
 }

@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ETMyContactsController : UIViewController
 
+
+@property (nonatomic,strong) void(^addressBlcok)(NSString *address);
+
 @end
 
 NS_ASSUME_NONNULL_END

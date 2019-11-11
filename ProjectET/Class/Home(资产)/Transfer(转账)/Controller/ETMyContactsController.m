@@ -8,6 +8,7 @@
 
 #import "ETMyContactsController.h"
 #import "ETAddContactsController.h"
+#import "ETDirectTransferController.h"
 
 #import "ETMyContactsCell.h"
 #import "ETMycontactListModel.h"
@@ -80,6 +81,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    contactData *data = self.model.data[indexPath.row];
+    if (self.addressBlcok) {
+        self.addressBlcok(data.address);
+        [self.navigationController popViewControllerAnimated:YES];
+    }else {
+        ETDirectTransferController *dVC = [ETDirectTransferController new];
+        dVC.address = data.address;
+        [self.navigationController pushViewController:dVC animated:YES];
+
+    }
+    
+   
     
 }
 
@@ -87,6 +100,7 @@
     
     return 70;
 }
+
 
 - (UIView *)footerView{
     

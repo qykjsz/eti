@@ -31,20 +31,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSMutableArray <newsData *> *news;
 
-@property (nonatomic,strong) proportionData *proportion;
+@property (nonatomic,strong) NSMutableArray <proportionData *> *proportion;
+
+@property (nonatomic,strong) NSString *today;
 
 
 @end
 
 @interface proportionData : NSObject
 
-@property (nonatomic,strong) NSString *ETH;
+@property (nonatomic,strong) NSString *bili;
 
-@property (nonatomic,strong) NSString *HOPE;
+@property (nonatomic,strong) NSString *name;
 
-@property (nonatomic,strong) NSString *USDT;
-
-@property (nonatomic,strong) NSString *translate;
+@property (nonatomic,strong) UIColor *color;
 
 @end
 
