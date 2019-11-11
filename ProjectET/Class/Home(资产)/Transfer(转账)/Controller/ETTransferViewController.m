@@ -14,6 +14,8 @@
 #import "ETTransferView.h"
 #import "ETTransferCell.h"
 
+#import "ETTransListModel.h"
+
 @interface ETTransferViewController ()<UITableViewDelegate,UITableViewDataSource,ETTransferViewDelegate>
 
 @property (nonatomic,strong) UITableView *detailTab;
@@ -93,6 +95,12 @@
         
     }];
     
+    [self listRequest];
+}
+
+#pragma Mark- NET
+- (void)listRequest {
+    
     /*
      address 复制    [string]    是    地址
      page    [string]    是    当前页数 从0开始
@@ -106,7 +114,20 @@
     [dict setValue:@"0" forKey:@"glod"];
     [dict setValue:@"3" forKey:@"type"];
     [HTTPTool requestDotNetWithURLString:@"et_recordorder" parameters:dict type:kPOST success:^(id responseObject) {
-        NSLog(@"%@",responseObject);
+       
+        
+        if (self.curretnPage == 0) {
+            [self.dataArr removeAllObjects];
+        }
+        ETTransListModel *model = [ETTransListModel mj_objectWithKeyValues:responseObject];
+        
+        [self.dataArr addObjectsFromArray:model.data.order];
+        
+        if (self.dataArr.count == [model.data.pages integerValue]) {
+            [self.detailTab.mj_footer endRefreshingWithNoMoreData];
+        }
+        
+        [self.detailTab reloadData];
         
     } failure:^(NSError *error) {
         
@@ -122,7 +143,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 10;
+    return self.dataArr.count;
     
 }
 
@@ -135,6 +156,8 @@
     
     ETTransferCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETTransferCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    orderData *data = self.dataArr[indexPath.row];
+    cell.model = data;
     return cell;
 }
 
@@ -171,15 +194,17 @@
         _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             
             STRONG_SELF(self);
+            self.curretnPage = 0;
             [self.detailTab.mj_header endRefreshing];
-            
+            [self listRequest];
         }];
         
         _detailTab.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
             
             STRONG_SELF(self);
             [self.detailTab.mj_footer endRefreshing];
-            
+            self.curretnPage += 1;
+            [self listRequest];
         }];
     }
     return _detailTab;

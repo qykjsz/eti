@@ -8,6 +8,16 @@
 
 #import "ETTransferCell.h"
 
+@interface ETTransferCell()
+
+@property (nonatomic,strong) UILabel *moneydetail;
+
+@property (nonatomic,strong) UILabel *statusDetail;
+
+@property (nonatomic,strong) UILabel *timeDetail;
+
+@end
+
 @implementation ETTransferCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -58,28 +68,28 @@
         }];
         
         
-        UILabel *moneydetail = [[UILabel alloc]init];
-        moneydetail.text = @"289.8493";
-        moneydetail.textAlignment = NSTextAlignmentLeft;
-        moneydetail.font = [UIFont systemFontOfSize:14];
-        moneydetail.textColor = UIColorFromHEX(0x333333, 1);
-        [self.contentView addSubview:moneydetail];
+        self.moneydetail = [[UILabel alloc]init];
+        self.moneydetail.text = @"289.8493";
+        self.moneydetail.textAlignment = NSTextAlignmentLeft;
+        self.moneydetail.font = [UIFont systemFontOfSize:14];
+        self.moneydetail.textColor = UIColorFromHEX(0x333333, 1);
+        [self.contentView addSubview:self.moneydetail];
         
-        UILabel *statusDetail = [[UILabel alloc]init];
-        statusDetail.text = @"已完成";
-        statusDetail.textAlignment = NSTextAlignmentCenter;
-        statusDetail.font = [UIFont systemFontOfSize:14];
-        statusDetail.textColor = UIColorFromHEX(0x333333, 1);
-        [self.contentView addSubview:statusDetail];
+        self.statusDetail = [[UILabel alloc]init];
+        self.statusDetail.text = @"已完成";
+        self.statusDetail.textAlignment = NSTextAlignmentCenter;
+        self.statusDetail.font = [UIFont systemFontOfSize:14];
+        self.statusDetail.textColor = UIColorFromHEX(0x333333, 1);
+        [self.contentView addSubview:self.statusDetail];
         
-        UILabel *timeDetail = [[UILabel alloc]init];
-        timeDetail.text = @"2019/10/22 12:23";
-        timeDetail.textAlignment = NSTextAlignmentRight;
-        timeDetail.font = [UIFont systemFontOfSize:14];
-        timeDetail.textColor = UIColorFromHEX(0x333333, 1);
-        [self.contentView addSubview:timeDetail];
+        self.timeDetail = [[UILabel alloc]init];
+        self.timeDetail.text = @"2019/10/22 12:23";
+        self.timeDetail.textAlignment = NSTextAlignmentRight;
+        self.timeDetail.font = [UIFont systemFontOfSize:14];
+        self.timeDetail.textColor = UIColorFromHEX(0x333333, 1);
+        [self.contentView addSubview:self.timeDetail];
         
-        [moneydetail mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.moneydetail mas_makeConstraints:^(MASConstraintMaker *make) {
            
             make.left.equalTo(moneyLb.mas_left);
             make.top.equalTo(moneyLb.mas_bottom).offset(15).priority(200);
@@ -87,17 +97,17 @@
             
         }];
         
-        [statusDetail mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.statusDetail mas_makeConstraints:^(MASConstraintMaker *make) {
            
             make.centerX.equalTo(self.contentView.mas_centerX);
-            make.centerY.equalTo(moneydetail.mas_centerY);
+            make.centerY.equalTo(self.moneydetail.mas_centerY);
             
         }];
         
-        [timeDetail mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.timeDetail mas_makeConstraints:^(MASConstraintMaker *make) {
            
             make.right.equalTo(self.contentView.mas_right).offset(-15);
-            make.centerY.equalTo(moneydetail.mas_centerY);
+            make.centerY.equalTo(self.moneydetail.mas_centerY);
             
         }];
         
@@ -114,6 +124,19 @@
     }
     
     return  self;
+}
+- (void)setModel:(orderData *)model {
+    
+    _model = model;
+    self.moneydetail.text = model.amount;
+    NSInteger type = [model.status integerValue];
+    if (type == 1) {
+        self.statusDetail.text = @"已完成";
+    }else{
+        self.statusDetail.text = @"失败";
+    }
+    
+    self.timeDetail.text = model.time;
 }
 
 @end

@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ETTransListModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ETTransferCell : UITableViewCell
+
+@property (nonatomic,strong) orderData *model;
 
 @end
 
