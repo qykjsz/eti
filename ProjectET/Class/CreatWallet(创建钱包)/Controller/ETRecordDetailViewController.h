@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 //交易类型 1.转入 2.转入 3.全部
 @property (nonatomic,strong) NSString *type;
 
+@property (nonatomic,strong) NSString *coinName;
+
 @end
 
 NS_ASSUME_NONNULL_END

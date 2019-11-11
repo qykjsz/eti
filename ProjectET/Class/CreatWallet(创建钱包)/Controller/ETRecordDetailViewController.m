@@ -26,6 +26,8 @@
 
 @property (nonatomic,assign) NSInteger curretnPage;
 
+@property (nonatomic,strong) ETTransListModel *model;
+
 @end
 
 @implementation ETRecordDetailViewController
@@ -99,7 +101,7 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setValue:model.address forKey:@"address"];
     [dict setValue:@(self.curretnPage) forKey:@"page"];
-    [dict setValue:@"0" forKey:@"glod"];
+    [dict setValue:self.coinName forKey:@"glod"];
     [dict setValue:self.type forKey:@"type"];
     [HTTPTool requestDotNetWithURLString:@"et_recordorder" parameters:dict type:kPOST success:^(id responseObject) {
         
@@ -107,11 +109,11 @@
         if (self.curretnPage == 0) {
             [self.dataArr removeAllObjects];
         }
-        ETTransListModel *model = [ETTransListModel mj_objectWithKeyValues:responseObject];
+        self.model = [ETTransListModel mj_objectWithKeyValues:responseObject];
         
-        [self.dataArr addObjectsFromArray:model.data.order];
+        [self.dataArr addObjectsFromArray:self.model.data.order];
         
-        if (self.dataArr.count == [model.data.pages integerValue]) {
+        if (self.dataArr.count == [self.model.data.pages integerValue]) {
             [self.detailTab.mj_footer endRefreshingWithNoMoreData];
         }
         

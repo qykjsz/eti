@@ -258,8 +258,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    glodData *data = self.dataArr[indexPath.row];
     ETRecordSegmentController *dVC = [ETRecordSegmentController new];
+    dVC.coinName = data.name;
     dVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:dVC animated:YES];
     

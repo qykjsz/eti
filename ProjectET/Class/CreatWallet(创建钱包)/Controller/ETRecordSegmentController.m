@@ -6,7 +6,7 @@
 #import "ETGatheringViewController.h"
 #import "ETDirectTransferController.h"
 #import "ETRecordHeaderView.h"
-
+#import "ETTransListModel.h"
 @interface ETRecordSegmentController ()<HoverPageViewControllerDelegate>
 @property(nonatomic, strong) UIView *indicator;
 @property(nonatomic, strong) HoverPageViewController *hoverPageViewController;
@@ -16,6 +16,8 @@
 @property (nonatomic,strong) UIView *pageTitleView;
 
 @property (nonatomic,strong) ETRecordHeaderView *headerView;
+
+@property (nonatomic,strong) ETTransListModel *model;
 
 @end
 
@@ -36,6 +38,39 @@
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
     
+}
+
+#pragma Mark- NET
+- (void)listRequest {
+    
+    /*
+     address 复制    [string]    是    地址
+     page    [string]    是    当前页数 从0开始
+     glod    [string]    是    查询币种 如 ETH 传0为全部币种
+     type    [string]    是    交易类型 1.转入 2.转入 3.全部
+     */
+    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:model.address forKey:@"address"];
+    [dict setValue:@(0) forKey:@"page"];
+    [dict setValue:self.coinName forKey:@"glod"];
+    [dict setValue:@"3" forKey:@"type"];
+    [HTTPTool requestDotNetWithURLString:@"et_recordorder" parameters:dict type:kPOST success:^(id responseObject) {
+        
+        
+
+        self.model = [ETTransListModel mj_objectWithKeyValues:responseObject];
+        self.headerView.moneyLb.text = self.model.data.number;
+        self.headerView.subMoneyLb.text = [NSString stringWithFormat:@"≈$ %@",self.model.data.usdtnumber];
+        if ([self.model.data.today floatValue] >= 0) {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.model.data.today];
+        }else {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 -%@",self.model.data.today];
+        }
+       
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)viewDidLoad {
@@ -139,10 +174,13 @@
     NSMutableArray *viewControllers = [NSMutableArray array];
     ETRecordDetailViewController *vc1 = [[ETRecordDetailViewController alloc]init];
     vc1.type = @"3";
+    vc1.coinName = self.coinName;
     ETRecordDetailViewController *vc2 = [[ETRecordDetailViewController alloc]init];
     vc2.type = @"1";
+    vc2.coinName = self.coinName;
     ETRecordDetailViewController *vc3 = [[ETRecordDetailViewController alloc]init];
     vc3.type = @"2";
+    vc3.coinName = self.coinName;
     [viewControllers addObject:vc1];
     [viewControllers addObject:vc2];
     [viewControllers addObject:vc3];
@@ -158,6 +196,8 @@
     [self.view addSubview:self.hoverPageViewController.view];
     
     [self.view addSubview:[self footerView]];
+    
+      [self listRequest];
 }
 
 - (void)eyeAction:(NSNotification *)sender {
