@@ -23,6 +23,7 @@
 #import "backUpMoneyViewController.h"
 #import "ETCoinListViewController.h"
 #import "ETScanViewController.h"
+#import "ETProclamationListController.h"
 
 #import "ETMyWalletView.h"
 #import "ETHomeModel.h"
@@ -272,6 +273,14 @@
     ETWalletDetailController *DVC = [ETWalletDetailController new];
     DVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:DVC animated:YES];
+    
+}
+
+- (void)ETHomeTableHeaderViewDelegateMoreClickAction {
+    
+    ETProclamationListController *pVC = [ETProclamationListController new];
+    pVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:pVC animated:YES];
     
 }
 

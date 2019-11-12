@@ -312,7 +312,9 @@
 }
 
 - (void)moreClick {
-    
+    if ([self.delegate respondsToSelector:@selector(ETHomeTableHeaderViewDelegateMoreClickAction)]) {
+        [self.delegate ETHomeTableHeaderViewDelegateMoreClickAction];
+    }
 }
 
 
