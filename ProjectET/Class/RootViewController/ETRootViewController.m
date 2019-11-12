@@ -8,6 +8,9 @@
 
 #import "ETRootViewController.h"
 #import "ETAssetsViewController.h"
+#import "MineViewController.h"
+#import "FoundViewController.h"
+#import "ConsultViewController.h"
 
 @interface ETRootViewController ()<UITabBarControllerDelegate>
 
@@ -33,19 +36,35 @@
     ETAssetsViewController *homeVC = [ETAssetsViewController new];
     UINavigationController * homeNav = [[UINavigationController alloc] initWithRootViewController:homeVC];
     
+
     
-    ETAssetsViewController * mallVC = [ETAssetsViewController new];
+//    ETAssetsViewController * mallVC = [ETAssetsViewController new];
+//    UINavigationController * mallNav = [[UINavigationController alloc] initWithRootViewController:mallVC];
+//    
+//    
+//    ETAssetsViewController * medicineVC = [ETAssetsViewController new];
+//    UINavigationController * medicineNav = [[UINavigationController alloc] initWithRootViewController:medicineVC];
+//    
+//    
+//    ETAssetsViewController * shoppingCartListVc  = [ETAssetsViewController new];
+//    UINavigationController * shoppingCartListNav = [[UINavigationController alloc] initWithRootViewController:shoppingCartListVc];
+//    
+//    ETAssetsViewController * meVC = [ETAssetsViewController new];
+
+    //商城购药
+    ConsultViewController * mallVC = [ConsultViewController new];
     UINavigationController * mallNav = [[UINavigationController alloc] initWithRootViewController:mallVC];
     
-    
-    ETAssetsViewController * medicineVC = [ETAssetsViewController new];
+    //发现
+    FoundViewController * medicineVC = [FoundViewController new];
     UINavigationController * medicineNav = [[UINavigationController alloc] initWithRootViewController:medicineVC];
     
-    
-    ETAssetsViewController * shoppingCartListVc  = [ETAssetsViewController new];
+    //购物车
+    FoundViewController * shoppingCartListVc  = [FoundViewController new];
     UINavigationController * shoppingCartListNav = [[UINavigationController alloc] initWithRootViewController:shoppingCartListVc];
     
-    ETAssetsViewController * meVC = [ETAssetsViewController new];
+    //我的
+    MineViewController * meVC = [MineViewController new];
     UINavigationController * meNav = [[UINavigationController alloc] initWithRootViewController:meVC];
     
     self.viewControllers = @[homeNav, mallNav, medicineNav, shoppingCartListNav, meNav];
