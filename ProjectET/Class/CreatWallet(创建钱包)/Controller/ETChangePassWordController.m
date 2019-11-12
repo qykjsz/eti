@@ -98,7 +98,7 @@
 
 - (void)clickAction {
     
-    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    ETWalletModel *model = [ETWalletManger getModelIndex:self.selectTag];
     
     if ([self.oldPassWord stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length == 0) {
         [KMPProgressHUD showText:@"请输入当前密码"];

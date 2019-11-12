@@ -399,6 +399,18 @@
 #pragma mark - NoticeAction
 - (void)hiddenAction:(NSNotification *)notice {
     self.isOpen = [notice.object[@"isOpen"] boolValue];
+    
+    if (self.isOpen) {
+        self.headerView.moneyLb.text = self.homeModel.data.allnumber;
+        if ([self.homeModel.data.today floatValue] >= 0) {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.homeModel.data.today];
+        }else {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 -%@",self.homeModel.data.today];
+        }
+    }else {
+        self.headerView.moneyLb.text = @"***.**";
+        self.headerView.todayLb.text = @"*****";
+    }
     [self.detailTab reloadData];
 }
 

@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ETWalletDetailController : UIViewController
 
+@property (nonatomic,assign) NSInteger selectWallect;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -60,7 +60,7 @@
     //    }];
     //    return;
     
-    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    ETWalletModel *model = [ETWalletManger getModelIndex:self.selectWallect];
     [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
         
        
@@ -93,7 +93,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    ETWalletModel *model = [ETWalletManger getModelIndex:self.selectWallect];
     self.walletName = model.walletName;
     self.title = model.walletName;
     
@@ -230,6 +230,7 @@
     
     if (indexPath.row == 1) {
         ETChangePassWordController *vc = [ETChangePassWordController new];
+        vc.selectTag = self.selectWallect;
         [self.navigationController pushViewController:vc animated:YES];
     }
     if (indexPath.row == 2) {
@@ -237,6 +238,7 @@
         ETVerifyPassWrodView *view = [[ETVerifyPassWrodView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         [view setSuccess:^{
             ETImportSyaoController *vc = [ETImportSyaoController new];
+            vc.selectTag = self.selectWallect;
             [self.navigationController pushViewController:vc animated:true];
         }];
         [[UIApplication sharedApplication].keyWindow addSubview:view];
@@ -247,6 +249,7 @@
         ETVerifyPassWrodView *view = [[ETVerifyPassWrodView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         [view setSuccess:^{
             ETKeystoreImportController *vc = [ETKeystoreImportController new];
+            vc.selectTag = self.selectWallect;
             [self.navigationController pushViewController:vc animated:YES];
         }];
         [[UIApplication sharedApplication].keyWindow addSubview:view];

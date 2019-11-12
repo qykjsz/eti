@@ -58,7 +58,7 @@
     [self.view addSubview:self.backScro];
     
     
-    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    ETWalletModel *model = [ETWalletManger getModelIndex:self.selectTag];
     
     self.leftView = [[ETKeystoreImporView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     self.leftView.syao.text = model.keyStore;

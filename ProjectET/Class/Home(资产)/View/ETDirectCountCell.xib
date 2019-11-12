@@ -78,7 +78,7 @@
                 <outlet property="textfiled" destination="xUE-LS-o3S" id="3mf-j2-TrP"/>
                 <outlet property="titleLb" destination="rHE-2r-l9U" id="YPH-WC-nQG"/>
             </connections>
-            <point key="canvasLocation" x="-237.68115942028987" y="53.90625"/>
+            <point key="canvasLocation" x="-594.20289855072474" y="54.575892857142854"/>
         </tableViewCell>
     </objects>
 </document>

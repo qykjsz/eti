@@ -100,12 +100,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ETTransferDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETTransferDetailCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.rowPath = indexPath;
     cell.delegate = self;
     switch (indexPath.row) {
         case 0: {
             cell.titleLb.text = @"金额:";
-            cell.detailLb.text = [NSString stringWithFormat:@"%@%@",self.model.data.name,self.model.data.amount];;
+            cell.detailLb.text = [NSString stringWithFormat:@"%@%@",self.model.data.amount,self.model.data.name];;
             cell.clickBtn.hidden = YES;
             cell.subDetailLb.text = @"";
             cell.lineImage.hidden = YES;

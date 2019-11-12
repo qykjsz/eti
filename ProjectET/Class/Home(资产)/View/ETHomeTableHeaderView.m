@@ -396,13 +396,13 @@
     
     sender.selected = !sender.selected;
     
-    if (!sender.selected) {
-        self.moneyLb.text = @"***.**";
-        self.todayLb.text = @"***.**";
-    }else {
-        self.moneyLb.text = @"999.99";
-        self.todayLb.text = @"今日 +120.36";
-    }
+//    if (!sender.selected) {
+//        self.moneyLb.text = @"***.**";
+//        self.todayLb.text = @"***.**";
+//    }else {
+//        self.moneyLb.text = @"999.99";
+//        self.todayLb.text = @"今日 +120.36";
+//    }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"HIDDENDATA" object:@{@"isOpen":@(sender.selected)}];
 }

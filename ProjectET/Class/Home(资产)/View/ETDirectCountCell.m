@@ -13,6 +13,10 @@
 @implementation ETDirectCountCell
 - (IBAction)coninTypeClick:(id)sender {
     
+    if ([self.delegate respondsToSelector:@selector(ETDirectCountCellDelegateCoinClick)]) {
+        [self.delegate ETDirectCountCellDelegateCoinClick];
+    }
+    
 }
 - (IBAction)allClickAction:(id)sender {
     
