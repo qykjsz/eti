@@ -93,7 +93,11 @@
     
     _temg = temg;
     
-    NSLog("%@",temg);
+    for (orderData *data in self.dataArr) {
+        if ([data.hashString isEqualToString:temg]) {
+            
+        }
+    }
 }
 #pragma Mark- NET
 - (void)listRequest {

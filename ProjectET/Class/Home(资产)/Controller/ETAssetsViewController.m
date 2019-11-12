@@ -172,7 +172,7 @@
         if ([self.homeModel.data.today floatValue] >= 0) {
              self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.homeModel.data.today];
         }else {
-             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 -%@",self.homeModel.data.today];
+             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.homeModel.data.today];
         }
        
         [self.detailTab reloadData];
@@ -414,7 +414,7 @@
         if ([self.homeModel.data.today floatValue] >= 0) {
             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.homeModel.data.today];
         }else {
-            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 -%@",self.homeModel.data.today];
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.homeModel.data.today];
         }
     }else {
         self.headerView.moneyLb.text = @"***.**";

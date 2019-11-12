@@ -128,6 +128,12 @@
     model.password = self.changePassWordString;
     [ETWalletManger updateWallet:model];
     
+    [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.navigationController popViewControllerAnimated:YES];
+    });
+    
+    
 }
 
 #pragma mark - ETAddContactsCellDelegate

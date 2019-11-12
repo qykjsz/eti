@@ -16,7 +16,7 @@
 
 #import "ETHomeModel.h"
 
-@interface ETWalletDetailController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ETWalletDetailController ()<UITableViewDelegate,UITableViewDataSource,ETWalletDetailViewDelegate>
 
 @property (nonatomic,strong) UITableView *detailTab;
 
@@ -70,6 +70,7 @@
         
         
         self.headerView = [[ETWalletDetailView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 240) andProgress:self.homeModel.data.proportion];
+        self.headerView.delegate = self;
         self.headerView.clipsToBounds = YES;
         self.headerView.layer.cornerRadius = 25;
         self.detailTab.tableHeaderView = self.headerView;
@@ -80,7 +81,7 @@
         if ([self.homeModel.data.today floatValue] >= 0) {
             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.homeModel.data.today];
         }else {
-            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 -%@",self.homeModel.data.today];
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.homeModel.data.today];
         }
         
         [self.detailTab reloadData];
@@ -178,6 +179,22 @@
     });
   
     
+}
+
+#pragma mark - ETWalletDetailViewDelegate
+- (void)ETWalletDetailViewDelegateHidden:(BOOL)isOpen {
+    
+    if (isOpen) {
+        self.headerView.moneyLb.text = self.homeModel.data.allnumber;
+        if ([self.homeModel.data.today floatValue] >= 0) {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.homeModel.data.today];
+        }else {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.homeModel.data.today];
+        }
+    }else {
+        self.headerView.moneyLb.text = @"***.**";
+        self.headerView.todayLb.text = @"*****";
+    }
 }
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 
