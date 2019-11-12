@@ -135,6 +135,8 @@
 		4F3F9063236C0F5E009AAA24 /* ETRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9062236C0F5E009AAA24 /* ETRecordDetailViewController.m */; };
 		4F3F9066236C1046009AAA24 /* ETRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9065236C1046009AAA24 /* ETRecordCell.m */; };
 		4F3F9069236C128D009AAA24 /* ETRecordHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9068236C128D009AAA24 /* ETRecordHeaderView.m */; };
+		4F5D107F237AC0D500B13D00 /* UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5D107E237AC0D500B13D00 /* UUID.m */; };
+		4F5D1084237AC12E00B13D00 /* KeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5D1083237AC12E00B13D00 /* KeyChainStore.m */; };
 		4FA0A305236FCA270038F880 /* WMZPageLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A2F4236FCA270038F880 /* WMZPageLoopView.m */; };
 		4FA0A306236FCA270038F880 /* WMZPageNaviBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A2F5236FCA270038F880 /* WMZPageNaviBtn.m */; };
 		4FA0A308236FCA270038F880 /* NSObject+SafeKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A2FB236FCA270038F880 /* NSObject+SafeKVO.m */; };
@@ -467,6 +469,10 @@
 		4F3F9065236C1046009AAA24 /* ETRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRecordCell.m; sourceTree = "<group>"; };
 		4F3F9067236C128D009AAA24 /* ETRecordHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETRecordHeaderView.h; sourceTree = "<group>"; };
 		4F3F9068236C128D009AAA24 /* ETRecordHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRecordHeaderView.m; sourceTree = "<group>"; };
+		4F5D107D237AC0D500B13D00 /* UUID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UUID.h; sourceTree = "<group>"; };
+		4F5D107E237AC0D500B13D00 /* UUID.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UUID.m; sourceTree = "<group>"; };
+		4F5D1082237AC12E00B13D00 /* KeyChainStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyChainStore.h; sourceTree = "<group>"; };
+		4F5D1083237AC12E00B13D00 /* KeyChainStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyChainStore.m; sourceTree = "<group>"; };
 		4FA0A2F2236FCA270038F880 /* WMZPageLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageLoopView.h; sourceTree = "<group>"; };
 		4FA0A2F3236FCA270038F880 /* WMZPageNaviBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageNaviBtn.h; sourceTree = "<group>"; };
 		4FA0A2F4236FCA270038F880 /* WMZPageLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageLoopView.m; sourceTree = "<group>"; };
@@ -912,6 +918,10 @@
 				4FFFB91523792A4D00AE9BFF /* ETTransListModel.m */,
 				4FFFB9182379390600AE9BFF /* ETTransferDetailModel.h */,
 				4FFFB9192379390600AE9BFF /* ETTransferDetailModel.m */,
+				4F5D107D237AC0D500B13D00 /* UUID.h */,
+				4F5D107E237AC0D500B13D00 /* UUID.m */,
+				4F5D1082237AC12E00B13D00 /* KeyChainStore.h */,
+				4F5D1083237AC12E00B13D00 /* KeyChainStore.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1799,6 +1809,7 @@
 				4F1942F2236D69E100AD907E /* ETVerifyPassWrodView.m in Sources */,
 				4F2307062366EB600046A136 /* ETAssetsViewController.m in Sources */,
 				4F1A22342372BF5500FDD5D9 /* HTTPTool.m in Sources */,
+				4F5D107F237AC0D500B13D00 /* UUID.m in Sources */,
 				4F3F904F236AE073009AAA24 /* ETCoinMainViewController.m in Sources */,
 				8855DACE2378037500F25DA4 /* MineRecordViewController.m in Sources */,
 				4F3F9055236AE62A009AAA24 /* ETCoinListViewController.m in Sources */,
@@ -1875,6 +1886,7 @@
 				4F3F9046236AB672009AAA24 /* ETKeyStoreController.m in Sources */,
 				4F128C692367E1A00004284D /* ETHomeTableHeaderView.m in Sources */,
 				4FA0A32723717A8A0038F880 /* ETScanViewController.m in Sources */,
+				4F5D1084237AC12E00B13D00 /* KeyChainStore.m in Sources */,
 				4F2306C72366DE9D0046A136 /* AppDelegate.m in Sources */,
 				047A9DE923700A5900FB5132 /* SharedDefaults.m in Sources */,
 				4F1A224A2372CF8100FDD5D9 /* HTTPTool+KMP_DOTNETRequest.m in Sources */,

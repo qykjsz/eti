@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSString *time;
 
+@property (nonatomic,strong) NSString *islook;
+
 
 @end
 

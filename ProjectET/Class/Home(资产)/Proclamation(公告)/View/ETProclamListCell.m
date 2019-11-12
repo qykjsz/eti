@@ -92,5 +92,10 @@
     self.timeLb.text = model.time;
     self.titleLb.text = model.name;
     
+    if ([model.islook isEqualToString:@"1"]) {
+        self.docView.backgroundColor = UIColorFromHEX(0xDBDBDB, 1);
+    }else {
+        self.docView.backgroundColor = UIColorFromHEX(0x1B5BFB, 1);
+    }
 }
 @end

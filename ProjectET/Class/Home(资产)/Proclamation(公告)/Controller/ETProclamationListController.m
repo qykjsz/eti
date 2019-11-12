@@ -12,6 +12,7 @@
 #import "ETProclamListCell.h"
 
 #import "ETNewsListModel.h"
+#import "UUID.h"
 
 @interface ETProclamationListController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -45,7 +46,8 @@
 
 - (void)newsRequest {
     
-    [HTTPTool requestDotNetWithURLString:@"et_news" parameters:@{@"page":@(self.currentPage)} type:kPOST success:^(id responseObject) {
+    NSString *uuidString = [UUID getUUID];
+    [HTTPTool requestDotNetWithURLString:@"et_notice" parameters:@{@"page":@(self.currentPage),@"contacts":uuidString} type:kPOST success:^(id responseObject) {
         
         if (self.currentPage == 0) {
             [self.dataArr removeAllObjects];

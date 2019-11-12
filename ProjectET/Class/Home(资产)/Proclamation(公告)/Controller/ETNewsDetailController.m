@@ -7,7 +7,7 @@
 //
 
 #import "ETNewsDetailController.h"
-
+#import "UUID.h"
 @interface ETNewsDetailController ()
 
 @end
@@ -19,8 +19,8 @@
     
     
     self.title = @"新闻详情";
-    
-    [HTTPTool requestDotNetWithURLString:@"et_newscontent" parameters:@{@"id":self.Id} type:kPOST success:^(id responseObject) {
+    NSString *uuidString = [UUID getUUID];
+    [HTTPTool requestDotNetWithURLString:@"et_noticeone" parameters:@{@"id":self.Id,@"contacts":uuidString} type:kPOST success:^(id responseObject) {
         
         UILabel *titleLb = [[UILabel alloc]init];
         titleLb.numberOfLines = 0;
@@ -69,9 +69,13 @@
             
         }];
         
+        NSString *detailText = responseObject[@"data"][@"text"];
+        NSDictionary *dic = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};
+        NSMutableAttributedString *mAStr = [[NSMutableAttributedString alloc] initWithData:[detailText dataUsingEncoding:NSUnicodeStringEncoding] options:dic documentAttributes:nil error:nil];
+        
         titleLb.text = responseObject[@"data"][@"name"];
         timeLb.text = responseObject[@"data"][@"time"];
-        detailLb.text = responseObject[@"data"][@"text"];
+        detailLb.attributedText = mAStr;
         
         
     } failure:^(NSError *error) {
