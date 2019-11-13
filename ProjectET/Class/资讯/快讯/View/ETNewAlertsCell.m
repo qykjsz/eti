@@ -23,8 +23,11 @@
     self.lab_conten.text = model.content;
     if ([model.islook isEqual: @"0"]) {
         [self.lab_conten setNumberOfLines:4];
+        [self.lab_all setHidden:NO];
+        
     }else {
         [self.lab_conten setNumberOfLines:0];
+         [self.lab_all setHidden:YES];
     }
 }
 

@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETNewInformationViewController">
             <connections>
                 <outlet property="btn_select" destination="c8X-17-nri" id="9ke-Vj-6nW"/>
+                <outlet property="constrain_top" destination="aYm-0G-I7r" id="203-Wv-fsq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="view_background" destination="71t-Co-S7G" id="bpX-te-sCI"/>
                 <outlet property="view_slide" destination="bcL-cj-kn1" id="AkS-27-j5I"/>
@@ -128,6 +129,7 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="71t-Co-S7G" secondAttribute="bottom" id="z8v-1V-QE5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="115.94202898550725" y="35.491071428571423"/>
         </view>
     </objects>
     <resources>

@@ -19,6 +19,7 @@
 @property (nonatomic, strong) ETNewAlertsViewController *aleVC;
 @property (nonatomic, strong) ETNewArticleViewController *artVC;
 @property (nonatomic, strong) ETNewMarketViewController *markVC;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrain_top;
 
 @end
 
@@ -43,6 +44,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (kStatusBarHeight == 64){
+        self.constrain_top.constant = -20;
+    }else {
+        self.constrain_top.constant = -44;
+    }
     [self layoutUI];
 }
 
