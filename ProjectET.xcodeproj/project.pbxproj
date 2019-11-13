@@ -23,6 +23,22 @@
 		047A9DED23700A5900FB5132 /* CloudKeychainSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DDB23700A5900FB5132 /* CloudKeychainSigner.m */; };
 		047A9DEE23700A5900FB5132 /* UIImage+resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A9DDE23700A5900FB5132 /* UIImage+resize.m */; };
 		047A9DF823700A9200FB5132 /* ethers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047A9DF523700A5F00FB5132 /* ethers.framework */; };
+		04DB9ED6237BE69B002796C3 /* ETNewAlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9ED4237BE69B002796C3 /* ETNewAlertsViewController.m */; };
+		04DB9ED7237BE69B002796C3 /* ETNewAlertsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB9ED5237BE69B002796C3 /* ETNewAlertsViewController.xib */; };
+		04DB9EDB237BE6C4002796C3 /* ETNewInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9ED9237BE6C4002796C3 /* ETNewInformationViewController.m */; };
+		04DB9EDC237BE6C4002796C3 /* ETNewInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB9EDA237BE6C4002796C3 /* ETNewInformationViewController.xib */; };
+		04DB9EE0237BEAE4002796C3 /* ETNewMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9EDE237BEAE3002796C3 /* ETNewMarketViewController.m */; };
+		04DB9EE1237BEAE4002796C3 /* ETNewMarketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB9EDF237BEAE4002796C3 /* ETNewMarketViewController.xib */; };
+		04DB9EE5237BEAFB002796C3 /* ETNewArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9EE3237BEAFB002796C3 /* ETNewArticleViewController.m */; };
+		04DB9EE6237BEAFB002796C3 /* ETNewArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB9EE4237BEAFB002796C3 /* ETNewArticleViewController.xib */; };
+		04DB9EEA237BF68B002796C3 /* ETNewAlertsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9EE8237BF68B002796C3 /* ETNewAlertsCell.m */; };
+		04DB9EEB237BF68B002796C3 /* ETNewAlertsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB9EE9237BF68B002796C3 /* ETNewAlertsCell.xib */; };
+		04DB9EEE237BFA3A002796C3 /* ETNewAlertsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9EED237BFA3A002796C3 /* ETNewAlertsModel.m */; };
+		04DB9EF2237C067A002796C3 /* ETNewArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9EF0237C067A002796C3 /* ETNewArticleCell.m */; };
+		04DB9EF3237C067A002796C3 /* ETNewArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB9EF1237C067A002796C3 /* ETNewArticleCell.xib */; };
+		04DB9EF6237C081B002796C3 /* ETNewArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9EF5237C081B002796C3 /* ETNewArticleModel.m */; };
+		04DB9EFB237C0CC7002796C3 /* ETNewArticleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9EF9237C0CC7002796C3 /* ETNewArticleDetailsViewController.m */; };
+		04DB9EFC237C0CC7002796C3 /* ETNewArticleDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB9EFA237C0CC7002796C3 /* ETNewArticleDetailsViewController.xib */; };
 		4F0E4D8D2373B3FC00E83618 /* ETHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */; };
 		4F0E4D932373EFF000E83618 /* ETTransferDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D922373EFF000E83618 /* ETTransferDetailViewController.m */; };
 		4F0E4D992373F5BB00E83618 /* ETTransferDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D982373F5BB00E83618 /* ETTransferDetailCell.m */; };
@@ -250,6 +266,31 @@
 		047A9DDE23700A5900FB5132 /* UIImage+resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+resize.m"; sourceTree = "<group>"; };
 		047A9DDF23700A5900FB5132 /* Wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wallet.h; sourceTree = "<group>"; };
 		047A9DEF23700A5F00FB5132 /* ethers.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ethers.xcodeproj; path = "ethers.objc-master/ethers.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		04DB9ED3237BE69B002796C3 /* ETNewAlertsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewAlertsViewController.h; sourceTree = "<group>"; };
+		04DB9ED4237BE69B002796C3 /* ETNewAlertsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewAlertsViewController.m; sourceTree = "<group>"; };
+		04DB9ED5237BE69B002796C3 /* ETNewAlertsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewAlertsViewController.xib; sourceTree = "<group>"; };
+		04DB9ED8237BE6C4002796C3 /* ETNewInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewInformationViewController.h; sourceTree = "<group>"; };
+		04DB9ED9237BE6C4002796C3 /* ETNewInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewInformationViewController.m; sourceTree = "<group>"; };
+		04DB9EDA237BE6C4002796C3 /* ETNewInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewInformationViewController.xib; sourceTree = "<group>"; };
+		04DB9EDD237BEAE3002796C3 /* ETNewMarketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewMarketViewController.h; sourceTree = "<group>"; };
+		04DB9EDE237BEAE3002796C3 /* ETNewMarketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewMarketViewController.m; sourceTree = "<group>"; };
+		04DB9EDF237BEAE4002796C3 /* ETNewMarketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewMarketViewController.xib; sourceTree = "<group>"; };
+		04DB9EE2237BEAFB002796C3 /* ETNewArticleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewArticleViewController.h; sourceTree = "<group>"; };
+		04DB9EE3237BEAFB002796C3 /* ETNewArticleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewArticleViewController.m; sourceTree = "<group>"; };
+		04DB9EE4237BEAFB002796C3 /* ETNewArticleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewArticleViewController.xib; sourceTree = "<group>"; };
+		04DB9EE7237BF68B002796C3 /* ETNewAlertsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewAlertsCell.h; sourceTree = "<group>"; };
+		04DB9EE8237BF68B002796C3 /* ETNewAlertsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewAlertsCell.m; sourceTree = "<group>"; };
+		04DB9EE9237BF68B002796C3 /* ETNewAlertsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewAlertsCell.xib; sourceTree = "<group>"; };
+		04DB9EEC237BFA3A002796C3 /* ETNewAlertsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewAlertsModel.h; sourceTree = "<group>"; };
+		04DB9EED237BFA3A002796C3 /* ETNewAlertsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewAlertsModel.m; sourceTree = "<group>"; };
+		04DB9EEF237C067A002796C3 /* ETNewArticleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewArticleCell.h; sourceTree = "<group>"; };
+		04DB9EF0237C067A002796C3 /* ETNewArticleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewArticleCell.m; sourceTree = "<group>"; };
+		04DB9EF1237C067A002796C3 /* ETNewArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewArticleCell.xib; sourceTree = "<group>"; };
+		04DB9EF4237C081B002796C3 /* ETNewArticleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewArticleModel.h; sourceTree = "<group>"; };
+		04DB9EF5237C081B002796C3 /* ETNewArticleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewArticleModel.m; sourceTree = "<group>"; };
+		04DB9EF8237C0CC7002796C3 /* ETNewArticleDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewArticleDetailsViewController.h; sourceTree = "<group>"; };
+		04DB9EF9237C0CC7002796C3 /* ETNewArticleDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewArticleDetailsViewController.m; sourceTree = "<group>"; };
+		04DB9EFA237C0CC7002796C3 /* ETNewArticleDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewArticleDetailsViewController.xib; sourceTree = "<group>"; };
 		172FA16F06F30E4F663C3530 /* Pods-ProjectET.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET.debug.xcconfig"; path = "Target Support Files/Pods-ProjectET/Pods-ProjectET.debug.xcconfig"; sourceTree = "<group>"; };
 		4F0E4D8B2373B3FC00E83618 /* ETHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETHomeModel.h; sourceTree = "<group>"; };
 		4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETHomeModel.m; sourceTree = "<group>"; };
@@ -679,6 +720,150 @@
 				047A9DF723700A5F00FB5132 /* ethersTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		04DB9EC3237BE5D8002796C3 /* 资讯 */ = {
+			isa = PBXGroup;
+			children = (
+				04DB9ED2237BE615002796C3 /* Controller */,
+				04DB9ECA237BE601002796C3 /* 文章 */,
+				04DB9ECE237BE601002796C3 /* 行情 */,
+				04DB9EC4237BE5D8002796C3 /* 快讯 */,
+			);
+			path = "资讯";
+			sourceTree = "<group>";
+		};
+		04DB9EC4237BE5D8002796C3 /* 快讯 */ = {
+			isa = PBXGroup;
+			children = (
+				04DB9EC5237BE5D8002796C3 /* Controller */,
+				04DB9EC6237BE5D8002796C3 /* Model */,
+				04DB9EC7237BE5D8002796C3 /* View */,
+			);
+			path = "快讯";
+			sourceTree = "<group>";
+		};
+		04DB9EC5237BE5D8002796C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04DB9ED3237BE69B002796C3 /* ETNewAlertsViewController.h */,
+				04DB9ED4237BE69B002796C3 /* ETNewAlertsViewController.m */,
+				04DB9ED5237BE69B002796C3 /* ETNewAlertsViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04DB9EC6237BE5D8002796C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04DB9EEC237BFA3A002796C3 /* ETNewAlertsModel.h */,
+				04DB9EED237BFA3A002796C3 /* ETNewAlertsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04DB9EC7237BE5D8002796C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04DB9EE7237BF68B002796C3 /* ETNewAlertsCell.h */,
+				04DB9EE8237BF68B002796C3 /* ETNewAlertsCell.m */,
+				04DB9EE9237BF68B002796C3 /* ETNewAlertsCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04DB9ECA237BE601002796C3 /* 文章 */ = {
+			isa = PBXGroup;
+			children = (
+				04DB9EF7237C0CA3002796C3 /* 文章详情 */,
+				04DB9ECB237BE601002796C3 /* Controller */,
+				04DB9ECC237BE601002796C3 /* Model */,
+				04DB9ECD237BE601002796C3 /* View */,
+			);
+			path = "文章";
+			sourceTree = "<group>";
+		};
+		04DB9ECB237BE601002796C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04DB9EE2237BEAFB002796C3 /* ETNewArticleViewController.h */,
+				04DB9EE3237BEAFB002796C3 /* ETNewArticleViewController.m */,
+				04DB9EE4237BEAFB002796C3 /* ETNewArticleViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04DB9ECC237BE601002796C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04DB9EF4237C081B002796C3 /* ETNewArticleModel.h */,
+				04DB9EF5237C081B002796C3 /* ETNewArticleModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04DB9ECD237BE601002796C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04DB9EEF237C067A002796C3 /* ETNewArticleCell.h */,
+				04DB9EF0237C067A002796C3 /* ETNewArticleCell.m */,
+				04DB9EF1237C067A002796C3 /* ETNewArticleCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04DB9ECE237BE601002796C3 /* 行情 */ = {
+			isa = PBXGroup;
+			children = (
+				04DB9ECF237BE601002796C3 /* Controller */,
+				04DB9ED0237BE601002796C3 /* Model */,
+				04DB9ED1237BE601002796C3 /* View */,
+			);
+			path = "行情";
+			sourceTree = "<group>";
+		};
+		04DB9ECF237BE601002796C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04DB9EDD237BEAE3002796C3 /* ETNewMarketViewController.h */,
+				04DB9EDE237BEAE3002796C3 /* ETNewMarketViewController.m */,
+				04DB9EDF237BEAE4002796C3 /* ETNewMarketViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04DB9ED0237BE601002796C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04DB9ED1237BE601002796C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04DB9ED2237BE615002796C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04DB9ED8237BE6C4002796C3 /* ETNewInformationViewController.h */,
+				04DB9ED9237BE6C4002796C3 /* ETNewInformationViewController.m */,
+				04DB9EDA237BE6C4002796C3 /* ETNewInformationViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04DB9EF7237C0CA3002796C3 /* 文章详情 */ = {
+			isa = PBXGroup;
+			children = (
+				04DB9EF8237C0CC7002796C3 /* ETNewArticleDetailsViewController.h */,
+				04DB9EF9237C0CC7002796C3 /* ETNewArticleDetailsViewController.m */,
+				04DB9EFA237C0CC7002796C3 /* ETNewArticleDetailsViewController.xib */,
+			);
+			path = "文章详情";
 			sourceTree = "<group>";
 		};
 		2E2D92EDFC2E29D9F702BA5B /* Frameworks */ = {
@@ -1188,6 +1373,7 @@
 		4F2306FE2366EA9A0046A136 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				04DB9EC3237BE5D8002796C3 /* 资讯 */,
 				8855DAD523780DBC00F25DA4 /* Consult */,
 				8855DAD423780DA100F25DA4 /* Found */,
 				88A5D6862376BEBE0012EE0B /* Mine */,
@@ -1582,6 +1768,7 @@
 		4F2306BA2366DE9D0046A136 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ET;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = LightCould;
 				TargetAttributes = {
@@ -1646,9 +1833,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DB9EE6237BEAFB002796C3 /* ETNewArticleViewController.xib in Resources */,
 				4F14FB23236966E10008C50A /* ETMyWalletDetailCell.xib in Resources */,
 				4F2306D22366DE9F0046A136 /* LaunchScreen.storyboard in Resources */,
 				4F14FB0223692CF30008C50A /* ETAddContactsCell.xib in Resources */,
+				04DB9EFC237C0CC7002796C3 /* ETNewArticleDetailsViewController.xib in Resources */,
 				4F128CA523683BF70004284D /* ETDirectCountCell.xib in Resources */,
 				4F14FAFA236924B30008C50A /* ETMyContactsCell.xib in Resources */,
 				4F128CAA23683EE70004284D /* ETDirectLeftCell.xib in Resources */,
@@ -1656,10 +1845,15 @@
 				4F128CAF236840120004284D /* ETDirectNormalCell.xib in Resources */,
 				4F2306CD2366DE9D0046A136 /* Main.storyboard in Resources */,
 				4F128C7F236820320004284D /* backUpMoneyViewController.xib in Resources */,
+				04DB9EDC237BE6C4002796C3 /* ETNewInformationViewController.xib in Resources */,
 				4F1942D2236D22E900AD907E /* ETWalletDetailCell.xib in Resources */,
+				04DB9EE1237BEAE4002796C3 /* ETNewMarketViewController.xib in Resources */,
+				04DB9ED7237BE69B002796C3 /* ETNewAlertsViewController.xib in Resources */,
 				4F3F9036236A7F04009AAA24 /* ETCreatWalletInputCell.xib in Resources */,
 				4F1942E0236D306800AD907E /* ETWalletImportCell.xib in Resources */,
 				4F128CA0236839610004284D /* ETDirectTranAddressCell.xib in Resources */,
+				04DB9EEB237BF68B002796C3 /* ETNewAlertsCell.xib in Resources */,
+				04DB9EF3237C067A002796C3 /* ETNewArticleCell.xib in Resources */,
 				4F3F9031236A7E83009AAA24 /* ETCreatWalletInfoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1816,6 +2010,7 @@
 				4F2307032366EB120046A136 /* ETRootViewController.m in Sources */,
 				4F0E4D992373F5BB00E83618 /* ETTransferDetailCell.m in Sources */,
 				4F3F9063236C0F5E009AAA24 /* ETRecordDetailViewController.m in Sources */,
+				04DB9EFB237C0CC7002796C3 /* ETNewArticleDetailsViewController.m in Sources */,
 				4FFFB91A2379390600AE9BFF /* ETTransferDetailModel.m in Sources */,
 				4FA0A30B236FCA270038F880 /* WMZPageScroller.m in Sources */,
 				4FA0A30A236FCA270038F880 /* WMZPageController.m in Sources */,
@@ -1828,6 +2023,7 @@
 				8855DB2223790CA400F25DA4 /* RCSegmentView.m in Sources */,
 				047A9DE223700A5900FB5132 /* CachedDataStore.m in Sources */,
 				4F0E4DA523740AA900E83618 /* ETWalletSearchCell.m in Sources */,
+				04DB9EEA237BF68B002796C3 /* ETNewAlertsCell.m in Sources */,
 				4F1942EC236D5E6900AD907E /* ETKeystoreQcodeView.m in Sources */,
 				88A5D68C2376BEF10012EE0B /* MineViewController.m in Sources */,
 				4FA0A319237013D10038F880 /* ETWalletModel.m in Sources */,
@@ -1862,6 +2058,7 @@
 				4F3F9030236A7E83009AAA24 /* ETCreatWalletInfoCell.m in Sources */,
 				4F3F9060236BD9F3009AAA24 /* KMPQRCodeManager.m in Sources */,
 				047A9DEA23700A5900FB5132 /* AsyncOperation.m in Sources */,
+				04DB9EE5237BEAFB002796C3 /* ETNewArticleViewController.m in Sources */,
 				8855DABF2377EAB600F25DA4 /* MineNodeViewController.m in Sources */,
 				8855DACA2377EB7E00F25DA4 /* MineNodeCell.m in Sources */,
 				8855DAAD2377E3AF00F25DA4 /* InvationViewController.m in Sources */,
@@ -1875,8 +2072,10 @@
 				4F128C82236820320004284D /* backUpViewController.m in Sources */,
 				4F128CA923683EE70004284D /* ETDirectLeftCell.m in Sources */,
 				4F1A0812237A8C3F00C7F7D0 /* ETAlertsModel.m in Sources */,
+				04DB9EDB237BE6C4002796C3 /* ETNewInformationViewController.m in Sources */,
 				4F0E4DB0237502EC00E83618 /* ETWalletMangerView.m in Sources */,
 				4F1A0803237A815800C7F7D0 /* ETProclamationListController.m in Sources */,
+				04DB9EF2237C067A002796C3 /* ETNewArticleCell.m in Sources */,
 				047A9DE123700A5900FB5132 /* Wallet.m in Sources */,
 				4F1942F5236D69FB00AD907E /* ETBackUpWalletView.m in Sources */,
 				4F1A224B2372CF8100FDD5D9 /* KMP_DOTNETModel.m in Sources */,
@@ -1889,6 +2088,7 @@
 				4F128C80236820320004284D /* ViewController.m in Sources */,
 				4F3F9049236ABAD9009AAA24 /* ETSecertCreatView.m in Sources */,
 				4F14FB19236960A20008C50A /* ETMyWalletView.m in Sources */,
+				04DB9EEE237BFA3A002796C3 /* ETNewAlertsModel.m in Sources */,
 				4F3F904C236ACE72009AAA24 /* ETCreatMyWalletViewController.m in Sources */,
 				4F14FB22236966E10008C50A /* ETMyWalletDetailCell.m in Sources */,
 				4FA0A314236FFF440038F880 /* ETWalletManger.m in Sources */,
@@ -1898,6 +2098,7 @@
 				4F3F9058236AEB93009AAA24 /* Tools+Image.m in Sources */,
 				4FA0A309236FCA270038F880 /* WMZPageParam.m in Sources */,
 				4F128C592367D1CE0004284D /* UIViewController+NaviBarButton.m in Sources */,
+				04DB9EF6237C081B002796C3 /* ETNewArticleModel.m in Sources */,
 				4F0E4DB423751F6700E83618 /* AppDelegate+SVPSetting.m in Sources */,
 				047A9DE823700A5900FB5132 /* UIImage+IconFont.m in Sources */,
 				4F3F9040236A9535009AAA24 /* ETRememberCardController.m in Sources */,
@@ -1907,6 +2108,7 @@
 				4F1942D1236D22E900AD907E /* ETWalletDetailCell.m in Sources */,
 				4F3F9052236AE241009AAA24 /* ETChooseWalletcell.m in Sources */,
 				8855DAA32377ACC700F25DA4 /* MineHeadView.m in Sources */,
+				04DB9ED6237BE69B002796C3 /* ETNewAlertsViewController.m in Sources */,
 				4F14FB0123692CF30008C50A /* ETAddContactsCell.m in Sources */,
 				4F1A22502372D04500FDD5D9 /* HTTPTool+DomainAPI.m in Sources */,
 				8855DAA72377C4E800F25DA4 /* AboutUsViewController.m in Sources */,
@@ -1942,6 +2144,7 @@
 				4F1942DF236D306800AD907E /* ETWalletImportCell.m in Sources */,
 				4F128C89236822610004284D /* ETTransferViewController.m in Sources */,
 				8855DB312379339A00F25DA4 /* QuickViewCell.m in Sources */,
+				04DB9EE0237BEAE4002796C3 /* ETNewMarketViewController.m in Sources */,
 				4F128C94236834EB0004284D /* AppDelegate+ET_VCSetting.m in Sources */,
 				4F1942E3236D358A00AD907E /* ETImportSyaoController.m in Sources */,
 				8855DAD32378049500F25DA4 /* MineRecordCell.m in Sources */,
@@ -2118,7 +2321,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TV8T7CUK6C;
+				DEVELOPMENT_TEAM = 2LML59W777;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectET/Supporting Files/PrefixETHeader.pch";
 				INFOPLIST_FILE = ProjectET/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2141,7 +2344,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TV8T7CUK6C;
+				DEVELOPMENT_TEAM = 2LML59W777;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectET/Supporting Files/PrefixETHeader.pch";
 				INFOPLIST_FILE = ProjectET/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

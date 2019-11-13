@@ -11,6 +11,7 @@
 #import "MineViewController.h"
 #import "FoundViewController.h"
 #import "ConsultViewController.h"
+#import "ETNewInformationViewController.h"
 
 @interface ETRootViewController ()<UITabBarControllerDelegate>
 
@@ -52,7 +53,7 @@
 //    ETAssetsViewController * meVC = [ETAssetsViewController new];
 
     //商城购药
-    ConsultViewController * mallVC = [ConsultViewController new];
+    ETNewInformationViewController * mallVC = [ETNewInformationViewController new];
     UINavigationController * mallNav = [[UINavigationController alloc] initWithRootViewController:mallVC];
     
     //发现

@@ -1,0 +1,104 @@
+//
+//  ETNewArticleViewController.m
+//  ProjectET
+//
+//  Created by mac on 2019/11/13.
+//  Copyright © 2019 LightCould. All rights reserved.
+//
+
+#import "ETNewArticleViewController.h"
+#import "ETNewArticleModel.h"
+#import "ETNewArticleCell.h"
+#import "ETNewArticleDetailsViewController.h"
+
+@interface ETNewArticleViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UILabel *lab_time;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) NSMutableArray *dataSource;
+@property (nonatomic, assign)NSInteger currentPage;
+@property (nonatomic,strong)ETNewArticleModel *model;
+
+@end
+
+@implementation ETNewArticleViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.lab_time.text = [Tools dateToString:NSDate.date];
+    self.dataSource  = [NSMutableArray array];
+    self.currentPage = 0;
+    [self.tableView registerNib:[UINib nibWithNibName:@"ETNewArticleCell" bundle:nil] forCellReuseIdentifier:@"ETNewArticleCell"];
+    WEAK_SELF(self);
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        STRONG_SELF(self);
+        self.currentPage = 0;
+        [self.tableView.mj_header endRefreshing];
+        [self getAlertsListData];
+    }];
+    
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        
+        STRONG_SELF(self);
+        [self.tableView.mj_footer endRefreshing];
+        self.currentPage += 1;
+        [self getAlertsListData];
+    }];
+    
+    [self getAlertsListData];
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)getAlertsListData{
+    [HTTPTool requestDotNetWithURLString:@"et_news" parameters:@{@"page":[NSString stringWithFormat:@"%ld",(long)self.currentPage]}    type:kPOST success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        self.model =[ETNewArticleModel mj_objectWithKeyValues:responseObject];
+        [self.dataSource addObjectsFromArray:self.model.data.News];
+        [self.tableView reloadData];
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+
+#pragma mark - UITableViewDelegate,UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.dataSource.count;
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ETNewArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETNewArticleCell"];
+    cell.model = self.dataSource[indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 114;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ETNewArticleDetailsViewController *vc = [[ETNewArticleDetailsViewController alloc]init];
+    vc.Id = [self.dataSource[indexPath.row] Id];
+    [self.navigationController pushViewController:vc animated:true];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.1;
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end
