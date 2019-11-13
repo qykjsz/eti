@@ -84,6 +84,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ETNewArticleDetailsViewController *vc = [[ETNewArticleDetailsViewController alloc]init];
     vc.Id = [self.dataSource[indexPath.row] Id];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:true];
 }
 
