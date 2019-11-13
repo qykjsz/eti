@@ -12,22 +12,22 @@
 
 + (NSDictionary *)mj_objectClassInArray{
     
-    return @{@"data":[alertsData class]};
+    return @{@"data":[conAlertsData class]};
 }
 
 @end
 
-@implementation alertsData
+@implementation conAlertsData
 
 + (NSDictionary *)mj_objectClassInArray{
     
-    return @{@"News":[ETalertNewsListData class]};
+    return @{@"News":[ETConalertNewsListData class]};
 }
 
 
 @end
 
-@implementation ETalertNewsListData
+@implementation ETConalertNewsListData
 
 
 

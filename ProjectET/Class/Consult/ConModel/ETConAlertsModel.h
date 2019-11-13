@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-@class alertsData,ETalertNewsListData;
+@class conAlertsData,ETConalertNewsListData;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ETConAlertsModel : NSObject
 
-@property (nonatomic,strong) alertsData *data;
+@property (nonatomic,strong) conAlertsData *data;
 
 @property (nonatomic,strong) NSString *msg;
 
@@ -20,16 +20,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface alertsData : NSObject
+@interface conAlertsData : NSObject
 
 @property (nonatomic,strong) NSString *pages;
 
-@property (nonatomic,strong) NSMutableArray <ETalertNewsListData *> *News;
+@property (nonatomic,strong) NSMutableArray <ETConalertNewsListData *> *News;
 
 @end
 
 
-@interface ETalertNewsListData : NSObject
+@interface ETConalertNewsListData : NSObject
 
 @property (nonatomic,strong) NSString *title;
 

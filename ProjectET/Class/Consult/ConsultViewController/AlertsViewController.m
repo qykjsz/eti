@@ -158,7 +158,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row<[self.dataArray count]) {
-        ETalertNewsListData *newsModel = self.dataArray[indexPath.row];
+        ETConalertNewsListData *newsModel = self.dataArray[indexPath.row];
         CGFloat high =[self getTextHeightWithString:newsModel.content];
         NSLog(@"%f",high);
         
@@ -209,7 +209,7 @@
         make.height.mas_offset(.5);
     }];
     
-    ETalertNewsListData *newsModel = self.dataArray[indexPath.row];
+    ETConalertNewsListData *newsModel = self.dataArray[indexPath.row];
         
     NSLog(@"---%@  ===%@----%ld",newsModel,newsModel.time,(long)indexPath.row);
         cell.time.text = [self getTimeFromTimestamp:newsModel.time];
