@@ -60,6 +60,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSString *usdtnumber;
 
+@property (nonatomic,strong) NSString *address;
+
+
 @end
 
 @interface newsData : NSObject

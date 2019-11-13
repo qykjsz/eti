@@ -86,7 +86,6 @@
         NSInteger top = 190;
         NSInteger left = 30;
         NSInteger lineWidth = SCREEN_WIDTH - 70;
-        NSInteger curretnX = 0;
         
         NSMutableArray *colorArr = [NSMutableArray array];
         for (int i = 0; i<progress.count; i++) {
@@ -94,15 +93,6 @@
             UIColor *color = [Tools getRandomColor];
             [colorArr addObject:color];
             data.color = color;
-            if (i == 0) {
-                data.bili = [NSString stringWithFormat:@"%.1f",12.0];
-            }else if (i == 1) {
-                data.bili = [NSString stringWithFormat:@"%.1f",30.0];
-            }else {
-                data.bili = [NSString stringWithFormat:@"%.1f",58.0];
-            }
-            
-            
         }
         // 第一根背景色为黑色的进度条，只做展示，方便后面的叠加
         UIView *grayView = [[UIView alloc]initWithFrame:CGRectMake(left, top, lineWidth, 4)];
@@ -158,86 +148,11 @@
                                   range:NSMakeRange(0 , 1)];
             [AttributedStr addAttribute:NSBaselineOffsetAttributeName value:@(-7) range:NSMakeRange(0, 1)];
             detailLb.attributedText = AttributedStr;
-            detailLb.frame = CGRectMake(30 + i*10 + 78*i, 200, 78, 25);
+            detailLb.frame = CGRectMake(20 + i*5 + 80*i, 200, 80, 25);
             [self addSubview:detailLb];
             
         }
         
-//        for (int i = 0; i < progress.count; i++) {
-//
-//            CGFloat pro = [progress[i] floatValue];
-//
-//            switch (i) {
-//                case 0: {
-//                    UIView *lineView = [[UIView alloc] init];
-//                    lineView.frame = CGRectMake(left, top, lineWidth, 4);
-//                    lineView.backgroundColor = UIColorFromHEX(0xEA566D, 1);
-//                    curretnX = 20 + lineWidth*pro;
-//                    [self addSubview:lineView];
-//                    break;
-//                }
-//                case 1:{
-//                    UIView *lineView = [[UIView alloc] init];
-//                    lineView.frame = CGRectMake(left, top, (lineWidth*(1.0-pro)), 4);
-//                    lineView.backgroundColor = UIColorFromHEX(0xFFB632, 1);
-//                    [self addSubview:lineView];
-//                    curretnX = curretnX + lineWidth*pro;
-//                    break;
-//                }
-//                case 2:{
-//                    UIView *lineView = [[UIView alloc] init];
-//                    lineView.frame = CGRectMake(left, top, lineWidth-(lineWidth*(pro)), 4);
-//                    lineView.backgroundColor = UIColorFromHEX(0x93AEFC, 1);
-//                    [self addSubview:lineView];
-//                    curretnX = curretnX + lineWidth*pro;
-//                    break;
-//                }
-//                case 3:{
-//                    UIView *lineView = [[UIView alloc] init];
-//                    lineView.frame = CGRectMake(left, top, (lineWidth*(pro)), 4);
-//                    lineView.backgroundColor = UIColor.whiteColor;
-//                    [self addSubview:lineView];
-//                    break;
-//                }
-//                default:
-//                    break;
-//            }
-//        }
-//
-//        [backImage addSubview:self.ETLB];
-//        [self.ETLB mas_makeConstraints:^(MASConstraintMaker *make) {
-//
-//            make.left.equalTo(backImage.mas_left).offset(15);
-//            make.top.equalTo(backImage.mas_top).offset(185);
-//
-//        }];
-//
-//        [backImage addSubview:self.ETHLB];
-//        [self.ETHLB mas_makeConstraints:^(MASConstraintMaker *make) {
-//
-//            make.left.equalTo(self.ETLB.mas_right).offset(10);
-//            make.centerY.equalTo(self.ETLB.mas_centerY);
-//
-//
-//        }];
-//
-//        [backImage addSubview:self.USDTLB];
-//        [self.USDTLB mas_makeConstraints:^(MASConstraintMaker *make) {
-//
-//            make.left.equalTo(self.ETHLB.mas_right).offset(10);
-//            make.centerY.equalTo(self.ETHLB.mas_centerY);
-//
-//
-//        }];
-//
-//        [backImage addSubview:self.EOSLB];
-//        [self.EOSLB mas_makeConstraints:^(MASConstraintMaker *make) {
-//
-//            make.left.equalTo(self.USDTLB.mas_right).offset(10);
-//            make.centerY.equalTo(self.USDTLB.mas_centerY);
-//
-//
-//        }];
     }
     
     return self;
@@ -247,12 +162,8 @@
     
     sender.selected = !sender.selected;
     
-    if (!sender.selected) {
-        self.moneyLb.text = @"***.**";
-        self.todayLb.text = @"***.**";
-    }else {
-        self.moneyLb.text = @"999.99";
-        self.todayLb.text = @"今日 +120.36";
+    if ([self.delegate respondsToSelector:@selector(ETWalletDetailViewDelegateHidden:)]) {
+        [self.delegate ETWalletDetailViewDelegateHidden:sender.selected];
     }
 }
 

@@ -10,6 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol ETWalletDetailViewDelegate <NSObject>
+
+- (void)ETWalletDetailViewDelegateHidden:(BOOL)isOpen;
+
+@end
+
 @interface ETWalletDetailView : UIView
 
 @property (nonatomic,strong) UILabel *tipsLb;
@@ -31,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) BOOL isOpen;
 
 - (instancetype)initWithFrame:(CGRect)frame andProgress:(NSMutableArray *)progress;
+
+@property (nonatomic,weak) id <ETWalletDetailViewDelegate> delegate;
 
 @end
 

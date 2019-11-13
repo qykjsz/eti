@@ -33,7 +33,7 @@
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
     
-    return @{@"Id":@"id"};
+    return @{@"Id":@"id",@"hashString":@"hash"};
 }
 
 @end

@@ -10,7 +10,7 @@
 #import "ETAddContactsCell.h"
 #import "ETScanViewController.h"
 #import "ETCoinListViewController.h"
-
+#import "UUID.h"
 @interface ETAddContactsController ()<UITableViewDelegate,UITableViewDataSource,ETAddContactsCellDelegate>
 
 @property (nonatomic,strong) UITableView *detailTab;
@@ -136,7 +136,7 @@
 
 
 - (void)clickAction {
-    NSUUID *uuid = [UIDevice currentDevice].identifierForVendor;
+   // NSUUID *uuid = [UIDevice currentDevice].identifierForVendor;
     //    NSLog(@"uuid 1 = %@",uuid.UUIDString);
     if ([Tools checkStringIsEmpty:self.nameString]) {
         [SVProgressHUD showInfoWithStatus:@"请输入名字"];
@@ -164,9 +164,9 @@
      wallettype    [string]    是    不知道你们怎么选 后台只能添加ETH
      address    [string]    是    地址
      */
-    
+    NSString *uuidString = [UUID getUUID];
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setValue:uuid.UUIDString forKey:@"contacts"];
+    [dict setValue:uuidString forKey:@"contacts"];
     [dict setValue:self.nameString forKey:@"name"];
     [dict setValue:self.backUpString forKey:@"remarks"];
     [dict setValue:self.bottomAddress forKey:@"wallettype"];

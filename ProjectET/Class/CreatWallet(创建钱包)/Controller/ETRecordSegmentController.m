@@ -122,7 +122,8 @@
     self.pageTitleView = [UIView new];
     self.pageTitleView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 40);
     
-    UITextField *textField = [[UITextField alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 100, 8, 85, 24)];
+    UITextField *textField = [[UITextField alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 120, 8, 105, 24)];
+    textField.font = [UIFont systemFontOfSize:12];
     UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 26, 15)];
     UIImageView *image = [[UIImageView alloc]initWithFrame:CGRectMake(10, 0, 13, 15)];
     [backView addSubview:image];
@@ -131,7 +132,7 @@
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:@"搜索" attributes:
                                              @{NSForegroundColorAttributeName:UIColorFromHEX(0xc2c2c2, 1),
                                                NSFontAttributeName:[UIFont boldSystemFontOfSize:12]}];
-    [textField addTarget:self action:@selector(textfieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [textField addTarget:self action:@selector(textfieldDidChange:) forControlEvents:UIControlEventEditingDidEnd];
     textField.attributedPlaceholder = attrString;
     textField.backgroundColor = UIColorFromHEX(0xF5F5F5, 1);
     textField.clipsToBounds = YES;

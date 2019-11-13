@@ -93,6 +93,11 @@
 		4F1942EF236D61EC00AD907E /* ETChangePassWordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942EE236D61EC00AD907E /* ETChangePassWordController.m */; };
 		4F1942F2236D69E100AD907E /* ETVerifyPassWrodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942F1236D69E100AD907E /* ETVerifyPassWrodView.m */; };
 		4F1942F5236D69FB00AD907E /* ETBackUpWalletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1942F4236D69FB00AD907E /* ETBackUpWalletView.m */; };
+		4F1A0803237A815800C7F7D0 /* ETProclamationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A0802237A815800C7F7D0 /* ETProclamationListController.m */; };
+		4F1A0808237A81CF00C7F7D0 /* ETProclamListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A0807237A81CF00C7F7D0 /* ETProclamListCell.m */; };
+		4F1A080C237A854100C7F7D0 /* ETNewsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A080B237A854100C7F7D0 /* ETNewsListModel.m */; };
+		4F1A080F237A8BC200C7F7D0 /* ETNewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A080E237A8BC200C7F7D0 /* ETNewsDetailController.m */; };
+		4F1A0812237A8C3F00C7F7D0 /* ETAlertsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A0811237A8C3F00C7F7D0 /* ETAlertsModel.m */; };
 		4F1A22332372BF5500FDD5D9 /* MJExtensionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A22252372BF5500FDD5D9 /* MJExtensionConfig.m */; };
 		4F1A22342372BF5500FDD5D9 /* HTTPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A22262372BF5500FDD5D9 /* HTTPTool.m */; };
 		4F1A22352372BF5500FDD5D9 /* XMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A222A2372BF5500FDD5D9 /* XMEngine.m */; };
@@ -130,6 +135,8 @@
 		4F3F9063236C0F5E009AAA24 /* ETRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9062236C0F5E009AAA24 /* ETRecordDetailViewController.m */; };
 		4F3F9066236C1046009AAA24 /* ETRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9065236C1046009AAA24 /* ETRecordCell.m */; };
 		4F3F9069236C128D009AAA24 /* ETRecordHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9068236C128D009AAA24 /* ETRecordHeaderView.m */; };
+		4F5D107F237AC0D500B13D00 /* UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5D107E237AC0D500B13D00 /* UUID.m */; };
+		4F5D1084237AC12E00B13D00 /* KeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5D1083237AC12E00B13D00 /* KeyChainStore.m */; };
 		4FA0A305236FCA270038F880 /* WMZPageLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A2F4236FCA270038F880 /* WMZPageLoopView.m */; };
 		4FA0A306236FCA270038F880 /* WMZPageNaviBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A2F5236FCA270038F880 /* WMZPageNaviBtn.m */; };
 		4FA0A308236FCA270038F880 /* NSObject+SafeKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A2FB236FCA270038F880 /* NSObject+SafeKVO.m */; };
@@ -375,6 +382,16 @@
 		4F1942F1236D69E100AD907E /* ETVerifyPassWrodView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETVerifyPassWrodView.m; sourceTree = "<group>"; };
 		4F1942F3236D69FB00AD907E /* ETBackUpWalletView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETBackUpWalletView.h; sourceTree = "<group>"; };
 		4F1942F4236D69FB00AD907E /* ETBackUpWalletView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETBackUpWalletView.m; sourceTree = "<group>"; };
+		4F1A0801237A815800C7F7D0 /* ETProclamationListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETProclamationListController.h; sourceTree = "<group>"; };
+		4F1A0802237A815800C7F7D0 /* ETProclamationListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETProclamationListController.m; sourceTree = "<group>"; };
+		4F1A0806237A81CF00C7F7D0 /* ETProclamListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETProclamListCell.h; sourceTree = "<group>"; };
+		4F1A0807237A81CF00C7F7D0 /* ETProclamListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETProclamListCell.m; sourceTree = "<group>"; };
+		4F1A080A237A854100C7F7D0 /* ETNewsListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewsListModel.h; sourceTree = "<group>"; };
+		4F1A080B237A854100C7F7D0 /* ETNewsListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewsListModel.m; sourceTree = "<group>"; };
+		4F1A080D237A8BC200C7F7D0 /* ETNewsDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewsDetailController.h; sourceTree = "<group>"; };
+		4F1A080E237A8BC200C7F7D0 /* ETNewsDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewsDetailController.m; sourceTree = "<group>"; };
+		4F1A0810237A8C3F00C7F7D0 /* ETAlertsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAlertsModel.h; sourceTree = "<group>"; };
+		4F1A0811237A8C3F00C7F7D0 /* ETAlertsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAlertsModel.m; sourceTree = "<group>"; };
 		4F1A22222372BF5500FDD5D9 /* HTTPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPTool.h; sourceTree = "<group>"; };
 		4F1A22242372BF5500FDD5D9 /* MJExtensionConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConfig.h; sourceTree = "<group>"; };
 		4F1A22252372BF5500FDD5D9 /* MJExtensionConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConfig.m; sourceTree = "<group>"; };
@@ -457,6 +474,10 @@
 		4F3F9065236C1046009AAA24 /* ETRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRecordCell.m; sourceTree = "<group>"; };
 		4F3F9067236C128D009AAA24 /* ETRecordHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETRecordHeaderView.h; sourceTree = "<group>"; };
 		4F3F9068236C128D009AAA24 /* ETRecordHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRecordHeaderView.m; sourceTree = "<group>"; };
+		4F5D107D237AC0D500B13D00 /* UUID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UUID.h; sourceTree = "<group>"; };
+		4F5D107E237AC0D500B13D00 /* UUID.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UUID.m; sourceTree = "<group>"; };
+		4F5D1082237AC12E00B13D00 /* KeyChainStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyChainStore.h; sourceTree = "<group>"; };
+		4F5D1083237AC12E00B13D00 /* KeyChainStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyChainStore.m; sourceTree = "<group>"; };
 		4FA0A2F2236FCA270038F880 /* WMZPageLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageLoopView.h; sourceTree = "<group>"; };
 		4FA0A2F3236FCA270038F880 /* WMZPageNaviBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageNaviBtn.h; sourceTree = "<group>"; };
 		4FA0A2F4236FCA270038F880 /* WMZPageLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageLoopView.m; sourceTree = "<group>"; };
@@ -912,6 +933,10 @@
 				4FFFB91523792A4D00AE9BFF /* ETTransListModel.m */,
 				4FFFB9182379390600AE9BFF /* ETTransferDetailModel.h */,
 				4FFFB9192379390600AE9BFF /* ETTransferDetailModel.m */,
+				4F5D107D237AC0D500B13D00 /* UUID.h */,
+				4F5D107E237AC0D500B13D00 /* UUID.m */,
+				4F5D1082237AC12E00B13D00 /* KeyChainStore.h */,
+				4F5D1083237AC12E00B13D00 /* KeyChainStore.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -955,6 +980,47 @@
 				4F14FB1223693CFC0008C50A /* KMPProgressHUD.h */,
 			);
 			path = KMPProgressHUD;
+			sourceTree = "<group>";
+		};
+		4F1A07FE237A80F800C7F7D0 /* Proclamation(公告) */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A0809237A852900C7F7D0 /* model */,
+				4F1A0805237A81A000C7F7D0 /* View */,
+				4F1A0804237A815B00C7F7D0 /* Controller */,
+			);
+			path = "Proclamation(公告)";
+			sourceTree = "<group>";
+		};
+		4F1A0804237A815B00C7F7D0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A0801237A815800C7F7D0 /* ETProclamationListController.h */,
+				4F1A0802237A815800C7F7D0 /* ETProclamationListController.m */,
+				4F1A080D237A8BC200C7F7D0 /* ETNewsDetailController.h */,
+				4F1A080E237A8BC200C7F7D0 /* ETNewsDetailController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4F1A0805237A81A000C7F7D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A0806237A81CF00C7F7D0 /* ETProclamListCell.h */,
+				4F1A0807237A81CF00C7F7D0 /* ETProclamListCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4F1A0809237A852900C7F7D0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A080A237A854100C7F7D0 /* ETNewsListModel.h */,
+				4F1A080B237A854100C7F7D0 /* ETNewsListModel.m */,
+				4F1A0810237A8C3F00C7F7D0 /* ETAlertsModel.h */,
+				4F1A0811237A8C3F00C7F7D0 /* ETAlertsModel.m */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		4F1A22212372BF5500FDD5D9 /* Net */ = {
@@ -1136,6 +1202,7 @@
 		4F2306FF2366EAB30046A136 /* Home(资产) */ = {
 			isa = PBXGroup;
 			children = (
+				4F1A07FE237A80F800C7F7D0 /* Proclamation(公告) */,
 				4F0E4DA82375023200E83618 /* WalletManger(钱包管理) */,
 				4F14FAEE2369240F0008C50A /* Transfer(转账) */,
 				4F128C5C2367D72E0004284D /* Controller */,
@@ -1725,6 +1792,8 @@
 				4F3F903D236A8415009AAA24 /* ETSecretImportController.m in Sources */,
 				4F10A7B52376B35C00EBF377 /* ETPlatformGlodModel.m in Sources */,
 				4FA0A32B23717ACF0038F880 /* ET_ScaningView.m in Sources */,
+				4F1A080F237A8BC200C7F7D0 /* ETNewsDetailController.m in Sources */,
+				4F1A0808237A81CF00C7F7D0 /* ETProclamListCell.m in Sources */,
 				4FA0A30F236FD0690038F880 /* HoverPageViewController.m in Sources */,
 				4F1A22372372BF5500FDD5D9 /* XMRequest.m in Sources */,
 				4F128C90236826FC0004284D /* ETTransferView.m in Sources */,
@@ -1775,6 +1844,7 @@
 				4F1942F2236D69E100AD907E /* ETVerifyPassWrodView.m in Sources */,
 				4F2307062366EB600046A136 /* ETAssetsViewController.m in Sources */,
 				4F1A22342372BF5500FDD5D9 /* HTTPTool.m in Sources */,
+				4F5D107F237AC0D500B13D00 /* UUID.m in Sources */,
 				4F3F904F236AE073009AAA24 /* ETCoinMainViewController.m in Sources */,
 				8855DACE2378037500F25DA4 /* MineRecordViewController.m in Sources */,
 				4F3F9055236AE62A009AAA24 /* ETCoinListViewController.m in Sources */,
@@ -1785,6 +1855,7 @@
 				8855DAB22377E4ED00F25DA4 /* HelpViewController.m in Sources */,
 				4F117509236C267E0042CDFD /* ETRecordSegmentController.m in Sources */,
 				4F0E4D932373EFF000E83618 /* ETTransferDetailViewController.m in Sources */,
+				4F1A080C237A854100C7F7D0 /* ETNewsListModel.m in Sources */,
 				88A5D0422372CFBC0012EE0B /* ClassBaseTools.m in Sources */,
 				8855DB3A2379469400F25DA4 /* TotalAssViewController.m in Sources */,
 				4F128C622367D83B0004284D /* HomeHeaderView.m in Sources */,
@@ -1803,7 +1874,9 @@
 				047A9DE423700A5900FB5132 /* UIColor+hex.m in Sources */,
 				4F128C82236820320004284D /* backUpViewController.m in Sources */,
 				4F128CA923683EE70004284D /* ETDirectLeftCell.m in Sources */,
+				4F1A0812237A8C3F00C7F7D0 /* ETAlertsModel.m in Sources */,
 				4F0E4DB0237502EC00E83618 /* ETWalletMangerView.m in Sources */,
+				4F1A0803237A815800C7F7D0 /* ETProclamationListController.m in Sources */,
 				047A9DE123700A5900FB5132 /* Wallet.m in Sources */,
 				4F1942F5236D69FB00AD907E /* ETBackUpWalletView.m in Sources */,
 				4F1A224B2372CF8100FDD5D9 /* KMP_DOTNETModel.m in Sources */,
@@ -1851,6 +1924,7 @@
 				4F3F9046236AB672009AAA24 /* ETKeyStoreController.m in Sources */,
 				4F128C692367E1A00004284D /* ETHomeTableHeaderView.m in Sources */,
 				4FA0A32723717A8A0038F880 /* ETScanViewController.m in Sources */,
+				4F5D1084237AC12E00B13D00 /* KeyChainStore.m in Sources */,
 				4F2306C72366DE9D0046A136 /* AppDelegate.m in Sources */,
 				047A9DE923700A5900FB5132 /* SharedDefaults.m in Sources */,
 				4F1A224A2372CF8100FDD5D9 /* HTTPTool+KMP_DOTNETRequest.m in Sources */,

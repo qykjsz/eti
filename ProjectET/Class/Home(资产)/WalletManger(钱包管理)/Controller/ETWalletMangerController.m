@@ -103,6 +103,7 @@
 - (void)ETWalletMangerViewDelegateDidSelect:(NSIndexPath *)path model:(ETWalletModel *)model {
     
     ETWalletDetailController *dVC = [ETWalletDetailController new];
+    dVC.selectWallect = path.row;
     [self.navigationController pushViewController:dVC animated:YES];
     
 }

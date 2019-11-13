@@ -23,6 +23,7 @@
 #import "backUpMoneyViewController.h"
 #import "ETCoinListViewController.h"
 #import "ETScanViewController.h"
+#import "ETProclamationListController.h"
 
 #import "ETMyWalletView.h"
 #import "ETHomeModel.h"
@@ -171,7 +172,7 @@
         if ([self.homeModel.data.today floatValue] >= 0) {
              self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.homeModel.data.today];
         }else {
-             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 -%@",self.homeModel.data.today];
+             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.homeModel.data.today];
         }
        
         [self.detailTab reloadData];
@@ -272,6 +273,14 @@
     ETWalletDetailController *DVC = [ETWalletDetailController new];
     DVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:DVC animated:YES];
+    
+}
+
+- (void)ETHomeTableHeaderViewDelegateMoreClickAction {
+    
+    ETProclamationListController *pVC = [ETProclamationListController new];
+    pVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:pVC animated:YES];
     
 }
 
@@ -399,6 +408,18 @@
 #pragma mark - NoticeAction
 - (void)hiddenAction:(NSNotification *)notice {
     self.isOpen = [notice.object[@"isOpen"] boolValue];
+    
+    if (self.isOpen) {
+        self.headerView.moneyLb.text = self.homeModel.data.allnumber;
+        if ([self.homeModel.data.today floatValue] >= 0) {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.homeModel.data.today];
+        }else {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.homeModel.data.today];
+        }
+    }else {
+        self.headerView.moneyLb.text = @"***.**";
+        self.headerView.todayLb.text = @"*****";
+    }
     [self.detailTab reloadData];
 }
 

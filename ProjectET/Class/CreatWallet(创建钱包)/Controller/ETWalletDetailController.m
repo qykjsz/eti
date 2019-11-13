@@ -16,7 +16,7 @@
 
 #import "ETHomeModel.h"
 
-@interface ETWalletDetailController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ETWalletDetailController ()<UITableViewDelegate,UITableViewDataSource,ETWalletDetailViewDelegate>
 
 @property (nonatomic,strong) UITableView *detailTab;
 
@@ -60,7 +60,7 @@
     //    }];
     //    return;
     
-    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    ETWalletModel *model = [ETWalletManger getModelIndex:self.selectWallect];
     [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
         
        
@@ -70,6 +70,7 @@
         
         
         self.headerView = [[ETWalletDetailView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 240) andProgress:self.homeModel.data.proportion];
+        self.headerView.delegate = self;
         self.headerView.clipsToBounds = YES;
         self.headerView.layer.cornerRadius = 25;
         self.detailTab.tableHeaderView = self.headerView;
@@ -80,7 +81,7 @@
         if ([self.homeModel.data.today floatValue] >= 0) {
             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.homeModel.data.today];
         }else {
-            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 -%@",self.homeModel.data.today];
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.homeModel.data.today];
         }
         
         [self.detailTab reloadData];
@@ -93,7 +94,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    ETWalletModel *model = [ETWalletManger getModelIndex:self.selectWallect];
     self.walletName = model.walletName;
     self.title = model.walletName;
     
@@ -179,6 +180,22 @@
   
     
 }
+
+#pragma mark - ETWalletDetailViewDelegate
+- (void)ETWalletDetailViewDelegateHidden:(BOOL)isOpen {
+    
+    if (isOpen) {
+        self.headerView.moneyLb.text = self.homeModel.data.allnumber;
+        if ([self.homeModel.data.today floatValue] >= 0) {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.homeModel.data.today];
+        }else {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.homeModel.data.today];
+        }
+    }else {
+        self.headerView.moneyLb.text = @"***.**";
+        self.headerView.todayLb.text = @"*****";
+    }
+}
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -230,6 +247,7 @@
     
     if (indexPath.row == 1) {
         ETChangePassWordController *vc = [ETChangePassWordController new];
+        vc.selectTag = self.selectWallect;
         [self.navigationController pushViewController:vc animated:YES];
     }
     if (indexPath.row == 2) {
@@ -237,6 +255,7 @@
         ETVerifyPassWrodView *view = [[ETVerifyPassWrodView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         [view setSuccess:^{
             ETImportSyaoController *vc = [ETImportSyaoController new];
+            vc.selectTag = self.selectWallect;
             [self.navigationController pushViewController:vc animated:true];
         }];
         [[UIApplication sharedApplication].keyWindow addSubview:view];
@@ -247,6 +266,7 @@
         ETVerifyPassWrodView *view = [[ETVerifyPassWrodView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         [view setSuccess:^{
             ETKeystoreImportController *vc = [ETKeystoreImportController new];
+            vc.selectTag = self.selectWallect;
             [self.navigationController pushViewController:vc animated:YES];
         }];
         [[UIApplication sharedApplication].keyWindow addSubview:view];
