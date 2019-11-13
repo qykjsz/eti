@@ -84,7 +84,7 @@
         [self.topLeftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             
             make.left.equalTo(self.mas_left).offset(0);
-            make.top.equalTo(self.mas_top).offset(20);
+            make.top.equalTo(self.mas_top).offset(kStatusBarHeight);
             make.width.equalTo(@150);
             make.height.equalTo(@30);
             

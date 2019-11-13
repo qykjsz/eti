@@ -19,6 +19,10 @@
 
 @property (nonatomic,strong) ETPlatformGlodModel *model;
 
+@property (nonatomic,strong) UITextField *textfiled;
+
+@property (nonatomic,strong) UIView *lineView;
+
 @end
 
 @implementation ETWalletSearchController
@@ -48,7 +52,7 @@
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
         
         STRONG_SELF(self);
-        make.top.equalTo(self.view.mas_top).offset(64);
+        make.top.equalTo(self.lineView.mas_bottom).offset(0);
         make.left.right.bottom.equalTo(self.view);
         
     }];
@@ -131,25 +135,26 @@
     [searchView addSubview:cancelBtn];
     [cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.right.bottom.equalTo(searchView);
+        make.top.equalTo(searchView.mas_top).offset(kStatusBarHeight);
+        make.right.equalTo(searchView.mas_right).offset(0);
         make.width.mas_equalTo(60);
         make.height.mas_equalTo(40);
         
     }];
     
-    UITextField *textfiled = [[UITextField alloc]init];
-    textfiled.clipsToBounds = YES;
-    textfiled.layer.cornerRadius = 12;
-    textfiled.backgroundColor = UIColorFromHEX(0xf5f5f5, 1);
-    textfiled.attributedPlaceholder = [[NSAttributedString alloc]initWithString:@"搜索代币名称/合约/项目名称" attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:12]}];
+    self.textfiled = [[UITextField alloc]init];
+    self.textfiled.clipsToBounds = YES;
+    self.textfiled.layer.cornerRadius = 12;
+    self.textfiled.backgroundColor = UIColorFromHEX(0xf5f5f5, 1);
+    self.textfiled.attributedPlaceholder = [[NSAttributedString alloc]initWithString:@"搜索代币名称/合约/项目名称" attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:12]}];
     UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 34, 30)];
     UIImageView *imag = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zc_sousuo"]];
     imag.frame = CGRectMake(10, 8, 14, 15);
     [backView addSubview:imag];
-    textfiled.leftView = backView;
-    textfiled.leftViewMode = UITextFieldViewModeAlways;
-    [searchView addSubview:textfiled];
-    [textfiled mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.textfiled.leftView = backView;
+    self.textfiled.leftViewMode = UITextFieldViewModeAlways;
+    [searchView addSubview:self.textfiled];
+    [self.textfiled mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.equalTo(searchView.mas_left).offset(15);
         make.centerY.equalTo(cancelBtn.mas_centerY);
@@ -158,15 +163,16 @@
         
     }];
     
-    [textfiled addTarget:self action:@selector(textfieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.textfiled addTarget:self action:@selector(textfieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     
-    UIView *lineView = [[UIView alloc]init];
-    lineView.backgroundColor = UIColorFromHEX(0xEBEBEB, 1);
-    [searchView addSubview:lineView];
-    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.lineView = [[UIView alloc]init];
+    self.lineView.backgroundColor = UIColorFromHEX(0xEBEBEB, 1);
+    [searchView addSubview:self.lineView];
+    [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.left.right.bottom.equalTo(searchView);
+        make.left.right.equalTo(searchView);
         make.height.mas_equalTo(0.5);
+        make.top.equalTo(self.textfiled.mas_bottom).offset(10);
         
     }];
 }

@@ -101,7 +101,7 @@
         
         make.top.equalTo(self.view.mas_top);
         make.right.left.equalTo(self.view);
-        make.height.mas_equalTo(164);
+        make.height.mas_equalTo(184);
         
     }];
     
@@ -109,7 +109,7 @@
     [self.view addSubview:self.detailTab];
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.equalTo(self.homeHeader.mas_bottom).offset(-20);
+        make.top.equalTo(self.homeHeader.mas_bottom).offset(-25);
         make.left.right.bottom.equalTo(self.view);
         
     }];

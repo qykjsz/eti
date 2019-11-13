@@ -15,6 +15,7 @@
 #import "ETMyContactsCell.h"
 
 #import "ETTransListModel.h"
+#import "ETHashSearchModel.h"
 
 @interface ETRecordDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -27,6 +28,10 @@
 @property (nonatomic,assign) NSInteger curretnPage;
 
 @property (nonatomic,strong) ETTransListModel *model;
+
+@property (nonatomic,strong) ETHashSearchModel *searchModel;
+
+@property (nonatomic,assign) BOOL isSearch;
 
 @end
 
@@ -92,12 +97,26 @@
 - (void)setTemg:(NSString *)temg {
     
     _temg = temg;
+    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:model.address forKey:@"address"];
+    [dict setValue:temg forKey:@"hash"];
+    [dict setValue:self.coinName forKey:@"glod"];
+    [HTTPTool requestDotNetWithURLString:@"et_recordorderhash" parameters:dict type:kPOST success:^(id responseObject) {
+        
+        self.isSearch = YES;
+        self.searchModel = [ETHashSearchModel mj_objectWithKeyValues:responseObject];
+        [self.detailTab reloadData];
+        
+    } failure:^(NSError *error) {
+        
+    }];
     
-    for (orderData *data in self.dataArr) {
-        if ([data.hashString isEqualToString:temg]) {
-            
-        }
+    if ([Tools checkStringIsEmpty:temg]) {
+        self.isSearch = NO;
+        [self.detailTab reloadData];
     }
+    
 }
 #pragma Mark- NET
 - (void)listRequest {
@@ -139,6 +158,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+   
+        
+    if (self.isSearch) {
+        if (self.searchModel.data) {
+            return 1;
+        }else {
+            return 0;
+        }
+    }
+        
+
     return self.dataArr.count;
     
 }
@@ -152,11 +182,14 @@
     
     ETRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETRecordCell"];
     if (self.isOpen) {
-        orderData *data = self.dataArr[indexPath.row];
-        cell.model = data;
-        cell.moneydetail.text = @"289.8493";
-        cell.statusDetail.text = @"已完成";
-        cell.timeDetail.text = @"2019/10/22 12:23";
+        
+        if (self.isSearch) {
+            cell.data = self.searchModel.data;
+        }else {
+            orderData *data = self.dataArr[indexPath.row];
+            cell.model = data;
+        }
+        
     }else {
         cell.moneydetail.text = @"***.**";
         cell.statusDetail.text = @"***";

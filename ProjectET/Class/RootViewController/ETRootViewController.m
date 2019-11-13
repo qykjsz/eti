@@ -5,7 +5,7 @@
 //  Created by hufeng on 2019/10/28.
 //  Copyright © 2019 LightCould. All rights reserved.
 //
-
+#import "ETNewFoundController.h"
 #import "ETRootViewController.h"
 #import "ETAssetsViewController.h"
 #import "MineViewController.h"
@@ -57,7 +57,7 @@
     UINavigationController * mallNav = [[UINavigationController alloc] initWithRootViewController:mallVC];
     
     //发现
-    FoundViewController * medicineVC = [FoundViewController new];
+    ETNewFoundController * medicineVC = [ETNewFoundController new];
     UINavigationController * medicineNav = [[UINavigationController alloc] initWithRootViewController:medicineVC];
     
     //购物车

@@ -10,7 +10,7 @@
 
 @interface ETRecordCell()
 
-@property (nonatomic,strong) UILabel *topLB;
+
 
 
 @end
@@ -158,6 +158,30 @@
     }
     
     self.timeDetail.text = model.time;
+    
+}
+
+- (void)setData:(hashData *)data {
+    
+    _data = data;
+    if ([data.type isEqualToString:@"1"]) {
+        self.topLB.textColor = UIColorFromHEX(0x1D57FF, 1);
+        self.topLB.text = [NSString stringWithFormat:@"转入%@",data.name];
+    }else {
+        self.topLB.textColor = UIColorFromHEX(0x00C176, 1);
+        self.topLB.text = [NSString stringWithFormat:@"转入%@",data.name];
+    }
+    
+    self.moneydetail.text = data.amount;
+    //    order->status    [string]    是    状态 1.成功 2.失败
+    NSInteger status = [data.status integerValue];
+    if (status == 1) {
+        self.statusDetail.text = @"已完成";
+    }else {
+        self.statusDetail.text = @"失败";
+    }
+    
+    self.timeDetail.text = data.time;
     
 }
 

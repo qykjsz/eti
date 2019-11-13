@@ -14,7 +14,7 @@
     
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = UIColor.whiteColor;
-        UIImageView *backImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"sy_qb_bg"]];
+        UIImageView *backImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"qb_bg"]];
         [self addSubview:backImage];
         [backImage mas_makeConstraints:^(MASConstraintMaker *make) {
             

@@ -14,7 +14,8 @@
 #import "HelpViewController.h"
 #import "SetViewController.h"
 #import "MineRecordViewController.h"
-#import "TotalAssViewController.h"
+//#import "TotalAssViewController.h"
+#import "ETTotalAssetsController.h"
 #import "ETWalletMangerController.h"
 
 @interface MineViewController ()<MineHeadViewDelegate,UITableViewDelegate,UITableViewDataSource>
@@ -40,7 +41,7 @@
 - (UITableView *)detailTab {
     
     if (!_detailTab) {
-        _detailTab = [[UITableView alloc] initWithFrame:CGRectMake(0, 118, SCREEN_WIDTH, SCREEN_HEIGHT - 118) style:UITableViewStylePlain];
+        _detailTab = [[UITableView alloc] initWithFrame:CGRectMake(0, kStatusBarHeight + 40, SCREEN_WIDTH, SCREEN_HEIGHT - 118) style:UITableViewStylePlain];
         _detailTab.delegate = self;
         _detailTab.dataSource = self;
         _detailTab.clipsToBounds = YES;
@@ -53,15 +54,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    MineHeadView *view = [[MineHeadView alloc]init];
-    view.delegate = self;
-    [self.view addSubview:view];
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.mas_offset(0);
-        make.height.height.mas_offset(148);
+//    MineHeadView *view = [[MineHeadView alloc]init];
+//    view.delegate = self;
+//    [self.view addSubview:view];
+//    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.right.top.mas_offset(0);
+//        make.height.height.mas_offset(148);
+//    }];
+    self.view.backgroundColor = [UIColor whiteColor];
+    UIImageView *topImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zz_top_bg"]];
+    topImage.userInteractionEnabled = YES;
+    [self.view addSubview:topImage];
+    [topImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.top.right.equalTo(self.view);
+        make.height.mas_equalTo(120);
+        
     }];
-    self.titleArray = @[@"联系人",@"",@"邀请好友",@"帮助中心",@"关于我们",@"系统设置"];
-    self.imgArray = @[@"wo_lian_4",@"",@"wo_yao_5",@"wo_help_6",@"wo_guan_7",@"wo_she_8"];
+    
+    UILabel *titleLb = [[UILabel alloc]init];
+    titleLb.text = @"个人中心";
+    titleLb.font = [UIFont systemFontOfSize:18];
+    titleLb.textColor = UIColor.whiteColor;
+    [topImage addSubview:titleLb];
+    [titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.centerX.equalTo(topImage.mas_centerX);
+        make.top.equalTo(topImage.mas_top).offset(kStatusBarHeight + 5);
+        
+    }];
+    self.titleArray = @[@"联系人",@"邀请好友",@"帮助中心",@"关于我们",@"系统设置"];
+    self.imgArray = @[@"wo_lian_4",@"wo_yao_5",@"wo_help_6",@"wo_guan_7",@"wo_she_8"];
     [self.view addSubview:self.detailTab];
     
     [self creatcontentView];
@@ -95,25 +118,26 @@
             make.top.equalTo(btn.mas_bottom).offset(10);
         }];
     }
-    UIView *footView = [ClassBaseTools viewWithBackgroundColor:[UIColor whiteColor]];
-    footView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 100);
-    self.detailTab.tableFooterView = footView;
-    UIButton *quietBtn = [ClassBaseTools buttonWithFont:16 titlesColor:[UIColor blueColor] contentHorizontalAlignment:0 title:@"退出登录"];
-    [footView addSubview:quietBtn];
+
+    UIButton *quietBtn = [ClassBaseTools buttonWithFont:16 titlesColor:UIColorFromHEX(0x1758FB, 1) contentHorizontalAlignment:0 title:@"退出登录"];
+    [self.view addSubview:quietBtn];
     [quietBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-       make.left.right.mas_offset(0);
-        make.height.mas_offset(16);
-        make.bottom.equalTo(footView.mas_bottom).offset(-30);
+       
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.right.left.equalTo(self.view);
+        make.height.mas_equalTo(44);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-20);
+        
     }];
     
 }
 - (void)headBtnAction:(UIButton *)btn{
     switch (btn.tag-1000) {
         case 0:{
-            TotalAssViewController *ctrl = [[TotalAssViewController alloc]init];
-            [self setHidesBottomBarWhenPushed:YES];
+            ETTotalAssetsController *ctrl = [[ETTotalAssetsController alloc]init];
+            ctrl.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:ctrl animated:YES];
-            [self setHidesBottomBarWhenPushed:NO];
+            
         }
             break;
         case 1:{
@@ -150,14 +174,14 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellTableIndentifier];
         //自带有两种基础的tableView样式，UITableViewCellStyleValue1、2. 后面的文章会讲解自定义样式
     }
-    switch (indexPath.row) {
-        case 1:
-            return cell;
-            break;
-            
-        default:
-            break;
-    }
+//    switch (indexPath.row) {
+//        case 1:
+//            return cell;
+//            break;
+//
+//        default:
+//            break;
+//    }
     UIView *line = [ClassBaseTools viewWithBackgroundColor:[[UIColor lightGrayColor] colorWithAlphaComponent:.3]];
     [cell.contentView addSubview:line];
     [line mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -171,6 +195,7 @@
     //添加图片
     cell.textLabel.text = _titleArray[indexPath.row];
     cell.textLabel.font =[UIFont systemFontOfSize:14];
+    cell.textLabel.textColor = UIColorFromHEX(0x333333, 1);
     //添加右侧注释
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

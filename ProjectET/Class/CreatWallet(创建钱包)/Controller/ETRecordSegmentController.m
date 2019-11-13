@@ -20,6 +20,13 @@
 @property (nonatomic,strong) ETTransListModel *model;
 
 @property (nonatomic,strong) ETRecordDetailViewController *vc1;
+
+@property (nonatomic,strong) ETRecordDetailViewController *vc2;
+
+@property (nonatomic,strong) ETRecordDetailViewController *vc3;
+
+@property (nonatomic,assign) NSInteger currentPage;
+
 @end
 
 @implementation ETRecordSegmentController
@@ -133,6 +140,7 @@
                                              @{NSForegroundColorAttributeName:UIColorFromHEX(0xc2c2c2, 1),
                                                NSFontAttributeName:[UIFont boldSystemFontOfSize:12]}];
     [textField addTarget:self action:@selector(textfieldDidChange:) forControlEvents:UIControlEventEditingDidEnd];
+    [textField addTarget:self action:@selector(textfieldDidChange2:) forControlEvents:UIControlEventEditingChanged];
     textField.attributedPlaceholder = attrString;
     textField.backgroundColor = UIColorFromHEX(0xF5F5F5, 1);
     textField.clipsToBounds = YES;
@@ -178,15 +186,15 @@
     self.vc1 = [[ETRecordDetailViewController alloc]init];
     self.vc1.type = @"3";
     self.vc1.coinName = self.coinName;
-    ETRecordDetailViewController *vc2 = [[ETRecordDetailViewController alloc]init];
-    vc2.type = @"1";
-    vc2.coinName = self.coinName;
-    ETRecordDetailViewController *vc3 = [[ETRecordDetailViewController alloc]init];
-    vc3.type = @"2";
-    vc3.coinName = self.coinName;
+    self.vc2 = [[ETRecordDetailViewController alloc]init];
+    self.vc2.type = @"1";
+    self.vc2.coinName = self.coinName;
+    self.vc3 = [[ETRecordDetailViewController alloc]init];
+    self.vc3.type = @"2";
+    self.vc3.coinName = self.coinName;
     [viewControllers addObject:self.vc1];
-    [viewControllers addObject:vc2];
-    [viewControllers addObject:vc3];
+    [viewControllers addObject:self.vc2];
+    [viewControllers addObject:self.vc3];
     
     /// 计算导航栏高度
     CGFloat barHeight = [UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.frame.size.height;
@@ -200,21 +208,50 @@
     
     [self.view addSubview:[self footerView]];
     
-      [self listRequest];
+    [self listRequest];
+    [self detailRequest];
 }
 
 - (void)textfieldDidChange:(UITextField *)textfiled {
     
-    self.vc1.temg = textfiled.text;
+    if (![Tools checkStringIsEmpty:textfiled.text]) {
+        if (self.currentPage == 0) {
+            self.vc1.temg = textfiled.text;
+        }else if (self.currentPage == 1) {
+            self.vc2.temg = textfiled.text;
+        }else {
+            self.vc3.temg = textfiled.text;
+        }
+    }
+
+}
+
+- (void)textfieldDidChange2:(UITextField *)textfiled {
+    
+    if ([Tools checkStringIsEmpty:textfiled.text]) {
+        if (self.currentPage == 0) {
+            self.vc1.temg = textfiled.text;
+        }else if (self.currentPage == 1) {
+            self.vc2.temg = textfiled.text;
+        }else {
+            self.vc3.temg = textfiled.text;
+        }
+    }
+    
 }
 
 - (void)eyeAction:(NSNotification *)sender {
     
     if ([sender.object[@"isOpen"] boolValue]) {
         
-        self.headerView.moneyLb.text = @"999.99";
-        self.headerView.subMoneyLb.text = @"≈$ 638383.7889";
-        self.headerView.todayLb.text = @"今日 +120.36";
+        self.headerView.moneyLb.text = self.model.data.number;
+        self.headerView.subMoneyLb.text = [NSString stringWithFormat:@"≈$ %@",self.model.data.usdtnumber];
+        if ([self.model.data.today floatValue] >= 0) {
+             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.model.data.today];
+        }else {
+             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.model.data.today];
+        }
+       
     }else {
         
         self.headerView.moneyLb.text = @"***.**";
@@ -226,7 +263,7 @@
 - (void)buttonClick:(UIButton *)btn{
     
     [self btnClickAction:btn];
-    
+    self.currentPage = btn.tag;
     [self.hoverPageViewController moveToAtIndex:btn.tag animated:YES];
 }
 
@@ -254,6 +291,7 @@
 - (void)hoverPageViewController:(HoverPageViewController *)ViewController scrollVIewDidEndDecelerating:(UIScrollView *)scrollView {
     
     CGFloat progress = scrollView.contentOffset.x / scrollView.frame.size.width;
+    self.currentPage = progress;
     if (progress == 1.0) {
         for (UIView *object in self.pageTitleView.subviews) {
             
@@ -289,6 +327,31 @@
 }
 
 
+- (void)detailRequest {
+    
+    /*
+     address 复制    [string]    是    地址
+     page    [string]    是    当前页数 从0开始
+     glod    [string]    是    查询币种 如 ETH 传0为全部币种
+     type    [string]    是    交易类型 1.转入 2.转入 3.全部
+     */
+    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:model.address forKey:@"address"];
+    [dict setValue:@(0) forKey:@"page"];
+    [dict setValue:self.coinName forKey:@"glod"];
+    [dict setValue:@"3" forKey:@"type"];
+    [HTTPTool requestDotNetWithURLString:@"et_recordorder" parameters:dict type:kPOST success:^(id responseObject) {
+        
+        
+        self.model = [ETTransListModel mj_objectWithKeyValues:responseObject];
+        
+        
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 - (void)popAction {
     

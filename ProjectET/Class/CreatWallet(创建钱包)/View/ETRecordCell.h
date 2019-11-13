@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ETTransListModel.h"
+#import "ETHashSearchModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ETRecordCell : UITableViewCell
@@ -19,6 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) UILabel *statusDetail;
 
 @property (nonatomic,strong) orderData *model;
+
+@property (nonatomic,strong) UILabel *topLB;
+
+@property (nonatomic,strong) hashData *data;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -20,7 +20,7 @@
     
  
 
-        NSString *accesstoken = [[NSUserDefaults standardUserDefaults] valueForKey:@"accesstoken"];
+     //   NSString *accesstoken = [[NSUserDefaults standardUserDefaults] valueForKey:@"accesstoken"];
 
         [self requestWithAccessToken:@""
                            URLString:URLString

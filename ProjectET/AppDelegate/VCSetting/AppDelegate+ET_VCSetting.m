@@ -45,6 +45,7 @@
         vc.view.backgroundColor = [UIColor whiteColor];
         vc.navigationController.navigationBar.translucent = NO;
         vc.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+        vc.hidesBottomBarWhenPushed = YES;
         
     } error:NULL];
 }
