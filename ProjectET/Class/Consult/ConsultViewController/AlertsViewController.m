@@ -9,14 +9,21 @@
 #import "AlertsViewController.h"
 #import "AlertsCell.h"
 #import "QuickViewCell.h"
+#import "AlertsModel.h"
+#import "ETConAlertsModel.h"
+#import "QuickViewController.h"
 
 @interface AlertsViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *detailTab;
-@property (nonatomic,strong) NSArray *dataArray;
+@property (nonatomic,strong) NSMutableArray *dataArray;
+//@property (nonatomic,strong)AlertsModel *model;
+@property (nonatomic,strong)ETConAlertsModel *model;
 
 @end
 
-@implementation AlertsViewController
+@implementation AlertsViewController{
+    int currentPage;
+}
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
@@ -33,7 +40,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"快讯";
-    
+    currentPage = 0;
+    self.dataArray = [NSMutableArray array];
+    [self getAlertsListData];
     UIView *topView = [ClassBaseTools viewWithBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"wo_top_bg"]]];
     [self.view addSubview:topView];
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -45,6 +54,41 @@
     
     [self.view addSubview:self.detailTab];
     [self creatHeadView];
+    __weak typeof(self)  weakSelf = self;
+    MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingBlock:^{
+        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
+        [self.dataArray removeAllObjects];
+        self->currentPage = 0;
+        [self getAlertsListData];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            // 结束刷新
+            [weakSelf.detailTab.mj_header endRefreshing];
+        });
+    }];
+//    header.stateLabel.textColor = [UIColor redColor];
+    self.detailTab.mj_header = header;
+
+   
+    
+}
+- (void)getAlertsListData{
+    
+    
+    [HTTPTool requestDotNetWithURLString:@"et_newsflash" parameters:@{@"page":[NSString stringWithFormat:@"%d",currentPage]}    type:kPOST success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        self.model =[ETConAlertsModel mj_objectWithKeyValues:responseObject];
+        [self.dataArray addObjectsFromArray:self.model.data.News];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.detailTab reloadData];
+            self->currentPage++;
+        });
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
 }
 - (void)creatHeadView{
     UIView *view = [ClassBaseTools viewWithBackgroundColor:[UIColor whiteColor]];
@@ -76,21 +120,79 @@
     NSLog(@"%ld",(long)tag);
 }
 - (CGFloat)getTextHeightWithString:(NSString *)string{
-    CGRect rect = [string boundingRectWithSize:CGSizeMake(200, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil];
+//    CGRect rect = [string boundingRectWithSize:CGSizeMake(SCREEN_WIDTH-39, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil];
+    CGRect rect = [string boundingRectWithSize:CGSizeMake(SCREEN_WIDTH-39, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil];
+    
+  
     return  rect.size.height;
 }
+#pragma mark ---- 将时间戳转换成时间
 
+- (NSString *)getTimeFromTimestamp:(NSString *)time{
+    
+    //将对象类型的时间转换为NSDate类型
+    
+//    double time =1504667976;
+    
+    NSDate * myDate=[NSDate dateWithTimeIntervalSince1970:[time doubleValue]];
+    
+    //设置时间格式
+    
+    NSDateFormatter * formatter=[[NSDateFormatter alloc]init];
+    
+    [formatter setDateFormat:@"YYYY/MM/dd HH:mm"];
+    
+    //将时间转换为字符串
+    
+    NSString *timeStr=[formatter stringFromDate:myDate];
+    
+    return timeStr;
+    
+}
 #pragma mark--------DELEGATE-------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    if (self.dataArray.count>0) {
+        return self.dataArray.count+1 ;
+    }
+    return 0;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 140;
+    if (indexPath.row<[self.dataArray count]) {
+        ETalertNewsListData *newsModel = self.dataArray[indexPath.row];
+        CGFloat high =[self getTextHeightWithString:newsModel.content];
+        NSLog(@"%f",high);
+        
+        if (high<100) {
+            return 100+high;
+        }else if(high>200){
+            return 60+high;
+        }else{
+            return 80+high;
+        }
+    }else{
+        return 44;
+    }
+   return 44;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellTableIndentifier = @"CellTableIdentifier";
     //单元格ID
     //重用单元格
+    
+    if([indexPath row] == ([self.dataArray count])) {
+        UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identy"];
+        
+        //创建loadMoreCell
+        if (indexPath.row < [self.model.data.pages intValue]) {
+            [self getAlertsListData];
+            cell.textLabel.text = @"加载中";
+            
+        }else{
+        cell.textLabel.text = @"加载完成";
+        }
+        return cell;
+    }else{
+    
     QuickViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIndentifier];
     //初始化单元格
     if(cell == nil)
@@ -107,14 +209,25 @@
         make.height.mas_offset(.5);
     }];
     
-//    cell.title.text = @"摆脱按键操作，通过语音识别直接输 入文字，快速返回识别结果";
-    CGFloat l = [self getTextHeightWithString:cell.title.text];
-    NSLog(@"%ld",(long)l);
+    ETalertNewsListData *newsModel = self.dataArray[indexPath.row];
+        
+    NSLog(@"---%@  ===%@----%ld",newsModel,newsModel.time,(long)indexPath.row);
+        cell.time.text = [self getTimeFromTimestamp:newsModel.time];
+        cell.title.text = newsModel.title;
+        cell.detail.text = newsModel.content;
+
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor whiteColor];
     return cell;
+    }
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    QuickViewController *ctrl = [[QuickViewController alloc]init];
+//    [self setHidesBottomBarWhenPushed:YES];
+//    [self.navigationController pushViewController:ctrl animated:YES];
+    [self presentViewController:ctrl animated:YES completion:nil];
 }
 @end

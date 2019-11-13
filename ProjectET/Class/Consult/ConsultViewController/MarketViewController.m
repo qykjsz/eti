@@ -8,10 +8,12 @@
 
 #import "MarketViewController.h"
 #import "MarketCell.h"
+#import "ETMarkModel.h"
 
 @interface MarketViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *detailTab;
 @property (nonatomic,strong) NSArray *dataArray;
+@property (nonatomic,strong) ETMarkModel *model;
 
 @end
 
@@ -20,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"行情";
-    
+    [self getMarkListData];
     UIView *topView = [ClassBaseTools viewWithBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"wo_top_bg"]]];
     [self.view addSubview:topView];
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -31,6 +33,17 @@
     }];
     [self creatHeadView];
     [self.view addSubview:self.detailTab];
+}
+- (void)getMarkListData{
+    [HTTPTool requestDotNetWithURLString:@"et_quotation" parameters:@{} type:kPOST success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        self.model = [ETMarkModel mj_objectWithKeyValues:responseObject];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.detailTab reloadData];
+        });
+    } failure:^(NSError *error) {
+        
+    }];
 }
 - (void)creatHeadView{
     UIView *view = [ClassBaseTools viewWithBackgroundColor:[UIColor whiteColor]];
@@ -76,7 +89,12 @@
 }
 #pragma mark--------DELEGATE-------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    if (self.model.data.count>0) {
+        return self.model.data.count;
+    }else{
+        return 0;
+    }
+    
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 75;
@@ -100,7 +118,12 @@
         make.width.mas_offset(SCREEN_WIDTH);
         make.height.mas_offset(.5);
     }];
-    
+    markData *markModel = self.model.data[indexPath.row];
+    [cell.icon sd_setImageWithURL:[NSURL URLWithString:markModel.img] placeholderImage:[UIImage imageNamed:@"zc_eth"]];
+    cell.name.text = markModel.name;
+    cell.number.text = markModel.shangmoney;
+    cell.money.text = markModel.xiamoney;
+    cell.gains.text = markModel.zd;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

@@ -8,14 +8,18 @@
 
 #import "ArticleViewController.h"
 #import "AlertsCell.h"
+#import "ArticleModel.h"
 
 @interface ArticleViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *detailTab;
-@property (nonatomic,strong) NSArray *dataArray;
+@property (nonatomic,strong) NSMutableArray *dataArray;
+@property (nonatomic,strong) ArticleModel *model;
 
 @end
 
-@implementation ArticleViewController
+@implementation ArticleViewController{
+    int currentPage;
+}
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
@@ -32,7 +36,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"文章";
-    
+    currentPage = 0;
+    self.dataArray = [NSMutableArray array];
+    [self getAritcleData];
     UIView *topView = [ClassBaseTools viewWithBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"wo_top_bg"]]];
     [self.view addSubview:topView];
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -43,6 +49,35 @@
     }];
     [self creatHeadView];
     [self.view addSubview:self.detailTab];
+    
+    __weak typeof(self)  weakSelf = self;
+    MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingBlock:^{
+        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
+        [self.dataArray removeAllObjects];
+        self->currentPage = 0;
+        [self getAritcleData];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            // 结束刷新
+            [weakSelf.detailTab.mj_header endRefreshing];
+        });
+    }];
+    //    header.stateLabel.textColor = [UIColor redColor];
+    self.detailTab.mj_header = header;
+}
+- (void)getAritcleData{
+    [HTTPTool requestDotNetWithURLString:@"et_news" parameters:@{@"page":@"0"}  type:kPOST success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        self.model = [ArticleModel mj_objectWithKeyValues:responseObject];
+        NSLog(@"%@",self.model.data.News);
+        [self.dataArray addObjectsFromArray:self.model.data.News];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.detailTab reloadData];
+            self->currentPage++;
+        });
+    } failure:^(NSError *error) {
+        
+    }];
 }
 - (void)creatHeadView{
     UIView *view = [ClassBaseTools viewWithBackgroundColor:[UIColor whiteColor]];
@@ -75,7 +110,10 @@
 }
 #pragma mark--------DELEGATE-------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    if (self.dataArray.count>0) {
+        return self.dataArray.count+1 ;
+    }
+    return 0;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 114;
@@ -83,7 +121,22 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellTableIndentifier = @"CellTableIdentifier";
     //单元格ID
+    if([indexPath row] == ([self.dataArray count])) {
+        UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identy"];
+        
+        //创建loadMoreCell
+        if (indexPath.row < [self.model.data.pages intValue]) {
+            [self getAritcleData];
+            cell.textLabel.text = @"加载中";
+            
+        }else{
+            cell.textLabel.text = @"";
+        }
+        return cell;
+    }else{
+    
     //重用单元格
+    
     AlertsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIndentifier];
     //初始化单元格
     if(cell == nil)
@@ -99,12 +152,16 @@
         make.width.mas_offset(SCREEN_WIDTH);
         make.height.mas_offset(.5);
     }];
-    
-    cell.title.text = @"摆脱按键操作，通过语音识别直接输 入文字，快速返回识别结果";
-    cell.from.text = @"来源：ET APP 2019/10/24";
+    articlNewseData *newsModel = self.model.data.News[indexPath.row];
+    cell.title.text = newsModel.name;
+    [cell.img sd_setImageWithURL:[NSURL URLWithString:newsModel.img] placeholderImage:[UIImage imageNamed:@"wz_pic"]];
+    cell.from.text = newsModel.time;
+//    cell.title.text = @"摆脱按键操作，通过语音识别直接输 入文字，快速返回识别结果";
+//    cell.from.text = @"来源：ET APP 2019/10/24";
     cell.textLabel.font =[UIFont systemFontOfSize:14];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+    }
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;

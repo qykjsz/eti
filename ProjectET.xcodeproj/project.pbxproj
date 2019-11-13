@@ -170,6 +170,11 @@
 		8855DB3523793BDA00F25DA4 /* MarketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DB3423793BDA00F25DA4 /* MarketCell.m */; };
 		8855DB3A2379469400F25DA4 /* TotalAssViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DB392379469400F25DA4 /* TotalAssViewController.m */; };
 		8855DB882379665700F25DA4 /* TotalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DB872379665700F25DA4 /* TotalCell.m */; };
+		8855DB9E237A5C2600F25DA4 /* AlertsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DB9D237A5C2600F25DA4 /* AlertsModel.m */; };
+		8855DBA1237A8D5500F25DA4 /* ETConAlertsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DBA0237A8D5500F25DA4 /* ETConAlertsModel.m */; };
+		8855DBA4237A920F00F25DA4 /* ArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DBA3237A920F00F25DA4 /* ArticleModel.m */; };
+		8855DBA8237A962B00F25DA4 /* ETMarkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DBA7237A962A00F25DA4 /* ETMarkModel.m */; };
+		8855DBAD237AB91600F25DA4 /* QuickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DBAC237AB91600F25DA4 /* QuickViewController.m */; };
 		88A5D0422372CFBC0012EE0B /* ClassBaseTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A5D0412372CFBC0012EE0B /* ClassBaseTools.m */; };
 		88A5D68C2376BEF10012EE0B /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A5D68B2376BEF10012EE0B /* MineViewController.m */; };
 		A9E72CB71DD272820A53863B /* Pods_ProjectET.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538F76165E482E5E17D51186 /* Pods_ProjectET.framework */; };
@@ -536,6 +541,16 @@
 		8855DB392379469400F25DA4 /* TotalAssViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TotalAssViewController.m; sourceTree = "<group>"; };
 		8855DB862379665700F25DA4 /* TotalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TotalCell.h; sourceTree = "<group>"; };
 		8855DB872379665700F25DA4 /* TotalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TotalCell.m; sourceTree = "<group>"; };
+		8855DB9C237A5C2600F25DA4 /* AlertsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertsModel.h; sourceTree = "<group>"; };
+		8855DB9D237A5C2600F25DA4 /* AlertsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertsModel.m; sourceTree = "<group>"; };
+		8855DB9F237A8D5500F25DA4 /* ETConAlertsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETConAlertsModel.h; sourceTree = "<group>"; };
+		8855DBA0237A8D5500F25DA4 /* ETConAlertsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETConAlertsModel.m; sourceTree = "<group>"; };
+		8855DBA2237A920F00F25DA4 /* ArticleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleModel.h; sourceTree = "<group>"; };
+		8855DBA3237A920F00F25DA4 /* ArticleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleModel.m; sourceTree = "<group>"; };
+		8855DBA6237A962A00F25DA4 /* ETMarkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETMarkModel.h; sourceTree = "<group>"; };
+		8855DBA7237A962A00F25DA4 /* ETMarkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETMarkModel.m; sourceTree = "<group>"; };
+		8855DBAB237AB91600F25DA4 /* QuickViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickViewController.h; sourceTree = "<group>"; };
+		8855DBAC237AB91600F25DA4 /* QuickViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickViewController.m; sourceTree = "<group>"; };
 		88A5D0402372CFBC0012EE0B /* ClassBaseTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassBaseTools.h; sourceTree = "<group>"; };
 		88A5D0412372CFBC0012EE0B /* ClassBaseTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassBaseTools.m; sourceTree = "<group>"; };
 		88A5D68A2376BEF10012EE0B /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
@@ -1321,6 +1336,7 @@
 		8855DAD523780DBC00F25DA4 /* Consult */ = {
 			isa = PBXGroup;
 			children = (
+				8855DB99237A5C0100F25DA4 /* ConModel */,
 				8855DADF2378238A00F25DA4 /* ConsultView */,
 				8855DAD723780DE000F25DA4 /* ConsultViewController */,
 			);
@@ -1347,6 +1363,8 @@
 				8855DB2723790F6200F25DA4 /* ArticleViewController.m */,
 				8855DB2923790F6F00F25DA4 /* MarketViewController.h */,
 				8855DB2A23790F6F00F25DA4 /* MarketViewController.m */,
+				8855DBAB237AB91600F25DA4 /* QuickViewController.h */,
+				8855DBAC237AB91600F25DA4 /* QuickViewController.m */,
 			);
 			path = ConsultViewController;
 			sourceTree = "<group>";
@@ -1366,6 +1384,21 @@
 				8855DB3423793BDA00F25DA4 /* MarketCell.m */,
 			);
 			path = ConsultView;
+			sourceTree = "<group>";
+		};
+		8855DB99237A5C0100F25DA4 /* ConModel */ = {
+			isa = PBXGroup;
+			children = (
+				8855DB9F237A8D5500F25DA4 /* ETConAlertsModel.h */,
+				8855DBA0237A8D5500F25DA4 /* ETConAlertsModel.m */,
+				8855DB9C237A5C2600F25DA4 /* AlertsModel.h */,
+				8855DB9D237A5C2600F25DA4 /* AlertsModel.m */,
+				8855DBA2237A920F00F25DA4 /* ArticleModel.h */,
+				8855DBA3237A920F00F25DA4 /* ArticleModel.m */,
+				8855DBA6237A962A00F25DA4 /* ETMarkModel.h */,
+				8855DBA7237A962A00F25DA4 /* ETMarkModel.m */,
+			);
+			path = ConModel;
 			sourceTree = "<group>";
 		};
 		88A5D03D2372CF980012EE0B /* ClassBaseTools */ = {
@@ -1705,9 +1738,11 @@
 				047A9DEC23700A5900FB5132 /* Signer.m in Sources */,
 				4F1942CD236D21DD00AD907E /* ETWalletDetailController.m in Sources */,
 				8855DAC72377EAD400F25DA4 /* MinePushViewController.m in Sources */,
+				8855DBA1237A8D5500F25DA4 /* ETConAlertsModel.m in Sources */,
 				4F128CA423683BF70004284D /* ETDirectCountCell.m in Sources */,
 				8855DB882379665700F25DA4 /* TotalCell.m in Sources */,
 				4F3F9069236C128D009AAA24 /* ETRecordHeaderView.m in Sources */,
+				8855DB9E237A5C2600F25DA4 /* AlertsModel.m in Sources */,
 				4F14FAF5236924770008C50A /* ETMyContactsController.m in Sources */,
 				4F2307032366EB120046A136 /* ETRootViewController.m in Sources */,
 				4F0E4D992373F5BB00E83618 /* ETTransferDetailCell.m in Sources */,
@@ -1772,8 +1807,10 @@
 				047A9DE123700A5900FB5132 /* Wallet.m in Sources */,
 				4F1942F5236D69FB00AD907E /* ETBackUpWalletView.m in Sources */,
 				4F1A224B2372CF8100FDD5D9 /* KMP_DOTNETModel.m in Sources */,
+				8855DBAD237AB91600F25DA4 /* QuickViewController.m in Sources */,
 				047A9DE323700A5900FB5132 /* SignedRemoteDictionary.m in Sources */,
 				8855DB2523790F4A00F25DA4 /* AlertsViewController.m in Sources */,
+				8855DBA8237A962B00F25DA4 /* ETMarkModel.m in Sources */,
 				4F1942DB236D2F7000AD907E /* ETQcodeImportView.m in Sources */,
 				8855DB2823790F6200F25DA4 /* ArticleViewController.m in Sources */,
 				4F128C80236820320004284D /* ViewController.m in Sources */,
@@ -1784,6 +1821,7 @@
 				4FA0A314236FFF440038F880 /* ETWalletManger.m in Sources */,
 				4FFFB9122379264500AE9BFF /* ETMycontactListModel.m in Sources */,
 				8855DAE4237823A500F25DA4 /* ConsultHeadView.m in Sources */,
+				8855DBA4237A920F00F25DA4 /* ArticleModel.m in Sources */,
 				4F3F9058236AEB93009AAA24 /* Tools+Image.m in Sources */,
 				4FA0A309236FCA270038F880 /* WMZPageParam.m in Sources */,
 				4F128C592367D1CE0004284D /* UIViewController+NaviBarButton.m in Sources */,
@@ -2004,8 +2042,8 @@
 			baseConfigurationReference = 172FA16F06F30E4F663C3530 /* Pods-ProjectET.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TV8T7CUK6C;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectET/Supporting Files/PrefixETHeader.pch";
 				INFOPLIST_FILE = ProjectET/Info.plist;
@@ -2016,7 +2054,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectET;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "et2-adhoc";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2027,8 +2065,9 @@
 			baseConfigurationReference = AE00EDB48D338D590FABFDDB /* Pods-ProjectET.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TV8T7CUK6C;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectET/Supporting Files/PrefixETHeader.pch";
 				INFOPLIST_FILE = ProjectET/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
