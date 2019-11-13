@@ -169,6 +169,7 @@
 		4FFFAFCF237BECAA00A87E50 /* ETNewFoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFCE237BECAA00A87E50 /* ETNewFoundController.m */; };
 		4FFFAFD6237BF2D100A87E50 /* ETFoundHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFD5237BF2D100A87E50 /* ETFoundHeaderView.m */; };
 		4FFFAFDE237BFE5100A87E50 /* ETFoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFDD237BFE5100A87E50 /* ETFoundCell.m */; };
+		4FFFAFE5237C12FB00A87E50 /* Tools+DeviceCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFE4237C12FB00A87E50 /* Tools+DeviceCategory.m */; };
 		4FFFB9122379264500AE9BFF /* ETMycontactListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB90E2379264500AE9BFF /* ETMycontactListModel.m */; };
 		4FFFB91623792A4D00AE9BFF /* ETTransListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB91523792A4D00AE9BFF /* ETTransListModel.m */; };
 		4FFFB91A2379390600AE9BFF /* ETTransferDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB9192379390600AE9BFF /* ETTransferDetailModel.m */; };
@@ -560,6 +561,8 @@
 		4FFFAFD5237BF2D100A87E50 /* ETFoundHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundHeaderView.m; sourceTree = "<group>"; };
 		4FFFAFDC237BFE5100A87E50 /* ETFoundCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundCell.h; sourceTree = "<group>"; };
 		4FFFAFDD237BFE5100A87E50 /* ETFoundCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundCell.m; sourceTree = "<group>"; };
+		4FFFAFE1237C12FB00A87E50 /* Tools+DeviceCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tools+DeviceCategory.h"; sourceTree = "<group>"; };
+		4FFFAFE4237C12FB00A87E50 /* Tools+DeviceCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tools+DeviceCategory.m"; sourceTree = "<group>"; };
 		4FFFB90E2379264500AE9BFF /* ETMycontactListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETMycontactListModel.m; sourceTree = "<group>"; };
 		4FFFB9112379264500AE9BFF /* ETMycontactListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMycontactListModel.h; sourceTree = "<group>"; };
 		4FFFB91423792A4D00AE9BFF /* ETTransListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransListModel.h; sourceTree = "<group>"; };
@@ -1024,6 +1027,8 @@
 		4F128C632367D95D0004284D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4FFFAFE1237C12FB00A87E50 /* Tools+DeviceCategory.h */,
+				4FFFAFE4237C12FB00A87E50 /* Tools+DeviceCategory.m */,
 				4F3F9056236AEB92009AAA24 /* Tools+Image.h */,
 				4F3F9057236AEB93009AAA24 /* Tools+Image.m */,
 				4F14FB1423695F0C0008C50A /* Tools.h */,
@@ -2134,6 +2139,7 @@
 				4F1A22332372BF5500FDD5D9 /* MJExtensionConfig.m in Sources */,
 				4F1942D5236D2A0800AD907E /* ETWalletDetailView.m in Sources */,
 				4F14FB1D236966C10008C50A /* ETMyWalletIconCell.m in Sources */,
+				4FFFAFE5237C12FB00A87E50 /* Tools+DeviceCategory.m in Sources */,
 				4FFFB91623792A4D00AE9BFF /* ETTransListModel.m in Sources */,
 				047A9DE423700A5900FB5132 /* UIColor+hex.m in Sources */,
 				4F128C82236820320004284D /* backUpViewController.m in Sources */,

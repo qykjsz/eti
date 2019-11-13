@@ -211,28 +211,28 @@
             [self setHidesBottomBarWhenPushed:NO];
         }
             break;
-        case 2:{
+        case 1:{
             InvationViewController *ctrl = [[InvationViewController alloc]init];
             [self setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:ctrl animated:YES];
             [self setHidesBottomBarWhenPushed:NO];
         }
             break;
-        case 3:{
+        case 2:{
             HelpViewController *ctrl = [[HelpViewController alloc]init];
             [self setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:ctrl animated:YES];
             [self setHidesBottomBarWhenPushed:NO];
         }
             break;
-        case 4:{
+        case 3:{
             AboutUsViewController *ctrl = [[AboutUsViewController alloc]init];
             [self setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:ctrl animated:YES];
             [self setHidesBottomBarWhenPushed:NO];
         }
             break;
-        case 5:{
+        case 4:{
             SetViewController *ctrl = [[SetViewController alloc]init];
             [self setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:ctrl animated:YES];

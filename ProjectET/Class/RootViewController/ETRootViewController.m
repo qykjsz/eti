@@ -33,42 +33,25 @@
 #pragma mark -
 - (void)setupViewControllers {
     
-
+    // 首页
     ETAssetsViewController *homeVC = [ETAssetsViewController new];
     UINavigationController * homeNav = [[UINavigationController alloc] initWithRootViewController:homeVC];
     
 
-    
-//    ETAssetsViewController * mallVC = [ETAssetsViewController new];
-//    UINavigationController * mallNav = [[UINavigationController alloc] initWithRootViewController:mallVC];
-//    
-//    
-//    ETAssetsViewController * medicineVC = [ETAssetsViewController new];
-//    UINavigationController * medicineNav = [[UINavigationController alloc] initWithRootViewController:medicineVC];
-//    
-//    
-//    ETAssetsViewController * shoppingCartListVc  = [ETAssetsViewController new];
-//    UINavigationController * shoppingCartListNav = [[UINavigationController alloc] initWithRootViewController:shoppingCartListVc];
-//    
-//    ETAssetsViewController * meVC = [ETAssetsViewController new];
-
-    //商城购药
+    // 资讯
     ETNewInformationViewController * mallVC = [ETNewInformationViewController new];
     UINavigationController * mallNav = [[UINavigationController alloc] initWithRootViewController:mallVC];
     
-    //发现
+    // 发现
     ETNewFoundController * medicineVC = [ETNewFoundController new];
     UINavigationController * medicineNav = [[UINavigationController alloc] initWithRootViewController:medicineVC];
-    
-    //购物车
-    FoundViewController * shoppingCartListVc  = [FoundViewController new];
-    UINavigationController * shoppingCartListNav = [[UINavigationController alloc] initWithRootViewController:shoppingCartListVc];
+
     
     //我的
     MineViewController * meVC = [MineViewController new];
     UINavigationController * meNav = [[UINavigationController alloc] initWithRootViewController:meVC];
     
-    self.viewControllers = @[homeNav, mallNav, medicineNav, shoppingCartListNav, meNav];
+    self.viewControllers = @[homeNav, mallNav, medicineNav, meNav];
     
     [self customizeTabBarForController];
     
@@ -77,7 +60,7 @@
 - (void)customizeTabBarForController {
     //选项卡图片
     NSArray *tabBarItemImages = @[@"1", @"2", @"3", @"4", @"5"];
-    NSArray *tabBarItemTitles = @[@"资产", @"资讯", @"发现", @"聊天", @"我的"];
+    NSArray *tabBarItemTitles = @[@"资产", @"资讯", @"发现", @"我的"];
     NSInteger index = 0;
     for (UIViewController * vc in self.viewControllers) {
         

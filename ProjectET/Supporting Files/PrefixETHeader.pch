@@ -40,7 +40,7 @@
 //#import <UMAnalytics/MobClick.h>
 //
 //#import "KMPAddressModel.h"//地址data
-
+#import "Tools+DeviceCategory.h"
 #import "UtilsHeader.h"//通用工具
 
 #import "ETExpandHeader.h"//KMP扩展

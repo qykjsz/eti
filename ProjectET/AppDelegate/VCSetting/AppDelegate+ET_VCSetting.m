@@ -39,13 +39,12 @@
             return;
         }
         
-        if (vc.navigationController.viewControllers.count> 1) {
+        if (vc.navigationController.viewControllers.count > 1) {
             [vc addLeftBarButtonWithImage:[UIImage imageNamed:@"fh_icon"] action:@selector(popNavi)];
         }
         vc.view.backgroundColor = [UIColor whiteColor];
         vc.navigationController.navigationBar.translucent = NO;
         vc.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-        vc.hidesBottomBarWhenPushed = YES;
         
     } error:NULL];
 }
