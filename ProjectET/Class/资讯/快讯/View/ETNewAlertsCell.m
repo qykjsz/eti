@@ -21,6 +21,7 @@
     self.lab_time.text = [self getTimeFromTimestamp:model.time];
     self.lab_title.text = model.title;
     self.lab_conten.text = model.content;
+    self.lab_source.text = [NSString stringWithFormat:@"来源：%@",model.source];
     if ([model.islook isEqual: @"0"]) {
         [self.lab_conten setNumberOfLines:4];
         [self.lab_all setHidden:NO];

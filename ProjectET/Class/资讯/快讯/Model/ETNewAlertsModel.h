@@ -38,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSString *islook;
 
+@property (nonatomic,strong) NSString *source;
 @end
 
 NS_ASSUME_NONNULL_END

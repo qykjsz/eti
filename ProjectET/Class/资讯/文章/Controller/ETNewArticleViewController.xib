@@ -49,7 +49,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="at6-fW-2JK">
-                    <rect key="frame" x="0.0" y="88" width="414" height="694"/>
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="yji-Qd-3VQ"/>
@@ -63,7 +63,7 @@
                 <constraint firstItem="at6-fW-2JK" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="G8P-lk-W5o"/>
                 <constraint firstItem="OUm-zv-Kvg" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="Q42-H2-1Ga"/>
                 <constraint firstItem="OUm-zv-Kvg" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="U8E-Hd-lpJ"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="at6-fW-2JK" secondAttribute="bottom" constant="80" id="dSz-6E-LS1"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="at6-fW-2JK" secondAttribute="bottom" id="dSz-6E-LS1"/>
                 <constraint firstItem="at6-fW-2JK" firstAttribute="top" secondItem="OUm-zv-Kvg" secondAttribute="bottom" id="sQq-uS-zgh"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="at6-fW-2JK" secondAttribute="trailing" id="z85-5S-cnV"/>
             </constraints>

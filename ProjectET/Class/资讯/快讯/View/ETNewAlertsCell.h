@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *lab_title;
 @property (weak, nonatomic) IBOutlet UILabel *lab_conten;
 @property (weak, nonatomic) IBOutlet UILabel *lab_all;
+@property (weak, nonatomic) IBOutlet UILabel *lab_source;
+
 @property (nonatomic,strong) ETNewConalertNewsListData *model;
 @end
 

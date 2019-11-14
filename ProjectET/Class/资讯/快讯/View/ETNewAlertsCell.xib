@@ -132,6 +132,7 @@
             <connections>
                 <outlet property="lab_all" destination="YUz-3n-UEQ" id="xxe-VY-jp4"/>
                 <outlet property="lab_conten" destination="Ad4-3K-0LN" id="vQX-be-v0Z"/>
+                <outlet property="lab_source" destination="Jc8-LM-BKw" id="fdn-Cq-ULx"/>
                 <outlet property="lab_time" destination="iy3-Ot-KTz" id="RkP-kJ-AB7"/>
                 <outlet property="lab_title" destination="eVX-X3-HKd" id="fAM-n0-ijR"/>
             </connections>

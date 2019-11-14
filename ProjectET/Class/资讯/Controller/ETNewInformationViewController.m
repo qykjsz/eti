@@ -44,7 +44,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (kStatusBarHeight == 64){
+    if (!iPhoneBang){
         self.constrain_top.constant = -20;
     }else {
         self.constrain_top.constant = -44;
@@ -58,9 +58,9 @@
     self.artVC = [[ETNewArticleViewController alloc]init];
     self.markVC = [[ETNewMarketViewController alloc]init];
     
-    self.aleVC.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 44);
-    self.artVC.view.frame = CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 44);
-    self.markVC.view.frame = CGRectMake(SCREEN_WIDTH *2, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 44);
+    self.aleVC.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, self.scrollView.frame.size.height);
+    self.artVC.view.frame = CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, self.scrollView.frame.size.height);
+    self.markVC.view.frame = CGRectMake(SCREEN_WIDTH *2, 0, SCREEN_WIDTH, self.scrollView.frame.size.height);
     
     [self addChildViewController:self.aleVC];
     [self addChildViewController:self.artVC];
@@ -96,7 +96,11 @@
 
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 44)];
+        if (!iPhoneBang){
+             _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 77)];
+        }else {
+            _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 83 - 77)];
+        }
         _scrollView.backgroundColor = UIColor.clearColor;
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;
@@ -104,7 +108,7 @@
         _scrollView.delegate = self;
 //        [_scrollView setScrollEnabled:NO];
         [_scrollView setPagingEnabled:YES];
-        [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH * 3, SCREEN_HEIGHT - 44)];
+        [_scrollView setContentSize:CGSizeMake(SCREEN_WIDTH * 3, 0)];
         [_scrollView setContentOffset:CGPointMake(0, 0)];
     }
     
