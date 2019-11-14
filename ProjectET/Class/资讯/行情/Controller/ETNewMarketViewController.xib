@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETNewMarketViewController">
             <connections>
+                <outlet property="tableView" destination="Yhp-fC-DZX" id="gEC-M1-7Bu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,20 +27,65 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bM0-dX-Hor">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dK-DV-wSS">
+                            <rect key="frame" x="151.5" y="0.0" width="121" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="最新价">
+                                <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1p-O4-lKV">
+                            <rect key="frame" x="20" y="0.0" width="121.5" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="资产">
+                                <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdQ-AS-vhj">
+                            <rect key="frame" x="272.5" y="0.0" width="121.5" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="涨跌幅">
+                                <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="h1p-O4-lKV" secondAttribute="bottom" id="0gm-7a-0FI"/>
                         <constraint firstItem="bM0-dX-Hor" firstAttribute="top" secondItem="8VB-i4-VQt" secondAttribute="top" id="4Fc-ou-rZs"/>
                         <constraint firstItem="bM0-dX-Hor" firstAttribute="leading" secondItem="8VB-i4-VQt" secondAttribute="leading" id="4HT-cQ-TNt"/>
                         <constraint firstAttribute="trailing" secondItem="bM0-dX-Hor" secondAttribute="trailing" id="Ncw-ST-d5i"/>
+                        <constraint firstItem="WdQ-AS-vhj" firstAttribute="leading" secondItem="8dK-DV-wSS" secondAttribute="trailing" id="OPU-1a-5Xa"/>
+                        <constraint firstItem="WdQ-AS-vhj" firstAttribute="top" secondItem="8VB-i4-VQt" secondAttribute="top" id="Op1-F7-Ev5"/>
                         <constraint firstAttribute="height" constant="44" id="UrX-HV-9p9"/>
+                        <constraint firstItem="h1p-O4-lKV" firstAttribute="top" secondItem="8VB-i4-VQt" secondAttribute="top" id="WR4-8W-jLU"/>
+                        <constraint firstItem="8dK-DV-wSS" firstAttribute="top" secondItem="8VB-i4-VQt" secondAttribute="top" id="ZoB-u5-Ekm"/>
+                        <constraint firstAttribute="bottom" secondItem="8dK-DV-wSS" secondAttribute="bottom" id="bVj-Ap-bVT"/>
                         <constraint firstAttribute="bottom" secondItem="bM0-dX-Hor" secondAttribute="bottom" id="du3-0i-jjw"/>
+                        <constraint firstItem="8dK-DV-wSS" firstAttribute="width" secondItem="h1p-O4-lKV" secondAttribute="width" id="j0h-y9-niP"/>
+                        <constraint firstAttribute="trailing" secondItem="WdQ-AS-vhj" secondAttribute="trailing" constant="20" id="lIB-m4-Dhe"/>
+                        <constraint firstItem="8dK-DV-wSS" firstAttribute="leading" secondItem="h1p-O4-lKV" secondAttribute="trailing" constant="10" id="nhp-4C-bhl"/>
+                        <constraint firstItem="h1p-O4-lKV" firstAttribute="leading" secondItem="8VB-i4-VQt" secondAttribute="leading" constant="20" id="o23-JT-h3K"/>
+                        <constraint firstItem="WdQ-AS-vhj" firstAttribute="width" secondItem="h1p-O4-lKV" secondAttribute="width" id="qWl-6W-NWN"/>
+                        <constraint firstAttribute="bottom" secondItem="WdQ-AS-vhj" secondAttribute="bottom" id="sfv-OP-Ps6"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yhp-fC-DZX">
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="A3R-nl-glz"/>
+                        <outlet property="delegate" destination="-1" id="zpj-p7-yZQ"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Yhp-fC-DZX" firstAttribute="top" secondItem="8VB-i4-VQt" secondAttribute="bottom" id="5d8-yf-znC"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Yhp-fC-DZX" secondAttribute="bottom" id="K5h-fw-Exw"/>
+                <constraint firstItem="Yhp-fC-DZX" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="ZPG-EM-aff"/>
                 <constraint firstItem="8VB-i4-VQt" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="daT-DF-DnD"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Yhp-fC-DZX" secondAttribute="trailing" id="qDJ-w0-kmi"/>
                 <constraint firstAttribute="trailing" secondItem="8VB-i4-VQt" secondAttribute="trailing" id="wcy-mb-V4c"/>
                 <constraint firstItem="8VB-i4-VQt" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="zQw-Vp-mOw"/>
             </constraints>

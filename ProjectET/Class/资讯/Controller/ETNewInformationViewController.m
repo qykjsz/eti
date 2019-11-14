@@ -20,6 +20,8 @@
 @property (nonatomic, strong) ETNewArticleViewController *artVC;
 @property (nonatomic, strong) ETNewMarketViewController *markVC;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrain_top;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrain_titleTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrain_backTop;
 
 @end
 
@@ -48,6 +50,8 @@
         self.constrain_top.constant = -20;
     }else {
         self.constrain_top.constant = -44;
+        self.constrain_titleTop.constant = 40;
+         self.constrain_backTop.constant = -51;
     }
     [self layoutUI];
 }
@@ -99,7 +103,7 @@
         if (!iPhoneBang){
              _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 77)];
         }else {
-            _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 83 - 77)];
+            _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 83 - 97)];
         }
         _scrollView.backgroundColor = UIColor.clearColor;
         _scrollView.showsVerticalScrollIndicator = NO;

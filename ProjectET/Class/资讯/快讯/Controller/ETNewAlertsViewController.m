@@ -7,10 +7,11 @@
 //
 
 #import "ETNewAlertsViewController.h"
+#import "ETNewAlertsDetailsViewController.h"
 #import "ETNewAlertsCell.h"
 #import "ETNewAlertsModel.h"
 
-@interface ETNewAlertsViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ETNewAlertsViewController ()<UITableViewDelegate,UITableViewDataSource,ETNewAlertsCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *lab_time;
 @property (nonatomic,strong) NSMutableArray *dataSource;
@@ -52,6 +53,10 @@
 
 - (void)getAlertsListData{
     [HTTPTool requestDotNetWithURLString:@"et_newsflash" parameters:@{@"page":[NSString stringWithFormat:@"%ld",(long)self.currentPage]}    type:kPOST success:^(id responseObject) {
+        if (self.currentPage == 0) {
+            [self.dataSource removeAllObjects];
+        }
+        
         NSLog(@"%@",responseObject);
         self.model =[ETNewAlertsModel mj_objectWithKeyValues:responseObject];
         [self.dataSource addObjectsFromArray:self.model.data.News];
@@ -78,6 +83,7 @@
 
     ETNewAlertsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETNewAlertsCell"];
     cell.model = self.dataSource[indexPath.row];
+    cell.delegate = self;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -94,6 +100,19 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 0.1;
+}
+
+#pragma mark - ETNewAlertsCellDelegate
+
+-(void)ETNewAlertsCellDelegateWithShare:(ETNewConalertNewsListData *)model{
+    ETNewAlertsDetailsViewController *vc = [[ETNewAlertsDetailsViewController alloc]init];
+    vc.titleStr = model.title;
+    vc.time = model.time;
+    vc.source = model.source;
+    vc.content = model.content;
+    vc.url = model.url;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 /*

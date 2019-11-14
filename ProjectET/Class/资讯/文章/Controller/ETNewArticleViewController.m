@@ -51,6 +51,9 @@
 - (void)getAlertsListData{
     [HTTPTool requestDotNetWithURLString:@"et_news" parameters:@{@"page":[NSString stringWithFormat:@"%ld",(long)self.currentPage]}    type:kPOST success:^(id responseObject) {
         NSLog(@"%@",responseObject);
+        if (self.currentPage == 0) {
+            [self.dataSource removeAllObjects];
+        }
         self.model =[ETNewArticleModel mj_objectWithKeyValues:responseObject];
         [self.dataSource addObjectsFromArray:self.model.data.News];
         [self.tableView reloadData];

@@ -61,6 +61,9 @@
                                     <constraint firstAttribute="width" constant="30" id="wyF-Ba-njj"/>
                                 </constraints>
                                 <state key="normal" image="kx_fx"/>
+                                <connections>
+                                    <action selector="actionOfShare:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ych-qc-7CO"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支持任意两种语言之间的字词、句子和网页翻译。可分析的人工翻译文档越多，译文的质量就会越高。Google 翻译生成译文时，会在数百万篇文档中查找各种模式，以便决定最佳翻译。Google 翻译通过在经过人工翻译的文档中检" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad4-3K-0LN">
                                 <rect key="frame" x="29.5" y="100.5" width="285.5" height="53"/>

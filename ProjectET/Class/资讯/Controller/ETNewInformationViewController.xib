@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETNewInformationViewController">
             <connections>
                 <outlet property="btn_select" destination="c8X-17-nri" id="9ke-Vj-6nW"/>
+                <outlet property="constrain_backTop" destination="4PV-5o-CG3" id="8PM-Nl-O60"/>
+                <outlet property="constrain_titleTop" destination="osI-Q2-WwJ" id="esG-ZB-eId"/>
                 <outlet property="constrain_top" destination="aYm-0G-I7r" id="203-Wv-fsq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="view_background" destination="71t-Co-S7G" id="bpX-te-sCI"/>

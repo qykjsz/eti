@@ -1,24 +1,27 @@
 //
-//  ETMarkModel.h
+//  ETNewMarketModel.h
 //  ProjectET
 //
-//  Created by wangxiaopeng on 2019/11/12.
+//  Created by mac on 2019/11/14.
 //  Copyright © 2019 LightCould. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-@class markData;
+
+@class ETNewMarketDatasModel;
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ETMarkModel : NSObject
-@property (nonatomic,strong) NSMutableArray <markData *> *data;
+@interface ETNewMarketModel : NSObject
+
+@property (nonatomic,strong) NSMutableArray <ETNewMarketDatasModel *> *data;
 
 @property (nonatomic,strong) NSString *msg;
 
 @property (nonatomic,strong) NSString *code;
+
 @end
 
-@interface markData : NSObject
+@interface ETNewMarketDatasModel : NSObject
 
 @property (nonatomic,strong) NSString *name;
 
@@ -29,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) NSString *xiamoney;
 
 @property (nonatomic,strong) NSString *zd;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -32,6 +32,13 @@
     }
 }
 
+
+- (IBAction)actionOfShare:(UIButton *)sender {
+    if ([self.delegate respondsToSelector:@selector(ETNewAlertsCellDelegateWithShare:)]) {
+        [self.delegate ETNewAlertsCellDelegateWithShare:self.model];
+    }
+}
+
 #pragma mark ---- 将时间戳转换成时间
 
 - (NSString *)getTimeFromTimestamp:(NSString *)time{

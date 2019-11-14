@@ -45,6 +45,11 @@
 		04DB9F0B237C1593002796C3 /* ETNewFoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9F09237C1592002796C3 /* ETNewFoundController.m */; };
 		04DB9F11237C15B5002796C3 /* ETFoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9F0D237C15B5002796C3 /* ETFoundCell.m */; };
 		04DB9F12237C15B5002796C3 /* ETFoundHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9F10237C15B5002796C3 /* ETFoundHeaderView.m */; };
+		04DB9F16237CF233002796C3 /* ETNewMarketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9F14237CF233002796C3 /* ETNewMarketCell.m */; };
+		04DB9F17237CF233002796C3 /* ETNewMarketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB9F15237CF233002796C3 /* ETNewMarketCell.xib */; };
+		04E9DAF5237CFE8800CDB9EE /* ETNewMarketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DAF4237CFE8800CDB9EE /* ETNewMarketModel.m */; };
+		04E9DAFA237D23D300CDB9EE /* ETNewAlertsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DAF8237D23D300CDB9EE /* ETNewAlertsDetailsViewController.m */; };
+		04E9DAFB237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E9DAF9237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib */; };
 		4F0E4D8D2373B3FC00E83618 /* ETHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */; };
 		4F0E4D932373EFF000E83618 /* ETTransferDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D922373EFF000E83618 /* ETTransferDetailViewController.m */; };
 		4F0E4D992373F5BB00E83618 /* ETTransferDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D982373F5BB00E83618 /* ETTransferDetailCell.m */; };
@@ -187,23 +192,9 @@
 		8855DACA2377EB7E00F25DA4 /* MineNodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DAC92377EB7E00F25DA4 /* MineNodeCell.m */; };
 		8855DACE2378037500F25DA4 /* MineRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DACD2378037500F25DA4 /* MineRecordViewController.m */; };
 		8855DAD32378049500F25DA4 /* MineRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DAD22378049500F25DA4 /* MineRecordCell.m */; };
-		8855DADA23780DF100F25DA4 /* ConsultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DAD923780DF100F25DA4 /* ConsultViewController.m */; };
 		8855DADD23780DF900F25DA4 /* FoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DADC23780DF900F25DA4 /* FoundViewController.m */; };
-		8855DAE4237823A500F25DA4 /* ConsultHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DAE3237823A500F25DA4 /* ConsultHeadView.m */; };
-		8855DB2223790CA400F25DA4 /* RCSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DB2123790CA400F25DA4 /* RCSegmentView.m */; };
-		8855DB2523790F4A00F25DA4 /* AlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DB2423790F4A00F25DA4 /* AlertsViewController.m */; };
-		8855DB2823790F6200F25DA4 /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DB2723790F6200F25DA4 /* ArticleViewController.m */; };
-		8855DB2B23790F6F00F25DA4 /* MarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DB2A23790F6F00F25DA4 /* MarketViewController.m */; };
-		8855DB2E23792FC200F25DA4 /* AlertsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DB2D23792FC200F25DA4 /* AlertsCell.m */; };
-		8855DB312379339A00F25DA4 /* QuickViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DB302379339A00F25DA4 /* QuickViewCell.m */; };
-		8855DB3523793BDA00F25DA4 /* MarketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DB3423793BDA00F25DA4 /* MarketCell.m */; };
 		8855DB3A2379469400F25DA4 /* TotalAssViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DB392379469400F25DA4 /* TotalAssViewController.m */; };
 		8855DB882379665700F25DA4 /* TotalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DB872379665700F25DA4 /* TotalCell.m */; };
-		8855DB9E237A5C2600F25DA4 /* AlertsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DB9D237A5C2600F25DA4 /* AlertsModel.m */; };
-		8855DBA1237A8D5500F25DA4 /* ETConAlertsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DBA0237A8D5500F25DA4 /* ETConAlertsModel.m */; };
-		8855DBA4237A920F00F25DA4 /* ArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DBA3237A920F00F25DA4 /* ArticleModel.m */; };
-		8855DBA8237A962B00F25DA4 /* ETMarkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DBA7237A962A00F25DA4 /* ETMarkModel.m */; };
-		8855DBAD237AB91600F25DA4 /* QuickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DBAC237AB91600F25DA4 /* QuickViewController.m */; };
 		88A5D0422372CFBC0012EE0B /* ClassBaseTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A5D0412372CFBC0012EE0B /* ClassBaseTools.m */; };
 		88A5D68C2376BEF10012EE0B /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A5D68B2376BEF10012EE0B /* MineViewController.m */; };
 		A9E72CB71DD272820A53863B /* Pods_ProjectET.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538F76165E482E5E17D51186 /* Pods_ProjectET.framework */; };
@@ -309,6 +300,14 @@
 		04DB9F0E237C15B5002796C3 /* ETFoundHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETFoundHeaderView.h; sourceTree = "<group>"; };
 		04DB9F0F237C15B5002796C3 /* ETFoundCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETFoundCell.h; sourceTree = "<group>"; };
 		04DB9F10237C15B5002796C3 /* ETFoundHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETFoundHeaderView.m; sourceTree = "<group>"; };
+		04DB9F13237CF233002796C3 /* ETNewMarketCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewMarketCell.h; sourceTree = "<group>"; };
+		04DB9F14237CF233002796C3 /* ETNewMarketCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewMarketCell.m; sourceTree = "<group>"; };
+		04DB9F15237CF233002796C3 /* ETNewMarketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewMarketCell.xib; sourceTree = "<group>"; };
+		04E9DAF3237CFE8800CDB9EE /* ETNewMarketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETNewMarketModel.h; sourceTree = "<group>"; };
+		04E9DAF4237CFE8800CDB9EE /* ETNewMarketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETNewMarketModel.m; sourceTree = "<group>"; };
+		04E9DAF7237D23D300CDB9EE /* ETNewAlertsDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewAlertsDetailsViewController.h; sourceTree = "<group>"; };
+		04E9DAF8237D23D300CDB9EE /* ETNewAlertsDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewAlertsDetailsViewController.m; sourceTree = "<group>"; };
+		04E9DAF9237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewAlertsDetailsViewController.xib; sourceTree = "<group>"; };
 		172FA16F06F30E4F663C3530 /* Pods-ProjectET.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET.debug.xcconfig"; path = "Target Support Files/Pods-ProjectET/Pods-ProjectET.debug.xcconfig"; sourceTree = "<group>"; };
 		4F0E4D8B2373B3FC00E83618 /* ETHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETHomeModel.h; sourceTree = "<group>"; };
 		4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETHomeModel.m; sourceTree = "<group>"; };
@@ -597,40 +596,12 @@
 		8855DACD2378037500F25DA4 /* MineRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineRecordViewController.m; sourceTree = "<group>"; };
 		8855DAD12378049500F25DA4 /* MineRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineRecordCell.h; sourceTree = "<group>"; };
 		8855DAD22378049500F25DA4 /* MineRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineRecordCell.m; sourceTree = "<group>"; };
-		8855DAD823780DF100F25DA4 /* ConsultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConsultViewController.h; sourceTree = "<group>"; };
-		8855DAD923780DF100F25DA4 /* ConsultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsultViewController.m; sourceTree = "<group>"; };
 		8855DADB23780DF900F25DA4 /* FoundViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoundViewController.h; sourceTree = "<group>"; };
 		8855DADC23780DF900F25DA4 /* FoundViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoundViewController.m; sourceTree = "<group>"; };
-		8855DAE2237823A500F25DA4 /* ConsultHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConsultHeadView.h; sourceTree = "<group>"; };
-		8855DAE3237823A500F25DA4 /* ConsultHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsultHeadView.m; sourceTree = "<group>"; };
-		8855DB2023790CA300F25DA4 /* RCSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSegmentView.h; sourceTree = "<group>"; };
-		8855DB2123790CA400F25DA4 /* RCSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSegmentView.m; sourceTree = "<group>"; };
-		8855DB2323790F4A00F25DA4 /* AlertsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertsViewController.h; sourceTree = "<group>"; };
-		8855DB2423790F4A00F25DA4 /* AlertsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertsViewController.m; sourceTree = "<group>"; };
-		8855DB2623790F6200F25DA4 /* ArticleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
-		8855DB2723790F6200F25DA4 /* ArticleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
-		8855DB2923790F6F00F25DA4 /* MarketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketViewController.h; sourceTree = "<group>"; };
-		8855DB2A23790F6F00F25DA4 /* MarketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketViewController.m; sourceTree = "<group>"; };
-		8855DB2C23792FC200F25DA4 /* AlertsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertsCell.h; sourceTree = "<group>"; };
-		8855DB2D23792FC200F25DA4 /* AlertsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertsCell.m; sourceTree = "<group>"; };
-		8855DB2F2379339A00F25DA4 /* QuickViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickViewCell.h; sourceTree = "<group>"; };
-		8855DB302379339A00F25DA4 /* QuickViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickViewCell.m; sourceTree = "<group>"; };
-		8855DB3323793BDA00F25DA4 /* MarketCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketCell.h; sourceTree = "<group>"; };
-		8855DB3423793BDA00F25DA4 /* MarketCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketCell.m; sourceTree = "<group>"; };
 		8855DB382379469400F25DA4 /* TotalAssViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TotalAssViewController.h; sourceTree = "<group>"; };
 		8855DB392379469400F25DA4 /* TotalAssViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TotalAssViewController.m; sourceTree = "<group>"; };
 		8855DB862379665700F25DA4 /* TotalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TotalCell.h; sourceTree = "<group>"; };
 		8855DB872379665700F25DA4 /* TotalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TotalCell.m; sourceTree = "<group>"; };
-		8855DB9C237A5C2600F25DA4 /* AlertsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertsModel.h; sourceTree = "<group>"; };
-		8855DB9D237A5C2600F25DA4 /* AlertsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertsModel.m; sourceTree = "<group>"; };
-		8855DB9F237A8D5500F25DA4 /* ETConAlertsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETConAlertsModel.h; sourceTree = "<group>"; };
-		8855DBA0237A8D5500F25DA4 /* ETConAlertsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETConAlertsModel.m; sourceTree = "<group>"; };
-		8855DBA2237A920F00F25DA4 /* ArticleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleModel.h; sourceTree = "<group>"; };
-		8855DBA3237A920F00F25DA4 /* ArticleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleModel.m; sourceTree = "<group>"; };
-		8855DBA6237A962A00F25DA4 /* ETMarkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETMarkModel.h; sourceTree = "<group>"; };
-		8855DBA7237A962A00F25DA4 /* ETMarkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETMarkModel.m; sourceTree = "<group>"; };
-		8855DBAB237AB91600F25DA4 /* QuickViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickViewController.h; sourceTree = "<group>"; };
-		8855DBAC237AB91600F25DA4 /* QuickViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickViewController.m; sourceTree = "<group>"; };
 		88A5D0402372CFBC0012EE0B /* ClassBaseTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassBaseTools.h; sourceTree = "<group>"; };
 		88A5D0412372CFBC0012EE0B /* ClassBaseTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassBaseTools.m; sourceTree = "<group>"; };
 		88A5D68A2376BEF10012EE0B /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
@@ -754,6 +725,7 @@
 		04DB9EC4237BE5D8002796C3 /* 快讯 */ = {
 			isa = PBXGroup;
 			children = (
+				04E9DAF6237D074100CDB9EE /* 快讯详情 */,
 				04DB9EC5237BE5D8002796C3 /* Controller */,
 				04DB9EC6237BE5D8002796C3 /* Model */,
 				04DB9EC7237BE5D8002796C3 /* View */,
@@ -853,6 +825,8 @@
 		04DB9ED0237BE601002796C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04E9DAF3237CFE8800CDB9EE /* ETNewMarketModel.h */,
+				04E9DAF4237CFE8800CDB9EE /* ETNewMarketModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -860,6 +834,9 @@
 		04DB9ED1237BE601002796C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04DB9F13237CF233002796C3 /* ETNewMarketCell.h */,
+				04DB9F14237CF233002796C3 /* ETNewMarketCell.m */,
+				04DB9F15237CF233002796C3 /* ETNewMarketCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -920,6 +897,16 @@
 				04DB9F10237C15B5002796C3 /* ETFoundHeaderView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		04E9DAF6237D074100CDB9EE /* 快讯详情 */ = {
+			isa = PBXGroup;
+			children = (
+				04E9DAF7237D23D300CDB9EE /* ETNewAlertsDetailsViewController.h */,
+				04E9DAF8237D23D300CDB9EE /* ETNewAlertsDetailsViewController.m */,
+				04E9DAF9237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib */,
+			);
+			path = "快讯详情";
 			sourceTree = "<group>";
 		};
 		2E2D92EDFC2E29D9F702BA5B /* Frameworks */ = {
@@ -1432,7 +1419,6 @@
 			isa = PBXGroup;
 			children = (
 				04DB9EC3237BE5D8002796C3 /* 资讯 */,
-				8855DAD523780DBC00F25DA4 /* Consult */,
 				8855DAD423780DA100F25DA4 /* Found */,
 				88A5D6862376BEBE0012EE0B /* Mine */,
 				4FA0A31F23717A0D0038F880 /* ScanController */,
@@ -1646,16 +1632,6 @@
 			path = Found;
 			sourceTree = "<group>";
 		};
-		8855DAD523780DBC00F25DA4 /* Consult */ = {
-			isa = PBXGroup;
-			children = (
-				8855DB99237A5C0100F25DA4 /* ConModel */,
-				8855DADF2378238A00F25DA4 /* ConsultView */,
-				8855DAD723780DE000F25DA4 /* ConsultViewController */,
-			);
-			path = Consult;
-			sourceTree = "<group>";
-		};
 		8855DAD623780DCD00F25DA4 /* FoundViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1665,55 +1641,6 @@
 				8855DADC23780DF900F25DA4 /* FoundViewController.m */,
 			);
 			path = FoundViewController;
-			sourceTree = "<group>";
-		};
-		8855DAD723780DE000F25DA4 /* ConsultViewController */ = {
-			isa = PBXGroup;
-			children = (
-				8855DAD823780DF100F25DA4 /* ConsultViewController.h */,
-				8855DAD923780DF100F25DA4 /* ConsultViewController.m */,
-				8855DB2323790F4A00F25DA4 /* AlertsViewController.h */,
-				8855DB2423790F4A00F25DA4 /* AlertsViewController.m */,
-				8855DB2623790F6200F25DA4 /* ArticleViewController.h */,
-				8855DB2723790F6200F25DA4 /* ArticleViewController.m */,
-				8855DB2923790F6F00F25DA4 /* MarketViewController.h */,
-				8855DB2A23790F6F00F25DA4 /* MarketViewController.m */,
-				8855DBAB237AB91600F25DA4 /* QuickViewController.h */,
-				8855DBAC237AB91600F25DA4 /* QuickViewController.m */,
-			);
-			path = ConsultViewController;
-			sourceTree = "<group>";
-		};
-		8855DADF2378238A00F25DA4 /* ConsultView */ = {
-			isa = PBXGroup;
-			children = (
-				8855DB2023790CA300F25DA4 /* RCSegmentView.h */,
-				8855DB2123790CA400F25DA4 /* RCSegmentView.m */,
-				8855DAE2237823A500F25DA4 /* ConsultHeadView.h */,
-				8855DAE3237823A500F25DA4 /* ConsultHeadView.m */,
-				8855DB2C23792FC200F25DA4 /* AlertsCell.h */,
-				8855DB2D23792FC200F25DA4 /* AlertsCell.m */,
-				8855DB2F2379339A00F25DA4 /* QuickViewCell.h */,
-				8855DB302379339A00F25DA4 /* QuickViewCell.m */,
-				8855DB3323793BDA00F25DA4 /* MarketCell.h */,
-				8855DB3423793BDA00F25DA4 /* MarketCell.m */,
-			);
-			path = ConsultView;
-			sourceTree = "<group>";
-		};
-		8855DB99237A5C0100F25DA4 /* ConModel */ = {
-			isa = PBXGroup;
-			children = (
-				8855DB9F237A8D5500F25DA4 /* ETConAlertsModel.h */,
-				8855DBA0237A8D5500F25DA4 /* ETConAlertsModel.m */,
-				8855DB9C237A5C2600F25DA4 /* AlertsModel.h */,
-				8855DB9D237A5C2600F25DA4 /* AlertsModel.m */,
-				8855DBA2237A920F00F25DA4 /* ArticleModel.h */,
-				8855DBA3237A920F00F25DA4 /* ArticleModel.m */,
-				8855DBA6237A962A00F25DA4 /* ETMarkModel.h */,
-				8855DBA7237A962A00F25DA4 /* ETMarkModel.m */,
-			);
-			path = ConModel;
 			sourceTree = "<group>";
 		};
 		88A5D03D2372CF980012EE0B /* ClassBaseTools */ = {
@@ -1900,8 +1827,10 @@
 				4F2306D22366DE9F0046A136 /* LaunchScreen.storyboard in Resources */,
 				4F14FB0223692CF30008C50A /* ETAddContactsCell.xib in Resources */,
 				04DB9EFC237C0CC7002796C3 /* ETNewArticleDetailsViewController.xib in Resources */,
+				04DB9F17237CF233002796C3 /* ETNewMarketCell.xib in Resources */,
 				4F128CA523683BF70004284D /* ETDirectCountCell.xib in Resources */,
 				4F14FAFA236924B30008C50A /* ETMyContactsCell.xib in Resources */,
+				04E9DAFB237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib in Resources */,
 				4F128CAA23683EE70004284D /* ETDirectLeftCell.xib in Resources */,
 				4F2306CF2366DE9F0046A136 /* Assets.xcassets in Resources */,
 				4F128CAF236840120004284D /* ETDirectNormalCell.xib in Resources */,
@@ -2058,18 +1987,18 @@
 				8855DAC42377EAC800F25DA4 /* MineCurrencyViewController.m in Sources */,
 				4F14FB0F23693CE40008C50A /* UIImage+Color.m in Sources */,
 				047A9DE523700A5900FB5132 /* IndexPathArray.m in Sources */,
-				8855DB3523793BDA00F25DA4 /* MarketCell.m in Sources */,
 				047A9DE723700A5900FB5132 /* IconInfo.m in Sources */,
 				047A9DEC23700A5900FB5132 /* Signer.m in Sources */,
 				4F1942CD236D21DD00AD907E /* ETWalletDetailController.m in Sources */,
 				8855DAC72377EAD400F25DA4 /* MinePushViewController.m in Sources */,
-				8855DBA1237A8D5500F25DA4 /* ETConAlertsModel.m in Sources */,
 				4F128CA423683BF70004284D /* ETDirectCountCell.m in Sources */,
+				04DB9F16237CF233002796C3 /* ETNewMarketCell.m in Sources */,
 				8855DB882379665700F25DA4 /* TotalCell.m in Sources */,
 				4F3F9069236C128D009AAA24 /* ETRecordHeaderView.m in Sources */,
-				8855DB9E237A5C2600F25DA4 /* AlertsModel.m in Sources */,
+				04E9DAF5237CFE8800CDB9EE /* ETNewMarketModel.m in Sources */,
 				4F14FAF5236924770008C50A /* ETMyContactsController.m in Sources */,
 				4F2307032366EB120046A136 /* ETRootViewController.m in Sources */,
+				04E9DAFA237D23D300CDB9EE /* ETNewAlertsDetailsViewController.m in Sources */,
 				4F0E4D992373F5BB00E83618 /* ETTransferDetailCell.m in Sources */,
 				4F3F9063236C0F5E009AAA24 /* ETRecordDetailViewController.m in Sources */,
 				04DB9EFB237C0CC7002796C3 /* ETNewArticleDetailsViewController.m in Sources */,
@@ -2083,7 +2012,6 @@
 				4F14FAF9236924B30008C50A /* ETMyContactsCell.m in Sources */,
 				4FA0A305236FCA270038F880 /* WMZPageLoopView.m in Sources */,
 				4F14FB0D23693CE40008C50A /* UIImage+Watermark.m in Sources */,
-				8855DB2223790CA400F25DA4 /* RCSegmentView.m in Sources */,
 				047A9DE223700A5900FB5132 /* CachedDataStore.m in Sources */,
 				4F0E4DA523740AA900E83618 /* ETWalletSearchCell.m in Sources */,
 				04DB9EEA237BF68B002796C3 /* ETNewAlertsCell.m in Sources */,
@@ -2100,7 +2028,6 @@
 				4F14FB1323693CFC0008C50A /* KMPProgressHUD.m in Sources */,
 				4F14FB2D23698BA30008C50A /* ETCreatWalletCell.m in Sources */,
 				4FA0A308236FCA270038F880 /* NSObject+SafeKVO.m in Sources */,
-				8855DB2B23790F6F00F25DA4 /* MarketViewController.m in Sources */,
 				4F1942F2236D69E100AD907E /* ETVerifyPassWrodView.m in Sources */,
 				4F2307062366EB600046A136 /* ETAssetsViewController.m in Sources */,
 				4F1A22342372BF5500FDD5D9 /* HTTPTool.m in Sources */,
@@ -2144,13 +2071,9 @@
 				4F1942F5236D69FB00AD907E /* ETBackUpWalletView.m in Sources */,
 				4F1A224B2372CF8100FDD5D9 /* KMP_DOTNETModel.m in Sources */,
 				04DB9F08237C156E002796C3 /* ETHashSearchModel.m in Sources */,
-				8855DBAD237AB91600F25DA4 /* QuickViewController.m in Sources */,
 				047A9DE323700A5900FB5132 /* SignedRemoteDictionary.m in Sources */,
-				8855DB2523790F4A00F25DA4 /* AlertsViewController.m in Sources */,
-				8855DBA8237A962B00F25DA4 /* ETMarkModel.m in Sources */,
 				04DB9EFF237C14E2002796C3 /* Tools+DeviceCategory.m in Sources */,
 				4F1942DB236D2F7000AD907E /* ETQcodeImportView.m in Sources */,
-				8855DB2823790F6200F25DA4 /* ArticleViewController.m in Sources */,
 				4F128C80236820320004284D /* ViewController.m in Sources */,
 				4F3F9049236ABAD9009AAA24 /* ETSecertCreatView.m in Sources */,
 				4F14FB19236960A20008C50A /* ETMyWalletView.m in Sources */,
@@ -2159,8 +2082,6 @@
 				4F14FB22236966E10008C50A /* ETMyWalletDetailCell.m in Sources */,
 				4FA0A314236FFF440038F880 /* ETWalletManger.m in Sources */,
 				4FFFB9122379264500AE9BFF /* ETMycontactListModel.m in Sources */,
-				8855DAE4237823A500F25DA4 /* ConsultHeadView.m in Sources */,
-				8855DBA4237A920F00F25DA4 /* ArticleModel.m in Sources */,
 				4F3F9058236AEB93009AAA24 /* Tools+Image.m in Sources */,
 				4FA0A309236FCA270038F880 /* WMZPageParam.m in Sources */,
 				4F128C592367D1CE0004284D /* UIViewController+NaviBarButton.m in Sources */,
@@ -2183,12 +2104,10 @@
 				4F14FB0C23693CE40008C50A /* UIImage+GIFImage.m in Sources */,
 				4F128C662367D96F0004284D /* UIButton+ImageTitleSpacing.m in Sources */,
 				4F1A22352372BF5500FDD5D9 /* XMEngine.m in Sources */,
-				8855DB2E23792FC200F25DA4 /* AlertsCell.m in Sources */,
 				047A9DEB23700A5900FB5132 /* Utilities.m in Sources */,
 				8855DAB52377E50500F25DA4 /* SetViewController.m in Sources */,
 				4F1942E9236D5E5800AD907E /* ETKeystoreImporView.m in Sources */,
 				4F128C8C236826710004284D /* ETTransferCell.m in Sources */,
-				8855DADA23780DF100F25DA4 /* ConsultViewController.m in Sources */,
 				4F3F9046236AB672009AAA24 /* ETKeyStoreController.m in Sources */,
 				4F128C692367E1A00004284D /* ETHomeTableHeaderView.m in Sources */,
 				4FA0A32723717A8A0038F880 /* ETScanViewController.m in Sources */,
@@ -2211,7 +2130,6 @@
 				4F0E4DAB237502B600E83618 /* ETWalletMangerController.m in Sources */,
 				4F1942DF236D306800AD907E /* ETWalletImportCell.m in Sources */,
 				4F128C89236822610004284D /* ETTransferViewController.m in Sources */,
-				8855DB312379339A00F25DA4 /* QuickViewCell.m in Sources */,
 				04DB9EE0237BEAE4002796C3 /* ETNewMarketViewController.m in Sources */,
 				4F128C94236834EB0004284D /* AppDelegate+ET_VCSetting.m in Sources */,
 				4F1942E3236D358A00AD907E /* ETImportSyaoController.m in Sources */,

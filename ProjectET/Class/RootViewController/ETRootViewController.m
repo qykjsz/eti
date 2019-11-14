@@ -10,7 +10,6 @@
 #import "ETAssetsViewController.h"
 #import "MineViewController.h"
 #import "FoundViewController.h"
-#import "ConsultViewController.h"
 #import "ETNewInformationViewController.h"
 
 @interface ETRootViewController ()<UITabBarControllerDelegate>
