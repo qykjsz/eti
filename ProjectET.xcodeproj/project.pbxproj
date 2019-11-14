@@ -181,6 +181,8 @@
 		4FA0A32B23717ACF0038F880 /* ET_ScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A32A23717ACF0038F880 /* ET_ScaningView.m */; };
 		4FFFAFEC237CFAF600A87E50 /* ETFoundDappModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFEB237CFAF600A87E50 /* ETFoundDappModel.m */; };
 		4FFFAFEF237D250D00A87E50 /* ETTransferGasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFEE237D250D00A87E50 /* ETTransferGasView.m */; };
+		4FFFAFF5237D480900A87E50 /* ETTransferGasModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFF4237D480900A87E50 /* ETTransferGasModel.m */; };
+		4FFFAFF9237D5B5C00A87E50 /* ETTotalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFF8237D5B5C00A87E50 /* ETTotalModel.m */; };
 		4FFFB9122379264500AE9BFF /* ETMycontactListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB90E2379264500AE9BFF /* ETMycontactListModel.m */; };
 		4FFFB91623792A4D00AE9BFF /* ETTransListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB91523792A4D00AE9BFF /* ETTransListModel.m */; };
 		4FFFB91A2379390600AE9BFF /* ETTransferDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB9192379390600AE9BFF /* ETTransferDetailModel.m */; };
@@ -579,6 +581,10 @@
 		4FFFAFEB237CFAF600A87E50 /* ETFoundDappModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundDappModel.m; sourceTree = "<group>"; };
 		4FFFAFED237D250D00A87E50 /* ETTransferGasView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransferGasView.h; sourceTree = "<group>"; };
 		4FFFAFEE237D250D00A87E50 /* ETTransferGasView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTransferGasView.m; sourceTree = "<group>"; };
+		4FFFAFF3237D480900A87E50 /* ETTransferGasModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransferGasModel.h; sourceTree = "<group>"; };
+		4FFFAFF4237D480900A87E50 /* ETTransferGasModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTransferGasModel.m; sourceTree = "<group>"; };
+		4FFFAFF7237D5B5C00A87E50 /* ETTotalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTotalModel.h; sourceTree = "<group>"; };
+		4FFFAFF8237D5B5C00A87E50 /* ETTotalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTotalModel.m; sourceTree = "<group>"; };
 		4FFFB90E2379264500AE9BFF /* ETMycontactListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETMycontactListModel.m; sourceTree = "<group>"; };
 		4FFFB9112379264500AE9BFF /* ETMycontactListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMycontactListModel.h; sourceTree = "<group>"; };
 		4FFFB91423792A4D00AE9BFF /* ETTransListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransListModel.h; sourceTree = "<group>"; };
@@ -890,8 +896,8 @@
 		04DB9F01237C156E002796C3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				04DB9F02237C156E002796C3 /* ETTotalAssetsController.m */,
 				04DB9F03237C156E002796C3 /* ETTotalAssetsController.h */,
+				04DB9F02237C156E002796C3 /* ETTotalAssetsController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -901,6 +907,10 @@
 			children = (
 				04DB9F05237C156E002796C3 /* ETHashSearchModel.h */,
 				04DB9F06237C156E002796C3 /* ETHashSearchModel.m */,
+				4FFFAFF3237D480900A87E50 /* ETTransferGasModel.h */,
+				4FFFAFF4237D480900A87E50 /* ETTransferGasModel.m */,
+				4FFFAFF7237D5B5C00A87E50 /* ETTotalModel.h */,
+				4FFFAFF8237D5B5C00A87E50 /* ETTotalModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2063,6 +2073,7 @@
 				04DB9EEA237BF68B002796C3 /* ETNewAlertsCell.m in Sources */,
 				4F1942EC236D5E6900AD907E /* ETKeystoreQcodeView.m in Sources */,
 				88A5D68C2376BEF10012EE0B /* MineViewController.m in Sources */,
+				4FFFAFF5237D480900A87E50 /* ETTransferGasModel.m in Sources */,
 				4FA0A319237013D10038F880 /* ETWalletModel.m in Sources */,
 				4F128C6F23680D120004284D /* ETTableHeaderSelectView.m in Sources */,
 				4F128C83236820320004284D /* backUpMoneyViewController.m in Sources */,
@@ -2088,6 +2099,7 @@
 				4F128CAE236840120004284D /* ETDirectNormalCell.m in Sources */,
 				4F3F9039236A804B009AAA24 /* ETCreatYYViewCell.m in Sources */,
 				4F0E4D8D2373B3FC00E83618 /* ETHomeModel.m in Sources */,
+				4FFFAFF9237D5B5C00A87E50 /* ETTotalModel.m in Sources */,
 				8855DAB22377E4ED00F25DA4 /* HelpViewController.m in Sources */,
 				4F117509236C267E0042CDFD /* ETRecordSegmentController.m in Sources */,
 				4F0E4D932373EFF000E83618 /* ETTransferDetailViewController.m in Sources */,

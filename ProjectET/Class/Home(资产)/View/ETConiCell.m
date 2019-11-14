@@ -64,20 +64,32 @@
     return self;
 }
 
-- (void)setModel:(glodData *)model {
+- (void)setModel:(glodsData *)model {
 
     
     _model = model;
 
-    if ([model.name isEqualToString:@"ETH"]) {
-        self.coninImage.image = [UIImage imageNamed:@"sy_eth"];
-    }else  {
-        self.coninImage.image = [UIImage imageNamed:@"sy_usdt"];
-    }
-//    self.coninImage
-//    self.topDollor.text = model.number;
-//    self.bottomDollor.text = [NSString stringWithFormat:@"$ %@",model.usdtnumber];
+
+    [self.coninImage sd_setImageWithURL:[NSURL URLWithString:model.img]];
+
+    self.coninName.text = model.name;
+    self.topDollor.text = model.number;
+    self.bottomDollor.text = [NSString stringWithFormat:@"$ %@",model.usdtnumber];
     
+}
+
+- (void)setIsOpen:(BOOL)isOpen {
+    
+    _isOpen = isOpen;
+    if (_isOpen) {
+//        self.coninName.text = _model.name;
+        self.topDollor.text = _model.number;
+        self.bottomDollor.text = [NSString stringWithFormat:@"$ %@",_model.usdtnumber];
+    }else {
+//        self.coninName.text = @"*";
+        self.topDollor.text = @"***.**";
+        self.bottomDollor.text = @"***.**";
+    }
 }
 
 - (UILabel *)coninName {

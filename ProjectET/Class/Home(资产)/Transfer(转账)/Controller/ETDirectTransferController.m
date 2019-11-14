@@ -15,6 +15,7 @@
 #import "ETDirectNormalCell.h"
 #import "ETHomeModel.h"
 #import "ETTransferGasView.h"
+#import "ETTransferGasModel.h"
 
 @interface ETDirectTransferController ()<UITableViewDelegate,UITableViewDataSource,ETDirectTranAddressCellDelegate,ETDirectCountCellDelegate,ETDirectNormalCellDelegate>
 
@@ -31,6 +32,16 @@
 @property (nonatomic,strong) NSString *leftString;
 
 @property (nonatomic,strong) NSString *totalString;
+
+@property (nonatomic,assign) NSInteger gasValue;
+
+@property (nonatomic,assign) CGFloat tranGasValue;
+
+@property (nonatomic,strong) NSString *toToken;
+
+@property (nonatomic,strong) NSString *gaslimit;
+
+
 
 @end
 
@@ -93,8 +104,8 @@
         if (self.coinNameString) {
             [cell.coninBtn setTitle:[NSString stringWithFormat:@"%@ >",self.coinNameString] forState:UIControlStateNormal];
         }
-        if (self.totalString) {
-            cell.textfiled.text = self.totalString;
+        if (self.countString) {
+            cell.textfiled.text = self.countString;
         }
         return cell;
         
@@ -122,9 +133,15 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLb.text = @"矿工费";
         cell.delegate = self;
-        cell.textfiled.placeholder = @"0.098753ETH";
+        cell.textfiled.placeholder = @"请滑动选择矿工费";
         cell.arrowLb.hidden = NO;
         cell.textfiled.enabled = NO;
+        
+        if (self.tranGasValue) {
+            cell.textfiled.text = [NSString stringWithFormat:@"%f%@",self.tranGasValue,self.coinNameString];
+        }else {
+            cell.textfiled.text = nil;
+        }
         return cell;
         
     }
@@ -150,8 +167,30 @@
         [HTTPTool requestDotNetWithURLString:@"givecharge" parameters:nil type:kPOST success:^(id responseObject) {
             
             
+            ETTransferGasModel *model = [ETTransferGasModel mj_objectWithKeyValues:responseObject];
+            
+           
             ETTransferGasView *view = [[ETTransferGasView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+            WEAK_SELF(self);
+            [view setSliderBlcok:^(CGFloat gas, CGFloat transfergas,NSString *gaslimit) {
+                STRONG_SELF(self);
+                self.tranGasValue = transfergas;
+                self.gasValue = gas;
+                self.gaslimit = gaslimit;
+                [self.detailTab reloadData];
+                NSLog(@"%f,%f",transfergas,gas);
+            }];
             view.coinName = self.coinNameString;
+            
+            for (TransferGasData *data in model.data) {
+                if ([data.name isEqualToString:self.coinNameString]) {
+                    view.data = data;
+                    break;
+                }else {
+                    view.data = data;
+                    break;
+                }
+            }
             [[UIApplication sharedApplication].keyWindow addSubview:view];
             
             
@@ -203,7 +242,7 @@
             
             glodData *data = self.model.data.glod[i];
             if ([data.name isEqualToString:self.coinNameString]) {
-                self.totalString = data.number;
+                self.countString = data.number;
                 [self.detailTab reloadData];
             }
         }
@@ -224,6 +263,11 @@
             UIAlertAction *action = [UIAlertAction actionWithTitle:data.name style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 self.coinNameString = data.name;
                 self.leftString = data.number;
+                self.toToken = data.address;
+                
+                self.gaslimit = nil;
+                self.tranGasValue = 0;
+                self.countString = @"";
                 [self.detailTab reloadData];
             }];
             
@@ -287,6 +331,11 @@
             }
             
             
+            if ([Tools checkStringIsEmpty:self.gaslimit]) {
+                [SVProgressHUD showInfoWithStatus:@"矿工费不能为空"];
+                return;
+            }
+            
             
             [HTTPTool requestDotNetWithURLString:@"et_node" parameters:nil type:kPOST success:^(id responseObject) {
                 NSLog(@"%@",responseObject);
@@ -295,16 +344,25 @@
                 NSString *urlString = responseObject[@"data"];
                 NSLog(@"%@",urlString);
                 
+//                [SVProgressHUD showWithStatus:@"正在转账"];
+//                ETWalletModel *model = [ETWalletManger getCurrentWallet];
+//                [HSEther ETTest_hs_sendToAssress:self.address money:self.countString tokenETH:self.toToken decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:[NSString stringWithFormat:@"%zd",self.gasValue] gasLimit:self.gaslimit block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
+//
+//                    if (suc) {
+//                        [KMPProgressHUD showProgressWithText:@"转账成功"];
+//                    }else {
+//                        [KMPProgressHUD showProgressWithText:@"转账失败"];
+//                    }
+//
+//                }];
                 [SVProgressHUD showWithStatus:@"正在转账"];
                 ETWalletModel *model = [ETWalletManger getCurrentWallet];
-                [HSEther ETTest_hs_sendToAssress:self.address money:self.countString tokenETH:nil decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:nil gasLimit:nil block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
-                    
+                [HSEther hs_sendToAssress:self.address ip:urlString money:self.countString tokenETH:self.toToken decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:[NSString stringWithFormat:@"%zd",self.gasValue] gasLimit:self.gaslimit block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
                     if (suc) {
                         [KMPProgressHUD showProgressWithText:@"转账成功"];
                     }else {
                         [KMPProgressHUD showProgressWithText:@"转账失败"];
                     }
-                    
                 }];
                 
             } failure:^(NSError *error) {
@@ -312,15 +370,7 @@
             }];
             //
             
-            //        [SVProgressHUD showWithStatus:@"正在转账"];
-            //        ETWalletModel *model = [ETWalletManger getCurrentWallet];
-            //        [HSEther hs_sendToAssress:self.address ip:@"http://47.75.96.111:6666" money:self.countString tokenETH:nil decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:nil gasLimit:nil block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
-            //            if (suc) {
-            //                [KMPProgressHUD showProgressWithText:@"转账成功"];
-            //            }else {
-            //                [KMPProgressHUD showProgressWithText:@"转账失败"];
-            //            }
-            //        }];
+
 
             
         } failure:^(NSError *error) {

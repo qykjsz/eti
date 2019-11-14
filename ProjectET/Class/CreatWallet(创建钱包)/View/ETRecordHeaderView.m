@@ -114,7 +114,7 @@
         _moneyLb = [[UILabel alloc]init];
         _moneyLb.font = [UIFont systemFontOfSize:33];
         _moneyLb.textColor = UIColorFromHEX(0xF5F5F5, 1);
-        _moneyLb.text = @"999.99";
+//        _moneyLb.text = @"999.99";
     }
     return _moneyLb;
 }
@@ -125,7 +125,7 @@
         _subMoneyLb = [[UILabel alloc]init];
         _subMoneyLb.font = [UIFont systemFontOfSize:12];
         _subMoneyLb.textColor = UIColorFromHEX(0xffffff, 1);
-        _subMoneyLb.text = @"≈$ 638383.7889";
+//        _subMoneyLb.text = @"≈$ 638383.7889";
     }
     return _subMoneyLb;
 }
@@ -154,7 +154,7 @@
         _todayLb = [[UILabel alloc]init];
         _todayLb.font = [UIFont systemFontOfSize:13];
         _todayLb.textColor = UIColorFromHEX(0xF5F5F5, 1);
-        _todayLb.text = @"今日 +120.36";
+//        _todayLb.text = @"今日 +120.36";
     }
     return _todayLb;
 }

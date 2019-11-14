@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "ETTransferGasModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ETTransferGasView : UIView
 
 @property (nonatomic,strong) NSString *coinName;
+
+@property (nonatomic,strong) TransferGasData *data;
+
+@property (nonatomic,strong) void(^sliderBlcok)(CGFloat gas,CGFloat transfergas,NSString *gaslimit);
 
 @end
 

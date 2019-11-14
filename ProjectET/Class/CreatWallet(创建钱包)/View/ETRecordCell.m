@@ -169,7 +169,7 @@
         self.topLB.text = [NSString stringWithFormat:@"转入%@",data.name];
     }else {
         self.topLB.textColor = UIColorFromHEX(0x00C176, 1);
-        self.topLB.text = [NSString stringWithFormat:@"转入%@",data.name];
+        self.topLB.text = [NSString stringWithFormat:@"转出%@",data.name];
     }
     
     self.moneydetail.text = data.amount;

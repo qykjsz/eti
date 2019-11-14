@@ -15,6 +15,20 @@
 
 @property (nonatomic,strong) UILabel *countLb;
 
+@property (nonatomic,assign) CGFloat gasmax;
+
+@property (nonatomic,assign) CGFloat gasmin;
+
+@property (nonatomic,assign) CGFloat gweimax;
+
+@property (nonatomic,assign) CGFloat gweimin;
+
+@property (nonatomic,assign) CGFloat tempfl;
+
+@property (nonatomic,strong) UISlider *slider;
+
+@property (nonatomic,assign) CGFloat seletGas;
+
 @end
 
 @implementation ETTransferGasView
@@ -62,12 +76,12 @@
             
         }];
         
-        UISlider *slider = [[UISlider alloc]init];
-        [slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
-        slider.minimumValue = 5;
-        slider.maximumValue = 24;
-        [self.gasView addSubview:slider];
-        [slider mas_makeConstraints:^(MASConstraintMaker *make) {
+        self.slider = [[UISlider alloc]init];
+        [self.slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
+        self.slider.minimumValue = 5;
+        self.slider.maximumValue = 24;
+        [self.gasView addSubview:self.slider];
+        [self.slider mas_makeConstraints:^(MASConstraintMaker *make) {
            
             STRONG_SELF(self);
             make.left.equalTo(self.gasView.mas_left).offset(30);
@@ -83,8 +97,8 @@
         [self.gasView addSubview:leftLb];
         [leftLb mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.left.equalTo(slider.mas_left).offset(0);
-            make.top.equalTo(slider.mas_bottom).offset(20);
+            make.left.equalTo(self.slider.mas_left).offset(0);
+            make.top.equalTo(self.slider.mas_bottom).offset(20);
             
             
         }];
@@ -96,8 +110,8 @@
         [self.gasView addSubview:rightLb];
         [rightLb mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.right.equalTo(slider.mas_right).offset(0);
-            make.top.equalTo(slider.mas_bottom).offset(20);
+            make.right.equalTo(self.slider.mas_right).offset(0);
+            make.top.equalTo(self.slider.mas_bottom).offset(20);
             
             
         }];
@@ -109,8 +123,8 @@
         [self.gasView addSubview:centerLb];
         [centerLb mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.centerX.equalTo(slider.mas_centerX);
-            make.top.equalTo(slider.mas_bottom).offset(20);
+            make.centerX.equalTo(self.slider.mas_centerX);
+            make.top.equalTo(self.slider.mas_bottom).offset(20);
             
         }];
         
@@ -122,8 +136,8 @@
         [self.gasView addSubview:self.countLb];
         [self.countLb mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.left.equalTo(slider.mas_left).offset(0);
-            make.top.equalTo(slider.mas_bottom).offset(100);
+            make.left.equalTo(self.slider.mas_left).offset(0);
+            make.top.equalTo(self.slider.mas_bottom).offset(100);
             
             
         }];
@@ -134,7 +148,7 @@
         [self.gasView addSubview:block];
         [block mas_makeConstraints:^(MASConstraintMaker *make) {
            
-            make.right.equalTo(slider.mas_right);
+            make.right.equalTo(self.slider.mas_right);
             make.centerY.equalTo(self.countLb.mas_centerY);
             
         }];
@@ -162,8 +176,8 @@
         [comfirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
 
             make.top.equalTo(self.countLb.mas_bottom).offset(30);
-            make.left.equalTo(slider.mas_left);
-            make.right.equalTo(slider.mas_right);
+            make.left.equalTo(self.slider.mas_left);
+            make.right.equalTo(self.slider.mas_right);
             make.height.mas_equalTo(44);
             
             
@@ -196,21 +210,42 @@
 - (void)sliderAction:(UISlider *)slider {
     
     
-    CGFloat value = slider.value;
-    BigNumber *fl = [[BigNumber bigNumberWithDecimalString:[NSString stringWithFormat:@"%f",value]] mul:[BigNumber bigNumberWithDecimalString:@"1000000000"]];
-    self.countLb.text = [NSString stringWithFormat:@"%@%@",fl.decimalString,self.coinName];
+    self.seletGas = slider.value;
+    self.tempfl = self.gasmax * self.seletGas / 100000000;
+    self.countLb.text = [NSString stringWithFormat:@"%f%@",self.tempfl,self.coinName];
+
 }
 
 - (void)comfirmAction {
     
     [self canleAction];
     
+    if (self.sliderBlcok) {
+        self.sliderBlcok(self.seletGas, self.tempfl,[NSString stringWithFormat:@"%@",_data.gasmin]);
+    }
+    
 }
 
 - (void)setCoinName:(NSString *)coinName {
     
     _coinName = coinName;
-    self.countLb.text = [NSString stringWithFormat:@"0.000052%@",coinName];
+    self.countLb.text = [NSString stringWithFormat:@"0.0000%@",coinName];
     
 }
+
+- (void)setData:(TransferGasData *)data {
+
+    _data = data;
+    self.seletGas = [data.gweimin floatValue];
+    self.gasmax = [data.gasmax floatValue];
+    self.gasmin = [data.gasmin floatValue];
+    self.gweimin = [data.gweimin floatValue];
+    self.gweimax = [data.gweimax floatValue];
+    self.slider.maximumValue = [data.gweimax floatValue];
+    self.slider.minimumValue = [data.gweimin floatValue];
+    
+    self.tempfl = self.gasmax * self.seletGas / 100000000;
+    self.countLb.text = [NSString stringWithFormat:@"%f%@",self.tempfl,self.coinName];
+}
+
 @end

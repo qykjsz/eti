@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ETHomeModel.h"
+#import "ETTotalModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ETConiCell : UITableViewCell
@@ -20,7 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) UILabel *bottomDollor;
 
-@property (nonatomic,strong) glodData *model;
+@property (nonatomic,strong) glodsData *model;
+
+
+@property (nonatomic,assign) BOOL isOpen;
 
 @end
 

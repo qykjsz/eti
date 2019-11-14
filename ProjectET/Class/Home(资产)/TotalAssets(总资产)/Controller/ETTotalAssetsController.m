@@ -9,7 +9,7 @@
 #import "ETTotalAssetsController.h"
 #import "ETConiCell.h"
 #import "ETRecordHeaderView.h"
-#import "ETHashSearchModel.h"
+#import "ETTotalModel.h"
 
 @interface ETTotalAssetsController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -17,7 +17,9 @@
 
 @property (nonatomic,strong) ETRecordHeaderView *headerView;
 
-@property (nonatomic,strong) ETHashSearchModel *model;
+@property (nonatomic,strong) ETTotalModel *model;
+
+@property (nonatomic,assign) BOOL isOpen;
 @end
 
 @implementation ETTotalAssetsController
@@ -42,6 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.isOpen = YES;
     self.view.backgroundColor = [UIColor whiteColor];
     UIImageView *topImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zz_top_bg"]];
     topImage.userInteractionEnabled = YES;
@@ -49,7 +52,7 @@
     [topImage mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.top.right.equalTo(self.view);
-        
+        make.height.mas_equalTo(kStatusAndNavHeight + 20);
     }];
     
     UIButton *popBtn = [[UIButton alloc]init];
@@ -60,7 +63,7 @@
     [topImage addSubview:popBtn];
     [popBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.equalTo(topImage.mas_top).offset(20);
+        make.top.equalTo(topImage.mas_top).offset(iPhoneBang?kStatusBarHeight : 20);
         make.width.height.equalTo(@44);
         
     }];
@@ -96,31 +99,23 @@
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 3;
+    return self.model.data.assets.count;
     
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 3;
+    
+    return [[self.model.data.assets[section] glods] count];
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    glodsData *data = [self.model.data.assets[indexPath.section] glods][indexPath.row];
     ETConiCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETConiCell"];
-//    glodData *data = self.dataArr[indexPath.row];
-//
-//    cell.model = self.dataArr[indexPath.row];
-//    if (!self.isOpen) {
-//        cell.topDollor.text = @"****.**";
-//        cell.bottomDollor.text = @"****.**";
-//    }else {
-//        cell.topDollor.text = data.number;
-//        cell.bottomDollor.text = [NSString stringWithFormat:@"$ %@",data.usdtnumber];
-//        cell.coninName.text = data.name;
-//    }
-    
+    cell.model = data;
+    cell.isOpen = self.isOpen;
     return  cell;
     
 }
@@ -132,12 +127,15 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
+    assetsData *data = self.model.data.assets[section];
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30)];
     view.backgroundColor = UIColor.whiteColor;
-    UILabel *titleLb = [[UILabel alloc]initWithFrame:CGRectMake(25, 0, 200, 30)];
+    UILabel *titleLb = [[UILabel alloc]initWithFrame:CGRectMake(25, 0, SCREEN_WIDTH - 50, 30)];
     titleLb.font = [UIFont systemFontOfSize:14];
     titleLb.textColor = UIColorFromHEX(0x333333, 1);
-    titleLb.text = @"尼古拉斯赵四";
+    NSString *subString = [data.address substringWithRange:NSMakeRange(0, 8)];
+    NSString *bottomString = [data.address substringWithRange:NSMakeRange(data.address.length-10, 10)];
+    titleLb.text = [NSString stringWithFormat:@"%@********%@",subString,bottomString];
     [view addSubview:titleLb];
     return view;
     
@@ -158,17 +156,25 @@
 
 - (void)eyeAction:(NSNotification *)sender {
     
+    self.isOpen =[sender.object[@"isOpen"] boolValue];
+    
     if ([sender.object[@"isOpen"] boolValue]) {
         
-        self.headerView.moneyLb.text = @"999.99";
-        self.headerView.subMoneyLb.text = @"≈$ 638383.7889";
-        self.headerView.todayLb.text = @"今日 +120.36";
+        self.headerView.moneyLb.text = self.model.data.allnumber;
+        self.headerView.subMoneyLb.hidden = YES;
+        if ([self.model.data.today floatValue] >= 0) {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.model.data.today];
+        }else {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.model.data.today];
+        }
     }else {
         
         self.headerView.moneyLb.text = @"***.**";
         self.headerView.subMoneyLb.text = @"≈$ ***.**";
         self.headerView.todayLb.text = @"******";
     }
+    
+    [self.detailTab reloadData];
 }
 
 #pragma mark - NET
@@ -181,8 +187,16 @@
         [data addObject:dict];
     }
     [HTTPTool requestDotNetWithURLString:@"et_allassets" parameters:@{@"alladdress":data} type:kPOST success:^(id responseObject) {
-        self.model = [ETHashSearchModel mj_objectWithKeyValues:responseObject];
-        NSLog(@"%@",self.model);
+        self.model = [ETTotalModel mj_objectWithKeyValues:responseObject];
+        self.headerView.moneyLb.text = self.model.data.allnumber;
+        self.headerView.subMoneyLb.hidden = YES;
+        if ([self.model.data.today floatValue] >= 0) {
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.model.data.today];
+        }else {
+             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.model.data.today];
+        }
+        
+        [self.detailTab reloadData];
     } failure:^(NSError *error) {
         
     }];
@@ -200,22 +214,6 @@
         [_detailTab registerClass:[ETConiCell class] forCellReuseIdentifier:@"ETConiCell"];
         _detailTab.clipsToBounds = YES;
         _detailTab.layer.cornerRadius = 25;
-//        WEAK_SELF(self);
-//        _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//
-//            STRONG_SELF(self);
-//            self.currentPage = 0;
-//            [self.detailTab.mj_header endRefreshing];
-//            [self newsRequest];
-//        }];
-//
-//        _detailTab.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-//
-//            STRONG_SELF(self);
-//            [self.detailTab.mj_footer endRefreshing];
-//            self.currentPage += 1;
-//            [self newsRequest];
-//        }];
         
     }
     return _detailTab;
