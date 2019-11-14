@@ -93,6 +93,7 @@
     [topImage mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.top.right.equalTo(self.view);
+        make.height.mas_equalTo(iPhoneBang?104:84);
         
     }];
     
@@ -104,7 +105,7 @@
     [topImage addSubview:popBtn];
     [popBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.equalTo(topImage.mas_top).offset(20);
+        make.top.equalTo(topImage.mas_top).offset(iPhoneBang?34:20);
         make.width.height.equalTo(@44);
         
     }];
@@ -201,7 +202,7 @@
     
     /// 添加分页控制器
     self.hoverPageViewController = [HoverPageViewController viewControllers:viewControllers headerView:self.headerView pageTitleView:self.pageTitleView];
-    self.hoverPageViewController.view.frame = CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - barHeight - 84);
+    self.hoverPageViewController.view.frame = CGRectMake(0, iPhoneBang?(barHeight - 10):barHeight, SCREEN_WIDTH, SCREEN_HEIGHT - barHeight - 84);
     self.hoverPageViewController.delegate = self;
     [self addChildViewController:self.hoverPageViewController];
     [self.view addSubview:self.hoverPageViewController.view];

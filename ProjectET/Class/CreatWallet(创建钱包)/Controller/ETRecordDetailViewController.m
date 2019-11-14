@@ -181,6 +181,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ETRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETRecordCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (self.isOpen) {
         
         if (self.isSearch) {

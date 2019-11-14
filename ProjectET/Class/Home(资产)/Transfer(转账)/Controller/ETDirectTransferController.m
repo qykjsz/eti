@@ -14,6 +14,7 @@
 #import "ETDirectLeftCell.h"
 #import "ETDirectNormalCell.h"
 #import "ETHomeModel.h"
+#import "ETTransferGasView.h"
 
 @interface ETDirectTransferController ()<UITableViewDelegate,UITableViewDataSource,ETDirectTranAddressCellDelegate,ETDirectCountCellDelegate,ETDirectNormalCellDelegate>
 
@@ -123,6 +124,7 @@
         cell.delegate = self;
         cell.textfiled.placeholder = @"0.098753ETH";
         cell.arrowLb.hidden = NO;
+        cell.textfiled.enabled = NO;
         return cell;
         
     }
@@ -140,6 +142,29 @@
     return 49;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    if (indexPath.row == 4) {
+        
+        [HTTPTool requestDotNetWithURLString:@"givecharge" parameters:nil type:kPOST success:^(id responseObject) {
+            
+            
+            ETTransferGasView *view = [[ETTransferGasView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+            view.coinName = self.coinNameString;
+            [[UIApplication sharedApplication].keyWindow addSubview:view];
+            
+            
+        } failure:^(NSError *error) {
+            
+        }];
+        
+        
+       
+    }
+    
+
+}
 #pragma mark - ETDirectTranAddressCellDelegate
 
 - (void)ETDirectTranAddressCellDelegateTextfiled:(UITextField *)textfiled {

@@ -97,6 +97,9 @@
             if (rowPath.row == 3) {
                 cell.textfiled.secureTextEntry = !flag;
             }
+            
+            ETCreatWalletInputCell *comfirmCell = (ETCreatWalletInputCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]];
+            comfirmCell.textfiled.secureTextEntry = !flag;
         }];
         switch (indexPath.row) {
             case 2:{
@@ -115,6 +118,7 @@
             case 4:{
                 cell.titleLb.text = @"确认密码:";
                 cell.hideBtn.hidden = true;
+                cell.textfiled.secureTextEntry = YES;
                 cell.textfiled.placeholder = @"请再次输入您的钱包密码";
             }
                 break;

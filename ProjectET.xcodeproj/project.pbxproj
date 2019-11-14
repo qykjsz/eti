@@ -170,6 +170,8 @@
 		4FA0A319237013D10038F880 /* ETWalletModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A318237013D10038F880 /* ETWalletModel.m */; };
 		4FA0A32723717A8A0038F880 /* ETScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A32623717A8A0038F880 /* ETScanViewController.m */; };
 		4FA0A32B23717ACF0038F880 /* ET_ScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A32A23717ACF0038F880 /* ET_ScaningView.m */; };
+		4FFFAFEC237CFAF600A87E50 /* ETFoundDappModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFEB237CFAF600A87E50 /* ETFoundDappModel.m */; };
+		4FFFAFEF237D250D00A87E50 /* ETTransferGasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFEE237D250D00A87E50 /* ETTransferGasView.m */; };
 		4FFFB9122379264500AE9BFF /* ETMycontactListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB90E2379264500AE9BFF /* ETMycontactListModel.m */; };
 		4FFFB91623792A4D00AE9BFF /* ETTransListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB91523792A4D00AE9BFF /* ETTransListModel.m */; };
 		4FFFB91A2379390600AE9BFF /* ETTransferDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB9192379390600AE9BFF /* ETTransferDetailModel.m */; };
@@ -563,6 +565,10 @@
 		4FA0A32623717A8A0038F880 /* ETScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETScanViewController.m; sourceTree = "<group>"; };
 		4FA0A32923717ACF0038F880 /* ET_ScaningView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ET_ScaningView.h; sourceTree = "<group>"; };
 		4FA0A32A23717ACF0038F880 /* ET_ScaningView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ET_ScaningView.m; sourceTree = "<group>"; };
+		4FFFAFEA237CFAF600A87E50 /* ETFoundDappModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundDappModel.h; sourceTree = "<group>"; };
+		4FFFAFEB237CFAF600A87E50 /* ETFoundDappModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundDappModel.m; sourceTree = "<group>"; };
+		4FFFAFED237D250D00A87E50 /* ETTransferGasView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransferGasView.h; sourceTree = "<group>"; };
+		4FFFAFEE237D250D00A87E50 /* ETTransferGasView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTransferGasView.m; sourceTree = "<group>"; };
 		4FFFB90E2379264500AE9BFF /* ETMycontactListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETMycontactListModel.m; sourceTree = "<group>"; };
 		4FFFB9112379264500AE9BFF /* ETMycontactListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMycontactListModel.h; sourceTree = "<group>"; };
 		4FFFB91423792A4D00AE9BFF /* ETTransListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransListModel.h; sourceTree = "<group>"; };
@@ -1163,6 +1169,8 @@
 				4F3F9051236AE240009AAA24 /* ETChooseWalletcell.m */,
 				4F0E4D972373F5BB00E83618 /* ETTransferDetailCell.h */,
 				4F0E4D982373F5BB00E83618 /* ETTransferDetailCell.m */,
+				4FFFAFED237D250D00A87E50 /* ETTransferGasView.h */,
+				4FFFAFEE237D250D00A87E50 /* ETTransferGasView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1622,6 +1630,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		4FFFAFE7237CFADF00A87E50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4FFFAFEA237CFAF600A87E50 /* ETFoundDappModel.h */,
+				4FFFAFEB237CFAF600A87E50 /* ETFoundDappModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8855DA9E2377ACA300F25DA4 /* MineView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1659,6 +1676,7 @@
 		8855DAD623780DCD00F25DA4 /* FoundViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4FFFAFE7237CFADF00A87E50 /* Model */,
 				04DB9F0A237C1592002796C3 /* ETNewFoundController.h */,
 				04DB9F09237C1592002796C3 /* ETNewFoundController.m */,
 				8855DADB23780DF900F25DA4 /* FoundViewController.h */,
@@ -2086,6 +2104,7 @@
 				8855DB2223790CA400F25DA4 /* RCSegmentView.m in Sources */,
 				047A9DE223700A5900FB5132 /* CachedDataStore.m in Sources */,
 				4F0E4DA523740AA900E83618 /* ETWalletSearchCell.m in Sources */,
+				4FFFAFEC237CFAF600A87E50 /* ETFoundDappModel.m in Sources */,
 				04DB9EEA237BF68B002796C3 /* ETNewAlertsCell.m in Sources */,
 				4F1942EC236D5E6900AD907E /* ETKeystoreQcodeView.m in Sources */,
 				88A5D68C2376BEF10012EE0B /* MineViewController.m in Sources */,
@@ -2101,6 +2120,7 @@
 				4F14FB2D23698BA30008C50A /* ETCreatWalletCell.m in Sources */,
 				4FA0A308236FCA270038F880 /* NSObject+SafeKVO.m in Sources */,
 				8855DB2B23790F6F00F25DA4 /* MarketViewController.m in Sources */,
+				4FFFAFEF237D250D00A87E50 /* ETTransferGasView.m in Sources */,
 				4F1942F2236D69E100AD907E /* ETVerifyPassWrodView.m in Sources */,
 				4F2307062366EB600046A136 /* ETAssetsViewController.m in Sources */,
 				4F1A22342372BF5500FDD5D9 /* HTTPTool.m in Sources */,

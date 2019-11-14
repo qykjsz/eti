@@ -201,7 +201,7 @@
     [topImage mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.top.right.equalTo(self.view);
-        
+        make.height.mas_equalTo(kStatusAndNavHeight+20);
     }];
     
     UIButton *popBtn = [[UIButton alloc]init];
@@ -212,7 +212,7 @@
     [topImage addSubview:popBtn];
     [popBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.equalTo(topImage.mas_top).offset(20);
+        make.top.equalTo(topImage.mas_top).offset(iPhoneBang?kStatusBarHeight-10:kStatusBarHeight);
         make.width.height.equalTo(@44);
         
     }];
@@ -232,7 +232,7 @@
     [self.view addSubview:self.detailTab];
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.equalTo(topImage.mas_bottom).offset(-20);
+        make.top.equalTo(self.view.mas_top).offset(kStatusAndNavHeight);
         make.left.right.bottom.equalTo(self.view);
         
     }];

@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ETFoundHeaderView : UIView
 
+@property (nonatomic,strong) NSMutableArray *dataArr;
 @end
 
 NS_ASSUME_NONNULL_END

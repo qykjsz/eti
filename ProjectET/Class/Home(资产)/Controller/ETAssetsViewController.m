@@ -76,6 +76,14 @@
         _detailTab.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
         _detailTab.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_detailTab registerClass:[ETConiCell class] forCellReuseIdentifier:@"ETConiCell"];
+        WEAK_SELF(self);
+        _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+           
+            STRONG_SELF(self);
+            [self.detailTab.mj_header endRefreshing];
+            [self homeRequest];
+            
+        }];
     }
     return _detailTab;
 }
@@ -96,9 +104,10 @@
     
     self.homeHeader.delegate = self;
     [self.view addSubview:self.homeHeader];
-    
+    WEAK_SELF(self);
     [self.homeHeader mas_makeConstraints:^(MASConstraintMaker *make) {
         
+        STRONG_SELF(self);
         make.top.equalTo(self.view.mas_top);
         make.right.left.equalTo(self.view);
         make.height.mas_equalTo(184);
@@ -169,6 +178,7 @@
         self.headerView.layer.cornerRadius = 25;
         self.detailTab.tableHeaderView = self.headerView;
         self.headerView.moneyLb.text = self.homeModel.data.allnumber;
+        [self.homeHeader.topLeftBtn setTitle:[NSString stringWithFormat:@"%@ >",model.walletName] forState:UIControlStateNormal];
         if ([self.homeModel.data.today floatValue] >= 0) {
              self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.homeModel.data.today];
         }else {
@@ -192,6 +202,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ETConiCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETConiCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     glodData *data = self.dataArr[indexPath.row];
     
     cell.model = self.dataArr[indexPath.row];
