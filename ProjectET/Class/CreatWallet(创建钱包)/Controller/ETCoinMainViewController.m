@@ -73,7 +73,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ETCreatWalletCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETCreatWalletCell"];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.section == 1) {
         switch (indexPath.row) {
             case 0:{
@@ -100,6 +100,7 @@
         return cell;
     }else {
         ETChooseWalletcell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETChooseWalletcell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLb.text = @"以太坊";
         cell.iconImage.image = [UIImage imageNamed:@"dc_eth"];
         return  cell;
@@ -133,8 +134,7 @@
                 break;
         }
     }else {
-        ETCoinListViewController *sVC = [ETCoinListViewController new];
-        [self.navigationController pushViewController:sVC animated:YES];
+        [SVProgressHUD showInfoWithStatus:@"暂未开放"];
     }
     
     
@@ -181,7 +181,7 @@
         
     }];
     
-    
+    NSLog(@"%f",kStatusBarHeight);
     UILabel *titleLb = [[UILabel alloc]init];
     titleLb.text = @"选择底层";
     titleLb.font = [UIFont systemFontOfSize:18];
@@ -190,14 +190,14 @@
     [titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.centerX.equalTo(topImage.mas_centerX);
-        make.top.equalTo(topImage.mas_top).offset(20);
+        make.top.equalTo(topImage.mas_top).offset(iPhoneBang?44:30);
         
     }];
     
     [self.view addSubview:self.detailTab];
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.equalTo(topImage.mas_bottom).offset(-35);
+        make.top.equalTo(self.view.mas_top).offset(iPhoneBang?kStatusAndNavHeight-10:kStatusAndNavHeight);
         make.left.right.bottom.equalTo(self.view);
         
     }];

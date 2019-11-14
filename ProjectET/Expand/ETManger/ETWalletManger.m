@@ -7,6 +7,7 @@
 //
 
 #import "ETWalletManger.h"
+#import "ETCoinMainViewController.h"
 
 @implementation ETWalletManger
 
@@ -106,10 +107,32 @@
                 [arr removeObjectAtIndex:i];
             }
         }
-        
-        
-        NSString *file = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/WalletData.data"];
-        [NSKeyedArchiver archiveRootObject:arr toFile:file];
+    }
+    
+    BOOL isexit = false;
+    if (arr.count != 0) {
+        for (int i = 0; i<arr.count; i++) {
+            
+            ETWalletModel *tempModel = arr[i];
+            if (tempModel.isCurrentWallet) {
+                isexit = YES;
+                break;
+            }
+        }
+    }
+    
+    if (!isexit) {
+        if (arr.count != 0) {
+            ETWalletModel *tempModel = arr[0];
+            tempModel.isCurrentWallet = YES;
+        }
+    }
+    
+    NSString *file = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/WalletData.data"];
+    [NSKeyedArchiver archiveRootObject:arr toFile:file];
+    
+    if (arr.count == 0) {
+        [UIApplication sharedApplication].delegate.window.rootViewController = [ETCoinMainViewController new];
     }
     
 }

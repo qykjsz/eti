@@ -100,9 +100,13 @@
         [cell setSecurEntyBlock:^(BOOL flag, NSIndexPath * _Nonnull rowPath) {
             
             STRONG_SELF(cell);
-            if (rowPath.row == 4) {
+            if (rowPath.row == 4 || rowPath.row == 5) {
                 cell.textfiled.secureTextEntry = !flag;
             }
+            
+            ETCreatWalletInputCell *comfirmCell = (ETCreatWalletInputCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]];
+            comfirmCell.textfiled.secureTextEntry = !flag;
+            
         }];
         switch (indexPath.row) {
             case 3:{
@@ -121,6 +125,7 @@
             case 5:{
                 cell.titleLb.text = @"确认密码:";
                 cell.hideBtn.hidden = true;
+                cell.textfiled.secureTextEntry = YES;
                 cell.textfiled.placeholder = @"请再次输入您的钱包密码";
             }
                 break;

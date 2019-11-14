@@ -120,6 +120,7 @@
     }
 
     UIButton *quietBtn = [ClassBaseTools buttonWithFont:16 titlesColor:UIColorFromHEX(0x1758FB, 1) contentHorizontalAlignment:0 title:@"退出登录"];
+    quietBtn.hidden = YES;
     [self.view addSubview:quietBtn];
     [quietBtn mas_makeConstraints:^(MASConstraintMaker *make) {
        
@@ -212,11 +213,8 @@
         }
             break;
         case 1:{
-            InvationViewController *ctrl = [[InvationViewController alloc]init];
-            [self setHidesBottomBarWhenPushed:YES];
-            [self.navigationController pushViewController:ctrl animated:YES];
-            [self setHidesBottomBarWhenPushed:NO];
-        }
+            [SVProgressHUD showInfoWithStatus:@"暂未开放"];
+         }
             break;
         case 2:{
             HelpViewController *ctrl = [[HelpViewController alloc]init];

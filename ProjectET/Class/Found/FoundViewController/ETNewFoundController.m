@@ -10,6 +10,8 @@
 
 #import "ETFoundHeaderView.h"
 
+#import "ETFoundDappModel.h"
+
 @interface ETNewFoundController ()
 
 @property (nonatomic,strong) ETFoundHeaderView *headerView;
@@ -21,7 +23,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    
+    [HTTPTool requestDotNetWithURLString:@"et_app" parameters:nil type:kPOST success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(NSError *error) {
+        
+    }];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
 }
@@ -76,6 +82,15 @@
     
     self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, kStatusBarHeight+55, SCREEN_WIDTH, 450)];
     [self.view addSubview:self.headerView];
+    
+    [HTTPTool requestDotNetWithURLString:@"et_app" parameters:nil type:kPOST success:^(id responseObject) {
+        ETFoundDappModel *model = [ETFoundDappModel mj_objectWithKeyValues:responseObject];
+        self.headerView.dataArr = model.data;
+    } failure:^(NSError *error) {
+        
+    }];
+    
+    
    
     
 }

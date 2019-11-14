@@ -8,6 +8,8 @@
 
 #import "ETFoundHeaderView.h"
 #import "ETFoundCell.h"
+#import "ETFoundDappModel.h"
+
 @interface ETFoundHeaderView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) UICollectionView *collectionView;
@@ -170,13 +172,16 @@
 #pragma mark - UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return 5;
+    return self.dataArr.count;
     
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     ETFoundCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ETFoundCell" forIndexPath:indexPath];
+    FoundDapp *data = self.dataArr[indexPath.item];
+    cell.titleLb.text = data.name;
+    [cell.iconImage sd_setImageWithURL:[NSURL URLWithString:data.img]];
     return cell;
     
 }
@@ -199,6 +204,10 @@
 }
 //- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section;
 //- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
-
+- (void)setDataArr:(NSMutableArray *)dataArr {
+    
+    _dataArr = dataArr;
+    [self.collectionView reloadData];
+}
 
 @end
