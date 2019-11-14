@@ -207,9 +207,8 @@
     switch (indexPath.row) {
         case 0:{
             ETMyContactsController *ctrl = [[ETMyContactsController alloc]init];
-            [self setHidesBottomBarWhenPushed:YES];
+            [ctrl setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:ctrl animated:YES];
-            [self setHidesBottomBarWhenPushed:NO];
         }
             break;
         case 1:{
@@ -218,23 +217,23 @@
             break;
         case 2:{
             HelpViewController *ctrl = [[HelpViewController alloc]init];
-            [self setHidesBottomBarWhenPushed:YES];
+            [ctrl setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:ctrl animated:YES];
-            [self setHidesBottomBarWhenPushed:NO];
+
         }
             break;
         case 3:{
             AboutUsViewController *ctrl = [[AboutUsViewController alloc]init];
-            [self setHidesBottomBarWhenPushed:YES];
+            [ctrl setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:ctrl animated:YES];
-            [self setHidesBottomBarWhenPushed:NO];
+       
         }
             break;
         case 4:{
             SetViewController *ctrl = [[SetViewController alloc]init];
-            [self setHidesBottomBarWhenPushed:YES];
+            [ctrl setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:ctrl animated:YES];
-            [self setHidesBottomBarWhenPushed:NO];
+ 
         }
             break;
             

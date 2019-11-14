@@ -50,6 +50,10 @@
 		04E9DAF5237CFE8800CDB9EE /* ETNewMarketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DAF4237CFE8800CDB9EE /* ETNewMarketModel.m */; };
 		04E9DAFA237D23D300CDB9EE /* ETNewAlertsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DAF8237D23D300CDB9EE /* ETNewAlertsDetailsViewController.m */; };
 		04E9DAFB237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E9DAF9237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib */; };
+		04E9DB02237D4BC000CDB9EE /* ETMineHelpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DB01237D4BC000CDB9EE /* ETMineHelpModel.m */; };
+		04E9DB06237D4F1200CDB9EE /* ETHTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DB04237D4F1200CDB9EE /* ETHTMLViewController.m */; };
+		04E9DB07237D4F1200CDB9EE /* ETHTMLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E9DB05237D4F1200CDB9EE /* ETHTMLViewController.xib */; };
+		04E9DB0D237D56F500CDB9EE /* ETAboutUsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DB0C237D56F500CDB9EE /* ETAboutUsModel.m */; };
 		4F0E4D8D2373B3FC00E83618 /* ETHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */; };
 		4F0E4D932373EFF000E83618 /* ETTransferDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D922373EFF000E83618 /* ETTransferDetailViewController.m */; };
 		4F0E4D992373F5BB00E83618 /* ETTransferDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D982373F5BB00E83618 /* ETTransferDetailCell.m */; };
@@ -310,6 +314,13 @@
 		04E9DAF7237D23D300CDB9EE /* ETNewAlertsDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewAlertsDetailsViewController.h; sourceTree = "<group>"; };
 		04E9DAF8237D23D300CDB9EE /* ETNewAlertsDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewAlertsDetailsViewController.m; sourceTree = "<group>"; };
 		04E9DAF9237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewAlertsDetailsViewController.xib; sourceTree = "<group>"; };
+		04E9DB00237D4BC000CDB9EE /* ETMineHelpModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETMineHelpModel.h; sourceTree = "<group>"; };
+		04E9DB01237D4BC000CDB9EE /* ETMineHelpModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETMineHelpModel.m; sourceTree = "<group>"; };
+		04E9DB03237D4F1200CDB9EE /* ETHTMLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETHTMLViewController.h; sourceTree = "<group>"; };
+		04E9DB04237D4F1200CDB9EE /* ETHTMLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETHTMLViewController.m; sourceTree = "<group>"; };
+		04E9DB05237D4F1200CDB9EE /* ETHTMLViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETHTMLViewController.xib; sourceTree = "<group>"; };
+		04E9DB0B237D56F500CDB9EE /* ETAboutUsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAboutUsModel.h; sourceTree = "<group>"; };
+		04E9DB0C237D56F500CDB9EE /* ETAboutUsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAboutUsModel.m; sourceTree = "<group>"; };
 		172FA16F06F30E4F663C3530 /* Pods-ProjectET.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET.debug.xcconfig"; path = "Target Support Files/Pods-ProjectET/Pods-ProjectET.debug.xcconfig"; sourceTree = "<group>"; };
 		4F0E4D8B2373B3FC00E83618 /* ETHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETHomeModel.h; sourceTree = "<group>"; };
 		4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETHomeModel.m; sourceTree = "<group>"; };
@@ -913,6 +924,17 @@
 				04E9DAF9237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib */,
 			);
 			path = "快讯详情";
+			sourceTree = "<group>";
+		};
+		04E9DAFD237D4BA700CDB9EE /* MineModel */ = {
+			isa = PBXGroup;
+			children = (
+				04E9DB00237D4BC000CDB9EE /* ETMineHelpModel.h */,
+				04E9DB01237D4BC000CDB9EE /* ETMineHelpModel.m */,
+				04E9DB0B237D56F500CDB9EE /* ETAboutUsModel.h */,
+				04E9DB0C237D56F500CDB9EE /* ETAboutUsModel.m */,
+			);
+			path = MineModel;
 			sourceTree = "<group>";
 		};
 		2E2D92EDFC2E29D9F702BA5B /* Frameworks */ = {
@@ -1673,6 +1695,7 @@
 		88A5D6862376BEBE0012EE0B /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				04E9DAFD237D4BA700CDB9EE /* MineModel */,
 				8855DA9E2377ACA300F25DA4 /* MineView */,
 				88A5D6892376BEE50012EE0B /* MineViewController */,
 			);
@@ -1704,6 +1727,9 @@
 				8855DACD2378037500F25DA4 /* MineRecordViewController.m */,
 				8855DB382379469400F25DA4 /* TotalAssViewController.h */,
 				8855DB392379469400F25DA4 /* TotalAssViewController.m */,
+				04E9DB03237D4F1200CDB9EE /* ETHTMLViewController.h */,
+				04E9DB04237D4F1200CDB9EE /* ETHTMLViewController.m */,
+				04E9DB05237D4F1200CDB9EE /* ETHTMLViewController.xib */,
 			);
 			path = MineViewController;
 			sourceTree = "<group>";
@@ -1848,6 +1874,7 @@
 				04DB9F17237CF233002796C3 /* ETNewMarketCell.xib in Resources */,
 				4F128CA523683BF70004284D /* ETDirectCountCell.xib in Resources */,
 				4F14FAFA236924B30008C50A /* ETMyContactsCell.xib in Resources */,
+				04E9DB07237D4F1200CDB9EE /* ETHTMLViewController.xib in Resources */,
 				04E9DAFB237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib in Resources */,
 				4F128CAA23683EE70004284D /* ETDirectLeftCell.xib in Resources */,
 				4F2306CF2366DE9F0046A136 /* Assets.xcassets in Resources */,
@@ -2043,11 +2070,12 @@
 				04DB9F07237C156E002796C3 /* ETTotalAssetsController.m in Sources */,
 				4F3F905C236BCB4B009AAA24 /* ETGatheringViewController.m in Sources */,
 				4F0E4D9F2374044700E83618 /* ETWalletSearchController.m in Sources */,
+				04E9DB0D237D56F500CDB9EE /* ETAboutUsModel.m in Sources */,
 				4F2306D52366DE9F0046A136 /* main.m in Sources */,
+				04E9DB06237D4F1200CDB9EE /* ETHTMLViewController.m in Sources */,
 				4F14FB1323693CFC0008C50A /* KMPProgressHUD.m in Sources */,
 				4F14FB2D23698BA30008C50A /* ETCreatWalletCell.m in Sources */,
 				4FA0A308236FCA270038F880 /* NSObject+SafeKVO.m in Sources */,
-				8855DB2B23790F6F00F25DA4 /* MarketViewController.m in Sources */,
 				4FFFAFEF237D250D00A87E50 /* ETTransferGasView.m in Sources */,
 				4F1942F2236D69E100AD907E /* ETVerifyPassWrodView.m in Sources */,
 				4F2307062366EB600046A136 /* ETAssetsViewController.m in Sources */,
@@ -2068,6 +2096,7 @@
 				8855DB3A2379469400F25DA4 /* TotalAssViewController.m in Sources */,
 				4F128C622367D83B0004284D /* HomeHeaderView.m in Sources */,
 				4F3F9030236A7E83009AAA24 /* ETCreatWalletInfoCell.m in Sources */,
+				04E9DB02237D4BC000CDB9EE /* ETMineHelpModel.m in Sources */,
 				4F3F9060236BD9F3009AAA24 /* KMPQRCodeManager.m in Sources */,
 				047A9DEA23700A5900FB5132 /* AsyncOperation.m in Sources */,
 				04DB9EE5237BEAFB002796C3 /* ETNewArticleViewController.m in Sources */,

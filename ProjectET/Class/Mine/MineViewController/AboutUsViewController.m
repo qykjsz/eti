@@ -7,22 +7,38 @@
 //
 
 #import "AboutUsViewController.h"
+#import "ETAboutUsModel.h"
+#import "ETHTMLViewController.h"
 
 @interface AboutUsViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *detailTab;
-@property (nonatomic,strong) NSArray *dataArray;
+@property (nonatomic,strong) NSMutableArray *dataSource;
+@property (nonatomic,strong)ETAboutUsModel *model;
+
 @end
 
 @implementation AboutUsViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"关于我们";
-    self.dataArray = @[@"使用协议",@"隐私条款",@"隐私日志",@"联系我们"];
+    self.dataSource  = [NSMutableArray array];
     [self.view addSubview:self.detailTab];
     [self creatHeadView];
+    [self getAlertsListData];
 }
+
+- (void)getAlertsListData{
+    [HTTPTool requestDotNetWithURLString:@"api_giveus" parameters:@{@"":@""}    type:kPOST success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        self.model =[ETAboutUsModel mj_objectWithKeyValues:responseObject];
+        [self.dataSource addObjectsFromArray:self.model.data];
+        [self.detailTab reloadData];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
 - (UITableView *)detailTab {
     
     if (!_detailTab) {
@@ -66,7 +82,7 @@
 }
 #pragma mark--------DELEGATE-------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -89,11 +105,19 @@
             make.height.mas_offset(.5);
         }];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.textLabel.text = _dataArray[indexPath.row];
+    ETAboutUsDataModel *model = self.dataSource[indexPath.row];
+    cell.textLabel.text = model.name;
         cell.textLabel.font =[UIFont systemFontOfSize:14];
         //添加右侧注释
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
+    ETAboutUsDataModel *model = self.dataSource[indexPath.row];
+    vc.url = model.iosurl;
+    [self.navigationController pushViewController:vc animated:true];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;

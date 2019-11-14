@@ -7,11 +7,14 @@
 //
 
 #import "MineRecordViewController.h"
-#import "MineRecordCell.h"
+#import "ETRecordCell.h"
+#import "ETTransListModel.h"
+#import "ETTransferDetailViewController.h"
 
 @interface MineRecordViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *detailTab;
-@property (nonatomic,strong) NSArray *dataArray;
+@property (nonatomic,strong) NSMutableArray *dataArr;
+@property (nonatomic,assign) NSInteger curretnPage;
 
 @end
 
@@ -20,46 +23,106 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"交易记录";
-    self.dataArray = @[@"77",@"11",@"22",@"321",@"123"];
+    self.dataArr = [NSMutableArray array];
+   
+    self.curretnPage = 0;
     [self.view addSubview:self.detailTab];
+    
+    [self listRequest];
+   
 }
+
+#pragma Mark- NET
+- (void)listRequest {
+    
+    /*
+     address 复制    [string]    是    地址
+     page    [string]    是    当前页数 从0开始
+     glod    [string]    是    查询币种 如 ETH 传0为全部币种
+     type    [string]    是    交易类型 1.转入 2.转入 3.全部
+     */
+    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:model.address forKey:@"address"];
+    [dict setValue:@(self.curretnPage) forKey:@"page"];
+    [dict setValue:@"0" forKey:@"glod"];
+    [dict setValue:@"3" forKey:@"type"];
+    [HTTPTool requestDotNetWithURLString:@"et_recordorder" parameters:dict type:kPOST success:^(id responseObject) {
+        
+        
+        if (self.curretnPage == 0) {
+            [self.dataArr removeAllObjects];
+        }
+        ETTransListModel *model = [ETTransListModel mj_objectWithKeyValues:responseObject];
+        
+        [self.dataArr addObjectsFromArray:model.data.order];
+        
+        if (self.dataArr.count == [model.data.pages integerValue]) {
+            [self.detailTab.mj_footer endRefreshingWithNoMoreData];
+        }
+        
+        [self.detailTab reloadData];
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
 - (UITableView *)detailTab {
     
     if (!_detailTab) {
-        _detailTab = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+        _detailTab = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
         _detailTab.delegate = self;
         _detailTab.dataSource = self;
-        _detailTab.clipsToBounds = YES;
-        _detailTab.layer.cornerRadius = 26;
-        _detailTab.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
         _detailTab.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [_detailTab registerClass:[ETRecordCell class] forCellReuseIdentifier:@"ETRecordCell"];
+        _detailTab.clipsToBounds = YES;
+        _detailTab.layer.cornerRadius = 25;
+        
+        WEAK_SELF(self);
+        _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            
+            STRONG_SELF(self);
+            self.curretnPage = 0;
+            [self.detailTab.mj_header endRefreshing];
+            [self listRequest];
+        }];
+        
+        _detailTab.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            
+            STRONG_SELF(self);
+            [self.detailTab.mj_footer endRefreshing];
+            self.curretnPage += 1;
+            [self listRequest];
+        }];
     }
     return _detailTab;
 }
 #pragma mark--------DELEGATE-------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.dataArray.count;
+    return self.dataArr.count;
 }
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    return 66;
+//}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *CellTableIndentifier = @"CellTableIdentifier";
-    //单元格ID
-    //重用单元格
-    MineRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIndentifier];
-    //初始化单元格
-    if(cell == nil)
-    {
-        cell = [[MineRecordCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellTableIndentifier];
-        //自带有两种基础的tableView样式，UITableViewCellStyleValue1、2. 后面的文章会讲解自定义样式
-    }
-    
+    ETRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETRecordCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    orderData *data = self.dataArr[indexPath.row];
+    cell.model = data;
     return cell;
 }
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 102.5;
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    orderData *data = self.dataArr[indexPath.row];
+    ETTransferDetailViewController *dVC = [ETTransferDetailViewController new];
+    dVC.Id = data.Id;
+    dVC.glod = data.name;
+    [self.navigationController pushViewController:dVC animated:YES];
 }
 @end
