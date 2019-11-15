@@ -12,6 +12,10 @@
 
 #import "ETHomeModel.h"
 
+@interface ETHomeTableHeaderView()<ETNoticeScrollViewDelegate>
+
+@end
+
 @implementation ETHomeTableHeaderView
 
 - (void)clickAction {
@@ -26,10 +30,9 @@
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = UIColor.whiteColor;
         
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickAction)];
-        [self addGestureRecognizer:tap];
-        
+       
         UIImageView *backImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"sy_qb_bg"]];
+        backImage.userInteractionEnabled = YES;
         [self addSubview:backImage];
         [backImage mas_makeConstraints:^(MASConstraintMaker *make) {
             
@@ -39,6 +42,10 @@
             make.height.mas_equalTo(220);
             
         }];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickAction)];
+        [backImage addGestureRecognizer:tap];
+        
         
         UILabel *titleLb = [[UILabel alloc]init];
         titleLb.text = @"资产正在保护中";
@@ -196,7 +203,8 @@
         }];
         
         
-        self.scrollView = [[ETNoticeScrollView alloc]initWithFrame:CGRectMake(82, 260, 220, 15)];
+        self.scrollView = [[ETNoticeScrollView alloc]initWithFrame:CGRectMake(82, 252, 220, 30)];
+        self.scrollView.delegate = self;
         [self addSubview:self.scrollView];
         
         
@@ -212,7 +220,7 @@
             make.right.equalTo(self.mas_right).offset(-10);
             make.centerY.equalTo(lunboImage.mas_centerY);
             make.width.equalTo(@100);
-            make.height.equalTo(@12);
+            make.height.equalTo(@40);
         }];
         
         self.selectView = [ETTableHeaderSelectView new];
@@ -227,6 +235,15 @@
     }
     
     return self;
+}
+
+#pragma mark - ETNoticeScrollViewDelegate
+- (void)noticeScrollDidClickAtIndex:(NSInteger)index content:(NSString *)content {
+    
+    if ([self.delegate respondsToSelector:@selector(ETHomeTableHeaderViewBannerDelegateClickAction:)]) {
+        [self.delegate ETHomeTableHeaderViewBannerDelegateClickAction:index];
+    }
+    
 }
 
 - (void)moreClick {

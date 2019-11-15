@@ -20,12 +20,204 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/Controller/ETDirectTransferController.m"
-            timestampString = "595481113.237101"
+            timestampString = "595493678.974156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "271"
             endingLineNumber = "271"
             landmarkName = "-ETDirectCountCellDelegateCoinClick"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
+            timestampString = "595493678.974232"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "-clickAction"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
+            timestampString = "595493678.974309"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
+            landmarkName = "-clickAction"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[ETSecretImportController clickAction]_block_invoke"
+                  moduleName = "ProjectET"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/CreatWallet(%E5%88%9B%E5%BB%BA%E9%92%B1%E5%8C%85)/Controller/ETSecretImportController.m"
+                  timestampString = "595493679.060238"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "294"
+                  endingLineNumber = "294"
+                  offsetFromSymbolStart = "654">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[ETSecretImportController clickAction]_block_invoke_2"
+                  moduleName = "ProjectET"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/CreatWallet(%E5%88%9B%E5%BB%BA%E9%92%B1%E5%8C%85)/Controller/ETSecretImportController.m"
+                  timestampString = "595493679.061519"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "294"
+                  endingLineNumber = "294"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
+            timestampString = "595493678.9743659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "-clickAction"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ETSecretImportController clickAction]"
+                  moduleName = "ProjectET"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/CreatWallet(%E5%88%9B%E5%BB%BA%E9%92%B1%E5%8C%85)/Controller/ETSecretImportController.m"
+                  timestampString = "595493679.064804"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "278"
+                  endingLineNumber = "278"
+                  offsetFromSymbolStart = "1088">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__39-[ETSecretImportController clickAction]_block_invoke"
+                  moduleName = "ProjectET"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/CreatWallet(%E5%88%9B%E5%BB%BA%E9%92%B1%E5%8C%85)/Controller/ETSecretImportController.m"
+                  timestampString = "595493679.065969"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "282"
+                  endingLineNumber = "282"
+                  offsetFromSymbolStart = "210">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
+            timestampString = "595493678.9744231"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "-clickAction"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
+            timestampString = "595493678.974468"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
+            landmarkName = "-clickAction"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
+            timestampString = "595493678.974528"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
+            landmarkName = "-clickAction"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
+            timestampString = "595493678.974579"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
+            landmarkName = "-clickAction"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
+            timestampString = "595493678.97462"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
+            landmarkName = "-clickAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
