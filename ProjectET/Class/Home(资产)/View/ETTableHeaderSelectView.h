@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ETTableHeaderSelectView : UIView
 
+@property (nonatomic,strong) void(^homeSelectTag)(NSInteger tag);
+
 @end
 
 NS_ASSUME_NONNULL_END

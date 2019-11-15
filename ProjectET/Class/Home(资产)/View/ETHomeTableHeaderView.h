@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ETTableHeaderSelectView.h"
 #import "ETNoticeScrollView.h"
 NS_ASSUME_NONNULL_BEGIN
 
@@ -44,6 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) ETNoticeScrollView *scrollView;
 
+@property (nonatomic,strong) ETTableHeaderSelectView *selectView;
 @end
 
 NS_ASSUME_NONNULL_END

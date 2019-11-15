@@ -312,14 +312,16 @@
     clickBtn.layer.cornerRadius = 5;
     
    
-   
+    
     WEAK_SELF(self);
     [clickBtn bk_whenTapped:^{
         STRONG_SELF(self);
-        
+       
+        [KMPProgressHUD showText:@"请稍等"];
+        self.view.userInteractionEnabled = NO;
         //判断币种是否允许被转出
         [HTTPTool requestDotNetWithURLString:@"et_transaction" parameters:@{@"name":self.coinNameString} type:kPOST success:^(id responseObject) {
-            
+            self.view.userInteractionEnabled = YES;
             if ([Tools checkStringIsEmpty:self.address]) {
                 [SVProgressHUD showInfoWithStatus:@"转账地址不能为空"];
                 return;
@@ -336,11 +338,10 @@
                 return;
             }
             
-            
             [HTTPTool requestDotNetWithURLString:@"et_node" parameters:nil type:kPOST success:^(id responseObject) {
                 NSLog(@"%@",responseObject);
                 
-                
+                [KMPProgressHUD dismissProgress];
                 NSString *urlString = responseObject[@"data"];
                 NSLog(@"%@",urlString);
                 
@@ -366,7 +367,8 @@
                 }];
                 
             } failure:^(NSError *error) {
-                
+                [KMPProgressHUD dismissProgress];
+                self.view.userInteractionEnabled = YES;
             }];
             //
             
@@ -374,7 +376,8 @@
 
             
         } failure:^(NSError *error) {
-            
+            [KMPProgressHUD dismissProgress];
+            self.view.userInteractionEnabled = YES;
         }];
         
 
