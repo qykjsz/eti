@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/Controller/ETDirectTransferController.m"
-            timestampString = "595493678.974156"
+            timestampString = "595495841.836633"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "271"
@@ -36,7 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
-            timestampString = "595493678.974232"
+            timestampString = "595495841.836696"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "300"
@@ -52,7 +52,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
-            timestampString = "595493678.974309"
+            timestampString = "595495841.836758"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "294"
@@ -68,12 +68,12 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/CreatWallet(%E5%88%9B%E5%BB%BA%E9%92%B1%E5%8C%85)/Controller/ETSecretImportController.m"
-                  timestampString = "595493679.060238"
+                  timestampString = "595495842.223747"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "294"
                   endingLineNumber = "294"
-                  offsetFromSymbolStart = "654">
+                  offsetFromSymbolStart = "636">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -83,12 +83,12 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/CreatWallet(%E5%88%9B%E5%BB%BA%E9%92%B1%E5%8C%85)/Controller/ETSecretImportController.m"
-                  timestampString = "595493679.061519"
+                  timestampString = "595495842.22499"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "294"
                   endingLineNumber = "294"
-                  offsetFromSymbolStart = "15">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -100,7 +100,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
-            timestampString = "595493678.9743659"
+            timestampString = "595495841.836802"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "278"
@@ -116,12 +116,12 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/CreatWallet(%E5%88%9B%E5%BB%BA%E9%92%B1%E5%8C%85)/Controller/ETSecretImportController.m"
-                  timestampString = "595493679.064804"
+                  timestampString = "595495842.228212"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "278"
                   endingLineNumber = "278"
-                  offsetFromSymbolStart = "1088">
+                  offsetFromSymbolStart = "1084">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -131,12 +131,12 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/CreatWallet(%E5%88%9B%E5%BB%BA%E9%92%B1%E5%8C%85)/Controller/ETSecretImportController.m"
-                  timestampString = "595493679.065969"
+                  timestampString = "595495842.229442"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "282"
                   endingLineNumber = "282"
-                  offsetFromSymbolStart = "210">
+                  offsetFromSymbolStart = "204">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -148,7 +148,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
-            timestampString = "595493678.9744231"
+            timestampString = "595495841.836868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "250"
@@ -164,7 +164,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
-            timestampString = "595493678.974468"
+            timestampString = "595495841.83693"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "282"
@@ -180,7 +180,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
-            timestampString = "595493678.974528"
+            timestampString = "595495841.836985"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "280"
@@ -196,7 +196,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
-            timestampString = "595493678.974579"
+            timestampString = "595495841.837024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "309"
@@ -212,7 +212,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETSecretImportController.m"
-            timestampString = "595493678.97462"
+            timestampString = "595495841.837064"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "316"
