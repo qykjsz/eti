@@ -126,15 +126,19 @@
             }
                 break;
             case 2: {
-                ETColdWalletViewController *cVC = [ETColdWalletViewController new];
-                [self.navigationController pushViewController:cVC animated:YES];
+//                ETColdWalletViewController *cVC = [ETColdWalletViewController new];
+//                [self.navigationController pushViewController:cVC animated:YES];
+                 [SVProgressHUD showInfoWithStatus:@"暂未开放"];
             }
                 break;
             default:
                 break;
         }
     }else {
-        [SVProgressHUD showInfoWithStatus:@"暂未开放"];
+        
+        ETCoinListViewController *vc = [ETCoinListViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+       
     }
     
     

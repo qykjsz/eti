@@ -132,10 +132,10 @@
     view.backgroundColor = UIColor.whiteColor;
     UILabel *titleLb = [[UILabel alloc]initWithFrame:CGRectMake(25, 0, SCREEN_WIDTH - 50, 30)];
     titleLb.font = [UIFont systemFontOfSize:14];
-    titleLb.textColor = UIColorFromHEX(0x333333, 1);
+    titleLb.textColor = UIColorFromHEX(0x99AFD9, 1);
     NSString *subString = [data.address substringWithRange:NSMakeRange(0, 8)];
     NSString *bottomString = [data.address substringWithRange:NSMakeRange(data.address.length-10, 10)];
-    titleLb.text = [NSString stringWithFormat:@"%@********%@",subString,bottomString];
+    titleLb.text = [NSString stringWithFormat:@"%@********%@",subString,bottomString ];
     [view addSubview:titleLb];
     return view;
     
