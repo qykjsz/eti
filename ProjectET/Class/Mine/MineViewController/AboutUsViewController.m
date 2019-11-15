@@ -56,15 +56,17 @@
     UIView *headView = [ClassBaseTools viewWithBackgroundColor:[UIColor whiteColor]];
     headView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 175);
     self.detailTab.tableHeaderView =headView;
-    UIView *iconImg = [ClassBaseTools viewWithBackgroundColor:[UIColor blueColor]];
+    UIImageView *iconImg = [[UIImageView alloc]init];
     iconImg.layer.masksToBounds = YES;
     iconImg.layer.cornerRadius = 5;
+    iconImg.image = [UIImage imageNamed:@"AppIcon"];
     [headView addSubview:iconImg];
     [iconImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(SCREEN_WIDTH/2-30);
         make.width.height.mas_offset(60);
         make.centerY.equalTo(headView).offset(-10);
     }];
+
     UILabel *appName = [ClassBaseTools labelWithFont:14 textColor:[UIColor blackColor] textAlignment:0];
     appName.text = @"APP";
     [headView addSubview:appName];
