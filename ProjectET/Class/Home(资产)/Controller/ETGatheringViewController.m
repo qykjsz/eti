@@ -11,7 +11,7 @@
 #import <Photos/Photos.h>
 #import "KMPQRCodeManager.h"
 #import "ETRecordSegmentController.h"
-
+#import "MineRecordViewController.h"
 @interface ETGatheringViewController ()
 
 @property (nonatomic,strong) UIImageView *qcordeImage;
@@ -162,7 +162,7 @@
 #pragma mark - Action
 - (void)recordAction {
     
-    ETRecordSegmentController *dVC = [ETRecordSegmentController new];
+    MineRecordViewController *dVC = [MineRecordViewController new];
     [self.navigationController pushViewController:dVC animated:YES];
     
 }

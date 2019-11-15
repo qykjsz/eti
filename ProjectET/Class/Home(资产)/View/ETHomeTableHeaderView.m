@@ -8,7 +8,7 @@
 
 #import "ETHomeTableHeaderView.h"
 #import "ETNoticeScrollView.h"
-#import "ETTableHeaderSelectView.h"
+
 
 #import "ETHomeModel.h"
 
@@ -215,9 +215,9 @@
             make.height.equalTo(@12);
         }];
         
-        ETTableHeaderSelectView *selectView = [ETTableHeaderSelectView new];
-        [self addSubview:selectView];
-        [selectView mas_makeConstraints:^(MASConstraintMaker *make) {
+        self.selectView = [ETTableHeaderSelectView new];
+        [self addSubview:self.selectView];
+        [self.selectView mas_makeConstraints:^(MASConstraintMaker *make) {
             
             make.left.equalTo(self.mas_left);
             make.top.equalTo(lunboImage.mas_bottom).offset(10);

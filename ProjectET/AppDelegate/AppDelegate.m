@@ -29,14 +29,13 @@
     [self.window makeKeyAndVisible];
     
     
-    
     NSMutableArray *walletArr = WALLET_ARR;
     if (walletArr.count != 0) {
-            ETRootViewController *rootVC = [ETRootViewController new];
-            self.window.rootViewController = rootVC;
+        ETRootViewController *rootVC = [ETRootViewController new];
+        self.window.rootViewController = rootVC;
     }else {
         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[ETCoinMainViewController new]];
-            self.window.rootViewController = nav;
+        self.window.rootViewController = nav;
     }
     
     //网络配置
@@ -48,7 +47,42 @@
     [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
     
     [self ET_VCSetting];
+
+    // 启动动画
+    [self imageGif:^{
+        
+    }];
+    
+    
+
     return YES;
+}
+
+- (void)imageGif:(void(^)(void))complicate {
+    
+    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"ET启动页" withExtension:@"gif"]; //加载GIF图片
+    CGImageSourceRef gifSource = CGImageSourceCreateWithURL((CFURLRef) fileUrl, NULL);           //将GIF图片转换成对应的图片源
+    size_t frameCout = CGImageSourceGetCount(gifSource);                                         //获取其中图片源个数，即由多少帧图片组成
+    NSMutableArray *frames = [[NSMutableArray alloc] init];                                      //定义数组存储拆分出来的图片
+    for (size_t i = 0; i < frameCout; i++) {
+        CGImageRef imageRef = CGImageSourceCreateImageAtIndex(gifSource, i, NULL); //从GIF图片中取出源图片
+        UIImage *imageName = [UIImage imageWithCGImage:imageRef];                  //将图片源转换成UIimageView能使用的图片源
+        [frames addObject:imageName];                                              //将图片加入数组中
+        CGImageRelease(imageRef);
+    }
+    UIImageView *gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    gifImageView.animationImages = frames; //将图片数组加入UIImageView动画数组中
+    gifImageView.animationDuration = 3; //每次动画时长
+    gifImageView.animationRepeatCount = 1;
+    [gifImageView startAnimating];         //开启动画，此处没有调用播放次数接口，UIImageView默认播放次数为无限次，故这里不做处理
+    [[UIApplication sharedApplication].keyWindow addSubview:gifImageView];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [gifImageView removeFromSuperview];
+        complicate();
+        
+    });
 }
 
 

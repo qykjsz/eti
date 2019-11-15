@@ -127,6 +127,10 @@
      glod    [string]    是    查询币种 如 ETH 传0为全部币种
      type    [string]    是    交易类型 1.转入 2.转入 3.全部
      */
+    if (self.coinName == nil) {
+        self.coinName = @"0";
+        self.type = @"3";
+    }
     ETWalletModel *model = [ETWalletManger getCurrentWallet];
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setValue:model.address forKey:@"address"];

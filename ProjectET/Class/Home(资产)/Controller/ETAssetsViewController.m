@@ -164,6 +164,11 @@
         [self.dataArr addObjectsFromArray:self.homeModel.data.glod];
         
         self.headerView = [[ETHomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 370) andProgress:self.homeModel.data.proportion];
+        [self.headerView.selectView setHomeSelectTag:^(NSInteger tag) {
+            [SVProgressHUD showInfoWithStatus:@"暂未开放"];
+        }];
+        
+        
         
         NSMutableArray *dataArr = [NSMutableArray array];
         if (self.homeModel.data.news.count != 0 ) {
@@ -190,6 +195,7 @@
     } failure:^(NSError *error) {
         
     }];
+    
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource

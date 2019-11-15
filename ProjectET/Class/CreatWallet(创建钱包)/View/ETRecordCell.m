@@ -145,7 +145,7 @@
         self.topLB.text = [NSString stringWithFormat:@"转入%@",model.name];
     }else {
          self.topLB.textColor = UIColorFromHEX(0x00C176, 1);
-        self.topLB.text = [NSString stringWithFormat:@"转入%@",model.name];
+        self.topLB.text = [NSString stringWithFormat:@"转出%@",model.name];
     }
     
     self.moneydetail.text = model.amount;

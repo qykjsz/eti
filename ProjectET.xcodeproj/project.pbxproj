@@ -184,6 +184,7 @@
 		4FFFAFEF237D250D00A87E50 /* ETTransferGasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFEE237D250D00A87E50 /* ETTransferGasView.m */; };
 		4FFFAFF5237D480900A87E50 /* ETTransferGasModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFF4237D480900A87E50 /* ETTransferGasModel.m */; };
 		4FFFAFF9237D5B5C00A87E50 /* ETTotalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFF8237D5B5C00A87E50 /* ETTotalModel.m */; };
+		4FFFB041237E42EF00A87E50 /* ET启动页.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FFFB03E237E42EF00A87E50 /* ET启动页.gif */; };
 		4FFFB9122379264500AE9BFF /* ETMycontactListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB90E2379264500AE9BFF /* ETMycontactListModel.m */; };
 		4FFFB91623792A4D00AE9BFF /* ETTransListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB91523792A4D00AE9BFF /* ETTransListModel.m */; };
 		4FFFB91A2379390600AE9BFF /* ETTransferDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB9192379390600AE9BFF /* ETTransferDetailModel.m */; };
@@ -588,6 +589,7 @@
 		4FFFAFF4237D480900A87E50 /* ETTransferGasModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTransferGasModel.m; sourceTree = "<group>"; };
 		4FFFAFF7237D5B5C00A87E50 /* ETTotalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTotalModel.h; sourceTree = "<group>"; };
 		4FFFAFF8237D5B5C00A87E50 /* ETTotalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTotalModel.m; sourceTree = "<group>"; };
+		4FFFB03E237E42EF00A87E50 /* ET启动页.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ET启动页.gif"; sourceTree = "<group>"; };
 		4FFFB90E2379264500AE9BFF /* ETMycontactListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETMycontactListModel.m; sourceTree = "<group>"; };
 		4FFFB9112379264500AE9BFF /* ETMycontactListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMycontactListModel.h; sourceTree = "<group>"; };
 		4FFFB91423792A4D00AE9BFF /* ETTransListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransListModel.h; sourceTree = "<group>"; };
@@ -1427,6 +1429,7 @@
 		4F2306F82366E44B0046A136 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4FFFB03E237E42EF00A87E50 /* ET启动页.gif */,
 				4F1174F4236C23C10042CDFD /* OCExample-Bridging-Header.h */,
 				4F2306F72366E41C0046A136 /* PrefixETHeader.pch */,
 				4F2306CB2366DE9D0046A136 /* Main.storyboard */,
@@ -1903,6 +1906,7 @@
 				4F3F9036236A7F04009AAA24 /* ETCreatWalletInputCell.xib in Resources */,
 				4F1942E0236D306800AD907E /* ETWalletImportCell.xib in Resources */,
 				4F128CA0236839610004284D /* ETDirectTranAddressCell.xib in Resources */,
+				4FFFB041237E42EF00A87E50 /* ET启动页.gif in Resources */,
 				04DB9EEB237BF68B002796C3 /* ETNewAlertsCell.xib in Resources */,
 				04DB9EF3237C067A002796C3 /* ETNewArticleCell.xib in Resources */,
 				4F3F9031236A7E83009AAA24 /* ETCreatWalletInfoCell.xib in Resources */,

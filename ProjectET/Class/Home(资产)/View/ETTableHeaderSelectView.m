@@ -41,6 +41,8 @@
 
 - (void)btnClick:(UIButton *)sender {
     
-    
+    if (self.homeSelectTag) {
+        self.homeSelectTag(sender.tag);
+    }
 }
 @end
