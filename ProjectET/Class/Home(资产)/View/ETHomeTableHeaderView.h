@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)ETHomeTableHeaderViewDelegateClickAction;
 
+- (void)ETHomeTableHeaderViewBannerDelegateClickAction:(NSInteger)tag;
+
 - (void)ETHomeTableHeaderViewDelegateMoreClickAction;
 
 @end

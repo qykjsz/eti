@@ -2380,6 +2380,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2LML59W777;
+				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectET/Supporting Files/PrefixETHeader.pch";
 				INFOPLIST_FILE = ProjectET/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2403,6 +2404,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2LML59W777;
+				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectET/Supporting Files/PrefixETHeader.pch";
 				INFOPLIST_FILE = ProjectET/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

@@ -40,7 +40,7 @@
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
     
-    return @{@"ID":@"id"};
+    return @{@"Id":@"id"};
     
 }
 
