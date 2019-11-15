@@ -176,7 +176,7 @@
             [AttributedStr addAttribute:NSFontAttributeName
                                   value:[UIFont systemFontOfSize:30]
                                   range:NSMakeRange(0 , 1)];
-            [AttributedStr addAttribute:NSBaselineOffsetAttributeName value:@(-7) range:NSMakeRange(0, 1)];
+            [AttributedStr addAttribute:NSBaselineOffsetAttributeName value:@(iPhoneBang?-5:-7) range:NSMakeRange(0, 1)];
             detailLb.attributedText = AttributedStr;
             detailLb.frame = CGRectMake(20 + i*5 + 80*i, 200, 80, 25);
             [self addSubview:detailLb];

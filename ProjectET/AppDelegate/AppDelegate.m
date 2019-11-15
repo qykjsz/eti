@@ -70,16 +70,21 @@
         [frames addObject:imageName];                                              //将图片加入数组中
         CGImageRelease(imageRef);
     }
-    UIImageView *gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    UIImageView *gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-120)];
     gifImageView.animationImages = frames; //将图片数组加入UIImageView动画数组中
     gifImageView.animationDuration = 3; //每次动画时长
     gifImageView.animationRepeatCount = 1;
     [gifImageView startAnimating];         //开启动画，此处没有调用播放次数接口，UIImageView默认播放次数为无限次，故这里不做处理
-    [[UIApplication sharedApplication].keyWindow addSubview:gifImageView];
+    UIView *backWhiteView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    backWhiteView.backgroundColor = [UIColor whiteColor];
+    [backWhiteView addSubview:gifImageView];
+    [[UIApplication sharedApplication].keyWindow addSubview:backWhiteView];
+    
+    
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        [gifImageView removeFromSuperview];
+        [backWhiteView removeFromSuperview];
         complicate();
         
     });
