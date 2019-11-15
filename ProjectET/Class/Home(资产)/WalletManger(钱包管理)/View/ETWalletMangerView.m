@@ -28,7 +28,6 @@
 
 @property (nonatomic,assign) NSInteger currentSelect;
 
-
 @end
 
 @implementation ETWalletMangerView
@@ -227,10 +226,14 @@
 
 - (void)addAction {
     
-    if ([self.delegate respondsToSelector:@selector(ETWalletMangerViewDelegateAddWallet)]) {
-        [self.delegate ETWalletMangerViewDelegateAddWallet];
+    if (self.currentSelect != 1) {
+        [KMPProgressHUD showText:@"暂未开放"];
+    }else {
+        if ([self.delegate respondsToSelector:@selector(ETWalletMangerViewDelegateAddWallet)]) {
+            [self.delegate ETWalletMangerViewDelegateAddWallet];
+        }
     }
-
+   
 }
 
 
