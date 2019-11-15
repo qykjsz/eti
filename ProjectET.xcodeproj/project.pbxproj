@@ -39,6 +39,8 @@
 		04E9DB07237D4F1200CDB9EE /* ETHTMLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E9DB05237D4F1200CDB9EE /* ETHTMLViewController.xib */; };
 		04E9DB0D237D56F500CDB9EE /* ETAboutUsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DB0C237D56F500CDB9EE /* ETAboutUsModel.m */; };
 		04E9DB11237E47AF00CDB9EE /* ETNodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DB10237E47AF00CDB9EE /* ETNodeModel.m */; };
+		04E9DB19237E8F3100CDB9EE /* HSEther.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DB16237E8F3100CDB9EE /* HSEther.m */; };
+		04E9DB1B237E8FAD00CDB9EE /* ethers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E9DB17237E8F3100CDB9EE /* ethers.framework */; };
 		4F0E4D8D2373B3FC00E83618 /* ETHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */; };
 		4F0E4D932373EFF000E83618 /* ETTransferDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D922373EFF000E83618 /* ETTransferDetailViewController.m */; };
 		4F0E4D992373F5BB00E83618 /* ETTransferDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D982373F5BB00E83618 /* ETTransferDetailCell.m */; };
@@ -168,9 +170,7 @@
 		4FFFAFEF237D250D00A87E50 /* ETTransferGasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFEE237D250D00A87E50 /* ETTransferGasView.m */; };
 		4FFFAFF5237D480900A87E50 /* ETTransferGasModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFF4237D480900A87E50 /* ETTransferGasModel.m */; };
 		4FFFAFF9237D5B5C00A87E50 /* ETTotalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFF8237D5B5C00A87E50 /* ETTotalModel.m */; };
-		4FFFB041237E42EF00A87E50 /* ET启动页.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FFFB03E237E42EF00A87E50 /* ET启动页.gif */; };
-		4FFFB048237E89D900A87E50 /* HSEther.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB047237E89D900A87E50 /* HSEther.m */; };
-		4FFFB04A237E89E700A87E50 /* ethers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFFB049237E89E700A87E50 /* ethers.framework */; };
+		4FFFB041237E42EF00A87E50 /* ET.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FFFB03E237E42EF00A87E50 /* ET.gif */; };
 		4FFFB9122379264500AE9BFF /* ETMycontactListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB90E2379264500AE9BFF /* ETMycontactListModel.m */; };
 		4FFFB91623792A4D00AE9BFF /* ETTransListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB91523792A4D00AE9BFF /* ETTransListModel.m */; };
 		4FFFB91A2379390600AE9BFF /* ETTransferDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB9192379390600AE9BFF /* ETTransferDetailModel.m */; };
@@ -268,6 +268,9 @@
 		04E9DB0C237D56F500CDB9EE /* ETAboutUsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAboutUsModel.m; sourceTree = "<group>"; };
 		04E9DB0F237E47AF00CDB9EE /* ETNodeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNodeModel.h; sourceTree = "<group>"; };
 		04E9DB10237E47AF00CDB9EE /* ETNodeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNodeModel.m; sourceTree = "<group>"; };
+		04E9DB16237E8F3100CDB9EE /* HSEther.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSEther.m; sourceTree = "<group>"; };
+		04E9DB17237E8F3100CDB9EE /* ethers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ethers.framework; sourceTree = "<group>"; };
+		04E9DB18237E8F3100CDB9EE /* HSEther.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSEther.h; sourceTree = "<group>"; };
 		172FA16F06F30E4F663C3530 /* Pods-ProjectET.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET.debug.xcconfig"; path = "Target Support Files/Pods-ProjectET/Pods-ProjectET.debug.xcconfig"; sourceTree = "<group>"; };
 		4F0E4D8B2373B3FC00E83618 /* ETHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETHomeModel.h; sourceTree = "<group>"; };
 		4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETHomeModel.m; sourceTree = "<group>"; };
@@ -530,10 +533,7 @@
 		4FFFAFF4237D480900A87E50 /* ETTransferGasModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTransferGasModel.m; sourceTree = "<group>"; };
 		4FFFAFF7237D5B5C00A87E50 /* ETTotalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTotalModel.h; sourceTree = "<group>"; };
 		4FFFAFF8237D5B5C00A87E50 /* ETTotalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTotalModel.m; sourceTree = "<group>"; };
-		4FFFB03E237E42EF00A87E50 /* ET启动页.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ET启动页.gif"; sourceTree = "<group>"; };
-		4FFFB046237E89D900A87E50 /* HSEther.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSEther.h; sourceTree = "<group>"; };
-		4FFFB047237E89D900A87E50 /* HSEther.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSEther.m; sourceTree = "<group>"; };
-		4FFFB049237E89E700A87E50 /* ethers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ethers.framework; sourceTree = "<group>"; };
+		4FFFB03E237E42EF00A87E50 /* ET.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ET.gif; sourceTree = "<group>"; };
 		4FFFB90E2379264500AE9BFF /* ETMycontactListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETMycontactListModel.m; sourceTree = "<group>"; };
 		4FFFB9112379264500AE9BFF /* ETMycontactListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMycontactListModel.h; sourceTree = "<group>"; };
 		4FFFB91423792A4D00AE9BFF /* ETTransListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransListModel.h; sourceTree = "<group>"; };
@@ -589,8 +589,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E9DB1B237E8FAD00CDB9EE /* ethers.framework in Frameworks */,
 				A9E72CB71DD272820A53863B /* Pods_ProjectET.framework in Frameworks */,
-				4FFFB04A237E89E700A87E50 /* ethers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,6 +826,16 @@
 				04E9DB10237E47AF00CDB9EE /* ETNodeModel.m */,
 			);
 			path = MineModel;
+			sourceTree = "<group>";
+		};
+		04E9DB15237E8F3100CDB9EE /* ETHLib */ = {
+			isa = PBXGroup;
+			children = (
+				04E9DB16237E8F3100CDB9EE /* HSEther.m */,
+				04E9DB17237E8F3100CDB9EE /* ethers.framework */,
+				04E9DB18237E8F3100CDB9EE /* HSEther.h */,
+			);
+			path = ETHLib;
 			sourceTree = "<group>";
 		};
 		2E2D92EDFC2E29D9F702BA5B /* Frameworks */ = {
@@ -1303,7 +1313,7 @@
 		4F2306F82366E44B0046A136 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4FFFB03E237E42EF00A87E50 /* ET启动页.gif */,
+				4FFFB03E237E42EF00A87E50 /* ET.gif */,
 				4F1174F4236C23C10042CDFD /* OCExample-Bridging-Header.h */,
 				4F2306F72366E41C0046A136 /* PrefixETHeader.pch */,
 				4F2306CB2366DE9D0046A136 /* Main.storyboard */,
@@ -1387,7 +1397,7 @@
 		4F23070B2366EC8C0046A136 /* Expand */ = {
 			isa = PBXGroup;
 			children = (
-				4FFFB045237E89C400A87E50 /* ETHLib */,
+				04E9DB15237E8F3100CDB9EE /* ETHLib */,
 				4F1A22442372CF7100FDD5D9 /* NetExpand */,
 				4FA0A311236FFF270038F880 /* ETManger */,
 				4FA0A30E236FD0680038F880 /* HoverPageViewController.h */,
@@ -1536,16 +1546,6 @@
 				4FFFAFEB237CFAF600A87E50 /* ETFoundDappModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		4FFFB045237E89C400A87E50 /* ETHLib */ = {
-			isa = PBXGroup;
-			children = (
-				4FFFB049237E89E700A87E50 /* ethers.framework */,
-				4FFFB046237E89D900A87E50 /* HSEther.h */,
-				4FFFB047237E89D900A87E50 /* HSEther.m */,
-			);
-			path = ETHLib;
 			sourceTree = "<group>";
 		};
 		8855DA9E2377ACA300F25DA4 /* MineView */ = {
@@ -1766,7 +1766,7 @@
 				4F3F9036236A7F04009AAA24 /* ETCreatWalletInputCell.xib in Resources */,
 				4F1942E0236D306800AD907E /* ETWalletImportCell.xib in Resources */,
 				4F128CA0236839610004284D /* ETDirectTranAddressCell.xib in Resources */,
-				4FFFB041237E42EF00A87E50 /* ET启动页.gif in Resources */,
+				4FFFB041237E42EF00A87E50 /* ET.gif in Resources */,
 				04DB9EEB237BF68B002796C3 /* ETNewAlertsCell.xib in Resources */,
 				04DB9EF3237C067A002796C3 /* ETNewArticleCell.xib in Resources */,
 				4F3F9031236A7E83009AAA24 /* ETCreatWalletInfoCell.xib in Resources */,
@@ -1904,7 +1904,7 @@
 				4F1A080F237A8BC200C7F7D0 /* ETNewsDetailController.m in Sources */,
 				4F1A0808237A81CF00C7F7D0 /* ETProclamListCell.m in Sources */,
 				4FA0A30F236FD0690038F880 /* HoverPageViewController.m in Sources */,
-				4FFFB048237E89D900A87E50 /* HSEther.m in Sources */,
+				04E9DB19237E8F3100CDB9EE /* HSEther.m in Sources */,
 				4F1A22372372BF5500FDD5D9 /* XMRequest.m in Sources */,
 				4F128C90236826FC0004284D /* ETTransferView.m in Sources */,
 				4F128C9F236839610004284D /* ETDirectTranAddressCell.m in Sources */,
@@ -2237,7 +2237,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.Etoken;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectET;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -2264,7 +2264,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.Etoken;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectET;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

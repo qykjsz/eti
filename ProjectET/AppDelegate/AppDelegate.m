@@ -60,7 +60,7 @@
 
 - (void)imageGif:(void(^)(void))complicate {
     
-    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"ET启动页" withExtension:@"gif"]; //加载GIF图片
+    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"ET" withExtension:@"gif"]; //加载GIF图片
     CGImageSourceRef gifSource = CGImageSourceCreateWithURL((CFURLRef) fileUrl, NULL);           //将GIF图片转换成对应的图片源
     size_t frameCout = CGImageSourceGetCount(gifSource);                                         //获取其中图片源个数，即由多少帧图片组成
     NSMutableArray *frames = [[NSMutableArray alloc] init];                                      //定义数组存储拆分出来的图片
