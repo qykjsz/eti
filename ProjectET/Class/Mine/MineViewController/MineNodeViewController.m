@@ -8,11 +8,12 @@
 
 #import "MineNodeViewController.h"
 #import "MineNodeCell.h"
+#import "ETNodeModel.h"
 
 @interface MineNodeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *detailTab;
-@property (nonatomic,strong) NSArray *dataArray;
-
+@property (nonatomic,strong) NSMutableArray *dataArray;
+@property (nonatomic,strong)ETNodeModel *model;
 @end
 
 @implementation MineNodeViewController
@@ -20,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"节点设置";
-    self.dataArray = @[@"ETHTP",@"JCC",@"ETH默认"];
+    self.dataArray = [NSMutableArray array];
     [self.view addSubview:self.detailTab];
     [self creatNodeHeadView];
     UIView *bottomView = [ClassBaseTools viewWithBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:.1]];
@@ -30,13 +31,27 @@
         make.bottom.equalTo(self.view);
         make.width.mas_offset(SCREEN_WIDTH);
     }];
-    UILabel *addNode = [ClassBaseTools labelWithFont:15 textColor:[UIColor blueColor] textAlignment:1];
+    UILabel *addNode = [ClassBaseTools labelWithFont:15 textColor:UIColorFromHEX(0x1D57FF,1) textAlignment:1];
     addNode.text = @"添加自定义节点";
     [bottomView addSubview:addNode];
     [addNode mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.width.height.equalTo(bottomView);
     }];
+    
+    [self getAlertsListData];
 }
+
+- (void)getAlertsListData{
+    [HTTPTool requestDotNetWithURLString:@"get_jiedian" parameters:@{@"":@""}    type:kPOST success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        self.model =[ETNodeModel mj_objectWithKeyValues:responseObject];
+        [self.dataArray addObjectsFromArray:self.model.data.data];
+        [self.detailTab reloadData];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
 - (void)creatNodeHeadView{
     UIView *headView = [ClassBaseTools viewWithBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:.1]];
     headView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 35);
@@ -60,15 +75,15 @@
         NSString *title;
         switch (i) {
             case 0:
-                color = [UIColor greenColor];
+                color = UIColorFromHEX(0x00CAA1, 1);
                 title = @"快";
                 break;
             case 1:
-                color = [UIColor orangeColor];
+                color = UIColorFromHEX(0xFFB61A, 1);
                 title = @"中";
                 break;
             case 2:
-                color = [UIColor redColor];
+                color = UIColorFromHEX(0xE04159, 1);
                 title = @"慢";
                 break;
                 
@@ -79,8 +94,8 @@
         point.text = @"·";
         [headView addSubview:point];
         [point mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(speed.mas_right).offset(10+30*i);
-            make.centerY.equalTo(speed).offset(-3);
+            make.left.equalTo(speed.mas_right).offset(20 + ((30 + 5)*i));
+            make.centerY.equalTo(headView.mas_centerY);
         }];
         UILabel *label = [ClassBaseTools labelWithFont:14 textColor:[UIColor lightGrayColor] textAlignment:0];
         label.text = title;
@@ -127,9 +142,10 @@
         make.width.mas_offset(SCREEN_WIDTH);
         make.height.mas_offset(.5);
     }];
-    
-    cell.nodeName.text = _dataArray[indexPath.row];
-    cell.nodeAddress.text = @"http://www.baidu.com";
+    ETNodeTwoDateModel *model = self.dataArray[indexPath.row];
+    cell.nodeName.text = model.name;
+    cell.nodeAddress.text = model.url;
+    cell.speed.text = model.speed;
     cell.textLabel.font =[UIFont systemFontOfSize:14];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

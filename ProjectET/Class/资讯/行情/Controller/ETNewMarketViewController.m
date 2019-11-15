@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = UIColor.clearColor;
     self.dataSource  = [NSMutableArray array];
     [self.tableView registerNib:[UINib nibWithNibName:@"ETNewMarketCell" bundle:nil] forCellReuseIdentifier:@"ETNewMarketCell"];
     WEAK_SELF(self);

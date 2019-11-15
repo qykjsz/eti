@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = UIColor.clearColor;
     self.lab_time.text = [Tools dateToString:NSDate.date];
     self.dataSource  = [NSMutableArray array];
     self.currentPage = 0;
