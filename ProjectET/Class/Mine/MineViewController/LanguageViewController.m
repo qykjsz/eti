@@ -77,6 +77,22 @@
         make.height.mas_offset(.5);
     }];
     
+    UIImageView *imgView = [[UIImageView alloc]init];
+    imgView.image = [UIImage imageNamed:@"lang_xz"];
+    [cell.contentView addSubview:imgView];
+    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_offset(-15);
+        make.centerY.equalTo(cell.contentView.mas_centerY);
+        make.width.offset(15);
+        make.height.offset(13);
+    }];
+    
+    if ([_dataArray[indexPath.row] isEqual:@"简体中文"]) {
+        [imgView setHidden:NO];
+    }else {
+        [imgView setHidden:YES];
+    }
+    
     cell.textLabel.text = _dataArray[indexPath.row];
     cell.textLabel.font =[UIFont systemFontOfSize:14];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
