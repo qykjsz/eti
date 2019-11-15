@@ -26,6 +26,14 @@
 
 @implementation ETProclamationListController
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    self.currentPage = 0;
+    [self newsRequest];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

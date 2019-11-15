@@ -73,7 +73,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ETCreatWalletCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETCreatWalletCell"];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:{

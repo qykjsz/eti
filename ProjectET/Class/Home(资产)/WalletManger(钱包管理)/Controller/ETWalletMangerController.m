@@ -50,9 +50,12 @@
     UIImageView *topImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zz_top_bg"]];
     topImage.userInteractionEnabled = YES;
     [self.view addSubview:topImage];
+    WEAK_SELF(self);
     [topImage mas_makeConstraints:^(MASConstraintMaker *make) {
         
+        STRONG_SELF(self);
         make.left.top.right.equalTo(self.view);
+        make.height.mas_equalTo(kStatusAndNavHeight + 20);
         
     }];
     
@@ -64,7 +67,7 @@
     [topImage addSubview:popBtn];
     [popBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.equalTo(topImage.mas_top).offset(20);
+        make.top.equalTo(topImage.mas_top).offset(kStatusBarHeight);
         make.width.height.equalTo(@44);
         
     }];
@@ -87,7 +90,7 @@
     [self.walletView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.right.bottom.equalTo(self.view);
-        make.top.equalTo(self.view.mas_top).offset(64);
+        make.top.equalTo(self.view.mas_top).offset(kStatusAndNavHeight);
         
     }];
 }

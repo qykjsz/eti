@@ -148,10 +148,10 @@
     //        NSLog(@"%@",error);
     //    }];
     //    return;
-    
+//    [KMPProgressHUD showProgressWithText:@"正在加载"];
     ETWalletModel *model = [ETWalletManger getCurrentWallet];
     [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
-        
+         [KMPProgressHUD dismissProgress];
         [self.dataArr removeAllObjects];
         self.homeModel = [ETHomeModel mj_objectWithKeyValues:responseObject];
         
@@ -193,7 +193,7 @@
         [self.detailTab reloadData];
         
     } failure:^(NSError *error) {
-        
+        [KMPProgressHUD showText:@"加载失败"];
     }];
     
 }
