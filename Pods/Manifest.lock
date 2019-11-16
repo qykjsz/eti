@@ -39,6 +39,8 @@ PODS:
   - MJExtension (3.0.13)
   - MJRefresh (3.1.15.3)
   - Reachability (3.2)
+  - SDCycleScrollView (1.80):
+    - SDWebImage (>= 5.0.0)
   - SDWebImage (5.0.1):
     - SDWebImage/Core (= 5.0.1)
   - SDWebImage/Core (5.0.1)
@@ -59,6 +61,7 @@ DEPENDENCIES:
   - MJExtension (= 3.0.13)
   - MJRefresh (= 3.1.15.3)
   - Reachability (= 3.2)
+  - SDCycleScrollView
   - SDWebImage (= 5.0.1)
   - SVProgressHUD (= 2.2.5)
   - WMPageController (= 2.3.0)
@@ -81,6 +84,7 @@ SPEC REPOS:
     - YYKit
   trunk:
     - KJBannerView
+    - SDCycleScrollView
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
@@ -93,11 +97,12 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 27dd2c9ea07a2252f94557c9fbb6105ee94b74c9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   WMPageController: 9f219bb8912a1a1f51af11fde61e2682a7b7e7f2
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 09228665843f3d6cce26b1a1855780fe8b072707
+PODFILE CHECKSUM: e54c150c1589abe3919d5018dda97caec83e7190
 
 COCOAPODS: 1.8.0.beta.1

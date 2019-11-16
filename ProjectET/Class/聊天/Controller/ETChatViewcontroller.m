@@ -44,7 +44,7 @@
     
     
     UILabel *titleLb = [[UILabel alloc]init];
-    titleLb.text = @"转账";
+    titleLb.text = @"聊天";
     titleLb.font = [UIFont systemFontOfSize:18];
     titleLb.textColor = UIColor.whiteColor;
     [topImage addSubview:titleLb];

@@ -18,6 +18,7 @@ target 'ProjectET' do
     pod 'MJExtension', '3.0.13'
     pod 'Reachability', '3.2'
     pod 'KJBannerView'
+    pod 'SDCycleScrollView'
   # Pods for ProjectET
 
   target 'ProjectETTests' do

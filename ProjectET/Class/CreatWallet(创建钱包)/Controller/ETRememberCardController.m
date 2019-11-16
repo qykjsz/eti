@@ -301,12 +301,13 @@
                 }
                 
             } failure:^(NSError *error) {
-                
+                 self.view.userInteractionEnabled = YES;
                 [SVProgressHUD showInfoWithStatus:@"导入失败"];
             }];
             
            
         }else {
+             self.view.userInteractionEnabled = YES;
             [SVProgressHUD showInfoWithStatus:@"导入失败"];
         }
         

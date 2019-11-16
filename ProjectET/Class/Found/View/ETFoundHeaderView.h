@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "KJBannerView.h"
+#import "SDCycleScrollView.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ETFoundHeaderView : UIView

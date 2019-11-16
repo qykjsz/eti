@@ -252,10 +252,14 @@
 
 - (void)ETDirectCountCellDelegateCoinClick {
     
-    
+    self.view.userInteractionEnabled = NO;
+    [SVProgressHUD showWithStatus:@"请稍等"];
+  
     ETWalletModel *model = [ETWalletManger getCurrentWallet];
     [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
         
+          [SVProgressHUD dismiss];
+         self.view.userInteractionEnabled = YES;
         UIAlertController *alter = [UIAlertController alertControllerWithTitle:@"请选择" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
 
         self.model = [ETHomeModel mj_objectWithKeyValues:responseObject];
@@ -283,7 +287,8 @@
         [self.navigationController presentViewController:alter animated:YES completion:nil];
         
     } failure:^(NSError *error) {
-        
+          [SVProgressHUD dismiss];
+         self.view.userInteractionEnabled = YES;
     }];
    
     

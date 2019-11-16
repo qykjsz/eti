@@ -8,19 +8,22 @@
 
 #import "ETNewFoundController.h"
 #import "ETFoundSearchController.h"
+#import "ETScanViewController.h"
+#import "ETHTMLViewController.h"
 
 #import "ETFoundHeaderView.h"
+
 
 #import "ETFoundDappModel.h"
 #import "ETFoundBannerModel.h"
 
 
 
-@interface ETNewFoundController ()
+@interface ETNewFoundController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) ETFoundHeaderView *headerView;
 
-
+@property (nonatomic,strong) UITableView *detailTab;
 
 @end
 
@@ -73,6 +76,18 @@
     
 }
 
+- (void)scanAction {
+    
+    ETScanViewController *sVC = [ETScanViewController new];
+    [sVC setScanBlock:^(NSString * _Nonnull qcodeString) {
+        ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
+        vc.url = qcodeString;
+        [self.navigationController pushViewController:vc animated:true];
+    }];
+    sVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:sVC animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -81,8 +96,10 @@
     UIImageView *topImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zz_top_bg"]];
     topImage.userInteractionEnabled = YES;
     [self.view addSubview:topImage];
+    WEAK_SELF(self);
     [topImage mas_makeConstraints:^(MASConstraintMaker *make) {
         
+        STRONG_SELF(self);
         make.left.top.right.equalTo(self.view);
         make.height.mas_equalTo(120);
     }];
@@ -107,6 +124,7 @@
     UIButton *scan = [UIButton buttonWithType:UIButtonTypeCustom];
     [scan setImage:[UIImage imageNamed:@"sy_sao"] forState:UIControlStateNormal];
     scan.frame = CGRectMake(SCREEN_WIDTH - 30, kStatusBarHeight+5, 23, 23);
+    [scan addTarget:self action:@selector(scanAction) forControlEvents:UIControlEventTouchUpInside];
     [topImage addSubview:scan];
     [scan mas_makeConstraints:^(MASConstraintMaker *make) {
        
@@ -116,8 +134,10 @@
         
     }];
     
-    self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, kStatusBarHeight+55, SCREEN_WIDTH, 450)];
-    [self.view addSubview:self.headerView];
+//    self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, kStatusBarHeight+55, SCREEN_WIDTH, 450)];
+//    [self.view addSubview:self.headerView];
+    self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 450)];
+
     
     [HTTPTool requestDotNetWithURLString:@"et_app" parameters:nil type:kPOST success:^(id responseObject) {
         ETFoundDappModel *model = [ETFoundDappModel mj_objectWithKeyValues:responseObject];
@@ -126,11 +146,59 @@
         
     }];
     
+    [self.view addSubview:self.detailTab];
+    self.detailTab.tableHeaderView = self.headerView;
+    [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        STRONG_SELF(self);
+        make.left.bottom.right.equalTo(self.view);
+        make.top.equalTo(self.view.mas_top).offset(kStatusAndNavHeight);
+        
+    }];
     
-   
     
 }
 
+#pragma mark - UITableViewDelegate,UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 0;
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"123"];
+    return cell;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 0;
+}
+
+- (UITableView *)detailTab {
+    
+    if (!_detailTab) {
+        _detailTab = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _detailTab.delegate = self;
+        _detailTab.dataSource = self;
+        _detailTab.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _detailTab.clipsToBounds = YES;
+        _detailTab.layer.cornerRadius = 10;
+        [_detailTab registerClass:[UITableViewCell class] forCellReuseIdentifier:@"123"];
+        WEAK_SELF(self);
+        _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+           
+            STRONG_SELF(self);
+            [self.detailTab.mj_header endRefreshing];
+            
+        }];
+    }
+    return _detailTab;
+}
 
 
 @end

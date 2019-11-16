@@ -123,6 +123,7 @@
     ETTransferDetailViewController *dVC = [ETTransferDetailViewController new];
     dVC.Id = data.Id;
     dVC.glod = data.name;
+    dVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:dVC animated:YES];
 }
 @end
