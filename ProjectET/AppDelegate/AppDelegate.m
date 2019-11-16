@@ -69,7 +69,7 @@
         [frames addObject:imageName];                                              //将图片加入数组中
         CGImageRelease(imageRef);
     }
-    UIImageView *gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-120)];
+    UIImageView *gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, iPhoneBang?(SCREEN_HEIGHT-120):SCREEN_HEIGHT)];
     gifImageView.animationImages = frames; //将图片数组加入UIImageView动画数组中
     gifImageView.animationDuration = 3; //每次动画时长
     gifImageView.animationRepeatCount = 1;
@@ -81,7 +81,7 @@
     
     
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         [backWhiteView removeFromSuperview];
         complicate();
