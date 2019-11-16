@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *dataSource;
 @property (nonatomic,strong)ETNewMarketModel *model;
-
+@property (nonatomic,strong)NSString *sort;
 
 @end
 
@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.view.backgroundColor = UIColor.clearColor;
     self.dataSource  = [NSMutableArray array];
     [self.tableView registerNib:[UINib nibWithNibName:@"ETNewMarketCell" bundle:nil] forCellReuseIdentifier:@"ETNewMarketCell"];
@@ -43,10 +44,53 @@
         self.model =[ETNewMarketModel mj_objectWithKeyValues:responseObject];
         [self.dataSource addObjectsFromArray:self.model.data];
         [self.tableView reloadData];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+
+- (void)getAlertsSortData{
+    NSMutableArray *arr = [NSMutableArray array];
+    for (ETNewMarketDatasModel *model in self.dataSource){
+        NSDictionary *dic = @{@"name":model.name};
+        [arr addObject:dic];
+    }
+    
+    NSLog(@"%@",arr);
+        
+    [HTTPTool requestDotNetWithURLString:@"et_quotationsort" parameters:@{@"allglods":arr,@"sort":self.sort}    type:kPOST success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        [self.dataSource removeAllObjects];
+        self.model =[ETNewMarketModel mj_objectWithKeyValues:responseObject];
+        [self.dataSource addObjectsFromArray:self.model.data];
+        [self.tableView reloadData];
 
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
     }];
+}
+
+///最新价
+- (IBAction)actionOfNew:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    if (sender.isSelected) {
+        self.sort = @"1";
+    }else {
+        self.sort = @"2";
+    }
+    [self getAlertsSortData];
+}
+
+
+- (IBAction)actionOfUp:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    if (sender.isSelected) {
+        self.sort = @"3";
+    }else {
+        self.sort = @"4";
+    }
+    [self getAlertsSortData];
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
