@@ -7,14 +7,20 @@
 //
 
 #import "ETNewFoundController.h"
+#import "ETFoundSearchController.h"
 
 #import "ETFoundHeaderView.h"
 
 #import "ETFoundDappModel.h"
+#import "ETFoundBannerModel.h"
+
+
 
 @interface ETNewFoundController ()
 
 @property (nonatomic,strong) ETFoundHeaderView *headerView;
+
+
 
 @end
 
@@ -24,7 +30,11 @@
     
     [super viewWillAppear:animated];
     [HTTPTool requestDotNetWithURLString:@"et_app" parameters:nil type:kPOST success:^(id responseObject) {
-        NSLog(@"%@",responseObject);
+        
+       
+        ETFoundDappModel *model = [ETFoundDappModel mj_objectWithKeyValues:responseObject];
+        self.headerView.dataArr = model.data;
+        
     } failure:^(NSError *error) {
         
     }];
@@ -40,10 +50,33 @@
     
 }
 
+- (void)bannerRequest {
+    
+    [HTTPTool requestDotNetWithURLString:@"api_banner" parameters:nil type:kPOST success:^(id responseObject) {
+        
+         ETFoundBannerModel *model = [ETFoundBannerModel mj_objectWithKeyValues:responseObject];
+        NSMutableArray *dataArr = [NSMutableArray array];
+        for (FoundBannerData *data in model.data) {
+            [dataArr addObject:data.url];
+        }
+//        self.headerView.bannerView.imageDatas = dataArr;
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (void)clickAction {
+    
+    ETFoundSearchController *sVC = [ETFoundSearchController new];
+    sVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:sVC animated:YES];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self bannerRequest];
     self.view.backgroundColor = [UIColor whiteColor];
     UIImageView *topImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zz_top_bg"]];
     topImage.userInteractionEnabled = YES;
@@ -66,6 +99,9 @@
     UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(15, -3, 16, 18)];
     icon.image = [UIImage imageNamed:@"fx_spusuo"];
     [field.leftView addSubview:icon];
+    UIButton *clickBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH-70, 31)];
+    [clickBtn addTarget:self action:@selector(clickAction) forControlEvents:UIControlEventTouchUpInside];
+    [field addSubview:clickBtn];
     [topImage addSubview:field];
     
     UIButton *scan = [UIButton buttonWithType:UIButtonTypeCustom];

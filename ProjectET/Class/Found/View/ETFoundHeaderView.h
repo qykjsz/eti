@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "KJBannerView.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ETFoundHeaderView : UIView
 
 @property (nonatomic,strong) NSMutableArray *dataArr;
+
+@property (nonatomic,strong) KJBannerView *bannerView;
+
 @end
 
 NS_ASSUME_NONNULL_END

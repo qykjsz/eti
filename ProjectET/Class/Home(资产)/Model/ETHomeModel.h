@@ -62,6 +62,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSString *address;
 
+@property (nonatomic,strong) NSString *decimal;
+
 
 @end
 

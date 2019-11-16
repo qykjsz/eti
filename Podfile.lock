@@ -31,6 +31,9 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - IQKeyboardManager (4.0.6)
+  - KJBannerView (1.3.0):
+    - KJBannerView/KJBannerView (= 1.3.0)
+  - KJBannerView/KJBannerView (1.3.0)
   - LTScrollView (0.2.1)
   - Masonry (1.1.0)
   - MJExtension (3.0.13)
@@ -50,6 +53,7 @@ DEPENDENCIES:
   - AspectsV1.4.2 (= 1.4.2)
   - BlocksKit (= 2.2.5)
   - IQKeyboardManager
+  - KJBannerView
   - LTScrollView
   - Masonry
   - MJExtension (= 3.0.13)
@@ -70,18 +74,20 @@ SPEC REPOS:
     - Masonry
     - MJExtension
     - MJRefresh
+    - Reachability
     - SDWebImage
     - SVProgressHUD
     - WMPageController
     - YYKit
   trunk:
-    - Reachability
+    - KJBannerView
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   AspectsV1.4.2: a8b168606776215f5ba4790b95ff315df336aca9
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   IQKeyboardManager: c52debb1967799ae7addb98eab0cf328083a874f
+  KJBannerView: a28eef2661e5868935ff33140e0db8d3b5088c3b
   LTScrollView: 93fff4aed9f9545f541a99b320b27808f5307c12
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
@@ -92,6 +98,6 @@ SPEC CHECKSUMS:
   WMPageController: 9f219bb8912a1a1f51af11fde61e2682a7b7e7f2
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: e95dd8c39e495dfae92eb3193ca4decd9bb6fb73
+PODFILE CHECKSUM: 09228665843f3d6cce26b1a1855780fe8b072707
 
 COCOAPODS: 1.8.0.beta.1

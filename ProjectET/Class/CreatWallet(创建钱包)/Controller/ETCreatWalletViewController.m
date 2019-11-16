@@ -80,30 +80,35 @@
                 cell.titleLb.text = @"私钥导入";
                 cell.iconImage.image = [UIImage imageNamed:@"cj_sy_01"];
                 cell.subTtitlLb.text = @"通过输入明文私钥或扫描二维码进行导入";
+                cell.backGrayView.hidden = YES;
             }
                 break;
             case 1:{
-                cell.titleLb.text = @"观察钱包";
-                cell.iconImage.image = [UIImage imageNamed:@"cj_fc_02"];
-                cell.subTtitlLb.text = @"无需导入私钥，输入账号或者对应公钥即可导入";
-            }
-                break;
-            case 2:{
-                cell.titleLb.text = @"冷钱包";
-                cell.iconImage.image = [UIImage imageNamed:@"cj_lqb_03"];
-                cell.subTtitlLb.text = @"离线导入并保持与网络隔绝，确保私钥永不触网";
-            }
-                break;
-            case 3:{
                 cell.titleLb.text = @"助记词导入";
                 cell.iconImage.image = [UIImage imageNamed:@"cj_zjc_04"];
                 cell.subTtitlLb.text = @"通过输入助记词或扫描二维码进行导入";
+                cell.backGrayView.hidden = YES;
             }
                 break;
-            case 4:{
+            case 2:{
                 cell.titleLb.text = @"Keystore导入";
                 cell.iconImage.image = [UIImage imageNamed:@"cj_key_05"];
                 cell.subTtitlLb.text = @"输入keystore文件内容或扫描二维码进行导入";
+                cell.backGrayView.hidden = YES;
+            }
+                break;
+            case 3:{
+                cell.titleLb.text = @"观察钱包";
+                cell.iconImage.image = [UIImage imageNamed:@"cj_fc_02"];
+                cell.subTtitlLb.text = @"无需导入私钥，输入账号或者对应公钥即可导入";
+                cell.backGrayView.hidden = NO;
+            }
+                break;
+            case 4:{
+                cell.titleLb.text = @"冷钱包";
+                cell.iconImage.image = [UIImage imageNamed:@"cj_lqb_03"];
+                cell.subTtitlLb.text = @"离线导入并保持与网络隔绝，确保私钥永不触网";
+                cell.backGrayView.hidden = NO;
             }
                 break;
             default:
@@ -113,6 +118,7 @@
         cell.titleLb.text = @"我没有钱包";
         cell.iconImage.image = [UIImage imageNamed:@"cj_no_06"];
         cell.subTtitlLb.text = @"创建钱包";
+        cell.backGrayView.hidden = YES;
     }
     
     return cell;
@@ -130,23 +136,23 @@
             }
                 break;
             case 1: {
-                [KMPProgressHUD showText:@"暂未开放"];
+                ETRememberCardController *rVC = [ETRememberCardController new];
+                [self.navigationController pushViewController:rVC animated:YES];
+                
             }
                 break;
             case 2: {
-//                ETColdWalletViewController *cVC = [ETColdWalletViewController new];
-//                [self.navigationController pushViewController:cVC animated:YES];
-                [KMPProgressHUD showText:@"暂未开放"];
+                ETKeyStoreController *kVC = [ETKeyStoreController new];
+                [self.navigationController pushViewController:kVC animated:YES];
+
             }
                 break;
             case 3: {
-                ETRememberCardController *rVC = [ETRememberCardController new];
-                [self.navigationController pushViewController:rVC animated:YES];
+                [KMPProgressHUD showText:@"暂未开放"];
             }
                 break;
             case 4: {
-                ETKeyStoreController *kVC = [ETKeyStoreController new];
-                [self.navigationController pushViewController:kVC animated:YES];
+                [KMPProgressHUD showText:@"暂未开放"];
             }
                 break;
                 

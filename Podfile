@@ -17,6 +17,7 @@ target 'ProjectET' do
     pod 'WMPageController', '2.3.0'
     pod 'MJExtension', '3.0.13'
     pod 'Reachability', '3.2'
+    pod 'KJBannerView'
   # Pods for ProjectET
 
   target 'ProjectETTests' do
