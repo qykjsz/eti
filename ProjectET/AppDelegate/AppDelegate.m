@@ -40,7 +40,6 @@
     
     //网络配置
     [HTTPTool getDomain];
-    //Toast设置
     [self svpSetting];
     
     [[IQKeyboardManager sharedManager] setEnableAutoToolbar:YES];

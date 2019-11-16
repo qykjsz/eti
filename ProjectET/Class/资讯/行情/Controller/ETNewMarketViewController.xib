@@ -34,6 +34,9 @@
                             <state key="normal">
                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="actionOfNew:" destination="-1" eventType="touchUpInside" id="O2F-T5-1Mh"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1p-O4-lKV">
                             <rect key="frame" x="20" y="0.0" width="121.5" height="49"/>
@@ -49,6 +52,9 @@
                             <state key="normal">
                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="actionOfUp:" destination="-1" eventType="touchUpInside" id="hqR-63-awz"/>
+                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hq_xjian_01-1" translatesAutoresizingMaskIntoConstraints="NO" id="78j-dd-y62">
                             <rect key="frame" x="388" y="21" width="6" height="7"/>
