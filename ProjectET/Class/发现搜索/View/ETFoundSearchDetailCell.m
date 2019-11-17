@@ -27,6 +27,15 @@
     }];
 }
 
+- (void)setModel:(ETFoundDetailData *)model {
+    
+    _model = model;
+    
+    [self.iconImage sd_setImageWithURL:[NSURL URLWithString:model.url]];
+    self.titleLb.text = model.name;
+    self.subTitle.text = model.text;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

@@ -8,6 +8,10 @@
 
 #import "ETFoundSerarchNavView.h"
 
+@interface ETFoundSerarchNavView()<UITextFieldDelegate>
+
+@end
+
 @implementation ETFoundSerarchNavView
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -24,6 +28,7 @@
         self.textfiled.textColor = UIColorFromHEX(0x000000, 1);
         self.textfiled.backgroundColor = UIColorFromHEX(0xF0F0F0, 1);
         [self.textfiled addTarget:self action:@selector(textfieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+        self.textfiled.delegate = self;
         [self addSubview:backView];
         
         
@@ -77,6 +82,16 @@
     }
 }
 
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    if ([self.delegate respondsToSelector:@selector(ETFoundSerarchNavViewReturn:)]) {
+        [self.delegate ETFoundSerarchNavViewReturn:textField];
+    }
+    
+    return YES;
+}
 
 
 @end
