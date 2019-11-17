@@ -187,7 +187,9 @@
         NSDictionary *dict = @{@"address":model.address};
         [data addObject:dict];
     }
-    [HTTPTool requestDotNetWithURLString:@"et_allassets" parameters:@{@"alladdress":data} type:kPOST success:^(id responseObject) {
+    NSDictionary *dict = @{@"alladdress":data};
+    
+    [HTTPTool requestDotNetWithURLString:@"et_allassets" parameters:dict type:kPOST success:^(id responseObject) {
         self.model = [ETTotalModel mj_objectWithKeyValues:responseObject];
         self.headerView.moneyLb.text = self.model.data.allnumber;
         self.headerView.subMoneyLb.hidden = YES;

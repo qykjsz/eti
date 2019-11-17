@@ -157,7 +157,7 @@
     
     ETFoundDetailData *data = self.detailData[indexPath.row];
     ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
-    vc.url = [NSString stringWithFormat:@"http://%@",data.url];
+    vc.url = data.url;
     vc.title = data.name;
     [self.navigationController pushViewController:vc animated:true];
     
