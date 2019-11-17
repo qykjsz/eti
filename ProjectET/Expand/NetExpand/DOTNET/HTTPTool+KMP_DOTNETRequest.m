@@ -21,18 +21,18 @@
  
 
      //   NSString *accesstoken = [[NSUserDefaults standardUserDefaults] valueForKey:@"accesstoken"];
-
+        [SVProgressHUD showWithStatus:@"正在加载"];
         [self requestWithAccessToken:@""
                            URLString:URLString
                           parameters:parameters
                                 type:type
                              success:^(id responseObject) {
-
+                                 [SVProgressHUD dismiss];
                                  if (success) {
                                      success(responseObject);
                                  }
                              } failure:^(NSError *error) {
-
+                                 [SVProgressHUD dismiss];
                                  if (failure) {
                                      failure(error);
                                  }

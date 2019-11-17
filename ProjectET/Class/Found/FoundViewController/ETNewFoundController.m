@@ -138,6 +138,14 @@
 //    [self.view addSubview:self.headerView];
     self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 450)];
 
+    [self foundRequest];
+   
+
+}
+
+#pragma mark - NET
+
+- (void)foundRequest {
     
     [HTTPTool requestDotNetWithURLString:@"et_app" parameters:nil type:kPOST success:^(id responseObject) {
         ETFoundDappModel *model = [ETFoundDappModel mj_objectWithKeyValues:responseObject];
@@ -148,14 +156,14 @@
     
     [self.view addSubview:self.detailTab];
     self.detailTab.tableHeaderView = self.headerView;
+    WEAK_SELF(self);
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         STRONG_SELF(self);
         make.left.bottom.right.equalTo(self.view);
         make.top.equalTo(self.view.mas_top).offset(kStatusAndNavHeight);
         
     }];
-    
     
 }
 
