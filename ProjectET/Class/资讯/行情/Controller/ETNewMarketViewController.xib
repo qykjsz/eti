@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETNewMarketViewController">
             <connections>
+                <outlet property="img_new" destination="fvK-dm-foX" id="J0F-s0-wvP"/>
+                <outlet property="img_up" destination="78j-dd-y62" id="txL-aY-yyg"/>
                 <outlet property="tableView" destination="Yhp-fC-DZX" id="gEC-M1-7Bu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -56,7 +58,7 @@
                                 <action selector="actionOfUp:" destination="-1" eventType="touchUpInside" id="hqR-63-awz"/>
                             </connections>
                         </button>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hq_xjian_01-1" translatesAutoresizingMaskIntoConstraints="NO" id="78j-dd-y62">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hq_sjian-1" translatesAutoresizingMaskIntoConstraints="NO" id="78j-dd-y62">
                             <rect key="frame" x="388" y="21" width="6" height="7"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="7" id="fqR-up-bzG"/>
@@ -69,7 +71,7 @@
                             <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hq_xjian_01-1" translatesAutoresizingMaskIntoConstraints="NO" id="fvK-dm-foX">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hq_sjian-1" translatesAutoresizingMaskIntoConstraints="NO" id="fvK-dm-foX">
                             <rect key="frame" x="193.5" y="21" width="6" height="7"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="6" id="CgW-P3-BLT"/>
@@ -139,6 +141,6 @@
     </objects>
     <resources>
         <image name="hq_dbg" width="375" height="69"/>
-        <image name="hq_xjian_01-1" width="6" height="7"/>
+        <image name="hq_sjian-1" width="6" height="7"/>
     </resources>
 </document>

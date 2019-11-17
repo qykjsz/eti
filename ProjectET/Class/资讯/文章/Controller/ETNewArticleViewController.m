@@ -50,6 +50,7 @@
 }
 
 - (void)getAlertsListData{
+     [SVProgressHUD showWithStatus:@""];
     [HTTPTool requestDotNetWithURLString:@"et_news" parameters:@{@"page":[NSString stringWithFormat:@"%ld",(long)self.currentPage]}    type:kPOST success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         if (self.currentPage == 0) {
@@ -58,9 +59,10 @@
         self.model =[ETNewArticleModel mj_objectWithKeyValues:responseObject];
         [self.dataSource addObjectsFromArray:self.model.data.News];
         [self.tableView reloadData];
-        
+        [SVProgressHUD dismiss];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
+        [SVProgressHUD dismiss];
     }];
 }
 

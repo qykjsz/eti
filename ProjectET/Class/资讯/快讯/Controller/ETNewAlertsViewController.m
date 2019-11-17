@@ -53,6 +53,7 @@
 
 
 - (void)getAlertsListData{
+    [SVProgressHUD showWithStatus:@""];
     [HTTPTool requestDotNetWithURLString:@"et_newsflash" parameters:@{@"page":[NSString stringWithFormat:@"%ld",(long)self.currentPage]}    type:kPOST success:^(id responseObject) {
         if (self.currentPage == 0) {
             [self.dataSource removeAllObjects];
@@ -65,9 +66,10 @@
             model.islook = @"0";
         }
         [self.tableView reloadData];
-        
+        [SVProgressHUD dismiss];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
+        [SVProgressHUD dismiss];
     }];
 }
 

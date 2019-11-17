@@ -29,13 +29,16 @@
 }
 
 - (void)getAlertsListData{
+     [SVProgressHUD showWithStatus:@""];
     [HTTPTool requestDotNetWithURLString:@"api_giveus" parameters:@{@"":@""}    type:kPOST success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         self.model =[ETAboutUsModel mj_objectWithKeyValues:responseObject];
         [self.dataSource addObjectsFromArray:self.model.data];
         [self.detailTab reloadData];
+        [SVProgressHUD dismiss];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
+        [SVProgressHUD dismiss];
     }];
 }
 

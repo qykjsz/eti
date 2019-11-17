@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"文章详情";
+     [SVProgressHUD showWithStatus:@""];
     [HTTPTool requestDotNetWithURLString:@"et_newscontent" parameters:@{@"id":self.Id} type:kPOST success:^(id responseObject) {
         
         UILabel *titleLb = [[UILabel alloc]init];
@@ -74,9 +75,9 @@
         timeLb.text = responseObject[@"data"][@"time"];
         detailLb.attributedText = mAStr;
         
-        
+        [SVProgressHUD dismiss];
     } failure:^(NSError *error) {
-        
+        [SVProgressHUD dismiss];
     }];
     
     // Do any additional setup after loading the view from its nib.

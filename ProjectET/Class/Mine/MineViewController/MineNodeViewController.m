@@ -42,13 +42,16 @@
 }
 
 - (void)getAlertsListData{
+     [SVProgressHUD showWithStatus:@""];
     [HTTPTool requestDotNetWithURLString:@"get_jiedian" parameters:@{@"":@""}    type:kPOST success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         self.model =[ETNodeModel mj_objectWithKeyValues:responseObject];
         [self.dataArray addObjectsFromArray:self.model.data.data];
         [self.detailTab reloadData];
+        [SVProgressHUD dismiss];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
+        [SVProgressHUD dismiss];
     }];
 }
 
