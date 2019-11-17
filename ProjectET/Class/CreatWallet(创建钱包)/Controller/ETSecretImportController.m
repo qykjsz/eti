@@ -273,11 +273,11 @@
         return;
     }
     
-//    self.view.userInteractionEnabled = NO;
+    self.view.userInteractionEnabled = NO;
     [KMPProgressHUD showProgressWithText:@"正在导入"];
     [HSEther hs_importWalletForPrivateKey:self.secretKey pwd:self.setPassWord block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, BOOL suc, HSWalletError error) {
         
-//        self.view.userInteractionEnabled = YES;
+        self.view.userInteractionEnabled = YES;
         
         if (suc) {
             ETWalletModel *model = [[ETWalletModel alloc]init];
@@ -292,7 +292,7 @@
            
             
             [HTTPTool requestDotNetWithURLString:@"et_import" parameters:@{@"address":address} type:kPOST success:^(id responseObject) {
-//                self.view.userInteractionEnabled = YES;
+                self.view.userInteractionEnabled = YES;
                 [ETWalletManger addWallet:model];
                 
                 [KMPProgressHUD showText:@"导入成功"];
@@ -305,14 +305,14 @@
                 }
                 
             } failure:^(NSError *error) {
-//                self.view.userInteractionEnabled = YES;
+                self.view.userInteractionEnabled = YES;
                 [SVProgressHUD showInfoWithStatus:@"导入失败"];
             }];
             
            
             
         }else {
-//            self.view.userInteractionEnabled = YES;
+            self.view.userInteractionEnabled = YES;
             [SVProgressHUD showInfoWithStatus:@"导入失败"];
         }
         

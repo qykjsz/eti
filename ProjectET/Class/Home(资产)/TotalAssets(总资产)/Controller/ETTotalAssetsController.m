@@ -114,6 +114,7 @@
     
     glodsData *data = [self.model.data.assets[indexPath.section] glods][indexPath.row];
     ETConiCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETConiCell"];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     cell.model = data;
     cell.isOpen = self.isOpen;
     return  cell;
@@ -214,6 +215,13 @@
         [_detailTab registerClass:[ETConiCell class] forCellReuseIdentifier:@"ETConiCell"];
         _detailTab.clipsToBounds = YES;
         _detailTab.layer.cornerRadius = 25;
+        WEAK_SELF(self);
+        _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+           
+            STRONG_SELF(self);
+            [self.detailTab.mj_header endRefreshing];
+            
+        }];
         
     }
     return _detailTab;

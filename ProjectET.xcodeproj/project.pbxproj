@@ -166,11 +166,20 @@
 		4FA0A319237013D10038F880 /* ETWalletModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A318237013D10038F880 /* ETWalletModel.m */; };
 		4FA0A32723717A8A0038F880 /* ETScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A32623717A8A0038F880 /* ETScanViewController.m */; };
 		4FA0A32B23717ACF0038F880 /* ET_ScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A32A23717ACF0038F880 /* ET_ScaningView.m */; };
+		4FF7FF11237F8D5500C38456 /* ETChatViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7FF10237F8D5500C38456 /* ETChatViewcontroller.m */; };
+		4FF7FF19237FAAB600C38456 /* ETFoundSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7FF18237FAAB600C38456 /* ETFoundSearchController.m */; };
+		4FF7FF1C237FD22D00C38456 /* ETFoundSerarchNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7FF1B237FD22D00C38456 /* ETFoundSerarchNavView.m */; };
+		4FF7FF1F237FD3D700C38456 /* ETFoundSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7FF1E237FD3D700C38456 /* ETFoundSectionView.m */; };
+		4FF7FF21237FD3E300C38456 /* ETFoundSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7FF20237FD3E300C38456 /* ETFoundSectionView.xib */; };
+		4FF7FF24237FDA4800C38456 /* ETFoundSearchCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7FF23237FDA4800C38456 /* ETFoundSearchCollectionView.m */; };
+		4FF7FF28237FE5CC00C38456 /* ETFoundSearchDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7FF26237FE5CC00C38456 /* ETFoundSearchDetailCell.m */; };
+		4FF7FF29237FE5CC00C38456 /* ETFoundSearchDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7FF27237FE5CC00C38456 /* ETFoundSearchDetailCell.xib */; };
 		4FFFAFEC237CFAF600A87E50 /* ETFoundDappModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFEB237CFAF600A87E50 /* ETFoundDappModel.m */; };
 		4FFFAFEF237D250D00A87E50 /* ETTransferGasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFEE237D250D00A87E50 /* ETTransferGasView.m */; };
 		4FFFAFF5237D480900A87E50 /* ETTransferGasModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFF4237D480900A87E50 /* ETTransferGasModel.m */; };
 		4FFFAFF9237D5B5C00A87E50 /* ETTotalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFAFF8237D5B5C00A87E50 /* ETTotalModel.m */; };
 		4FFFB041237E42EF00A87E50 /* ET.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4FFFB03E237E42EF00A87E50 /* ET.gif */; };
+		4FFFB04D237EA47E00A87E50 /* ETFoundBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB04C237EA47E00A87E50 /* ETFoundBannerModel.m */; };
 		4FFFB9122379264500AE9BFF /* ETMycontactListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB90E2379264500AE9BFF /* ETMycontactListModel.m */; };
 		4FFFB91623792A4D00AE9BFF /* ETTransListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB91523792A4D00AE9BFF /* ETTransListModel.m */; };
 		4FFFB91A2379390600AE9BFF /* ETTransferDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB9192379390600AE9BFF /* ETTransferDetailModel.m */; };
@@ -525,6 +534,20 @@
 		4FA0A32623717A8A0038F880 /* ETScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETScanViewController.m; sourceTree = "<group>"; };
 		4FA0A32923717ACF0038F880 /* ET_ScaningView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ET_ScaningView.h; sourceTree = "<group>"; };
 		4FA0A32A23717ACF0038F880 /* ET_ScaningView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ET_ScaningView.m; sourceTree = "<group>"; };
+		4FF7FF0F237F8D5500C38456 /* ETChatViewcontroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETChatViewcontroller.h; sourceTree = "<group>"; };
+		4FF7FF10237F8D5500C38456 /* ETChatViewcontroller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETChatViewcontroller.m; sourceTree = "<group>"; };
+		4FF7FF17237FAAB600C38456 /* ETFoundSearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundSearchController.h; sourceTree = "<group>"; };
+		4FF7FF18237FAAB600C38456 /* ETFoundSearchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundSearchController.m; sourceTree = "<group>"; };
+		4FF7FF1A237FD22D00C38456 /* ETFoundSerarchNavView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundSerarchNavView.h; sourceTree = "<group>"; };
+		4FF7FF1B237FD22D00C38456 /* ETFoundSerarchNavView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundSerarchNavView.m; sourceTree = "<group>"; };
+		4FF7FF1D237FD3D700C38456 /* ETFoundSectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundSectionView.h; sourceTree = "<group>"; };
+		4FF7FF1E237FD3D700C38456 /* ETFoundSectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundSectionView.m; sourceTree = "<group>"; };
+		4FF7FF20237FD3E300C38456 /* ETFoundSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETFoundSectionView.xib; sourceTree = "<group>"; };
+		4FF7FF22237FDA4800C38456 /* ETFoundSearchCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundSearchCollectionView.h; sourceTree = "<group>"; };
+		4FF7FF23237FDA4800C38456 /* ETFoundSearchCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundSearchCollectionView.m; sourceTree = "<group>"; };
+		4FF7FF25237FE5CC00C38456 /* ETFoundSearchDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundSearchDetailCell.h; sourceTree = "<group>"; };
+		4FF7FF26237FE5CC00C38456 /* ETFoundSearchDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundSearchDetailCell.m; sourceTree = "<group>"; };
+		4FF7FF27237FE5CC00C38456 /* ETFoundSearchDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETFoundSearchDetailCell.xib; sourceTree = "<group>"; };
 		4FFFAFEA237CFAF600A87E50 /* ETFoundDappModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundDappModel.h; sourceTree = "<group>"; };
 		4FFFAFEB237CFAF600A87E50 /* ETFoundDappModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundDappModel.m; sourceTree = "<group>"; };
 		4FFFAFED237D250D00A87E50 /* ETTransferGasView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransferGasView.h; sourceTree = "<group>"; };
@@ -534,6 +557,8 @@
 		4FFFAFF7237D5B5C00A87E50 /* ETTotalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTotalModel.h; sourceTree = "<group>"; };
 		4FFFAFF8237D5B5C00A87E50 /* ETTotalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTotalModel.m; sourceTree = "<group>"; };
 		4FFFB03E237E42EF00A87E50 /* ET.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ET.gif; sourceTree = "<group>"; };
+		4FFFB04B237EA47E00A87E50 /* ETFoundBannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundBannerModel.h; sourceTree = "<group>"; };
+		4FFFB04C237EA47E00A87E50 /* ETFoundBannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundBannerModel.m; sourceTree = "<group>"; };
 		4FFFB90E2379264500AE9BFF /* ETMycontactListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETMycontactListModel.m; sourceTree = "<group>"; };
 		4FFFB9112379264500AE9BFF /* ETMycontactListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMycontactListModel.h; sourceTree = "<group>"; };
 		4FFFB91423792A4D00AE9BFF /* ETTransListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransListModel.h; sourceTree = "<group>"; };
@@ -1350,6 +1375,8 @@
 		4F2306FE2366EA9A0046A136 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				4FF7FF13237FA8C900C38456 /* 发现搜索 */,
+				4FF7FF0E237F8D3D00C38456 /* 聊天 */,
 				04DB9EC3237BE5D8002796C3 /* 资讯 */,
 				8855DAD423780DA100F25DA4 /* Found */,
 				88A5D6862376BEBE0012EE0B /* Mine */,
@@ -1539,11 +1566,73 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		4FF7FF0E237F8D3D00C38456 /* 聊天 */ = {
+			isa = PBXGroup;
+			children = (
+				4FF7FF12237F8D5800C38456 /* Controller */,
+			);
+			path = "聊天";
+			sourceTree = "<group>";
+		};
+		4FF7FF12237F8D5800C38456 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4FF7FF0F237F8D5500C38456 /* ETChatViewcontroller.h */,
+				4FF7FF10237F8D5500C38456 /* ETChatViewcontroller.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4FF7FF13237FA8C900C38456 /* 发现搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				4FF7FF16237FA8DD00C38456 /* View */,
+				4FF7FF15237FA8D900C38456 /* Model */,
+				4FF7FF14237FA8D200C38456 /* Controller */,
+			);
+			path = "发现搜索";
+			sourceTree = "<group>";
+		};
+		4FF7FF14237FA8D200C38456 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4FF7FF17237FAAB600C38456 /* ETFoundSearchController.h */,
+				4FF7FF18237FAAB600C38456 /* ETFoundSearchController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4FF7FF15237FA8D900C38456 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4FF7FF16237FA8DD00C38456 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4FF7FF1A237FD22D00C38456 /* ETFoundSerarchNavView.h */,
+				4FF7FF1B237FD22D00C38456 /* ETFoundSerarchNavView.m */,
+				4FF7FF1D237FD3D700C38456 /* ETFoundSectionView.h */,
+				4FF7FF1E237FD3D700C38456 /* ETFoundSectionView.m */,
+				4FF7FF20237FD3E300C38456 /* ETFoundSectionView.xib */,
+				4FF7FF22237FDA4800C38456 /* ETFoundSearchCollectionView.h */,
+				4FF7FF23237FDA4800C38456 /* ETFoundSearchCollectionView.m */,
+				4FF7FF25237FE5CC00C38456 /* ETFoundSearchDetailCell.h */,
+				4FF7FF26237FE5CC00C38456 /* ETFoundSearchDetailCell.m */,
+				4FF7FF27237FE5CC00C38456 /* ETFoundSearchDetailCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4FFFAFE7237CFADF00A87E50 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				4FFFAFEA237CFAF600A87E50 /* ETFoundDappModel.h */,
 				4FFFAFEB237CFAF600A87E50 /* ETFoundDappModel.m */,
+				4FFFB04B237EA47E00A87E50 /* ETFoundBannerModel.h */,
+				4FFFB04C237EA47E00A87E50 /* ETFoundBannerModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1754,6 +1843,7 @@
 				4F14FAFA236924B30008C50A /* ETMyContactsCell.xib in Resources */,
 				04E9DB07237D4F1200CDB9EE /* ETHTMLViewController.xib in Resources */,
 				04E9DAFB237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib in Resources */,
+				4FF7FF21237FD3E300C38456 /* ETFoundSectionView.xib in Resources */,
 				4F128CAA23683EE70004284D /* ETDirectLeftCell.xib in Resources */,
 				4F2306CF2366DE9F0046A136 /* Assets.xcassets in Resources */,
 				4F128CAF236840120004284D /* ETDirectNormalCell.xib in Resources */,
@@ -1761,6 +1851,7 @@
 				4F128C7F236820320004284D /* backUpMoneyViewController.xib in Resources */,
 				04DB9EDC237BE6C4002796C3 /* ETNewInformationViewController.xib in Resources */,
 				4F1942D2236D22E900AD907E /* ETWalletDetailCell.xib in Resources */,
+				4FF7FF29237FE5CC00C38456 /* ETFoundSearchDetailCell.xib in Resources */,
 				04DB9EE1237BEAE4002796C3 /* ETNewMarketViewController.xib in Resources */,
 				04DB9ED7237BE69B002796C3 /* ETNewAlertsViewController.xib in Resources */,
 				4F3F9036236A7F04009AAA24 /* ETCreatWalletInputCell.xib in Resources */,
@@ -1897,6 +1988,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF7FF24237FDA4800C38456 /* ETFoundSearchCollectionView.m in Sources */,
 				4F128C73236813580004284D /* ETConiCell.m in Sources */,
 				4F3F903D236A8415009AAA24 /* ETSecretImportController.m in Sources */,
 				4F10A7B52376B35C00EBF377 /* ETPlatformGlodModel.m in Sources */,
@@ -1907,6 +1999,7 @@
 				04E9DB19237E8F3100CDB9EE /* HSEther.m in Sources */,
 				4F1A22372372BF5500FDD5D9 /* XMRequest.m in Sources */,
 				4F128C90236826FC0004284D /* ETTransferView.m in Sources */,
+				4FF7FF11237F8D5500C38456 /* ETChatViewcontroller.m in Sources */,
 				4F128C9F236839610004284D /* ETDirectTranAddressCell.m in Sources */,
 				4F14FB1623695F0C0008C50A /* Tools.m in Sources */,
 				8855DAC42377EAC800F25DA4 /* MineCurrencyViewController.m in Sources */,
@@ -1923,6 +2016,7 @@
 				04E9DAFA237D23D300CDB9EE /* ETNewAlertsDetailsViewController.m in Sources */,
 				4F0E4D992373F5BB00E83618 /* ETTransferDetailCell.m in Sources */,
 				4F3F9063236C0F5E009AAA24 /* ETRecordDetailViewController.m in Sources */,
+				4FF7FF1C237FD22D00C38456 /* ETFoundSerarchNavView.m in Sources */,
 				04DB9EFB237C0CC7002796C3 /* ETNewArticleDetailsViewController.m in Sources */,
 				4FFFB91A2379390600AE9BFF /* ETTransferDetailModel.m in Sources */,
 				4FA0A30B236FCA270038F880 /* WMZPageScroller.m in Sources */,
@@ -1932,6 +2026,7 @@
 				4F3F9043236AB22B009AAA24 /* ETColdWalletViewController.m in Sources */,
 				8855DAB92377E86700F25DA4 /* LanguageViewController.m in Sources */,
 				4F14FAF9236924B30008C50A /* ETMyContactsCell.m in Sources */,
+				4FFFB04D237EA47E00A87E50 /* ETFoundBannerModel.m in Sources */,
 				4FA0A305236FCA270038F880 /* WMZPageLoopView.m in Sources */,
 				4F14FB0D23693CE40008C50A /* UIImage+Watermark.m in Sources */,
 				4F0E4DA523740AA900E83618 /* ETWalletSearchCell.m in Sources */,
@@ -1944,6 +2039,7 @@
 				4F128C6F23680D120004284D /* ETTableHeaderSelectView.m in Sources */,
 				4F128C83236820320004284D /* backUpMoneyViewController.m in Sources */,
 				04E9DB11237E47AF00CDB9EE /* ETNodeModel.m in Sources */,
+				4FF7FF19237FAAB600C38456 /* ETFoundSearchController.m in Sources */,
 				04DB9F07237C156E002796C3 /* ETTotalAssetsController.m in Sources */,
 				4F3F905C236BCB4B009AAA24 /* ETGatheringViewController.m in Sources */,
 				4F0E4D9F2374044700E83618 /* ETWalletSearchController.m in Sources */,
@@ -2018,6 +2114,7 @@
 				4F3F9052236AE241009AAA24 /* ETChooseWalletcell.m in Sources */,
 				8855DAA32377ACC700F25DA4 /* MineHeadView.m in Sources */,
 				04DB9ED6237BE69B002796C3 /* ETNewAlertsViewController.m in Sources */,
+				4FF7FF28237FE5CC00C38456 /* ETFoundSearchDetailCell.m in Sources */,
 				4F14FB0123692CF30008C50A /* ETAddContactsCell.m in Sources */,
 				4F1A22502372D04500FDD5D9 /* HTTPTool+DomainAPI.m in Sources */,
 				8855DAA72377C4E800F25DA4 /* AboutUsViewController.m in Sources */,
@@ -2041,6 +2138,7 @@
 				04DB9F12237C15B5002796C3 /* ETFoundHeaderView.m in Sources */,
 				4F1A22362372BF5500FDD5D9 /* XMCenter.m in Sources */,
 				4F1942D8236D2F4600AD907E /* ETSyoImportView.m in Sources */,
+				4FF7FF1F237FD3D700C38456 /* ETFoundSectionView.m in Sources */,
 				4F128C9B236836040004284D /* ETDirectTransferController.m in Sources */,
 				4F14FAFD23692BB70008C50A /* ETAddContactsController.m in Sources */,
 				4F14FB29236985420008C50A /* ETCreatWalletViewController.m in Sources */,

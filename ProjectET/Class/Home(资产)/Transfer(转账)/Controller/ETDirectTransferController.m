@@ -41,6 +41,7 @@
 
 @property (nonatomic,strong) NSString *gaslimit;
 
+@property (nonatomic,strong) NSString *decimalString;
 
 
 @end
@@ -182,15 +183,15 @@
             }];
             view.coinName = self.coinNameString;
             
-            for (TransferGasData *data in model.data) {
-                if ([data.name isEqualToString:self.coinNameString]) {
-                    view.data = data;
-                    break;
-                }else {
-                    view.data = data;
-                    break;
-                }
+            TransferGasData *data1 = model.data[0];
+            TransferGasData *data2 = model.data[1];
+            if ([data1.name isEqualToString:self.coinNameString]) {
+                view.data = data1;
+            }else {
+                view.data = data2;
             }
+            
+            
             [[UIApplication sharedApplication].keyWindow addSubview:view];
             
             
@@ -251,10 +252,14 @@
 
 - (void)ETDirectCountCellDelegateCoinClick {
     
-    
+    self.view.userInteractionEnabled = NO;
+    [SVProgressHUD showWithStatus:@"请稍等"];
+  
     ETWalletModel *model = [ETWalletManger getCurrentWallet];
     [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
         
+          [SVProgressHUD dismiss];
+         self.view.userInteractionEnabled = YES;
         UIAlertController *alter = [UIAlertController alertControllerWithTitle:@"请选择" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
 
         self.model = [ETHomeModel mj_objectWithKeyValues:responseObject];
@@ -264,7 +269,7 @@
                 self.coinNameString = data.name;
                 self.leftString = data.number;
                 self.toToken = data.address;
-                
+                self.decimalString = data.decimal;
                 self.gaslimit = nil;
                 self.tranGasValue = 0;
                 self.countString = @"";
@@ -282,7 +287,8 @@
         [self.navigationController presentViewController:alter animated:YES completion:nil];
         
     } failure:^(NSError *error) {
-        
+          [SVProgressHUD dismiss];
+         self.view.userInteractionEnabled = YES;
     }];
    
     
@@ -355,12 +361,13 @@
 //                        [KMPProgressHUD showProgressWithText:@"转账失败"];
 //                    }
 //
-//                }];
+//                }];0xa51c50c880d389b5bbd1c76308d3b544f54f39a4
                 [SVProgressHUD showWithStatus:@"正在转账"];
                 ETWalletModel *model = [ETWalletManger getCurrentWallet];
-                [HSEther hs_sendToAssress:self.address ip:urlString money:self.countString tokenETH:self.toToken decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:[NSString stringWithFormat:@"%zd",self.gasValue] gasLimit:self.gaslimit block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
+                [HSEther hs_sendToAssress:self.address ip:urlString money:self.countString tokenETH:self.toToken decimal:self.decimalString currentKeyStore:model.keyStore pwd:model.password gasPrice:[NSString stringWithFormat:@"%zd",self.gasValue] gasLimit:self.gaslimit block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
                     if (suc) {
                         [KMPProgressHUD showProgressWithText:@"转账成功"];
+                        [self.navigationController popViewControllerAnimated:YES];
                     }else {
                         [KMPProgressHUD showProgressWithText:@"转账失败"];
                     }

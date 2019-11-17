@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) UIImageView *backImage;
 
+@property (nonatomic,strong) UIView *backGrayView;
+
 @end
 
 NS_ASSUME_NONNULL_END

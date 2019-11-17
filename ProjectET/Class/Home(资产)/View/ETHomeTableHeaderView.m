@@ -94,6 +94,7 @@
             
             make.top.equalTo(self.tipsLb.mas_bottom).offset(15);
             make.left.equalTo(backImage.mas_left).offset(15);
+            make.right.equalTo(backImage.mas_right).offset(-40);
             
         }];
         

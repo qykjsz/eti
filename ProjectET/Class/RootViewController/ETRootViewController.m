@@ -10,6 +10,7 @@
 #import "ETAssetsViewController.h"
 #import "MineViewController.h"
 #import "FoundViewController.h"
+#import "ETChatViewcontroller.h"
 #import "ETNewInformationViewController.h"
 
 @interface ETRootViewController ()<UITabBarControllerDelegate>
@@ -45,12 +46,15 @@
     ETNewFoundController * medicineVC = [ETNewFoundController new];
     UINavigationController * medicineNav = [[UINavigationController alloc] initWithRootViewController:medicineVC];
 
+    // 聊天
+    ETChatViewcontroller *cVc = [ETChatViewcontroller new];
+    UINavigationController * cVcNav = [[UINavigationController alloc] initWithRootViewController:cVc];
     
     //我的
     MineViewController * meVC = [MineViewController new];
     UINavigationController * meNav = [[UINavigationController alloc] initWithRootViewController:meVC];
     
-    self.viewControllers = @[homeNav, mallNav, medicineNav, meNav];
+    self.viewControllers = @[homeNav, mallNav, medicineNav,cVcNav, meNav];
     
     [self customizeTabBarForController];
     
@@ -59,7 +63,7 @@
 - (void)customizeTabBarForController {
     //选项卡图片
     NSArray *tabBarItemImages = @[@"1", @"2", @"3", @"4", @"5"];
-    NSArray *tabBarItemTitles = @[@"资产", @"资讯", @"发现", @"我的"];
+    NSArray *tabBarItemTitles = @[@"资产", @"资讯", @"发现", @"聊天",@"我的"];
     NSInteger index = 0;
     for (UIViewController * vc in self.viewControllers) {
         
