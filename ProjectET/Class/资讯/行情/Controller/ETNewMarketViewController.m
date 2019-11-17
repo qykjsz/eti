@@ -15,6 +15,8 @@
 @property (nonatomic,strong) NSMutableArray *dataSource;
 @property (nonatomic,strong)ETNewMarketModel *model;
 @property (nonatomic,strong)NSString *sort;
+@property (weak, nonatomic) IBOutlet UIImageView *img_new;
+@property (weak, nonatomic) IBOutlet UIImageView *img_up;
 
 @end
 
@@ -76,8 +78,10 @@
     sender.selected = !sender.selected;
     if (sender.isSelected) {
         self.sort = @"1";
+        self.img_new.image = [UIImage imageNamed:@"hq_xjian_01-1"];
     }else {
         self.sort = @"2";
+        self.img_new.image = [UIImage imageNamed:@"hq_sjian-1"];
     }
     [self getAlertsSortData];
 }
@@ -87,8 +91,10 @@
     sender.selected = !sender.selected;
     if (sender.isSelected) {
         self.sort = @"3";
+        self.img_up.image = [UIImage imageNamed:@"hq_sjian-1"];
     }else {
         self.sort = @"4";
+        self.img_up.image = [UIImage imageNamed:@"hq_xjian_01-1"];
     }
     [self getAlertsSortData];
 }
