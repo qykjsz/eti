@@ -8,7 +8,7 @@
 
 #import "ETFoundHeaderView.h"
 #import "ETFoundCell.h"
-#import "ETFoundDappModel.h"
+
 
 
 @interface ETFoundHeaderView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
@@ -214,6 +214,14 @@
     
     _dataArr = dataArr;
     [self.collectionView reloadData];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    FoundDapp *data = self.dataArr[indexPath.item];
+    if ([self.delegate respondsToSelector:@selector(ETFoundHeaderViewDelegateCollectionClick:)]) {
+        [self.delegate ETFoundHeaderViewDelegateCollectionClick:data];
+    }
 }
 
 @end

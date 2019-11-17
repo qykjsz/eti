@@ -71,7 +71,7 @@
         
         STRONG_SELF(self);
         ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
-        vc.url = [NSString stringWithFormat:@"http://str"];
+        vc.url = str;
         [self.navigationController pushViewController:vc animated:true];
         
     }];

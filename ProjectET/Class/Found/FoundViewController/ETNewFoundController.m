@@ -19,7 +19,7 @@
 
 
 
-@interface ETNewFoundController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ETNewFoundController ()<UITableViewDelegate,UITableViewDataSource,ETFoundHeaderViewDelegate>
 
 @property (nonatomic,strong) ETFoundHeaderView *headerView;
 
@@ -137,7 +137,7 @@
 //    self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, kStatusBarHeight+55, SCREEN_WIDTH, 450)];
 //    [self.view addSubview:self.headerView];
     self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 450)];
-
+    self.headerView.delegate = self;
     [self foundRequest];
    
 
@@ -187,6 +187,18 @@
     return 0;
 }
 
+#pragma mark - ETFoundHeaderViewDelegate
+- (void)ETFoundHeaderViewDelegateCollectionClick:(FoundDapp *)model {
+    
+    ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
+    vc.url = model.url;
+    vc.title = model.name;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:true];
+    
+}
+
+#pragma mark - lazy load
 - (UITableView *)detailTab {
     
     if (!_detailTab) {
