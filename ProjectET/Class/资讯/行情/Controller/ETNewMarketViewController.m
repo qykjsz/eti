@@ -40,14 +40,17 @@
 }
 
 - (void)getAlertsListData{
+     [SVProgressHUD showWithStatus:@""];
     [HTTPTool requestDotNetWithURLString:@"et_quotation" parameters:@{@"":@""}    type:kPOST success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         [self.dataSource removeAllObjects];
         self.model =[ETNewMarketModel mj_objectWithKeyValues:responseObject];
         [self.dataSource addObjectsFromArray:self.model.data];
         [self.tableView reloadData];
+        [SVProgressHUD dismiss];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
+        [SVProgressHUD dismiss];
     }];
 }
 
@@ -60,16 +63,17 @@
     }
     
     NSLog(@"%@",arr);
-        
+     [SVProgressHUD showWithStatus:@""];
     [HTTPTool requestDotNetWithURLString:@"et_quotationsort" parameters:@{@"allglods":arr,@"sort":self.sort}    type:kPOST success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         [self.dataSource removeAllObjects];
         self.model =[ETNewMarketModel mj_objectWithKeyValues:responseObject];
         [self.dataSource addObjectsFromArray:self.model.data];
         [self.tableView reloadData];
-
+        [SVProgressHUD dismiss];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
+        [SVProgressHUD dismiss];
     }];
 }
 

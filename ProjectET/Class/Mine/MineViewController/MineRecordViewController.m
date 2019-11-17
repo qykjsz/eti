@@ -47,6 +47,7 @@
     [dict setValue:@(self.curretnPage) forKey:@"page"];
     [dict setValue:@"0" forKey:@"glod"];
     [dict setValue:@"3" forKey:@"type"];
+     [SVProgressHUD showWithStatus:@""];
     [HTTPTool requestDotNetWithURLString:@"et_recordorder" parameters:dict type:kPOST success:^(id responseObject) {
         
         
@@ -62,9 +63,9 @@
         }
         
         [self.detailTab reloadData];
-        
+        [SVProgressHUD dismiss];
     } failure:^(NSError *error) {
-        
+        [SVProgressHUD dismiss];
     }];
 }
 

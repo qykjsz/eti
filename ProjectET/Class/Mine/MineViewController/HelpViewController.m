@@ -36,6 +36,7 @@
 }
 
 - (void)getAlertsListData{
+     [SVProgressHUD showWithStatus:@""];
     [HTTPTool requestDotNetWithURLString:@"api_givehelp" parameters:@{@"":@""}    type:kPOST success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         self.model =[ETMineHelpModel mj_objectWithKeyValues:responseObject];
@@ -51,8 +52,10 @@
             
         }
         [self.detailTab reloadData];
+        [SVProgressHUD dismiss];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
+        [SVProgressHUD dismiss];
     }];
 }
 
