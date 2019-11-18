@@ -12,6 +12,7 @@
 #import "ETRootViewController.h"
 #import "AppDelegate+ET_VCSetting.h"
 #import "ETCoinMainViewController.h"
+#import "ETDirectTransferController.h"//转账
 
 #import "IQKeyboardManager.h"//键盘管理
 
@@ -84,9 +85,58 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         [backWhiteView removeFromSuperview];
+        [self updateApp];
         complicate();
         
     });
+}
+
+- (void)updateApp{
+    [SVProgressHUD showWithStatus:@""];
+    [HTTPTool requestDotNetWithURLString:@"api_update" parameters:@{@"type":@"ios"}    type:kPOST success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        if (![responseObject[@"data"][@"name"] isEqual:[Tools getVersion]]) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:responseObject[@"data"][@"remark"] preferredStyle:UIAlertControllerStyleAlert];
+
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://%@",responseObject[@"data"][@"download"]]]options:@{} completionHandler:^(BOOL success) {
+                    exit(0);
+                }];
+            }];
+            [alertController addAction:okAction];
+            [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
+        }
+        [SVProgressHUD dismiss];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+        [SVProgressHUD dismiss];
+    }];
+}
+
+// 有外部app通过URL Scheme 的方法打开本应用，就会走本应用的这个方法
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    NSString *test = url.host; // 这就是参数
+    NSArray *arr = [test componentsSeparatedByString:@"="];
+    NSString *type = arr[2];
+    NSString *address = arr[1];
+    address = [address substringToIndex: address.length - 5];
+    NSLog(@"type = %@,address = %@",type,address);
+    
+    NSMutableArray *walletArr = WALLET_ARR;
+    if (walletArr.count != 0) {
+        UITabBarController *tab = (UITabBarController *)_window.rootViewController;
+        UINavigationController *nav = tab.viewControllers[tab.selectedIndex];
+        ETDirectTransferController *vc = [[ETDirectTransferController alloc] init];
+        vc.address = address;
+        vc.hidesBottomBarWhenPushed = YES;
+        [nav pushViewController:vc animated:YES];
+    }else {
+        
+        [SVProgressHUD showWithStatus:@"请创建钱包"];
+    }
+    
+    return YES;
 }
 
 

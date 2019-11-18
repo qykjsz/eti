@@ -15,6 +15,12 @@
 
 @implementation Tools
 
++ (NSString *)getVersion{
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    return app_Version;
+}
+
 + (void)copyClickWithText:(NSString *)text {
     UIPasteboard *pab = [UIPasteboard generalPasteboard];
     pab.string = text;

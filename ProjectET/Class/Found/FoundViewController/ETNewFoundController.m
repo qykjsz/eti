@@ -34,7 +34,7 @@
     [super viewWillAppear:animated];
     [HTTPTool requestDotNetWithURLString:@"et_app" parameters:nil type:kPOST success:^(id responseObject) {
         
-       
+        
         ETFoundDappModel *model = [ETFoundDappModel mj_objectWithKeyValues:responseObject];
         self.headerView.dataArr = model.data;
         
@@ -57,7 +57,7 @@
     
     [HTTPTool requestDotNetWithURLString:@"api_banner" parameters:nil type:kPOST success:^(id responseObject) {
         
-         ETFoundBannerModel *model = [ETFoundBannerModel mj_objectWithKeyValues:responseObject];
+        ETFoundBannerModel *model = [ETFoundBannerModel mj_objectWithKeyValues:responseObject];
         NSMutableArray *dataArr = [NSMutableArray array];
         for (FoundBannerData *data in model.data) {
             [dataArr addObject:data.url];
@@ -127,20 +127,20 @@
     [scan addTarget:self action:@selector(scanAction) forControlEvents:UIControlEventTouchUpInside];
     [topImage addSubview:scan];
     [scan mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.centerY.equalTo(field.mas_centerY);
         make.width.height.mas_equalTo(23);
         make.right.equalTo(topImage.mas_right).offset(-15);
         
     }];
     
-//    self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, kStatusBarHeight+55, SCREEN_WIDTH, 450)];
-//    [self.view addSubview:self.headerView];
+    //    self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, kStatusBarHeight+55, SCREEN_WIDTH, 450)];
+    //    [self.view addSubview:self.headerView];
     self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 450)];
     self.headerView.delegate = self;
     [self foundRequest];
-   
-
+    
+    
 }
 
 #pragma mark - NET
@@ -198,6 +198,27 @@
     
 }
 
+- (void)ETFoundHeaderViewDAppDelegateCollectionClick:(NSInteger)tag {
+    if (tag == 1) {
+        NSURL *url = [NSURL URLWithString:@"ETUnion://"];
+        BOOL isCanOpen = [[UIApplication sharedApplication] canOpenURL:url];
+        if (isCanOpen) {
+#ifdef NSFoundationVersionNumber_iOS_10_0
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+                
+            }];
+#else
+            [[UIApplication sharedApplication] openURL:url];
+#endif
+            NSLog(@"App1打开App2");
+        }else{
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.baidu.com"]options:@{} completionHandler:^(BOOL success) {
+                
+            }];
+        }
+    }
+}
+
 #pragma mark - lazy load
 - (UITableView *)detailTab {
     
@@ -211,7 +232,7 @@
         [_detailTab registerClass:[UITableViewCell class] forCellReuseIdentifier:@"123"];
         WEAK_SELF(self);
         _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-           
+            
             STRONG_SELF(self);
             [self.detailTab.mj_header endRefreshing];
             

@@ -14,6 +14,15 @@
 
 
 /**
+ *  获取版本号
+ *
+ *  @return NSString
+ */
++ (NSString *)getVersion;
+
+
+
+/**
  *  获取url中的参数
  *
  *  @param urlString url
