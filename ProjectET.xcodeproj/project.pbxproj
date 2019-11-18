@@ -153,6 +153,8 @@
 		4F3F9063236C0F5E009AAA24 /* ETRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9062236C0F5E009AAA24 /* ETRecordDetailViewController.m */; };
 		4F3F9066236C1046009AAA24 /* ETRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9065236C1046009AAA24 /* ETRecordCell.m */; };
 		4F3F9069236C128D009AAA24 /* ETRecordHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F9068236C128D009AAA24 /* ETRecordHeaderView.m */; };
+		4F4D3DBE2380F28200BBFB5D /* ETFoundHotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D3DBD2380F28200BBFB5D /* ETFoundHotModel.m */; };
+		4F4D3DC12380F49A00BBFB5D /* ETFoundDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4D3DC02380F49A00BBFB5D /* ETFoundDetailModel.m */; };
 		4F5D107F237AC0D500B13D00 /* UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5D107E237AC0D500B13D00 /* UUID.m */; };
 		4F5D1084237AC12E00B13D00 /* KeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5D1083237AC12E00B13D00 /* KeyChainStore.m */; };
 		4FA0A305236FCA270038F880 /* WMZPageLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0A2F4236FCA270038F880 /* WMZPageLoopView.m */; };
@@ -504,6 +506,10 @@
 		4F3F9065236C1046009AAA24 /* ETRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRecordCell.m; sourceTree = "<group>"; };
 		4F3F9067236C128D009AAA24 /* ETRecordHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETRecordHeaderView.h; sourceTree = "<group>"; };
 		4F3F9068236C128D009AAA24 /* ETRecordHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETRecordHeaderView.m; sourceTree = "<group>"; };
+		4F4D3DBC2380F28100BBFB5D /* ETFoundHotModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundHotModel.h; sourceTree = "<group>"; };
+		4F4D3DBD2380F28200BBFB5D /* ETFoundHotModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundHotModel.m; sourceTree = "<group>"; };
+		4F4D3DBF2380F49A00BBFB5D /* ETFoundDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundDetailModel.h; sourceTree = "<group>"; };
+		4F4D3DC02380F49A00BBFB5D /* ETFoundDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundDetailModel.m; sourceTree = "<group>"; };
 		4F5D107D237AC0D500B13D00 /* UUID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UUID.h; sourceTree = "<group>"; };
 		4F5D107E237AC0D500B13D00 /* UUID.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UUID.m; sourceTree = "<group>"; };
 		4F5D1082237AC12E00B13D00 /* KeyChainStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyChainStore.h; sourceTree = "<group>"; };
@@ -1605,6 +1611,10 @@
 		4FF7FF15237FA8D900C38456 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4F4D3DBC2380F28100BBFB5D /* ETFoundHotModel.h */,
+				4F4D3DBD2380F28200BBFB5D /* ETFoundHotModel.m */,
+				4F4D3DBF2380F49A00BBFB5D /* ETFoundDetailModel.h */,
+				4F4D3DC02380F49A00BBFB5D /* ETFoundDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2100,6 +2110,8 @@
 				04DB9EEE237BFA3A002796C3 /* ETNewAlertsModel.m in Sources */,
 				4F3F904C236ACE72009AAA24 /* ETCreatMyWalletViewController.m in Sources */,
 				4F14FB22236966E10008C50A /* ETMyWalletDetailCell.m in Sources */,
+				4F4D3DC12380F49A00BBFB5D /* ETFoundDetailModel.m in Sources */,
+				4F4D3DBE2380F28200BBFB5D /* ETFoundHotModel.m in Sources */,
 				4FA0A314236FFF440038F880 /* ETWalletManger.m in Sources */,
 				4FFFB9122379264500AE9BFF /* ETMycontactListModel.m in Sources */,
 				4F3F9058236AEB93009AAA24 /* Tools+Image.m in Sources */,

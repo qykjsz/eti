@@ -8,7 +8,7 @@
 
 #import "ETHTMLViewController.h"
 
-@interface ETHTMLViewController ()
+@interface ETHTMLViewController ()<UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
@@ -19,8 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [SVProgressHUD showWithStatus:@"正在加载"];
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
+    self.webView.delegate = self;
     // Do any additional setup after loading the view from its nib.
+}
+
+#pragma mark - UIWebViewDelegate
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
+    [SVProgressHUD dismiss];
 }
 
 /*

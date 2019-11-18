@@ -8,14 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "KJBannerView.h"
-#import "SDCycleScrollView.h"
+#import "ETFoundDappModel.h"
 NS_ASSUME_NONNULL_BEGIN
+
+@protocol ETFoundHeaderViewDelegate <NSObject>
+
+- (void)ETFoundHeaderViewDelegateCollectionClick:(FoundDapp *)model;
+
+@end
 
 @interface ETFoundHeaderView : UIView
 
 @property (nonatomic,strong) NSMutableArray *dataArr;
 
 @property (nonatomic,strong) KJBannerView *bannerView;
+
+@property (nonatomic,weak) id <ETFoundHeaderViewDelegate> delegate;
 
 @end
 

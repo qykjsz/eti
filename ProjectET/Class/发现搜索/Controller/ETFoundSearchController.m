@@ -15,6 +15,10 @@
 #import "ETFoundSearchCollectionView.h"
 #import "ETFoundSearchDetailCell.h"
 
+//model
+#import "ETFoundHotModel.h"
+#import "ETFoundDetailModel.h"
+
 @interface ETFoundSearchController ()<ETFoundSerarchNavViewDelegate,ETFoundSearchCollectionViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) ETFoundSectionView *sectionView;
@@ -24,6 +28,10 @@
 @property (nonatomic,strong) ETFoundSerarchNavView *navView;
 
 @property (nonatomic,strong) UITableView *detailTab;
+
+@property (nonatomic,strong) NSMutableArray *hotData;
+
+@property (nonatomic,strong) NSMutableArray *detailData;
 
 @end
 
@@ -48,6 +56,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.hotData = [NSMutableArray array];
+    self.detailData = [NSMutableArray array];
     self.view.backgroundColor = UIColorFromHEX(0xf5f5f5, 1);
     // 设置顶部搜索
     self.navView = [[ETFoundSerarchNavView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kStatusAndNavHeight)];
@@ -61,27 +71,17 @@
         
         STRONG_SELF(self);
         ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
-        vc.url = [NSString stringWithFormat:@"http://str"];
+        vc.url = str;
         [self.navigationController pushViewController:vc animated:true];
         
     }];
     [self.view addSubview:self.sectionView];
     
-    
-    NSMutableArray *data = [NSMutableArray array];
-    [data addObject:@"JIBI"];
-    [data addObject:@"ET 2.0"];
-    [data addObject:@"JIBI"];
-    [data addObject:@"ET 2.0"];
-    [data addObject:@"宝宝"];
-    [data addObject:@"宝宝宝宝"];
-    [data addObject:@"宝宝宝宝宝宝"];
-    [data addObject:@"宝"];
+
     
     self.headerView = [[ETFoundSearchCollectionView alloc]init];
     self.headerView.delegate = self;
     self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 115);
-    self.headerView.dataArr = data;
     [self.view addSubview:self.headerView];
     
     [self.view addSubview:self.detailTab];
@@ -95,12 +95,47 @@
         
     }];
     
+    [self hotRequest];
+    
+}
+
+#pragma mark -热门接口
+- (void)hotRequest {
+    
+    [HTTPTool requestDotNetWithURLString:@"et_apphot" parameters:nil type:kPOST success:^(id responseObject) {
+        
+        ETFoundHotModel *model = [ETFoundHotModel mj_objectWithKeyValues:responseObject];
+        for (FoundHotData *data in model.data) {
+            [self.hotData addObject:data.name];
+        }
+        self.headerView.dataArr = self.hotData;
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+#pragma mark -搜索接口
+- (void)searchRequest:(NSString *)text {
+    
+    [HTTPTool requestDotNetWithURLString:@"et_selapp" parameters:@{@"appname":text} type:kPOST success:^(id responseObject) {
+        
+        ETFoundDetailModel *model = [ETFoundDetailModel mj_objectWithKeyValues:responseObject];
+        
+        [self.detailData removeLastObject];
+        [self.detailData addObjectsFromArray:model.data];
+        [self.detailTab reloadData];
+        
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 3;
+    return self.detailData.count;
     
 }
 
@@ -108,12 +143,23 @@
     
     ETFoundSearchDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETFoundSearchDetailCell"];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    cell.model = self.detailData[indexPath.row];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 73;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ETFoundDetailData *data = self.detailData[indexPath.row];
+    ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
+    vc.url = data.url;
+    vc.title = data.name;
+    [self.navigationController pushViewController:vc animated:true];
     
 }
 #pragma mark - lazy load
@@ -125,6 +171,7 @@
         _detailTab.dataSource = self;
         _detailTab.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_detailTab registerNib:[UINib nibWithNibName:@"ETFoundSearchDetailCell" bundle:nil] forCellReuseIdentifier:@"ETFoundSearchDetailCell"];
+        _detailTab.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     }
     return _detailTab;
 }
@@ -144,6 +191,23 @@
     self.sectionView.topLb.text = textfield.text;
     self.sectionView.bottomLb.text = [NSString stringWithFormat:@"http://%@",textfield.text];
     
+    if ([Tools checkStringIsEmpty:textfield.text]) {
+        [self.detailData removeAllObjects];
+        self.detailTab.tableHeaderView = self.headerView;
+        [self.detailTab reloadData];
+    }
+   
+    
+}
+
+- (void)ETFoundSerarchNavViewReturn:(UITextField *)textfiled {
+    
+    [self searchRequest:textfiled.text];
+    
+    if (self.detailData.count == 0) {
+        self.detailTab.tableHeaderView = self.headerView;
+    }
+    [self.view endEditing:YES];
 }
 
 #pragma mark - ETFoundSearchCollectionViewDelegate
@@ -153,6 +217,9 @@
     
     self.sectionView.topLb.text = str;
     self.sectionView.bottomLb.text = [NSString stringWithFormat:@"http://%@",str];
+    
+    [self searchRequest:str];
+    self.detailTab.tableHeaderView = nil;
     
 }
 

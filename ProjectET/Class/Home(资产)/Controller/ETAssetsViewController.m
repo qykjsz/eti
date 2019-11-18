@@ -149,7 +149,7 @@
     //        NSLog(@"%@",error);
     //    }];
     //    return;
-//    [KMPProgressHUD showProgressWithText:@"正在加载"];
+    [SVProgressHUD showWithStatus:@"正在加载"];
     ETWalletModel *model = [ETWalletManger getCurrentWallet];
     [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
          [KMPProgressHUD dismissProgress];
@@ -194,7 +194,7 @@
         [self.detailTab reloadData];
         
     } failure:^(NSError *error) {
-        [KMPProgressHUD showText:@"加载失败"];
+        [SVProgressHUD showInfoWithStatus:@"加载失败"];
     }];
     
 }
@@ -411,6 +411,7 @@
 - (void)ETBackUpWalletViewDelegateDeletAction:(ETWalletModel *)model {
     
     [ETWalletManger deleWallet:model];
+    [self homeRequest];
     [SVProgressHUD showInfoWithStatus:@"删除成功"];
     
 }

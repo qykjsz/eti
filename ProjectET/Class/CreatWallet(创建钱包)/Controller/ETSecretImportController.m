@@ -277,8 +277,6 @@
     [KMPProgressHUD showProgressWithText:@"正在导入"];
     [HSEther hs_importWalletForPrivateKey:self.secretKey pwd:self.setPassWord block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, BOOL suc, HSWalletError error) {
         
-        self.view.userInteractionEnabled = YES;
-        
         if (suc) {
             ETWalletModel *model = [[ETWalletModel alloc]init];
             model.password = self.setPassWord;
