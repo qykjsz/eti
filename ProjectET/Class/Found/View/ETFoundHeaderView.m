@@ -93,6 +93,9 @@
             
         }];
         
+        UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(actionOfDapp1)];
+        [dapp1 addGestureRecognizer:tap1];
+        
         UIView *dapp2 = [[UIView alloc]init];
         [self addSubview:dapp2];
         [dapp2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -127,6 +130,9 @@
             make.top.equalTo(dappImage2.mas_bottom).offset(10);
             
         }];
+        
+        UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(actionOfDapp2)];
+        [dapp2 addGestureRecognizer:tap2];
         
         UILabel *titleLb2 = [[UILabel alloc]init];
         titleLb2.font = [UIFont systemFontOfSize:16];
@@ -173,6 +179,18 @@
     }
     return self;
     
+}
+
+-(void)actionOfDapp1{
+    if ([self.delegate respondsToSelector:@selector(ETFoundHeaderViewDAppDelegateCollectionClick:)]) {
+        [self.delegate ETFoundHeaderViewDAppDelegateCollectionClick:1];
+    }
+}
+
+-(void)actionOfDapp2{
+    if ([self.delegate respondsToSelector:@selector(ETFoundHeaderViewDAppDelegateCollectionClick:)]) {
+        [self.delegate ETFoundHeaderViewDAppDelegateCollectionClick:2];
+    }
 }
 
 #pragma mark - UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
