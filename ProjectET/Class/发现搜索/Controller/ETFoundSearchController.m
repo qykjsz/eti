@@ -81,7 +81,7 @@
     
     self.headerView = [[ETFoundSearchCollectionView alloc]init];
     self.headerView.delegate = self;
-    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 115);
+    self.headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 160);
     [self.view addSubview:self.headerView];
     
     [self.view addSubview:self.detailTab];
@@ -124,9 +124,13 @@
         
         [self.detailData removeLastObject];
         [self.detailData addObjectsFromArray:model.data];
-        [self.detailTab reloadData];
-        
-        
+      
+        if (self.detailData.count == 0) {
+            self.detailTab.tableHeaderView = self.headerView;
+        }else {
+            self.detailTab.tableHeaderView = nil;
+        }
+          [self.detailTab reloadData];
     } failure:^(NSError *error) {
         
     }];
@@ -195,7 +199,10 @@
         [self.detailData removeAllObjects];
         self.detailTab.tableHeaderView = self.headerView;
         [self.detailTab reloadData];
+    }else {
+        self.detailTab.tableHeaderView = nil;
     }
+    
    
     
 }
@@ -204,9 +211,7 @@
     
     [self searchRequest:textfiled.text];
     
-    if (self.detailData.count == 0) {
-        self.detailTab.tableHeaderView = self.headerView;
-    }
+    
     [self.view endEditing:YES];
 }
 

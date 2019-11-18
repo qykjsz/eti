@@ -51,7 +51,7 @@
             STRONG_SELF(self);
             make.left.right.equalTo(self);
             make.top.equalTo(topLeftImage.mas_bottom).offset(5);
-            make.height.mas_equalTo(80);
+            make.height.mas_equalTo(150);
             
         }];
         
