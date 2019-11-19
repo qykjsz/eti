@@ -73,6 +73,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ETCreatWalletCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETCreatWalletCell"];
+    cell.backGrayView.hidden = YES;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.section == 1) {
         switch (indexPath.row) {
@@ -100,6 +101,7 @@
         return cell;
     }else {
         ETChooseWalletcell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETChooseWalletcell"];
+        cell.backGrayView.hidden = YES;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleLb.text = @"以太坊";
         cell.iconImage.image = [UIImage imageNamed:@"dc_eth"];

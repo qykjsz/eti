@@ -12,7 +12,7 @@
 #import "FoundViewController.h"
 #import "ETChatViewcontroller.h"
 #import "ETNewInformationViewController.h"
-
+#import "ETFoundSegmetnController.h"
 @interface ETRootViewController ()<UITabBarControllerDelegate>
 {
     NSInteger _currentIndex;
@@ -45,7 +45,7 @@
     UINavigationController * mallNav = [[UINavigationController alloc] initWithRootViewController:mallVC];
     
     // 发现
-    ETNewFoundController * medicineVC = [ETNewFoundController new];
+    ETFoundSegmetnController * medicineVC = [ETFoundSegmetnController new];
     UINavigationController * medicineNav = [[UINavigationController alloc] initWithRootViewController:medicineVC];
 
     // 聊天

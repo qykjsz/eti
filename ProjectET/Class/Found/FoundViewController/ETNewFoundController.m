@@ -41,6 +41,8 @@
     } failure:^(NSError *error) {
         
     }];
+    
+     [self categortReques];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
 }
@@ -68,25 +70,6 @@
     }];
 }
 
-- (void)clickAction {
-    
-    ETFoundSearchController *sVC = [ETFoundSearchController new];
-    sVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:sVC animated:YES];
-    
-}
-
-- (void)scanAction {
-    
-    ETScanViewController *sVC = [ETScanViewController new];
-    [sVC setScanBlock:^(NSString * _Nonnull qcodeString) {
-        ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
-        vc.url = qcodeString;
-        [self.navigationController pushViewController:vc animated:true];
-    }];
-    sVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:sVC animated:YES];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -140,7 +123,17 @@
     self.headerView.delegate = self;
     [self foundRequest];
     
+   
     
+}
+
+- (void)categortReques {
+    
+    [HTTPTool requestDotNetWithURLString:@"et_appantype" parameters:nil type:kPOST success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 #pragma mark - NET

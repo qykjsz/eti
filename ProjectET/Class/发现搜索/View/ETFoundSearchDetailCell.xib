@@ -33,7 +33,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="区块链棋牌类游戏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dil-Qp-6OZ">
-                        <rect key="frame" x="74" y="42" width="90" height="13.5"/>
+                        <rect key="frame" x="74" y="42" width="206" height="13.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="206" id="IRN-rJ-GS2"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
@@ -49,6 +52,7 @@
                 <constraints>
                     <constraint firstItem="U6J-dU-iN4" firstAttribute="leading" secondItem="xYA-Gs-OO1" secondAttribute="trailing" constant="15" id="95O-zm-2qM"/>
                     <constraint firstItem="xYA-Gs-OO1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="I9y-I1-BqB"/>
+                    <constraint firstAttribute="trailing" secondItem="dil-Qp-6OZ" secondAttribute="trailing" constant="40" id="UBD-g2-tzn"/>
                     <constraint firstItem="dil-Qp-6OZ" firstAttribute="bottom" secondItem="xYA-Gs-OO1" secondAttribute="bottom" constant="-3" id="Zol-r4-CnK"/>
                     <constraint firstAttribute="trailing" secondItem="NBs-VD-8Zq" secondAttribute="trailing" constant="15" id="b9O-5y-cxl"/>
                     <constraint firstItem="xYA-Gs-OO1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="cvf-7D-Kfp"/>
@@ -61,6 +65,7 @@
             <connections>
                 <outlet property="iconImage" destination="xYA-Gs-OO1" id="d0G-DU-unV"/>
                 <outlet property="subTitle" destination="dil-Qp-6OZ" id="dcq-wG-X93"/>
+                <outlet property="subTittleWidth" destination="IRN-rJ-GS2" id="oOF-bA-kZB"/>
                 <outlet property="titleLb" destination="U6J-dU-iN4" id="FVv-ES-GvJ"/>
             </connections>
             <point key="canvasLocation" x="37.681159420289859" y="115.51339285714285"/>

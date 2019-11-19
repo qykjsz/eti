@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSMutableArray *dataArr;
 
+@property (nonatomic,strong) NSMutableArray *topArr;
+
 @property (nonatomic,strong) KJBannerView *bannerView;
 
 @property (nonatomic,weak) id <ETFoundHeaderViewDelegate> delegate;

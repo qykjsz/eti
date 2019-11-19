@@ -15,6 +15,8 @@
 
 @property (nonatomic,strong) UICollectionView *collectionView;
 
+@property (nonatomic,strong) UICollectionView *collectionView2;
+
 
 @end
 
@@ -52,87 +54,29 @@
         [titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
             
             STRONG_SELF(self);
-            make.left.equalTo(self.mas_left).offset(33);
+            make.left.equalTo(self.mas_left).offset(10);
             make.top.equalTo(self.bannerView.mas_bottom).offset(20);
             
             
         }];
         
-        UIView *dapp1 = [[UIView alloc]init];
-        [self addSubview:dapp1];
-        [dapp1 mas_makeConstraints:^(MASConstraintMaker *make) {
-           
-            STRONG_SELF(self);
-            make.left.equalTo(self.mas_left).offset(30);
-            make.width.mas_equalTo(64);
+       
+        UICollectionViewFlowLayout *flow2 = [UICollectionViewFlowLayout new];
+        self.collectionView2 = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:flow2];
+        self.collectionView2.backgroundColor = UIColor.whiteColor;
+        self.collectionView2.delegate = self;
+        self.collectionView2.scrollEnabled = false;
+        self.collectionView2.dataSource = self;
+        [self.collectionView2 registerClass:[ETFoundCell class] forCellWithReuseIdentifier:@"ETFoundCell"];
+        [self addSubview:self.collectionView2];
+        [self.collectionView2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.left.right.equalTo(self);
+            make.top.equalTo(titleLb.mas_bottom).offset(10);
             make.height.mas_equalTo(80);
-            make.top.equalTo(titleLb.mas_bottom).offset(5);
             
         }];
-        
-        UIImageView *dappImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fx_01"]];
-        [dapp1 addSubview:dappImage];
-        [dappImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-            make.centerX.equalTo(dapp1.mas_centerX);
-            make.width.height.mas_equalTo(44);
-            make.top.equalTo(dapp1.mas_top).offset(10);
-            
-        }];
-        
-        UILabel *dapp1Lb = [[UILabel alloc]init];
-        dapp1Lb.font = [UIFont systemFontOfSize:11];
-        dapp1Lb.textColor = UIColorFromHEX(0x333333, 1);
-        dapp1Lb.text = @"猎鱼达人";
-        dapp1Lb.textAlignment = NSTextAlignmentCenter;
-        [dapp1 addSubview:dapp1Lb];
-        [dapp1Lb mas_makeConstraints:^(MASConstraintMaker *make) {
-
-            make.left.right.equalTo(dapp1);
-            make.top.equalTo(dappImage.mas_bottom).offset(10);
-            
-        }];
-        
-        UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(actionOfDapp1)];
-        [dapp1 addGestureRecognizer:tap1];
-        
-        UIView *dapp2 = [[UIView alloc]init];
-        [self addSubview:dapp2];
-        [dapp2 mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.left.equalTo(dapp1.mas_right).offset(5);
-            make.width.mas_equalTo(64);
-            make.height.mas_equalTo(80);
-            make.top.equalTo(titleLb.mas_bottom).offset(5);
-            
-        }];
-        
-        UIImageView *dappImage2 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fa_02"]];
-        [dapp1 addSubview:dappImage2];
-        [dappImage2 mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-
-            make.centerX.equalTo(dapp2.mas_centerX);
-            make.width.height.mas_equalTo(44);
-            make.top.equalTo(dapp2.mas_top).offset(10);
-            
-        }];
-        
-        UILabel *dapp2Lb = [[UILabel alloc]init];
-        dapp2Lb.font = [UIFont systemFontOfSize:11];
-        dapp2Lb.textColor = UIColorFromHEX(0x333333, 1);
-        dapp2Lb.text = @"即可金服";
-        dapp2Lb.textAlignment = NSTextAlignmentCenter;
-        [dapp2 addSubview:dapp2Lb];
-        [dapp2Lb mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.left.right.equalTo(dapp2);
-            make.top.equalTo(dappImage2.mas_bottom).offset(10);
-            
-        }];
-        
-        UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(actionOfDapp2)];
-        [dapp2 addGestureRecognizer:tap2];
+      
         
         UILabel *titleLb2 = [[UILabel alloc]init];
         titleLb2.font = [UIFont systemFontOfSize:16];
@@ -142,8 +86,8 @@
         [titleLb2 mas_makeConstraints:^(MASConstraintMaker *make) {
             
             STRONG_SELF(self);
-            make.left.equalTo(self.mas_left).offset(33);
-            make.top.equalTo(dapp1.mas_bottom).offset(20);
+            make.left.equalTo(self.mas_left).offset(10);
+            make.top.equalTo(self.collectionView2.mas_bottom).offset(20);
             
             
         }];
@@ -162,11 +106,12 @@
         }];
         
         UICollectionViewFlowLayout *flow = [UICollectionViewFlowLayout new];
-        flow.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+//        flow.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:flow];
         self.collectionView.backgroundColor = UIColor.whiteColor;
         self.collectionView.delegate = self;
         self.collectionView.dataSource = self;
+        self.collectionView.scrollEnabled = false;
         [self.collectionView registerClass:[ETFoundCell class] forCellWithReuseIdentifier:@"ETFoundCell"];
         [self addSubview:self.collectionView];
         [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -198,57 +143,116 @@
 #pragma mark - UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return self.dataArr.count;
+    if (collectionView == self.collectionView) {
+        return self.dataArr.count;
+    }else {
+        return self.topArr.count;
+    }
+    
     
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    ETFoundCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ETFoundCell" forIndexPath:indexPath];
-    FoundDapp *data = self.dataArr[indexPath.item];
-    cell.titleLb.text = data.name;
-    [cell.iconImage sd_setImageWithURL:[NSURL URLWithString:data.img]];
-    return cell;
+    if (collectionView == self.collectionView) {
+        ETFoundCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ETFoundCell" forIndexPath:indexPath];
+        FoundDapp *data = self.dataArr[indexPath.item];
+        cell.titleLb.text = data.name;
+        [cell.iconImage sd_setImageWithURL:[NSURL URLWithString:data.img]];
+        return cell;
+    }else {
+        ETFoundCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ETFoundCell" forIndexPath:indexPath];
+        FoundDapp *data = self.topArr[indexPath.item];
+        cell.titleLb.text = data.name;
+        if ([data.img containsString:@"http"]) {
+            [cell.iconImage sd_setImageWithURL:[NSURL URLWithString:data.img]];
+        }else {
+            cell.iconImage.image = [UIImage imageNamed:data.img];
+        }
+        
+        return cell;
+    }
+    
     
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    return CGSizeMake(64, 80);
+    NSInteger width = (SCREEN_WIDTH - 30 - 40)/5;
+    return CGSizeMake(width, 80);
     
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     
-    return UIEdgeInsetsMake(0, 30, 0, 0);
+    return UIEdgeInsetsMake(0, 15, 0, 15);
     
-}
-//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section;
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    
-    return 3;
-}
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section;
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
-- (void)setDataArr:(NSMutableArray *)dataArr {
-    
-    _dataArr = dataArr;
-    [self.collectionView reloadData];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    FoundDapp *data = self.dataArr[indexPath.item];
-    if ([self.delegate respondsToSelector:@selector(ETFoundHeaderViewDelegateCollectionClick:)]) {
-        [self.delegate ETFoundHeaderViewDelegateCollectionClick:data];
+    if (collectionView == self.collectionView) {
+        FoundDapp *data = self.dataArr[indexPath.item];
+        if ([self.delegate respondsToSelector:@selector(ETFoundHeaderViewDelegateCollectionClick:)]) {
+            [self.delegate ETFoundHeaderViewDelegateCollectionClick:data];
+        }
+    }else {
+        
+        if (indexPath.item == 0) {
+            if ([self.delegate respondsToSelector:@selector(ETFoundHeaderViewDAppDelegateCollectionClick:)]) {
+                [self.delegate ETFoundHeaderViewDAppDelegateCollectionClick:1];
+            }else if (indexPath.item == 1){
+                if ([self.delegate respondsToSelector:@selector(ETFoundHeaderViewDAppDelegateCollectionClick:)]) {
+                    [self.delegate ETFoundHeaderViewDAppDelegateCollectionClick:2];
+                }
+            }
+        }
+        
     }
+    
+   
+}
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+//    return 1;
+//}
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+//    
+//    return 1;
+//}
+
+- (void)setDataArr:(NSMutableArray *)dataArr {
+    
+    _dataArr = dataArr;
+   
+    [self.collectionView reloadData];
+    NSInteger height = dataArr.count % 5;
+    if (height == 0) {
+        height = dataArr.count/5;
+    }else {
+        height = dataArr.count/5 + 1;
+    }
+    [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+       
+        make.height.mas_equalTo(height * 80 + 10);
+        
+    }];
+
 }
 
-//- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize withHorizontalFittingPriority:(UILayoutPriority)horizontalFittingPriority verticalFittingPriority:(UILayoutPriority)verticalFittingPriority {
+- (void)setTopArr:(NSMutableArray *)topArr {
+    
+    _topArr = topArr;
+    [self.collectionView2 reloadData];
+
+}
+
+//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 //
-//    self.collectionView.frame = CGRectMake(0, 0, targetSize.width, MAXFLOAT);
-//    return [self.collectionView.collectionViewLayout collectionViewContentSize];
-//
+//    FoundDapp *data = self.dataArr[indexPath.item];
+//    if ([self.delegate respondsToSelector:@selector(ETFoundHeaderViewDelegateCollectionClick:)]) {
+//        [self.delegate ETFoundHeaderViewDelegateCollectionClick:data];
+//    }
 //}
+
 
 @end

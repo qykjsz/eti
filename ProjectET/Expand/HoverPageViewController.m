@@ -94,7 +94,7 @@
     self.pageScrollView.contentSize = CGSizeMake(SCREEN_WIDTH * _viewControllers.count, 0);
     for (NSInteger i = 0; i < _viewControllers.count; i++) {
         HoverChildViewController *child = [_viewControllers objectAtIndex:i];
-         child.view.frame = CGRectMake(i * SCREEN_WIDTH, child.view.frame.origin.y, child.view.frame.size.width, child.view.frame.size.height);
+         child.view.frame = CGRectMake(i * SCREEN_WIDTH, child.view.frame.origin.y, SCREEN_WIDTH, child.view.frame.size.height);
         child.scrollDelegate = self;
        
     }

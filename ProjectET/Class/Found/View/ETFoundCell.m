@@ -22,7 +22,7 @@
             STRONG_SELF(self);
             make.centerX.equalTo(self.contentView.mas_centerX);
             make.top.equalTo(self.contentView.mas_top).offset(10);
-            make.width.height.mas_equalTo(44);
+            make.width.height.mas_equalTo(33);
             
         }];
         
