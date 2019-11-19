@@ -44,6 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+//    self.view.backgroundColor = 
     [self.view addSubview:self.detailTab];
     WEAK_SELF(self);
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -80,6 +81,7 @@
     ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
     vc.url = data.url;
     vc.title = data.name;
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:true];
     
 }

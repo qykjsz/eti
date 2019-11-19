@@ -11,7 +11,7 @@
 #import "ETFoundSearchController.h"
 #import "ETScanViewController.h"
 #import "ETHTMLViewController.h"
-
+#import "ETFoundHTMLViewController.h"
 #import "ETFoundClassificationController.h"
 
 // model
@@ -24,7 +24,7 @@
 
 #import "UUID.h"
 
-@interface ETFoundSegmetnController ()<HoverPageViewControllerDelegate,ETFoundHeaderViewDelegate>
+@interface ETFoundSegmetnController ()<HoverPageViewControllerDelegate,ETFoundHeaderViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic, strong) UIView *indicator;
 
@@ -37,6 +37,8 @@
 @property (nonatomic,strong) ETFoundHeaderView *headerView;
 
 @property (nonatomic,strong) NSMutableArray *viewControllers;
+
+@property (nonatomic,strong) UITableView *detailTab;
 
 @end
 
@@ -67,6 +69,7 @@
     self.viewControllers = [NSMutableArray array];
     /// 指示器
     self.pageTitleView = [UIView new];
+    self.pageTitleView.backgroundColor = UIColor.whiteColor;
     self.pageTitleView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 40);
     
    
@@ -140,11 +143,25 @@
         
         
         self.hoverPageViewController = [HoverPageViewController viewControllers:self.viewControllers headerView:self.headerView pageTitleView:self.pageTitleView];
+        self.hoverPageViewController.view.clipsToBounds = YES;
+        self.hoverPageViewController.view.layer.cornerRadius = 15;
+        self.hoverPageViewController.view.backgroundColor = UIColor.clearColor;
         self.hoverPageViewController.view.frame = CGRectMake(0, iPhoneBang?(barHeight - 10):barHeight, SCREEN_WIDTH, SCREEN_HEIGHT - barHeight);
         self.hoverPageViewController.delegate = self;
         [self addChildViewController:self.hoverPageViewController];
         [self.view addSubview:self.hoverPageViewController.view];
         
+//        self.detailTab = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+//        [self.detailTab registerClass:[UITableViewCell class] forCellReuseIdentifier:@"123"];
+//        self.detailTab.delegate = self;
+//        self.detailTab.dataSource = self;
+//        [self.hoverPageViewController.view addSubview:self.detailTab];
+//        self.detailTab.tableHeaderView = self.hoverPageViewController.view;
+//        [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//            make.edges.equalTo(self.view);
+//
+//        }];
         [self bannerRequest];
         [self et_appnewsRequest];
         
@@ -160,6 +177,11 @@
 - (void)ETFoundHeaderViewDelegateCollectionClick:(FoundDapp *)model {
     
     [self et_appnewRequest:model.Id];
+    ETHTMLViewController *htmlVC = [ETHTMLViewController new];
+    htmlVC.url = model.url;
+    htmlVC.title = model.name;
+    htmlVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:htmlVC animated:YES];
     
 }
 
@@ -181,6 +203,15 @@
                 
             }];
         }
+    }else if(tag == 2){
+        ETFoundHTMLViewController *vc = [[ETFoundHTMLViewController alloc]init];
+        vc.url = @"https://ceshi.etac.io/dist";
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:true];
+        //        ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
+        //        vc.url = @"https://ceshi.etac.io/dist";
+        //        vc.hidesBottomBarWhenPushed = YES;
+        //        [self.navigationController pushViewController:vc animated:true];
     }
 }
 
@@ -245,6 +276,20 @@
     }];
 }
 
+#pragma mark - UITableViewDelegate,UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"123"];
+    return cell;
+    
+}
+
+
+#pragma Mark - pageLayout
 - (void)pageLayout {
     
     self.view.backgroundColor = [UIColor whiteColor];

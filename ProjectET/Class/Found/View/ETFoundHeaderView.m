@@ -11,7 +11,7 @@
 
 
 
-@interface ETFoundHeaderView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface ETFoundHeaderView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UICollectionView *collectionView;
 
@@ -27,9 +27,39 @@
     if (self = [super initWithFrame:frame]) {
         
         self.backgroundColor = [UIColor whiteColor];
-        self.clipsToBounds = YES;
-        self.layer.cornerRadius = 15;
-        WEAK_SELF(self);
+        
+        UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, frame.size.height)];
+        backView.backgroundColor = UIColor.whiteColor;
+//        [self addSubview:backView];
+         WEAK_SELF(self);
+//        [backView mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//            STRONG_SELF(self);
+//            make.edges.equalTo(self);
+//
+//        }];
+        
+        UITableView *detailTab = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+        detailTab.delegate = self;
+        detailTab.dataSource = self;
+        detailTab.separatorStyle = UITableViewCellSelectionStyleNone;
+        [detailTab registerClass:[UITableViewCell class] forCellReuseIdentifier:@"123"];
+        detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+           
+            STRONG_SELF(self);
+            [detailTab.mj_header endRefreshing];
+            
+        }];
+        [self addSubview:detailTab];
+        [detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            STRONG_SELF(self);
+            make.edges.equalTo(self);
+            
+        }];
+        
+        detailTab.tableHeaderView = backView;
+       
         self.bannerView = [[KJBannerView alloc]initWithFrame:CGRectMake(0, 10, SCREEN_WIDTH, SCREEN_WIDTH*0.4)];
         self.bannerView.imgCornerRadius = 15;
         self.bannerView.autoScrollTimeInterval = 2;
@@ -40,7 +70,7 @@
 //        NSString *gif = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564463770360&di=c93e799328198337ed68c61381bcd0be&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170714%2F1eed483f1874437990ad84c50ecfc82a_th.jpg";
 //        self.bannerView.imageDatas = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573820843997&di=d82e372435a4025cba81c6fb16d83540&imgtype=0&src=http%3A%2F%2Fp0.ifengimg.com%2Fpmop%2F2017%2F1214%2F756F54079DFC35207C23E6FE1AA1BC2CA1018BB6_size70_w600_h450.jpeg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573820860928&di=5150b930f67ddb9fb0119b5b5d11729c&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F41602924fbab86ce142f11de937ec963f6d55739ea6a-7Hx1E8_fw658"
 //                               ];
-        [self addSubview:self.bannerView];
+        [backView addSubview:self.bannerView];
         
         self.bannerView.kSelectBlock = ^(KJBannerView * _Nonnull banner, NSInteger idx) {
             NSLog(@"---------%@,%ld",banner,idx);
@@ -50,7 +80,7 @@
         titleLb.font = [UIFont systemFontOfSize:16];
         titleLb.textColor = UIColorFromHEX(0x333333, 1);
         titleLb.text = @"我的DApp";
-        [self addSubview:titleLb];
+        [backView addSubview:titleLb];
         [titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
             
             STRONG_SELF(self);
@@ -68,7 +98,7 @@
         self.collectionView2.scrollEnabled = false;
         self.collectionView2.dataSource = self;
         [self.collectionView2 registerClass:[ETFoundCell class] forCellWithReuseIdentifier:@"ETFoundCell"];
-        [self addSubview:self.collectionView2];
+        [backView addSubview:self.collectionView2];
         [self.collectionView2 mas_makeConstraints:^(MASConstraintMaker *make) {
             
             make.left.right.equalTo(self);
@@ -82,7 +112,7 @@
         titleLb2.font = [UIFont systemFontOfSize:16];
         titleLb2.textColor = UIColorFromHEX(0x333333, 1);
         titleLb2.text = @"精选DApp";
-        [self addSubview:titleLb2];
+        [backView addSubview:titleLb2];
         [titleLb2 mas_makeConstraints:^(MASConstraintMaker *make) {
             
             STRONG_SELF(self);
@@ -96,7 +126,7 @@
         subTitle.font = [UIFont systemFontOfSize:12];
         subTitle.textColor = UIColorFromHEX(0x999999, 1);
         subTitle.text = @"官方精选，不容错过";
-        [self addSubview:subTitle];
+        [backView addSubview:subTitle];
         [subTitle mas_makeConstraints:^(MASConstraintMaker *make) {
             
             STRONG_SELF(self);
@@ -113,7 +143,7 @@
         self.collectionView.dataSource = self;
         self.collectionView.scrollEnabled = false;
         [self.collectionView registerClass:[ETFoundCell class] forCellWithReuseIdentifier:@"ETFoundCell"];
-        [self addSubview:self.collectionView];
+        [backView addSubview:self.collectionView];
         [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
            
             make.left.right.equalTo(self);
@@ -122,6 +152,8 @@
             
         }];
 
+        
+        
         
     }
     return self;
@@ -244,6 +276,31 @@
     _topArr = topArr;
     [self.collectionView2 reloadData];
 
+}
+
+#pragma mark - UITableViewDataSource,UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 1;
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"123"];
+    return cell;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 10;
 }
 
 //- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

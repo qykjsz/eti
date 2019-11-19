@@ -233,7 +233,7 @@
 /* Begin PBXFileReference section */
 		04018F562382A17000C45B63 /* ETHTMLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETHTMLViewController.xib; sourceTree = "<group>"; };
 		04018F572382A17100C45B63 /* ETHTMLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETHTMLViewController.h; sourceTree = "<group>"; };
-		04018F582382A17100C45B63 /* ETHTMLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETHTMLViewController.m; sourceTree = "<group>"; };
+		04018F582382A17100C45B63 /* ETHTMLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETHTMLViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		04018F5B2382A1A200C45B63 /* ETFoundHTMLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundHTMLViewController.h; sourceTree = "<group>"; };
 		04018F5C2382A1A200C45B63 /* ETFoundHTMLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundHTMLViewController.m; sourceTree = "<group>"; };
 		04018F5D2382A1A200C45B63 /* ETFoundHTMLViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETFoundHTMLViewController.xib; sourceTree = "<group>"; };
