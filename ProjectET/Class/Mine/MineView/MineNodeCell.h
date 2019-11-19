@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)UILabel *nodeAddress;
 @property(nonatomic,strong)UILabel *speed;
 @property(nonatomic,strong)UILabel *point;
+@property(nonatomic,strong)UIImageView *selImg;
 @end
 
 NS_ASSUME_NONNULL_END

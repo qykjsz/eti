@@ -15,10 +15,22 @@
         UILabel *nodeName = [ClassBaseTools labelWithFont:15 textColor:UIColorFromHEX(0x333333, 1) textAlignment:0];
         [self.contentView addSubview:nodeName];
         [nodeName mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_offset(15);
+            make.left.equalTo(self.contentView).offset(15);
             make.top.mas_offset(10);
         }];
         self.nodeName = nodeName;
+        
+        UIImageView *imgView = [[UIImageView alloc]init];
+        imgView.image = [UIImage imageNamed:@"lang_xz"];
+        [self.contentView addSubview:imgView];
+        [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(nodeName.mas_centerY);
+            make.width.offset(15);
+            make.height.offset(13);
+            make.left.equalTo(nodeName.mas_right).offset(5);
+        }];
+        
+        self.selImg = imgView;
         
         UILabel *point = [ClassBaseTools labelWithFont:30 textColor:[UIColor greenColor] textAlignment:0];
         point.text = @"·";
@@ -47,10 +59,6 @@
         }];
         self.nodeAddress = nodeAddress;
         
-        
-       
-        
-     
     }
     
     return self;

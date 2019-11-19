@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04018F592382A17100C45B63 /* ETHTMLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04018F562382A17000C45B63 /* ETHTMLViewController.xib */; };
+		04018F5A2382A17100C45B63 /* ETHTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04018F582382A17100C45B63 /* ETHTMLViewController.m */; };
+		04018F5E2382A1A200C45B63 /* ETFoundHTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04018F5C2382A1A200C45B63 /* ETFoundHTMLViewController.m */; };
+		04018F5F2382A1A200C45B63 /* ETFoundHTMLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04018F5D2382A1A200C45B63 /* ETFoundHTMLViewController.xib */; };
 		04DB9ED6237BE69B002796C3 /* ETNewAlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9ED4237BE69B002796C3 /* ETNewAlertsViewController.m */; };
 		04DB9ED7237BE69B002796C3 /* ETNewAlertsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB9ED5237BE69B002796C3 /* ETNewAlertsViewController.xib */; };
 		04DB9EDB237BE6C4002796C3 /* ETNewInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9ED9237BE6C4002796C3 /* ETNewInformationViewController.m */; };
@@ -35,8 +39,6 @@
 		04E9DAFA237D23D300CDB9EE /* ETNewAlertsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DAF8237D23D300CDB9EE /* ETNewAlertsDetailsViewController.m */; };
 		04E9DAFB237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E9DAF9237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib */; };
 		04E9DB02237D4BC000CDB9EE /* ETMineHelpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DB01237D4BC000CDB9EE /* ETMineHelpModel.m */; };
-		04E9DB06237D4F1200CDB9EE /* ETHTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DB04237D4F1200CDB9EE /* ETHTMLViewController.m */; };
-		04E9DB07237D4F1200CDB9EE /* ETHTMLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E9DB05237D4F1200CDB9EE /* ETHTMLViewController.xib */; };
 		04E9DB0D237D56F500CDB9EE /* ETAboutUsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DB0C237D56F500CDB9EE /* ETAboutUsModel.m */; };
 		04E9DB11237E47AF00CDB9EE /* ETNodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DB10237E47AF00CDB9EE /* ETNodeModel.m */; };
 		04E9DB19237E8F3100CDB9EE /* HSEther.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DB16237E8F3100CDB9EE /* HSEther.m */; };
@@ -229,6 +231,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04018F562382A17000C45B63 /* ETHTMLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETHTMLViewController.xib; sourceTree = "<group>"; };
+		04018F572382A17100C45B63 /* ETHTMLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETHTMLViewController.h; sourceTree = "<group>"; };
+		04018F582382A17100C45B63 /* ETHTMLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETHTMLViewController.m; sourceTree = "<group>"; };
+		04018F5B2382A1A200C45B63 /* ETFoundHTMLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundHTMLViewController.h; sourceTree = "<group>"; };
+		04018F5C2382A1A200C45B63 /* ETFoundHTMLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundHTMLViewController.m; sourceTree = "<group>"; };
+		04018F5D2382A1A200C45B63 /* ETFoundHTMLViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETFoundHTMLViewController.xib; sourceTree = "<group>"; };
 		04DB9ED3237BE69B002796C3 /* ETNewAlertsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewAlertsViewController.h; sourceTree = "<group>"; };
 		04DB9ED4237BE69B002796C3 /* ETNewAlertsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewAlertsViewController.m; sourceTree = "<group>"; };
 		04DB9ED5237BE69B002796C3 /* ETNewAlertsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewAlertsViewController.xib; sourceTree = "<group>"; };
@@ -276,9 +284,6 @@
 		04E9DAF9237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewAlertsDetailsViewController.xib; sourceTree = "<group>"; };
 		04E9DB00237D4BC000CDB9EE /* ETMineHelpModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETMineHelpModel.h; sourceTree = "<group>"; };
 		04E9DB01237D4BC000CDB9EE /* ETMineHelpModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETMineHelpModel.m; sourceTree = "<group>"; };
-		04E9DB03237D4F1200CDB9EE /* ETHTMLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETHTMLViewController.h; sourceTree = "<group>"; };
-		04E9DB04237D4F1200CDB9EE /* ETHTMLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETHTMLViewController.m; sourceTree = "<group>"; };
-		04E9DB05237D4F1200CDB9EE /* ETHTMLViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETHTMLViewController.xib; sourceTree = "<group>"; };
 		04E9DB0B237D56F500CDB9EE /* ETAboutUsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAboutUsModel.h; sourceTree = "<group>"; };
 		04E9DB0C237D56F500CDB9EE /* ETAboutUsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAboutUsModel.m; sourceTree = "<group>"; };
 		04E9DB0F237E47AF00CDB9EE /* ETNodeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNodeModel.h; sourceTree = "<group>"; };
@@ -1697,6 +1702,9 @@
 				4F24C37523828D2A00BB6E00 /* ETFoundSegmetnController.m */,
 				8855DADB23780DF900F25DA4 /* FoundViewController.h */,
 				8855DADC23780DF900F25DA4 /* FoundViewController.m */,
+				04018F5B2382A1A200C45B63 /* ETFoundHTMLViewController.h */,
+				04018F5C2382A1A200C45B63 /* ETFoundHTMLViewController.m */,
+				04018F5D2382A1A200C45B63 /* ETFoundHTMLViewController.xib */,
 			);
 			path = FoundViewController;
 			sourceTree = "<group>";
@@ -1745,9 +1753,9 @@
 				8855DACD2378037500F25DA4 /* MineRecordViewController.m */,
 				8855DB382379469400F25DA4 /* TotalAssViewController.h */,
 				8855DB392379469400F25DA4 /* TotalAssViewController.m */,
-				04E9DB03237D4F1200CDB9EE /* ETHTMLViewController.h */,
-				04E9DB04237D4F1200CDB9EE /* ETHTMLViewController.m */,
-				04E9DB05237D4F1200CDB9EE /* ETHTMLViewController.xib */,
+				04018F572382A17100C45B63 /* ETHTMLViewController.h */,
+				04018F582382A17100C45B63 /* ETHTMLViewController.m */,
+				04018F562382A17000C45B63 /* ETHTMLViewController.xib */,
 			);
 			path = MineViewController;
 			sourceTree = "<group>";
@@ -1868,11 +1876,12 @@
 				04DB9EFC237C0CC7002796C3 /* ETNewArticleDetailsViewController.xib in Resources */,
 				4F24C373238284DE00BB6E00 /* ET_New.gif in Resources */,
 				04DB9F17237CF233002796C3 /* ETNewMarketCell.xib in Resources */,
+				04018F592382A17100C45B63 /* ETHTMLViewController.xib in Resources */,
 				4F128CA523683BF70004284D /* ETDirectCountCell.xib in Resources */,
 				4F14FAFA236924B30008C50A /* ETMyContactsCell.xib in Resources */,
-				04E9DB07237D4F1200CDB9EE /* ETHTMLViewController.xib in Resources */,
 				04E9DAFB237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib in Resources */,
 				4FF7FF21237FD3E300C38456 /* ETFoundSectionView.xib in Resources */,
+				04018F5F2382A1A200C45B63 /* ETFoundHTMLViewController.xib in Resources */,
 				4F128CAA23683EE70004284D /* ETDirectLeftCell.xib in Resources */,
 				4F2306CF2366DE9F0046A136 /* Assets.xcassets in Resources */,
 				4F128CAF236840120004284D /* ETDirectNormalCell.xib in Resources */,
@@ -2032,6 +2041,7 @@
 				4F128C9F236839610004284D /* ETDirectTranAddressCell.m in Sources */,
 				4F14FB1623695F0C0008C50A /* Tools.m in Sources */,
 				8855DAC42377EAC800F25DA4 /* MineCurrencyViewController.m in Sources */,
+				04018F5E2382A1A200C45B63 /* ETFoundHTMLViewController.m in Sources */,
 				4F14FB0F23693CE40008C50A /* UIImage+Color.m in Sources */,
 				4F1942CD236D21DD00AD907E /* ETWalletDetailController.m in Sources */,
 				8855DAC72377EAD400F25DA4 /* MinePushViewController.m in Sources */,
@@ -2075,7 +2085,6 @@
 				4F0E4D9F2374044700E83618 /* ETWalletSearchController.m in Sources */,
 				04E9DB0D237D56F500CDB9EE /* ETAboutUsModel.m in Sources */,
 				4F2306D52366DE9F0046A136 /* main.m in Sources */,
-				04E9DB06237D4F1200CDB9EE /* ETHTMLViewController.m in Sources */,
 				4F14FB1323693CFC0008C50A /* KMPProgressHUD.m in Sources */,
 				4F14FB2D23698BA30008C50A /* ETCreatWalletCell.m in Sources */,
 				4FA0A308236FCA270038F880 /* NSObject+SafeKVO.m in Sources */,
@@ -2090,6 +2099,7 @@
 				4F3F9055236AE62A009AAA24 /* ETCoinListViewController.m in Sources */,
 				4FA0A306236FCA270038F880 /* WMZPageNaviBtn.m in Sources */,
 				4F128CAE236840120004284D /* ETDirectNormalCell.m in Sources */,
+				04018F5A2382A17100C45B63 /* ETHTMLViewController.m in Sources */,
 				4F3F9039236A804B009AAA24 /* ETCreatYYViewCell.m in Sources */,
 				4F0E4D8D2373B3FC00E83618 /* ETHomeModel.m in Sources */,
 				4FFFAFF9237D5B5C00A87E50 /* ETTotalModel.m in Sources */,

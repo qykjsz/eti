@@ -16,7 +16,7 @@
 
 #import "ETFoundDappModel.h"
 #import "ETFoundBannerModel.h"
-
+#import "ETFoundHTMLViewController.h"
 
 
 @interface ETNewFoundController ()<UITableViewDelegate,UITableViewDataSource,ETFoundHeaderViewDelegate>
@@ -209,6 +209,15 @@
                 
             }];
         }
+    }else if(tag == 2){
+        ETFoundHTMLViewController *vc = [[ETFoundHTMLViewController alloc]init];
+        vc.url = @"https://ceshi.etac.io/dist";
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:true];
+//        ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
+//        vc.url = @"https://ceshi.etac.io/dist";
+//        vc.hidesBottomBarWhenPushed = YES;
+//        [self.navigationController pushViewController:vc animated:true];
     }
 }
 
