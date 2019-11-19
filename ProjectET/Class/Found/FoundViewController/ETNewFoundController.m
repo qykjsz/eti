@@ -62,7 +62,7 @@
         for (FoundBannerData *data in model.data) {
             [dataArr addObject:data.url];
         }
-        //        self.headerView.bannerView.imageDatas = dataArr;
+        self.headerView.bannerView.imageDatas = dataArr;
     } failure:^(NSError *error) {
         
     }];

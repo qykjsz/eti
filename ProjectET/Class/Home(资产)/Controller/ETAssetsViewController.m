@@ -29,6 +29,8 @@
 #import "ETMyWalletView.h"
 #import "ETHomeModel.h"
 #import "ETBackUpWalletView.h"
+
+#import "ETGatheringViewController.h"
 @interface ETAssetsViewController ()<UITableViewDelegate,UITableViewDataSource,HomeHeaderViewDelegate,ETMyWalletViewDelegate,ETHomeTableHeaderViewDelegate,ETBackUpWalletViewDelegate>
 
 @property (nonatomic,strong) UITableView *detailTab;

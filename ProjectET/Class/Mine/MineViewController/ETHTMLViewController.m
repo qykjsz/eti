@@ -24,6 +24,7 @@
     [SVProgressHUD dismiss];
 }
 
+
 - (void)popNavi {
     
     [self.navigationController popViewControllerAnimated:YES];
