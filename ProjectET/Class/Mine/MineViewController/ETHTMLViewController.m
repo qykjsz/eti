@@ -17,6 +17,18 @@
 
 @implementation ETHTMLViewController
 
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    
+    [SVProgressHUD dismiss];
+}
+
+- (void)popNavi {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

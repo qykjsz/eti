@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"货币单位";
-    self.dataArray = @[@"AUD",@"CNY",@"EOS",@"EUR",@"GBP",@"MRY",@"USD"];
+    self.dataArray = @[@"USDT",@"AUD",@"CNY",@"EOS",@"EUR",@"GBP",@"MRY"];
     [self.view addSubview:self.detailTab];
     [self creatCurrencyFootView];
 }
@@ -76,6 +76,22 @@
         make.width.mas_offset(SCREEN_WIDTH);
         make.height.mas_offset(.5);
     }];
+    
+    UIImageView *imgView = [[UIImageView alloc]init];
+    imgView.image = [UIImage imageNamed:@"lang_xz"];
+    [cell.contentView addSubview:imgView];
+    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_offset(-15);
+        make.centerY.equalTo(cell.contentView.mas_centerY);
+        make.width.offset(15);
+        make.height.offset(13);
+    }];
+    
+    if ([_dataArray[indexPath.row] isEqual:@"USDT"]) {
+        [imgView setHidden:false];
+    }else {
+         [imgView setHidden:true];
+    }
     
     cell.textLabel.text = _dataArray[indexPath.row];
     cell.textLabel.font =[UIFont systemFontOfSize:14];

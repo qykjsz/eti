@@ -149,6 +149,12 @@
     cell.nodeName.text = model.name;
     cell.nodeAddress.text = model.url;
     cell.speed.text = model.speed;
+    if (indexPath.row == 0) {
+        cell.nodeName.textColor = UIColorFromHEX(0x1D57FF, 1);
+        [cell.selImg setHidden:false];
+    }else {
+        [cell.selImg setHidden:true];
+    }
     cell.textLabel.font =[UIFont systemFontOfSize:14];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
