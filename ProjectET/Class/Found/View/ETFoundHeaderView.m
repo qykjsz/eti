@@ -11,7 +11,7 @@
 
 
 
-@interface ETFoundHeaderView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
+@interface ETFoundHeaderView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) UICollectionView *collectionView;
 
@@ -30,36 +30,36 @@
         
         UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, frame.size.height)];
         backView.backgroundColor = UIColor.whiteColor;
-//        [self addSubview:backView];
+        [self addSubview:backView];
          WEAK_SELF(self);
-//        [backView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [backView mas_makeConstraints:^(MASConstraintMaker *make) {
+
+            STRONG_SELF(self);
+            make.edges.equalTo(self);
+
+        }];
+        
+//        UITableView *detailTab = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+//        detailTab.delegate = self;
+//        detailTab.dataSource = self;
+//        detailTab.separatorStyle = UITableViewCellSelectionStyleNone;
+//        [detailTab registerClass:[UITableViewCell class] forCellReuseIdentifier:@"123"];
+//        detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//
+//            STRONG_SELF(self);
+//            [detailTab.mj_header endRefreshing];
+//
+//        }];
+//        [self addSubview:detailTab];
+//        [detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
 //
 //            STRONG_SELF(self);
 //            make.edges.equalTo(self);
 //
 //        }];
-        
-        UITableView *detailTab = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-        detailTab.delegate = self;
-        detailTab.dataSource = self;
-        detailTab.separatorStyle = UITableViewCellSelectionStyleNone;
-        [detailTab registerClass:[UITableViewCell class] forCellReuseIdentifier:@"123"];
-        detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-           
-            STRONG_SELF(self);
-            [detailTab.mj_header endRefreshing];
-            
-        }];
-        [self addSubview:detailTab];
-        [detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            STRONG_SELF(self);
-            make.edges.equalTo(self);
-            
-        }];
-        
-        detailTab.tableHeaderView = backView;
-       
+//
+//        detailTab.tableHeaderView = backView;
+//
         self.bannerView = [[KJBannerView alloc]initWithFrame:CGRectMake(0, 10, SCREEN_WIDTH, SCREEN_WIDTH*0.4)];
         self.bannerView.imgCornerRadius = 15;
         self.bannerView.autoScrollTimeInterval = 2;
@@ -278,30 +278,30 @@
 
 }
 
-#pragma mark - UITableViewDataSource,UITableViewDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 1;
-    
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 1;
-    
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"123"];
-    return cell;
-    
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return 10;
-}
+//#pragma mark - UITableViewDataSource,UITableViewDelegate
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//
+//    return 1;
+//
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//
+//    return 1;
+//
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"123"];
+//    return cell;
+//
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//    return 10;
+//}
 
 //- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 //
@@ -310,6 +310,5 @@
 //        [self.delegate ETFoundHeaderViewDelegateCollectionClick:data];
 //    }
 //}
-
 
 @end

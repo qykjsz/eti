@@ -146,8 +146,13 @@
         self.hoverPageViewController.view.clipsToBounds = YES;
         self.hoverPageViewController.view.layer.cornerRadius = 15;
         self.hoverPageViewController.view.backgroundColor = UIColor.clearColor;
-        self.hoverPageViewController.view.frame = CGRectMake(0, iPhoneBang?(barHeight - 10):barHeight, SCREEN_WIDTH, SCREEN_HEIGHT - barHeight);
+        self.hoverPageViewController.view.frame = CGRectMake(0, kStatusAndNavHeight, SCREEN_WIDTH, SCREEN_HEIGHT - barHeight);
         self.hoverPageViewController.delegate = self;
+        self.hoverPageViewController.mainScrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [self bannerRequest];
+            [self et_appnewsRequest];
+            [self.hoverPageViewController.mainScrollView.mj_header endRefreshing];
+        }];
         [self addChildViewController:self.hoverPageViewController];
         [self.view addSubview:self.hoverPageViewController.view];
         
@@ -300,8 +305,10 @@
     [topImage mas_makeConstraints:^(MASConstraintMaker *make) {
         
         STRONG_SELF(self);
-        make.left.top.right.equalTo(self.view);
-        make.height.mas_equalTo(120);
+        make.height.mas_equalTo(140);
+         make.height.mas_equalTo(120);
+         make.left.top.right.equalTo(self.view);
+        
     }];
     
     UITextField *field = [[UITextField alloc]initWithFrame:CGRectMake(15, kStatusBarHeight+5, SCREEN_WIDTH-70, 31)];

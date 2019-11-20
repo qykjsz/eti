@@ -14,6 +14,9 @@
 @class HoverPageViewController;
 
 NS_ASSUME_NONNULL_BEGIN
+@interface HoverPageScrollView : UIScrollView<UIGestureRecognizerDelegate>
+@end
+
 @protocol HoverChildViewControllerDelegate <NSObject>
 @optional
 - (void)hoverChildViewController:(HoverChildViewController *)ViewController scrollViewDidScroll:(UIScrollView *)scrollView;
@@ -41,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)viewControllers:(NSArray<HoverChildViewController *> *)viewControllers
                      headerView:(UIView *)headerView
                   pageTitleView:(UIView *)pageTitleView;
-
+@property(nonatomic, strong) HoverPageScrollView *mainScrollView;
 @property(nonatomic, strong, readonly) NSArray<HoverChildViewController *> *viewControllers;
 @property(nonatomic, strong, readonly) UIView *headerView;
 @property(nonatomic, strong, readonly) UIView *pageTitleView;
