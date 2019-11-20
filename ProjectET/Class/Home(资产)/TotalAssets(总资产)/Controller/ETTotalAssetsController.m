@@ -85,7 +85,7 @@
        
 //        make.edges.equalTo(self.view);
         make.left.right.bottom.equalTo(self.view);
-        make.top.equalTo(self.view.mas_top).offset(64);
+        make.top.equalTo(self.view.mas_top).offset(iPhoneBang?84:64);
         
     }];
     

@@ -81,7 +81,7 @@
                             forState:UIControlStateNormal];
         [item setTitleTextAttributes:@{
                                        NSFontAttributeName: [UIFont fontWithName:AppFontHelvetica size:13],
-                                       NSForegroundColorAttributeName:UIColorFromHEX(0x1D57FF, 1),
+                                       NSForegroundColorAttributeName:UIColorFromHEX(0x1758FB, 1),
                                        }
                             forState:UIControlStateSelected];
         index ++;

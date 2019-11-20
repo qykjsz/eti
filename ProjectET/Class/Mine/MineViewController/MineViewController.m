@@ -143,17 +143,17 @@
             break;
         case 1:{
             ETWalletMangerController *ctrl = [[ETWalletMangerController alloc]init];
-            [self setHidesBottomBarWhenPushed:YES];
+            ctrl.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:ctrl animated:YES];
-            [self setHidesBottomBarWhenPushed:NO];
+   
         }
             
             break;
         case 2:{
             MineRecordViewController *ctrl = [[MineRecordViewController alloc]init];
-            [self setHidesBottomBarWhenPushed:YES];
+            ctrl.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:ctrl animated:YES];
-            [self setHidesBottomBarWhenPushed:NO];
+            
         }
             break;
             

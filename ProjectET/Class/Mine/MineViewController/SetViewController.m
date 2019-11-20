@@ -90,25 +90,25 @@
     switch (indexPath.row) {
         case 0:{
             LanguageViewController *ctrl = [[LanguageViewController alloc]init];
-            [self setHidesBottomBarWhenPushed:YES];
+            [ctrl setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:ctrl animated:YES];
         }
             break;
         case 1:{
             MineNodeViewController *ctrl = [[MineNodeViewController alloc]init];
-            [self setHidesBottomBarWhenPushed:YES];
+            [ctrl setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:ctrl animated:YES];
         }
             break;
         case 2:{
             MineCurrencyViewController *ctrl = [[MineCurrencyViewController alloc]init];
-            [self setHidesBottomBarWhenPushed:YES];
+            [ctrl setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:ctrl animated:YES];
         }
             break;
         case 3:{
             MinePushViewController *ctrl = [[MinePushViewController alloc]init];
-            [self setHidesBottomBarWhenPushed:YES];
+            [ctrl setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:ctrl animated:YES];
         }
             break;
