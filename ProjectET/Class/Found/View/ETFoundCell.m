@@ -13,21 +13,31 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     
     if (self = [super initWithFrame:frame]) {
-        
-        WEAK_SELF(self);
-        self.iconImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fa_02"]];
-        self.iconImage.clipsToBounds = YES;
-        self.iconImage.contentMode = UIViewContentModeScaleAspectFit;
-        self.iconImage.layer.cornerRadius = 10;
-        self.iconImage.layer.borderWidth = 1;
-        self.iconImage.layer.borderColor = UIColorFromHEX(0xE0E0E0, 1).CGColor;
-        [self.contentView addSubview:self.iconImage];
-        [self.iconImage mas_makeConstraints:^(MASConstraintMaker *make) {
-            
+         WEAK_SELF(self);
+        UIImageView *backImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fx_logo_k"]];
+        [self.contentView addSubview:backImage];
+        [backImage mas_makeConstraints:^(MASConstraintMaker *make) {
+           
             STRONG_SELF(self);
             make.centerX.equalTo(self.contentView.mas_centerX);
             make.top.equalTo(self.contentView.mas_top).offset(10);
             make.width.height.mas_equalTo(44);
+            
+        }];
+        
+       
+        self.iconImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fa_02"]];
+//        self.iconImage.clipsToBounds = YES;
+//        self.iconImage.contentMode = UIViewContentModeScaleAspectFit;
+//        self.iconImage.layer.cornerRadius = 10;
+//        self.iconImage.layer.borderWidth = 1;
+        self.iconImage.layer.borderColor = UIColorFromHEX(0xE0E0E0, 1).CGColor;
+        [backImage addSubview:self.iconImage];
+        [self.iconImage mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.centerX.equalTo(backImage.mas_centerX);
+            make.centerY.equalTo(backImage.mas_centerY);
+            make.width.height.mas_equalTo(40);
             
         }];
         

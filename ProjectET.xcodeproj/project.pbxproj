@@ -2401,6 +2401,11 @@
 					"$(PROJECT_DIR)/ProjectET/Expand/ETHLib",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectET/Supporting Files/PrefixETHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"RELEASE=1",
+				);
 				INFOPLIST_FILE = ProjectET/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
