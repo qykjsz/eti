@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *img_code;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIView *view_bg;
+@property (weak, nonatomic) IBOutlet UIImageView *img_title;
 
 @end
 
@@ -132,7 +133,7 @@
 
 #pragma mark ---- 截屏
 - (UIImage *)screenShot {
-      UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc]initWithBounds:CGRectMake(0, self.view_bg.frame.origin.y - 10, SCREEN_WIDTH, self.view_bg.frame.size.height - 49)];
+      UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc]initWithBounds:CGRectMake(0, self.img_title.frame.origin.y - 35, SCREEN_WIDTH, self.view_bg.frame.size.height - CGRectGetMaxY(self.img_title.frame))];
       
         return [renderer imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
             [self.view.layer renderInContext: rendererContext.CGContext];

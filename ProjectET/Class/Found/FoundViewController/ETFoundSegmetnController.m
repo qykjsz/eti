@@ -236,7 +236,7 @@
         }
     }else if(tag == 1){
         ETFoundHTMLViewController *vc = [[ETFoundHTMLViewController alloc]init];
-        vc.url = model.url;
+        vc.url = [NSString stringWithFormat:@"%@?%@",model.url,[UUID getUUID]];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:true];
         //        ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
