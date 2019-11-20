@@ -139,7 +139,7 @@
         cell.textfiled.enabled = NO;
         
         if (self.tranGasValue) {
-            cell.textfiled.text = [NSString stringWithFormat:@"%f%@",self.tranGasValue,self.coinNameString];
+            cell.textfiled.text = [NSString stringWithFormat:@"%f%@",self.tranGasValue,@"ETH"];
         }else {
             cell.textfiled.text = nil;
         }

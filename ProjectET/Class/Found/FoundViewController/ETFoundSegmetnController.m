@@ -50,7 +50,6 @@
     
     [super viewWillAppear:animated];
     [self et_appnewsRequest];
-    [self handpickRequest];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
 }
@@ -181,6 +180,7 @@
         self.hoverPageViewController.mainScrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             [self bannerRequest];
             [self et_appnewsRequest];
+            [self handpickRequest];
             [self.hoverPageViewController.mainScrollView.mj_header endRefreshing];
         }];
         [self addChildViewController:self.hoverPageViewController];
@@ -226,13 +226,13 @@
 #endif
             NSLog(@"App1打开App2");
         }else{
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.baidu.com"]options:@{} completionHandler:^(BOOL success) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model.url]options:@{} completionHandler:^(BOOL success) {
                 
             }];
         }
     }else if(tag == 1){
         ETFoundHTMLViewController *vc = [[ETFoundHTMLViewController alloc]init];
-        vc.url = @"https://ceshi.etac.io/dist";
+        vc.url = model.url;
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:true];
         //        ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
@@ -333,8 +333,8 @@
     [topImage mas_makeConstraints:^(MASConstraintMaker *make) {
         
         STRONG_SELF(self);
-        make.height.mas_equalTo(140);
-         make.height.mas_equalTo(120);
+
+         make.height.mas_equalTo(kStatusAndNavHeight + 20);
          make.left.top.right.equalTo(self.view);
         
     }];

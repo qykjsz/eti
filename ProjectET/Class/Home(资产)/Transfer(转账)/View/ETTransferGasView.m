@@ -212,7 +212,7 @@
     
     self.seletGas = slider.value;
     self.tempfl = self.gasmin * self.seletGas / 100000000;
-    self.countLb.text = [NSString stringWithFormat:@"%f%@",self.tempfl,self.coinName];
+    self.countLb.text = [NSString stringWithFormat:@"%f%@",self.tempfl,@"ETH"];
 
 }
 

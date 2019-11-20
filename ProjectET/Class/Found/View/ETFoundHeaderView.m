@@ -265,7 +265,13 @@
 - (void)setTopArr:(NSMutableArray *)topArr {
     
     _topArr = topArr;
-    [self.collectionView2 reloadData];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [self.collectionView2 reloadData];
+        
+    });
+    
 
 }
 

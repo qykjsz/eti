@@ -78,7 +78,7 @@
     clickBtn.clipsToBounds = YES;
     clickBtn.layer.cornerRadius = 5;
     clickBtn.backgroundColor = UIColorFromHEX(0x999999, 1);
-    [clickBtn setTitle:@"开始验证" forState:UIControlStateNormal];
+    [clickBtn setTitle:@"敬请期待" forState:UIControlStateNormal];
     [clickBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     [whitView addSubview:clickBtn];
     [clickBtn mas_makeConstraints:^(MASConstraintMaker *make) {
