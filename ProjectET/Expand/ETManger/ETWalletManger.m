@@ -76,6 +76,7 @@
         arr = [NSMutableArray array];
     }
     
+    
     if (arr.count != 0) {
         for (int i = 0; i<arr.count; i++) {
             
@@ -132,7 +133,8 @@
     [NSKeyedArchiver archiveRootObject:arr toFile:file];
     
     if (arr.count == 0) {
-        [UIApplication sharedApplication].delegate.window.rootViewController = [ETCoinMainViewController new];
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[ETCoinMainViewController new]];
+        [UIApplication sharedApplication].delegate.window.rootViewController = nav;
     }
     
 }

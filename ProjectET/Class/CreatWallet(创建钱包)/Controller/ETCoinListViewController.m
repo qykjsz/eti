@@ -52,7 +52,7 @@
     
     self.iconNameArr = @[@"qbgl_eth_xz",@"qbgl_eos_xz",@"qbgl_iost_xz",@"qbgl_tron_xz",@"qbgl_binance_xz",@"qbgl_bos_xz",@"qbgl_cosmos_xz",@"qbgl_moac_xz"];
     self.coninNameArr = @[@"以太坊",@"EOS",@"IOST",@"Tron",@"BINANCE",@"BOS",@"COSMOS",@"墨客"];
-    self.coninSubNameArr = @[@"EOS底层",@"以太坊底层",@"IOST底层",@"Tron底层",@"Binance底层",@"BOS底层",@"COSMOS底层",@"墨客底层"];
+    self.coninSubNameArr = @[@"以太坊底层",@"EOS底层",@"IOST底层",@"Tron底层",@"Binance底层",@"BOS底层",@"COSMOS底层",@"墨客底层"];
     [self pagelayout];
     
 }

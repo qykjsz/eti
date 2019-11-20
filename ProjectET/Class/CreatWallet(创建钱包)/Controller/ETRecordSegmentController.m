@@ -4,7 +4,7 @@
 #import "HoverPageViewController.h"
 #import "ETRecordDetailViewController.h"
 #import "ETGatheringViewController.h"
-#import "ETDirectTransferController.h"
+#import "ETTransferViewController.h"
 #import "ETRecordHeaderView.h"
 #import "ETTransListModel.h"
 @interface ETRecordSegmentController ()<HoverPageViewControllerDelegate>
@@ -408,7 +408,7 @@
 - (void)clickAction:(UIButton *)sender {
     
     if (sender.tag == 0) {
-        ETDirectTransferController *dVC = [ETDirectTransferController new];
+        ETTransferViewController *dVC = [ETTransferViewController new];
         [self.navigationController pushViewController:dVC animated:YES];
     }else {
         ETGatheringViewController *gVC = [ETGatheringViewController new];

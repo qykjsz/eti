@@ -56,7 +56,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    [self homeRequest];
+//    [self homeRequest];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
@@ -137,6 +137,7 @@
     //        }
     //        [ETWalletManger updateWallet:model];
     //    }
+    [self homeRequest];
     
 }
 
@@ -166,7 +167,7 @@
         }
         [self.dataArr addObjectsFromArray:self.homeModel.data.glod];
         
-        self.headerView = [[ETHomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 370) andProgress:self.homeModel.data.proportion];
+        self.headerView = [[ETHomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 390) andProgress:self.homeModel.data.proportion];
         [self.headerView.selectView setHomeSelectTag:^(NSInteger tag) {
             [SVProgressHUD showInfoWithStatus:@"暂未开放"];
         }];
@@ -383,14 +384,14 @@
     NSMutableArray *arr = WALLET_ARR;
     ETWalletModel *model = arr[indexPath.row];
     
-    if (!model.isBackUp) {
-        
-        ETBackUpWalletView *backView = [[ETBackUpWalletView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-        backView.delegate = self;
-        backView.model = model;
-        [[UIApplication sharedApplication].keyWindow addSubview:backView];
-        
-    }
+//    if (!model.isBackUp) {
+//        
+//        ETBackUpWalletView *backView = [[ETBackUpWalletView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+//        backView.delegate = self;
+//        backView.model = model;
+//        [[UIApplication sharedApplication].keyWindow addSubview:backView];
+//        
+//    }
     
     /*--------------这一步是先取出当前钱包把当前状态改成不是当前的------------*/
     ETWalletModel *currentModel = [ETWalletManger getCurrentWallet];

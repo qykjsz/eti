@@ -139,6 +139,8 @@
     }else {
         
         ETCoinListViewController *vc = [ETCoinListViewController new];
+//        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+       
         [self.navigationController pushViewController:vc animated:YES];
        
     }
