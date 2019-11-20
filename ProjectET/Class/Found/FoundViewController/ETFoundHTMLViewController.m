@@ -7,6 +7,7 @@
 //
 
 #import "ETFoundHTMLViewController.h"
+#import "ETDirectTransferController.h"//转账
 #import <WebKit/WebKit.h>
 @interface ETFoundHTMLViewController ()<WKUIDelegate,WKNavigationDelegate>
 
@@ -29,7 +30,7 @@
 - (void)initWKWebView
 {
   
-    self.webView = [[WKWebView alloc] initWithFrame:self.view.frame];
+    self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     
     
     //    NSString *urlStr = @"http://www.baidu.com";
@@ -42,6 +43,45 @@
     self.webView.UIDelegate = self;
     self.webView.navigationDelegate =self;
     [self.view addSubview:self.webView];
+    
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0,0,44,44)];
+    
+    view.backgroundColor = [UIColor clearColor];
+    
+    UIButton *firstButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    firstButton.frame = CGRectMake(0, 0, 44, 44);
+    
+    [firstButton setImage:[UIImage imageNamed:@"fh_icon"] forState:UIControlStateNormal];
+    
+    [firstButton addTarget:self action:@selector(backHtml) forControlEvents:UIControlEventTouchUpInside];
+
+    firstButton.contentHorizontalAlignment =UIControlContentHorizontalAlignmentLeft;
+    firstButton.tag = 10001;
+    
+    //    [firstButton setImageEdgeInsets:UIEdgeInsetsMake(0,0 *SCREEN_WIDTH /375.0,0,0)];
+    
+    
+    
+    
+    
+    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:firstButton];
+    
+    
+    
+    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
+    
+}
+
+-(void)backHtml{
+    if ([self.webView canGoBack]) {
+        // 网页可以返回 就进行网页返回
+        [self.webView goBack];
+    }else{
+        [self.view resignFirstResponder];
+        // 网页返回到首页了 返回不了了 这时候我们的控制器返回
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)initProgressView
@@ -59,6 +99,8 @@
     NSLog(@"%s",__FUNCTION__);
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
 }
+
+
 
 #pragma mark - KVO
 // 计算wkWebView进度条
@@ -91,6 +133,14 @@
 {
     NSURLRequest *request = navigationAction.request;
     NSLog(@"%@",request.URL)
+    if ([request.URL.host isEqualToString:@"webview"]) {
+        NSArray *arr = [request.URL.absoluteString componentsSeparatedByString:@"address="];
+        NSString *address = arr[1];
+        ETDirectTransferController *vc = [[ETDirectTransferController alloc] init];
+        vc.address = address;
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
     //类似于UIWebView里面的那个返回Yes的功能
     decisionHandler(WKNavigationActionPolicyAllow);
 }
