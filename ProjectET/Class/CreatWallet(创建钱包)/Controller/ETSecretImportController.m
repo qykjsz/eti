@@ -267,6 +267,12 @@
         return;
     }
     
+    if (![self.setPassWord isEqualToString:self.comfirmPassWord]) {
+        [KMPProgressHUD showText:@"两次密码不一致,请重新输入"];
+        return;
+    }
+    
+    
     if (!self.isAgree) {
         
         [KMPProgressHUD showText:@"请同意阅读并同意服务及隐私条款"];
@@ -286,7 +292,6 @@
             model.mnemonicPhrase = [mnemonicPhrase componentsSeparatedByString:@" "];
             model.privateKey = privateKey;
             model.walletType = @"以太坊";
-            
            
             
             [HTTPTool requestDotNetWithURLString:@"et_import" parameters:@{@"address":address} type:kPOST success:^(id responseObject) {
