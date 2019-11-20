@@ -77,7 +77,7 @@
         }];
         
         UIButton *deletBtn = [[UIButton alloc]init];
-        [deletBtn setTitle:@"删除" forState:UIControlStateNormal];
+        [deletBtn setTitle:@"取消" forState:UIControlStateNormal];
         [deletBtn setTitleColor:UIColorFromHEX(0x999999, 1) forState:UIControlStateNormal];
         [deletBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
         deletBtn.tag = 0;
@@ -130,10 +130,9 @@
         
         [self dismissAction];
         
-        if ([self.delegate respondsToSelector:@selector(ETBackUpWalletViewDelegateDeletAction:)]) {
-            [self.delegate ETBackUpWalletViewDelegateDeletAction:self.model];
-        }
-        
+//        if ([self.delegate respondsToSelector:@selector(ETBackUpWalletViewDelegateDeletAction:)]) {
+//            [self.delegate ETBackUpWalletViewDelegateDeletAction:self.model];
+//        }
     }else {
         
         [self dismissAction];
