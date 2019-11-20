@@ -75,6 +75,8 @@
     self.pageTitleView.backgroundColor = UIColor.whiteColor;
     self.pageTitleView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 40);
     
+    
+   
    
     
     UIButton *button = self.pageTitleView.subviews.firstObject;
@@ -185,6 +187,8 @@
         }];
         [self addChildViewController:self.hoverPageViewController];
         [self.view addSubview:self.hoverPageViewController.view];
+        
+       
         
         [self bannerRequest];
         [self et_appnewsRequest];
@@ -368,6 +372,12 @@
         make.right.equalTo(topImage.mas_right).offset(-15);
         
     }];
+    
+    UIView *whiteBackView = [[UIView alloc]initWithFrame:CGRectMake(0, kStatusAndNavHeight, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    whiteBackView.backgroundColor = UIColor.whiteColor;
+    whiteBackView.clipsToBounds = YES;
+    whiteBackView.layer.cornerRadius = 15;
+    [self.view addSubview:whiteBackView];
 }
 #pragma mark -
 - (void)hoverPageViewController:(HoverPageViewController *)ViewController scrollViewDidScroll:(UIScrollView *)scrollView{

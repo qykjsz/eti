@@ -27,6 +27,8 @@
     if (self = [super initWithFrame:frame]) {
         
         self.backgroundColor = [UIColor whiteColor];
+        self.clipsToBounds = YES;
+        self.layer.cornerRadius = 15;
         
         UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, frame.size.height)];
         backView.backgroundColor = UIColor.whiteColor;

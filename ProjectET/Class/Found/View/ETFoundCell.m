@@ -16,13 +16,18 @@
         
         WEAK_SELF(self);
         self.iconImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fa_02"]];
+        self.iconImage.clipsToBounds = YES;
+        self.iconImage.contentMode = UIViewContentModeScaleAspectFit;
+        self.iconImage.layer.cornerRadius = 10;
+        self.iconImage.layer.borderWidth = 1;
+        self.iconImage.layer.borderColor = UIColorFromHEX(0xE0E0E0, 1).CGColor;
         [self.contentView addSubview:self.iconImage];
         [self.iconImage mas_makeConstraints:^(MASConstraintMaker *make) {
             
             STRONG_SELF(self);
             make.centerX.equalTo(self.contentView.mas_centerX);
             make.top.equalTo(self.contentView.mas_top).offset(10);
-            make.width.height.mas_equalTo(33);
+            make.width.height.mas_equalTo(44);
             
         }];
         
