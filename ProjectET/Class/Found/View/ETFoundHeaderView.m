@@ -46,7 +46,7 @@
         [detailTab registerClass:[UITableViewCell class] forCellReuseIdentifier:@"123"];
         detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
            
-            STRONG_SELF(self);
+
             [detailTab.mj_header endRefreshing];
             
         }];
