@@ -23,6 +23,7 @@
 #import "ETFoundHeaderView.h"
 
 #import "UUID.h"
+#import <objc/runtime.h>
 
 @interface ETFoundSegmetnController ()<HoverPageViewControllerDelegate,ETFoundHeaderViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -349,7 +350,9 @@
     field.font = [UIFont systemFontOfSize:14];
     field.layer.masksToBounds = YES;
     field.layer.cornerRadius = 15;
-    [field setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    Ivar ivar =  class_getInstanceVariable([UITextField class], "_placeholderLabel");
+    UILabel *placeholderLabel = object_getIvar(field, ivar);
+    placeholderLabel.textColor = [UIColor whiteColor];
     field.leftViewMode = UITextFieldViewModeAlways;
     field.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 40, 10)];
     UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(15, -3, 16, 18)];

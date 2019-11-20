@@ -40,7 +40,7 @@
            
             make.left.equalTo(self.coninImage.mas_right).offset(15);
             make.centerY.equalTo(self.coninImage.mas_centerY);
-            
+            make.width.mas_equalTo(60);
         }];
         
         
@@ -49,6 +49,7 @@
            
             make.top.equalTo(backImage.mas_top).offset(15);
             make.right.equalTo(backImage.mas_right).offset(-25);
+             make.left.equalTo(self.coninName.mas_right).offset(5);
             
         }];
         
@@ -57,6 +58,7 @@
            
             make.bottom.equalTo(backImage.mas_bottom).offset(-15);
             make.right.equalTo(backImage.mas_right).offset(-25);
+            make.left.equalTo(self.coninName.mas_right).offset(5);
             
         }];
     }
@@ -73,7 +75,7 @@
     [self.coninImage sd_setImageWithURL:[NSURL URLWithString:model.img]];
 
     self.coninName.text = model.name;
-    self.topDollor.text = model.number;
+    self.topDollor.text = model.number ;
     self.bottomDollor.text = [NSString stringWithFormat:@"$ %@",model.usdtnumber];
     
 }
@@ -118,6 +120,7 @@
         _topDollor = [[UILabel alloc]init];
         _topDollor.font = [UIFont systemFontOfSize:20];
         _topDollor.text = @"22.8862";
+        _topDollor.textAlignment = NSTextAlignmentRight;
         _topDollor.textColor = UIColorFromHEX(0x333333, 1);
     }
     return _topDollor;
@@ -128,6 +131,7 @@
     if (!_bottomDollor) {
         _bottomDollor = [[UILabel alloc]init];
         _bottomDollor.font = [UIFont systemFontOfSize:12];
+        _bottomDollor.textAlignment = NSTextAlignmentRight;
         _bottomDollor.text = @"$ 7652.61";
         _bottomDollor.textColor = UIColorFromHEX(0x99AFD9, 1);
     }

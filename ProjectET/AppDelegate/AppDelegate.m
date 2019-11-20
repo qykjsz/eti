@@ -32,10 +32,10 @@
     
     NSMutableArray *walletArr = WALLET_ARR;
     if (walletArr.count != 0) {
-        ETRootViewController *rootVC = [ETRootViewController new];
+        ETRootViewController *rootVC = [[ETRootViewController alloc]init];
         self.window.rootViewController = rootVC;
     }else {
-        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[ETCoinMainViewController new]];
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[[ETCoinMainViewController alloc]init]];
         self.window.rootViewController = nav;
     }
     
@@ -46,13 +46,13 @@
     [[IQKeyboardManager sharedManager] setEnableAutoToolbar:YES];
     [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
     
-    [self ET_VCSetting];
+//    [self ET_VCSetting];
 
     // 启动动画
     [self imageGif:^{
-        
+
     }];
-    
+
     
 
     return YES;
