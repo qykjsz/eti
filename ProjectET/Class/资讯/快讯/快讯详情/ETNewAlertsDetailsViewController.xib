@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETNewAlertsDetailsViewController">
             <connections>
                 <outlet property="img_code" destination="fwU-Y6-aAK" id="VAk-7J-zC7"/>
+                <outlet property="img_title" destination="b5l-gd-OYa" id="Ic4-0I-tQn"/>
                 <outlet property="lab_source" destination="MPc-N6-Kmb" id="KbC-Nv-eKo"/>
                 <outlet property="lab_time" destination="En7-XX-Hds" id="QEP-uG-epF"/>
                 <outlet property="lab_title" destination="gKf-fr-0gD" id="VVQ-ya-uW1"/>
