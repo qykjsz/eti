@@ -306,12 +306,13 @@
 
 - (void)ETHomeTableHeaderViewBannerDelegateClickAction:(NSInteger)tag {
     
-    ETNewsDetailController *dVC = [ETNewsDetailController new];
-    newsData *data = self.homeModel.data.news[tag];
-    dVC.Id = data.Id;
-    dVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:dVC animated:YES];
-    
+    if (self.homeModel.data.news.count != 0) {
+        ETNewsDetailController *dVC = [ETNewsDetailController new];
+        newsData *data = self.homeModel.data.news[tag];
+        dVC.Id = data.Id;
+        dVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:dVC animated:YES];
+    }
 }
 
 #pragma mark - HomeHeaderViewDelegate

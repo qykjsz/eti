@@ -14,6 +14,8 @@
 
 @interface ETHomeTableHeaderView()<ETNoticeScrollViewDelegate>
 
+@property (nonatomic,strong) UIButton *moreBtn;
+
 @end
 
 @implementation ETHomeTableHeaderView
@@ -209,14 +211,15 @@
         [self addSubview:self.scrollView];
         
         
-        UIButton *moreBtn = [[UIButton alloc]init];
-        moreBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -60);
-        [moreBtn setTitle:@"更多" forState:UIControlStateNormal];
-        [moreBtn setTitleColor:UIColorFromHEX(0x1758FB, 1) forState:UIControlStateNormal];
-        moreBtn.titleLabel.font = [UIFont systemFontOfSize:12];
-        [moreBtn addTarget:self action:@selector(moreClick) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:moreBtn];
-        [moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        self.moreBtn = [[UIButton alloc]init];
+        self.moreBtn.hidden = true;
+        self.moreBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -60);
+        [self.moreBtn setTitle:@"更多" forState:UIControlStateNormal];
+        [self.moreBtn setTitleColor:UIColorFromHEX(0x1758FB, 1) forState:UIControlStateNormal];
+        self.moreBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+        [self.moreBtn addTarget:self action:@selector(moreClick) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.moreBtn];
+        [self.moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             
             make.right.equalTo(self.mas_right).offset(-10);
             make.centerY.equalTo(lunboImage.mas_centerY);
@@ -257,7 +260,11 @@
 - (void)setContentArr:(NSArray *)contentArr {
     
     _contentArr = contentArr;
-    
+    if (contentArr.count != 0) {
+        self.moreBtn.hidden = false;
+    }else {
+        self.moreBtn.hidden = true;
+    }
     [self.scrollView setContents:contentArr];
     
 }

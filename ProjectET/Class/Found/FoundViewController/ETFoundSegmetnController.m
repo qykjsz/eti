@@ -40,6 +40,8 @@
 
 @property (nonatomic,strong) UITableView *detailTab;
 
+@property (nonatomic,strong) NSMutableArray *dappArr;
+
 @end
 
 @implementation ETFoundSegmetnController
@@ -67,6 +69,7 @@
     [self pageLayout];
     
     self.viewControllers = [NSMutableArray array];
+    self.dappArr = [NSMutableArray array];
     /// 指示器
     self.pageTitleView = [UIView new];
     self.pageTitleView.backgroundColor = UIColor.whiteColor;
@@ -156,17 +159,6 @@
         [self addChildViewController:self.hoverPageViewController];
         [self.view addSubview:self.hoverPageViewController.view];
         
-//        self.detailTab = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-//        [self.detailTab registerClass:[UITableViewCell class] forCellReuseIdentifier:@"123"];
-//        self.detailTab.delegate = self;
-//        self.detailTab.dataSource = self;
-//        [self.hoverPageViewController.view addSubview:self.detailTab];
-//        self.detailTab.tableHeaderView = self.hoverPageViewController.view;
-//        [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
-//
-//            make.edges.equalTo(self.view);
-//
-//        }];
         [self bannerRequest];
         [self et_appnewsRequest];
         
@@ -191,7 +183,10 @@
 }
 
 - (void)ETFoundHeaderViewDAppDelegateCollectionClick:(NSInteger)tag {
-    if (tag == 1) {
+    
+    FoundDapp *model = self.dappArr[tag];
+    
+    if (tag == 0) {
         NSURL *url = [NSURL URLWithString:@"ETUnion://"];
         BOOL isCanOpen = [[UIApplication sharedApplication] canOpenURL:url];
         if (isCanOpen) {
@@ -208,7 +203,7 @@
                 
             }];
         }
-    }else if(tag == 2){
+    }else if(tag == 1){
         ETFoundHTMLViewController *vc = [[ETFoundHTMLViewController alloc]init];
         vc.url = @"https://ceshi.etac.io/dist";
         vc.hidesBottomBarWhenPushed = YES;
@@ -217,6 +212,12 @@
         //        vc.url = @"https://ceshi.etac.io/dist";
         //        vc.hidesBottomBarWhenPushed = YES;
         //        [self.navigationController pushViewController:vc animated:true];
+    }else {
+        ETHTMLViewController *vc = [ETHTMLViewController new];
+        vc.url = model.url;
+        vc.title = model.name;
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:true];
     }
 }
 
@@ -260,21 +261,21 @@
     [dict setValue:uuidString forKey:@"contacts"];
     [HTTPTool requestDotNetWithURLString:@"et_appnews" parameters:dict type:kPOST success:^(id responseObject) {
         
-        NSMutableArray *dataArr = [NSMutableArray array];
+        [self.dappArr removeAllObjects];
         ETFoundDappModel *model = [ETFoundDappModel mj_objectWithKeyValues:responseObject];
-        FoundDapp *data = [[FoundDapp alloc]init];
-        data.img = @"fx_01";
-        data.name = @"猎鱼达人";
-        [dataArr addObject:data];
+//        FoundDapp *data = [[FoundDapp alloc]init];
+//        data.img = @"ET合约";
+//        data.name = @"猎鱼达人";
+//        [dataArr addObject:data];
+//
+//        FoundDapp *data1 = [[FoundDapp alloc]init];
+//        data1.img = @"fa_02";
+//        data1.name = @"即可金服";
+//        [dataArr addObject:data1];
         
-        FoundDapp *data1 = [[FoundDapp alloc]init];
-        data1.img = @"fa_02";
-        data1.name = @"即可金服";
-        [dataArr addObject:data1];
+        [self.dappArr addObjectsFromArray:model.data];
         
-        [dataArr addObjectsFromArray:model.data];
-        
-        self.headerView.topArr = dataArr;
+        self.headerView.topArr = self.dappArr;
         
     } failure:^(NSError *error) {
         

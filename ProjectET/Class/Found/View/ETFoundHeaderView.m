@@ -227,14 +227,8 @@
         }
     }else {
         
-        if (indexPath.item == 0) {
-            if ([self.delegate respondsToSelector:@selector(ETFoundHeaderViewDAppDelegateCollectionClick:)]) {
-                [self.delegate ETFoundHeaderViewDAppDelegateCollectionClick:1];
-            }else if (indexPath.item == 1){
-                if ([self.delegate respondsToSelector:@selector(ETFoundHeaderViewDAppDelegateCollectionClick:)]) {
-                    [self.delegate ETFoundHeaderViewDAppDelegateCollectionClick:2];
-                }
-            }
+        if ([self.delegate respondsToSelector:@selector(ETFoundHeaderViewDAppDelegateCollectionClick:)]) {
+            [self.delegate ETFoundHeaderViewDAppDelegateCollectionClick:indexPath.row];
         }
         
     }
