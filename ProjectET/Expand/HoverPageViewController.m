@@ -14,8 +14,7 @@
 @implementation HoverChildViewController
 @end
 
-@interface HoverPageScrollView : UIScrollView<UIGestureRecognizerDelegate>
-@end
+
 
 @implementation HoverPageScrollView
 
@@ -29,7 +28,6 @@
 @end
 
 @interface HoverPageViewController ()<UIScrollViewDelegate,HoverChildViewControllerDelegate>
-@property(nonatomic, strong) HoverPageScrollView *mainScrollView;
 @property(nonatomic, strong) UIScrollView *pageScrollView;
 @end
 
@@ -59,7 +57,7 @@
 
 - (void)prepareView{
     self.mainScrollView = [[HoverPageScrollView alloc]init];
-    self.mainScrollView.bounces = NO;
+//    self.mainScrollView.bounces = NO;
     self.mainScrollView.delegate = self;
     self.mainScrollView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:self.mainScrollView];
