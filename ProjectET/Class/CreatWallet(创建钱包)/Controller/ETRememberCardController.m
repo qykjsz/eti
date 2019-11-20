@@ -87,7 +87,7 @@
     }else if (indexPath.row == 2) {
         ETCreatWalletInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETCreatWalletInfoCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.titleLb.text = @"取回路劲";
+        cell.titleLb.text = @"取回路径";
         cell.subTitle.text = @"m/44’/66‘/0/0";
         return cell;
     }else {

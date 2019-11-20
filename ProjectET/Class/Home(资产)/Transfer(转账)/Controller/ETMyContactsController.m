@@ -12,6 +12,7 @@
 
 #import "ETMyContactsCell.h"
 #import "ETMycontactListModel.h"
+#import "UUID.h"
 
 @interface ETMyContactsController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -49,8 +50,8 @@
 
 - (void)listRequest {
     
-    NSUUID *uuid = [UIDevice currentDevice].identifierForVendor;
-    [HTTPTool requestDotNetWithURLString:@"et_contactsall" parameters:@{@"contacts":uuid.UUIDString} type:kPOST success:^(id responseObject) {
+    NSString *uuid = [UUID getUUID];
+    [HTTPTool requestDotNetWithURLString:@"et_contactsall" parameters:@{@"contacts":uuid} type:kPOST success:^(id responseObject) {
         
         self.model = [ETMycontactListModel mj_objectWithKeyValues:responseObject];
         [self.detailTab reloadData];
@@ -136,6 +137,14 @@
         _detailTab.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_detailTab registerNib:[UINib nibWithNibName:@"ETMyContactsCell" bundle:nil] forCellReuseIdentifier:@"ETMyContactsCell"];
         _detailTab.tableFooterView = [self footerView];
+        WEAK_SELF(self);
+        _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+           
+            STRONG_SELF(self);
+            [self.detailTab.mj_header endRefreshing];
+            [self listRequest];
+            
+        }];
     }
     return _detailTab;
 }

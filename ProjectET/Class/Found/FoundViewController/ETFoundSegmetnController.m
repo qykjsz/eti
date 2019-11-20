@@ -49,7 +49,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    [self et_appnewsRequest];
+    
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
 }
@@ -168,7 +168,7 @@
         }else {
             height = model.data.count/5 + 1;
         }
-        self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 332 + height * 80 + 20)];
+        self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 332 + height * 90 + 20)];
         self.headerView.delegate = self;
         self.headerView.dataArr = model.data;
         
@@ -261,7 +261,7 @@
     [dict setValue:uuidString forKey:@"contacts"];
     [HTTPTool requestDotNetWithURLString:@"et_appnew" parameters:dict type:kPOST success:^(id responseObject) {
         
-        NSLog(@"%@",responseObject);
+        [self et_appnewsRequest];
         
     } failure:^(NSError *error) {
         

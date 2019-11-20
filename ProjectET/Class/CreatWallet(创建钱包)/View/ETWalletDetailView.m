@@ -90,9 +90,27 @@
         NSMutableArray *colorArr = [NSMutableArray array];
         for (int i = 0; i<progress.count; i++) {
             proportionData *data = progress[i];
-            UIColor *color = [Tools getRandomColor];
-            [colorArr addObject:color];
-            data.color = color;
+            if ([data.name isEqualToString:@"ET"]) {
+                data.color = UIColor.whiteColor;
+            }else if ([data.name isEqualToString:@"ETH"]) {
+                data.color = UIColorFromHEX(0x93AEFC, 1);
+            }else if ([data.name isEqualToString:@"USDT"]) {
+                data.color = UIColorFromHEX(0xFFB632, 1);
+            }else if ([data.name isEqualToString:@"EOS"]) {
+                data.color = UIColorFromHEX(0xEA566D, 1);
+            }else {
+                data.color = [Tools getRandomColor];
+            }
+            //            UIColor *color = [Tools getRandomColor];
+            //            [colorArr addObject:color];
+            //            data.color = color;
+            //            if (i == 0) {
+            //                 data.bili = [NSString stringWithFormat:@"%.1f",12.0];
+            //            }else if (i == 1) {
+            //                data.bili = [NSString stringWithFormat:@"%.1f",30.0];
+            //            }else {
+            //                data.bili = [NSString stringWithFormat:@"%.1f",58.0];
+            //            }
         }
         // 第一根背景色为黑色的进度条，只做展示，方便后面的叠加
         UIView *grayView = [[UIView alloc]initWithFrame:CGRectMake(left, top, lineWidth, 4)];
@@ -114,7 +132,7 @@
         
         for (int i = 0 ; i<resultStrArray.count; i++) {
             proportionData *data = resultStrArray[i];
-            CGFloat width = [data.bili floatValue]/100;
+            CGFloat width = [data.bili floatValue];
             UIView *lineView = [[UIView alloc] init];
             lineView.frame = CGRectMake(0, 0, width*lineWidth, 4);
             lineView.backgroundColor = data.color;
@@ -126,8 +144,8 @@
             
             
             proportionData *data = progress[i];
-            
-            NSString *textString = [NSString stringWithFormat:@"·%@ %@%%",data.name,data.bili];
+            CGFloat bill = [data.bili floatValue] * 100;
+            NSString *textString = [NSString stringWithFormat:@"·%@ %.1f%%",data.name,bill];
             UILabel *detailLb = [[UILabel alloc]init];
             
             detailLb.textColor = UIColorFromHEX(0xF5F5F5, 1);
@@ -135,7 +153,7 @@
             //            detailLb.textAlignment = NSTextAlignmentCenter;
             NSMutableAttributedString *AttributedStr = [[NSMutableAttributedString alloc] initWithString:textString];
             [AttributedStr addAttribute:NSForegroundColorAttributeName
-                                  value:colorArr[i]
+                                  value:data.color
                                   range:NSMakeRange(0, 1)];
             [AttributedStr addAttribute:NSForegroundColorAttributeName
                                   value:UIColor.whiteColor

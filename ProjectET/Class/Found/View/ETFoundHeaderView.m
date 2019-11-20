@@ -258,7 +258,7 @@
     }
     [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
        
-        make.height.mas_equalTo(height * 80 + 10);
+        make.height.mas_equalTo(height * 90 + 10);
         
     }];
 
