@@ -50,6 +50,7 @@
     
     [super viewWillAppear:animated];
     [self et_appnewsRequest];
+    [self handpickRequest];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
 }
@@ -122,6 +123,32 @@
         
     }];
 
+}
+
+
+#pragma mark - 精选app接口
+- (void)handpickRequest {
+    
+    [HTTPTool requestDotNetWithURLString:@"et_app" parameters:nil type:kPOST success:^(id responseObject) {
+        
+        
+        ETFoundDappModel *model = [ETFoundDappModel mj_objectWithKeyValues:responseObject];
+        
+        NSInteger height = model.data.count % 5;
+        if (height == 0) {
+            height = model.data.count/5;
+        }else {
+            height = model.data.count/5 + 1;
+        }
+        self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 332 + height * 80 + 20)];
+//        self.hoverPageViewController.headerView = self.headerView;
+        self.headerView.delegate = self;
+        self.headerView.dataArr = model.data;
+        
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 - (void)setController {

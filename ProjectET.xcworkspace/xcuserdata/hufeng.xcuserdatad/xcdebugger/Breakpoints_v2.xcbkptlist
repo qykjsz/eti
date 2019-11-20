@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/Found/FoundViewController/ETFoundSegmetnController.m"
-            timestampString = "595913786.4660521"
+            timestampString = "595914711.8030159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "-ETFoundHeaderViewDAppDelegateCollectionClick:"
             landmarkType = "7">
          </BreakpointContent>
@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/Found/FoundViewController/ETFoundSegmetnController.m"
-            timestampString = "595913786.466391"
+            timestampString = "595914711.803435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "-ETFoundHeaderViewDAppDelegateCollectionClick:"
             landmarkType = "7">
          </BreakpointContent>
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/Found/FoundViewController/ETFoundSegmetnController.m"
-            timestampString = "595913786.46659"
+            timestampString = "595914711.803647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "-ETFoundHeaderViewDAppDelegateCollectionClick:"
             landmarkType = "7">
          </BreakpointContent>
