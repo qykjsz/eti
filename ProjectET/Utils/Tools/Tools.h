@@ -130,6 +130,8 @@
  */
 + (NSString *)dataTojsonString:(id)object;
 
+
+
 /**
  将json字符串转为字典
 
@@ -185,6 +187,14 @@
  *  @return NSdate
  */
 + (NSString *)dateToString:(NSDate *)date;
+
+/**
+ *  NSdate转时间字符串
+ *
+ *
+ *  @return NSdate
+ */
++ (NSString *)dateToCNString:(NSDate *)date;
 
 /**
  *  时间戳转化为时间字符串

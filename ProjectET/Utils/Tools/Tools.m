@@ -380,6 +380,27 @@
     
 }
 
+
++ (NSString *)dateToCNString:(NSDate *)date {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSArray *weekdays = [NSArray arrayWithObjects: @"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday",@"Sunday", nil];
+
+    NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"];
+
+    [calendar setTimeZone: timeZone];
+
+    NSCalendarUnit calendarUnit = NSCalendarUnitWeekday;
+
+    NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:date];
+
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM月yyyy年"];
+    NSString *strDate = [NSString stringWithFormat:@"%@,%@", [weekdays objectAtIndex:theComponents.weekday],[dateFormatter stringFromDate:date]];
+    
+    return strDate;
+    
+}
+
 +(NSString *)timestampSwitchTime:(long long)timestamp andFormatter:(NSString *)format{
     
     

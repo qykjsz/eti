@@ -72,16 +72,22 @@
             
             make.top.equalTo(self.tipsLb.mas_bottom).offset(15);
             make.left.equalTo(backImage.mas_left).offset(15);
+            make.right.equalTo(backImage.mas_right).offset(-150);
             
         }];
         
         [self addSubview:self.subMoneyLb];
         [self.subMoneyLb mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+            make.width.mas_offset(120);
             make.right.equalTo(backImage.mas_right).offset(-15);
             make.bottom.equalTo(self.moneyLb.mas_bottom).offset(-10);
             
         }];
+        
+        
+//        [self.tipsLb mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.right.equalTo(self.subMoneyLb.mas_left).offset(10);
+//        }];
         
         [self addSubview:self.todayLb];
         [self.todayLb mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -125,6 +131,7 @@
         _subMoneyLb = [[UILabel alloc]init];
         _subMoneyLb.font = [UIFont systemFontOfSize:12];
         _subMoneyLb.textColor = UIColorFromHEX(0xffffff, 1);
+        _subMoneyLb.textAlignment = NSTextAlignmentRight;
 //        _subMoneyLb.text = @"≈$ 638383.7889";
     }
     return _subMoneyLb;

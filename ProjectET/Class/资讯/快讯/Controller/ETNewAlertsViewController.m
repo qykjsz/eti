@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.clearColor;
-    self.lab_time.text = [Tools dateToString:NSDate.date];
+    self.lab_time.text = [Tools dateToCNString:NSDate.date];
     self.dataSource  = [NSMutableArray array];
     self.currentPage = 0;
     [self.tableView registerNib:[UINib nibWithNibName:@"ETNewAlertsCell" bundle:nil] forCellReuseIdentifier:@"ETNewAlertsCell"];
@@ -57,7 +57,7 @@
     [HTTPTool requestDotNetWithURLString:@"et_newsflash" parameters:@{@"page":[NSString stringWithFormat:@"%ld",(long)self.currentPage]}    type:kPOST success:^(id responseObject) {
         if (self.currentPage == 0) {
             [self.dataSource removeAllObjects];
-            self.lab_time.text = [Tools dateToString:NSDate.date];
+             self.lab_time.text = [Tools dateToCNString:NSDate.date];
         }
         
         NSLog(@"%@",responseObject);
