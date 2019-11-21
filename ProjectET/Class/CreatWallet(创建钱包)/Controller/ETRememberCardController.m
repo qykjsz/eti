@@ -270,7 +270,7 @@
     }
     
     self.view.userInteractionEnabled = NO;
-    [KMPProgressHUD showProgressWithText:@"正在导入"];
+       [SVProgressHUD showInfoWithStatus:@"正在导入"];
     [HSEther hs_inportMnemonics:self.secretKey pwd:self.setPassWord block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, BOOL suc, HSWalletError error) {
         
         self.view.userInteractionEnabled = YES;
@@ -282,7 +282,7 @@
             model.keyStore = keyStore;
             model.address = address;
             model.mnemonicPhrase = [mnemonicPhrase componentsSeparatedByString:@" "];
-            model.privateKey = privateKey;
+            model.privateKey = [privateKey substringFromIndex:2];
             model.walletType = @"以太坊";
             
            

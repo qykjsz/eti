@@ -171,7 +171,7 @@
 
 - (void)deleAction {
     
-    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    ETWalletModel *model = [ETWalletManger getModelIndex:self.selectWallect];
     [ETWalletManger deleWallet:model];
     
     [KMPProgressHUD showText:@"删除成功"];
@@ -193,7 +193,7 @@
             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.homeModel.data.today];
         }
     }else {
-        self.headerView.moneyLb.text = @"***.**";
+        self.headerView.moneyLb.text = @"*****";
         self.headerView.todayLb.text = @"*****";
     }
 }

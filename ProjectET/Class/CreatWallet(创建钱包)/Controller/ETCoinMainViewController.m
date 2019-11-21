@@ -90,7 +90,7 @@
             }
                 break;
             case 2:{
-                cell.titleLb.text = @"访客模式";
+                cell.titleLb.text = @"资产正在保护中";
                 cell.iconImage.image = [UIImage imageNamed:@"dc_fk"];
                 cell.subTtitlLb.text = @"使用固定账号登录";
             }

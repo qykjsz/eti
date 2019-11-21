@@ -44,7 +44,7 @@
     _appModel = appModel;
     [self.iconImage sd_setImageWithURL:[NSURL URLWithString:appModel.img]];
     self.titleLb.text = appModel.name;
-    self.subTitle.text = @"阿莱空间发了；四开饭了；ask单分类；奥孔扥将；奥孔单反了；奥孔单反了；奥孔单反了； 卡塞减肥";
+    self.subTitle.text = appModel.text;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

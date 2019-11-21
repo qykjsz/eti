@@ -52,6 +52,16 @@
         self.walletArr = [NSMutableArray array];
         [self.walletArr addObjectsFromArray:WALLET_ARR];
         
+        for (int i = 0; i<self.walletArr.count; i++) {
+            
+            ETWalletModel *model = self.walletArr[i];
+            if (model.isCurrentWallet) {
+                [self.walletArr insertObject:model atIndex:0];
+                [self.walletArr removeObjectAtIndex:i+1];
+                break;
+            }
+        }
+        
         for (int i =0; i<8; i++) {
             
             ETMyWalletLeftModel *model = [ETMyWalletLeftModel new];

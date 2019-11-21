@@ -89,8 +89,8 @@
         self.bottomDollor.text = [NSString stringWithFormat:@"$ %@",_model.usdtnumber];
     }else {
 //        self.coninName.text = @"*";
-        self.topDollor.text = @"***.**";
-        self.bottomDollor.text = @"***.**";
+        self.topDollor.text = @"*****";
+        self.bottomDollor.text = @"*****";
     }
 }
 

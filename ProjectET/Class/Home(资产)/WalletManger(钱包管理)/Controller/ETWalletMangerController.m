@@ -7,7 +7,7 @@
 //
 
 #import "ETWalletMangerController.h"
-#import "ETCreatMyWalletViewController.h"
+#import "ETCreatWalletViewController.h"
 #import "ETWalletMangerView.h"
 #import "ETWalletDetailController.h"
 @interface ETWalletMangerController ()<ETWalletMangerViewDelegate>
@@ -98,7 +98,7 @@
 #pragma mark - ETWalletMangerViewDelegate
 - (void)ETWalletMangerViewDelegateAddWallet {
     
-    ETCreatMyWalletViewController *cVC = [ETCreatMyWalletViewController new];
+    ETCreatWalletViewController *cVC = [ETCreatWalletViewController new];
     [self.navigationController pushViewController:cVC animated:YES];
     
 }

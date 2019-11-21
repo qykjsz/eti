@@ -36,6 +36,7 @@
     
     [self.walletArr removeAllObjects];
     [self.walletArr addObjectsFromArray:WALLET_ARR];
+    [self.rightTab reloadData];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
