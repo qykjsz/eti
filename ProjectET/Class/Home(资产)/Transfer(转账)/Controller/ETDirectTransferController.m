@@ -322,6 +322,112 @@
     
 }
 
+- (void)virferimAciton {
+    
+    
+    [HTTPTool requestDotNetWithURLString:@"et_node" parameters:nil type:kPOST success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        [KMPProgressHUD dismissProgress];
+        NSString *urlString = responseObject[@"data"];
+        NSLog(@"%@",urlString);
+        
+        //                [SVProgressHUD showWithStatus:@"正在转账"];
+        //                ETWalletModel *model = [ETWalletManger getCurrentWallet];
+        //                [HSEther ETTest_hs_sendToAssress:self.address money:self.countString tokenETH:self.toToken decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:[NSString stringWithFormat:@"%zd",self.gasValue] gasLimit:self.gaslimit block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
+        //
+        //                    if (suc) {
+        //                        [KMPProgressHUD showProgressWithText:@"转账成功"];
+        //                    }else {
+        //                        [KMPProgressHUD showProgressWithText:@"转账失败"];
+        //                    }
+        //
+        //                }];0xa51c50c880d389b5bbd1c76308d3b544f54f39a4
+        [SVProgressHUD showWithStatus:@"正在转账"];
+        if ([self.coinNameString isEqualToString:@"ETH"]) {
+            self.toToken = nil;
+            self.decimalString = @"18";
+        }
+        ETWalletModel *model = [ETWalletManger getCurrentWallet];
+        [HSEther hs_sendToAssress:self.address ip:urlString money:self.countString tokenETH:self.toToken decimal:self.decimalString currentKeyStore:model.keyStore pwd:model.password gasPrice:[NSString stringWithFormat:@"%zd",self.gasValue] gasLimit:self.gaslimit block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
+            
+            if (suc) {
+                //                            [SVProgressHUD showWithStatus:@"转账成功"];
+                [KMPProgressHUD showText:@"转账成功"];
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }else {
+                [KMPProgressHUD showText:@"转账失败"];
+            }
+        }];
+        
+        
+    } failure:^(NSError *error) {
+        [KMPProgressHUD dismissProgress];
+        self.view.userInteractionEnabled = YES;
+    }];
+    
+}
+
+- (void)testAction {
+    
+    
+            //  判断币种是否允许被转出
+            [SVProgressHUD showWithStatus:@"正在加载"];
+            [HTTPTool requestDotNetWithURLString:@"et_transaction" parameters:@{@"name":self.coinNameString} type:kPOST success:^(id responseObject) {
+                [SVProgressHUD dismiss];
+                self.view.userInteractionEnabled = YES;
+                if ([Tools checkStringIsEmpty:self.address]) {
+                    [SVProgressHUD showInfoWithStatus:@"转账地址不能为空"];
+                    return;
+                }
+    
+                if ([Tools checkStringIsEmpty:self.countString]) {
+                    [SVProgressHUD showInfoWithStatus:@"转账数量不能为空"];
+                    return;
+                }
+    
+    
+                if ([Tools checkStringIsEmpty:self.gaslimit]) {
+                    [SVProgressHUD showInfoWithStatus:@"矿工费不能为空"];
+                    return;
+                }
+                
+                UIAlertController *alter = [UIAlertController alertControllerWithTitle:@"请输入密码" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+                [alter addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                    
+                    textField.placeholder = @"请输入密码";
+                    textField.secureTextEntry = YES;
+                    
+                }];
+                //添加一个取消按钮
+                [alter addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+                
+                [alter addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    
+                    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+                    UITextField *envirnmentNameTextField = alter.textFields.firstObject;
+                    if (![model.password isEqualToString:envirnmentNameTextField.text]) {
+                        [KMPProgressHUD showText:@"密码不正确"];
+                    }else {
+                        [self virferimAciton];
+                    }
+                }]];
+                
+                [self.navigationController presentViewController:alter animated:YES completion:nil];
+                
+            } failure:^(NSError *error) {
+                [KMPProgressHUD dismissProgress];
+                self.view.userInteractionEnabled = YES;
+            }];
+                
+    
+    
+                
+    
+    
+    
+}
+
 #pragma Mark - View
 - (UIView *)footerView {
     
@@ -334,106 +440,7 @@
     clickBtn.clipsToBounds = YES;
     clickBtn.layer.cornerRadius = 5;
     
-   
-    
-    WEAK_SELF(self);
-    [clickBtn bk_whenTapped:^{
-        STRONG_SELF(self);
-       
-        [KMPProgressHUD showText:@"请稍等"];
-        self.view.userInteractionEnabled = NO;
-        //判断币种是否允许被转出
-        [HTTPTool requestDotNetWithURLString:@"et_transaction" parameters:@{@"name":self.coinNameString} type:kPOST success:^(id responseObject) {
-            self.view.userInteractionEnabled = YES;
-            if ([Tools checkStringIsEmpty:self.address]) {
-                [SVProgressHUD showInfoWithStatus:@"转账地址不能为空"];
-                return;
-            }
-            
-            if ([Tools checkStringIsEmpty:self.countString]) {
-                [SVProgressHUD showInfoWithStatus:@"转账数量不能为空"];
-                return;
-            }
-            
-            
-            if ([Tools checkStringIsEmpty:self.gaslimit]) {
-                [SVProgressHUD showInfoWithStatus:@"矿工费不能为空"];
-                return;
-            }
-            
-            UIAlertController *alter = [UIAlertController alertControllerWithTitle:@"请输入密码" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-            [alter addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-                
-                textField.placeholder = @"请输入密码";
-                textField.secureTextEntry = YES;
-                
-            }];
-            
-            [alter addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                
-                ETWalletModel *model = [ETWalletManger getCurrentWallet];
-                UITextField *envirnmentNameTextField = alter.textFields.firstObject;
-                if (![model.password isEqualToString:envirnmentNameTextField.text]) {
-                     [KMPProgressHUD showText:@"密码不正确"];
-                    return;
-                }
-                
-                [HTTPTool requestDotNetWithURLString:@"et_node" parameters:nil type:kPOST success:^(id responseObject) {
-                    NSLog(@"%@",responseObject);
-                    
-                    [KMPProgressHUD dismissProgress];
-                    NSString *urlString = responseObject[@"data"];
-                    NSLog(@"%@",urlString);
-                    
-                    //                [SVProgressHUD showWithStatus:@"正在转账"];
-                    //                ETWalletModel *model = [ETWalletManger getCurrentWallet];
-                    //                [HSEther ETTest_hs_sendToAssress:self.address money:self.countString tokenETH:self.toToken decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:[NSString stringWithFormat:@"%zd",self.gasValue] gasLimit:self.gaslimit block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
-                    //
-                    //                    if (suc) {
-                    //                        [KMPProgressHUD showProgressWithText:@"转账成功"];
-                    //                    }else {
-                    //                        [KMPProgressHUD showProgressWithText:@"转账失败"];
-                    //                    }
-                    //
-                    //                }];0xa51c50c880d389b5bbd1c76308d3b544f54f39a4
-                    [SVProgressHUD showWithStatus:@"正在转账"];
-                    ETWalletModel *model = [ETWalletManger getCurrentWallet];
-                    [HSEther hs_sendToAssress:self.address ip:urlString money:self.countString tokenETH:self.toToken decimal:self.decimalString currentKeyStore:model.keyStore pwd:model.password gasPrice:[NSString stringWithFormat:@"%zd",self.gasValue] gasLimit:self.gaslimit block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
-                        if (suc) {
-//                            [SVProgressHUD showWithStatus:@"转账成功"];
-                            [KMPProgressHUD showText:@"转账成功"];
-                            [self.navigationController popViewControllerAnimated:YES];
-                        }else {
-                            [KMPProgressHUD showText:@"转账失败"];
-                        }
-                    }];
-                    
-                } failure:^(NSError *error) {
-                    [KMPProgressHUD dismissProgress];
-                    self.view.userInteractionEnabled = YES;
-                }];
-                
-               
-            }]];
-            
-            //添加一个取消按钮
-            [alter addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
-            
-            
-            [self.navigationController presentViewController:alter animated:YES completion:nil];
-
-            
-        } failure:^(NSError *error) {
-            [KMPProgressHUD dismissProgress];
-            self.view.userInteractionEnabled = YES;
-        }];
-        
-
-
-       
-    }];
-   
-    
+    [clickBtn addTarget:self action:@selector(testAction) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:clickBtn];
     return view;
 }

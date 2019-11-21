@@ -52,7 +52,7 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Mine/MineViewController/HelpViewController.m"
-                  timestampString = "596013133.515473"
+                  timestampString = "596019806.610015"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
@@ -67,7 +67,7 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Mine/MineViewController/HelpViewController.m"
-                  timestampString = "596013133.516772"
+                  timestampString = "596019806.611393"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
@@ -116,7 +116,7 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETAddContactsController.m"
-                  timestampString = "596013133.5235831"
+                  timestampString = "596019806.6189851"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
@@ -131,7 +131,7 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETAddContactsController.m"
-                  timestampString = "596013133.5247951"
+                  timestampString = "596019806.62076"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
@@ -139,22 +139,6 @@
                   offsetFromSymbolStart = "16">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/Controller/ETDirectTransferController.m"
-            timestampString = "596013133.315953"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "405"
-            endingLineNumber = "405"
-            landmarkName = "-footerView"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -171,38 +155,6 @@
             endingLineNumber = "297"
             landmarkName = "-clickAction"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[ETSecretImportController clickAction]_block_invoke"
-                  moduleName = "ProjectET"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/CreatWallet(%E5%88%9B%E5%BB%BA%E9%92%B1%E5%8C%85)/Controller/ETSecretImportController.m"
-                  timestampString = "596013133.537246"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "297"
-                  endingLineNumber = "297"
-                  offsetFromSymbolStart = "724">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[ETSecretImportController clickAction]_block_invoke_2"
-                  moduleName = "ProjectET"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/CreatWallet(%E5%88%9B%E5%BB%BA%E9%92%B1%E5%8C%85)/Controller/ETSecretImportController.m"
-                  timestampString = "596013133.53856"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "297"
-                  endingLineNumber = "297"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -219,38 +171,6 @@
             endingLineNumber = "284"
             landmarkName = "-clickAction"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ETSecretImportController clickAction]"
-                  moduleName = "ProjectET"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/CreatWallet(%E5%88%9B%E5%BB%BA%E9%92%B1%E5%8C%85)/Controller/ETSecretImportController.m"
-                  timestampString = "596013133.542897"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "284"
-                  endingLineNumber = "284"
-                  offsetFromSymbolStart = "1344">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[ETSecretImportController clickAction]_block_invoke"
-                  moduleName = "ProjectET"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/CreatWallet(%E5%88%9B%E5%BB%BA%E9%92%B1%E5%8C%85)/Controller/ETSecretImportController.m"
-                  timestampString = "596013133.544222"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "286"
-                  endingLineNumber = "286"
-                  offsetFromSymbolStart = "204">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -260,12 +180,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/Controller/ETDirectTransferController.m"
-            timestampString = "596013237.090754"
+            timestampString = "596019806.404809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "407"
-            endingLineNumber = "407"
-            landmarkName = "-footerView"
+            startingLineNumber = "377"
+            endingLineNumber = "377"
+            landmarkName = "-testAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -276,43 +196,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/Controller/ETDirectTransferController.m"
-            timestampString = "596013363.2620521"
+            timestampString = "596019962.667279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "401"
-            endingLineNumber = "401"
-            landmarkName = "-footerView"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
+            landmarkName = "-virferimAciton"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__40-[ETDirectTransferController footerView]_block_invoke_5"
+                  symbolName = "-[ETDirectTransferController virferimAciton]"
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETDirectTransferController.m"
-                  timestampString = "596013363.488464"
+                  timestampString = "596019962.892284"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "401"
-                  endingLineNumber = "401"
-                  offsetFromSymbolStart = "328">
+                  startingLineNumber = "328"
+                  endingLineNumber = "328"
+                  offsetFromSymbolStart = "52">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__40-[ETDirectTransferController footerView]_block_invoke_6"
+                  symbolName = "__44-[ETDirectTransferController virferimAciton]_block_invoke"
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETDirectTransferController.m"
-                  timestampString = "596013363.489924"
+                  timestampString = "596019962.893527"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "402"
-                  endingLineNumber = "402"
-                  offsetFromSymbolStart = "72">
+                  startingLineNumber = "328"
+                  endingLineNumber = "328"
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
