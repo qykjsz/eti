@@ -9,6 +9,7 @@
 #import "ETSecretImportController.h"
 #import "ETScanViewController.h"
 #import "ETRootViewController.h"
+#import "ETHTMLViewController.h"
 // cell
 #import "ETCreatYYViewCell.h"
 #import "ETCreatWalletInputCell.h"
@@ -191,7 +192,7 @@
     
     
     
-    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 150)];
+    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 190)];
     UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(10, 100, SCREEN_WIDTH - 20, 44)];
     btn.backgroundColor = UIColorFromHEX(0x1D57FF, 1);
     [btn setTitle:@"开始导入" forState:UIControlStateNormal];
@@ -235,6 +236,21 @@
         
         make.centerY.equalTo(selectBtn.mas_centerY);
         make.left.equalTo(tipsLb.mas_right).offset(5);
+        
+    }];
+    
+    UIButton *bottomBtn = [[UIButton alloc]init];
+    [bottomBtn setTitle:@"什么是私钥?" forState:UIControlStateNormal];
+    bottomBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [bottomBtn setTitleColor:UIColorFromHEX(0x1D57FF, 1) forState:UIControlStateNormal];
+    [bottomBtn addTarget:self action:@selector(questionClick) forControlEvents:UIControlEventTouchUpInside];
+    [backView addSubview:bottomBtn];
+    [bottomBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.top.equalTo(btn.mas_bottom).offset(0);
+        make.centerX.equalTo(backView.mas_centerX);
+        make.width.mas_equalTo(120);
+        make.height.mas_equalTo(40);
         
     }];
     
@@ -357,5 +373,13 @@
     self.isAgree = sender.selected;
     
 }
+
+- (void)questionClick {
+    ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
+     vc.url = @"https://etoken.etac.io/weburl/help.html?typeid=6";
+     vc.title = @"什么是私钥";
+     [self.navigationController pushViewController:vc animated:true];
+}
+
 
 @end

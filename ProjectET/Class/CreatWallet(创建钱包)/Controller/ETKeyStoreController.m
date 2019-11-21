@@ -9,6 +9,7 @@
 #import "ETKeyStoreController.h"
 #import "ETScanViewController.h"
 #import "ETRootViewController.h"
+#import "ETHTMLViewController.h"
 // cell
 #import "ETCreatYYViewCell.h"
 #import "ETCreatWalletInputCell.h"
@@ -148,7 +149,7 @@
     
     
     
-    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 150)];
+    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 190)];
     UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(10, 100, SCREEN_WIDTH - 20, 44)];
     btn.backgroundColor = UIColorFromHEX(0x1D57FF, 1);
     [btn setTitle:@"开始导入" forState:UIControlStateNormal];
@@ -206,7 +207,7 @@
         make.top.equalTo(btn.mas_bottom).offset(0);
         make.centerX.equalTo(backView.mas_centerX);
         make.width.mas_equalTo(120);
-        make.height.mas_equalTo(30);
+        make.height.mas_equalTo(40);
         
     }];
     
@@ -300,5 +301,12 @@
     sender.selected = !sender.selected;
     self.isAgree = sender.selected;
     
+}
+
+- (void)questionClick {
+    ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
+      vc.url = @"https://etoken.etac.io/weburl/help.html?typeid=7";
+      vc.title = @"什么是Keystore";
+      [self.navigationController pushViewController:vc animated:true];
 }
 @end
