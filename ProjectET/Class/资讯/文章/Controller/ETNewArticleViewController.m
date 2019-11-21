@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.clearColor;
-    self.lab_time.text = [Tools dateToString:NSDate.date];
+      self.lab_time.text = [Tools dateToCNString:NSDate.date];
     self.dataSource  = [NSMutableArray array];
     self.currentPage = 0;
     [self.tableView registerNib:[UINib nibWithNibName:@"ETNewArticleCell" bundle:nil] forCellReuseIdentifier:@"ETNewArticleCell"];
@@ -55,7 +55,7 @@
         NSLog(@"%@",responseObject);
         if (self.currentPage == 0) {
             [self.dataSource removeAllObjects];
-            self.lab_time.text = [Tools dateToString:NSDate.date];
+              self.lab_time.text = [Tools dateToCNString:NSDate.date];
         }
         self.model =[ETNewArticleModel mj_objectWithKeyValues:responseObject];
         [self.dataSource addObjectsFromArray:self.model.data.News];
