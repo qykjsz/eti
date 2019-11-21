@@ -391,8 +391,10 @@
             if (suc) {
                 //                            [SVProgressHUD showWithStatus:@"转账成功"];
                 [KMPProgressHUD showText:@"转账成功"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                });
                 
-                [self.navigationController popToRootViewControllerAnimated:YES];
             }else {
                 [KMPProgressHUD showText:@"转账失败"];
             }
@@ -450,7 +452,9 @@
                     ETWalletModel *model = [ETWalletManger getCurrentWallet];
                     UITextField *envirnmentNameTextField = alter.textFields.firstObject;
                     if (![model.password isEqualToString:envirnmentNameTextField.text]) {
-                        [KMPProgressHUD showText:@"密码不正确"];
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            [SVProgressHUD showInfoWithStatus:@"密码不正确"];
+                        });
                     }else {
                         [self virferimAciton];
                     }

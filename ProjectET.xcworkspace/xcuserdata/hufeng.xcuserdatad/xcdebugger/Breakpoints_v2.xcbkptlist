@@ -52,12 +52,12 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Mine/MineViewController/HelpViewController.m"
-                  timestampString = "596029012.585091"
+                  timestampString = "596029781.892874"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
                   endingLineNumber = "40"
-                  offsetFromSymbolStart = "79">
+                  offsetFromSymbolStart = "128">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -67,12 +67,12 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Mine/MineViewController/HelpViewController.m"
-                  timestampString = "596029012.587124"
+                  timestampString = "596029781.894107"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
                   endingLineNumber = "40"
-                  offsetFromSymbolStart = "15">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -116,12 +116,12 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETAddContactsController.m"
-                  timestampString = "596029012.5976861"
+                  timestampString = "596029781.900767"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
                   endingLineNumber = "174"
-                  offsetFromSymbolStart = "957">
+                  offsetFromSymbolStart = "1044">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -131,12 +131,12 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETAddContactsController.m"
-                  timestampString = "596029012.599636"
+                  timestampString = "596029781.902015"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
                   endingLineNumber = "174"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -180,7 +180,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/Controller/ETTransferViewController.m"
-            timestampString = "596029012.489924"
+            timestampString = "596029781.6952291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
@@ -196,7 +196,7 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETTransferViewController.m"
-                  timestampString = "596029012.6126699"
+                  timestampString = "596029782.214237"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "120"
@@ -211,7 +211,7 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETTransferViewController.m"
-                  timestampString = "596029012.614278"
+                  timestampString = "596029782.215605"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "120"
@@ -228,7 +228,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Controller/ETAssetsViewController.m"
-            timestampString = "596029012.490006"
+            timestampString = "596029781.695317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "481"
