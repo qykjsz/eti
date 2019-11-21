@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"推送通知";
-    
+    self.view.backgroundColor = UIColor.whiteColor;
     NSArray *titleArray = @[@"接收推送通知",@"转账通知",@"聊天消息通知"];
     for (int i = 0;  i < 3; i++) {
         UILabel *title = [ClassBaseTools labelWithFont:16 textColor:[UIColor blackColor] textAlignment:0];
