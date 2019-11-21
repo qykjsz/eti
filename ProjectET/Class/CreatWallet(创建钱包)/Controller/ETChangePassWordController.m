@@ -49,6 +49,7 @@
     ETAddContactsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETAddContactsCell"];
     cell.rowPath = indexPath;
     cell.delegate = self;
+    [cell.textfiled setSecureTextEntry:true];
     if (indexPath.row == 0) {
         cell.titleLb.text = @"当前密码";
         cell.textfiled.placeholder = @"请输入当前密码";
@@ -65,6 +66,7 @@
         cell.scanBtn.hidden = true;
         cell.textfiled.placeholder = @"请再次输入密码";
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
     
 }

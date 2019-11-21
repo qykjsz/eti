@@ -170,16 +170,19 @@
         }
         
         CGRect curretnFrame = CGRectZero;
-        for (int i = 0 ; i<resultStrArray.count; i++) {
-            proportionData *data = resultStrArray[i];
-//            CGFloat width = [data.bili floatValue];
-            UIView *lineView = [[UIView alloc] init];
-            lineView.frame = CGRectMake(CGRectGetMaxX(curretnFrame), 0, [data.bili floatValue]/totalCount * lineWidth, 4);
-            lineView.backgroundColor = data.color;
-            curretnFrame = lineView.frame;
-            [grayView addSubview:lineView];
+        if (totalCount != 0.0) {
+              for (int i = 0 ; i<resultStrArray.count; i++) {
+                        proportionData *data = resultStrArray[i];
+            //            CGFloat width = [data.bili floatValue];
+                        UIView *lineView = [[UIView alloc] init];
+                        lineView.frame = CGRectMake(CGRectGetMaxX(curretnFrame), 0, [data.bili floatValue]/totalCount * lineWidth, 4);
+                        lineView.backgroundColor = data.color;
+                        curretnFrame = lineView.frame;
+                        [grayView addSubview:lineView];
+                    }
+                
         }
-    
+      
         UIScrollView *titleScro = [[UIScrollView alloc]initWithFrame:CGRectMake(20, 200, SCREEN_WIDTH-40, 25)];
         [titleScro setContentSize:CGSizeMake(progress.count * 100, 0)];
         titleScro.showsHorizontalScrollIndicator = false;
