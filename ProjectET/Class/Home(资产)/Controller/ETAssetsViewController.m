@@ -472,6 +472,7 @@
         [self.dataArr addObjectsFromArray:self.homeModel.data.glod];
     }
     [self.detailTab reloadData];
+    [self.view endEditing:YES];
 }
 
 @end
