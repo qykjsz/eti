@@ -16,7 +16,7 @@
     NSLog(@"************************DEBUG************************");
     [[NSUserDefaults standardUserDefaults] setValue:@"https://et2.etac.io/api/" forKey:@"AppDomain"];
     
-//    [[NSUserDefaults standardUserDefaults] setValue:@"https://etoken.etac.io/api/" forKey:@"AppDomain"];//.net
+    [[NSUserDefaults standardUserDefaults] setValue:@"https://etoken.etac.io/api/" forKey:@"AppDomain"];//.net
 #elif RELEASE
     NSLog(@"************************RELEASE************************");
     
