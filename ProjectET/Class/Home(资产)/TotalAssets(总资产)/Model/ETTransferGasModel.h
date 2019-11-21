@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TransferGasData : NSObject
 
+@property (nonatomic,strong) NSString *gweidefault;
+
 @property (nonatomic,strong) NSString *gasmax;
 
 @property (nonatomic,strong) NSString *gasmin;

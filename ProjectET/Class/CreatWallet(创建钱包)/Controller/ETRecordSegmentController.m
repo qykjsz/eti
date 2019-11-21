@@ -129,7 +129,7 @@
     /// 指示器
     self.pageTitleView = [UIView new];
     self.pageTitleView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 40);
-    
+    self.pageTitleView.backgroundColor = UIColor.whiteColor;
     UITextField *textField = [[UITextField alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 120, 8, 105, 24)];
     textField.font = [UIFont systemFontOfSize:12];
     UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 26, 15)];

@@ -236,7 +236,8 @@
 - (void)setData:(TransferGasData *)data {
 
     _data = data;
-    self.seletGas = [data.gweimin floatValue];
+//    self.seletGas = [data.gweimin floatValue];
+    self.seletGas = [data.gweidefault floatValue];
     self.gasmax = [data.gasmax floatValue];
     self.gasmin = [data.gasmin floatValue];
     self.gweimin = [data.gweimin floatValue];
