@@ -31,7 +31,7 @@
 #import "ETBackUpWalletView.h"
 
 #import "ETGatheringViewController.h"
-@interface ETAssetsViewController ()<UITableViewDelegate,UITableViewDataSource,HomeHeaderViewDelegate,ETMyWalletViewDelegate,ETHomeTableHeaderViewDelegate,ETBackUpWalletViewDelegate>
+@interface ETAssetsViewController ()<UITableViewDelegate,UITableViewDataSource,HomeHeaderViewDelegate,ETMyWalletViewDelegate,ETHomeTableHeaderViewDelegate,ETBackUpWalletViewDelegate,UITextFieldDelegate>
 
 @property (nonatomic,strong) UITableView *detailTab;
 
@@ -267,6 +267,7 @@
     textField.layer.cornerRadius = 12;
     textField.leftViewMode = UITextFieldViewModeAlways;
     [textField addTarget:self action:@selector(coninSearch:) forControlEvents:UIControlEventEditingChanged];
+    textField.delegate = self;
     [backView addSubview:textField];
     
     return backView;
@@ -472,7 +473,13 @@
         [self.dataArr addObjectsFromArray:self.homeModel.data.glod];
     }
     [self.detailTab reloadData];
+   
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
     [self.view endEditing:YES];
+    
 }
 
 @end
