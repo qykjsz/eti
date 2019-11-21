@@ -46,7 +46,7 @@
     [[IQKeyboardManager sharedManager] setEnableAutoToolbar:YES];
     [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
     
-//    [self ET_VCSetting];
+    [self ET_VCSetting];
 
     // 启动动画
     [self imageGif:^{

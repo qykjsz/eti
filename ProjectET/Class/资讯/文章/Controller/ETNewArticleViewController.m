@@ -55,6 +55,7 @@
         NSLog(@"%@",responseObject);
         if (self.currentPage == 0) {
             [self.dataSource removeAllObjects];
+            self.lab_time.text = [Tools dateToString:NSDate.date];
         }
         self.model =[ETNewArticleModel mj_objectWithKeyValues:responseObject];
         [self.dataSource addObjectsFromArray:self.model.data.News];
