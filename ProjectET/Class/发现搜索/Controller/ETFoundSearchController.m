@@ -106,9 +106,9 @@
 
 #pragma mark -热门接口
 - (void)hotRequest {
-    
+     [SVProgressHUD showWithStatus:@"正在加载"];
     [HTTPTool requestDotNetWithURLString:@"et_apphot" parameters:nil type:kPOST success:^(id responseObject) {
-        
+        [SVProgressHUD dismiss];
         ETFoundHotModel *model = [ETFoundHotModel mj_objectWithKeyValues:responseObject];
         for (FoundHotData *data in model.data) {
             [self.hotData addObject:data.name];
@@ -116,15 +116,17 @@
         self.headerView.dataArr = self.hotData;
         
     } failure:^(NSError *error) {
-        
+        [SVProgressHUD dismiss];
     }];
 }
 
 #pragma mark -搜索接口
 - (void)searchRequest:(NSString *)text {
     
+    
+    [SVProgressHUD showWithStatus:@"搜索中"];
     [HTTPTool requestDotNetWithURLString:@"et_selapp" parameters:@{@"appname":text} type:kPOST success:^(id responseObject) {
-        
+        [SVProgressHUD dismiss];
         ETFoundDetailModel *model = [ETFoundDetailModel mj_objectWithKeyValues:responseObject];
         
         [self.detailData removeLastObject];
@@ -137,7 +139,7 @@
         }
           [self.detailTab reloadData];
     } failure:^(NSError *error) {
-        
+         [SVProgressHUD dismiss];
     }];
 }
 

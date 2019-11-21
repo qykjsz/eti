@@ -82,9 +82,9 @@
     
     UIButton *button = self.pageTitleView.subviews.firstObject;
     [button layoutIfNeeded];
-    
+     [SVProgressHUD showWithStatus:@"正在加载"];
     [HTTPTool requestDotNetWithURLString:@"et_appantype" parameters:nil type:kPOST success:^(id responseObject) {
-       
+        [SVProgressHUD dismiss];
         ETFoundCategoryModel *models = [ETFoundCategoryModel mj_objectWithKeyValues:responseObject];
         NSLog(@"%@",models);
         
@@ -122,7 +122,7 @@
         [self setController];
         
     } failure:^(NSError *error) {
-        
+        [SVProgressHUD dismiss];
     }];
 
 }
@@ -131,8 +131,9 @@
 #pragma mark - 精选app接口
 - (void)handpickRequest {
     
+     [SVProgressHUD showWithStatus:@"正在加载"];
     [HTTPTool requestDotNetWithURLString:@"et_app" parameters:nil type:kPOST success:^(id responseObject) {
-        
+        [SVProgressHUD dismiss];
         
         ETFoundDappModel *model = [ETFoundDappModel mj_objectWithKeyValues:responseObject];
         
@@ -149,7 +150,7 @@
         
         
     } failure:^(NSError *error) {
-        
+        [SVProgressHUD dismiss];
     }];
 }
 
@@ -157,9 +158,9 @@
     
     /// 计算导航栏高度
     CGFloat barHeight = [UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.frame.size.height;
-    
+     [SVProgressHUD showWithStatus:@"正在加载"];
     [HTTPTool requestDotNetWithURLString:@"et_app" parameters:nil type:kPOST success:^(id responseObject) {
-        
+        [SVProgressHUD dismiss];
         
         ETFoundDappModel *model = [ETFoundDappModel mj_objectWithKeyValues:responseObject];
         
@@ -216,7 +217,7 @@
         
 
     } failure:^(NSError *error) {
-        
+        [SVProgressHUD dismiss];
     }];
     
     
@@ -293,9 +294,9 @@
 
 #pragma mark - 广告
 - (void)bannerRequest {
-    
+    [SVProgressHUD showWithStatus:@"正在加载"];
     [HTTPTool requestDotNetWithURLString:@"api_banner" parameters:nil type:kPOST success:^(id responseObject) {
-        
+        [SVProgressHUD dismiss];
         ETFoundBannerModel *model = [ETFoundBannerModel mj_objectWithKeyValues:responseObject];
         NSMutableArray *dataArr = [NSMutableArray array];
         for (FoundBannerData *data in model.data) {
@@ -303,7 +304,7 @@
         }
         self.headerView.bannerView.imageDatas = dataArr;
     } failure:^(NSError *error) {
-        
+        [SVProgressHUD dismiss];
     }];
 }
 
@@ -313,8 +314,9 @@
     NSString *uuidString = [UUID getUUID];
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setValue:uuidString forKey:@"contacts"];
+     [SVProgressHUD showWithStatus:@"正在加载"];
     [HTTPTool requestDotNetWithURLString:@"et_appnews" parameters:dict type:kPOST success:^(id responseObject) {
-        
+        [SVProgressHUD dismiss];
         [self.dappArr removeAllObjects];
         ETFoundDappModel *model = [ETFoundDappModel mj_objectWithKeyValues:responseObject];
 //        FoundDapp *data = [[FoundDapp alloc]init];
@@ -332,7 +334,7 @@
         self.headerView.topArr = self.dappArr;
         
     } failure:^(NSError *error) {
-        
+        [SVProgressHUD dismiss];
     }];
 }
 
