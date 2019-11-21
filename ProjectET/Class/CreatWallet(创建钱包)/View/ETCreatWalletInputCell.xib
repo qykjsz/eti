@@ -32,7 +32,11 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4Z-go-ldi">
-                        <rect key="frame" x="289" y="13.5" width="16" height="22"/>
+                        <rect key="frame" x="265" y="4.5" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="ALh-DE-qEW"/>
+                            <constraint firstAttribute="width" constant="40" id="GeS-Lk-JDn"/>
+                        </constraints>
                         <state key="normal" image="zjc_nxs"/>
                         <connections>
                             <action selector="clickAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SkE-qm-1tJ"/>

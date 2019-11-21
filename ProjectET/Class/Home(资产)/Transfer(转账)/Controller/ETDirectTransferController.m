@@ -43,6 +43,8 @@
 
 @property (nonatomic,strong) NSString *decimalString;
 
+@property (nonatomic,strong) ETTransferGasView *gasView;
+
 
 @end
 
@@ -75,6 +77,8 @@
     } failure:^(NSError *error) {
         
     }];
+    
+    [self kuanggongRequest];
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
@@ -165,45 +169,58 @@
     
     if (indexPath.row == 4) {
         
-        [HTTPTool requestDotNetWithURLString:@"givecharge" parameters:nil type:kPOST success:^(id responseObject) {
-            
-            
-            ETTransferGasModel *model = [ETTransferGasModel mj_objectWithKeyValues:responseObject];
-            
-           
-            ETTransferGasView *view = [[ETTransferGasView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-            WEAK_SELF(self);
-            [view setSliderBlcok:^(CGFloat gas, CGFloat transfergas,NSString *gaslimit) {
-                STRONG_SELF(self);
-                self.tranGasValue = transfergas;
-                self.gasValue = gas;
-                self.gaslimit = gaslimit;
-                [self.detailTab reloadData];
-                NSLog(@"%f,%f",transfergas,gas);
-            }];
-            view.coinName = self.coinNameString;
-            
-            TransferGasData *data1 = model.data[0];
-            TransferGasData *data2 = model.data[1];
-            if ([data1.name isEqualToString:self.coinNameString]) {
-                view.data = data1;
-            }else {
-                view.data = data2;
-            }
-            
-            
-            [[UIApplication sharedApplication].keyWindow addSubview:view];
-            
-            
-        } failure:^(NSError *error) {
-            
-        }];
-        
-        
+
+        [self kuanggongRequest];
+        [[UIApplication sharedApplication].keyWindow addSubview:self.gasView];
        
     }
     
 
+}
+
+- (void)kuanggongRequest {
+    
+    [HTTPTool requestDotNetWithURLString:@"givecharge" parameters:nil type:kPOST success:^(id responseObject) {
+        
+        
+        ETTransferGasModel *model = [ETTransferGasModel mj_objectWithKeyValues:responseObject];
+        
+        
+        self.gasView = [[ETTransferGasView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        WEAK_SELF(self);
+        [self.gasView setSliderBlcok:^(CGFloat gas, CGFloat transfergas,NSString *gaslimit) {
+            STRONG_SELF(self);
+            self.tranGasValue = transfergas;
+            self.gasValue = gas;
+            self.gaslimit = gaslimit;
+            [self.detailTab reloadData];
+            NSLog(@"%f,%f",transfergas,gas);
+        }];
+        self.gasView.coinName = self.coinNameString;
+        
+        TransferGasData *data1 = model.data[0];
+        TransferGasData *data2 = model.data[1];
+        if ([data1.name isEqualToString:self.coinNameString]) {
+            self.gasView.data = data1;
+            self.gaslimit = data1.gasmin;
+            self.gasValue = [data1.gweidefault integerValue];
+            self.tranGasValue = [data1.gasmin floatValue] * self.gasValue / 1000000000;
+            [self.detailTab reloadData];
+        }else {
+            self.gasView.data = data2;
+            self.gaslimit = data2.gasmin;
+            self.gasValue = [data2.gweidefault integerValue];
+            self.tranGasValue = [data2.gasmin floatValue] * self.gasValue / 1000000000;
+            [self.detailTab reloadData];
+        }
+        
+        
+        
+        
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 #pragma mark - ETDirectTranAddressCellDelegate
 
@@ -384,10 +401,10 @@
                     ETWalletModel *model = [ETWalletManger getCurrentWallet];
                     [HSEther hs_sendToAssress:self.address ip:urlString money:self.countString tokenETH:self.toToken decimal:self.decimalString currentKeyStore:model.keyStore pwd:model.password gasPrice:[NSString stringWithFormat:@"%zd",self.gasValue] gasLimit:self.gaslimit block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
                         if (suc) {
-                            [KMPProgressHUD showProgressWithText:@"转账成功"];
+                            [SVProgressHUD showWithStatus:@"转账成功"];
                             [self.navigationController popViewControllerAnimated:YES];
                         }else {
-                            [KMPProgressHUD showProgressWithText:@"转账失败"];
+                            [SVProgressHUD showWithStatus:@"转账失败"];
                         }
                     }];
                     

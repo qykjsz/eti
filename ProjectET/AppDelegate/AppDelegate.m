@@ -47,7 +47,7 @@
     [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
     
     [self ET_VCSetting];
-
+//    [self kmp_VCWillDisappear];
     // 启动动画
     [self imageGif:^{
 
