@@ -402,10 +402,11 @@
                     [HSEther hs_sendToAssress:self.address ip:urlString money:self.countString tokenETH:self.toToken decimal:self.decimalString currentKeyStore:model.keyStore pwd:model.password gasPrice:[NSString stringWithFormat:@"%zd",self.gasValue] gasLimit:self.gaslimit block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
                         if (suc) {
                             [SVProgressHUD showWithStatus:@"转账成功"];
-                            [self.navigationController popViewControllerAnimated:YES];
+                            [self.navigationController popToRootViewControllerAnimated:YES];
                         }else {
                             [SVProgressHUD showWithStatus:@"转账失败"];
                         }
+                        
                     }];
                     
                 } failure:^(NSError *error) {
