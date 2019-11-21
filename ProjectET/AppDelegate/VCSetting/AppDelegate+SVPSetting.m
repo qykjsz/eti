@@ -23,7 +23,8 @@
     //设置提示框的边角弯曲半径
     [SVProgressHUD setCornerRadius:5];
     
-//    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
+    
     
     [SVProgressHUD dismissWithDelay:1.0];
 

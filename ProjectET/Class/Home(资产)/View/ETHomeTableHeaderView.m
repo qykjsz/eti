@@ -190,9 +190,9 @@
 
         
         CGRect curretnTitleFrame = CGRectZero;
-        for (int i = 0; i<progress.count; i++) {
+        for (int i = 0; i<resultStrArray.count; i++) {
             
-            proportionData *data = progress[i];
+            proportionData *data = resultStrArray[i];
             CGFloat bill = [data.bili floatValue] * 100;
             NSString *textString = [NSString stringWithFormat:@"·%@ %.1f%%",data.name,bill];
             UILabel *detailLb = [[UILabel alloc]init];

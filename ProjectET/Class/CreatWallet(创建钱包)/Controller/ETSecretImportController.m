@@ -280,7 +280,7 @@
     }
     
     self.view.userInteractionEnabled = NO;
-    [SVProgressHUD showInfoWithStatus:@"正在导入"];
+    [SVProgressHUD showWithStatus:@"正在导入"];
     [HSEther hs_importWalletForPrivateKey:self.secretKey pwd:self.setPassWord block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, BOOL suc, HSWalletError error) {
         
         if (suc) {
@@ -293,7 +293,7 @@
             
             model.privateKey = [privateKey substringFromIndex:2];
             model.walletType = @"以太坊";
-            
+            [SVProgressHUD showWithStatus:@"正在导入"];
             [HTTPTool requestDotNetWithURLString:@"et_import" parameters:@{@"address":address} type:kPOST success:^(id responseObject) {
                 self.view.userInteractionEnabled = YES;
                 [ETWalletManger addWallet:model];

@@ -35,11 +35,11 @@ singletonImplemention(KMPProgressHUD)
     
     [SVProgressHUD showImage:[UIImage imageWithGIFNamed:@"loading"] status:[NSString stringWithFormat:@"%@",text]];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [SVProgressHUD dismiss];
-        });
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [SVProgressHUD dismiss];
+//        });
+//    });
 }
 
 + (void)showSuccessWithText:(NSString *)text {

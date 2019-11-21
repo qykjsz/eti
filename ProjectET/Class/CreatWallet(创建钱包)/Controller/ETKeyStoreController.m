@@ -243,7 +243,7 @@
     self.view.userInteractionEnabled = NO;
         [SVProgressHUD showInfoWithStatus:@"正在导入"];
     [HSEther hs_importKeyStore:self.secretKey pwd:self.setPassWord block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, BOOL suc, HSWalletError error) {
-        
+        [SVProgressHUD showWithStatus:@"正在导入"];
         self.view.userInteractionEnabled = YES;
         
         if (suc) {
