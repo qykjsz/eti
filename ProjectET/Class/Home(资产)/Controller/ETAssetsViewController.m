@@ -56,7 +56,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-//    [self homeRequest];
+    [self homeRequest];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
