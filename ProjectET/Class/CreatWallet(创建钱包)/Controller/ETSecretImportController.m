@@ -298,7 +298,7 @@
     self.view.userInteractionEnabled = NO;
     [SVProgressHUD showWithStatus:@"正在导入"];
     [HSEther hs_importWalletForPrivateKey:self.secretKey pwd:self.setPassWord block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, BOOL suc, HSWalletError error) {
-        
+        self.view.userInteractionEnabled = YES;
         if (suc) {
             ETWalletModel *model = [[ETWalletModel alloc]init];
             model.password = self.setPassWord;
@@ -347,7 +347,11 @@
         
     }];
     
-    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [SVProgressHUD dismiss];
+         [SVProgressHUD showInfoWithStatus:@"导入失败,请检查私钥"];
+        self.view.userInteractionEnabled = YES;
+    });
     
     
     
