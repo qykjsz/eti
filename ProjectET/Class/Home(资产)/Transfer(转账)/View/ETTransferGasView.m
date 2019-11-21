@@ -244,7 +244,7 @@
     self.slider.maximumValue = [data.gweimax floatValue];
     self.slider.minimumValue = [data.gweimin floatValue];
     
-    self.tempfl = self.gasmin * self.seletGas / 100000000;
+    self.tempfl = self.gasmin * self.seletGas / 1000000000;
     self.countLb.text = [NSString stringWithFormat:@"%f%@",self.tempfl,@"ETH"];
 }
 

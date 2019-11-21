@@ -194,11 +194,13 @@
 
 - (void)dismissAction {
     
-    [UIView animateWithDuration:0.3 animations:^{
-        self.alpha = 0;
-    } completion:^(BOOL finished) {
-        [self removeFromSuperview];
-    }];
+     [self removeFromSuperview];
+    
+//    [UIView animateWithDuration:0.3 animations:^{
+//        self.alpha = 0;
+//    } completion:^(BOOL finished) {
+//        [self removeFromSuperview];
+//    }];
 }
 
 @end
