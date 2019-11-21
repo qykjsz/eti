@@ -24,10 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tabBar.tintColor = [UIColor whiteColor];
+//    self.tabBar.tintColor = [UIColor whiteColor];
     //禁止底部tabbart透明影响view高度问题
-    self.tabBar.translucent = NO;
-    self.delegate = self;
+//    self.tabBar.translucent = NO;
+//    self.delegate = self;
     
     [self setupViewControllers];
 }

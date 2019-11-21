@@ -180,7 +180,7 @@
                  [self.navigationController popViewControllerAnimated:YES];
            });
     }];
-    [[UIApplication sharedApplication].keyWindow addSubview:view];    
+    [[UIApplication sharedApplication].keyWindow addSubview:view];
 }
 
 #pragma mark - ETWalletDetailViewDelegate

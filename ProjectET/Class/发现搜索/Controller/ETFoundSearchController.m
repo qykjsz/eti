@@ -148,7 +148,7 @@
     
     ETFoundSearchDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETFoundSearchDetailCell"];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    cell.model = self.detailData[indexPath.row];
+    cell.appModel = self.detailData[indexPath.row];
     return cell;
 }
 

@@ -7,12 +7,14 @@
 //
 
 #import "ETColdWalletViewController.h"
-
+#import "ETHTMLViewController.h"
 
 // cell
 #import "ETCreatYYViewCell.h"
 #import "ETCreatWalletInputCell.h"
 #import "ETCreatWalletInfoCell.h"
+
+
 
 // view
 #import "ETSecertCreatView.h"
@@ -224,6 +226,13 @@
 
 - (void)rightAction {
     
+}
+
+- (void)questionClick {
+    ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
+     vc.url = @"https://etoken.etac.io/weburl/help.html?typeid=6";
+     vc.title = @"什么是私钥";
+     [self.navigationController pushViewController:vc animated:true];
 }
 
 - (void)selectAction:(UIButton *)sender {
