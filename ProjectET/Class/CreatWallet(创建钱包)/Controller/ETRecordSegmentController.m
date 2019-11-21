@@ -73,7 +73,7 @@
         if ([self.model.data.today floatValue] >= 0) {
             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 +%@",self.model.data.today];
         }else {
-            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 -%@",self.model.data.today];
+            self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.model.data.today];
         }
        
     } failure:^(NSError *error) {

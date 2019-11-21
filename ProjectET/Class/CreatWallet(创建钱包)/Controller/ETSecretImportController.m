@@ -281,7 +281,7 @@
     
     self.view.userInteractionEnabled = NO;
     [SVProgressHUD showInfoWithStatus:@"正在导入"];
-    [HSEther hs_importWalletForPrivateKey:[NSString stringWithFormat:@"0x%@",self.secretKey] pwd:self.setPassWord block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, BOOL suc, HSWalletError error) {
+    [HSEther hs_importWalletForPrivateKey:self.secretKey pwd:self.setPassWord block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, BOOL suc, HSWalletError error) {
         
         if (suc) {
             ETWalletModel *model = [[ETWalletModel alloc]init];
