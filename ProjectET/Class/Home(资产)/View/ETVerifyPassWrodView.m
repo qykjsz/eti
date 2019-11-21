@@ -171,7 +171,9 @@
                 self.Success();
             }
         }else {
-            [KMPProgressHUD showText:@"密码错误"];
+            if (self.failure) {
+                self.failure();
+            }
         }
         
       

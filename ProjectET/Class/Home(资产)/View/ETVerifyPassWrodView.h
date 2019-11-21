@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) void (^Success)(void);
 
+@property (nonatomic,strong) void (^failure)(void);
+
 @property (nonatomic,weak) id <ETVerifyPassWrodViewDelegate> delegate;
 
 @end

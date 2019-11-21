@@ -268,6 +268,9 @@
             vc.selectTag = self.selectWallect;
             [self.navigationController pushViewController:vc animated:true];
         }];
+        [view setFailure:^{
+            [KMPProgressHUD showText:@"密码错误"];
+        }];
         [[UIApplication sharedApplication].keyWindow addSubview:view];
         
        
