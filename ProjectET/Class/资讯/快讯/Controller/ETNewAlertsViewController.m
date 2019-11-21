@@ -57,6 +57,7 @@
     [HTTPTool requestDotNetWithURLString:@"et_newsflash" parameters:@{@"page":[NSString stringWithFormat:@"%ld",(long)self.currentPage]}    type:kPOST success:^(id responseObject) {
         if (self.currentPage == 0) {
             [self.dataSource removeAllObjects];
+            self.lab_time.text = [Tools dateToString:NSDate.date];
         }
         
         NSLog(@"%@",responseObject);

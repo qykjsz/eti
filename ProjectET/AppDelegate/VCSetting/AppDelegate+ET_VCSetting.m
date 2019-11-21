@@ -35,16 +35,16 @@
             [aspectInfo.instance isKindOfClass:NSClassFromString(@"UIAlertController")] ||
             [aspectInfo.instance isKindOfClass:NSClassFromString(@"_UIAlertControllerTextFieldViewController")] ||
             [aspectInfo.instance isKindOfClass:NSClassFromString(@"UISystemKeyboardDockController")]) {
-            
+
             return;
         }
         
         if (vc.navigationController.viewControllers.count > 1) {
             [vc addLeftBarButtonWithImage:[UIImage imageNamed:@"fh_icon"] action:@selector(popNavi)];
         }
-        vc.view.backgroundColor = [UIColor whiteColor];
+//        vc.view.backgroundColor = [UIColor whiteColor];
         vc.navigationController.navigationBar.translucent = NO;
-        vc.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+//        vc.navigationController.navigationBar.barStyle = UIBarStyleDefault;
         
     } error:NULL];
 }

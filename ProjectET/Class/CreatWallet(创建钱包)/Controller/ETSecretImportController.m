@@ -292,7 +292,6 @@
             model.mnemonicPhrase = [mnemonicPhrase componentsSeparatedByString:@" "];
             model.privateKey = privateKey;
             model.walletType = @"以太坊";
-           
             
             [HTTPTool requestDotNetWithURLString:@"et_import" parameters:@{@"address":address} type:kPOST success:^(id responseObject) {
                 self.view.userInteractionEnabled = YES;
@@ -318,11 +317,6 @@
             self.view.userInteractionEnabled = YES;
             [SVProgressHUD showInfoWithStatus:@"导入失败"];
         }
-        
-       
-        
-        
-        
         
     }];
     
