@@ -76,21 +76,41 @@
         arr = [NSMutableArray array];
     }
     
+    BOOL isReplace = false;
+    NSInteger replaceTag = 0;
+//    if (arr.count != 0) {
+//        for (int i = 0; i<arr.count; i++) {
+//
+//            ETWalletModel *tempModel = arr[i];
+//            if ([tempModel.address isEqualToString:model.address]) {
+//                [arr replaceObjectAtIndex:i withObject:model];
+//            }else {
+//                [arr addObject:model];
+//            }
+//        }
+//
+//    }else {
+//        [arr addObject:model];
+//    }
     
     if (arr.count != 0) {
         for (int i = 0; i<arr.count; i++) {
             
             ETWalletModel *tempModel = arr[i];
             if ([tempModel.address isEqualToString:model.address]) {
-                [arr replaceObjectAtIndex:i withObject:model];
-            }else {
-                [arr addObject:model];
+                isReplace = YES;
+                replaceTag = i;
+                break;
             }
         }
-        
-    }else {
-        [arr addObject:model];
     }
+        
+        if (isReplace) {
+            [arr replaceObjectAtIndex:replaceTag withObject:model];
+        }else {
+            [arr addObject:model];
+        }
+        
     NSString *file = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/WalletData.data"];
     [NSKeyedArchiver archiveRootObject:arr toFile:file];
 }

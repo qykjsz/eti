@@ -129,19 +129,30 @@
             //        return result == NSOrderedAscending;  // 降序
         }];
         NSLog(@"%@",resultStrArray);
+        CGFloat totalCount = 0.0;
+        for (proportionData *data in resultStrArray) {
+            totalCount += [data.bili floatValue];
+        }
         
+        CGRect curretnFrame = CGRectZero;
         for (int i = 0 ; i<resultStrArray.count; i++) {
             proportionData *data = resultStrArray[i];
-            CGFloat width = [data.bili floatValue];
+            //            CGFloat width = [data.bili floatValue];
             UIView *lineView = [[UIView alloc] init];
-            lineView.frame = CGRectMake(0, 0, width*lineWidth, 4);
+            lineView.frame = CGRectMake(CGRectGetMaxX(curretnFrame), 0, [data.bili floatValue]/totalCount * lineWidth, 4);
             lineView.backgroundColor = data.color;
+            curretnFrame = lineView.frame;
             [grayView addSubview:lineView];
         }
         
+        UIScrollView *titleScro = [[UIScrollView alloc]initWithFrame:CGRectMake(20, 200, SCREEN_WIDTH-40, 25)];
+        [titleScro setContentSize:CGSizeMake(progress.count * 100, 0)];
+        titleScro.showsHorizontalScrollIndicator = false;
+        [self addSubview:titleScro];
+
+        
+        CGRect curretnTitleFrame = CGRectZero;
         for (int i = 0; i<progress.count; i++) {
-            
-            
             
             proportionData *data = progress[i];
             CGFloat bill = [data.bili floatValue] * 100;
@@ -166,8 +177,10 @@
                                   range:NSMakeRange(0 , 1)];
             [AttributedStr addAttribute:NSBaselineOffsetAttributeName value:@(-7) range:NSMakeRange(0, 1)];
             detailLb.attributedText = AttributedStr;
-            detailLb.frame = CGRectMake(20 + i*5 + 80*i, 200, 80, 25);
-            [self addSubview:detailLb];
+            CGSize size = [textString boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:13]} context:nil].size;
+            detailLb.frame = CGRectMake(CGRectGetMaxX(curretnTitleFrame), 0, size.width, 25);
+            curretnTitleFrame = detailLb.frame;
+            [titleScro addSubview:detailLb];
             
         }
         

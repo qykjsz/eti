@@ -201,7 +201,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 4;
+    return 5;
     
 }
 
@@ -213,6 +213,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ETWalletDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETWalletDetailCell"];
+    ETWalletModel *model = [ETWalletManger getCurrentWallet];
     if (indexPath.row == 0) {
         cell.titleLb.text = @"钱包名称";
         cell.titleLb.textColor = UIColorFromHEX(0x999999, 1);
@@ -221,18 +222,25 @@
         cell.BtnCopy.hidden = YES;
         cell.arrowImage.hidden = YES;
     }else if (indexPath.row == 1) {
+        cell.titleLb.text = @"钱包地址";
+        cell.detailLb.text = model.address;
+        cell.titleLb.textColor = UIColorFromHEX(0x999999, 1);
+        cell.detailLb.hidden = false;
+        cell.BtnCopy.hidden = NO;
+        cell.arrowImage.hidden = NO;
+    }else if (indexPath.row == 2) {
         cell.titleLb.text = @"修改密码";
         cell.titleLb.textColor = UIColorFromHEX(0x3333333, 1);
         cell.detailLb.hidden = YES;
         cell.BtnCopy.hidden = YES;
         cell.arrowImage.hidden = NO;
-    }else if (indexPath.row == 2) {
+    }else if (indexPath.row == 3) {
         cell.titleLb.text = @"导出私钥";
         cell.titleLb.textColor = UIColorFromHEX(0x333333, 1);
         cell.detailLb.hidden = YES;
         cell.BtnCopy.hidden = YES;
         cell.arrowImage.hidden = NO;
-    }else if (indexPath.row == 3) {
+    }else if (indexPath.row == 4) {
         cell.titleLb.text = @"导出Keystore";
         cell.titleLb.textColor = UIColorFromHEX(0x333333, 1);
         cell.detailLb.hidden = YES;
@@ -246,12 +254,12 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.row == 1) {
+    if (indexPath.row == 2) {
         ETChangePassWordController *vc = [ETChangePassWordController new];
         vc.selectTag = self.selectWallect;
         [self.navigationController pushViewController:vc animated:YES];
     }
-    if (indexPath.row == 2) {
+    if (indexPath.row == 3) {
         
         ETVerifyPassWrodView *view = [[ETVerifyPassWrodView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         [view setSuccess:^{
@@ -262,7 +270,7 @@
         [[UIApplication sharedApplication].keyWindow addSubview:view];
         
        
-    }else if (indexPath.row == 3) {
+    }else if (indexPath.row == 4) {
         
         ETVerifyPassWrodView *view = [[ETVerifyPassWrodView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         [view setSuccess:^{
