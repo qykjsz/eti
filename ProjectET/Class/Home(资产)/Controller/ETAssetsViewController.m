@@ -217,8 +217,8 @@
     
     cell.model = self.dataArr[indexPath.row];
     if (!self.isOpen) {
-        cell.topDollor.text = @"****.**";
-        cell.bottomDollor.text = @"****.**";
+        cell.topDollor.text = @"******";
+        cell.bottomDollor.text = @"******";
     }else {
         cell.topDollor.text = data.number;
         cell.bottomDollor.text = [NSString stringWithFormat:@"$ %@",data.usdtnumber];
@@ -450,7 +450,7 @@
             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.homeModel.data.today];
         }
     }else {
-        self.headerView.moneyLb.text = @"***.**";
+        self.headerView.moneyLb.text = @"*****";
         self.headerView.todayLb.text = @"*****";
     }
     [self.detailTab reloadData];

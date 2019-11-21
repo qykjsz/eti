@@ -348,7 +348,8 @@
             [alter addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
                 
                 textField.placeholder = @"请输入密码";
-                textField.keyboardType = UIKeyboardTypeNumberPad;
+                textField.secureTextEntry = YES;
+//                textField.keyboardType = UIKeyboardTypeNumberPad;
                 
             }];
             

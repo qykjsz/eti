@@ -196,7 +196,7 @@
         }
         
     }else {
-        cell.moneydetail.text = @"***.**";
+        cell.moneydetail.text = @"*****";
         cell.statusDetail.text = @"***";
         cell.timeDetail.text = @"****/**/** **:**";
     }

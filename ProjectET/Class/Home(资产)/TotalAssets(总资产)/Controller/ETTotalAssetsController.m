@@ -170,8 +170,8 @@
         }
     }else {
         
-        self.headerView.moneyLb.text = @"***.**";
-        self.headerView.subMoneyLb.text = @"≈$ ***.**";
+        self.headerView.moneyLb.text = @"*****";
+        self.headerView.subMoneyLb.text = @"≈$ *****";
         self.headerView.todayLb.text = @"******";
     }
     

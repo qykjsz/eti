@@ -180,10 +180,7 @@
                  [self.navigationController popViewControllerAnimated:YES];
            });
     }];
-    [[UIApplication sharedApplication].keyWindow addSubview:view];
-    
-   
-    
+    [[UIApplication sharedApplication].keyWindow addSubview:view];    
 }
 
 #pragma mark - ETWalletDetailViewDelegate
@@ -197,7 +194,7 @@
             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.homeModel.data.today];
         }
     }else {
-        self.headerView.moneyLb.text = @"***.**";
+        self.headerView.moneyLb.text = @"*****";
         self.headerView.todayLb.text = @"*****";
     }
 }
