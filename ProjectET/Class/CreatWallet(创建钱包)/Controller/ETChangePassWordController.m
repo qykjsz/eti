@@ -47,6 +47,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ETAddContactsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETAddContactsCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.rowPath = indexPath;
     cell.delegate = self;
     if (indexPath.row == 0) {
