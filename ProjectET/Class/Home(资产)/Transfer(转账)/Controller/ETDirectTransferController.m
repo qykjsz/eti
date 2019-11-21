@@ -50,6 +50,13 @@
 
 @implementation ETDirectTransferController
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    [self kuanggongRequest];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
    
@@ -267,6 +274,36 @@
     }
 }
 
+- (void)getHeYueInfo {
+    
+    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
+        
+        [SVProgressHUD dismiss];
+        self.view.userInteractionEnabled = YES;
+       
+        self.model = [ETHomeModel mj_objectWithKeyValues:responseObject];
+        
+        for (glodData *data in self.model.data.glod) {
+            if ([data.name isEqualToString:self.coinNameString]) {
+                self.coinNameString = data.name;
+                self.leftString = data.number;
+                self.toToken = data.address;
+                self.decimalString = data.decimal;
+                self.gaslimit = nil;
+                self.tranGasValue = 0;
+                self.countString = @"";
+                [self.detailTab reloadData];
+                break;
+            }
+        }
+        
+    } failure:^(NSError *error) {
+        [SVProgressHUD dismiss];
+        self.view.userInteractionEnabled = YES;
+    }];
+}
+
 - (void)ETDirectCountCellDelegateCoinClick {
     
     self.view.userInteractionEnabled = NO;
@@ -324,7 +361,7 @@
 
 - (void)virferimAciton {
     
-    
+    [SVProgressHUD showWithStatus:@"正在转账"];
     [HTTPTool requestDotNetWithURLString:@"et_node" parameters:nil type:kPOST success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         
@@ -399,8 +436,8 @@
                     textField.secureTextEntry = YES;
                     
                 }];
-                //添加一个取消按钮
-                [alter addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+         
+               
                 
                 [alter addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                     
@@ -412,6 +449,9 @@
                         [self virferimAciton];
                     }
                 }]];
+                
+                //添加一个取消按钮
+                 [alter addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
                 
                 [self.navigationController presentViewController:alter animated:YES completion:nil];
                 

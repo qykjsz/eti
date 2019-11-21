@@ -37,9 +37,9 @@
     self.bottoLb.text = model.address;
     
     if (model.isBackUp) {
-        [self.statusBtn setTitle:@"已备份" forState:UIControlStateNormal];
+        [self.statusBtn setTitle:@"不可备份" forState:UIControlStateNormal];
     }else {
-        [self.statusBtn setTitle:@"未备份" forState:UIControlStateNormal];
+        [self.statusBtn setTitle:@"不可备份" forState:UIControlStateNormal];
     }
     
     if (model.isCurrentWallet) {

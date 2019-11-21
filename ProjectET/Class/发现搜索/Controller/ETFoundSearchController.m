@@ -8,6 +8,7 @@
 
 #import "ETFoundSearchController.h"
 #import "ETHTMLViewController.h"
+#import "ETFoundHTMLViewController.h"
 
 // view
 #import "ETFoundSectionView.h"
@@ -18,6 +19,9 @@
 //model
 #import "ETFoundHotModel.h"
 #import "ETFoundDetailModel.h"
+
+// tools
+#import "UUID.h"
 
 @interface ETFoundSearchController ()<ETFoundSerarchNavViewDelegate,ETFoundSearchCollectionViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -160,11 +164,50 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     ETFoundDetailData *data = self.detailData[indexPath.row];
-    ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
-    vc.url = data.url;
-    vc.title = data.name;
-    [self.navigationController pushViewController:vc animated:true];
+//    ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
+//    vc.url = data.url;
+//    vc.title = data.name;
+//    [self.navigationController pushViewController:vc animated:true];
+//
+//    ETFoundHTMLViewController *newH5 = [ETFoundHTMLViewController new];
+//    newH5.url = data.url;
+//    newH5.title = data.name;
+    if ([data.name isEqualToString:@"ET"]) {
+        NSURL *url = [NSURL URLWithString:@"ETUnion://"];
+        BOOL isCanOpen = [[UIApplication sharedApplication] canOpenURL:url];
+        if (isCanOpen) {
+#ifdef NSFoundationVersionNumber_iOS_10_0
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+                
+            }];
+#else
+            [[UIApplication sharedApplication] openURL:url];
+#endif
+            NSLog(@"App1打开App2");
+        }else{
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:data.url]options:@{} completionHandler:^(BOOL success) {
+                
+            }];
+        }
+    }else if([data.name isEqualToString:@"ET理财"]){
+        ETFoundHTMLViewController *vc = [[ETFoundHTMLViewController alloc]init];
+        vc.url = [NSString stringWithFormat:@"%@?%@",data.url,[UUID getUUID]];
+        vc.title = data.name;
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:true];
+        //        ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
+        //        vc.url = @"https://ceshi.etac.io/dist";
+        //        vc.hidesBottomBarWhenPushed = YES;
+        //        [self.navigationController pushViewController:vc animated:true];
+    }else {
+        ETHTMLViewController *vc = [ETHTMLViewController new];
+        vc.url = data.url;
+        vc.title = data.name;
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:true];
+    }
     
 }
 #pragma mark - lazy load

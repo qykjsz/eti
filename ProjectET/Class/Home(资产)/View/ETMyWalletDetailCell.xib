@@ -41,7 +41,7 @@
                                 <state key="normal" title="不可备份"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="theeoportal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUs-UZ-VS3">
-                                <rect key="frame" x="35" y="56" width="94" height="21"/>
+                                <rect key="frame" x="35" y="56" width="255" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,6 +79,7 @@
                         <constraints>
                             <constraint firstItem="fAB-E3-gje" firstAttribute="top" secondItem="xg4-95-Ass" secondAttribute="top" constant="20" id="2fV-uS-RRv"/>
                             <constraint firstItem="kE0-8N-ZMp" firstAttribute="centerY" secondItem="fAB-E3-gje" secondAttribute="centerY" id="3AF-Z4-MCB"/>
+                            <constraint firstAttribute="trailing" secondItem="hUs-UZ-VS3" secondAttribute="trailing" constant="30" id="53c-Jr-yfv"/>
                             <constraint firstItem="8wK-zh-z23" firstAttribute="leading" secondItem="h72-JG-nJD" secondAttribute="trailing" constant="15" id="8Qr-Lx-zoo"/>
                             <constraint firstItem="hUs-UZ-VS3" firstAttribute="leading" secondItem="xg4-95-Ass" secondAttribute="leading" constant="35" id="B7C-73-fsb"/>
                             <constraint firstAttribute="bottom" secondItem="wCJ-m5-wBi" secondAttribute="bottom" constant="10" id="LYe-K8-nlq"/>
