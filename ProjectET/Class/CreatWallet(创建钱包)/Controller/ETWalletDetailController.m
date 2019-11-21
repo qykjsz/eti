@@ -170,16 +170,17 @@
 
 
 - (void)deleAction {
-    
-    ETWalletModel *model = [ETWalletManger getModelIndex:self.selectWallect];
-    [ETWalletManger deleWallet:model];
-    
-    [KMPProgressHUD showText:@"删除成功"];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-          [self.navigationController popViewControllerAnimated:YES];
-    });
-  
-    
+    ETVerifyPassWrodView *view = [[ETVerifyPassWrodView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    [view setSuccess:^{
+        ETWalletModel *model = [ETWalletManger getCurrentWallet];
+           [ETWalletManger deleWallet:model];
+           
+           [KMPProgressHUD showText:@"删除成功"];
+           dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                 [self.navigationController popViewControllerAnimated:YES];
+           });
+    }];
+    [[UIApplication sharedApplication].keyWindow addSubview:view];    
 }
 
 #pragma mark - ETWalletDetailViewDelegate

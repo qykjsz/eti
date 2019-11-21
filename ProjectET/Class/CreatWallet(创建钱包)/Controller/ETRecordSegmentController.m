@@ -202,8 +202,10 @@
     
     /// 添加分页控制器
     self.hoverPageViewController = [HoverPageViewController viewControllers:viewControllers headerView:self.headerView pageTitleView:self.pageTitleView];
+ 
     self.hoverPageViewController.view.frame = CGRectMake(0, iPhoneBang?(barHeight - 10):barHeight, SCREEN_WIDTH, SCREEN_HEIGHT - barHeight - 84);
     self.hoverPageViewController.delegate = self;
+    self.hoverPageViewController.mainScrollView.bounces = NO;
     [self addChildViewController:self.hoverPageViewController];
     [self.view addSubview:self.hoverPageViewController.view];
     

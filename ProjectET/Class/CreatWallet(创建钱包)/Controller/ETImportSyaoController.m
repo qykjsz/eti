@@ -29,7 +29,7 @@
     [super viewDidLoad];
     
     self.title = @"导出私钥";
-
+    self.view.backgroundColor = UIColor.whiteColor;
     
     
     [self.view addSubview:self.leftBtn];
