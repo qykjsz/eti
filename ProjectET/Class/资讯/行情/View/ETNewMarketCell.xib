@@ -44,7 +44,7 @@
                                 <rect key="frame" x="120" y="1" width="80" height="73"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKD-ly-X2s">
-                                        <rect key="frame" x="0.0" y="14.5" width="80" height="13"/>
+                                        <rect key="frame" x="0.0" y="19.5" width="80" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="13" id="Sw2-Si-rkJ"/>
                                         </constraints>
@@ -52,7 +52,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHt-XJ-5VD">
-                                        <rect key="frame" x="0.0" y="37.5" width="80" height="12"/>
+                                        <rect key="frame" x="0.0" y="42.5" width="80" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="12" id="6mm-JU-tTa"/>
                                         </constraints>
@@ -87,7 +87,7 @@
                             <constraint firstItem="0Aw-JZ-0jh" firstAttribute="leading" secondItem="JOM-AY-4xk" secondAttribute="trailing" constant="10" id="3a9-hG-L33"/>
                             <constraint firstAttribute="bottom" secondItem="yfG-5S-e9W" secondAttribute="bottom" id="9aP-8t-bHK"/>
                             <constraint firstAttribute="trailing" secondItem="jqR-2l-Laf" secondAttribute="trailing" constant="20" id="A3i-Zf-4Aa"/>
-                            <constraint firstItem="rKD-ly-X2s" firstAttribute="top" secondItem="JOM-AY-4xk" secondAttribute="top" id="N3L-OQ-7Rp"/>
+                            <constraint firstItem="rKD-ly-X2s" firstAttribute="top" secondItem="JOM-AY-4xk" secondAttribute="top" constant="5" id="N3L-OQ-7Rp"/>
                             <constraint firstItem="JOM-AY-4xk" firstAttribute="leading" secondItem="UfQ-AI-1cB" secondAttribute="leading" constant="20" id="SDe-YJ-p2r"/>
                             <constraint firstAttribute="bottom" secondItem="bsY-Dp-Pda" secondAttribute="bottom" constant="1" id="WmM-bF-QP4"/>
                             <constraint firstItem="bsY-Dp-Pda" firstAttribute="width" secondItem="UfQ-AI-1cB" secondAttribute="width" multiplier="1:4" id="Xsr-uR-64e"/>
