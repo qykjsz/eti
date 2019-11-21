@@ -370,8 +370,7 @@
 
 - (void)testAction {
     
-    
-            //  判断币种是否允许被转出
+    //  判断币种是否允许被转出
             [SVProgressHUD showWithStatus:@"正在加载"];
             [HTTPTool requestDotNetWithURLString:@"et_transaction" parameters:@{@"name":self.coinNameString} type:kPOST success:^(id responseObject) {
                 [SVProgressHUD dismiss];
@@ -395,32 +394,8 @@
                 UIAlertController *alter = [UIAlertController alertControllerWithTitle:@"请输入密码" message:@"" preferredStyle:UIAlertControllerStyleAlert];
                 [alter addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
                     
-                    [KMPProgressHUD dismissProgress];
-                    NSString *urlString = responseObject[@"data"];
-                    NSLog(@"%@",urlString);
-                    
-                    //                [SVProgressHUD showWithStatus:@"正在转账"];
-                    //                ETWalletModel *model = [ETWalletManger getCurrentWallet];
-                    //                [HSEther ETTest_hs_sendToAssress:self.address money:self.countString tokenETH:self.toToken decimal:@"18" currentKeyStore:model.keyStore pwd:model.password gasPrice:[NSString stringWithFormat:@"%zd",self.gasValue] gasLimit:self.gaslimit block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
-                    //
-                    //                    if (suc) {
-                    //                        [KMPProgressHUD showProgressWithText:@"转账成功"];
-                    //                    }else {
-                    //                        [KMPProgressHUD showProgressWithText:@"转账失败"];
-                    //                    }
-                    //
-                    //                }];0xa51c50c880d389b5bbd1c76308d3b544f54f39a4
-                    [SVProgressHUD showWithStatus:@"正在转账"];
-                    ETWalletModel *model = [ETWalletManger getCurrentWallet];
-                    [HSEther hs_sendToAssress:self.address ip:urlString money:self.countString tokenETH:self.toToken decimal:self.decimalString currentKeyStore:model.keyStore pwd:model.password gasPrice:[NSString stringWithFormat:@"%zd",self.gasValue] gasLimit:self.gaslimit block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
-                        if (suc) {
-                             [KMPProgressHUD showText:@"转账成功"];
-                            [self.navigationController popToRootViewControllerAnimated:YES];
-                        }else {
-                            [KMPProgressHUD showText:@"转账失败"];
-                        }
-                        
-                    }];
+                    textField.placeholder = @"请输入密码";
+                    textField.secureTextEntry = YES;
                     
                 }];
                 //添加一个取消按钮
@@ -443,13 +418,6 @@
                 [KMPProgressHUD dismissProgress];
                 self.view.userInteractionEnabled = YES;
             }];
-                
-    
-    
-                
-    
-    
-    
 }
 
 #pragma Mark - View

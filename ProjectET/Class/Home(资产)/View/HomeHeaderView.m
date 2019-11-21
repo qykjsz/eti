@@ -24,12 +24,14 @@
        
         self.backgroundColor = UIColorFromHEX(0x0B50FB, 1);
 
-        self.topLeftBtn = [[UIButton alloc]init];
+        self.topLeftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 //        [self.topLeftBtn setTitle:@"theeosportal >" forState:UIControlStateNormal];
-        [self.topLeftBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -60, 0, 0)];
+//        [self.topLeftBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -60, 0, 0)];
         [self.topLeftBtn setTitleColor:UIColorFromHEX(0xffffff, 1) forState:UIControlStateNormal];
         self.topLeftBtn.titleLabel.font = [UIFont systemFontOfSize:17];
+        self.topLeftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         self.topLeftBtn.tag = 0;
+//        self.topLeftBtn.backgroundColor = UIColor.redColor;
         [self.topLeftBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.topLeftBtn];
         
@@ -82,8 +84,7 @@
         
         
         [self.topLeftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.left.equalTo(self.mas_left).offset(0);
+            make.left.equalTo(self.mas_left).offset(15);
             make.top.equalTo(self.mas_top).offset(kStatusBarHeight);
             make.width.equalTo(@150);
             make.height.equalTo(@30);
