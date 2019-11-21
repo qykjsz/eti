@@ -24,7 +24,7 @@ singletonImplemention(KMPProgressHUD)
 //    [SVProgressHUD showImage:[Tools imageFromColor:[[UIColor blackColor] colorWithAlphaComponent:0.3]] status:text];
     
     CGFloat minimum = MAX((CGFloat)text.length * 0.06 + 0.5, 5);
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(minimum * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         dispatch_async(dispatch_get_main_queue(), ^{
             [SVProgressHUD dismiss];
         });
