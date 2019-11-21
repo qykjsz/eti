@@ -366,7 +366,6 @@
                 
                 textField.placeholder = @"请输入密码";
                 textField.secureTextEntry = YES;
-//                textField.keyboardType = UIKeyboardTypeNumberPad;
                 
             }];
             
@@ -375,7 +374,7 @@
                 ETWalletModel *model = [ETWalletManger getCurrentWallet];
                 UITextField *envirnmentNameTextField = alter.textFields.firstObject;
                 if (![model.password isEqualToString:envirnmentNameTextField.text]) {
-                    [SVProgressHUD showInfoWithStatus:@"密码不正确"];
+                     [KMPProgressHUD showText:@"密码不正确"];
                     return;
                 }
                 
@@ -401,10 +400,10 @@
                     ETWalletModel *model = [ETWalletManger getCurrentWallet];
                     [HSEther hs_sendToAssress:self.address ip:urlString money:self.countString tokenETH:self.toToken decimal:self.decimalString currentKeyStore:model.keyStore pwd:model.password gasPrice:[NSString stringWithFormat:@"%zd",self.gasValue] gasLimit:self.gaslimit block:^(NSString *hashStr, BOOL suc, HSWalletError error) {
                         if (suc) {
-                            [SVProgressHUD showWithStatus:@"转账成功"];
+                             [KMPProgressHUD showText:@"转账成功"];
                             [self.navigationController popToRootViewControllerAnimated:YES];
                         }else {
-                            [SVProgressHUD showWithStatus:@"转账失败"];
+                            [KMPProgressHUD showText:@"转账失败"];
                         }
                         
                     }];

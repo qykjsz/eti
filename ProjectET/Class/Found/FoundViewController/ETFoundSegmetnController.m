@@ -171,6 +171,9 @@
         }
         self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 332 + height * 90 + 20)];
         self.headerView.delegate = self;
+//        NSArray *aaaa = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573820843997&di=d82e372435a4025cba81c6fb16d83540&imgtype=0&src=http%3A%2F%2Fp0.ifengimg.com%2Fpmop%2F2017%2F1214%2F756F54079DFC35207C23E6FE1AA1BC2CA1018BB6_size70_w600_h450.jpeg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573820860928&di=5150b930f67ddb9fb0119b5b5d11729c&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F41602924fbab86ce142f11de937ec963f6d55739ea6a-7Hx1E8_fw658"
+//                          ];
+//        self.headerView.dataArr = [NSMutableArray arrayWithArray:aaaa];
         self.headerView.dataArr = model.data;
         
         
@@ -181,19 +184,37 @@
         self.hoverPageViewController.view.frame = CGRectMake(0, kStatusAndNavHeight, SCREEN_WIDTH, SCREEN_HEIGHT - barHeight);
         self.hoverPageViewController.delegate = self;
         self.hoverPageViewController.mainScrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            [self bannerRequest];
-            [self et_appnewsRequest];
-            [self handpickRequest];
+            
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                [self bannerRequest];
+            });
+            
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                 [self et_appnewsRequest];
+            });
+            
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                [self handpickRequest];
+            });
+            
+            
+           
+            
             [self.hoverPageViewController.mainScrollView.mj_header endRefreshing];
         }];
         [self addChildViewController:self.hoverPageViewController];
         [self.view addSubview:self.hoverPageViewController.view];
         
        
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [self bannerRequest];
+        });
         
-        [self bannerRequest];
-        [self et_appnewsRequest];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [self et_appnewsRequest];
+        });
         
+
     } failure:^(NSError *error) {
         
     }];

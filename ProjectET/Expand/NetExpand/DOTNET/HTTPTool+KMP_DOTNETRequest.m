@@ -21,7 +21,7 @@
  
 
      //   NSString *accesstoken = [[NSUserDefaults standardUserDefaults] valueForKey:@"accesstoken"];
-        [SVProgressHUD showWithStatus:@"正在加载"];
+//        [SVProgressHUD showWithStatus:@"正在加载"];
         [self requestWithAccessToken:@""
                            URLString:URLString
                           parameters:parameters
