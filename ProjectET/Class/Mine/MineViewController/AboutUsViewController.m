@@ -57,7 +57,7 @@
 }
 - (void)creatHeadView{
     UIView *headView = [ClassBaseTools viewWithBackgroundColor:[UIColor whiteColor]];
-    headView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 175);
+    headView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 0);
     self.detailTab.tableHeaderView =headView;
     UIImageView *iconImg = [[UIImageView alloc]init];
     iconImg.layer.masksToBounds = YES;
@@ -67,22 +67,29 @@
     [iconImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(SCREEN_WIDTH/2-30);
         make.width.height.mas_offset(60);
-        make.centerY.equalTo(headView).offset(-10);
+        make.centerY.equalTo(headView).offset(-30);
     }];
 
     UILabel *appName = [ClassBaseTools labelWithFont:14 textColor:[UIColor blackColor] textAlignment:0];
-    appName.text = @"APP";
+    appName.text = @"EToken";
     [headView addSubview:appName];
     [appName mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(iconImg);
-        make.top.equalTo(iconImg.mas_bottom).offset(5);
+        make.top.equalTo(iconImg.mas_bottom).offset(15);
     }];
     UILabel *detail = [ClassBaseTools labelWithFont:14 textColor:[UIColor grayColor] textAlignment:0];
-    detail.text = @"关于此app简介";
+    detail.text = @"EToken是一款易用的数字资产钱包,作为专业数字资产钱包，安全放心、简单易用；支持ETH 多币种钱包转账、收款等管理与兑换，以及基于智能合约的币币兑换和丰富的 DApp，让区块链技术更好地融入你的生活。";
+    detail.numberOfLines = 0;
     [headView addSubview:detail];
     [detail mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(iconImg);
-        make.top.equalTo(appName.mas_bottom).offset(5);
+        make.left.equalTo(headView.mas_left).offset(15);
+         make.right.equalTo(headView.mas_right).offset(-15);
+        make.top.equalTo(appName.mas_bottom).offset(15);
+    }];
+    
+    [headView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(detail.mas_bottom).offset(10);
     }];
 }
 #pragma mark--------DELEGATE-------------
