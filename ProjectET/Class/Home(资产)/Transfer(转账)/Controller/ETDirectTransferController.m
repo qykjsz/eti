@@ -436,7 +436,8 @@
                     
                 }];
          
-               
+                //添加一个取消按钮
+                [alter addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
                 
                 [alter addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                     
@@ -449,8 +450,7 @@
                     }
                 }]];
                 
-                //添加一个取消按钮
-                 [alter addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+                
                 
                 [self.navigationController presentViewController:alter animated:YES completion:nil];
                 

@@ -57,6 +57,8 @@
      glod    [string]    是    查询币种 如 ETH 传0为全部币种
      type    [string]    是    交易类型 1.转入 2.转入 3.全部
      */
+    
+    [SVProgressHUD showWithStatus:@"正在加载"];
     ETWalletModel *model = [ETWalletManger getCurrentWallet];
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setValue:model.address forKey:@"address"];
@@ -65,7 +67,7 @@
     [dict setValue:@"3" forKey:@"type"];
     [HTTPTool requestDotNetWithURLString:@"et_recordorder" parameters:dict type:kPOST success:^(id responseObject) {
         
-        
+        [SVProgressHUD dismiss];
 
         self.model = [ETTransListModel mj_objectWithKeyValues:responseObject];
         self.headerView.moneyLb.text = self.model.data.number;
@@ -77,7 +79,7 @@
         }
        
     } failure:^(NSError *error) {
-        
+        [SVProgressHUD dismiss];
     }];
 }
 

@@ -68,6 +68,7 @@
     
     [self.view addSubview:self.detailTab];
     
+    [self listRequest];
 }
 
 
@@ -131,6 +132,8 @@
         self.coinName = @"0";
         self.type = @"3";
     }
+    
+    [SVProgressHUD showWithStatus:@"正在加载"];
     ETWalletModel *model = [ETWalletManger getCurrentWallet];
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setValue:model.address forKey:@"address"];
@@ -139,7 +142,7 @@
     [dict setValue:self.type forKey:@"type"];
     [HTTPTool requestDotNetWithURLString:@"et_recordorder" parameters:dict type:kPOST success:^(id responseObject) {
         
-        
+        [SVProgressHUD dismiss];
         if (self.curretnPage == 0) {
             [self.dataArr removeAllObjects];
         }
@@ -154,7 +157,7 @@
         [self.detailTab reloadData];
         
     } failure:^(NSError *error) {
-        
+         [SVProgressHUD dismiss];
     }];
 }
 
