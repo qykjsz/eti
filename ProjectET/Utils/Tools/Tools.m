@@ -382,20 +382,100 @@
 
 
 + (NSString *)dateToCNString:(NSDate *)date {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSArray *weekdays = [NSArray arrayWithObjects: @"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday",@"Sunday", nil];
 
-    NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"];
+    NSCalendar * calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]; // 指定日历的算法
 
-    [calendar setTimeZone: timeZone];
+    NSDateComponents *comps = [calendar components:NSCalendarUnitWeekday fromDate:date];
 
-    NSCalendarUnit calendarUnit = NSCalendarUnitWeekday;
+    // 1 是周日，2是周一 3.以此类推
 
-    NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:date];
+    NSNumber * weekNumber = @([comps weekday]);
+
+    NSInteger weekInt = [weekNumber integerValue];
+
+    NSString *weekDayString = @"Monday";
+
+    switch (weekInt) {
+
+    case 1:
+
+    {
+
+    weekDayString = @"Sunday";
+
+    }
+
+    break;
+
+    case 2:
+
+    {
+
+    weekDayString = @"Monday";
+
+    }
+
+    break;
+
+    case 3:
+
+    {
+
+    weekDayString = @"Tuesday";
+
+    }
+
+    break;
+
+    case 4:
+
+    {
+
+    weekDayString = @"Wednesday";
+
+    }
+
+    break;
+
+    case 5:
+
+    {
+
+    weekDayString = @"Thursday";
+
+    }
+
+    break;
+
+    case 6:
+
+    {
+
+    weekDayString = @"Friday";
+
+    }
+
+    break;
+
+    case 7:
+
+    {
+
+    weekDayString = @"Saturday";
+
+    }
+
+    break;
+
+    default:
+
+    break;
+
+    }
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM月yyyy年"];
-    NSString *strDate = [NSString stringWithFormat:@"%@,%@", [weekdays objectAtIndex:theComponents.weekday],[dateFormatter stringFromDate:date]];
+    NSString *strDate = [NSString stringWithFormat:@"%@,%@", weekDayString,[dateFormatter stringFromDate:date]];
     
     return strDate;
     

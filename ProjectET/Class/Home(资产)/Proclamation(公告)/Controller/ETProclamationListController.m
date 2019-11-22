@@ -39,6 +39,7 @@
     // Do any additional setup after loading the view.
     
     self.title = @"平台公告";
+    self.view.backgroundColor = UIColor.whiteColor;
     self.dataArr = [NSMutableArray array];
     [self.view addSubview:self.detailTab];
     WEAK_SELF(self);

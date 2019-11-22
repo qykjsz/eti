@@ -19,6 +19,7 @@
     
     
     self.title = @"新闻详情";
+    self.view.backgroundColor = UIColor.whiteColor;
     NSString *uuidString = [UUID getUUID];
     [HTTPTool requestDotNetWithURLString:@"et_noticeone" parameters:@{@"id":self.Id,@"contacts":uuidString} type:kPOST success:^(id responseObject) {
         

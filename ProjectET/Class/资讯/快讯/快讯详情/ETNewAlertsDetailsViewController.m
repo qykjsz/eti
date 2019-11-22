@@ -45,9 +45,11 @@
     [self.textView setEditable:NO];
     self.lab_time.text = [self getTimeFromTimestamp:self.time];
     self.textView.text = [NSString stringWithFormat:@"  %@",self.content];
+ 
     self.lab_title.text = self.titleStr;
     self.lab_source.text = [NSString stringWithFormat:@"来源：%@",self.source];
     self.img_code.image = [KMPQRCodeManager createQRCode:self.url warterImage:nil];
+    self.textView.layoutManager.allowsNonContiguousLayout= NO;
     // Do any additional setup after loading the view from its nib.
 }
 

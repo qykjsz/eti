@@ -36,7 +36,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     UIButton *right = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
     [right setImage:[UIImage imageNamed:@"zjc_sao"] forState:UIControlStateNormal];
     [right addTarget:self action:@selector(rightAction) forControlEvents:UIControlEventTouchUpInside];
@@ -347,7 +346,6 @@
         }
         
     }];
-    
 }
 
 - (void)rightAction {

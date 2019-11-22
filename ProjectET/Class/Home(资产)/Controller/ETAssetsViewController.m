@@ -485,7 +485,7 @@
     
     [self.detailTab reloadData];
     [self.view endEditing:YES];
-    
+
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
