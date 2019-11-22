@@ -83,6 +83,7 @@
 /*版本号*/
 #define VersionString [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 #define BuildString [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+#define kVersion @"1.0.1"
 
 //适配adjustsScrollViewInsets属性
 

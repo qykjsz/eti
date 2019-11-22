@@ -13,13 +13,6 @@
 @interface Tools : NSObject
 
 
-/**
- *  获取版本号
- *
- *  @return NSString
- */
-+ (NSString *)getVersion;
-
 
 
 /**

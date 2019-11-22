@@ -95,11 +95,11 @@
     [SVProgressHUD showWithStatus:@""];
     [HTTPTool requestDotNetWithURLString:@"api_update" parameters:@{@"type":@"ios"}    type:kPOST success:^(id responseObject) {
         NSLog(@"%@",responseObject);
-        if (![responseObject[@"data"][@"name"] isEqual:[Tools getVersion]]) {
+        if (![responseObject[@"data"][@"name"] isEqual:VersionString]) {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:responseObject[@"data"][@"remark"] preferredStyle:UIAlertControllerStyleAlert];
 
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://%@",responseObject[@"data"][@"download"]]]options:@{} completionHandler:^(BOOL success) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",responseObject[@"data"][@"download"]]]options:@{} completionHandler:^(BOOL success) {
                     exit(0);
                 }];
             }];
