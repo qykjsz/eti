@@ -25,8 +25,6 @@
 
 @property (nonatomic,strong) NSString *kgString;
 
-@property (nonatomic,strong) NSString *coinNameString;
-
 @property (nonatomic,strong) ETHomeModel *model;
 
 @property (nonatomic,strong) NSString *leftString;

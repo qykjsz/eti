@@ -79,18 +79,21 @@
         switch (indexPath.row) {
             case 0:{
                 cell.titleLb.text = @"我有钱包";
+                cell.backGrayView.hidden = YES;
                 cell.iconImage.image = [UIImage imageNamed:@"dc_qb"];
                 cell.subTtitlLb.text = @"导入钱包";
             }
                 break;
             case 1:{
                 cell.titleLb.text = @"我没有钱包";
+                cell.backGrayView.hidden = YES;
                 cell.iconImage.image = [UIImage imageNamed:@"dc_no"];
                 cell.subTtitlLb.text = @"创建钱包";
             }
                 break;
             case 2:{
-                cell.titleLb.text = @"资产正在保护中";
+                cell.titleLb.text = @"游客模式";
+                cell.backGrayView.hidden = NO;
                 cell.iconImage.image = [UIImage imageNamed:@"dc_fk"];
                 cell.subTtitlLb.text = @"使用固定账号登录";
             }

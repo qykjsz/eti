@@ -472,12 +472,38 @@
         [self.dataArr removeAllObjects];
         [self.dataArr addObjectsFromArray:self.homeModel.data.glod];
     }
-    [self.detailTab reloadData];
+    
+    if (textfiled.text.length == 0) {
+        [self.dataArr removeAllObjects];
+        [self.dataArr addObjectsFromArray:self.homeModel.data.glod];
+    }
    
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField{
-    [self.view endEditing:true];
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+    
+    [self.detailTab reloadData];
+    [self.view endEditing:YES];
+
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [self.detailTab reloadData];
+    [self.view endEditing:YES];
+
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+    if (textField.text.length == 0) {
+        [self.dataArr removeAllObjects];
+        [self.dataArr addObjectsFromArray:self.homeModel.data.glod];
+        [self.detailTab reloadData];
+    }
+    
 }
 
 @end

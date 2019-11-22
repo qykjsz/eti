@@ -59,16 +59,16 @@
     //        NSLog(@"%@",error);
     //    }];
     //    return;
-    
+    [SVProgressHUD showWithStatus:@"加载中"];
     ETWalletModel *model = [ETWalletManger getModelIndex:self.selectWallect];
     [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
         [SVProgressHUD dismiss];
-       
+
         self.homeModel = [ETHomeModel mj_objectWithKeyValues:responseObject];
-        
+
         NSLog(@"%@",responseObject);
-        
-        
+
+
         self.headerView = [[ETWalletDetailView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 240) andProgress:self.homeModel.data.proportion];
         self.headerView.delegate = self;
         self.headerView.clipsToBounds = YES;
@@ -83,9 +83,9 @@
         }else {
             self.headerView.todayLb.text = [NSString stringWithFormat:@"今日 %@",self.homeModel.data.today];
         }
-        
+
         [self.detailTab reloadData];
-        
+
     } failure:^(NSError *error) {
         [SVProgressHUD dismiss];
     }];
@@ -158,10 +158,10 @@
         make.height.mas_equalTo(44);
     }];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        [SVProgressHUD showWithStatus:@"正在加载"];
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    
+    
+//    });
    
     [self homeRequest];
     
