@@ -180,6 +180,7 @@
     
     if (tag == 0) {
         ETDirectTransferController *dtVC = [ETDirectTransferController new];
+        dtVC.coinNameString = @"ETH";
         [self.navigationController pushViewController:dtVC animated:YES];
     }else if (tag == 1) {
         ETMyContactsController *cVC = [ETMyContactsController new];

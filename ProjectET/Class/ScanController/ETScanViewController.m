@@ -106,6 +106,7 @@
             if (self.isDirection) {
                 ETDirectTransferController *dvc = [ETDirectTransferController new];
                 dvc.address = obj.stringValue;
+                dvc.coinNameString = @"ETH";
                 [self.navigationController pushViewController:dvc animated:YES];
             }else {
                 if (self.scanBlock) {
@@ -119,6 +120,7 @@
             if (self.isDirection) {
                 ETDirectTransferController *dvc = [ETDirectTransferController new];
                 dvc.address = obj.stringValue;
+                dvc.coinNameString = @"ETH";
                 [self.navigationController pushViewController:dvc animated:YES];
             }else {
                 if (self.scanBlock) {

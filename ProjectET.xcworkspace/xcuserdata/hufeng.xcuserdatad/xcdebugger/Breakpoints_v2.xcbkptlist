@@ -19,70 +19,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ProjectET/Class/Mine/MineViewController/HelpViewController.m"
-            timestampString = "595938630.686915"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-getAlertsListData"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ProjectET/Class/Mine/MineViewController/HelpViewController.m"
-            timestampString = "595938630.687224"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-getAlertsListData"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[HelpViewController getAlertsListData]"
-                  moduleName = "ProjectET"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Mine/MineViewController/HelpViewController.m"
-                  timestampString = "596103297.100755"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "79">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[HelpViewController getAlertsListData]_block_invoke"
-                  moduleName = "ProjectET"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Mine/MineViewController/HelpViewController.m"
-                  timestampString = "596103297.102577"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "15">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/Controller/ETAddContactsController.m"
             timestampString = "595945786.528837"
             startingColumnNumber = "9223372036854775807"
@@ -116,12 +52,12 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETAddContactsController.m"
-                  timestampString = "596103297.109555"
+                  timestampString = "596106679.906981"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
                   endingLineNumber = "174"
-                  offsetFromSymbolStart = "957">
+                  offsetFromSymbolStart = "1044">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -131,12 +67,12 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETAddContactsController.m"
-                  timestampString = "596103297.110752"
+                  timestampString = "596106679.908172"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
                   endingLineNumber = "174"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -228,7 +164,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETKeyStoreController.m"
-            timestampString = "596097156.514078"
+            timestampString = "596106679.647082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "267"
@@ -244,7 +180,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETKeyStoreController.m"
-            timestampString = "596097156.514167"
+            timestampString = "596106679.647185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "276"
@@ -260,12 +196,155 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/CreatWallet(&#x521b;&#x5efa;&#x94b1;&#x5305;)/Controller/ETKeyStoreController.m"
-            timestampString = "596097156.514304"
+            timestampString = "596106679.647248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "251"
             endingLineNumber = "251"
             landmarkName = "-clickAction"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/Controller/ETDirectTransferController.m"
+            timestampString = "596106679.64837"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/Controller/ETDirectTransferController.m"
+            timestampString = "596106679.6487761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__64-[ETDirectTransferController tableView:didSelectRowAtIndexPath:]_block_invoke"
+                  moduleName = "ProjectET"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETDirectTransferController.m"
+                  timestampString = "596106682.429214"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "2885">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__64-[ETDirectTransferController tableView:didSelectRowAtIndexPath:]_block_invoke"
+                  moduleName = "ProjectET"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETDirectTransferController.m"
+                  timestampString = "596106682.430473"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "2969">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__64-[ETDirectTransferController tableView:didSelectRowAtIndexPath:]_block_invoke.203"
+                  moduleName = "ProjectET"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETDirectTransferController.m"
+                  timestampString = "596106682.431717"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "238"
+                  endingLineNumber = "238"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/View/ETTransferGasView.m"
+            timestampString = "596106679.6490721"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "-setData:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/View/ETTransferGasView.m"
+            timestampString = "596106679.649202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "-setData:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/View/ETTransferGasView.m"
+            timestampString = "596106679.649263"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "-sliderAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/View/ETTransferGasView.m"
+            timestampString = "596106679.649323"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "-setData:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

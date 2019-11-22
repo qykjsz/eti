@@ -43,6 +43,8 @@
 
 @property (nonatomic,strong) ETTransferGasView *gasView;
 
+@property (nonatomic,strong) ETTransferGasModel *gasModel;
+
 
 @end
 
@@ -59,7 +61,6 @@
     [super viewDidLoad];
    
     self.title = @"直接转账";
-    self.coinNameString = @"ETH";
     [self.view addSubview:self.detailTab];
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
        
@@ -67,24 +68,52 @@
         
     }];
     
+    // 获取币种信息，合约地址，数量，decmail
+    [self getCoinInfoRequest];
+    // 获取矿工费
+    [self kuanggongRequest];
+}
+
+- (void)getCoinInfoRequest {
+    
+    
+    [SVProgressHUD showWithStatus:@"正在加载"];
     ETWalletModel *model = [ETWalletManger getCurrentWallet];
     [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
-        
+        [SVProgressHUD dismiss];
         self.model = [ETHomeModel mj_objectWithKeyValues:responseObject];
         if (self.model.data.glod.count != 0) {
-            glodData *data = self.model.data.glod[0];
-            self.coinNameString = data.name;
-            self.leftString = data.number;
+            BOOL isSupport = false;
+            for (glodData *data in self.model.data.glod) {
+                if ([data.name isEqualToString:self.coinNameString]) {
+                    self.coinNameString = data.name;
+                    self.leftString = data.number;
+                    self.toToken = data.address;
+                    self.decimalString = data.decimal;
+                    isSupport = YES;
+                    break;
+                }
+            }
+            
+            if (!isSupport) {
+                [SVProgressHUD showInfoWithStatus:@"暂不支持改币种转账"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                });
+                return;
+            }
+            
             [self.detailTab reloadData];
         }
         
         
     } failure:^(NSError *error) {
-        
+        [SVProgressHUD dismiss];
     }];
     
-    [self kuanggongRequest];
+    
 }
+
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 
@@ -174,9 +203,50 @@
     
     if (indexPath.row == 4) {
         
-
-        [self kuanggongRequest];
-        [[UIApplication sharedApplication].keyWindow addSubview:self.gasView];
+        [SVProgressHUD showWithStatus:@"正在加载"];
+        [HTTPTool requestDotNetWithURLString:@"givecharge" parameters:nil type:kPOST success:^(id responseObject) {
+            
+            [SVProgressHUD dismiss];
+            
+            self.gasView = [[ETTransferGasView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+            WEAK_SELF(self);
+            [self.gasView setSliderBlcok:^(CGFloat gas, CGFloat transfergas,NSString *gaslimit) {
+                STRONG_SELF(self);
+                self.tranGasValue = transfergas;
+                self.gasValue = gas;
+                self.gaslimit = gaslimit;
+                [self.detailTab reloadData];
+                NSLog(@"%f,%f",transfergas,gas);
+            }];
+            self.gasView.coinName = self.coinNameString;
+            [[UIApplication sharedApplication].keyWindow addSubview:self.gasView];
+            
+            self.gasModel = [ETTransferGasModel mj_objectWithKeyValues:responseObject];
+            TransferGasData *data1 = self.gasModel.data[0];
+            TransferGasData *data2 = self.gasModel.data[1];
+            if ([data1.name isEqualToString:self.coinNameString]) {
+                self.gasView.data = data1;
+                self.gaslimit = data1.gasmin;
+                self.gasValue = [data1.gweidefault integerValue];
+                self.tranGasValue = [data1.gasmin floatValue] * self.gasValue / 1000000000;
+                [self.detailTab reloadData];
+            }else {
+                self.gasView.data = data2;
+                self.gaslimit = data2.gasmin;
+                self.gasValue = [data2.gweidefault integerValue];
+                self.tranGasValue = [data2.gasmin floatValue] * self.gasValue / 1000000000;
+                [self.detailTab reloadData];
+            }
+            
+           
+            
+            
+            
+        } failure:^(NSError *error) {
+             [SVProgressHUD dismiss];
+        }];
+        
+       
        
     }
     
@@ -187,24 +257,10 @@
     
     [HTTPTool requestDotNetWithURLString:@"givecharge" parameters:nil type:kPOST success:^(id responseObject) {
         
-        
-        ETTransferGasModel *model = [ETTransferGasModel mj_objectWithKeyValues:responseObject];
-        
-        
-        self.gasView = [[ETTransferGasView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-        WEAK_SELF(self);
-        [self.gasView setSliderBlcok:^(CGFloat gas, CGFloat transfergas,NSString *gaslimit) {
-            STRONG_SELF(self);
-            self.tranGasValue = transfergas;
-            self.gasValue = gas;
-            self.gaslimit = gaslimit;
-            [self.detailTab reloadData];
-            NSLog(@"%f,%f",transfergas,gas);
-        }];
-        self.gasView.coinName = self.coinNameString;
-        
-        TransferGasData *data1 = model.data[0];
-        TransferGasData *data2 = model.data[1];
+    
+        self.gasModel = [ETTransferGasModel mj_objectWithKeyValues:responseObject];
+        TransferGasData *data1 = self.gasModel.data[0];
+        TransferGasData *data2 = self.gasModel.data[1];
         if ([data1.name isEqualToString:self.coinNameString]) {
             self.gasView.data = data1;
             self.gaslimit = data1.gasmin;
@@ -218,8 +274,6 @@
             self.tranGasValue = [data2.gasmin floatValue] * self.gasValue / 1000000000;
             [self.detailTab reloadData];
         }
-        
-        
         
         
         
@@ -270,36 +324,6 @@
             }
         }
     }
-}
-
-- (void)getHeYueInfo {
-    
-    ETWalletModel *model = [ETWalletManger getCurrentWallet];
-    [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
-        
-        [SVProgressHUD dismiss];
-        self.view.userInteractionEnabled = YES;
-       
-        self.model = [ETHomeModel mj_objectWithKeyValues:responseObject];
-        
-        for (glodData *data in self.model.data.glod) {
-            if ([data.name isEqualToString:self.coinNameString]) {
-                self.coinNameString = data.name;
-                self.leftString = data.number;
-                self.toToken = data.address;
-                self.decimalString = data.decimal;
-                self.gaslimit = nil;
-                self.tranGasValue = 0;
-                self.countString = @"";
-                [self.detailTab reloadData];
-                break;
-            }
-        }
-        
-    } failure:^(NSError *error) {
-        [SVProgressHUD dismiss];
-        self.view.userInteractionEnabled = YES;
-    }];
 }
 
 - (void)ETDirectCountCellDelegateCoinClick {
@@ -450,9 +474,9 @@
                     ETWalletModel *model = [ETWalletManger getCurrentWallet];
                     UITextField *envirnmentNameTextField = alter.textFields.firstObject;
                     if (![model.password isEqualToString:envirnmentNameTextField.text]) {
-                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                            [SVProgressHUD showInfoWithStatus:@"密码不正确"];
-                        });
+
+                        [SVProgressHUD showInfoWithStatus:@"密码不正确"];
+   
                     }else {
                         [self virferimAciton];
                     }
@@ -498,8 +522,6 @@
         [_detailTab registerNib:[UINib nibWithNibName:@"ETDirectCountCell" bundle:nil] forCellReuseIdentifier:@"ETDirectCountCell"];
         [_detailTab registerNib:[UINib nibWithNibName:@"ETDirectLeftCell" bundle:nil] forCellReuseIdentifier:@"ETDirectLeftCell"];
         [_detailTab registerNib:[UINib nibWithNibName:@"ETDirectNormalCell" bundle:nil] forCellReuseIdentifier:@"ETDirectNormalCell"];
-        _detailTab.clipsToBounds = YES;
-        _detailTab.layer.cornerRadius = 25;
         _detailTab.tableFooterView = [self footerView];
     }
     return _detailTab;
