@@ -47,7 +47,7 @@
     [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
     
     [self ET_VCSetting];
-    [self kmp_VCWillDisappear];
+//    [self kmp_VCWillDisappear];
     // 启动动画
     [self imageGif:^{
 
@@ -129,6 +129,7 @@
         UINavigationController *nav = tab.viewControllers[tab.selectedIndex];
         ETDirectTransferController *vc = [[ETDirectTransferController alloc] init];
         vc.address = address;
+        vc.coinNameString = type;
         vc.hidesBottomBarWhenPushed = YES;
         [nav pushViewController:vc animated:YES];
     }else {

@@ -294,11 +294,12 @@
         [KMPProgressHUD showText:@"请同意阅读并同意服务及隐私条款"];
         return;
     }
-    
+    __block NSString *tempstrig = nil;
     self.view.userInteractionEnabled = NO;
     [SVProgressHUD showWithStatus:@"正在导入"];
     [HSEther hs_importWalletForPrivateKey:self.secretKey pwd:self.setPassWord block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, BOOL suc, HSWalletError error) {
         self.view.userInteractionEnabled = YES;
+        
         if (suc) {
             ETWalletModel *model = [[ETWalletModel alloc]init];
             model.password = self.setPassWord;
@@ -313,7 +314,6 @@
             [HTTPTool requestDotNetWithURLString:@"et_import" parameters:@{@"address":address} type:kPOST success:^(id responseObject) {
                 self.view.userInteractionEnabled = YES;
                 [ETWalletManger addWallet:model];
-                
                 [KMPProgressHUD showText:@"导入成功"];
                 
                 NSMutableArray *arr = WALLET_ARR;
@@ -335,7 +335,8 @@
                 
             } failure:^(NSError *error) {
                 self.view.userInteractionEnabled = YES;
-                [SVProgressHUD showInfoWithStatus:@"导入失败"];
+                tempstrig = @"导入失败";
+                [SVProgressHUD showInfoWithStatus:tempstrig];
             }];
             
            
@@ -346,16 +347,6 @@
         }
         
     }];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [SVProgressHUD dismiss];
-         [SVProgressHUD showInfoWithStatus:@"导入失败,请检查私钥"];
-        self.view.userInteractionEnabled = YES;
-    });
-    
-    
-    
-    
     
 }
 

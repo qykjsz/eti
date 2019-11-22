@@ -49,35 +49,35 @@
     } error:NULL];
 }
 
-- (void)kmp_VCWillDisappear {
-    
-    [UIViewController aspect_hookSelector:@selector(viewWillDisappear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
-        
-        [KMPProgressHUD dismissProgress];
-        
-        UIViewController * vc = aspectInfo.instance;
-        if (vc == nil) {
-            return ;
-        }
-        //屏蔽一些系统界面
-//        if ([aspectInfo.instance isKindOfClass:NSClassFromString(@"UIInputWindowController")] ||
-//            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UIWindow")] ||
-//            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UINavigationController")] ||
-//            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UITabBarController")] ||
-//            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UINavigationController")] ||
-//            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UICompatibilityInputViewController")] ||
-//            [aspectInfo.instance isKindOfClass:NSClassFromString(@"_UIRemoteInputViewController")] ||
-//            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UIApplicationRotationFollowingControllerNoTouches")] ||
-//            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UIApplicationRotationFollowingController")] ||
-//            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UIAlertController")] ||
-//            [aspectInfo.instance isKindOfClass:NSClassFromString(@"_UIAlertControllerTextFieldViewController")]||
-//            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UISystemKeyboardDockController")]) {
-//            
-//            
+//- (void)kmp_VCWillDisappear {
+//
+//    [UIViewController aspect_hookSelector:@selector(viewWillDisappear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
+//
+//      //  [KMPProgressHUD dismissProgress];
+//
+//        UIViewController * vc = aspectInfo.instance;
+//        if (vc == nil) {
 //            return ;
 //        }
-        
-    }error:NULL];
-}
+//        //屏蔽一些系统界面
+////        if ([aspectInfo.instance isKindOfClass:NSClassFromString(@"UIInputWindowController")] ||
+////            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UIWindow")] ||
+////            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UINavigationController")] ||
+////            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UITabBarController")] ||
+////            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UINavigationController")] ||
+////            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UICompatibilityInputViewController")] ||
+////            [aspectInfo.instance isKindOfClass:NSClassFromString(@"_UIRemoteInputViewController")] ||
+////            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UIApplicationRotationFollowingControllerNoTouches")] ||
+////            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UIApplicationRotationFollowingController")] ||
+////            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UIAlertController")] ||
+////            [aspectInfo.instance isKindOfClass:NSClassFromString(@"_UIAlertControllerTextFieldViewController")]||
+////            [aspectInfo.instance isKindOfClass:NSClassFromString(@"UISystemKeyboardDockController")]) {
+////
+////
+////            return ;
+////        }
+//
+//    }error:NULL];
+//}
 
 @end

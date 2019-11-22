@@ -142,6 +142,12 @@
     //1 解密私钥
     Account *account = [Account accountWithPrivateKey:[SecureData hexStringToData:[privateKey hasPrefix:@"0x"]?privateKey:[@"0x" stringByAppendingString:privateKey]]];
     
+    if (account == nil) {
+
+        block(@"",@"",@"",@"",NO,HSWalletErrorPrivateKeyLength);
+        return;
+    
+    }
     //2 生成keystore
     [account encryptSecretStorageJSON:pwd callback:^(NSString *json) {
         NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];

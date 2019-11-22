@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)ET_VCSetting;
 
-- (void)kmp_VCWillDisappear;
+//- (void)kmp_VCWillDisappear;
 
 @end
 
