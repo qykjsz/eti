@@ -65,6 +65,7 @@
             if (failure) {
                 NSError * error = [[NSError alloc] initWithDomain:@"TOKEN_FAILURE" code:-2 userInfo:@{NSLocalizedDescriptionKey:baseModel.msg,NSLocalizedFailureReasonErrorKey:@"Token无效或为空",NSLocalizedRecoverySuggestionErrorKey:@"重新登录"}];
                 failure(error);
+                [SVProgressHUD showInfoWithStatus:@"服务器繁忙"];
             }
             return ;
         }
@@ -72,6 +73,7 @@
         if (baseModel.code == 400) {
             NSError * error = [[NSError alloc] initWithDomain:@"TOKEN_FAILURE" code:baseModel.code userInfo:@{NSLocalizedDescriptionKey:baseModel.msg,NSLocalizedFailureReasonErrorKey:@"Token无效或为空",NSLocalizedRecoverySuggestionErrorKey:@"重新登录"}];
             failure(error);
+            [SVProgressHUD showInfoWithStatus:@"服务器繁忙"];
         }
 //        if (baseModel.code != 0) {
 //            NSLog(@"\n===========\n%@\n response data :\n%@\n===========",[NSString stringWithFormat:@"%@%@",APP_DOMAIN,URLString],responseObject);
@@ -96,6 +98,7 @@
         if (failure) {
             NSError * tmpError = [[NSError alloc] initWithDomain:@"FAILURE" code:-2333 userInfo:@{NSLocalizedDescriptionKey:ErrorText,NSLocalizedFailureReasonErrorKey:@".net后台接口报错",NSLocalizedRecoverySuggestionErrorKey:@".net后台接口报错"}];
             failure(tmpError);
+            [SVProgressHUD showInfoWithStatus:@"服务器繁忙"];
         }
         
     }];
