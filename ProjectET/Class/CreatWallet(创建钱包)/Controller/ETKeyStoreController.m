@@ -258,18 +258,18 @@
             model.walletType = @"以太坊";
             
             [HTTPTool requestDotNetWithURLString:@"et_import" parameters:@{@"address":address} type:kPOST success:^(id responseObject) {
-                
+
                 [ETWalletManger addWallet:model];
-                
+
                 [KMPProgressHUD showText:@"导入成功"];
-                
+
                 NSMutableArray *arr = WALLET_ARR;
                 if (arr.count == 1) {
                     [UIApplication sharedApplication].delegate.window.rootViewController = [ETRootViewController new];
                 }else {
                     [self.navigationController popToRootViewControllerAnimated:YES];
                 }
-                
+
             } failure:^(NSError *error) {
                  self.view.userInteractionEnabled = YES;
                 [SVProgressHUD showInfoWithStatus:@"导入失败"];
