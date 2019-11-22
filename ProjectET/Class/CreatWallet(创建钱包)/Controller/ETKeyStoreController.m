@@ -231,7 +231,7 @@
     }
     
     if ([self.setPassWord stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length == 0) {
-        [KMPProgressHUD showText:@"请输入密码"];
+        [KMPProgressHUD showText:@"请输入原keystore密码"];
         return;
     }
     
