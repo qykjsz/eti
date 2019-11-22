@@ -476,10 +476,8 @@
    
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    
-    [self.view endEditing:YES];
-    
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [self.view endEditing:true];
 }
 
 @end

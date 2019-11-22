@@ -36,7 +36,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     UIButton *right = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
     [right setImage:[UIImage imageNamed:@"zjc_sao"] forState:UIControlStateNormal];
     [right addTarget:self action:@selector(rightAction) forControlEvents:UIControlEventTouchUpInside];
@@ -347,11 +346,13 @@
         
     }];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [SVProgressHUD dismiss];
-         [SVProgressHUD showInfoWithStatus:@"导入失败,请检查私钥"];
-        self.view.userInteractionEnabled = YES;
-    });
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(40 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //        [SVProgressHUD dismiss];
+                 [SVProgressHUD showInfoWithStatus:@"导入失败,请检查私钥"];
+                self.view.userInteractionEnabled = YES;
+            });
+    
+
     
     
     
