@@ -48,6 +48,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) ETNoticeScrollView *scrollView;
 
 @property (nonatomic,strong) ETTableHeaderSelectView *selectView;
+
+@property (nonatomic,assign) BOOL isSelect;
+
 @end
 
 NS_ASSUME_NONNULL_END

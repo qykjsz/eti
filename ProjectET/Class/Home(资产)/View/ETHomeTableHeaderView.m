@@ -133,6 +133,8 @@
                 data.color = UIColorFromHEX(0xFFB632, 1);
             }else if ([data.name isEqualToString:@"EOS"]) {
                 data.color = UIColorFromHEX(0xEA566D, 1);
+            }else if ([data.name isEqualToString:@"HOPE"]) {
+                data.color = UIColorFromRGB(186, 222, 123, 1);
             }else {
                 data.color = [Tools getRandomColor];
             }
@@ -378,6 +380,13 @@
 //    }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"HIDDENDATA" object:@{@"isOpen":@(sender.selected)}];
+}
+
+- (void)setIsSelect:(BOOL)isSelect {
+    
+    _isSelect = isSelect;
+    self.eyeBtn.selected = isSelect;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"HIDDENDATA" object:@{@"isOpen":@(self.eyeBtn.selected)}];
 }
 
 - (UILabel *)USDTLB {

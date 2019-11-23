@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "A3FB4209-C828-4A1D-9928-156327AE5564"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
+            uuid = "1CBFD9DC-735F-43E3-95A4-3B055ADACB8F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -16,6 +18,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "215FB749-7B8F-41FA-9EC0-56A889482EA1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -32,6 +35,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "5BC81FE4-5583-4C9C-A8A8-5DF51B344AA7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -45,6 +49,7 @@
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "5BC81FE4-5583-4C9C-A8A8-5DF51B344AA7 - 8dfa115720d37f36"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -52,14 +57,14 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETAddContactsController.m"
-                  timestampString = "596106679.906981"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
                   endingLineNumber = "174"
-                  offsetFromSymbolStart = "1044">
+                  offsetFromSymbolStart = "957">
                </Location>
                <Location
+                  uuid = "5BC81FE4-5583-4C9C-A8A8-5DF51B344AA7 - 10ae57e6ed750581"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -67,12 +72,11 @@
                   moduleName = "ProjectET"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETAddContactsController.m"
-                  timestampString = "596106679.908172"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
                   endingLineNumber = "174"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -80,6 +84,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "BE974545-E518-4C1E-992E-869885ECB0C0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -87,8 +92,8 @@
             timestampString = "596097156.51362"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "478"
-            endingLineNumber = "478"
+            startingLineNumber = "486"
+            endingLineNumber = "486"
             landmarkName = "-coninSearch:"
             landmarkType = "7">
          </BreakpointContent>
@@ -96,6 +101,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "2EBA737B-97B2-483E-8E61-AA3B85CE525C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -103,8 +109,8 @@
             timestampString = "596097156.513745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "473"
-            endingLineNumber = "473"
+            startingLineNumber = "481"
+            endingLineNumber = "481"
             landmarkName = "-coninSearch:"
             landmarkType = "7">
          </BreakpointContent>
@@ -112,6 +118,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "8409FB5F-818C-4FE9-97BA-F0E0146BB984"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -119,8 +126,8 @@
             timestampString = "596097156.5138071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "467"
-            endingLineNumber = "467"
+            startingLineNumber = "475"
+            endingLineNumber = "475"
             landmarkName = "-coninSearch:"
             landmarkType = "7">
          </BreakpointContent>
@@ -128,6 +135,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "F223BE7A-9BA9-4E8A-AA8F-7F4D8DD45D5F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -135,8 +143,8 @@
             timestampString = "596097156.513885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "501"
-            endingLineNumber = "501"
+            startingLineNumber = "509"
+            endingLineNumber = "509"
             landmarkName = "-textFieldDidBeginEditing:"
             landmarkType = "7">
          </BreakpointContent>
@@ -144,6 +152,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "ADA51C81-A740-4DF3-9792-FEF6F8627C8B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -151,8 +160,8 @@
             timestampString = "596097156.5139641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "502"
-            endingLineNumber = "502"
+            startingLineNumber = "510"
+            endingLineNumber = "510"
             landmarkName = "-textFieldDidBeginEditing:"
             landmarkType = "7">
          </BreakpointContent>
@@ -160,6 +169,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D6D2C6AA-DE57-4BC7-B162-E9106CEAABEC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -176,6 +186,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "3F8176E5-8CC4-4115-A985-6F7696898E14"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -192,6 +203,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "635A78D5-3343-4110-AD1A-D077CBE51293"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -208,11 +220,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "2B5CD1FD-60A8-49E5-8714-B32B494A1934"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/Controller/ETDirectTransferController.m"
-            timestampString = "596106679.64837"
+            timestampString = "596181913.7658679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "230"
@@ -224,69 +237,24 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "AB27AE24-D0DC-4A40-8EEC-11B6C9B64FB3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProjectET/Class/Home(&#x8d44;&#x4ea7;)/Transfer(&#x8f6c;&#x8d26;)/Controller/ETDirectTransferController.m"
-            timestampString = "596106679.6487761"
+            timestampString = "596181913.796352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "236"
             endingLineNumber = "236"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__64-[ETDirectTransferController tableView:didSelectRowAtIndexPath:]_block_invoke"
-                  moduleName = "ProjectET"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETDirectTransferController.m"
-                  timestampString = "596106682.429214"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "237"
-                  endingLineNumber = "237"
-                  offsetFromSymbolStart = "2885">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__64-[ETDirectTransferController tableView:didSelectRowAtIndexPath:]_block_invoke"
-                  moduleName = "ProjectET"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETDirectTransferController.m"
-                  timestampString = "596106682.430473"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "237"
-                  endingLineNumber = "237"
-                  offsetFromSymbolStart = "2969">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__64-[ETDirectTransferController tableView:didSelectRowAtIndexPath:]_block_invoke.203"
-                  moduleName = "ProjectET"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hufeng/Desktop/Project_ET_Git/ProjectET/Class/Home(%E8%B5%84%E4%BA%A7)/Transfer(%E8%BD%AC%E8%B4%A6)/Controller/ETDirectTransferController.m"
-                  timestampString = "596106682.431717"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "238"
-                  endingLineNumber = "238"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "2F8A35BB-25CB-4A5F-BE31-EB75C2756AE1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -303,6 +271,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9FFA5965-E2FA-4248-9221-659775EE118E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -319,6 +288,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6A76524E-3F8A-4FD3-9005-5F676AC7CCD6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -335,6 +305,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "1EB59B64-DDAC-4BF4-AA0C-868EBDCBBE5F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
