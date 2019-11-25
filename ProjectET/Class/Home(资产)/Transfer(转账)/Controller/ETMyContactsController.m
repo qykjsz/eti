@@ -89,6 +89,7 @@
     }else {
         ETDirectTransferController *dVC = [ETDirectTransferController new];
         dVC.address = data.address;
+        dVC.coinNameString = @"ETH";
         [self.navigationController pushViewController:dVC animated:YES];
 
     }

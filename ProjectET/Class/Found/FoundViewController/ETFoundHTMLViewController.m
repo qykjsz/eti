@@ -138,6 +138,7 @@
         NSString *address = arr[1];
         ETDirectTransferController *vc = [[ETDirectTransferController alloc] init];
         vc.address = address;
+        vc.coinNameString = @"ETH";
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     }
