@@ -72,7 +72,7 @@
 - (UITableView *)detailTab {
     
     if (!_detailTab) {
-        _detailTab = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+        _detailTab = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 64) style:UITableViewStylePlain];
         _detailTab.delegate = self;
         _detailTab.dataSource = self;
         _detailTab.separatorStyle = UITableViewCellSeparatorStyleNone;
