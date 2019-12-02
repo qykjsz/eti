@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "ET_ScaningView.h"
 #import "ETDirectTransferController.h"
+#import "ETShopPaymentViewController.h"
 
 @interface ETScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 /** 会话对象 */
@@ -118,10 +119,26 @@
         } else { // 扫描结果为条形码
             NSLog(@"扫描条形码为----------%@", obj.stringValue);
             if (self.isDirection) {
-                ETDirectTransferController *dvc = [ETDirectTransferController new];
-                dvc.address = obj.stringValue;
-                dvc.coinNameString = @"ETH";
-                [self.navigationController pushViewController:dvc animated:YES];
+                NSDictionary *dic = [Tools dictionaryWithJsonString:obj.stringValue];
+                NSLog(@"%@",dic);
+                if (dic == nil) {
+                    ETDirectTransferController *dvc = [ETDirectTransferController new];
+                    dvc.hidesBottomBarWhenPushed = YES;
+                    dvc.address = obj.stringValue;
+                    dvc.coinNameString = @"ETH";
+                    NSMutableArray *vcs = [[NSMutableArray alloc]initWithArray:self.navigationController.viewControllers];
+                    [vcs removeLastObject];
+                    [vcs addObject:dvc];
+                    [self.navigationController setViewControllers:vcs];
+                }else {
+                    ETShopPaymentViewController *pvc = [ETShopPaymentViewController new];
+                    pvc.hidesBottomBarWhenPushed = YES;
+                    pvc.jsonStr = obj.stringValue;
+                    NSMutableArray *vcs = [[NSMutableArray alloc]initWithArray:self.navigationController.viewControllers];
+                    [vcs removeLastObject];
+                    [vcs addObject:pvc];
+                    [self.navigationController setViewControllers:vcs];
+                }
             }else {
                 if (self.scanBlock) {
                     self.scanBlock(obj.stringValue);

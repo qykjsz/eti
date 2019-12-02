@@ -25,6 +25,7 @@
 #import "ETScanViewController.h"
 #import "ETProclamationListController.h"
 #import "ETNewsDetailController.h"
+#import "ETShopCodeViewController.h"
 
 #import "ETMyWalletView.h"
 #import "ETHomeModel.h"
@@ -363,9 +364,12 @@
             [self.navigationController pushViewController:gVC animated:YES];
             break;
         }
-        case 5:
-            [KMPProgressHUD showText:@"暂未开放"];
+        case 5:{
+             ETShopCodeViewController *shopVC = [ETShopCodeViewController new];
+             shopVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:shopVC animated:YES];
             break;
+        }
         default:
             break;
     }

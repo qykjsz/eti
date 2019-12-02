@@ -66,7 +66,7 @@
 /*iPhoneX的状态栏高度差值*/
 #define kTopBarDifHeight (CGFloat)((iPhoneX||iPhoneXSMax||iPhoneXR)?(24.0):(0))
 /*导航条和Tabbar总高度*/
-#define kNavAndTabHeight (kNavBarAndStatusBarHeight + kTabBarHeight)
+#define kNavAndTabHeight (kStatusAndNavHeight + kTabBarHeight)
 
 
 //设备系统

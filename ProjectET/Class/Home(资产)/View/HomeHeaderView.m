@@ -63,20 +63,20 @@
         [self addSubview:leftBtn];
         
         UIButton *minBtn = [[UIButton alloc]init];
-        [minBtn setTitle:@"收款" forState:UIControlStateNormal];
+        [minBtn setTitle:@"二维码" forState:UIControlStateNormal];
         [minBtn setTitleColor:UIColorFromHEX(0xffffff, 1) forState:UIControlStateNormal];
         minBtn.titleLabel.font = [UIFont systemFontOfSize:11];
-        [minBtn setImage:[UIImage imageNamed:@"sy_shou"] forState:UIControlStateNormal];
+        [minBtn setImage:[UIImage imageNamed:@"sy_ewm_icon"] forState:UIControlStateNormal];
         minBtn.tag = 4;
        
         [minBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:minBtn];
         
         UIButton *rightBtn = [[UIButton alloc]init];
-        [rightBtn setTitle:@"闪兑" forState:UIControlStateNormal];
+        [rightBtn setTitle:@"商家收款" forState:UIControlStateNormal];
         [rightBtn setTitleColor:UIColorFromHEX(0xffffff, 1) forState:UIControlStateNormal];
         rightBtn.titleLabel.font = [UIFont systemFontOfSize:11];
-        [rightBtn setImage:[UIImage imageNamed:@"sy_shan"] forState:UIControlStateNormal];
+        [rightBtn setImage:[UIImage imageNamed:@"sy_sj_icon"] forState:UIControlStateNormal];
         rightBtn.tag = 5;
        
         [rightBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];

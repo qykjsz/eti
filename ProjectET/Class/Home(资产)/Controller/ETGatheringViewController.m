@@ -29,7 +29,7 @@
     self.model = [ETWalletManger getCurrentWallet];
     
     
-    self.title = @"收款";
+    self.title = @"二维码";
     UIButton *rightBarBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
     [rightBarBtn setTitle:@"记录" forState:UIControlStateNormal];
     [rightBarBtn setTitleColor:UIColorFromHEX(0x000000, 1) forState:UIControlStateNormal];

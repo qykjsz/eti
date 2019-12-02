@@ -46,7 +46,7 @@
     
     [self pageLayout];
     self.dataArray = [NSMutableArray array];
-    
+    self.view.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:self.detailTab];
     WEAK_SELF(self);
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {

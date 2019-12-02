@@ -24,7 +24,7 @@
     [super viewDidLoad];
     self.title = @"交易记录";
     self.dataArr = [NSMutableArray array];
-   
+    self.view.backgroundColor = UIColor.whiteColor;
     self.curretnPage = 0;
     [self.view addSubview:self.detailTab];
     

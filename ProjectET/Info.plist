@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0.1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>ETUnion</string>
@@ -44,10 +44,12 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>是否允许访问相机</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>添加内容到相册（写），会出现用户授权</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>是否允许访问相册</string>
 	<key>UILaunchStoryboardName</key>
-	<string>Main</string>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

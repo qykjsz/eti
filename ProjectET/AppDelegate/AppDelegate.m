@@ -49,6 +49,7 @@
     [self ET_VCSetting];
 //    [self kmp_VCWillDisappear];
     // 启动动画
+//    [self updateApp];
     [self imageGif:^{
 
     }];
@@ -60,21 +61,23 @@
 
 - (void)imageGif:(void(^)(void))complicate {
     
-    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"ET_New" withExtension:@"gif"]; //加载GIF图片
-    CGImageSourceRef gifSource = CGImageSourceCreateWithURL((CFURLRef) fileUrl, NULL);           //将GIF图片转换成对应的图片源
-    size_t frameCout = CGImageSourceGetCount(gifSource);                                         //获取其中图片源个数，即由多少帧图片组成
-    NSMutableArray *frames = [[NSMutableArray alloc] init];                                      //定义数组存储拆分出来的图片
-    for (size_t i = 0; i < frameCout; i++) {
-        CGImageRef imageRef = CGImageSourceCreateImageAtIndex(gifSource, i, NULL); //从GIF图片中取出源图片
-        UIImage *imageName = [UIImage imageWithCGImage:imageRef];                  //将图片源转换成UIimageView能使用的图片源
-        [frames addObject:imageName];                                              //将图片加入数组中
-        CGImageRelease(imageRef);
-    }
-    UIImageView *gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, iPhoneBang?(SCREEN_HEIGHT-120):SCREEN_HEIGHT)];
-    gifImageView.animationImages = frames; //将图片数组加入UIImageView动画数组中
-    gifImageView.animationDuration = 3; //每次动画时长
-    gifImageView.animationRepeatCount = 1;
-    [gifImageView startAnimating];         //开启动画，此处没有调用播放次数接口，UIImageView默认播放次数为无限次，故这里不做处理
+//    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"ET_New" withExtension:@"gif"]; //加载GIF图片
+//    CGImageSourceRef gifSource = CGImageSourceCreateWithURL((CFURLRef) fileUrl, NULL);           //将GIF图片转换成对应的图片源
+//    size_t frameCout = CGImageSourceGetCount(gifSource);                                         //获取其中图片源个数，即由多少帧图片组成
+//    NSMutableArray *frames = [[NSMutableArray alloc] init];                                      //定义数组存储拆分出来的图片
+//    for (size_t i = 0; i < frameCout; i++) {
+//        CGImageRef imageRef = CGImageSourceCreateImageAtIndex(gifSource, i, NULL); //从GIF图片中取出源图片
+//        UIImage *imageName = [UIImage imageWithCGImage:imageRef];                  //将图片源转换成UIimageView能使用的图片源
+//        [frames addObject:imageName];                                              //将图片加入数组中
+//        CGImageRelease(imageRef);
+//    }
+    UIImageView *gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    gifImageView.image = [UIImage imageNamed:@"et_qdy"];
+    gifImageView.contentMode = UIViewContentModeScaleAspectFill;
+//    gifImageView.animationImages = frames; //将图片数组加入UIImageView动画数组中
+//    gifImageView.animationDuration = 3; //每次动画时长
+//    gifImageView.animationRepeatCount = 1;
+//    [gifImageView startAnimating];         //开启动画，此处没有调用播放次数接口，UIImageView默认播放次数为无限次，故这里不做处理
     UIView *backWhiteView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     backWhiteView.backgroundColor = [UIColor whiteColor];
     [backWhiteView addSubview:gifImageView];
@@ -82,11 +85,11 @@
     
     
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         [backWhiteView removeFromSuperview];
         [self updateApp];
-        complicate();
+//        complicate();
         
     });
 }

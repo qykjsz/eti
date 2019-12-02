@@ -111,11 +111,11 @@
             }
             [self.pageTitleView addSubview:button];
         }
-        
         for (FoundCategoryData *data in models.data) {
             ETFoundClassificationController *vc1 = [[ETFoundClassificationController alloc]init];
             vc1.data = data.apps;
-            vc1.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+            vc1.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT  - self.pageTitleView.frame.size.height - kNavAndTabHeight);
+            NSLog(@"%f",vc1.view.frame.size.height);
             [self.viewControllers addObject:vc1];
         }
         

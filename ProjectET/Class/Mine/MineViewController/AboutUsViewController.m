@@ -71,7 +71,7 @@
     }];
 
     UILabel *appName = [ClassBaseTools labelWithFont:14 textColor:[UIColor blackColor] textAlignment:0];
-    appName.text = @"EToken (1.0.1)";
+    appName.text = [NSString stringWithFormat: @"EToken (%@)",VersionString];
     [headView addSubview:appName];
     [appName mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(iconImg);

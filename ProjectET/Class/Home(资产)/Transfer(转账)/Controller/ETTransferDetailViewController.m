@@ -66,7 +66,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"详情";
-    
+    self.view.backgroundColor = UIColor.whiteColor;
     UIScrollView *backScro = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     [backScro setContentSize:CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT + 50)];
     [self.view addSubview:backScro];

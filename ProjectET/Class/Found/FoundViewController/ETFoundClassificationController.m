@@ -40,17 +40,25 @@
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.view addSubview:self.detailTab];
+     NSLog(@"%f",self.detailTab.frame.size.height);
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    self.view.backgroundColor = 
-    [self.view addSubview:self.detailTab];
+//    [self.view addSubview:self.detailTab];
     WEAK_SELF(self);
-    [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
-        STRONG_SELF(self);
-        make.edges.equalTo(self.view);
-    }];
+//    [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
+//        STRONG_SELF(self);
+//        make.edges.equalTo(self.view);
+//    }];
+    
+  
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
@@ -91,6 +99,7 @@
     
     if (!_detailTab) {
         _detailTab = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _detailTab.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         _detailTab.delegate = self;
         _detailTab.dataSource = self;
         _detailTab.separatorStyle = UITableViewCellSeparatorStyleNone;

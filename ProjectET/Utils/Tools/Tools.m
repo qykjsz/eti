@@ -15,6 +15,7 @@
 
 @implementation Tools
 
+
 + (void)copyClickWithText:(NSString *)text {
     UIPasteboard *pab = [UIPasteboard generalPasteboard];
     pab.string = text;

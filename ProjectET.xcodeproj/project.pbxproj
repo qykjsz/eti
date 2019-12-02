@@ -11,6 +11,20 @@
 		04018F5A2382A17100C45B63 /* ETHTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04018F582382A17100C45B63 /* ETHTMLViewController.m */; };
 		04018F5E2382A1A200C45B63 /* ETFoundHTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04018F5C2382A1A200C45B63 /* ETFoundHTMLViewController.m */; };
 		04018F5F2382A1A200C45B63 /* ETFoundHTMLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04018F5D2382A1A200C45B63 /* ETFoundHTMLViewController.xib */; };
+		04998A16238CC736002939F1 /* ETShopSetMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04998A14238CC736002939F1 /* ETShopSetMoneyViewController.m */; };
+		04998A17238CC736002939F1 /* ETShopSetMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04998A15238CC736002939F1 /* ETShopSetMoneyViewController.xib */; };
+		04998A1F238CCE20002939F1 /* ETShopRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04998A1D238CCE20002939F1 /* ETShopRecordViewController.m */; };
+		04998A20238CCE20002939F1 /* ETShopRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04998A1E238CCE20002939F1 /* ETShopRecordViewController.xib */; };
+		04998A27238CCEDD002939F1 /* ETShopRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04998A25238CCEDD002939F1 /* ETShopRecordCell.m */; };
+		04998A28238CCEDD002939F1 /* ETShopRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04998A26238CCEDD002939F1 /* ETShopRecordCell.xib */; };
+		04998A2C238CD3AB002939F1 /* ETShopChooseCoinView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04998A2B238CD3AB002939F1 /* ETShopChooseCoinView.m */; };
+		04998A33238CD938002939F1 /* ETShopChooseCoinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04998A31238CD938002939F1 /* ETShopChooseCoinCell.m */; };
+		04998A34238CD938002939F1 /* ETShopChooseCoinCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04998A32238CD938002939F1 /* ETShopChooseCoinCell.xib */; };
+		04998A37238D0171002939F1 /* ETShopChooseCoinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04998A36238D0171002939F1 /* ETShopChooseCoinView.xib */; };
+		04998A3A238D06C8002939F1 /* ETShopChooseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04998A39238D06C8002939F1 /* ETShopChooseModel.m */; };
+		04998A40238D29E8002939F1 /* ETShopPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04998A3E238D29E8002939F1 /* ETShopPaymentViewController.m */; };
+		04998A41238D29E8002939F1 /* ETShopPaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04998A3F238D29E8002939F1 /* ETShopPaymentViewController.xib */; };
+		04CAF00E238D3FD4001FEE2F /* ETShopRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CAF00D238D3FD4001FEE2F /* ETShopRecordModel.m */; };
 		04DB9ED6237BE69B002796C3 /* ETNewAlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9ED4237BE69B002796C3 /* ETNewAlertsViewController.m */; };
 		04DB9ED7237BE69B002796C3 /* ETNewAlertsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB9ED5237BE69B002796C3 /* ETNewAlertsViewController.xib */; };
 		04DB9EDB237BE6C4002796C3 /* ETNewInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9ED9237BE6C4002796C3 /* ETNewInformationViewController.m */; };
@@ -35,6 +49,8 @@
 		04DB9F12237C15B5002796C3 /* ETFoundHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9F10237C15B5002796C3 /* ETFoundHeaderView.m */; };
 		04DB9F16237CF233002796C3 /* ETNewMarketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9F14237CF233002796C3 /* ETNewMarketCell.m */; };
 		04DB9F17237CF233002796C3 /* ETNewMarketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB9F15237CF233002796C3 /* ETNewMarketCell.xib */; };
+		04DCAA2D238CB47600B9F2A3 /* ETShopCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DCAA2B238CB47600B9F2A3 /* ETShopCodeViewController.m */; };
+		04DCAA2E238CB47700B9F2A3 /* ETShopCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DCAA2C238CB47600B9F2A3 /* ETShopCodeViewController.xib */; };
 		04E9DAF5237CFE8800CDB9EE /* ETNewMarketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DAF4237CFE8800CDB9EE /* ETNewMarketModel.m */; };
 		04E9DAFA237D23D300CDB9EE /* ETNewAlertsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E9DAF8237D23D300CDB9EE /* ETNewAlertsDetailsViewController.m */; };
 		04E9DAFB237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E9DAF9237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib */; };
@@ -237,6 +253,28 @@
 		04018F5B2382A1A200C45B63 /* ETFoundHTMLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundHTMLViewController.h; sourceTree = "<group>"; };
 		04018F5C2382A1A200C45B63 /* ETFoundHTMLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundHTMLViewController.m; sourceTree = "<group>"; };
 		04018F5D2382A1A200C45B63 /* ETFoundHTMLViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETFoundHTMLViewController.xib; sourceTree = "<group>"; };
+		04998A13238CC736002939F1 /* ETShopSetMoneyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETShopSetMoneyViewController.h; sourceTree = "<group>"; };
+		04998A14238CC736002939F1 /* ETShopSetMoneyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETShopSetMoneyViewController.m; sourceTree = "<group>"; };
+		04998A15238CC736002939F1 /* ETShopSetMoneyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETShopSetMoneyViewController.xib; sourceTree = "<group>"; };
+		04998A1C238CCE20002939F1 /* ETShopRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETShopRecordViewController.h; sourceTree = "<group>"; };
+		04998A1D238CCE20002939F1 /* ETShopRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETShopRecordViewController.m; sourceTree = "<group>"; };
+		04998A1E238CCE20002939F1 /* ETShopRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETShopRecordViewController.xib; sourceTree = "<group>"; };
+		04998A24238CCEDD002939F1 /* ETShopRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETShopRecordCell.h; sourceTree = "<group>"; };
+		04998A25238CCEDD002939F1 /* ETShopRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETShopRecordCell.m; sourceTree = "<group>"; };
+		04998A26238CCEDD002939F1 /* ETShopRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETShopRecordCell.xib; sourceTree = "<group>"; };
+		04998A2A238CD3AB002939F1 /* ETShopChooseCoinView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETShopChooseCoinView.h; sourceTree = "<group>"; };
+		04998A2B238CD3AB002939F1 /* ETShopChooseCoinView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETShopChooseCoinView.m; sourceTree = "<group>"; wrapsLines = 0; };
+		04998A30238CD938002939F1 /* ETShopChooseCoinCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETShopChooseCoinCell.h; sourceTree = "<group>"; };
+		04998A31238CD938002939F1 /* ETShopChooseCoinCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETShopChooseCoinCell.m; sourceTree = "<group>"; };
+		04998A32238CD938002939F1 /* ETShopChooseCoinCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETShopChooseCoinCell.xib; sourceTree = "<group>"; };
+		04998A36238D0171002939F1 /* ETShopChooseCoinView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETShopChooseCoinView.xib; sourceTree = "<group>"; };
+		04998A38238D06C8002939F1 /* ETShopChooseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETShopChooseModel.h; sourceTree = "<group>"; };
+		04998A39238D06C8002939F1 /* ETShopChooseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETShopChooseModel.m; sourceTree = "<group>"; };
+		04998A3D238D29E8002939F1 /* ETShopPaymentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETShopPaymentViewController.h; sourceTree = "<group>"; };
+		04998A3E238D29E8002939F1 /* ETShopPaymentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETShopPaymentViewController.m; sourceTree = "<group>"; };
+		04998A3F238D29E8002939F1 /* ETShopPaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETShopPaymentViewController.xib; sourceTree = "<group>"; };
+		04CAF00C238D3FD4001FEE2F /* ETShopRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETShopRecordModel.h; sourceTree = "<group>"; };
+		04CAF00D238D3FD4001FEE2F /* ETShopRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETShopRecordModel.m; sourceTree = "<group>"; };
 		04DB9ED3237BE69B002796C3 /* ETNewAlertsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewAlertsViewController.h; sourceTree = "<group>"; };
 		04DB9ED4237BE69B002796C3 /* ETNewAlertsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewAlertsViewController.m; sourceTree = "<group>"; };
 		04DB9ED5237BE69B002796C3 /* ETNewAlertsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewAlertsViewController.xib; sourceTree = "<group>"; };
@@ -277,6 +315,9 @@
 		04DB9F13237CF233002796C3 /* ETNewMarketCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewMarketCell.h; sourceTree = "<group>"; };
 		04DB9F14237CF233002796C3 /* ETNewMarketCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewMarketCell.m; sourceTree = "<group>"; };
 		04DB9F15237CF233002796C3 /* ETNewMarketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewMarketCell.xib; sourceTree = "<group>"; };
+		04DCAA2A238CB47600B9F2A3 /* ETShopCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETShopCodeViewController.h; sourceTree = "<group>"; };
+		04DCAA2B238CB47600B9F2A3 /* ETShopCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETShopCodeViewController.m; sourceTree = "<group>"; };
+		04DCAA2C238CB47600B9F2A3 /* ETShopCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETShopCodeViewController.xib; sourceTree = "<group>"; };
 		04E9DAF3237CFE8800CDB9EE /* ETNewMarketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETNewMarketModel.h; sourceTree = "<group>"; };
 		04E9DAF4237CFE8800CDB9EE /* ETNewMarketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETNewMarketModel.m; sourceTree = "<group>"; };
 		04E9DAF7237D23D300CDB9EE /* ETNewAlertsDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewAlertsDetailsViewController.h; sourceTree = "<group>"; };
@@ -660,6 +701,112 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04998A11238CC724002939F1 /* 设置金额 */ = {
+			isa = PBXGroup;
+			children = (
+				04998A12238CC724002939F1 /* Controller */,
+			);
+			path = "设置金额";
+			sourceTree = "<group>";
+		};
+		04998A12238CC724002939F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04998A13238CC736002939F1 /* ETShopSetMoneyViewController.h */,
+				04998A14238CC736002939F1 /* ETShopSetMoneyViewController.m */,
+				04998A15238CC736002939F1 /* ETShopSetMoneyViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04998A18238CCDD0002939F1 /* 收款记录 */ = {
+			isa = PBXGroup;
+			children = (
+				04998A19238CCDD0002939F1 /* Controller */,
+				04998A1A238CCDD0002939F1 /* Model */,
+				04998A1B238CCDD0002939F1 /* View */,
+			);
+			path = "收款记录";
+			sourceTree = "<group>";
+		};
+		04998A19238CCDD0002939F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04998A1C238CCE20002939F1 /* ETShopRecordViewController.h */,
+				04998A1D238CCE20002939F1 /* ETShopRecordViewController.m */,
+				04998A1E238CCE20002939F1 /* ETShopRecordViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04998A1A238CCDD0002939F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04CAF00C238D3FD4001FEE2F /* ETShopRecordModel.h */,
+				04CAF00D238D3FD4001FEE2F /* ETShopRecordModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04998A1B238CCDD0002939F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04998A24238CCEDD002939F1 /* ETShopRecordCell.h */,
+				04998A25238CCEDD002939F1 /* ETShopRecordCell.m */,
+				04998A26238CCEDD002939F1 /* ETShopRecordCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04998A29238CD2F4002939F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04998A35238CDB47002939F1 /* Model */,
+				04998A2F238CD909002939F1 /* cell */,
+				04998A2A238CD3AB002939F1 /* ETShopChooseCoinView.h */,
+				04998A2B238CD3AB002939F1 /* ETShopChooseCoinView.m */,
+				04998A36238D0171002939F1 /* ETShopChooseCoinView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04998A2F238CD909002939F1 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				04998A30238CD938002939F1 /* ETShopChooseCoinCell.h */,
+				04998A31238CD938002939F1 /* ETShopChooseCoinCell.m */,
+				04998A32238CD938002939F1 /* ETShopChooseCoinCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		04998A35238CDB47002939F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04998A38238D06C8002939F1 /* ETShopChooseModel.h */,
+				04998A39238D06C8002939F1 /* ETShopChooseModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04998A3B238D29B0002939F1 /* 商家付款 */ = {
+			isa = PBXGroup;
+			children = (
+				04998A3C238D29B0002939F1 /* Controller */,
+			);
+			path = "商家付款";
+			sourceTree = "<group>";
+		};
+		04998A3C238D29B0002939F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04998A3D238D29E8002939F1 /* ETShopPaymentViewController.h */,
+				04998A3E238D29E8002939F1 /* ETShopPaymentViewController.m */,
+				04998A3F238D29E8002939F1 /* ETShopPaymentViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		04DB9EC3237BE5D8002796C3 /* 资讯 */ = {
 			isa = PBXGroup;
 			children = (
@@ -850,6 +997,37 @@
 				04DB9F10237C15B5002796C3 /* ETFoundHeaderView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		04DCAA27238CB41D00B9F2A3 /* 商家 */ = {
+			isa = PBXGroup;
+			children = (
+				04998A3B238D29B0002939F1 /* 商家付款 */,
+				04998A18238CCDD0002939F1 /* 收款记录 */,
+				04998A11238CC724002939F1 /* 设置金额 */,
+				04DCAA28238CB43200B9F2A3 /* 商家收款 */,
+				04998A29238CD2F4002939F1 /* View */,
+			);
+			name = "商家";
+			path = "ProjectET/Class/商家";
+			sourceTree = SOURCE_ROOT;
+		};
+		04DCAA28238CB43200B9F2A3 /* 商家收款 */ = {
+			isa = PBXGroup;
+			children = (
+				04DCAA29238CB43200B9F2A3 /* Controller */,
+			);
+			path = "商家收款";
+			sourceTree = "<group>";
+		};
+		04DCAA29238CB43200B9F2A3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04DCAA2A238CB47600B9F2A3 /* ETShopCodeViewController.h */,
+				04DCAA2B238CB47600B9F2A3 /* ETShopCodeViewController.m */,
+				04DCAA2C238CB47600B9F2A3 /* ETShopCodeViewController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		04E9DAF6237D074100CDB9EE /* 快讯详情 */ = {
@@ -1414,6 +1592,7 @@
 		4F2306FF2366EAB30046A136 /* Home(资产) */ = {
 			isa = PBXGroup;
 			children = (
+				04DCAA27238CB41D00B9F2A3 /* 商家 */,
 				04DB9F00237C156E002796C3 /* TotalAssets(总资产) */,
 				4F1A07FE237A80F800C7F7D0 /* Proclamation(公告) */,
 				4F0E4DA82375023200E83618 /* WalletManger(钱包管理) */,
@@ -1871,27 +2050,34 @@
 			files = (
 				04DB9EE6237BEAFB002796C3 /* ETNewArticleViewController.xib in Resources */,
 				4F14FB23236966E10008C50A /* ETMyWalletDetailCell.xib in Resources */,
+				04998A34238CD938002939F1 /* ETShopChooseCoinCell.xib in Resources */,
 				4F2306D22366DE9F0046A136 /* LaunchScreen.storyboard in Resources */,
 				4F14FB0223692CF30008C50A /* ETAddContactsCell.xib in Resources */,
 				04DB9EFC237C0CC7002796C3 /* ETNewArticleDetailsViewController.xib in Resources */,
 				4F24C373238284DE00BB6E00 /* ET_New.gif in Resources */,
 				04DB9F17237CF233002796C3 /* ETNewMarketCell.xib in Resources */,
 				04018F592382A17100C45B63 /* ETHTMLViewController.xib in Resources */,
+				04998A37238D0171002939F1 /* ETShopChooseCoinView.xib in Resources */,
 				4F128CA523683BF70004284D /* ETDirectCountCell.xib in Resources */,
 				4F14FAFA236924B30008C50A /* ETMyContactsCell.xib in Resources */,
 				04E9DAFB237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib in Resources */,
 				4FF7FF21237FD3E300C38456 /* ETFoundSectionView.xib in Resources */,
+				04998A20238CCE20002939F1 /* ETShopRecordViewController.xib in Resources */,
 				04018F5F2382A1A200C45B63 /* ETFoundHTMLViewController.xib in Resources */,
 				4F128CAA23683EE70004284D /* ETDirectLeftCell.xib in Resources */,
+				04998A28238CCEDD002939F1 /* ETShopRecordCell.xib in Resources */,
+				04998A17238CC736002939F1 /* ETShopSetMoneyViewController.xib in Resources */,
 				4F2306CF2366DE9F0046A136 /* Assets.xcassets in Resources */,
 				4F128CAF236840120004284D /* ETDirectNormalCell.xib in Resources */,
 				4F2306CD2366DE9D0046A136 /* Main.storyboard in Resources */,
+				04998A41238D29E8002939F1 /* ETShopPaymentViewController.xib in Resources */,
 				4F128C7F236820320004284D /* backUpMoneyViewController.xib in Resources */,
 				04DB9EDC237BE6C4002796C3 /* ETNewInformationViewController.xib in Resources */,
 				4F1942D2236D22E900AD907E /* ETWalletDetailCell.xib in Resources */,
 				4FF7FF29237FE5CC00C38456 /* ETFoundSearchDetailCell.xib in Resources */,
 				04DB9EE1237BEAE4002796C3 /* ETNewMarketViewController.xib in Resources */,
 				04DB9ED7237BE69B002796C3 /* ETNewAlertsViewController.xib in Resources */,
+				04DCAA2E238CB47700B9F2A3 /* ETShopCodeViewController.xib in Resources */,
 				4F3F9036236A7F04009AAA24 /* ETCreatWalletInputCell.xib in Resources */,
 				4F1942E0236D306800AD907E /* ETWalletImportCell.xib in Resources */,
 				4F128CA0236839610004284D /* ETDirectTranAddressCell.xib in Resources */,
@@ -2053,22 +2239,26 @@
 				4F14FAF5236924770008C50A /* ETMyContactsController.m in Sources */,
 				4F2307032366EB120046A136 /* ETRootViewController.m in Sources */,
 				04E9DAFA237D23D300CDB9EE /* ETNewAlertsDetailsViewController.m in Sources */,
+				04998A27238CCEDD002939F1 /* ETShopRecordCell.m in Sources */,
 				4F0E4D992373F5BB00E83618 /* ETTransferDetailCell.m in Sources */,
 				4F3F9063236C0F5E009AAA24 /* ETRecordDetailViewController.m in Sources */,
 				4FF7FF1C237FD22D00C38456 /* ETFoundSerarchNavView.m in Sources */,
 				04DB9EFB237C0CC7002796C3 /* ETNewArticleDetailsViewController.m in Sources */,
 				4FFFB91A2379390600AE9BFF /* ETTransferDetailModel.m in Sources */,
+				04998A2C238CD3AB002939F1 /* ETShopChooseCoinView.m in Sources */,
 				4FA0A30B236FCA270038F880 /* WMZPageScroller.m in Sources */,
 				4FA0A30A236FCA270038F880 /* WMZPageController.m in Sources */,
 				04DB9F11237C15B5002796C3 /* ETFoundCell.m in Sources */,
 				4F24C37623828D2A00BB6E00 /* ETFoundSegmetnController.m in Sources */,
 				4F128C86236820580004284D /* EqualSpaceFlowLayoutEvolve.m in Sources */,
+				04998A16238CC736002939F1 /* ETShopSetMoneyViewController.m in Sources */,
 				4F3F9043236AB22B009AAA24 /* ETColdWalletViewController.m in Sources */,
 				8855DAB92377E86700F25DA4 /* LanguageViewController.m in Sources */,
 				4F14FAF9236924B30008C50A /* ETMyContactsCell.m in Sources */,
 				4FFFB04D237EA47E00A87E50 /* ETFoundBannerModel.m in Sources */,
 				4FA0A305236FCA270038F880 /* WMZPageLoopView.m in Sources */,
 				4F14FB0D23693CE40008C50A /* UIImage+Watermark.m in Sources */,
+				04CAF00E238D3FD4001FEE2F /* ETShopRecordModel.m in Sources */,
 				4F0E4DA523740AA900E83618 /* ETWalletSearchCell.m in Sources */,
 				4FFFAFEC237CFAF600A87E50 /* ETFoundDappModel.m in Sources */,
 				04DB9EEA237BF68B002796C3 /* ETNewAlertsCell.m in Sources */,
@@ -2080,6 +2270,7 @@
 				4F128C83236820320004284D /* backUpMoneyViewController.m in Sources */,
 				04E9DB11237E47AF00CDB9EE /* ETNodeModel.m in Sources */,
 				4FF7FF19237FAAB600C38456 /* ETFoundSearchController.m in Sources */,
+				04DCAA2D238CB47600B9F2A3 /* ETShopCodeViewController.m in Sources */,
 				04DB9F07237C156E002796C3 /* ETTotalAssetsController.m in Sources */,
 				4F3F905C236BCB4B009AAA24 /* ETGatheringViewController.m in Sources */,
 				4F0E4D9F2374044700E83618 /* ETWalletSearchController.m in Sources */,
@@ -2134,6 +2325,7 @@
 				4F1A224B2372CF8100FDD5D9 /* KMP_DOTNETModel.m in Sources */,
 				04DB9F08237C156E002796C3 /* ETHashSearchModel.m in Sources */,
 				04DB9EFF237C14E2002796C3 /* Tools+DeviceCategory.m in Sources */,
+				04998A33238CD938002939F1 /* ETShopChooseCoinCell.m in Sources */,
 				4F1942DB236D2F7000AD907E /* ETQcodeImportView.m in Sources */,
 				4F128C80236820320004284D /* ViewController.m in Sources */,
 				4F3F9049236ABAD9009AAA24 /* ETSecertCreatView.m in Sources */,
@@ -2173,6 +2365,7 @@
 				4F3F9046236AB672009AAA24 /* ETKeyStoreController.m in Sources */,
 				4F128C692367E1A00004284D /* ETHomeTableHeaderView.m in Sources */,
 				4FA0A32723717A8A0038F880 /* ETScanViewController.m in Sources */,
+				04998A3A238D06C8002939F1 /* ETShopChooseModel.m in Sources */,
 				4F5D1084237AC12E00B13D00 /* KeyChainStore.m in Sources */,
 				4F2306C72366DE9D0046A136 /* AppDelegate.m in Sources */,
 				4F1A224A2372CF8100FDD5D9 /* HTTPTool+KMP_DOTNETRequest.m in Sources */,
@@ -2187,6 +2380,8 @@
 				4F14FAFD23692BB70008C50A /* ETAddContactsController.m in Sources */,
 				4F14FB29236985420008C50A /* ETCreatWalletViewController.m in Sources */,
 				4F128C81236820320004284D /* titleCell.m in Sources */,
+				04998A1F238CCE20002939F1 /* ETShopRecordViewController.m in Sources */,
+				04998A40238D29E8002939F1 /* ETShopPaymentViewController.m in Sources */,
 				4F0E4DAB237502B600E83618 /* ETWalletMangerController.m in Sources */,
 				4F1942DF236D306800AD907E /* ETWalletImportCell.m in Sources */,
 				4F128C89236822610004284D /* ETTransferViewController.m in Sources */,
@@ -2299,7 +2494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2352,7 +2547,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2367,6 +2562,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20191129;
 				DEVELOPMENT_TEAM = 2LML59W777;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2379,7 +2575,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectET1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2395,6 +2591,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20191129;
 				DEVELOPMENT_TEAM = 2LML59W777;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2412,7 +2609,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectET1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
