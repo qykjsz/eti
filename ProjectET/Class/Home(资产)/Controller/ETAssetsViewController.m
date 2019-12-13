@@ -16,7 +16,6 @@
 #import "ETCreatWalletViewController.h"
 #import "ETGatheringViewController.h"
 #import "ETWalletDetailController.h"
-#import "ETWalletDetailController.h"
 #import "ETRecordSegmentController.h"
 #import "ETWalletSearchController.h"
 #import "ETWalletMangerController.h"
@@ -26,7 +25,8 @@
 #import "ETProclamationListController.h"
 #import "ETNewsDetailController.h"
 #import "ETShopCodeViewController.h"
-
+#import "ETTopupCenterViewController.h"
+#import "IQKeyboardManager.h"//键盘管理
 #import "ETMyWalletView.h"
 #import "ETHomeModel.h"
 #import "ETBackUpWalletView.h"
@@ -53,18 +53,22 @@
 @end
 
 @implementation ETAssetsViewController
-
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
     [self homeRequest];
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+     //默认为YES，关闭为NO
+      manager.enable = NO;
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     
     [super viewWillDisappear:animated];
-    
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+     //默认为YES，关闭为NO
+      manager.enable = YES;
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
 }
@@ -96,6 +100,7 @@
     [super viewDidLoad];
     
     self.title = @"资产";
+
     self.isOpen = YES;
     self.model = [ETWalletManger getCurrentWallet];
     self.dataArr = [NSMutableArray array];
@@ -153,7 +158,7 @@
     //        NSLog(@"%@",error);
     //    }];
     //    return;
-    [SVProgressHUD showWithStatus:@"正在加载"];
+//    [SVProgressHUD showWithStatus:@"正在加载"];
     ETWalletModel *model = [ETWalletManger getCurrentWallet];
     [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
          [KMPProgressHUD dismissProgress];
@@ -170,7 +175,15 @@
         
         self.headerView = [[ETHomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 390) andProgress:self.homeModel.data.proportion];
         self.headerView.isSelect = self.isOpen;
+         WEAK_SELF(self);
         [self.headerView.selectView setHomeSelectTag:^(NSInteger tag) {
+            STRONG_SELF(self);
+            if (tag == 1) {
+                ETTopupCenterViewController *cVC = [ETTopupCenterViewController new];
+                  cVC.hidesBottomBarWhenPushed = YES;
+                  [self.navigationController pushViewController:cVC animated:YES];
+                return ;
+            }
             [SVProgressHUD showInfoWithStatus:@"暂未开放"];
         }];
         
@@ -240,7 +253,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 75;
+    return 70;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -300,7 +313,7 @@
 
 #pragma mark - ETHomeTableHeaderViewDelegate
 - (void)ETHomeTableHeaderViewDelegateClickAction {
-    
+     [self.view endEditing:true];
     ETWalletDetailController *DVC = [ETWalletDetailController new];
     DVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:DVC animated:YES];
@@ -308,7 +321,7 @@
 }
 
 - (void)ETHomeTableHeaderViewDelegateMoreClickAction {
-    
+     [self.view endEditing:true];
     ETProclamationListController *pVC = [ETProclamationListController new];
     pVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:pVC animated:YES];
@@ -316,7 +329,7 @@
 }
 
 - (void)ETHomeTableHeaderViewBannerDelegateClickAction:(NSInteger)tag {
-    
+     [self.view endEditing:true];
     if (self.homeModel.data.news.count != 0) {
         ETNewsDetailController *dVC = [ETNewsDetailController new];
         newsData *data = self.homeModel.data.news[tag];
@@ -329,7 +342,7 @@
 #pragma mark - HomeHeaderViewDelegate
 
 -(void)HomeHeaderViewDelegateWithClickTag:(NSInteger)tag {
-    
+     [self.view endEditing:true];
     switch (tag) {
         case 0: {
             ETMyWalletView *view = [[ETMyWalletView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
@@ -377,7 +390,7 @@
 
 #pragma mark - ETMyWalletViewDelegate
 - (void)ETMyWalletViewDelegateAddWallet {
-    
+     [self.view endEditing:true];
     ETCreatWalletViewController *creatVC = [ETCreatWalletViewController new];
     creatVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:creatVC animated:YES];
@@ -385,7 +398,7 @@
 }
 
 - (void)ETMyWalletViewDelegateWalletManger {
-    
+     [self.view endEditing:true];
     ETWalletMangerController *mVC = [ETWalletMangerController new];
     mVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:mVC animated:YES];
@@ -393,7 +406,7 @@
 }
 
 - (void)ETMyWalletViewDelegateDidSelect:(NSIndexPath *)indexPath {
-    
+     [self.view endEditing:true];
     NSMutableArray *arr = WALLET_ARR;
     ETWalletModel *model = arr[indexPath.row];
     
@@ -426,7 +439,7 @@
 
 #pragma mark - ETBackUpWalletViewDelegate
 - (void)ETBackUpWalletViewDelegateDeletAction:(ETWalletModel *)model {
-    
+     [self.view endEditing:true];
     [ETWalletManger deleWallet:model];
     [self homeRequest];
     [SVProgressHUD showInfoWithStatus:@"删除成功"];
@@ -434,7 +447,7 @@
 }
 
 - (void)ETBackUpWalletViewDelegateBackUpAction:(ETWalletModel *)model {
-    
+     [self.view endEditing:true];
     backUpMoneyViewController *bcVC = [backUpMoneyViewController new];
     bcVC.model = model;
     bcVC.hidesBottomBarWhenPushed = YES;
@@ -444,7 +457,7 @@
 
 #pragma mark - Action
 - (void)pushToListAction {
-    
+     [self.view endEditing:true];
     ETWalletSearchController *sVC = [ETWalletSearchController new];
     sVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:sVC animated:YES];
@@ -453,6 +466,7 @@
 
 #pragma mark - NoticeAction
 - (void)hiddenAction:(NSNotification *)notice {
+     [self.view endEditing:true];
     self.isOpen = [notice.object[@"isOpen"] boolValue];
     
     if (self.isOpen) {
@@ -489,19 +503,24 @@
         [self.dataArr removeAllObjects];
         [self.dataArr addObjectsFromArray:self.homeModel.data.glod];
     }
-   
+    [self.detailTab reloadData];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    
-    
+    CGRect rect = textField.frame;
+     rect.size.width = 85;
+    rect.origin.x = SCREEN_WIDTH - 54  - 85;
+     textField.frame = rect;
     [self.detailTab reloadData];
     [self.view endEditing:YES];
 
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
+    CGRect rect = textField.frame;
+     rect.size.width = 85;
+     rect.origin.x = SCREEN_WIDTH - 54  - 85;
+     textField.frame = rect;
     [self.detailTab reloadData];
     [self.view endEditing:YES];
 
@@ -515,7 +534,22 @@
         [self.dataArr addObjectsFromArray:self.homeModel.data.glod];
         [self.detailTab reloadData];
     }
+    self.detailTab.contentInset = UIEdgeInsetsMake(-385, 0, 0, 0);
+    CGRect rect = textField.frame;
+     rect.size.width = 160;
+    rect.origin.x = SCREEN_WIDTH - 54  - 160;
+     textField.frame = rect;
+
     
+}
+
+//去掉 UItableview headerview 黏性(sticky)
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    {
+        if (scrollView.contentOffset.y < 385 && scrollView.contentOffset.y>=0) {
+            self.detailTab.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+        }
+    }
 }
 
 @end

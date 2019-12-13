@@ -14,8 +14,8 @@
     
     if (self = [super initWithFrame:frame]) {
         
-        NSArray *titleArr = @[@"资源",@"投票",@"币买卖",@"更多工具"];
-        NSArray *photoArr = @[@"sy_ziyuan",@"sy_toupiao",@"sy_maibi",@"sy_more"];
+        NSArray *titleArr = @[@"资源",@"充值",@"币买卖",@"更多工具"];
+        NSArray *photoArr = @[@"sy_ziyuan",@"sy_cz_icon",@"sy_maibi",@"sy_more"];
         for (int i = 0; i<4; i++) {
             
             UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
@@ -23,7 +23,10 @@
             [btn setTitle:titleArr[i] forState:UIControlStateNormal];
             btn.titleLabel.font = [UIFont systemFontOfSize:12];
             [btn setImage:[UIImage imageNamed:photoArr[i]] forState:UIControlStateNormal];
-            [btn setBackgroundImage:[UIImage imageNamed:@"kj_kp_d"] forState:UIControlStateNormal];
+            btn.layer.borderColor = UIColorFromHEX(0xE6E6E6, 1).CGColor;
+            btn.layer.borderWidth = 0.5;
+            btn.layer.cornerRadius = 14;
+            btn.layer.masksToBounds = YES;
             [self addSubview:btn];
             
             NSInteger btnW = (SCREEN_WIDTH - 30 - 36)/4;

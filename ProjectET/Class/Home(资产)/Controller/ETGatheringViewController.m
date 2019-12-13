@@ -19,7 +19,7 @@
 @property (nonatomic,strong) ETWalletModel *model;
 
 @end
-
+    
 @implementation ETGatheringViewController
 
 - (void)viewDidLoad {

@@ -160,6 +160,7 @@
                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     <connections>
                                         <action selector="textFieldValueChanged:" destination="-1" eventType="editingChanged" id="9Sl-Ds-fXj"/>
+                                        <outlet property="delegate" destination="-1" id="N63-HV-sZi"/>
                                     </connections>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbg-0u-wwD">

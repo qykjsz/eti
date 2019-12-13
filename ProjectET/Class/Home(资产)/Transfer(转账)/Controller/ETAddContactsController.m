@@ -59,6 +59,7 @@
     ETAddContactsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETAddContactsCell"];
     cell.delegate = self;
     cell.rowPath = indexPath;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.row == 0) {
         cell.titleLb.text = @"名字";
         cell.textfiled.placeholder = @"请输入名字";
@@ -67,6 +68,10 @@
         if (self.nameString) {
             cell.textfiled.text = self.nameString;
         }
+        if (self.model != nil) {
+            self.nameString = self.model.name;
+            cell.textfiled.text = self.model.name;
+        }
     }else if (indexPath.row == 1) {
         cell.titleLb.text = @"备注";
         cell.textfiled.placeholder = @"选填";
@@ -74,6 +79,11 @@
         cell.scanBtn.hidden = true;
         if (self.backUpString) {
             cell.textfiled.text = self.backUpString;
+        }
+        
+        if (self.model != nil) {
+            cell.textfiled.text = self.model.remarks;
+            self.backUpString = self.model.remarks;
         }
     }else if (indexPath.row == 2) {
         cell.titleLb.text = @"钱包底层";
@@ -84,12 +94,22 @@
         if (self.bottomAddress) {
             cell.textfiled.text = self.bottomAddress;
         }
+        
+        if (self.model != nil) {
+            cell.textfiled.text = self.model.wallettype;
+            self.bottomAddress = self.model.wallettype;
+        }
     }else if (indexPath.row == 3) {
         cell.titleLb.text = @"钱包地址";
         cell.arrowImage.hidden = true;
         cell.textfiled.placeholder = @"扫描或粘贴钱包地址";
         if (self.walletAddress) {
             cell.textfiled.text = self.walletAddress;
+        }
+        
+        if (self.model != nil) {
+            cell.textfiled.text = self.model.address;
+            self.walletAddress = self.model.address;
         }
     }
     return cell;
@@ -118,6 +138,12 @@
     
     return 49;
 }
+
+
+
+
+
+
 
 - (UIView *)footerView{
     
@@ -157,33 +183,72 @@
         [SVProgressHUD showInfoWithStatus:@"请输入钱包地址"];
         return;
     }
+    
+    if (self.model == nil) {
+        [self addContacts];
+    }else{
+        [self upContacts];
+    }
+    
+}
+
+- (void)addContacts{
     /*
-     contacts 复制    [string]    是    设备号
-     name    [string]    是    联系人姓名
-     remarks    [string]    是    备注（可以为空）
-     wallettype    [string]    是    不知道你们怎么选 后台只能添加ETH
-     address    [string]    是    地址
-     */
-    NSString *uuidString = [UUID getUUID];
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setValue:uuidString forKey:@"contacts"];
-    [dict setValue:self.nameString forKey:@"name"];
-    [dict setValue:self.backUpString forKey:@"remarks"];
-    [dict setValue:self.bottomAddress forKey:@"wallettype"];
-    [dict setValue:self.walletAddress forKey:@"address"];
-    [HTTPTool requestDotNetWithURLString:@"et_addcontacts" parameters:dict type:kPOST success:^(id responseObject) {
-        
-        [SVProgressHUD showInfoWithStatus:@"创建成功"];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.navigationController popViewControllerAnimated:YES];
-        });
-        
-    } failure:^(NSError *error) {
-        [SVProgressHUD showInfoWithStatus:@"创建失败"];
-    }];
-    
-    
-    
+        contacts 复制    [string]    是    设备号
+        name    [string]    是    联系人姓名
+        remarks    [string]    是    备注（可以为空）
+        wallettype    [string]    是    不知道你们怎么选 后台只能添加ETH
+        address    [string]    是    地址
+        */
+       NSString *uuidString = [UUID getUUID];
+       NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+       [dict setValue:uuidString forKey:@"contacts"];
+       [dict setValue:self.nameString forKey:@"name"];
+       [dict setValue:self.backUpString forKey:@"remarks"];
+       [dict setValue:self.bottomAddress forKey:@"wallettype"];
+       [dict setValue:self.walletAddress forKey:@"address"];
+       [HTTPTool requestDotNetWithURLString:@"et_addcontacts" parameters:dict type:kPOST success:^(id responseObject) {
+           
+           [SVProgressHUD showInfoWithStatus:@"创建成功"];
+           dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+               [self.navigationController popViewControllerAnimated:YES];
+           });
+           
+       } failure:^(NSError *error) {
+           [SVProgressHUD showInfoWithStatus:@"创建失败"];
+       }];
+       
+       
+}
+
+- (void)upContacts{
+    /*
+        contacts 复制    [string]    是    设备号
+        name    [string]    是    联系人姓名
+        remarks    [string]    是    备注（可以为空）
+        wallettype    [string]    是    不知道你们怎么选 后台只能添加ETH
+        address    [string]    是    地址
+        */
+       NSString *uuidString = [UUID getUUID];
+       NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+       [dict setValue:uuidString forKey:@"contacts"];
+       [dict setValue:self.nameString forKey:@"name"];
+       [dict setValue:self.backUpString forKey:@"remarks"];
+       [dict setValue:self.bottomAddress forKey:@"wallettype"];
+       [dict setValue:self.walletAddress forKey:@"address"];
+        [dict setValue:self.model.ID forKey:@"contactsid"];
+       [HTTPTool requestDotNetWithURLString:@"et_upcontacts" parameters:dict type:kPOST success:^(id responseObject) {
+           
+           [SVProgressHUD showInfoWithStatus:@"修改成功"];
+           dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+               [self.navigationController popViewControllerAnimated:YES];
+           });
+           
+       } failure:^(NSError *error) {
+           [SVProgressHUD showInfoWithStatus:@"修改失败"];
+       }];
+       
+       
 }
 
 #pragma mark - ETAddContactsCellDelegate

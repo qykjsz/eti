@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSMutableArray <ETShopChooseDataModel *> *data;
 
+@property (nonatomic,strong) NSMutableArray *numData;
+
 @property (nonatomic,strong) NSString *msg;
 
 @property (nonatomic,strong) NSString *code;
@@ -38,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) NSString *decimal;
 
 @property (nonatomic,strong) NSString *address;
+
+@property (nonatomic,strong) NSString *proportion;
 @end
 
 NS_ASSUME_NONNULL_END

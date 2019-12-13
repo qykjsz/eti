@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ETMycontactListModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ETAddContactsController : UIViewController
-
+@property (nonatomic,strong) contactData *model;
 @end
 
 NS_ASSUME_NONNULL_END

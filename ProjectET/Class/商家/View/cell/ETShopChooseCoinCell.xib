@@ -27,14 +27,17 @@
                                     <constraint firstAttribute="height" constant="1" id="267-CC-dye"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpN-B9-ceE">
-                                <rect key="frame" x="141.5" y="16" width="37.5" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpN-B9-ceE">
+                                <rect key="frame" x="120" y="16" width="80" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="lvL-x9-nxL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.11372549019607843" green="0.3411764705882353" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X5E-vJ-EqH">
-                                <rect key="frame" x="109.5" y="13" width="24" height="24"/>
+                                <rect key="frame" x="96" y="13" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="B0V-Yo-9oO"/>
                                     <constraint firstAttribute="width" constant="24" id="D7D-hn-rLq"/>
@@ -47,7 +50,7 @@
                             <constraint firstItem="gpN-B9-ceE" firstAttribute="centerY" secondItem="X5E-vJ-EqH" secondAttribute="centerY" id="Hh3-Kg-yFY"/>
                             <constraint firstAttribute="trailing" secondItem="KNj-pF-zYY" secondAttribute="trailing" id="NlE-KW-Gb8"/>
                             <constraint firstItem="KNj-pF-zYY" firstAttribute="leading" secondItem="MBU-gW-Pq2" secondAttribute="leading" id="UWM-cr-WXO"/>
-                            <constraint firstItem="gpN-B9-ceE" firstAttribute="leading" secondItem="X5E-vJ-EqH" secondAttribute="trailing" constant="8" id="azr-gu-xu2"/>
+                            <constraint firstItem="gpN-B9-ceE" firstAttribute="leading" secondItem="X5E-vJ-EqH" secondAttribute="trailing" id="azr-gu-xu2"/>
                             <constraint firstItem="gpN-B9-ceE" firstAttribute="centerY" secondItem="MBU-gW-Pq2" secondAttribute="centerY" id="cgE-1W-GsB"/>
                             <constraint firstItem="KNj-pF-zYY" firstAttribute="top" secondItem="MBU-gW-Pq2" secondAttribute="top" id="qur-1v-HzM"/>
                         </constraints>

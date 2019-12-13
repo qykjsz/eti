@@ -104,4 +104,71 @@
     }];
 }
 
+
+
++ (void)requestGameDotNetWithURLString:(NSString *)URLString
+                        parameters:(id)parameters
+                              type:(XMHTTPMethodType)type
+                           success:(void (^)(id responseObject))success
+                           failure:(void (^)(NSError * error))failure
+{
+    
+    
+        URLString = [URLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+     //   NSString *accesstoken = [[NSUserDefaults standardUserDefaults] valueForKey:@"accesstoken"];
+//        [SVProgressHUD showWithStatus:@"正在加载"];
+        [self requestGameWithAccessToken:@""
+                           URLString:URLString
+                          parameters:parameters
+                                type:type
+                             success:^(id responseObject) {
+                                 [SVProgressHUD dismiss];
+                                 if (success) {
+                                     success(responseObject);
+                                 }
+                             } failure:^(NSError *error) {
+                                 [SVProgressHUD dismiss];
+                                 if (failure) {
+                                     failure(error);
+                                 }
+                             }];
+
+    
+}
+
+
++ (void)requestGameWithAccessToken:(NSString *)accessToken
+                     URLString:(NSString *)URLString
+                    parameters:(id)parameters
+                          type:(XMHTTPMethodType)type
+                       success:(void (^)(id responseObject))success
+                       failure:(void (^)(NSError * error))failure {
+    
+
+    
+    [XMCenter sendRequest:^(XMRequest *request) {
+        request.url = [NSString stringWithFormat:@"%@%@",@"http://www.xiaojiyx.com/",URLString];
+        request.parameters = parameters;
+        request.httpMethod = type;
+        request.requestSerializerType = kXMRequestSerializerJSON;
+        request.responseSerializerType = kXMResponseSerializerJSON;
+    } onSuccess:^(id responseObject) {
+        
+        KMP_DOTNETModel *baseModel = [KMP_DOTNETModel mj_objectWithKeyValues:responseObject];
+            if (success) {
+                success(responseObject);
+            }
+    } onFailure:^(NSError *error) {
+        
+        if (failure) {
+            NSError * tmpError = [[NSError alloc] initWithDomain:@"FAILURE" code:-2333 userInfo:@{NSLocalizedDescriptionKey:ErrorText,NSLocalizedFailureReasonErrorKey:@".net后台接口报错",NSLocalizedRecoverySuggestionErrorKey:@".net后台接口报错"}];
+            failure(tmpError);
+            [SVProgressHUD showInfoWithStatus:@"服务器繁忙"];
+        }
+        
+    }];
+}
+
+
 @end

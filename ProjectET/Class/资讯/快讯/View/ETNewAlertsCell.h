@@ -26,6 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *lab_source;
 @property (nonatomic,strong) ETNewConalertNewsListData *model;
 @property (nonatomic,weak) id <ETNewAlertsCellDelegate> delegate;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

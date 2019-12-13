@@ -170,7 +170,7 @@
     UILabel *tipsLb = [[UILabel alloc]init];
     tipsLb.text = @"我已仔细阅读并同意";
     tipsLb.textColor = UIColorFromHEX(0x999999, 1);
-    tipsLb.font = [UIFont systemFontOfSize:10];
+    tipsLb.font = [UIFont systemFontOfSize:12];
     [backView addSubview:tipsLb];
     [tipsLb mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -182,7 +182,7 @@
     UIButton *clickBtn = [[UIButton alloc]init];
     [clickBtn setTitle:@"服务及隐私条款" forState:UIControlStateNormal];
     [clickBtn setTitleColor:UIColorFromHEX(0x1D57FF, 1) forState:UIControlStateNormal];
-    clickBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+    clickBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [backView addSubview:clickBtn];
     [clickBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -194,7 +194,7 @@
     UILabel *tipsLbTwo = [[UILabel alloc]init];
     tipsLbTwo.text = @"·我已仔细阅读并同意 服务及隐私条款";
     tipsLbTwo.textColor = UIColorFromHEX(0x999999, 1);
-    tipsLbTwo.font = [UIFont systemFontOfSize:10];
+    tipsLbTwo.font = [UIFont systemFontOfSize:12];
     [backView addSubview:tipsLbTwo];
     [tipsLbTwo mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -206,7 +206,7 @@
     UILabel *tipsLbThree = [[UILabel alloc]init];
     tipsLbThree.text = @"·App不存储密码，也无法帮您找回，请务必牢";
     tipsLbThree.textColor = UIColorFromHEX(0x999999, 1);
-    tipsLbThree.font = [UIFont systemFontOfSize:10];
+    tipsLbThree.font = [UIFont systemFontOfSize:12];
     [backView addSubview:tipsLbThree];
     [tipsLbThree mas_makeConstraints:^(MASConstraintMaker *make) {
         

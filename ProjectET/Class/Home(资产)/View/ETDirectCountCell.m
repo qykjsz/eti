@@ -8,6 +8,10 @@
 
 #import "ETDirectCountCell.h"
 
+@interface ETDirectCountCell()<UITextFieldDelegate>
+
+
+@end
 
 
 @implementation ETDirectCountCell
@@ -31,6 +35,7 @@
     
     self.titleLb.textColor = UIColorFromHEX(0x000000, 1);
     self.textfiled.keyboardType = UIKeyboardTypeNumberPad;
+    self.textfiled.delegate = self;
     [self.coninBtn setTitleColor:UIColorFromHEX(0x000000, 1) forState:UIControlStateNormal];
     self.allBtn.clipsToBounds = YES;
     self.allBtn.layer.borderColor = UIColorFromHEX(0x1D57FF, 1).CGColor;
@@ -57,6 +62,20 @@
     if ([self.delegate respondsToSelector:@selector(ETDirectCountCellDelegateTextField:)]) {
         [self.delegate ETDirectCountCellDelegateTextField:textfiled];
     }
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    //        //第一个参数，被替换字符串的range，第二个参数，即将键入或者粘贴的string，返回的是改变过后的新str，即textfield的新的文本内容
+    
+    NSString *oldText = textField.text;
+    NSString *checkStr = [oldText stringByReplacingCharactersInRange:range withString:string];
+    if (checkStr.length == 0) {
+        return YES;
+    }
+    NSString *regex = @"^\\-?([1-9]\\d*|0)(\\.\\d{0,2})?$";
+    NSPredicate *predicte = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL isValid = [predicte evaluateWithObject:checkStr];
+    return isValid;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

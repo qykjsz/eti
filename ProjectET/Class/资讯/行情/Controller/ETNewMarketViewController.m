@@ -9,14 +9,14 @@
 #import "ETNewMarketViewController.h"
 #import "ETNewMarketModel.h"
 #import "ETNewMarketCell.h"
+#import "ETNewTwoMarketCell.h"
 
 @interface ETNewMarketViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *dataSource;
 @property (nonatomic,strong)ETNewMarketModel *model;
 @property (nonatomic,strong)NSString *sort;
-@property (weak, nonatomic) IBOutlet UIImageView *img_new;
-@property (weak, nonatomic) IBOutlet UIImageView *img_up;
+
 
 @end
 
@@ -27,7 +27,7 @@
 
     self.view.backgroundColor = UIColor.clearColor;
     self.dataSource  = [NSMutableArray array];
-    [self.tableView registerNib:[UINib nibWithNibName:@"ETNewMarketCell" bundle:nil] forCellReuseIdentifier:@"ETNewMarketCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ETNewTwoMarketCell" bundle:nil] forCellReuseIdentifier:@"ETNewTwoMarketCell"];
     WEAK_SELF(self);
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         STRONG_SELF(self);
@@ -77,31 +77,32 @@
     }];
 }
 
-///最新价
-- (IBAction)actionOfNew:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    if (sender.isSelected) {
-        self.sort = @"1";
-        self.img_new.image = [UIImage imageNamed:@"hq_xjian_01-1"];
-    }else {
-        self.sort = @"2";
-        self.img_new.image = [UIImage imageNamed:@"hq_sjian-1"];
-    }
-    [self getAlertsSortData];
-}
-
-
-- (IBAction)actionOfUp:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    if (sender.isSelected) {
-        self.sort = @"3";
-        self.img_up.image = [UIImage imageNamed:@"hq_sjian-1"];
-    }else {
-        self.sort = @"4";
-        self.img_up.image = [UIImage imageNamed:@"hq_xjian_01-1"];
-    }
-    [self getAlertsSortData];
-}
+/////最新价
+//- (IBAction)actionOfNew:(UIButton *)sender {
+//    sender.selected = !sender.selected;
+//    if (sender.isSelected) {
+//        self.sort = @"1";
+//        self.img_new.image = [UIImage imageNamed:@"hq_xjian_01-1"];
+//    }else {
+//        self.sort = @"2";
+//        self.img_new.image = [UIImage imageNamed:@"hq_sjian-1"];
+//    }
+//    [self getAlertsSortData];
+//}
+//
+//
+//- (IBAction)actionOfUp:(UIButton *)sender {
+//    sender.selected = !sender.selected;
+//    if (sender.isSelected) {
+//        self.sort = @"3";
+//       self.img_up.image = [UIImage imageNamed:@"hq_xjian_01-1"];
+//    }else {
+//        self.sort = @"4";
+////        self.img_up.image = [UIImage imageNamed:@"hq_xjian_01-1"];
+//        self.img_up.image = [UIImage imageNamed:@"hq_sjian-1"];
+//    }
+//    [self getAlertsSortData];
+//}
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 
@@ -113,9 +114,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ETNewMarketCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETNewMarketCell"];
+    ETNewTwoMarketCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETNewTwoMarketCell"];
     cell.model = self.dataSource[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.lab_num.text = [NSString stringWithFormat:@"%ld",indexPath.row + 1];
     return cell;
 }
 

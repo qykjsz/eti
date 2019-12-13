@@ -14,12 +14,12 @@
     
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
-        UIImageView *backImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"sy_zc_dk-1"]];
+        UIImageView *backImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@""]];
         [self.contentView addSubview:backImage];
         [backImage mas_makeConstraints:^(MASConstraintMaker *make) {
            
-            make.left.equalTo(self.contentView.mas_left).offset(13);
-            make.right.equalTo(self.contentView.mas_right).offset(-13);
+            make.left.equalTo(self.contentView.mas_left).offset(0);
+            make.right.equalTo(self.contentView.mas_right).offset(0);
             make.height.mas_equalTo(70);
 //            make.centerY.equalTo(self.contentView.mas_centerY);
             make.top.equalTo(self.contentView.mas_top);
@@ -37,7 +37,7 @@
         
         [self.contentView addSubview:self.coninName];
         [self.coninName mas_makeConstraints:^(MASConstraintMaker *make) {
-           
+
             make.left.equalTo(self.coninImage.mas_right).offset(15);
             make.centerY.equalTo(self.coninImage.mas_centerY);
             make.width.mas_equalTo(60);
@@ -49,7 +49,7 @@
            
             make.top.equalTo(backImage.mas_top).offset(15);
             make.right.equalTo(backImage.mas_right).offset(-25);
-             make.left.equalTo(self.coninName.mas_right).offset(5);
+            make.left.equalTo(self.coninName.mas_right).offset(5);
             
         }];
         
@@ -60,6 +60,15 @@
             make.right.equalTo(backImage.mas_right).offset(-25);
             make.left.equalTo(self.coninName.mas_right).offset(5);
             
+        }];
+        
+        [self.contentView addSubview:self.lineView];
+        [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+           
+            make.height.mas_offset(0.5);
+            make.right.equalTo(self.contentView.mas_right);
+            make.left.equalTo(self.coninImage.mas_right).offset(15);
+            make.bottom.equalTo(backImage.mas_bottom);
         }];
     }
     
@@ -136,6 +145,14 @@
         _bottomDollor.textColor = UIColorFromHEX(0x99AFD9, 1);
     }
     return _bottomDollor;
+}
+
+- (UIView *)lineView{
+    if (!_lineView) {
+        _lineView = [[UIView alloc]init];
+        _lineView.backgroundColor = UIColorFromHEX(0xEBEBEB, 1);
+    }
+    return _lineView;
 }
 
 @end

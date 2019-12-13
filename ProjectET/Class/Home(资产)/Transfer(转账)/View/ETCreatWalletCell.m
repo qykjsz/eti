@@ -15,7 +15,10 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
         WEAK_SELF(self);
-        self.backImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"sy_zc_dk-1"]];
+        self.backImage = [[UIImageView alloc]init];
+        self.backImage.contentMode = UIViewContentModeScaleToFill;
+        self.backImage.clipsToBounds = YES;
+        self.backImage.layer.cornerRadius = 7;
         [self.contentView addSubview:self.backImage];
         [self.backImage mas_makeConstraints:^(MASConstraintMaker *make) {
            
@@ -27,17 +30,17 @@
             
         }];
         
-        self.backGrayView = [[UIView alloc]init];
-        self.backGrayView.clipsToBounds = YES;
-        self.backGrayView.layer.cornerRadius = 7;
-        self.backGrayView.backgroundColor = UIColorFromHEX(0xf5f5f5, 1);
-        [self.backImage addSubview:self.backGrayView];
-        [self.backGrayView mas_makeConstraints:^(MASConstraintMaker *make) {
-           
-            STRONG_SELF(self);
-            make.edges.equalTo(self.backImage);
-            
-        }];
+//        self.backGrayView = [[UIView alloc]init];
+//        self.backGrayView.clipsToBounds = YES;
+//        self.backGrayView.layer.cornerRadius = 7;
+//        self.backGrayView.backgroundColor = UIColorFromHEX(0xf5f5f5, 1);
+//        [self.backImage addSubview:self.backGrayView];
+//        [self.backGrayView mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//            STRONG_SELF(self);
+//            make.edges.equalTo(self.backImage);
+//
+//        }];
         
         self.iconImage = [[UIImageView alloc]init];
         [self.backImage addSubview:self.iconImage];
@@ -51,7 +54,7 @@
         }];
         
         self.titleLb = [[UILabel alloc]init];
-        self.titleLb.font = [UIFont systemFontOfSize:14];
+        self.titleLb.font = [UIFont systemFontOfSize:15];
         self.titleLb.textColor = UIColorFromHEX(0x000000, 1);
         [self.contentView addSubview:self.titleLb];
         [self.titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -63,7 +66,7 @@
         }];
         
         self.subTtitlLb = [[UILabel alloc]init];
-        self.subTtitlLb.font = [UIFont systemFontOfSize:10];
+        self.subTtitlLb.font = [UIFont systemFontOfSize:12];
         self.subTtitlLb.textColor = UIColorFromHEX(0x999999, 1);
         [self.contentView addSubview:self.subTtitlLb];
         [self.subTtitlLb mas_makeConstraints:^(MASConstraintMaker *make) {

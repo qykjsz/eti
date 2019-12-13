@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSString *name;
 
+@property (nonatomic,strong) NSString *allname;
+
 @property (nonatomic,strong) NSString *img;
 
 @property (nonatomic,strong) NSString *shangmoney;
@@ -32,6 +34,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) NSString *xiamoney;
 
 @property (nonatomic,strong) NSString *zd;
+
+@property (nonatomic,strong) NSString *vol;
+
+@property (nonatomic,strong) NSString *circulation;
+
+@property (nonatomic,strong) NSString *shizhi;
 
 @end
 

@@ -5,6 +5,7 @@
 #import "ETRecordDetailViewController.h"
 #import "ETGatheringViewController.h"
 #import "ETTransferViewController.h"
+#import "ETCoinInstructionsViewController.h"
 #import "ETRecordHeaderView.h"
 #import "ETTransListModel.h"
 @interface ETRecordSegmentController ()<HoverPageViewControllerDelegate>
@@ -85,9 +86,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eyeAction:) name:@"RECODEREYEACTION" object:nil];
-    
+     
+  
     self.view.backgroundColor = [UIColor whiteColor];
     UIImageView *topImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"zz_top_bg"]];
     topImage.userInteractionEnabled = YES;
@@ -124,6 +126,15 @@
         
     }];
     
+//    UIButton *rightBarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [rightBarBtn setImage:[UIImage imageNamed:@"bz_jj_icon"] forState:UIControlStateNormal];
+//    [rightBarBtn addTarget:self action:@selector(recordAction) forControlEvents:UIControlEventTouchUpInside];
+//    [topImage addSubview:rightBarBtn];
+//    [rightBarBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(topImage.mas_top).offset(iPhoneBang?34:20);
+//        make.width.height.equalTo(@44);
+//        make.right.equalTo(topImage.mas_right);
+//    }];
     
     self.headerView = [[ETRecordHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 190)];
     
@@ -418,6 +429,15 @@
         ETGatheringViewController *gVC = [ETGatheringViewController new];
         [self.navigationController pushViewController:gVC animated:YES];
     }
+}
+
+
+#pragma mark - Action
+- (void)recordAction {
+    
+    ETCoinInstructionsViewController *vc = [[ETCoinInstructionsViewController alloc]init];
+    vc.glod = self.coinName;
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 

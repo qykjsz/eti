@@ -16,6 +16,19 @@
 @implementation Tools
 
 
++ (BOOL)isUrlAddress:(NSString*)url
+
+{
+    
+    NSString*reg =@"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)|(www.[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)";
+    
+    NSPredicate *urlPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", reg];
+    
+    return [urlPredicate evaluateWithObject:url];
+    
+}
+
+
 + (void)copyClickWithText:(NSString *)text {
     UIPasteboard *pab = [UIPasteboard generalPasteboard];
     pab.string = text;
@@ -28,9 +41,9 @@
 
 #pragma mark - 获取URL中的参数
 + (NSDictionary *)getParametersWithUrlString:(NSString *)urlString {
-
+    
     NSMutableDictionary *tempDic = [NSMutableDictionary dictionary];
-
+    
     //获取问号的位置，问号后是参数列表
     NSRange range = [urlString rangeOfString:@"?"];
     if (range.location == NSNotFound) {
@@ -43,9 +56,9 @@
     //把subArray转换为字典
     //tempDic中存放一个URL中转换的键值对
     if (subArray.count > 0) {
-
+        
         for (int j = 0 ; j < subArray.count; j++) {
-
+            
             //在通过=拆分键和值
             NSArray *dicArray = [subArray[j] componentsSeparatedByString:@"="];
             //给字典加入元素
@@ -62,32 +75,32 @@
 + (void)countdownWithTime:(int)time
                       End:(void(^)(void))end
                     going:(void(^)(NSString * time))going {
-
+    
     __block int timeout = time; //倒计时时间
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
     dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
     dispatch_source_set_event_handler(_timer, ^
-    {
+                                      {
         if(timeout<=0) {
-
+            
             //倒计时结束，关闭
             dispatch_source_cancel(_timer);
             dispatch_async(dispatch_get_main_queue(), ^
-            {
+                           {
                 //设置界面的按钮显示 根据自己需求设置
                 if (end) {
                     end();
                 }
-
+                
             });
         }
         else {
-
+            
             int seconds = timeout % (time + 1);
             NSString *strTime = [NSString stringWithFormat:@"%d", seconds];
             dispatch_async(dispatch_get_main_queue(), ^
-            {
+                           {
                 //设置界面的按钮显示 根据自己需求设置
                 going(strTime);
             });
@@ -98,9 +111,9 @@
 }
 
 + (void)countdownWithDoctorTime:(int)time
-                      End:(void(^)(void))end
-                    going:(void(^)(NSString * time))going
-                    timer:(void(^)(dispatch_source_t timer))timer{
+                            End:(void(^)(void))end
+                          going:(void(^)(NSString * time))going
+                          timer:(void(^)(dispatch_source_t timer))timer{
     
     __block int timeout = time; //倒计时时间
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -108,41 +121,41 @@
     dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
     dispatch_async(dispatch_get_main_queue(), ^
                    {
-                       //设置界面的按钮显示 根据自己需求设置
-                       if (timer) {
-                           timer(_timer);
-                       }
-                       
-                   });
+        //设置界面的按钮显示 根据自己需求设置
+        if (timer) {
+            timer(_timer);
+        }
+        
+    });
     dispatch_source_set_event_handler(_timer, ^
                                       {
-                                          
-                                          if(timeout<=0) {
-                                              
-                                              //倒计时结束，关闭
-                                              dispatch_source_cancel(_timer);
-                                              dispatch_async(dispatch_get_main_queue(), ^
-                                                             {
-                                                                 //设置界面的按钮显示 根据自己需求设置
-                                                                 if (end) {
-                                                                     end();
-                                                                 }
-                                                                 
-                                                             });
-                                          }
-                                          else {
-                                              
-                                              int seconds = timeout % (time + 1);
-                                              NSString *strTime = [NSString stringWithFormat:@"%d", seconds];
-                                              dispatch_async(dispatch_get_main_queue(), ^
-                                                             {
-                                                                 //设置界面的按钮显示 根据自己需求设置
-                                                                 going(strTime);
-                                                               
-                                                             });
-                                              timeout--;
-                                          }
-                                      });
+        
+        if(timeout<=0) {
+            
+            //倒计时结束，关闭
+            dispatch_source_cancel(_timer);
+            dispatch_async(dispatch_get_main_queue(), ^
+                           {
+                //设置界面的按钮显示 根据自己需求设置
+                if (end) {
+                    end();
+                }
+                
+            });
+        }
+        else {
+            
+            int seconds = timeout % (time + 1);
+            NSString *strTime = [NSString stringWithFormat:@"%d", seconds];
+            dispatch_async(dispatch_get_main_queue(), ^
+                           {
+                //设置界面的按钮显示 根据自己需求设置
+                going(strTime);
+                
+            });
+            timeout--;
+        }
+    });
     dispatch_resume(_timer);
 }
 
@@ -159,21 +172,21 @@
 
 #pragma mark - 将对象转化为jsonDic
 + (NSDictionary *)convertFromObjectWith:(id)object{
-
+    
     NSMutableDictionary * jsonDic = [[NSMutableDictionary alloc] init];
     NSMutableArray * props = [NSMutableArray array];
     unsigned int outCount, i;
     objc_property_t *properties = class_copyPropertyList([object class], &outCount);
     for (i = 0; i<outCount; i++) {
-
+        
         const char* char_f =property_getName(properties[i]);
         NSString *propertyName = [NSString stringWithUTF8String:char_f];
         [props addObject:propertyName];
     }
     free(properties);
-
+    
     for (NSString *key in props) {
-
+        
         [jsonDic setValue:[object valueForKey:key] forKey:key];//从类里面取值然后赋给每个值，取得字典
     }
     return jsonDic;
@@ -198,7 +211,7 @@
         //替换字符
         html = [html stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@>",text] withString:@""];
     }
-
+    
     
     return html;
 }
@@ -250,7 +263,7 @@
         if (failure) {
             failure();
         }
-
+        
     }];
     [alert addAction:okAction];
     [alert addAction:cancelAction];
@@ -299,27 +312,27 @@
     CIContext * context = [CIContext contextWithOptions:nil];
     CIDetector * detector = [CIDetector detectorOfType:@"CIDetectorTypeFace"context:context options:[NSDictionary dictionaryWithObjectsAndKeys:@"CIDetectorAccuracyHigh", @"CIDetectorAccuracy", nil]];
     NSArray * features = [detector featuresInImage:coreImage];
-
-
+    
+    
     for(CIFaceFeature* faceFeature in features)
     {
         CGRect origRect = faceFeature.bounds;
         CGRect biggerRect = CGRectInset(origRect
                                         ,origRect.size.width*-0.5
                                         ,origRect.size.height*-0.5);
-
+        
         CGRect flipRect = biggerRect;
         flipRect.origin.y = image.size.height - (biggerRect.origin.y + biggerRect.size.height);
         flipRect.origin.y = flipRect.origin.y - 4;
-
+        
         CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], flipRect);
         UIImage* faceImage = [UIImage imageWithCGImage:imageRef];
         CGImageRelease(imageRef);
-
+        
         sourceImage = faceImage;
         break;
     }
-
+    
     return sourceImage;
 }
 
@@ -377,97 +390,97 @@
 
 
 + (NSString *)dateToCNString:(NSDate *)date {
-
+    
     NSCalendar * calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]; // 指定日历的算法
-
+    
     NSDateComponents *comps = [calendar components:NSCalendarUnitWeekday fromDate:date];
-
+    
     // 1 是周日，2是周一 3.以此类推
-
+    
     NSNumber * weekNumber = @([comps weekday]);
-
+    
     NSInteger weekInt = [weekNumber integerValue];
-
+    
     NSString *weekDayString = @"Monday";
-
+    
     switch (weekInt) {
-
-    case 1:
-
-    {
-
-    weekDayString = @"Sunday";
-
+            
+        case 1:
+            
+        {
+            
+            weekDayString = @"Sunday";
+            
+        }
+            
+            break;
+            
+        case 2:
+            
+        {
+            
+            weekDayString = @"Monday";
+            
+        }
+            
+            break;
+            
+        case 3:
+            
+        {
+            
+            weekDayString = @"Tuesday";
+            
+        }
+            
+            break;
+            
+        case 4:
+            
+        {
+            
+            weekDayString = @"Wednesday";
+            
+        }
+            
+            break;
+            
+        case 5:
+            
+        {
+            
+            weekDayString = @"Thursday";
+            
+        }
+            
+            break;
+            
+        case 6:
+            
+        {
+            
+            weekDayString = @"Friday";
+            
+        }
+            
+            break;
+            
+        case 7:
+            
+        {
+            
+            weekDayString = @"Saturday";
+            
+        }
+            
+            break;
+            
+        default:
+            
+            break;
+            
     }
-
-    break;
-
-    case 2:
-
-    {
-
-    weekDayString = @"Monday";
-
-    }
-
-    break;
-
-    case 3:
-
-    {
-
-    weekDayString = @"Tuesday";
-
-    }
-
-    break;
-
-    case 4:
-
-    {
-
-    weekDayString = @"Wednesday";
-
-    }
-
-    break;
-
-    case 5:
-
-    {
-
-    weekDayString = @"Thursday";
-
-    }
-
-    break;
-
-    case 6:
-
-    {
-
-    weekDayString = @"Friday";
-
-    }
-
-    break;
-
-    case 7:
-
-    {
-
-    weekDayString = @"Saturday";
-
-    }
-
-    break;
-
-    default:
-
-    break;
-
-    }
-
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM月yyyy年"];
     NSString *strDate = [NSString stringWithFormat:@"%@,%@", weekDayString,[dateFormatter stringFromDate:date]];

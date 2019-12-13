@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)ETFoundHeaderViewDAppDelegateCollectionClick:(NSInteger)tag;
 
+- (void)ETFoundHeaderViewDelegateBannerClick:(NSInteger)index;
+
 @end
 
 @interface ETFoundHeaderView : UIView

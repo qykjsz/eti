@@ -11,7 +11,7 @@
 #import "ETVerifyPassWrodView.h"
 
 #import "ETShopChooseModel.h"
-@interface ETShopSetMoneyViewController ()<ETShopChooseCoinViewDelegate>
+@interface ETShopSetMoneyViewController ()<ETShopChooseCoinViewDelegate,UITextFieldDelegate>
 
 @property(nonatomic,strong)ETShopChooseCoinView *chooseView;
 @property (weak, nonatomic) IBOutlet UILabel *lab_moneyName;
@@ -26,6 +26,7 @@
 @property (nonatomic,strong) NSString *crate;
 @property (nonatomic,strong) NSString *coinName;
 @property (nonatomic,strong) NSString *coinNum;
+@property (nonatomic,strong) NSString *moneyName;
 @property (nonatomic,assign) NSInteger index;
 @end
 
@@ -54,6 +55,7 @@
         if (!flag) {
             ETShopChooseDataModel *model = self.dataSource2[0];
             self.lab_moneyName.text = model.name;
+            self.moneyName = model.name;
             self.mrate = model.rate;
         }else{
             NSMutableArray *arr = [[NSMutableArray alloc]init];
@@ -61,6 +63,7 @@
                        NSDictionary *dic = @{@"img":model.img,@"name":model.name};
                        [arr addObject:dic];
                    }
+            self.chooseView.lab_title.text = @"选择货币";
                    [self.chooseView reloadChooseView:arr];
                    [self.chooseView show];
         }
@@ -91,6 +94,7 @@
                 NSDictionary *dic = @{@"img":model.img,@"name":model.name};
                 [arr addObject:dic];
             }
+            self.chooseView.lab_title.text = @"选择币种";
             [self.chooseView reloadChooseView:arr];
             [self.chooseView show];
         }
@@ -131,17 +135,22 @@
     [self.view endEditing:true];
     if (self.tf_money.text.length == 0) {
         [KMPProgressHUD showText:@"请输入金额"];
+        return ;
+    }
+    
+    if ([self.tf_money.text floatValue] <= 0) {
+           [KMPProgressHUD showText:@"设置金额不能为零"];
+           return ;
     }
     
     ETShopChooseDataModel *model = self.dataSource[self.index];
-    ETShopChooseDataModel *model2 = self.dataSource2[self.index];
     ETWalletModel *model3 = [ETWalletManger getCurrentWallet];
     NSString *token = @"";
     if (![self.coinName isEqualToString:@"ETH"]) {
         token = model.address;
     }
     NSDictionary *dic = @{@"price":self.tf_money.text,
-                          @"priceName" : model2.name,
+                          @"priceName" : self.moneyName,
                           @"amount" : self.coinNum,
                           @"img" : model.img,
                           @"token":token,
@@ -174,6 +183,7 @@
     if (self.flag) {
         ETShopChooseDataModel *model = self.dataSource2[index];
         self.lab_moneyName.text = model.name;
+        self.moneyName = model.name;
         self.mrate = model.rate;
     }else {
         ETShopChooseDataModel *model = self.dataSource[index];
@@ -192,6 +202,15 @@
     CGFloat num = [self.tf_money.text floatValue] * [self.mrate floatValue];
       self.lab_coinNum.text = [NSString stringWithFormat:@"≈ %@ %@",[self notRounding:(num / [self.crate floatValue]) afterPoint:4],self.coinName];
      self.coinNum = [NSString stringWithFormat:@"%@",[self notRounding:(num / [self.crate floatValue]) afterPoint:4]];
+    if (sender.text.length > 15) {
+    　　　　　　　　UITextRange *markedRange = [sender markedTextRange];
+            　　　if (markedRange) {
+               　　 return;
+           　　　 }
+    
+    NSRange range = [sender.text rangeOfComposedCharacterSequenceAtIndex:15];
+                   sender.text = [sender.text substringToIndex:range.location];
+    }
 }
 
 
@@ -206,6 +225,20 @@
     return [NSString stringWithFormat:@"%@",roundedOunces];
 }
 
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    //        //第一个参数，被替换字符串的range，第二个参数，即将键入或者粘贴的string，返回的是改变过后的新str，即textfield的新的文本内容
+    
+    NSString *oldText = textField.text;
+    NSString *checkStr = [oldText stringByReplacingCharactersInRange:range withString:string];
+    if (checkStr.length == 0) {
+        return YES;
+    }
+    NSString *regex = @"^\\-?([1-9]\\d*|0)(\\.\\d{0,2})?$";
+    NSPredicate *predicte = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL isValid = [predicte evaluateWithObject:checkStr];
+    return isValid;
+}
 
 //- (void)transferSure{
 //    ETShopChooseDataModel *model = self.dataSource[self.index];

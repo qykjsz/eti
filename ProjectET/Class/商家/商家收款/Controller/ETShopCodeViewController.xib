@@ -74,11 +74,11 @@
                             <rect key="frame" x="92" y="80" width="180" height="175"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sys_tx" translatesAutoresizingMaskIntoConstraints="NO" id="TRa-Es-tfb">
-                            <rect key="frame" x="160" y="145.5" width="44" height="44"/>
+                            <rect key="frame" x="167" y="152.5" width="30" height="30"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="44" id="9ds-HY-DjX"/>
-                                <constraint firstAttribute="height" constant="44" id="YF6-Pe-bcn"/>
+                                <constraint firstAttribute="width" constant="30" id="9ds-HY-DjX"/>
+                                <constraint firstAttribute="height" constant="30" id="YF6-Pe-bcn"/>
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bd0-hx-lkC">

@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETNewMarketViewController">
             <connections>
-                <outlet property="img_new" destination="fvK-dm-foX" id="J0F-s0-wvP"/>
-                <outlet property="img_up" destination="78j-dd-y62" id="txL-aY-yyg"/>
                 <outlet property="tableView" destination="Yhp-fC-DZX" id="gEC-M1-7Bu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -30,10 +26,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dK-DV-wSS">
-                            <rect key="frame" x="151.5" y="0.0" width="121" height="49"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dK-DV-wSS">
+                            <rect key="frame" x="158" y="0.0" width="118" height="49"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal">
+                            <state key="normal" title="涨跌幅/价格">
                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -41,79 +37,42 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1p-O4-lKV">
-                            <rect key="frame" x="20" y="0.0" width="121.5" height="49"/>
+                            <rect key="frame" x="40" y="0.0" width="118" height="49"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="资产">
+                            <state key="normal" title="Top100币种">
                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdQ-AS-vhj">
-                            <rect key="frame" x="272.5" y="0.0" width="121.5" height="49"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdQ-AS-vhj">
+                            <rect key="frame" x="276" y="0.0" width="118" height="49"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <inset key="imageEdgeInsets" minX="120" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal">
+                            <state key="normal" title="24h成交额/市值">
                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
                                 <action selector="actionOfUp:" destination="-1" eventType="touchUpInside" id="hqR-63-awz"/>
                             </connections>
                         </button>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hq_sjian-1" translatesAutoresizingMaskIntoConstraints="NO" id="78j-dd-y62">
-                            <rect key="frame" x="388" y="21" width="6" height="7"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="7" id="fqR-up-bzG"/>
-                                <constraint firstAttribute="width" constant="6" id="uS9-NV-NMK"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最新价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sX-zw-N3B">
-                            <rect key="frame" x="151.5" y="0.0" width="37" height="49"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hq_sjian-1" translatesAutoresizingMaskIntoConstraints="NO" id="fvK-dm-foX">
-                            <rect key="frame" x="193.5" y="21" width="6" height="7"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="6" id="CgW-P3-BLT"/>
-                                <constraint firstAttribute="height" constant="7" id="Xbi-51-NL5"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="涨跌幅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QD0-dX-q9U">
-                            <rect key="frame" x="346" y="0.0" width="37" height="49"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="h1p-O4-lKV" secondAttribute="bottom" constant="20" id="0gm-7a-0FI"/>
                         <constraint firstItem="bM0-dX-Hor" firstAttribute="top" secondItem="8VB-i4-VQt" secondAttribute="top" id="4Fc-ou-rZs"/>
                         <constraint firstItem="bM0-dX-Hor" firstAttribute="leading" secondItem="8VB-i4-VQt" secondAttribute="leading" id="4HT-cQ-TNt"/>
-                        <constraint firstItem="78j-dd-y62" firstAttribute="leading" secondItem="QD0-dX-q9U" secondAttribute="trailing" constant="5" id="BN7-cZ-KkB"/>
-                        <constraint firstItem="fvK-dm-foX" firstAttribute="centerY" secondItem="3sX-zw-N3B" secondAttribute="centerY" id="Lg4-jU-bLc"/>
-                        <constraint firstItem="3sX-zw-N3B" firstAttribute="leading" secondItem="8dK-DV-wSS" secondAttribute="leading" id="MFh-9B-Rvt"/>
                         <constraint firstAttribute="trailing" secondItem="bM0-dX-Hor" secondAttribute="trailing" id="Ncw-ST-d5i"/>
                         <constraint firstItem="WdQ-AS-vhj" firstAttribute="leading" secondItem="8dK-DV-wSS" secondAttribute="trailing" id="OPU-1a-5Xa"/>
                         <constraint firstItem="WdQ-AS-vhj" firstAttribute="top" secondItem="8VB-i4-VQt" secondAttribute="top" id="Op1-F7-Ev5"/>
-                        <constraint firstAttribute="bottom" secondItem="3sX-zw-N3B" secondAttribute="bottom" constant="20" id="TGj-5m-Jne"/>
                         <constraint firstAttribute="height" constant="69" id="UrX-HV-9p9"/>
-                        <constraint firstItem="78j-dd-y62" firstAttribute="centerY" secondItem="WdQ-AS-vhj" secondAttribute="centerY" id="WKE-DA-woY"/>
                         <constraint firstItem="h1p-O4-lKV" firstAttribute="top" secondItem="8VB-i4-VQt" secondAttribute="top" id="WR4-8W-jLU"/>
                         <constraint firstItem="8dK-DV-wSS" firstAttribute="top" secondItem="8VB-i4-VQt" secondAttribute="top" id="ZoB-u5-Ekm"/>
-                        <constraint firstItem="fvK-dm-foX" firstAttribute="leading" secondItem="3sX-zw-N3B" secondAttribute="trailing" constant="5" id="auJ-S2-mL7"/>
                         <constraint firstAttribute="bottom" secondItem="8dK-DV-wSS" secondAttribute="bottom" constant="20" id="bVj-Ap-bVT"/>
                         <constraint firstAttribute="bottom" secondItem="bM0-dX-Hor" secondAttribute="bottom" id="du3-0i-jjw"/>
-                        <constraint firstItem="3sX-zw-N3B" firstAttribute="top" secondItem="8VB-i4-VQt" secondAttribute="top" id="eRo-rb-OSY"/>
                         <constraint firstItem="8dK-DV-wSS" firstAttribute="width" secondItem="h1p-O4-lKV" secondAttribute="width" id="j0h-y9-niP"/>
-                        <constraint firstItem="78j-dd-y62" firstAttribute="trailing" secondItem="WdQ-AS-vhj" secondAttribute="trailing" id="kHF-ii-mGX"/>
                         <constraint firstAttribute="trailing" secondItem="WdQ-AS-vhj" secondAttribute="trailing" constant="20" id="lIB-m4-Dhe"/>
-                        <constraint firstItem="8dK-DV-wSS" firstAttribute="leading" secondItem="h1p-O4-lKV" secondAttribute="trailing" constant="10" id="nhp-4C-bhl"/>
-                        <constraint firstItem="h1p-O4-lKV" firstAttribute="leading" secondItem="8VB-i4-VQt" secondAttribute="leading" constant="20" id="o23-JT-h3K"/>
+                        <constraint firstItem="8dK-DV-wSS" firstAttribute="leading" secondItem="h1p-O4-lKV" secondAttribute="trailing" id="nhp-4C-bhl"/>
+                        <constraint firstItem="h1p-O4-lKV" firstAttribute="leading" secondItem="8VB-i4-VQt" secondAttribute="leading" constant="40" id="o23-JT-h3K"/>
                         <constraint firstItem="WdQ-AS-vhj" firstAttribute="width" secondItem="h1p-O4-lKV" secondAttribute="width" id="qWl-6W-NWN"/>
-                        <constraint firstItem="QD0-dX-q9U" firstAttribute="top" secondItem="8VB-i4-VQt" secondAttribute="top" id="qd0-76-lNy"/>
                         <constraint firstAttribute="bottom" secondItem="WdQ-AS-vhj" secondAttribute="bottom" constant="20" id="sfv-OP-Ps6"/>
-                        <constraint firstAttribute="bottom" secondItem="QD0-dX-q9U" secondAttribute="bottom" constant="20" id="v0x-ch-wcT"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yhp-fC-DZX">
@@ -141,6 +100,5 @@
     </objects>
     <resources>
         <image name="hq_dbg" width="375" height="69"/>
-        <image name="hq_sjian-1" width="6" height="7"/>
     </resources>
 </document>

@@ -128,7 +128,7 @@
 - (void)setModel:(orderData *)model {
     
     _model = model;
-    self.moneydetail.text = model.amount;
+    self.moneydetail.text = [NSString stringWithFormat:@"%.4f",[model.amount floatValue]];
     NSInteger type = [model.status integerValue];
     if (type == 1) {
         self.statusDetail.text = @"已完成";

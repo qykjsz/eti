@@ -34,7 +34,7 @@
         [self.tableView setScrollEnabled:YES];
     }else {
         self.constraint_height.constant = 50 * arr.count + 10;
-        [self.tableView setScrollEnabled:YES];
+        [self.tableView setScrollEnabled:NO];
     }
      self.dataSource = arr;
     [self.tableView reloadData];
@@ -46,6 +46,7 @@
    
     [self removeFromSuperview];
 }
+
 
 - (void)show{
    

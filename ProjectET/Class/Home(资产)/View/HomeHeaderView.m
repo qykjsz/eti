@@ -82,6 +82,16 @@
         [rightBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:rightBtn];
         
+//        UIButton *topBtn = [[UIButton alloc]init];
+//         [topBtn setTitle:@"商家收款" forState:UIControlStateNormal];
+//         [topBtn setTitleColor:UIColorFromHEX(0xffffff, 1) forState:UIControlStateNormal];
+//         topBtn.titleLabel.font = [UIFont systemFontOfSize:11];
+//         [topBtn setImage:[UIImage imageNamed:@"sy_sj_icon"] forState:UIControlStateNormal];
+//         topBtn.tag = 6;
+//
+//         [topBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
+//         [self addSubview:topBtn];
+//
         
         [self.topLeftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.mas_left).offset(15);
@@ -135,9 +145,19 @@
             
         }];
         
+//        [topBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//                make.width.mas_equalTo(btnW);
+//                make.height.mas_equalTo(100);
+//                make.top.equalTo(self.topLeftBtn.mas_bottom);
+//                make.left.equalTo(rightBtn.mas_right);
+//
+//            }];
+        
          [minBtn layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop imageTitleSpace:10];
          [rightBtn layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop imageTitleSpace:10];
          [leftBtn layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop imageTitleSpace:10];
+//        [topBtn layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop imageTitleSpace:10];
         
     }
     return self;

@@ -80,35 +80,40 @@
                 cell.titleLb.text = @"私钥导入";
                 cell.iconImage.image = [UIImage imageNamed:@"cj_sy_01"];
                 cell.subTtitlLb.text = @"通过输入明文私钥或扫描二维码进行导入";
-                cell.backGrayView.hidden = YES;
+//                cell.backGrayView.hidden = YES;
+                cell.backImage.image = [UIImage imageNamed:@"sy_zc_dk-1"];
             }
                 break;
             case 1:{
                 cell.titleLb.text = @"助记词导入";
                 cell.iconImage.image = [UIImage imageNamed:@"cj_zjc_04"];
                 cell.subTtitlLb.text = @"通过输入助记词或扫描二维码进行导入";
-                cell.backGrayView.hidden = YES;
+//                cell.backGrayView.hidden = YES;
+                 cell.backImage.image = [UIImage imageNamed:@"sy_zc_dk-1"];
             }
                 break;
             case 2:{
                 cell.titleLb.text = @"Keystore导入";
                 cell.iconImage.image = [UIImage imageNamed:@"cj_key_05"];
                 cell.subTtitlLb.text = @"输入keystore文件内容或扫描二维码进行导入";
-                cell.backGrayView.hidden = YES;
+//                cell.backGrayView.hidden = YES;
+                 cell.backImage.image = [UIImage imageNamed:@"sy_zc_dk-1"];
             }
                 break;
             case 3:{
                 cell.titleLb.text = @"观察钱包";
                 cell.iconImage.image = [UIImage imageNamed:@"cj_fc_02"];
                 cell.subTtitlLb.text = @"无需导入私钥，输入账号或者对应公钥即可导入";
-                cell.backGrayView.hidden = NO;
+//                cell.backGrayView.hidden = NO;
+                 cell.backImage.image = [UIImage imageNamed:@"sy_zc_dk_h"];
             }
                 break;
             case 4:{
                 cell.titleLb.text = @"冷钱包";
                 cell.iconImage.image = [UIImage imageNamed:@"cj_lqb_03"];
                 cell.subTtitlLb.text = @"离线导入并保持与网络隔绝，确保私钥永不触网";
-                cell.backGrayView.hidden = NO;
+//                cell.backGrayView.hidden = NO;
+                 cell.backImage.image = [UIImage imageNamed:@"sy_zc_dk_h"];
             }
                 break;
             default:
@@ -118,7 +123,9 @@
         cell.titleLb.text = @"我没有钱包";
         cell.iconImage.image = [UIImage imageNamed:@"cj_no_06"];
         cell.subTtitlLb.text = @"创建钱包";
-        cell.backGrayView.hidden = YES;
+//        cell.backGrayView.hidden = YES;
+        cell.backImage.image = [UIImage imageNamed:@"sy_zc_dk-1"];
+        
     }
     
     return cell;

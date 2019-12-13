@@ -188,8 +188,9 @@
         [data addObject:dict];
     }
     NSDictionary *dict = @{@"alladdress":data};
-    
+    [SVProgressHUD showWithStatus:@"正在加载"];
     [HTTPTool requestDotNetWithURLString:@"et_allassets" parameters:dict type:kPOST success:^(id responseObject) {
+        [SVProgressHUD dismiss];
         self.model = [ETTotalModel mj_objectWithKeyValues:responseObject];
         self.headerView.moneyLb.text = self.model.data.allnumber;
         self.headerView.subMoneyLb.hidden = YES;
@@ -201,7 +202,7 @@
         
         [self.detailTab reloadData];
     } failure:^(NSError *error) {
-        
+        [SVProgressHUD showInfoWithStatus:@"加载失败"];
     }];
     
 }

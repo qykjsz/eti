@@ -62,7 +62,7 @@
     [SVProgressHUD showWithStatus:@"加载中"];
     ETWalletModel *model = [ETWalletManger getModelIndex:self.selectWallect];
     [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
-        [SVProgressHUD dismiss];
+       
 
         self.homeModel = [ETHomeModel mj_objectWithKeyValues:responseObject];
 
@@ -85,7 +85,7 @@
         }
 
         [self.detailTab reloadData];
-
+         [SVProgressHUD dismiss];
     } failure:^(NSError *error) {
         [SVProgressHUD dismiss];
     }];
@@ -233,7 +233,7 @@
         cell.titleLb.textColor = UIColorFromHEX(0x999999, 1);
         cell.detailLb.hidden = false;
         cell.BtnCopy.hidden = NO;
-        cell.arrowImage.hidden = NO;
+        cell.arrowImage.hidden = YES;
     }else if (indexPath.row == 2) {
         cell.titleLb.text = @"修改密码";
         cell.titleLb.textColor = UIColorFromHEX(0x3333333, 1);

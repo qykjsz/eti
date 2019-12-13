@@ -15,13 +15,18 @@
     return @{@"data":[ETShopChooseDataModel class]};
 }
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+    
+    return @{@"numData":@"data"};
+}
+
 @end
 
 @implementation ETShopChooseDataModel
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
     
-    return @{@"Id":@"id"};
+    return @{@"ID":@"id"};
 }
 
 @end

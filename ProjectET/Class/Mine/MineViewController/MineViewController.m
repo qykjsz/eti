@@ -249,7 +249,7 @@
     return _imgArray.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 44;
+    return 48;
 }
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {

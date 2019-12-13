@@ -77,7 +77,7 @@
             make.centerY.equalTo(moneyLb.mas_centerY);
             
         }];
-        
+
         
         self.moneydetail = [[UILabel alloc]init];
         self.moneydetail.text = @"289.8493";
@@ -148,7 +148,7 @@
         self.topLB.text = [NSString stringWithFormat:@"转出%@",model.name];
     }
     
-    self.moneydetail.text = model.amount;
+    self.moneydetail.text = [NSString stringWithFormat:@"%.4f",[model.amount floatValue]];
 //    order->status    [string]    是    状态 1.成功 2.失败
     NSInteger status = [model.status integerValue];
     if (status == 1) {

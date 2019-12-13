@@ -25,8 +25,8 @@
         
         
         self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissAction)];
-        [self addGestureRecognizer:tap];
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissAction)];
+//        [self addGestureRecognizer:tap];
         
         self.whiteView = [[UIView alloc]init];
         self.whiteView.clipsToBounds = YES;

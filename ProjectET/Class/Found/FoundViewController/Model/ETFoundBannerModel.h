@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSString *url;
 
+@property (nonatomic,strong) NSString *link;
+
 
 @end
 

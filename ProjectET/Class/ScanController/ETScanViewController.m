@@ -130,7 +130,7 @@
                     [vcs removeLastObject];
                     [vcs addObject:dvc];
                     [self.navigationController setViewControllers:vcs];
-                }else {
+                }else if (dic[@"version"] == nil) {
                     ETShopPaymentViewController *pvc = [ETShopPaymentViewController new];
                     pvc.hidesBottomBarWhenPushed = YES;
                     pvc.jsonStr = obj.stringValue;
@@ -138,6 +138,9 @@
                     [vcs removeLastObject];
                     [vcs addObject:pvc];
                     [self.navigationController setViewControllers:vcs];
+                }else {
+                    [KMPProgressHUD showText:@"请扫描正确的二维码"];
+                    [self setupScanningQRCode];
                 }
             }else {
                 if (self.scanBlock) {

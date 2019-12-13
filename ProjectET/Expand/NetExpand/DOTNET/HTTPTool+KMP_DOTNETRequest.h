@@ -27,4 +27,20 @@
                            failure:(void (^)(NSError * error))failure;
 
 
+/**
+ .Net后台接口（code!=0同样走失败回调，msg以error中的NSLocalizedDescriptionKey返回）
+ 
+ @param URLString api
+ @param parameters 参数
+ @param type 请求类型
+ @param success 成功回调
+ @param failure 失败回调
+ */
++ (void)requestGameDotNetWithURLString:(NSString *)URLString
+                        parameters:(id)parameters
+                              type:(XMHTTPMethodType)type
+                           success:(void (^)(id responseObject))success
+                           failure:(void (^)(NSError * error))failure;
+
+
 @end

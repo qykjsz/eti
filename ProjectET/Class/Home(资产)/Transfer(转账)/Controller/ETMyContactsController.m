@@ -9,14 +9,14 @@
 #import "ETMyContactsController.h"
 #import "ETAddContactsController.h"
 #import "ETDirectTransferController.h"
-
+#import "ETContactsTableView.h"
 #import "ETMyContactsCell.h"
 #import "ETMycontactListModel.h"
 #import "UUID.h"
 
 @interface ETMyContactsController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic,strong) UITableView *detailTab;
+@property (nonatomic,strong) ETContactsTableView *detailTab;
 
 @property (nonatomic,strong) ETMycontactListModel *model;
 
@@ -37,13 +37,17 @@
     // Do any additional setup after loading the view.
     
     self.title = @"联系人";
+    self.view.backgroundColor = UIColor.whiteColor;
+    
     [self.view addSubview:self.detailTab];
+    
     [self.detailTab mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.edges.equalTo(self.view);
+        make.top.left.right.equalTo(self.view);
+        make.bottom.equalTo(self.view).offset(-74);
+        //        make.edges.equalTo(self.view);
         
     }];
-    
+    [self footerView];
 }
 
 #pragma mark - NET
@@ -56,6 +60,21 @@
         self.model = [ETMycontactListModel mj_objectWithKeyValues:responseObject];
         [self.detailTab reloadData];
         
+    } failure:^(NSError *error) {
+        
+    }];
+    
+}
+
+
+#pragma mark - NET
+
+- (void)delRequest:(NSString *)name {
+    
+    NSString *uuid = [UUID getUUID];
+    [HTTPTool requestDotNetWithURLString:@"et_delcontacts" parameters:@{@"contacts":uuid,@"contactsid":name} type:kPOST success:^(id responseObject) {
+        [KMPProgressHUD showText:@"删除成功"];
+        [self listRequest];
     } failure:^(NSError *error) {
         
     }];
@@ -91,10 +110,10 @@
         dVC.address = data.address;
         dVC.coinNameString = @"ETH";
         [self.navigationController pushViewController:dVC animated:YES];
-
+        
     }
     
-   
+    
     
 }
 
@@ -103,20 +122,70 @@
     return 70;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
 
-- (UIView *)footerView{
+
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 150)];
-    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(10, 100, SCREEN_WIDTH - 20, 44)];
+    if (@available(iOS 11.0, *)) {
+        UIContextualAction *del = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+            contactData *data = self.model.data[indexPath.row];
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:[NSString stringWithFormat:@"确定要删除%@吗？",data.name] preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *delAction = [UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self delRequest:data.ID];
+            }];
+            
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            [alertController addAction:okAction];
+            [alertController addAction:delAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+            
+        }];
+        del.backgroundColor = UIColorFromHEX(0xF7FAFF, 1);
+        [del setImage:[UIImage imageNamed:@"lxr_sc_icon"]];
+        
+        UIContextualAction *edit = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+            ETAddContactsController *addVC = [ETAddContactsController new];
+            addVC.model = self.model.data[indexPath.row];
+            [self.navigationController pushViewController:addVC animated:YES];
+        }];
+        edit.backgroundColor = UIColorFromHEX(0xF7FAFF, 1);
+        [edit setImage:[UIImage imageNamed:@"lxg_bj_icon"]];
+        
+        UISwipeActionsConfiguration *config = [UISwipeActionsConfiguration configurationWithActions:@[del,edit]];
+        config.performsFirstActionWithFullSwipe = NO;
+        return config;
+    } else {
+        // Fallback on earlier versions
+        return nil;
+    }
+    
+}
+
+
+- (UIButton *)footerView{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.backgroundColor = UIColorFromHEX(0x1D57FF, 1);
     [btn setTitle:@"新建联系人" forState:UIControlStateNormal];
     [btn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     btn.clipsToBounds = YES;
     btn.layer.cornerRadius = 5;
     [btn addTarget:self action:@selector(clickAction) forControlEvents:UIControlEventTouchUpInside];
-    [backView addSubview:btn];
-    return backView;
-    
+    [self.view addSubview:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(20);
+        make.right.equalTo(self.view).offset(-20);
+        make.bottom.equalTo(self.view).offset(-20);
+        make.height.offset(44);
+        
+    }];
+    return btn;
 }
 
 
@@ -129,18 +198,18 @@
 
 
 #pragma mark - lazy load
-- (UITableView *)detailTab {
+- (ETContactsTableView *)detailTab {
     
     if (!_detailTab) {
-        _detailTab = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _detailTab = [[ETContactsTableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         _detailTab.delegate = self;
         _detailTab.dataSource = self;
         _detailTab.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_detailTab registerNib:[UINib nibWithNibName:@"ETMyContactsCell" bundle:nil] forCellReuseIdentifier:@"ETMyContactsCell"];
-        _detailTab.tableFooterView = [self footerView];
+        //        _detailTab.tableFooterView = [self footerView];
         WEAK_SELF(self);
         _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-           
+            
             STRONG_SELF(self);
             [self.detailTab.mj_header endRefreshing];
             [self listRequest];

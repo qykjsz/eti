@@ -43,6 +43,8 @@
 
 @property (nonatomic,strong) NSMutableArray *dappArr;
 
+@property (nonatomic, strong)ETFoundBannerModel *bannerModel;
+
 @end
 
 @implementation ETFoundSegmetnController
@@ -75,13 +77,12 @@
     self.pageTitleView = [UIView new];
     self.pageTitleView.backgroundColor = UIColor.whiteColor;
     self.pageTitleView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 40);
-    
-    
-   
-   
-    
+    [self appantypeRequest];
+}
+
+- (void)appantypeRequest{
     UIButton *button = self.pageTitleView.subviews.firstObject;
-    [button layoutIfNeeded];
+       [button layoutIfNeeded];
      [SVProgressHUD showWithStatus:@"正在加载"];
     [HTTPTool requestDotNetWithURLString:@"et_appantype" parameters:nil type:kPOST success:^(id responseObject) {
         [SVProgressHUD dismiss];
@@ -124,7 +125,6 @@
     } failure:^(NSError *error) {
         [SVProgressHUD dismiss];
     }];
-
 }
 
 
@@ -197,10 +197,7 @@
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
                 [self handpickRequest];
             });
-            
-            
-           
-            
+
             [self.hoverPageViewController.mainScrollView.mj_header endRefreshing];
         }];
         [self addChildViewController:self.hoverPageViewController];
@@ -276,6 +273,21 @@
     }
 }
 
+
+- (void)ETFoundHeaderViewDelegateBannerClick:(NSInteger)index{
+    FoundBannerData *model = self.bannerModel.data[index];
+    NSString *link = model.link;
+    if ([Tools isUrlAddress:model.link]) {
+        if (![model.link.lowercaseString hasPrefix:@"http://"]) {
+            link = [NSString stringWithFormat:@"http://%@",link];
+        }
+        ETHTMLViewController *vc = [ETHTMLViewController new];
+        vc.url = link;
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:true];
+    }
+}
+
 #pragma mark - 记录最近使用
 - (void)et_appnewRequest:(NSString *)ID {
     
@@ -297,9 +309,9 @@
     [SVProgressHUD showWithStatus:@"正在加载"];
     [HTTPTool requestDotNetWithURLString:@"api_banner" parameters:nil type:kPOST success:^(id responseObject) {
         [SVProgressHUD dismiss];
-        ETFoundBannerModel *model = [ETFoundBannerModel mj_objectWithKeyValues:responseObject];
+        self.bannerModel = [ETFoundBannerModel mj_objectWithKeyValues:responseObject];
         NSMutableArray *dataArr = [NSMutableArray array];
-        for (FoundBannerData *data in model.data) {
+        for (FoundBannerData *data in self.bannerModel.data) {
             [dataArr addObject:data.url];
         }
         self.headerView.bannerView.imageDatas = dataArr;

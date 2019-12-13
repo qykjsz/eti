@@ -72,7 +72,9 @@
         [backView addSubview:self.bannerView];
         
         self.bannerView.kSelectBlock = ^(KJBannerView * _Nonnull banner, NSInteger idx) {
-            NSLog(@"---------%@,%ld",banner,idx);
+            if ([self.delegate respondsToSelector:@selector(ETFoundHeaderViewDelegateBannerClick:)]) {
+                [self.delegate ETFoundHeaderViewDelegateBannerClick:idx];
+            }
         };
         
         UILabel *titleLb = [[UILabel alloc]init];

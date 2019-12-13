@@ -446,6 +446,11 @@
                     [SVProgressHUD showInfoWithStatus:@"转账数量不能为空"];
                     return;
                 }
+                
+                if ([self.countString floatValue] <= 0) {
+                       [KMPProgressHUD showText:@"设置金额不能为零"];
+                       return ;
+                }
     
     
                 if ([Tools checkStringIsEmpty:self.gaslimit]) {

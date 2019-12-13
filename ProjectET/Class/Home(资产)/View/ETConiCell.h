@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) UILabel *bottomDollor;
 
+@property (nonatomic,strong) UIView *lineView;
+
 @property (nonatomic,strong) glodsData *model;
 
 
