@@ -15,6 +15,7 @@
 @property (nonatomic,strong) NSMutableArray *dataSource;
 @property (nonatomic,assign) NSInteger curretnPage;
 @property (nonatomic,strong)ETTopupCenterRecordModel *model;
+@property (nonatomic,strong) CustomGifHeader *gifHeader;
 
 @end
 
@@ -28,12 +29,7 @@
     self.curretnPage = 0;
      [self.tableView registerNib:[UINib nibWithNibName:@"ETTopupCenterRecordCell" bundle:nil] forCellReuseIdentifier:@"ETTopupCenterRecordCell"];
     WEAK_SELF(self);
-       self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-              STRONG_SELF(self);
-               self.curretnPage = 0;
-              [self.tableView.mj_header endRefreshing];
-              [self getAlertsListData];
-          }];
+    self.tableView.mj_header = self.gifHeader;
           
           self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
               
@@ -86,6 +82,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+}
+
+- (CustomGifHeader *)gifHeader {
+    if (!_gifHeader) {
+    WEAK_SELF(self);
+        _gifHeader = [CustomGifHeader headerWithRefreshingBlock:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        STRONG_SELF(self);
+                self.curretnPage = 0;
+                       [self.tableView.mj_header endRefreshing];
+                       [self getAlertsListData];
+            });
+        }];
+    }
+    return _gifHeader;
 }
 
 @end

@@ -113,10 +113,14 @@
     
     [HTTPTool requestDotNetWithURLString:@"et_glodoperation" parameters:@{@"address":wModel.address,@"glodid":data.Id,@"operationtype":status} type:kPOST success:^(id responseObject) {
         NSLog(@"%@",responseObject);
-        [self platformGlodRequest];
-        [self.detailTab reloadData];
+        if ([[NSString stringWithFormat:@"%@",responseObject[@"code"]] isEqualToString:@"400"]) {
+            [KMPProgressHUD showText:responseObject[@"msg"]];
+        }else {
+            [self platformGlodRequest];
+                  [self.detailTab reloadData];
+        }
+      
     } failure:^(NSError *error) {
-        NSLog(@"%@",error);
     }];
     
 }

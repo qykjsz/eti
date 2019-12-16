@@ -9,7 +9,7 @@
 #import "ETFoundClassificationController.h"
 #import "ETFoundSearchDetailCell.h"
 #import "ETHTMLViewController.h"
-
+#import "UUID.h"
 #import "ETFoundCategoryModel.h"
 
 @interface ETFoundClassificationController ()<UITableViewDelegate,UITableViewDataSource>
@@ -61,6 +61,22 @@
   
 }
 
+#pragma mark - 记录最近使用
+- (void)et_appnewRequest:(NSString *)ID {
+    
+    NSString *uuidString = [UUID getUUID];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:ID forKey:@"appid"];
+    [dict setValue:uuidString forKey:@"contacts"];
+    [HTTPTool requestDotNetWithURLString:@"et_appnew" parameters:dict type:kPOST success:^(id responseObject) {
+        
+//        [self et_appnewsRequest];
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -85,7 +101,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 //    ETFoundDetailData *data = self.detailData[indexPath.row];
+    
     FoundCategoryApps *data = self.data[indexPath.row];
+    [self et_appnewRequest:data.Id];
     ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
     vc.url = data.url;
     vc.title = data.name;

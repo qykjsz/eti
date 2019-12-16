@@ -22,6 +22,8 @@
 
 @property (nonatomic,assign) NSInteger currentPage;
 
+@property (nonatomic,strong) CustomGifHeader *gifHeader;
+
 @end
 
 @implementation ETProclamationListController
@@ -115,13 +117,7 @@
         _detailTab.clipsToBounds = YES;
         _detailTab.layer.cornerRadius = 25;
         WEAK_SELF(self);
-        _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            
-            STRONG_SELF(self);
-            self.currentPage = 0;
-            [self.detailTab.mj_header endRefreshing];
-            [self newsRequest];
-        }];
+        _detailTab.mj_header = self.gifHeader;
         
         _detailTab.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
             
@@ -133,6 +129,21 @@
 
     }
     return _detailTab;
+}
+
+- (CustomGifHeader *)gifHeader {
+    if (!_gifHeader) {
+    WEAK_SELF(self);
+        _gifHeader = [CustomGifHeader headerWithRefreshingBlock:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        STRONG_SELF(self);
+                self.currentPage = 0;
+                [self.detailTab.mj_header endRefreshing];
+                [self newsRequest];
+            });
+        }];
+    }
+    return _gifHeader;
 }
 
 @end

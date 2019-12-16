@@ -13,19 +13,18 @@ typedef enum : NSInteger{
     PageControlStyleRectangle = 0, // 默认类型 长方形
     PageControlStyleCircle, // 圆形
     PageControlStyleSquare, // 正方形
-    PageControlStyleSizeDot,// 大小点
 }PageControlStyle;
 @interface KJPageControl : UIPageControl
 /* 总共点数 */
-@property(nonatomic,assign) IBInspectable NSInteger totalPages;
+@property(nonatomic,assign)NSInteger totalPages;
 /* 当前点，默认0 */
-@property(nonatomic,assign) IBInspectable NSInteger currentIndex;
+@property(nonatomic,assign)NSInteger currentIndex;
 /* 选中的色，默认白色 */
-@property(nonatomic,strong) IBInspectable UIColor *selectColor;
+@property(nonatomic,strong)UIColor *selectColor;
 /* 背景色，默认灰色 */
-@property(nonatomic,strong) IBInspectable UIColor *normalColor;
+@property(nonatomic,strong)UIColor *normalColor;
 /* 类别，默认长方形 */
-@property(nonatomic,assign) IBInspectable PageControlStyle pageType;
+@property(nonatomic,assign)PageControlStyle pageType;
 @end
 
 NS_ASSUME_NONNULL_END

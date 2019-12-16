@@ -33,6 +33,7 @@
 
 @property (nonatomic,assign) BOOL isSearch;
 
+@property (nonatomic,strong) CustomGifHeader *gifHeader;
 @end
 
 @implementation ETRecordDetailViewController
@@ -63,8 +64,12 @@
     self.isOpen = YES;
     self.dataArr = [NSMutableArray array];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(eyeAction:) name:@"RECODEREYEACTION" object:nil];
+    if (![self.coinName isEqualToString:@"EGA"]) {
+        self.detailTab.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 84 - 64 - 50);
+    }else {
+        self.detailTab.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64 - 50);
+    }
     
-    self.detailTab.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 85 - 64 - 50);
     
     [self.view addSubview:self.detailTab];
     
@@ -231,13 +236,7 @@
         _detailTab.layer.cornerRadius = 25;
         
         WEAK_SELF(self);
-        _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            
-            STRONG_SELF(self);
-            self.curretnPage = 0;
-            [self.detailTab.mj_header endRefreshing];
-            [self listRequest];
-        }];
+        _detailTab.mj_header = self.gifHeader;
         
         _detailTab.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
             
@@ -248,6 +247,22 @@
         }];
     }
     return _detailTab;
+}
+
+
+- (CustomGifHeader *)gifHeader {
+    if (!_gifHeader) {
+    WEAK_SELF(self);
+        _gifHeader = [CustomGifHeader headerWithRefreshingBlock:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        STRONG_SELF(self);
+                      self.curretnPage = 0;
+                      [self.detailTab.mj_header endRefreshing];
+                      [self listRequest];
+            });
+        }];
+    }
+    return _gifHeader;
 }
 
 

@@ -80,7 +80,7 @@
         UILabel *titleLb = [[UILabel alloc]init];
         titleLb.font = [UIFont systemFontOfSize:16];
         titleLb.textColor = UIColorFromHEX(0x333333, 1);
-        titleLb.text = @"我的DApp";
+        titleLb.text = @"最近使用";
         [backView addSubview:titleLb];
         [titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
             
@@ -250,8 +250,12 @@
 - (void)setDataArr:(NSMutableArray *)dataArr {
     
     _dataArr = dataArr;
-   
-    [self.collectionView reloadData];
+   dispatch_async(dispatch_get_main_queue(), ^{
+          
+         [self.collectionView reloadData];
+          
+    });
+    
     NSInteger height = dataArr.count % 5;
     if (height == 0) {
         height = dataArr.count/5;

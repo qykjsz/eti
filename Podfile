@@ -1,9 +1,11 @@
 # Uncomment the next line to define a global platform for your project
- platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+platform :ios, '9.0'
 
 target 'ProjectET' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+  
     pod 'Masonry'
     pod 'SVProgressHUD', '2.2.5'
     pod 'AFNetworking', '3.2.0'
@@ -19,15 +21,16 @@ target 'ProjectET' do
     pod 'Reachability', '3.2'
     pod 'KJBannerView'
     pod 'SDCycleScrollView'
+    pod 'JAnalytics'
   # Pods for ProjectET
-
-  target 'ProjectETTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'ProjectETUITests' do
-    # Pods for testing
-  end
+#
+#  target 'ProjectETTests' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
+#
+#  target 'ProjectETUITests' do
+#    # Pods for testing
+#  end
 
 end

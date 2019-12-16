@@ -33,6 +33,8 @@
 		04998A41238D29E8002939F1 /* ETShopPaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04998A3F238D29E8002939F1 /* ETShopPaymentViewController.xib */; };
 		04CAF00E238D3FD4001FEE2F /* ETShopRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CAF00D238D3FD4001FEE2F /* ETShopRecordModel.m */; };
 		04D15FD42396643E00ECA143 /* ETContactsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D15FD32396643E00ECA143 /* ETContactsTableView.m */; };
+		04D82B8223A7304F0051808B /* ETTopUpExplainviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D82B8023A7304F0051808B /* ETTopUpExplainviewController.m */; };
+		04D82B8323A7304F0051808B /* ETTopUpExplainviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D82B8123A7304F0051808B /* ETTopUpExplainviewController.xib */; };
 		04DB9ED6237BE69B002796C3 /* ETNewAlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9ED4237BE69B002796C3 /* ETNewAlertsViewController.m */; };
 		04DB9ED7237BE69B002796C3 /* ETNewAlertsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB9ED5237BE69B002796C3 /* ETNewAlertsViewController.xib */; };
 		04DB9EDB237BE6C4002796C3 /* ETNewInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9ED9237BE6C4002796C3 /* ETNewInformationViewController.m */; };
@@ -74,6 +76,7 @@
 		04F4274423A225CD009587CE /* ETCoinInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F4274223A225CD009587CE /* ETCoinInstructionsViewController.m */; };
 		04F4274523A225CD009587CE /* ETCoinInstructionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F4274323A225CD009587CE /* ETCoinInstructionsViewController.xib */; };
 		04F4274923A22EE5009587CE /* ETCoinInstructionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F4274823A22EE5009587CE /* ETCoinInstructionsModel.m */; };
+		04F4278D23A38CEF009587CE /* CustomGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F4278C23A38CEF009587CE /* CustomGifHeader.m */; };
 		4F0E4D8D2373B3FC00E83618 /* ETHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */; };
 		4F0E4D932373EFF000E83618 /* ETTransferDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D922373EFF000E83618 /* ETTransferDetailViewController.m */; };
 		4F0E4D992373F5BB00E83618 /* ETTransferDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D982373F5BB00E83618 /* ETTransferDetailCell.m */; };
@@ -222,8 +225,6 @@
 		4FFFB9122379264500AE9BFF /* ETMycontactListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB90E2379264500AE9BFF /* ETMycontactListModel.m */; };
 		4FFFB91623792A4D00AE9BFF /* ETTransListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB91523792A4D00AE9BFF /* ETTransListModel.m */; };
 		4FFFB91A2379390600AE9BFF /* ETTransferDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FFFB9192379390600AE9BFF /* ETTransferDetailModel.m */; };
-		658EFA9763BC24E969103719 /* Pods_ProjectET_ProjectETUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A224CC41A5867B4A06D4BE24 /* Pods_ProjectET_ProjectETUITests.framework */; };
-		6A90619DC84BDE4BF253E0AF /* Pods_ProjectETTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590DE355526C79E021DE22B4 /* Pods_ProjectETTests.framework */; };
 		8855DAA32377ACC700F25DA4 /* MineHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DAA22377ACC700F25DA4 /* MineHeadView.m */; };
 		8855DAA72377C4E800F25DA4 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DAA62377C4E800F25DA4 /* AboutUsViewController.m */; };
 		8855DAAD2377E3AF00F25DA4 /* InvationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8855DAAC2377E3AF00F25DA4 /* InvationViewController.m */; };
@@ -303,6 +304,9 @@
 		04CAF00D238D3FD4001FEE2F /* ETShopRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETShopRecordModel.m; sourceTree = "<group>"; };
 		04D15FD22396643E00ECA143 /* ETContactsTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETContactsTableView.h; sourceTree = "<group>"; };
 		04D15FD32396643E00ECA143 /* ETContactsTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETContactsTableView.m; sourceTree = "<group>"; };
+		04D82B7F23A7304F0051808B /* ETTopUpExplainviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTopUpExplainviewController.h; sourceTree = "<group>"; };
+		04D82B8023A7304F0051808B /* ETTopUpExplainviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTopUpExplainviewController.m; sourceTree = "<group>"; };
+		04D82B8123A7304F0051808B /* ETTopUpExplainviewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETTopUpExplainviewController.xib; sourceTree = "<group>"; };
 		04DB9ED3237BE69B002796C3 /* ETNewAlertsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewAlertsViewController.h; sourceTree = "<group>"; };
 		04DB9ED4237BE69B002796C3 /* ETNewAlertsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewAlertsViewController.m; sourceTree = "<group>"; };
 		04DB9ED5237BE69B002796C3 /* ETNewAlertsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewAlertsViewController.xib; sourceTree = "<group>"; };
@@ -372,6 +376,8 @@
 		04F4274323A225CD009587CE /* ETCoinInstructionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETCoinInstructionsViewController.xib; sourceTree = "<group>"; };
 		04F4274723A22EE5009587CE /* ETCoinInstructionsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCoinInstructionsModel.h; sourceTree = "<group>"; };
 		04F4274823A22EE5009587CE /* ETCoinInstructionsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCoinInstructionsModel.m; sourceTree = "<group>"; };
+		04F4278B23A38CEF009587CE /* CustomGifHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomGifHeader.h; sourceTree = "<group>"; };
+		04F4278C23A38CEF009587CE /* CustomGifHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomGifHeader.m; sourceTree = "<group>"; };
 		172FA16F06F30E4F663C3530 /* Pods-ProjectET.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET.debug.xcconfig"; path = "Target Support Files/Pods-ProjectET/Pods-ProjectET.debug.xcconfig"; sourceTree = "<group>"; };
 		4F0E4D8B2373B3FC00E83618 /* ETHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETHomeModel.h; sourceTree = "<group>"; };
 		4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETHomeModel.m; sourceTree = "<group>"; };
@@ -669,9 +675,6 @@
 		4FFFB9182379390600AE9BFF /* ETTransferDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTransferDetailModel.h; sourceTree = "<group>"; };
 		4FFFB9192379390600AE9BFF /* ETTransferDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTransferDetailModel.m; sourceTree = "<group>"; };
 		538F76165E482E5E17D51186 /* Pods_ProjectET.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectET.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		590DE355526C79E021DE22B4 /* Pods_ProjectETTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectETTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F8CE32C24AC41FF7C2D546B /* Pods-ProjectET-ProjectETUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET-ProjectETUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectET-ProjectETUITests/Pods-ProjectET-ProjectETUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		71BF457FE4D184D7CB86E10F /* Pods-ProjectET-ProjectETUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET-ProjectETUITests.release.xcconfig"; path = "Target Support Files/Pods-ProjectET-ProjectETUITests/Pods-ProjectET-ProjectETUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8855DAA12377ACC700F25DA4 /* MineHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineHeadView.h; sourceTree = "<group>"; };
 		8855DAA22377ACC700F25DA4 /* MineHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineHeadView.m; sourceTree = "<group>"; };
 		8855DAA52377C4E800F25DA4 /* AboutUsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
@@ -706,9 +709,6 @@
 		88A5D0412372CFBC0012EE0B /* ClassBaseTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassBaseTools.m; sourceTree = "<group>"; };
 		88A5D68A2376BEF10012EE0B /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		88A5D68B2376BEF10012EE0B /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
-		8DEA859CD113E49D14CD6446 /* Pods-ProjectETTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectETTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectETTests/Pods-ProjectETTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A224CC41A5867B4A06D4BE24 /* Pods_ProjectET_ProjectETUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectET_ProjectETUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAEF493952AAEB65DFE33AF9 /* Pods-ProjectETTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectETTests.release.xcconfig"; path = "Target Support Files/Pods-ProjectETTests/Pods-ProjectETTests.release.xcconfig"; sourceTree = "<group>"; };
 		AE00EDB48D338D590FABFDDB /* Pods-ProjectET.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET.release.xcconfig"; path = "Target Support Files/Pods-ProjectET/Pods-ProjectET.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -726,7 +726,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A90619DC84BDE4BF253E0AF /* Pods_ProjectETTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,7 +733,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				658EFA9763BC24E969103719 /* Pods_ProjectET_ProjectETUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,6 +757,9 @@
 				04733DF2239DDD9A006FE3F3 /* ETTopupCenterViewController.h */,
 				04733DF3239DDD9A006FE3F3 /* ETTopupCenterViewController.m */,
 				04733DF4239DDD9A006FE3F3 /* ETTopupCenterViewController.xib */,
+				04D82B7F23A7304F0051808B /* ETTopUpExplainviewController.h */,
+				04D82B8023A7304F0051808B /* ETTopUpExplainviewController.m */,
+				04D82B8123A7304F0051808B /* ETTopUpExplainviewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1209,8 +1210,6 @@
 			isa = PBXGroup;
 			children = (
 				538F76165E482E5E17D51186 /* Pods_ProjectET.framework */,
-				A224CC41A5867B4A06D4BE24 /* Pods_ProjectET_ProjectETUITests.framework */,
-				590DE355526C79E021DE22B4 /* Pods_ProjectETTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1220,10 +1219,6 @@
 			children = (
 				172FA16F06F30E4F663C3530 /* Pods-ProjectET.debug.xcconfig */,
 				AE00EDB48D338D590FABFDDB /* Pods-ProjectET.release.xcconfig */,
-				6F8CE32C24AC41FF7C2D546B /* Pods-ProjectET-ProjectETUITests.debug.xcconfig */,
-				71BF457FE4D184D7CB86E10F /* Pods-ProjectET-ProjectETUITests.release.xcconfig */,
-				8DEA859CD113E49D14CD6446 /* Pods-ProjectETTests.debug.xcconfig */,
-				AAEF493952AAEB65DFE33AF9 /* Pods-ProjectETTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1358,6 +1353,8 @@
 				4F14FB1523695F0C0008C50A /* Tools.m */,
 				4F128C642367D96F0004284D /* UIButton+ImageTitleSpacing.h */,
 				4F128C652367D96F0004284D /* UIButton+ImageTitleSpacing.m */,
+				04F4278B23A38CEF009587CE /* CustomGifHeader.h */,
+				04F4278C23A38CEF009587CE /* CustomGifHeader.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -2111,7 +2108,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F2306F12366DE9F0046A136 /* Build configuration list for PBXNativeTarget "ProjectETTests" */;
 			buildPhases = (
-				7D5590D9BB61E6F40B9ACDAB /* [CP] Check Pods Manifest.lock */,
 				4F2306D62366DE9F0046A136 /* Sources */,
 				4F2306D72366DE9F0046A136 /* Frameworks */,
 				4F2306D82366DE9F0046A136 /* Resources */,
@@ -2130,11 +2126,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F2306F42366DE9F0046A136 /* Build configuration list for PBXNativeTarget "ProjectETUITests" */;
 			buildPhases = (
-				3AF0D8D939E0113D504218F7 /* [CP] Check Pods Manifest.lock */,
 				4F2306E12366DE9F0046A136 /* Sources */,
 				4F2306E22366DE9F0046A136 /* Frameworks */,
 				4F2306E32366DE9F0046A136 /* Resources */,
-				B37650F81398D5ECB4E17D8E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2197,6 +2191,7 @@
 				04DB9EE6237BEAFB002796C3 /* ETNewArticleViewController.xib in Resources */,
 				4F14FB23236966E10008C50A /* ETMyWalletDetailCell.xib in Resources */,
 				04998A34238CD938002939F1 /* ETShopChooseCoinCell.xib in Resources */,
+				04D82B8323A7304F0051808B /* ETTopUpExplainviewController.xib in Resources */,
 				04F4274523A225CD009587CE /* ETCoinInstructionsViewController.xib in Resources */,
 				4F2306D22366DE9F0046A136 /* LaunchScreen.storyboard in Resources */,
 				4F14FB0223692CF30008C50A /* ETAddContactsCell.xib in Resources */,
@@ -2256,67 +2251,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3AF0D8D939E0113D504218F7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ProjectET-ProjectETUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7D5590D9BB61E6F40B9ACDAB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ProjectETTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B37650F81398D5ECB4E17D8E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProjectET-ProjectETUITests/Pods-ProjectET-ProjectETUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProjectET-ProjectETUITests/Pods-ProjectET-ProjectETUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectET-ProjectETUITests/Pods-ProjectET-ProjectETUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C3BC53C8913E9B28B4564BD0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2497,6 +2431,7 @@
 				4FA0A314236FFF440038F880 /* ETWalletManger.m in Sources */,
 				4FFFB9122379264500AE9BFF /* ETMycontactListModel.m in Sources */,
 				4F3F9058236AEB93009AAA24 /* Tools+Image.m in Sources */,
+				04F4278D23A38CEF009587CE /* CustomGifHeader.m in Sources */,
 				4FA0A309236FCA270038F880 /* WMZPageParam.m in Sources */,
 				4F24C37C23829BCB00BB6E00 /* ETFoundCategoryModel.m in Sources */,
 				4F128C592367D1CE0004284D /* UIViewController+NaviBarButton.m in Sources */,
@@ -2512,6 +2447,7 @@
 				04DB9ED6237BE69B002796C3 /* ETNewAlertsViewController.m in Sources */,
 				4FF7FF28237FE5CC00C38456 /* ETFoundSearchDetailCell.m in Sources */,
 				4F14FB0123692CF30008C50A /* ETAddContactsCell.m in Sources */,
+				04D82B8223A7304F0051808B /* ETTopUpExplainviewController.m in Sources */,
 				4F1A22502372D04500FDD5D9 /* HTTPTool+DomainAPI.m in Sources */,
 				8855DAA72377C4E800F25DA4 /* AboutUsViewController.m in Sources */,
 				4F14FB26236975890008C50A /* ETMyWalletLeftModel.m in Sources */,
@@ -2723,7 +2659,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2019121311;
+				CURRENT_PROJECT_VERSION = 2019121316;
 				DEVELOPMENT_TEAM = 2LML59W777;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2736,7 +2672,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectET1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2752,7 +2688,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2019121311;
+				CURRENT_PROJECT_VERSION = 2019121316;
 				DEVELOPMENT_TEAM = 2LML59W777;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2770,7 +2706,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectET1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2781,7 +2717,6 @@
 		};
 		4F2306F22366DE9F0046A136 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DEA859CD113E49D14CD6446 /* Pods-ProjectETTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -2800,7 +2735,6 @@
 		};
 		4F2306F32366DE9F0046A136 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AAEF493952AAEB65DFE33AF9 /* Pods-ProjectETTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -2819,7 +2753,6 @@
 		};
 		4F2306F52366DE9F0046A136 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F8CE32C24AC41FF7C2D546B /* Pods-ProjectET-ProjectETUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ProjectETUITests/Info.plist;
@@ -2837,7 +2770,6 @@
 		};
 		4F2306F62366DE9F0046A136 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71BF457FE4D184D7CB86E10F /* Pods-ProjectET-ProjectETUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ProjectETUITests/Info.plist;

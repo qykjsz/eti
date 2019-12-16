@@ -437,6 +437,10 @@
             [HTTPTool requestDotNetWithURLString:@"et_transaction" parameters:@{@"name":self.coinNameString} type:kPOST success:^(id responseObject) {
                 [SVProgressHUD dismiss];
                 self.view.userInteractionEnabled = YES;
+                if ([[NSString stringWithFormat: @"%@",responseObject[@"code"]] isEqualToString:@"400"]) {
+                    [KMPProgressHUD showText:responseObject[@"msg"]];
+                    return ;
+                }
                 if ([Tools checkStringIsEmpty:self.address]) {
                     [SVProgressHUD showInfoWithStatus:@"转账地址不能为空"];
                     return;

@@ -14,7 +14,7 @@
     
     if (self = [super initWithFrame:frame]) {
         
-        NSArray *titleArr = @[@"资源",@"充值",@"币买卖",@"更多工具"];
+        NSArray *titleArr = @[@"资源",@"充值中心",@"币买卖",@"更多工具"];
         NSArray *photoArr = @[@"sy_ziyuan",@"sy_cz_icon",@"sy_maibi",@"sy_more"];
         for (int i = 0; i<4; i++) {
             

@@ -10,6 +10,7 @@
 #import "ETShopChooseCoinView.h"
 #import "ETVerifyPassWrodView.h"
 #import "ETTopupCenterRecordViewController.h"
+#import "ETTopUpExplainviewController.h"
 #import "ETTopUpVerifyPassWrodView.h"
 #import "ETShopChooseModel.h"
 
@@ -55,6 +56,14 @@
     [self getFimoney:NO];
     [self getETGames:NO];
     self.chooseView.delegate = self;
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightBtn.frame = CGRectMake(0, 0, 40, 40);
+    [rightBtn setImage:[UIImage imageNamed:@"czcz_icon"] forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(rightBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
+
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -189,15 +198,15 @@
 ///游戏充值
 - (void)getETGame:(NSString *)hash{
     ETWalletModel *model = [ETWalletManger getCurrentWallet];
-     [SVProgressHUD showWithStatus:@""];
+    [SVProgressHUD showWithStatus:@""];
     [HTTPTool requestDotNetWithURLString:@"recharge_et_game" parameters:@{@"from":model.address,
-                                                                  @"to":self.gameAddress,
-                                                                  @"hash":hash,
-                                                                  @"moneystate":self.lab_coinName.text,
-                                                                  @"gameid":self.gameID,
-                                                                  @"money":self.coinNum,
-                                                                  @"gamenumber":self.tf_num.text,
-                                                                  @"gameuser" : self.tf_userName.text
+                                                                          @"to":self.gameAddress,
+                                                                          @"hash":hash,
+                                                                          @"moneystate":self.lab_coinName.text,
+                                                                          @"gameid":self.gameID,
+                                                                          @"money":self.coinNum,
+                                                                          @"gamenumber":self.tf_num.text,
+                                                                          @"gameuser" : self.tf_userName.text
     } type:kPOST success:^(id responseObject) {
         [KMPProgressHUD showText:@"提交成功"];
     } failure:^(NSError *error) {
@@ -208,31 +217,33 @@
 
 ///验证游戏充值数据
 - (void)getETGameVerification{
-//    ETWalletModel *model = [ETWalletManger getCurrentWallet];
-     [SVProgressHUD showWithStatus:@""];
+    //    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    [SVProgressHUD showWithStatus:@""];
     [HTTPTool requestDotNetWithURLString:@"recharge_et_game_verification" parameters:@{@"gameid":self.gameID,
-                                                                  @"gamenumber":self.tf_num.text,
-                                                                  @"moneystate":self.lab_coinName.text,
-                                                                  @"money":self.coinNum
+                                                                                       @"gamenumber":self.tf_num.text,
+                                                                                       @"moneystate":self.lab_coinName.text,
+                                                                                       @"money":self.coinNum
     } type:kPOST success:^(id responseObject) {
-            self.coinNum = [NSString stringWithFormat:@"%@",responseObject[@"data"]];
-           ETTopUpVerifyPassWrodView *view = [[ETTopUpVerifyPassWrodView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        self.coinNum = [NSString stringWithFormat:@"%@",responseObject[@"data"]];
+        ETTopUpVerifyPassWrodView *view = [[ETTopUpVerifyPassWrodView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         view.lab_num.text = [NSString stringWithFormat:@"需支付：%@%@",self.coinNum,self.lab_coinName.text];
-           [view setSuccess:^{
-                [self transferSure];
-           }];
-           [view setFailure:^{
-               [KMPProgressHUD showText:@"密码错误"];
-           }];
-           [[UIApplication sharedApplication].keyWindow addSubview:view];
-       
-       
+        [view setSuccess:^{
+            [self transferSure];
+        }];
+        [view setFailure:^{
+            [KMPProgressHUD showText:@"密码错误"];
+        }];
+        [[UIApplication sharedApplication].keyWindow addSubview:view];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
         [SVProgressHUD dismiss];
     }];
 }
 
+
+- (void)rightBtnAction{
+    [self.navigationController pushViewController:[[ETTopUpExplainviewController alloc]init] animated:true];
+}
 
 
 ///其他充值
@@ -294,7 +305,7 @@
     }
     
     [self getETGameVerification];
-   
+    
     
 }
 
@@ -395,18 +406,18 @@
     //        //第一个参数，被替换字符串的range，第二个参数，即将键入或者粘贴的string，返回的是改变过后的新str，即textfield的新的文本内容
     if (textField == self.tf_num) {
         NSString *oldText = textField.text;
-           NSString *checkStr = [oldText stringByReplacingCharactersInRange:range withString:string];
-           if (checkStr.length == 0) {
-               return YES;
-           }
-           NSString *regex = @"^\\-?([1-9]\\d*|0)(\\.\\d{0,2})?$";
-           NSPredicate *predicte = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
-           BOOL isValid = [predicte evaluateWithObject:checkStr];
-           return isValid;
+        NSString *checkStr = [oldText stringByReplacingCharactersInRange:range withString:string];
+        if (checkStr.length == 0) {
+            return YES;
+        }
+        NSString *regex = @"^\\-?([1-9]\\d*|0)(\\.\\d{0,2})?$";
+        NSPredicate *predicte = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+        BOOL isValid = [predicte evaluateWithObject:checkStr];
+        return isValid;
     }else {
         return true;
     }
-   
+    
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{

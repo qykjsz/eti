@@ -128,7 +128,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (scrollView == self.mainScrollView){
-        self.pageScrollView.scrollEnabled = NO;
+        self.pageScrollView.scrollEnabled = YES;
         HoverChildViewController *child = [_viewControllers objectAtIndex:_currentIndex];
         if (child.offsetY > 0){
             scrollView.contentOffset = CGPointMake(0, self.headerView.frame.size.height);
@@ -138,7 +138,7 @@
             }
         }
     }else if (scrollView == self.pageScrollView){
-        self.mainScrollView.scrollEnabled = NO;
+        self.mainScrollView.scrollEnabled = YES;
         if ([self.delegate respondsToSelector:@selector(hoverPageViewController:scrollViewDidScroll:)]){
             [self.delegate hoverPageViewController:self scrollViewDidScroll:scrollView];
         }

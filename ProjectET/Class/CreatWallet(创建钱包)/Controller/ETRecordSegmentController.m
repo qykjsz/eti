@@ -126,15 +126,15 @@
         
     }];
     
-//    UIButton *rightBarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [rightBarBtn setImage:[UIImage imageNamed:@"bz_jj_icon"] forState:UIControlStateNormal];
-//    [rightBarBtn addTarget:self action:@selector(recordAction) forControlEvents:UIControlEventTouchUpInside];
-//    [topImage addSubview:rightBarBtn];
-//    [rightBarBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(topImage.mas_top).offset(iPhoneBang?34:20);
-//        make.width.height.equalTo(@44);
-//        make.right.equalTo(topImage.mas_right);
-//    }];
+    UIButton *rightBarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightBarBtn setImage:[UIImage imageNamed:@"bz_jj_icon"] forState:UIControlStateNormal];
+    [rightBarBtn addTarget:self action:@selector(recordAction) forControlEvents:UIControlEventTouchUpInside];
+    [topImage addSubview:rightBarBtn];
+    [rightBarBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topImage.mas_top).offset(iPhoneBang?34:20);
+        make.width.height.equalTo(@44);
+        make.right.equalTo(topImage.mas_right);
+    }];
     
     self.headerView = [[ETRecordHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 190)];
     
@@ -215,8 +215,12 @@
     
     /// 添加分页控制器
     self.hoverPageViewController = [HoverPageViewController viewControllers:viewControllers headerView:self.headerView pageTitleView:self.pageTitleView];
- 
-    self.hoverPageViewController.view.frame = CGRectMake(0, iPhoneBang?(barHeight - 10):barHeight, SCREEN_WIDTH, SCREEN_HEIGHT - barHeight - 84);
+    if (![self.coinName isEqualToString:@"EGA"]) {
+        self.hoverPageViewController.view.frame = CGRectMake(0, iPhoneBang?(barHeight - 10):barHeight, SCREEN_WIDTH, SCREEN_HEIGHT - barHeight - 84);
+    }else {
+        self.hoverPageViewController.view.frame = CGRectMake(0, iPhoneBang?(barHeight - 10):barHeight, SCREEN_WIDTH, SCREEN_HEIGHT - barHeight);
+    }
+    
     self.hoverPageViewController.delegate = self;
     self.hoverPageViewController.mainScrollView.bounces = NO;
     [self addChildViewController:self.hoverPageViewController];
@@ -376,47 +380,54 @@
 
 - (UIView *)footerView {
     
-    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 84, SCREEN_WIDTH, 84)];
     
-    UIButton *leftBtn = [[UIButton alloc]init];
-    leftBtn.clipsToBounds = YES;
-    leftBtn.layer.cornerRadius = 5;
-    leftBtn.tag = 0;
-    [leftBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
-    [leftBtn setTitle:@"转账" forState:UIControlStateNormal];
-    [leftBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-    leftBtn.titleLabel.font = [UIFont systemFontOfSize:16];
-    leftBtn.backgroundColor = UIColorFromHEX(0x00B792, 1);
-    [backView addSubview:leftBtn];
-    [leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    if (![self.coinName isEqualToString:@"EGA"]) {
+        UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 84, SCREEN_WIDTH, 84)];
         
-        make.left.equalTo(backView.mas_left).offset(15);
-        make.centerY.equalTo(backView.mas_centerY);
-        make.width.equalTo(@((SCREEN_WIDTH-55)/2));
-        make.height.mas_equalTo(44);
+        UIButton *leftBtn = [[UIButton alloc]init];
+        leftBtn.clipsToBounds = YES;
+        leftBtn.layer.cornerRadius = 5;
+        leftBtn.tag = 0;
+        [leftBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
+        [leftBtn setTitle:@"转账" forState:UIControlStateNormal];
+        [leftBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+        leftBtn.titleLabel.font = [UIFont systemFontOfSize:16];
+        leftBtn.backgroundColor = UIColorFromHEX(0x00B792, 1);
+        [backView addSubview:leftBtn];
+        [leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.left.equalTo(backView.mas_left).offset(15);
+            make.centerY.equalTo(backView.mas_centerY);
+            make.width.equalTo(@((SCREEN_WIDTH-55)/2));
+            make.height.mas_equalTo(44);
+            
+        }];
         
-    }];
+        UIButton *rightBtn = [[UIButton alloc]init];
+        rightBtn.clipsToBounds = YES;
+        rightBtn.layer.cornerRadius = 5;
+        rightBtn.tag = 1;
+        [rightBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
+        [rightBtn setTitle:@"收款" forState:UIControlStateNormal];
+        [rightBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+        rightBtn.titleLabel.font = [UIFont systemFontOfSize:16];
+        rightBtn.backgroundColor = UIColorFromHEX(0x1D57FF, 1);
+        [backView addSubview:rightBtn];
+        [rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.right.equalTo(backView.mas_right).offset(-15);
+            make.centerY.equalTo(backView.mas_centerY);
+            make.width.equalTo(@((SCREEN_WIDTH-55)/2));
+            make.height.mas_equalTo(44);
+            
+        }];
+        
+        return backView;
+    }else {
+        UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 0)];
+        return backView;
+    }
     
-    UIButton *rightBtn = [[UIButton alloc]init];
-    rightBtn.clipsToBounds = YES;
-    rightBtn.layer.cornerRadius = 5;
-    rightBtn.tag = 1;
-    [rightBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
-    [rightBtn setTitle:@"收款" forState:UIControlStateNormal];
-    [rightBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-    rightBtn.titleLabel.font = [UIFont systemFontOfSize:16];
-    rightBtn.backgroundColor = UIColorFromHEX(0x1D57FF, 1);
-    [backView addSubview:rightBtn];
-    [rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.right.equalTo(backView.mas_right).offset(-15);
-        make.centerY.equalTo(backView.mas_centerY);
-        make.width.equalTo(@((SCREEN_WIDTH-55)/2));
-        make.height.mas_equalTo(44);
-        
-    }];
-    
-    return backView;
     
 }
 

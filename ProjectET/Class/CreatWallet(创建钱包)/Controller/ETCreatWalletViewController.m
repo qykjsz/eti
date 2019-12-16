@@ -35,10 +35,16 @@
 - (void)viewWillDisappear:(BOOL)animated {
     
     [super viewWillDisappear:animated];
-    
+    [JANALYTICSService stopLogPageView:@"Create a wallet"];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
     
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [JANALYTICSService startLogPageView:@"Create a wallet"];
+    [super viewDidAppear:animated];
 }
 
 - (void)viewDidLoad {

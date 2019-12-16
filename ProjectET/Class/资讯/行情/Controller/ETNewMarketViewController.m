@@ -16,31 +16,39 @@
 @property (nonatomic,strong) NSMutableArray *dataSource;
 @property (nonatomic,strong)ETNewMarketModel *model;
 @property (nonatomic,strong)NSString *sort;
-
+@property (nonatomic,strong) CustomGifHeader *gifHeader;
 
 @end
 
 @implementation ETNewMarketViewController
 
+- (CustomGifHeader *)gifHeader {
+    if (!_gifHeader) {
+        WEAK_SELF(self);
+        _gifHeader = [CustomGifHeader headerWithRefreshingBlock:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                STRONG_SELF(self);
+                [self.tableView.mj_header endRefreshing];
+                [self getAlertsListData];
+            });
+        }];
+    }
+    return _gifHeader;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.view.backgroundColor = UIColor.clearColor;
     self.dataSource  = [NSMutableArray array];
     [self.tableView registerNib:[UINib nibWithNibName:@"ETNewTwoMarketCell" bundle:nil] forCellReuseIdentifier:@"ETNewTwoMarketCell"];
-    WEAK_SELF(self);
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        STRONG_SELF(self);
-        [self.tableView.mj_header endRefreshing];
-        [self getAlertsListData];
-    }];
-
+    self.tableView.mj_header = self.gifHeader;
     [self getAlertsListData];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)getAlertsListData{
-     [SVProgressHUD showWithStatus:@""];
+    [SVProgressHUD showWithStatus:@""];
     [HTTPTool requestDotNetWithURLString:@"et_quotation" parameters:@{@"":@""}    type:kPOST success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         [self.dataSource removeAllObjects];
@@ -63,7 +71,7 @@
     }
     
     NSLog(@"%@",arr);
-     [SVProgressHUD showWithStatus:@""];
+    [SVProgressHUD showWithStatus:@""];
     [HTTPTool requestDotNetWithURLString:@"et_quotationsort" parameters:@{@"allglods":arr,@"sort":self.sort}    type:kPOST success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         [self.dataSource removeAllObjects];
@@ -126,7 +134,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -135,13 +143,13 @@
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

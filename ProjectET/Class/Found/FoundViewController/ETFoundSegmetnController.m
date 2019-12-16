@@ -45,6 +45,8 @@
 
 @property (nonatomic, strong)ETFoundBannerModel *bannerModel;
 
+@property (nonatomic,strong) CustomGifHeader *gifHeader;
+
 @end
 
 @implementation ETFoundSegmetnController
@@ -65,6 +67,8 @@
     
     
 }
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -98,7 +102,7 @@
             UIButton *button = [UIButton new];
             button.tag = i;
             [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-            button.frame = CGRectMake(i * buttonSize.width, 0, buttonSize.width, buttonSize.height);
+            button.frame = CGRectMake(i * buttonSize.width + 10, 0, buttonSize.width, buttonSize.height);
             [button setTitleColor:UIColorFromHEX(0xB7BCDC, 1) forState:UIControlStateNormal];
             [button setTitleColor:UIColorFromHEX(0x333333, 1) forState:UIControlStateSelected];
             if (i == 0) {
@@ -184,22 +188,7 @@
         self.hoverPageViewController.view.backgroundColor = UIColor.clearColor;
         self.hoverPageViewController.view.frame = CGRectMake(0, kStatusAndNavHeight, SCREEN_WIDTH, SCREEN_HEIGHT - barHeight);
         self.hoverPageViewController.delegate = self;
-        self.hoverPageViewController.mainScrollView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            
-            dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                [self bannerRequest];
-            });
-            
-            dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                 [self et_appnewsRequest];
-            });
-            
-            dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                [self handpickRequest];
-            });
-
-            [self.hoverPageViewController.mainScrollView.mj_header endRefreshing];
-        }];
+        self.hoverPageViewController.mainScrollView.mj_header = self.gifHeader;
         [self addChildViewController:self.hoverPageViewController];
         [self.view addSubview:self.hoverPageViewController.view];
         
@@ -440,6 +429,8 @@
     }
 }
 
+
+
 #pragma mark - Action
 - (void)btnClickAction:(UIButton *)btn {
     
@@ -475,6 +466,31 @@
     }];
     sVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:sVC animated:YES];
+}
+
+- (CustomGifHeader *)gifHeader {
+    if (!_gifHeader) {
+    WEAK_SELF(self);
+        _gifHeader = [CustomGifHeader headerWithRefreshingBlock:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        STRONG_SELF(self);
+                dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                                [self bannerRequest];
+                            });
+                            
+                            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                                 [self et_appnewsRequest];
+                            });
+                            
+                //            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                //                [self handpickRequest];
+                //            });
+
+                            [self.hoverPageViewController.mainScrollView.mj_header endRefreshing];
+            });
+        }];
+    }
+    return _gifHeader;
 }
 
 /*

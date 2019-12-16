@@ -17,11 +17,26 @@
 @property (nonatomic,strong) NSMutableArray *dataSource;
 @property (nonatomic,strong)ETNewAlertsModel *model;
 @property (nonatomic, assign)NSInteger currentPage;
-
+@property (nonatomic,strong) CustomGifHeader *gifHeader;
 
 @end
 
 @implementation ETNewAlertsViewController
+
+- (CustomGifHeader *)gifHeader {
+    if (!_gifHeader) {
+    WEAK_SELF(self);
+        _gifHeader = [CustomGifHeader headerWithRefreshingBlock:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        STRONG_SELF(self);
+                   self.currentPage = 0;
+                     [self.tableView.mj_header endRefreshing];
+                     [self getAlertsListData];
+            });
+        }];
+    }
+    return _gifHeader;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,12 +46,7 @@
     self.currentPage = 0;
     [self.tableView registerNib:[UINib nibWithNibName:@"ETNewAlertsCell" bundle:nil] forCellReuseIdentifier:@"ETNewAlertsCell"];
      WEAK_SELF(self);
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        STRONG_SELF(self);
-        self.currentPage = 0;
-        [self.tableView.mj_header endRefreshing];
-        [self getAlertsListData];
-    }];
+    self.tableView.mj_header = self.gifHeader;
     
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         

@@ -23,7 +23,7 @@
 - (UIImageView *)gifView
 {
     if (!_gifView) { 
-        UIImageView *gifView = [[UIImageView alloc] init]; 
+        UIImageView *gifView = [[UIImageView alloc] init];
         [self addSubview:_gifView = gifView]; 
     } 
     return _gifView; 

@@ -20,6 +20,8 @@
 @property (nonatomic,strong) ETTotalModel *model;
 
 @property (nonatomic,assign) BOOL isOpen;
+
+@property (nonatomic,strong) CustomGifHeader *gifHeader;
 @end
 
 @implementation ETTotalAssetsController
@@ -219,15 +221,23 @@
         _detailTab.clipsToBounds = YES;
         _detailTab.layer.cornerRadius = 25;
         WEAK_SELF(self);
-        _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-           
-            STRONG_SELF(self);
-            [self.detailTab.mj_header endRefreshing];
-            
-        }];
+        _detailTab.mj_header = self.gifHeader;
         
     }
     return _detailTab;
+}
+
+- (CustomGifHeader *)gifHeader {
+    if (!_gifHeader) {
+    WEAK_SELF(self);
+        _gifHeader = [CustomGifHeader headerWithRefreshingBlock:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        STRONG_SELF(self);
+                [self.detailTab.mj_header endRefreshing];
+            });
+        }];
+    }
+    return _gifHeader;
 }
 
 @end

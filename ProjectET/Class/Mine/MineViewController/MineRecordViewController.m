@@ -15,6 +15,7 @@
 @property (nonatomic,strong) UITableView *detailTab;
 @property (nonatomic,strong) NSMutableArray *dataArr;
 @property (nonatomic,assign) NSInteger curretnPage;
+@property (nonatomic,strong) CustomGifHeader *gifHeader;
 
 @end
 
@@ -81,13 +82,7 @@
         _detailTab.layer.cornerRadius = 25;
         
         WEAK_SELF(self);
-        _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            
-            STRONG_SELF(self);
-            self.curretnPage = 0;
-            [self.detailTab.mj_header endRefreshing];
-            [self listRequest];
-        }];
+        _detailTab.mj_header = self.gifHeader;
         
         _detailTab.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
             
@@ -126,5 +121,21 @@
     dVC.glod = data.name;
     dVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:dVC animated:YES];
+}
+
+
+- (CustomGifHeader *)gifHeader {
+    if (!_gifHeader) {
+    WEAK_SELF(self);
+        _gifHeader = [CustomGifHeader headerWithRefreshingBlock:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        STRONG_SELF(self);
+                   self.curretnPage = 0;
+                         [self.detailTab.mj_header endRefreshing];
+                         [self listRequest];
+            });
+        }];
+    }
+    return _gifHeader;
 }
 @end

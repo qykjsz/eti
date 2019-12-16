@@ -50,9 +50,18 @@
 
 @property (nonatomic,strong) HomeHeaderView *homeHeader;
 
+@property (nonatomic,strong) CustomGifHeader *gifHeader;
+
 @end
 
 @implementation ETAssetsViewController
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [JANALYTICSService startLogPageView:@"Home"];
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
@@ -64,11 +73,12 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    
+   
     [super viewWillDisappear:animated];
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
      //默认为YES，关闭为NO
       manager.enable = YES;
+    [JANALYTICSService stopLogPageView:@"Home"];
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
 }
@@ -84,16 +94,25 @@
         _detailTab.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
         _detailTab.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_detailTab registerClass:[ETConiCell class] forCellReuseIdentifier:@"ETConiCell"];
-        WEAK_SELF(self);
-        _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-           
-            STRONG_SELF(self);
-            [self.detailTab.mj_header endRefreshing];
-            [self homeRequest];
-            
-        }];
+       
+        _detailTab.mj_header = self.gifHeader;
     }
     return _detailTab;
+}
+
+- (CustomGifHeader *)gifHeader {
+    if (!_gifHeader) {
+         WEAK_SELF(self);
+        _gifHeader = [CustomGifHeader headerWithRefreshingBlock:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                  
+                          STRONG_SELF(self);
+                          [self.detailTab.mj_header endRefreshing];
+                          [self homeRequest];
+            });
+        }];
+    }
+    return _gifHeader;
 }
 
 - (void)viewDidLoad {
@@ -158,7 +177,7 @@
     //        NSLog(@"%@",error);
     //    }];
     //    return;
-//    [SVProgressHUD showWithStatus:@"正在加载"];
+    [SVProgressHUD showWithStatus:@"正在加载"];
     ETWalletModel *model = [ETWalletManger getCurrentWallet];
     [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
          [KMPProgressHUD dismissProgress];
@@ -217,9 +236,10 @@
        
        
         [self.detailTab reloadData];
-        
+        [SVProgressHUD dismiss];
     } failure:^(NSError *error) {
         [SVProgressHUD showInfoWithStatus:@"加载失败"];
+        [SVProgressHUD dismiss];
     }];
     
 }

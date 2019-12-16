@@ -17,10 +17,18 @@
 
 @implementation ETHTMLViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
+    // 设置窗口亮度大小，范围是0.1 - 1.0
+    [[UIScreen mainScreen] setBrightness: 0.8];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     
     [super viewWillDisappear:animated];
-    
+    [UIApplication sharedApplication].idleTimerDisabled = NO;
     [SVProgressHUD dismiss];
 }
 

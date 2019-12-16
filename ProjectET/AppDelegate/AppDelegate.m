@@ -28,7 +28,7 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = UIColor.whiteColor;
     [self.window makeKeyAndVisible];
-    
+    [self JANALYTICSLaunchConfig];
     
     NSMutableArray *walletArr = WALLET_ARR;
     if (walletArr.count != 0) {
@@ -115,6 +115,14 @@
         NSLog(@"%@",error);
         [SVProgressHUD dismiss];
     }];
+}
+
+- (void)JANALYTICSLaunchConfig{
+    JANALYTICSLaunchConfig * config = [[JANALYTICSLaunchConfig alloc] init];
+    
+       config.appKey = @"efd63d226e15e5392bf0b03b";
+       [JANALYTICSService crashLogON];
+       [JANALYTICSService setupWithConfig:config];
 }
 
 // 有外部app通过URL Scheme 的方法打开本应用，就会走本应用的这个方法

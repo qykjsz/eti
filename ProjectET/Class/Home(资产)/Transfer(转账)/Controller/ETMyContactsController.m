@@ -19,6 +19,7 @@
 @property (nonatomic,strong) ETContactsTableView *detailTab;
 
 @property (nonatomic,strong) ETMycontactListModel *model;
+@property (nonatomic,strong) CustomGifHeader *gifHeader;
 
 @end
 
@@ -208,15 +209,23 @@
         [_detailTab registerNib:[UINib nibWithNibName:@"ETMyContactsCell" bundle:nil] forCellReuseIdentifier:@"ETMyContactsCell"];
         //        _detailTab.tableFooterView = [self footerView];
         WEAK_SELF(self);
-        _detailTab.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            
-            STRONG_SELF(self);
-            [self.detailTab.mj_header endRefreshing];
-            [self listRequest];
-            
-        }];
+        _detailTab.mj_header = self.gifHeader;
     }
     return _detailTab;
+}
+
+- (CustomGifHeader *)gifHeader {
+    if (!_gifHeader) {
+    WEAK_SELF(self);
+        _gifHeader = [CustomGifHeader headerWithRefreshingBlock:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        STRONG_SELF(self);
+                [self.detailTab.mj_header endRefreshing];
+                [self listRequest];
+            });
+        }];
+    }
+    return _gifHeader;
 }
 
 @end
