@@ -24,8 +24,20 @@
     [self initProgressView];
     
     [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+       rightBtn.frame = CGRectMake(0, 0, 40, 40);
+       [rightBtn setImage:[UIImage imageNamed:@"…"] forState:UIControlStateNormal];
+       [rightBtn addTarget:self action:@selector(rightBtnAction) forControlEvents:UIControlEventTouchUpInside];
+       self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
     // Do any additional setup after loading the view from its nib.
 }
+
+- (void)rightBtnAction{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.url]options:@{} completionHandler:^(BOOL success) {
+        
+    }];
+}
+
 
 - (void)initWKWebView
 {

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETNewChatAddressBookViewController">
+            <connections>
+                <outlet property="tableView" destination="IKO-dV-BYH" id="iKI-8F-kTh"/>
+                <outlet property="tf_search" destination="Jfp-Pc-KCP" id="GGG-TA-e9W"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2BH-cc-Jaf">
+                    <rect key="frame" x="0.0" y="90" width="414" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="T2B-77-UuJ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IKO-dV-BYH">
+                    <rect key="frame" x="0.0" y="115" width="414" height="747"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="AMF-EH-PMc"/>
+                        <outlet property="delegate" destination="-1" id="gqg-bi-Wux"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgB-7M-EmD">
+                    <rect key="frame" x="15" y="44" width="384" height="36"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lt_ss_icon" translatesAutoresizingMaskIntoConstraints="NO" id="dsY-pn-UkW">
+                            <rect key="frame" x="25" y="10.5" width="15" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="15" id="Ijj-8c-Xft"/>
+                                <constraint firstAttribute="height" constant="15" id="cPY-VB-QSH"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="这是一个搜索框..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jfp-Pc-KCP">
+                            <rect key="frame" x="52" y="0.0" width="317" height="36"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="dsY-pn-UkW" firstAttribute="centerY" secondItem="cgB-7M-EmD" secondAttribute="centerY" id="0cD-jC-AMN"/>
+                        <constraint firstAttribute="bottom" secondItem="Jfp-Pc-KCP" secondAttribute="bottom" id="Eq5-Qj-0Ww"/>
+                        <constraint firstAttribute="height" constant="36" id="WK3-ed-ffw"/>
+                        <constraint firstAttribute="trailing" secondItem="Jfp-Pc-KCP" secondAttribute="trailing" constant="15" id="ebl-NM-ij5"/>
+                        <constraint firstItem="Jfp-Pc-KCP" firstAttribute="top" secondItem="cgB-7M-EmD" secondAttribute="top" id="gEM-Jt-Ree"/>
+                        <constraint firstItem="Jfp-Pc-KCP" firstAttribute="leading" secondItem="dsY-pn-UkW" secondAttribute="trailing" constant="12" id="uMv-eQ-AlM"/>
+                        <constraint firstItem="dsY-pn-UkW" firstAttribute="leading" secondItem="cgB-7M-EmD" secondAttribute="leading" constant="25" id="uTy-ap-huF"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="18"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="IKO-dV-BYH" secondAttribute="trailing" id="0Ff-zm-dF0"/>
+                <constraint firstItem="2BH-cc-Jaf" firstAttribute="top" secondItem="cgB-7M-EmD" secondAttribute="bottom" constant="10" id="Bli-sm-cI1"/>
+                <constraint firstItem="cgB-7M-EmD" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="FsD-8y-dkT"/>
+                <constraint firstItem="cgB-7M-EmD" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="Fss-2E-6sX"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="cgB-7M-EmD" secondAttribute="trailing" constant="15" id="H1P-cd-xqI"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="2BH-cc-Jaf" secondAttribute="trailing" id="QOl-DM-Jcf"/>
+                <constraint firstItem="IKO-dV-BYH" firstAttribute="top" secondItem="2BH-cc-Jaf" secondAttribute="bottom" constant="-25" id="QW2-BY-rZT"/>
+                <constraint firstItem="IKO-dV-BYH" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="WGh-vx-MJ2"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="IKO-dV-BYH" secondAttribute="bottom" id="ae2-1d-9SW"/>
+                <constraint firstItem="2BH-cc-Jaf" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="csb-4R-ycY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="lt_ss_icon" width="13" height="16.5"/>
+    </resources>
+</document>

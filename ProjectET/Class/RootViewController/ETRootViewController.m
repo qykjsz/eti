@@ -13,6 +13,8 @@
 #import "ETChatViewcontroller.h"
 #import "ETNewInformationViewController.h"
 #import "ETFoundSegmetnController.h"
+#import "ETNewBaseChatViewController.h"
+
 @interface ETRootViewController ()<UITabBarControllerDelegate>
 {
     NSInteger _currentIndex;
@@ -49,7 +51,7 @@
     UINavigationController * medicineNav = [[UINavigationController alloc] initWithRootViewController:medicineVC];
 
     // 聊天
-    ETChatViewcontroller *cVc = [ETChatViewcontroller new];
+    ETNewBaseChatViewController *cVc = [ETNewBaseChatViewController new];
     UINavigationController * cVcNav = [[UINavigationController alloc] initWithRootViewController:cVc];
     
     //我的

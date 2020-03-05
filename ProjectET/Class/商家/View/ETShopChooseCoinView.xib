@@ -33,17 +33,17 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3A-sq-wI6">
                             <rect key="frame" x="0.0" y="558" width="414" height="70"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择币种" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qub-62-dlu">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择币种" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qub-62-dlu">
+                                    <rect key="frame" x="15" y="0.0" width="384" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstItem="qub-62-dlu" firstAttribute="leading" secondItem="s3A-sq-wI6" secondAttribute="leading" id="1Ac-L5-vrD"/>
-                                <constraint firstAttribute="trailing" secondItem="qub-62-dlu" secondAttribute="trailing" id="SvK-2L-yaa"/>
+                                <constraint firstItem="qub-62-dlu" firstAttribute="leading" secondItem="s3A-sq-wI6" secondAttribute="leading" constant="15" id="1Ac-L5-vrD"/>
+                                <constraint firstAttribute="trailing" secondItem="qub-62-dlu" secondAttribute="trailing" constant="15" id="SvK-2L-yaa"/>
                                 <constraint firstItem="qub-62-dlu" firstAttribute="top" secondItem="s3A-sq-wI6" secondAttribute="top" id="YGQ-su-jzg"/>
                                 <constraint firstAttribute="bottom" secondItem="qub-62-dlu" secondAttribute="bottom" constant="20" id="dJX-mF-2z5"/>
                                 <constraint firstAttribute="height" constant="70" id="hMx-5h-PSC"/>

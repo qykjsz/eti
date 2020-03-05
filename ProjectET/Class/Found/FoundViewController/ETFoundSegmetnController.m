@@ -86,8 +86,8 @@
 
 - (void)appantypeRequest{
     UIButton *button = self.pageTitleView.subviews.firstObject;
-       [button layoutIfNeeded];
-     [SVProgressHUD showWithStatus:@"正在加载"];
+    [button layoutIfNeeded];
+    [SVProgressHUD showWithStatus:@"正在加载"];
     [HTTPTool requestDotNetWithURLString:@"et_appantype" parameters:nil type:kPOST success:^(id responseObject) {
         [SVProgressHUD dismiss];
         ETFoundCategoryModel *models = [ETFoundCategoryModel mj_objectWithKeyValues:responseObject];
@@ -135,7 +135,7 @@
 #pragma mark - 精选app接口
 - (void)handpickRequest {
     
-     [SVProgressHUD showWithStatus:@"正在加载"];
+    [SVProgressHUD showWithStatus:@"正在加载"];
     [HTTPTool requestDotNetWithURLString:@"et_app" parameters:nil type:kPOST success:^(id responseObject) {
         [SVProgressHUD dismiss];
         
@@ -148,7 +148,7 @@
             height = model.data.count/5 + 1;
         }
         self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 332 + height * 80 + 20)];
-//        self.hoverPageViewController.headerView = self.headerView;
+        //        self.hoverPageViewController.headerView = self.headerView;
         self.headerView.delegate = self;
         self.headerView.dataArr = model.data;
         
@@ -162,7 +162,7 @@
     
     /// 计算导航栏高度
     CGFloat barHeight = [UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.frame.size.height;
-     [SVProgressHUD showWithStatus:@"正在加载"];
+    [SVProgressHUD showWithStatus:@"正在加载"];
     [HTTPTool requestDotNetWithURLString:@"et_app" parameters:nil type:kPOST success:^(id responseObject) {
         [SVProgressHUD dismiss];
         
@@ -176,9 +176,9 @@
         }
         self.headerView = [[ETFoundHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 332 + height * 90 + 20)];
         self.headerView.delegate = self;
-//        NSArray *aaaa = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573820843997&di=d82e372435a4025cba81c6fb16d83540&imgtype=0&src=http%3A%2F%2Fp0.ifengimg.com%2Fpmop%2F2017%2F1214%2F756F54079DFC35207C23E6FE1AA1BC2CA1018BB6_size70_w600_h450.jpeg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573820860928&di=5150b930f67ddb9fb0119b5b5d11729c&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F41602924fbab86ce142f11de937ec963f6d55739ea6a-7Hx1E8_fw658"
-//                          ];
-//        self.headerView.dataArr = [NSMutableArray arrayWithArray:aaaa];
+        //        NSArray *aaaa = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573820843997&di=d82e372435a4025cba81c6fb16d83540&imgtype=0&src=http%3A%2F%2Fp0.ifengimg.com%2Fpmop%2F2017%2F1214%2F756F54079DFC35207C23E6FE1AA1BC2CA1018BB6_size70_w600_h450.jpeg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1573820860928&di=5150b930f67ddb9fb0119b5b5d11729c&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F41602924fbab86ce142f11de937ec963f6d55739ea6a-7Hx1E8_fw658"
+        //                          ];
+        //        self.headerView.dataArr = [NSMutableArray arrayWithArray:aaaa];
         self.headerView.dataArr = model.data;
         
         
@@ -192,7 +192,7 @@
         [self addChildViewController:self.hoverPageViewController];
         [self.view addSubview:self.hoverPageViewController.view];
         
-       
+        
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             [self bannerRequest];
         });
@@ -201,7 +201,7 @@
             [self et_appnewsRequest];
         });
         
-
+        
     } failure:^(NSError *error) {
         [SVProgressHUD dismiss];
     }];
@@ -213,21 +213,10 @@
 #pragma mark - ETFoundHeaderViewDelegate
 - (void)ETFoundHeaderViewDelegateCollectionClick:(FoundDapp *)model {
     
-    [self et_appnewRequest:model.Id];
-    ETHTMLViewController *htmlVC = [ETHTMLViewController new];
-    htmlVC.url = model.url;
-    htmlVC.title = model.name;
-    htmlVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:htmlVC animated:YES];
+    //    FoundDapp *model = self.dappArr[tag];
     
-}
-
-- (void)ETFoundHeaderViewDAppDelegateCollectionClick:(NSInteger)tag {
-    
-    FoundDapp *model = self.dappArr[tag];
-    
-    if (tag == 0) {
-        NSURL *url = [NSURL URLWithString:@"ETUnion://"];
+    if ([model.types isEqualToString:@"2"]) {
+        NSURL *url = [NSURL URLWithString:model.ios];
         BOOL isCanOpen = [[UIApplication sharedApplication] canOpenURL:url];
         if (isCanOpen) {
 #ifdef NSFoundationVersionNumber_iOS_10_0
@@ -237,22 +226,11 @@
 #else
             [[UIApplication sharedApplication] openURL:url];
 #endif
-            NSLog(@"App1打开App2");
         }else{
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model.url]options:@{} completionHandler:^(BOOL success) {
                 
             }];
         }
-    }else if(tag == 1){
-        ETFoundHTMLViewController *vc = [[ETFoundHTMLViewController alloc]init];
-        vc.url = [NSString stringWithFormat:@"%@?%@",model.url,[UUID getUUID]];
-        vc.title = model.name;
-        vc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:vc animated:true];
-        //        ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
-        //        vc.url = @"https://ceshi.etac.io/dist";
-        //        vc.hidesBottomBarWhenPushed = YES;
-        //        [self.navigationController pushViewController:vc animated:true];
     }else {
         ETHTMLViewController *vc = [ETHTMLViewController new];
         vc.url = model.url;
@@ -260,8 +238,44 @@
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:true];
     }
+    //
+    //    [self et_appnewRequest:model.Id];
+    //    ETHTMLViewController *htmlVC = [ETHTMLViewController new];
+    //    htmlVC.url = model.url;
+    //    htmlVC.title = model.name;
+    //    htmlVC.hidesBottomBarWhenPushed = YES;
+    //    [self.navigationController pushViewController:htmlVC animated:YES];
+    //
 }
 
+- (void)ETFoundHeaderViewDAppDelegateCollectionClick:(NSInteger)tag {
+    
+    FoundDapp *model = self.dappArr[tag];
+    
+    if ([model.types isEqualToString:@"2"]) {
+            NSURL *url = [NSURL URLWithString:model.ios];
+            BOOL isCanOpen = [[UIApplication sharedApplication] canOpenURL:url];
+            if (isCanOpen) {
+    #ifdef NSFoundationVersionNumber_iOS_10_0
+                [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+                    
+                }];
+    #else
+                [[UIApplication sharedApplication] openURL:url];
+    #endif
+            }else{
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model.url]options:@{} completionHandler:^(BOOL success) {
+                    
+                }];
+            }
+        }else {
+            ETHTMLViewController *vc = [ETHTMLViewController new];
+            vc.url = model.url;
+            vc.title = model.name;
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:true];
+        }
+}
 
 - (void)ETFoundHeaderViewDelegateBannerClick:(NSInteger)index{
     FoundBannerData *model = self.bannerModel.data[index];
@@ -315,20 +329,20 @@
     NSString *uuidString = [UUID getUUID];
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setValue:uuidString forKey:@"contacts"];
-     [SVProgressHUD showWithStatus:@"正在加载"];
+    [SVProgressHUD showWithStatus:@"正在加载"];
     [HTTPTool requestDotNetWithURLString:@"et_appnews" parameters:dict type:kPOST success:^(id responseObject) {
         [SVProgressHUD dismiss];
         [self.dappArr removeAllObjects];
         ETFoundDappModel *model = [ETFoundDappModel mj_objectWithKeyValues:responseObject];
-//        FoundDapp *data = [[FoundDapp alloc]init];
-//        data.img = @"ET合约";
-//        data.name = @"猎鱼达人";
-//        [dataArr addObject:data];
-//
-//        FoundDapp *data1 = [[FoundDapp alloc]init];
-//        data1.img = @"fa_02";
-//        data1.name = @"即可金服";
-//        [dataArr addObject:data1];
+        //        FoundDapp *data = [[FoundDapp alloc]init];
+        //        data.img = @"ET合约";
+        //        data.name = @"猎鱼达人";
+        //        [dataArr addObject:data];
+        //
+        //        FoundDapp *data1 = [[FoundDapp alloc]init];
+        //        data1.img = @"fa_02";
+        //        data1.name = @"即可金服";
+        //        [dataArr addObject:data1];
         
         [self.dappArr addObjectsFromArray:model.data];
         
@@ -363,9 +377,9 @@
     [topImage mas_makeConstraints:^(MASConstraintMaker *make) {
         
         STRONG_SELF(self);
-
-         make.height.mas_equalTo(kStatusAndNavHeight + 20);
-         make.left.top.right.equalTo(self.view);
+        
+        make.height.mas_equalTo(kStatusAndNavHeight + 20);
+        make.left.top.right.equalTo(self.view);
         
     }];
     
@@ -470,23 +484,23 @@
 
 - (CustomGifHeader *)gifHeader {
     if (!_gifHeader) {
-    WEAK_SELF(self);
+        WEAK_SELF(self);
         _gifHeader = [CustomGifHeader headerWithRefreshingBlock:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        STRONG_SELF(self);
+                STRONG_SELF(self);
                 dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                                [self bannerRequest];
-                            });
-                            
-                            dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                                 [self et_appnewsRequest];
-                            });
-                            
+                    [self bannerRequest];
+                });
+                
+                dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                    [self et_appnewsRequest];
+                });
+                
                 //            dispatch_async(dispatch_get_global_queue(0, 0), ^{
                 //                [self handpickRequest];
                 //            });
-
-                            [self.hoverPageViewController.mainScrollView.mj_header endRefreshing];
+                
+                [self.hoverPageViewController.mainScrollView.mj_header endRefreshing];
             });
         }];
     }
@@ -494,13 +508,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

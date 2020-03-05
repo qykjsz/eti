@@ -104,11 +104,30 @@
     
     FoundCategoryApps *data = self.data[indexPath.row];
     [self et_appnewRequest:data.Id];
-    ETHTMLViewController *vc = [[ETHTMLViewController alloc]init];
-    vc.url = data.url;
-    vc.title = data.name;
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:true];
+    if ([data.types isEqualToString:@"2"]) {
+                NSURL *url = [NSURL URLWithString:data.ios];
+                BOOL isCanOpen = [[UIApplication sharedApplication] canOpenURL:url];
+                if (isCanOpen) {
+        #ifdef NSFoundationVersionNumber_iOS_10_0
+                    [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+                        
+                    }];
+        #else
+                    [[UIApplication sharedApplication] openURL:url];
+        #endif
+                    NSLog(@"App1打开App2");
+                }else{
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:data.url]options:@{} completionHandler:^(BOOL success) {
+                        
+                    }];
+                }
+    }else {
+        ETHTMLViewController *vc = [ETHTMLViewController new];
+           vc.url = data.url;
+           vc.title = data.name;
+           vc.hidesBottomBarWhenPushed = YES;
+           [self.navigationController pushViewController:vc animated:true];
+    }
     
 }
 

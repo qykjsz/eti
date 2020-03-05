@@ -106,8 +106,8 @@
 
 - (void)showAction {
     
-    ETWalletModel *model = [ETWalletManger getCurrentWallet];
-    self.qcodeImage.image = [KMPQRCodeManager createQRCode:model.privateKey warterImage:nil];
+//    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    self.qcodeImage.image = [KMPQRCodeManager createQRCode:self.privateKey warterImage:nil];
     
 }
 

@@ -16,6 +16,9 @@
 @implementation Tools
 
 
+
+
+
 + (BOOL)isUrlAddress:(NSString*)url
 
 {

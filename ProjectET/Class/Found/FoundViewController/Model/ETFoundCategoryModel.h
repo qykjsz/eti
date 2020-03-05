@@ -36,6 +36,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSString *url;
 
+@property (nonatomic,strong) NSString *types;
+
+@property (nonatomic,strong) NSString *ios;
+
 @end
 
 NS_ASSUME_NONNULL_END

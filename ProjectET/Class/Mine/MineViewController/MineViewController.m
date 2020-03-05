@@ -17,6 +17,7 @@
 //#import "TotalAssViewController.h"
 #import "ETTotalAssetsController.h"
 #import "ETWalletMangerController.h"
+#import "ETInviteFriendsViewController.h"
 
 @interface MineViewController ()<MineHeadViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *detailTab;
@@ -212,7 +213,9 @@
         }
             break;
         case 1:{
-            [SVProgressHUD showInfoWithStatus:@"暂未开放"];
+             ETInviteFriendsViewController *ctrl = [[ETInviteFriendsViewController alloc]init];
+                       [ctrl setHidesBottomBarWhenPushed:YES];
+                       [self.navigationController pushViewController:ctrl animated:YES];
          }
             break;
         case 2:{

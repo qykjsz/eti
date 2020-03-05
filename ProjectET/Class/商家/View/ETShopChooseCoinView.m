@@ -67,6 +67,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ETShopChooseCoinCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ETShopChooseCoinCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (self.color) {
+        cell.lab_title.textColor = self.color;
+    }
     cell.lab_title.text = self.dataSource[indexPath.row][@"name"];
     [cell.img_img sd_setImageWithURL:[NSURL URLWithString:self.dataSource[indexPath.row][@"img"]]];
     return cell;

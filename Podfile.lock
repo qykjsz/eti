@@ -34,6 +34,8 @@ PODS:
   - JAnalytics (2.1.0):
     - JCore (< 3.0.0, >= 1.2.0)
   - JCore (2.1.1)
+  - JPush (3.2.2):
+    - JCore (< 3.0.0, >= 2.0.0)
   - KJBannerView (1.2.4):
     - KJBannerView/KJBannerView (= 1.2.4)
   - KJBannerView/KJBannerView (1.2.4)
@@ -42,11 +44,17 @@ PODS:
   - MJExtension (3.0.13)
   - MJRefresh (3.1.15.3)
   - Reachability (3.2)
+  - RongCloudIM/IMKit (2.9.25):
+    - RongCloudIM/IMLib
+  - RongCloudIM/IMLib (2.9.25)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
   - SDWebImage (5.0.1):
     - SDWebImage/Core (= 5.0.1)
   - SDWebImage/Core (5.0.1)
+  - Socket.IO-Client-Swift (13.2.1):
+    - Starscream (~> 3.0.2)
+  - Starscream (3.0.6)
   - SVProgressHUD (2.2.5)
   - WMPageController (2.3.0)
   - YYKit (1.0.9):
@@ -59,14 +67,18 @@ DEPENDENCIES:
   - BlocksKit (= 2.2.5)
   - IQKeyboardManager
   - JAnalytics
+  - JPush
   - KJBannerView
   - LTScrollView
   - Masonry
   - MJExtension (= 3.0.13)
   - MJRefresh (= 3.1.15.3)
   - Reachability (= 3.2)
+  - RongCloudIM/IMKit (~> 2.9.15)
+  - RongCloudIM/IMLib (~> 2.9.15)
   - SDCycleScrollView
   - SDWebImage (= 5.0.1)
+  - Socket.IO-Client-Swift (~> 13.2.0)
   - SVProgressHUD (= 2.2.5)
   - WMPageController (= 2.3.0)
   - YYKit
@@ -79,14 +91,18 @@ SPEC REPOS:
     - IQKeyboardManager
     - JAnalytics
     - JCore
+    - JPush
     - KJBannerView
     - LTScrollView
     - Masonry
     - MJExtension
     - MJRefresh
     - Reachability
+    - RongCloudIM
     - SDCycleScrollView
     - SDWebImage
+    - Socket.IO-Client-Swift
+    - Starscream
     - SVProgressHUD
     - WMPageController
     - YYKit
@@ -98,18 +114,22 @@ SPEC CHECKSUMS:
   IQKeyboardManager: fcef267266379c003181fc3592f6bdb8bf4db839
   JAnalytics: 3ae37a36b02cd06543c4d5a008a37470f577ec50
   JCore: 4072327557f0b83cc22dd4041f2f839740c0077b
+  JPush: 0e9088c85c73275629facc311fe5992dfac36eeb
   KJBannerView: 8a7e06f89a1a6a4e8ee9b21ef041de34584bf7c8
   LTScrollView: 93fff4aed9f9545f541a99b320b27808f5307c12
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  RongCloudIM: cd6836aa86fbf6c02f7b6b5c895ea4caa894d67f
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 27dd2c9ea07a2252f94557c9fbb6105ee94b74c9
+  Socket.IO-Client-Swift: b94943e2fb916fe2f95244b9ed21828634002280
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   WMPageController: 9f219bb8912a1a1f51af11fde61e2682a7b7e7f2
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: a20e525e6223f902520d66b2b3ff387e7a6a56ca
+PODFILE CHECKSUM: 5d306b3d2e12adab29b7185eb358f1df025deeaf
 
 COCOAPODS: 1.8.4

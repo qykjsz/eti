@@ -26,6 +26,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSString *walletType;
 
+@property (nonatomic,strong) NSString *ryToken;
+
+@property (nonatomic,strong) NSString *ryID;
+
+@property (nonatomic,assign) BOOL isOpenChat;
+
 @property (nonatomic,assign) BOOL isBackUp;
 
 @property (nonatomic,assign) bool isCurrentWallet;

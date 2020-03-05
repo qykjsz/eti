@@ -12,6 +12,9 @@
 
 @interface Tools : NSObject
 
+
+
+
 /**
 *  获取url中的参数
 *

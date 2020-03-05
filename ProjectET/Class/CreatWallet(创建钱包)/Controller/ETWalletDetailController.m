@@ -269,9 +269,25 @@
         
         ETVerifyPassWrodView *view = [[ETVerifyPassWrodView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         [view setSuccess:^{
-            ETImportSyaoController *vc = [ETImportSyaoController new];
-            vc.selectTag = self.selectWallect;
-            [self.navigationController pushViewController:vc animated:true];
+                [SVProgressHUD showWithStatus:@"正在导出"];
+                ETWalletModel *model = [ETWalletManger getCurrentWallet];
+                [HSEther hs_importKeyStore:model.keyStore pwd:model.password block:^(NSString *address, NSString *keyStore, NSString *mnemonicPhrase, NSString *privateKey, BOOL suc, HSWalletError error) {
+                    [SVProgressHUD showWithStatus:@"正在导出"];
+                    self.view.userInteractionEnabled = YES;
+                    if (suc) {
+                        [SVProgressHUD dismiss];
+                        ETImportSyaoController *vc = [ETImportSyaoController new];
+                        vc.selectTag = self.selectWallect;
+                        vc.privateKey = [privateKey substringFromIndex:2];
+                        [self.navigationController pushViewController:vc animated:true];
+                    }else {
+                         self.view.userInteractionEnabled = YES;
+                        [SVProgressHUD showInfoWithStatus:@"导出失败"];
+                    }
+                   
+                    
+                }];
+            
         }];
         [view setFailure:^{
             [KMPProgressHUD showText:@"密码错误"];

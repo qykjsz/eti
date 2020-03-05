@@ -79,7 +79,7 @@
     self.syao.clipsToBounds = YES;
     self.syao.layer.cornerRadius = 5;
     self.syao.editable = false;
-    self.syao.text = @"cbcksfh9w09dwjcnwdx9j2m2xjmexniwcwusew9h39xbwu dh839d38dxsnjw38";
+    self.syao.text = @"";
     [backView addSubview:self.self.syao];
     
     UIButton *copyBtn = [[UIButton alloc]initWithFrame:CGRectMake(15, CGRectGetMaxY(self.syao.frame) + 100, SCREEN_WIDTH - 30, 44)];
@@ -97,8 +97,8 @@
 
 - (void)copyAction {
     
-    ETWalletModel *model = [ETWalletManger getCurrentWallet];
-    [Tools copyClickWithText:model.privateKey];
+//    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    [Tools copyClickWithText:self.syao.text];
     
 }
 

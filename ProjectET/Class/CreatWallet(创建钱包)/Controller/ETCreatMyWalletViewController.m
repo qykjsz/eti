@@ -268,8 +268,9 @@
         model.keyStore = keyStore;
         model.address = address;
         model.mnemonicPhrase = [mnemonicPhrase componentsSeparatedByString:@" "];
-        model.privateKey = privateKey;
+//        model.privateKey = privateKey;
         model.walletType = @"以太坊";
+        model.isOpenChat = NO;
         NSMutableArray *arr = WALLET_ARR;
         if (arr == nil) {
             arr = [NSMutableArray array];

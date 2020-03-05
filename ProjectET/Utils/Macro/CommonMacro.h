@@ -12,6 +12,8 @@
 //mainWindow
 #define MAIN_WINDOW [UIApplication sharedApplication].keyWindow
 
+
+
 //宽高
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height

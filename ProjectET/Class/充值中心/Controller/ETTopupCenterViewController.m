@@ -37,6 +37,7 @@
 @property (nonatomic,assign) NSInteger index;
 @property (nonatomic,strong) NSString *gameAddress;
 @property (nonatomic,strong) NSString *gameID;
+@property (nonatomic,strong) NSString *gameUrl;
 @end
 
 @implementation ETTopupCenterViewController
@@ -49,6 +50,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"充值中心";
+    self.gameID = @"";
     self.coinData = [NSMutableArray array];
     self.gameData = [NSMutableArray array];
     self.numData = [NSMutableArray array];
@@ -88,7 +90,7 @@
 ///获取币种
 - (void)getFimoney:(BOOL)flag{
     [SVProgressHUD showWithStatus:@""];
-    [HTTPTool requestDotNetWithURLString:@"give_et_fimoney" parameters:@{@"":@""} type:kPOST success:^(id responseObject) {
+    [HTTPTool requestDotNetWithURLString:@"give_et_fimoney" parameters:@{@"gameid":self.gameID} type:kPOST success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         [self.coinData removeAllObjects];
         self.model =[ETShopChooseModel mj_objectWithKeyValues:responseObject];
@@ -132,10 +134,11 @@
             self.gameAddress = model.address;
             self.gameID = model.ID;
             self.grate = model.proportion;
+            self.gameUrl = model.is_user_url;
         }else {
             NSMutableArray *arr = [[NSMutableArray alloc]init];
             for (ETShopChooseDataModel *model in self.gameData) {
-                NSDictionary *dic = @{@"address":model.address,@"name":model.name};
+                NSDictionary *dic = @{@"address":model.address,@"name":model.name,@"isUrl":model.is_user_url};
                 [arr addObject:dic];
             }
             self.chooseView.lab_title.text = @"选择平台";
@@ -174,26 +177,47 @@
     }];
 }
 
-///验证账号
-- (void)getGameName{
+///获取平台币数量
+- (void)getETGamenser{
     [SVProgressHUD showWithStatus:@""];
-    [HTTPTool requestGameDotNetWithURLString: [NSString stringWithFormat:@"?ct=new_recharge&ac=check&account=%@",self.tf_userName.text]  parameters:@{} type:kGET success:^(id responseObject) {
+    [HTTPTool requestDotNetWithURLString:@"give_et_gamenser" parameters:@{@"gameid":self.gameID,@"gameuser":self.tf_userName.text} type:kPOST success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
         [self.btn_validation setTitle:@"" forState:UIControlStateNormal];
-        if ([responseObject[@"code"] intValue] == 1) {
-            self.userFlag = YES;
-            [self.btn_validation setImage:[UIImage imageNamed:@"yz_cg_icon"] forState:UIControlStateNormal];
-            [KMPProgressHUD showText:responseObject[@"msg"]];
-        }else {
-            self.userFlag = NO;
-            [self.btn_validation setImage:[UIImage imageNamed:@"yz_sb_icon"] forState:UIControlStateNormal];
-            [KMPProgressHUD showText:responseObject[@"msg"]];
-        }
-        
+               if ([responseObject[@"code"] intValue] == 1) {
+                   self.userFlag = YES;
+                   [self.btn_validation setImage:[UIImage imageNamed:@"yz_cg_icon"] forState:UIControlStateNormal];
+                   [KMPProgressHUD showText:responseObject[@"msg"]];
+               }else {
+                   self.userFlag = NO;
+                   [self.btn_validation setImage:[UIImage imageNamed:@"yz_sb_icon"] forState:UIControlStateNormal];
+                   [KMPProgressHUD showText:responseObject[@"msg"]];
+               }
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
         [SVProgressHUD dismiss];
     }];
 }
+
+/////验证账号
+//- (void)getGameName{
+//    [SVProgressHUD showWithStatus:@""];
+//    [HTTPTool requestGameDotNetWithURLString: [NSString stringWithFormat:@"%@%@",self.gameUrl,self.tf_userName.text]  parameters:@{} type:kGET success:^(id responseObject) {
+//        [self.btn_validation setTitle:@"" forState:UIControlStateNormal];
+//        if ([responseObject[@"code"] intValue] == 1) {
+//            self.userFlag = YES;
+//            [self.btn_validation setImage:[UIImage imageNamed:@"yz_cg_icon"] forState:UIControlStateNormal];
+//            [KMPProgressHUD showText:responseObject[@"msg"]];
+//        }else {
+//            self.userFlag = NO;
+//            [self.btn_validation setImage:[UIImage imageNamed:@"yz_sb_icon"] forState:UIControlStateNormal];
+//            [KMPProgressHUD showText:responseObject[@"msg"]];
+//        }
+//
+//    } failure:^(NSError *error) {
+//        NSLog(@"%@",error);
+//        [SVProgressHUD dismiss];
+//    }];
+//}
 
 ///游戏充值
 - (void)getETGame:(NSString *)hash{
@@ -269,7 +293,7 @@
             [KMPProgressHUD showText:self.tf_userName.placeholder];
             return;
         }
-        [self getGameName];
+        [self getETGamenser];
     }else if (sender.tag - 500 == 2) {
         [self getETGamemoneys];
     }else if (sender.tag - 500 == 3) {
@@ -294,7 +318,7 @@
         return;
     }
     
-    if (self.tf_num.text.length == 0) {
+    if (self.tf_num.text.length == 0 || [self.tf_num.text floatValue] == 0.00) {
         [KMPProgressHUD showText:self.tf_num.placeholder];
         return;
     }
@@ -352,11 +376,16 @@
     /// 0游戏平台 1验证账号 2选择货币 3选择币种
     [self.view endEditing:YES];
     if (self.typeIndex == 0) {
+        
         ETShopChooseDataModel *model = self.gameData[index];
         self.lab_gameName.text = model.name;
         self.gameAddress = model.address;
         self.gameID = model.ID;
         self.grate = model.proportion;
+        self.gameUrl = model.is_user_url;
+        [self textFieldDidBeginEditing:self.tf_userName];
+         [self getFimoney:NO];
+        self.tf_num.text = @"";
     }else if (self.typeIndex  == 1) {
         
     }else if (self.typeIndex  == 2) {
@@ -375,9 +404,15 @@
 
 
 - (IBAction)textFieldValueChanged:(UITextField *)sender {
-    CGFloat num = [self.tf_num.text floatValue] * [self.mrate floatValue] * [self.grate floatValue];
-    self.lab_coinNum.text = [NSString stringWithFormat:@"≈ %@",[self notRounding:(num / [self.crate floatValue]) afterPoint:4]];
-    self.coinNum = [self notRounding:(num / [self.crate floatValue]) afterPoint:4];
+    if (![self.gameID isEqualToString:@"8"]) {
+        CGFloat num = [self.tf_num.text floatValue] * [self.mrate floatValue] * [self.grate floatValue];
+        self.lab_coinNum.text = [NSString stringWithFormat:@"≈ %@",[self notRounding:(num / [self.crate floatValue]) afterPoint:4]];
+        self.coinNum = [self notRounding:(num / [self.crate floatValue]) afterPoint:4];
+    }else {
+        self.lab_coinNum.text = self.tf_num.text;
+        self.coinNum = self.tf_num.text;
+    }
+    
     if (sender.text.length > 15) {
         　　　　　　　　UITextRange *markedRange = [sender markedTextRange];
         　　　if (markedRange) {

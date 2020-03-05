@@ -32,6 +32,7 @@
 #import "ETBackUpWalletView.h"
 
 #import "ETGatheringViewController.h"
+#import <RongIMKit/RongIMKit.h>
 @interface ETAssetsViewController ()<UITableViewDelegate,UITableViewDataSource,HomeHeaderViewDelegate,ETMyWalletViewDelegate,ETHomeTableHeaderViewDelegate,ETBackUpWalletViewDelegate,UITextFieldDelegate>
 
 @property (nonatomic,strong) UITableView *detailTab;
@@ -56,16 +57,11 @@
 
 @implementation ETAssetsViewController
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [JANALYTICSService startLogPageView:@"Home"];
-    
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
     [self homeRequest];
+    
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
      //默认为YES，关闭为NO
       manager.enable = NO;
@@ -73,12 +69,11 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-   
     [super viewWillDisappear:animated];
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
      //默认为YES，关闭为NO
       manager.enable = YES;
-    [JANALYTICSService stopLogPageView:@"Home"];
+    
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
 }
@@ -119,6 +114,8 @@
     [super viewDidLoad];
     
     self.title = @"资产";
+//    NSDictionary *info = [NSBundle mainBundle].infoDictionary;
+//    [info setValue:@[@"123123"] forKey:@"LSApplicationQueriesSchemes"];
 
     self.isOpen = YES;
     self.model = [ETWalletManger getCurrentWallet];
@@ -129,7 +126,7 @@
     ETWalletModel *walletModel = [ETWalletManger getCurrentWallet];
     self.homeHeader = [[HomeHeaderView alloc]init];
     [self.homeHeader.topLeftBtn setTitle:[NSString stringWithFormat:@"%@ >",walletModel.walletName] forState:UIControlStateNormal];
-    
+
     self.homeHeader.delegate = self;
     [self.view addSubview:self.homeHeader];
     WEAK_SELF(self);
@@ -162,8 +159,55 @@
     //        }
     //        [ETWalletManger updateWallet:model];
     //    }
-    [self homeRequest];
-    
+   
+}
+
+
+- (void)connectToRongCloud{
+    ETWalletModel *model = [ETWalletManger getCurrentWallet];
+    if (model.ryToken) {
+        [[RCIM sharedRCIM] connectWithToken:model.ryToken success:^(NSString *userId) {
+            model.ryID = userId;
+            [ETWalletManger updateWallet:model];
+            NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
+        } error:^(RCConnectErrorCode status) {
+            NSLog(@"登陆的错误码为:%ld", (long)status);
+        } tokenIncorrect:^{
+            //token过期或者不正确。
+            //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+            //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+            NSLog(@"token错误");
+        }];
+    }else {
+        [SVProgressHUD showWithStatus:@""];
+        [HTTPTool requestDotNetWithURLString:@"rongyun_gettoken" parameters:@{@"address":model.address}    type:kPOST success:^(id responseObject) {
+            KMP_DOTNETModel *baseModel = [KMP_DOTNETModel mj_objectWithKeyValues:responseObject];
+            if (baseModel.code == 200) {
+                model.ryToken = [NSString stringWithFormat:@"%@",responseObject[@"data"][@"token"]];
+
+                [ETWalletManger updateWallet:model];
+                [[RCIM sharedRCIM] connectWithToken:[NSString stringWithFormat:@"%@",responseObject[@"data"][@"token"]] success:^(NSString *userId) {
+                    model.ryID = userId;
+                    [ETWalletManger updateWallet:model];
+                    NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
+                } error:^(RCConnectErrorCode status) {
+                    NSLog(@"登陆的错误码为:%ld", (long)status);
+                } tokenIncorrect:^{
+                    //token过期或者不正确。
+                    //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+                    //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+                    NSLog(@"token错误");
+                }];
+            }else {
+
+            }
+            [SVProgressHUD dismiss];
+        } failure:^(NSError *error) {
+            NSLog(@"%@",error);
+            [SVProgressHUD dismiss];
+        }];
+    }
+
 }
 
 
@@ -177,6 +221,7 @@
     //        NSLog(@"%@",error);
     //    }];
     //    return;
+    [self connectToRongCloud];
     [SVProgressHUD showWithStatus:@"正在加载"];
     ETWalletModel *model = [ETWalletManger getCurrentWallet];
     [HTTPTool requestDotNetWithURLString:@"et_home" parameters:@{@"address":model.address} type:kPOST success:^(id responseObject) {
@@ -452,7 +497,6 @@
     self.headerView.moneyLb.text = self.homeModel.data.allnumber;
     [self.homeHeader.topLeftBtn setTitle:[NSString stringWithFormat:@"%@ >",model.walletName] forState:UIControlStateNormal];
     [self homeRequest];
-    
     
     
 }

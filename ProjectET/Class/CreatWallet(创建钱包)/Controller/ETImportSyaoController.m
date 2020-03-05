@@ -55,12 +55,13 @@
     self.backScro.contentSize = CGSizeMake(SCREEN_WIDTH * 2, SCREEN_HEIGHT);
     [self.view addSubview:self.backScro];
     
-    ETWalletModel *model = [ETWalletManger getModelIndex:self.selectTag];
+//    ETWalletModel *model = [ETWalletManger getModelIndex:self.selectTag];
     self.leftView = [[ETSyoImportView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    self.leftView.syao.text = model.privateKey;
+    self.leftView.syao.text = self.privateKey;
     [self.backScro addSubview:self.leftView];
     
     self.rightView = [[ETQcodeImportView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    self.rightView.privateKey = self.privateKey;
     [self.backScro addSubview:self.rightView];
     
 }

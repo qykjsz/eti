@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ETQcodeImportView : UIView
 
+@property (nonatomic, strong) NSString *privateKey;
+
 @end
 
 NS_ASSUME_NONNULL_END

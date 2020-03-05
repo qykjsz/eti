@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETAdvertisingH5ViewController">
+            <connections>
+                <outlet property="lab_title" destination="EUh-dx-f9r" id="Zcg-WJ-kLt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="i65-KG-k3B" id="h6y-vU-25d"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="df4-S6-PYT">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0W-aZ-ptj">
+                            <rect key="frame" x="15" y="0.0" width="50" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="85C-NQ-fKh"/>
+                            </constraints>
+                            <state key="normal" image="fh_icon"/>
+                            <connections>
+                                <action selector="actionOfBack:" destination="-1" eventType="touchUpInside" id="GCP-DN-whi"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUh-dx-f9r">
+                            <rect key="frame" x="65" y="0.0" width="284" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="EUh-dx-f9r" firstAttribute="top" secondItem="df4-S6-PYT" secondAttribute="top" id="2qV-zv-Wo0"/>
+                        <constraint firstAttribute="bottom" secondItem="X0W-aZ-ptj" secondAttribute="bottom" id="6Rx-5c-wPo"/>
+                        <constraint firstItem="EUh-dx-f9r" firstAttribute="leading" secondItem="X0W-aZ-ptj" secondAttribute="trailing" id="Cuw-n4-tLq"/>
+                        <constraint firstAttribute="trailing" secondItem="EUh-dx-f9r" secondAttribute="trailing" constant="65" id="DYN-t9-RG4"/>
+                        <constraint firstItem="X0W-aZ-ptj" firstAttribute="leading" secondItem="df4-S6-PYT" secondAttribute="leading" constant="15" id="G3T-5G-VI5"/>
+                        <constraint firstAttribute="bottom" secondItem="EUh-dx-f9r" secondAttribute="bottom" id="W4G-ad-evl"/>
+                        <constraint firstItem="X0W-aZ-ptj" firstAttribute="top" secondItem="df4-S6-PYT" secondAttribute="top" id="nsC-wu-5jW"/>
+                        <constraint firstAttribute="height" constant="44" id="rW1-M3-LFO"/>
+                    </constraints>
+                </view>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i65-KG-k3B">
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </webView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="df4-S6-PYT" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="0C5-O7-lkJ"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="i65-KG-k3B" secondAttribute="bottom" id="0Os-ma-3be"/>
+                <constraint firstItem="i65-KG-k3B" firstAttribute="top" secondItem="df4-S6-PYT" secondAttribute="bottom" id="JCl-dB-Q0c"/>
+                <constraint firstItem="i65-KG-k3B" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="XWu-Zi-YJH"/>
+                <constraint firstItem="df4-S6-PYT" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="iMz-NI-lYC"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="df4-S6-PYT" secondAttribute="trailing" id="kbd-os-nIf"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="i65-KG-k3B" secondAttribute="trailing" id="waI-cf-oGy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="139" y="99"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="fh_icon" width="11" height="20"/>
+    </resources>
+</document>

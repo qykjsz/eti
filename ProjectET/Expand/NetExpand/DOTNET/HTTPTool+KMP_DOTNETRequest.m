@@ -148,7 +148,7 @@
 
     
     [XMCenter sendRequest:^(XMRequest *request) {
-        request.url = [NSString stringWithFormat:@"%@%@",@"http://www.xiaojiyx.com/",URLString];
+        request.url = URLString;
         request.parameters = parameters;
         request.httpMethod = type;
         request.requestSerializerType = kXMRequestSerializerJSON;
@@ -169,6 +169,9 @@
         
     }];
 }
+
+
+
 
 
 @end

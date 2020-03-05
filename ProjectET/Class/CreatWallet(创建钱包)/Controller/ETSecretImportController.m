@@ -307,8 +307,9 @@
             model.address = address;
             model.mnemonicPhrase = [mnemonicPhrase componentsSeparatedByString:@" "];
             
-            model.privateKey = [privateKey substringFromIndex:2];
+//            model.privateKey = [privateKey substringFromIndex:2];
             model.walletType = @"以太坊";
+            model.isOpenChat = NO;
             [SVProgressHUD showWithStatus:@"正在导入"];
             [HTTPTool requestDotNetWithURLString:@"et_import" parameters:@{@"address":address} type:kPOST success:^(id responseObject) {
                 self.view.userInteractionEnabled = YES;

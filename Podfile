@@ -22,6 +22,11 @@ target 'ProjectET' do
     pod 'KJBannerView'
     pod 'SDCycleScrollView'
     pod 'JAnalytics'
+    pod 'JPush'
+    pod 'RongCloudIM/IMLib','~> 2.9.15'
+    pod 'RongCloudIM/IMKit','~> 2.9.15'
+    # sockio
+    pod 'Socket.IO-Client-Swift', '~> 13.2.0'
   # Pods for ProjectET
 #
 #  target 'ProjectETTests' do

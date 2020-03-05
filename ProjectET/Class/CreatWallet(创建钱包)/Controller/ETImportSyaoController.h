@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ETImportSyaoController : UIViewController
 @property (nonatomic,assign) NSInteger selectTag;
+
+@property (nonatomic,strong) NSString *privateKey;
 @end
 
 NS_ASSUME_NONNULL_END

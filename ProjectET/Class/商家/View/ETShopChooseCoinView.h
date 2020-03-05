@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraint_height;
 @property (nonatomic,strong) NSMutableArray *dataSource;
 @property (nonatomic,weak) id <ETShopChooseCoinViewDelegate> delegate;
+
+@property (nonatomic, strong) UIColor *color;
 -(void)reloadChooseView:(NSMutableArray *)arr;
 
 -(void)show;

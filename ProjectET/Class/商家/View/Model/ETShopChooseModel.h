@@ -42,6 +42,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) NSString *address;
 
 @property (nonatomic,strong) NSString *proportion;
+
+@property (nonatomic,strong) NSString *is_user_url;
 @end
 
 NS_ASSUME_NONNULL_END

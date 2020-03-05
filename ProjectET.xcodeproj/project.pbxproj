@@ -11,13 +11,108 @@
 		04018F5A2382A17100C45B63 /* ETHTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04018F582382A17100C45B63 /* ETHTMLViewController.m */; };
 		04018F5E2382A1A200C45B63 /* ETFoundHTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04018F5C2382A1A200C45B63 /* ETFoundHTMLViewController.m */; };
 		04018F5F2382A1A200C45B63 /* ETFoundHTMLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04018F5D2382A1A200C45B63 /* ETFoundHTMLViewController.xib */; };
+		040776EC23CC40DE00B36FFB /* ETNewChatChangeNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040776EA23CC40DE00B36FFB /* ETNewChatChangeNameViewController.m */; };
+		040776ED23CC40DE00B36FFB /* ETNewChatChangeNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040776EB23CC40DE00B36FFB /* ETNewChatChangeNameViewController.xib */; };
+		040776F323CC435100B36FFB /* ETNewChatMineCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040776F123CC435100B36FFB /* ETNewChatMineCodeViewController.m */; };
+		040776F423CC435100B36FFB /* ETNewChatMineCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040776F223CC435100B36FFB /* ETNewChatMineCodeViewController.xib */; };
+		040776F823CC4F8000B36FFB /* ETNewChatAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040776F623CC4F8000B36FFB /* ETNewChatAddressCell.m */; };
+		040776F923CC4F8000B36FFB /* ETNewChatAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040776F723CC4F8000B36FFB /* ETNewChatAddressCell.xib */; };
+		040776FC23CC56B500B36FFB /* ETNewChatAddressBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 040776FB23CC56B500B36FFB /* ETNewChatAddressBookModel.m */; };
+		0407770423CC61F100B36FFB /* ETNewChatNewFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407770223CC61F100B36FFB /* ETNewChatNewFriendViewController.m */; };
+		0407770523CC61F100B36FFB /* ETNewChatNewFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407770323CC61F100B36FFB /* ETNewChatNewFriendViewController.xib */; };
+		0407770923CC626C00B36FFB /* ETNewChatNewFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407770723CC626C00B36FFB /* ETNewChatNewFriendCell.m */; };
+		0407770A23CC626C00B36FFB /* ETNewChatNewFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407770823CC626C00B36FFB /* ETNewChatNewFriendCell.xib */; };
+		0407771223CC657D00B36FFB /* ETNewChatAddressFriendMsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407771023CC657D00B36FFB /* ETNewChatAddressFriendMsgViewController.m */; };
+		0407771323CC657D00B36FFB /* ETNewChatAddressFriendMsgViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407771123CC657D00B36FFB /* ETNewChatAddressFriendMsgViewController.xib */; };
+		0407771923CC6A5100B36FFB /* ETNewChatAddressFriendSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407771723CC6A5100B36FFB /* ETNewChatAddressFriendSetViewController.m */; };
+		0407771A23CC6A5100B36FFB /* ETNewChatAddressFriendSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407771823CC6A5100B36FFB /* ETNewChatAddressFriendSetViewController.xib */; };
+		0407772423CC892B00B36FFB /* ETNewChatFristViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407772223CC892B00B36FFB /* ETNewChatFristViewController.m */; };
+		0407772523CC892B00B36FFB /* ETNewChatFristViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407772323CC892B00B36FFB /* ETNewChatFristViewController.xib */; };
+		0407772D23CD5BE200B36FFB /* ETNewChatCreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407772B23CD5BE200B36FFB /* ETNewChatCreateGroupViewController.m */; };
+		0407772E23CD5BE200B36FFB /* ETNewChatCreateGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407772C23CD5BE200B36FFB /* ETNewChatCreateGroupViewController.xib */; };
+		0407773223CD5FA300B36FFB /* ETNewChatCreateGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407773023CD5FA300B36FFB /* ETNewChatCreateGroupCell.m */; };
+		0407773323CD5FA300B36FFB /* ETNewChatCreateGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407773123CD5FA300B36FFB /* ETNewChatCreateGroupCell.xib */; };
+		0407773923CD9B1200B36FFB /* ETNewChatConfirmGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407773723CD9B1200B36FFB /* ETNewChatConfirmGroupViewController.m */; };
+		0407773A23CD9B1200B36FFB /* ETNewChatConfirmGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407773823CD9B1200B36FFB /* ETNewChatConfirmGroupViewController.xib */; };
+		0407774023CDA82100B36FFB /* ETNewChatMineGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407773E23CDA82100B36FFB /* ETNewChatMineGroupViewController.m */; };
+		0407774123CDA82100B36FFB /* ETNewChatMineGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407773F23CDA82100B36FFB /* ETNewChatMineGroupViewController.xib */; };
+		0407774723CDA89500B36FFB /* ETNewChatMineGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407774523CDA89500B36FFB /* ETNewChatMineGroupCell.m */; };
+		0407774823CDA89500B36FFB /* ETNewChatMineGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407774623CDA89500B36FFB /* ETNewChatMineGroupCell.xib */; };
+		0407774B23CDA93400B36FFB /* ETNewChatMineGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407774A23CDA93400B36FFB /* ETNewChatMineGroupModel.m */; };
+		0407774E23CDACC100B36FFB /* ETNewChatNewFriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407774D23CDACC100B36FFB /* ETNewChatNewFriendModel.m */; };
+		0407775423CDE36600B36FFB /* ETNewChatFriendRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407775223CDE36600B36FFB /* ETNewChatFriendRemarkViewController.m */; };
+		0407775523CDE36600B36FFB /* ETNewChatFriendRemarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407775323CDE36600B36FFB /* ETNewChatFriendRemarkViewController.xib */; };
+		0407775D23CEA6DE00B36FFB /* ETNewChatGroupDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407775B23CEA6DE00B36FFB /* ETNewChatGroupDetailsViewController.m */; };
+		0407775E23CEA6DE00B36FFB /* ETNewChatGroupDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407775C23CEA6DE00B36FFB /* ETNewChatGroupDetailsViewController.xib */; };
+		0407776123CEE57500B36FFB /* ETNewChatGroupDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407776023CEE57500B36FFB /* ETNewChatGroupDetailsModel.m */; };
+		0407776523CEE62300B36FFB /* ETNewChatGroupDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407776323CEE62300B36FFB /* ETNewChatGroupDetailsCell.m */; };
+		0407776623CEE62300B36FFB /* ETNewChatGroupDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407776423CEE62300B36FFB /* ETNewChatGroupDetailsCell.xib */; };
+		0407776C23CEF21800B36FFB /* ETNewChatChangeGroupNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407776A23CEF21800B36FFB /* ETNewChatChangeGroupNameViewController.m */; };
+		0407776D23CEF21800B36FFB /* ETNewChatChangeGroupNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407776B23CEF21800B36FFB /* ETNewChatChangeGroupNameViewController.xib */; };
+		0407777323CEFC9300B36FFB /* ETNewChatGroupRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407777123CEFC9300B36FFB /* ETNewChatGroupRemarkViewController.m */; };
+		0407777423CEFC9300B36FFB /* ETNewChatGroupRemarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407777223CEFC9300B36FFB /* ETNewChatGroupRemarkViewController.xib */; };
+		0407777823CEFE6200B36FFB /* ETNewChatGroupChangeRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407777623CEFE6200B36FFB /* ETNewChatGroupChangeRemarkViewController.m */; };
+		0407777923CEFE6200B36FFB /* ETNewChatGroupChangeRemarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407777723CEFE6200B36FFB /* ETNewChatGroupChangeRemarkViewController.xib */; };
+		0407777F23CF01B100B36FFB /* ETNewChatGroupCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407777D23CF01B100B36FFB /* ETNewChatGroupCodeViewController.m */; };
+		0407778023CF01B100B36FFB /* ETNewChatGroupCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407777E23CF01B100B36FFB /* ETNewChatGroupCodeViewController.xib */; };
+		0407778623CF20D400B36FFB /* ETNewChatGroupUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407778423CF20D400B36FFB /* ETNewChatGroupUserViewController.m */; };
+		0407778723CF20D400B36FFB /* ETNewChatGroupUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0407778523CF20D400B36FFB /* ETNewChatGroupUserViewController.xib */; };
+		0407778B23CFFC4200B36FFB /* CTRongManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0407778A23CFFC4200B36FFB /* CTRongManager.m */; };
+		040777B423D1939800B36FFB /* ETAdvertisingH5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040777B223D1939800B36FFB /* ETAdvertisingH5ViewController.m */; };
+		040777B523D1939800B36FFB /* ETAdvertisingH5ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040777B323D1939800B36FFB /* ETAdvertisingH5ViewController.xib */; };
+		040777B823D19CC000B36FFB /* ETNewChatDelGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040777B723D19CC000B36FFB /* ETNewChatDelGroupView.m */; };
+		040777BA23D19CDA00B36FFB /* ETNewChatDelGroupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040777B923D19CDA00B36FFB /* ETNewChatDelGroupView.xib */; };
+		040B25C823C45DC8007647DE /* ETFriendAndGroupCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B25C623C45DC8007647DE /* ETFriendAndGroupCodeViewController.m */; };
+		040B25C923C45DC8007647DE /* ETFriendAndGroupCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040B25C723C45DC8007647DE /* ETFriendAndGroupCodeViewController.xib */; };
+		040B25E323C81E92007647DE /* ETNewChatDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B25E123C81E92007647DE /* ETNewChatDetailsViewController.m */; };
+		040B25ED23C9AD17007647DE /* ETNewChatHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B25EC23C9AD17007647DE /* ETNewChatHeaderView.m */; };
+		040B25EF23C9AD3E007647DE /* ETNewChatHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040B25EE23C9AD3E007647DE /* ETNewChatHeaderView.xib */; };
+		040B25F323CBFE8A007647DE /* ETNewBaseChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B25F123CBFE8A007647DE /* ETNewBaseChatViewController.m */; };
+		040B25F423CBFE8A007647DE /* ETNewBaseChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040B25F223CBFE8A007647DE /* ETNewBaseChatViewController.xib */; };
+		040B260023CC0150007647DE /* ETNewChatAddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B25FE23CC0150007647DE /* ETNewChatAddressBookViewController.m */; };
+		040B260123CC0150007647DE /* ETNewChatAddressBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040B25FF23CC0150007647DE /* ETNewChatAddressBookViewController.xib */; };
+		040B260523CC016E007647DE /* ETNewChatMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B260323CC016E007647DE /* ETNewChatMineViewController.m */; };
+		040B260623CC016E007647DE /* ETNewChatMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040B260423CC016E007647DE /* ETNewChatMineViewController.xib */; };
+		040B260923CC071B007647DE /* ETNewChatToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B260823CC071B007647DE /* ETNewChatToolView.m */; };
+		040B260B23CC072A007647DE /* ETNewChatToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040B260A23CC072A007647DE /* ETNewChatToolView.xib */; };
+		040B261123CC0AD8007647DE /* ETNewChatAddFriendAndGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B260F23CC0AD8007647DE /* ETNewChatAddFriendAndGroupViewController.m */; };
+		040B261223CC0AD8007647DE /* ETNewChatAddFriendAndGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040B261023CC0AD8007647DE /* ETNewChatAddFriendAndGroupViewController.xib */; };
+		040B261823CC1285007647DE /* ETNewChatAddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B261623CC1285007647DE /* ETNewChatAddFriendViewController.m */; };
+		040B261923CC1285007647DE /* ETNewChatAddFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040B261723CC1285007647DE /* ETNewChatAddFriendViewController.xib */; };
+		040B261F23CC165B007647DE /* ETNewChatFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B261D23CC165B007647DE /* ETNewChatFriendViewController.m */; };
+		040B262023CC165B007647DE /* ETNewChatFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040B261E23CC165B007647DE /* ETNewChatFriendViewController.xib */; };
 		0411CA27239F7170003420AE /* ETTopupCenterRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0411CA25239F7170003420AE /* ETTopupCenterRecordCell.m */; };
 		0411CA28239F7170003420AE /* ETTopupCenterRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0411CA26239F7170003420AE /* ETTopupCenterRecordCell.xib */; };
+		044B7D7F23C2C67D0013A43F /* ETChatLishModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B7D7E23C2C67D0013A43F /* ETChatLishModel.m */; };
+		044B7D8723C2D0C60013A43F /* ETCharGroupAndFriendNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B7D8523C2D0C60013A43F /* ETCharGroupAndFriendNoticeViewController.m */; };
+		044B7D8823C2D0C60013A43F /* ETCharGroupAndFriendNoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044B7D8623C2D0C60013A43F /* ETCharGroupAndFriendNoticeViewController.xib */; };
+		044B7D8C23C2D2370013A43F /* ETCharGroupAndFriendNoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B7D8A23C2D2370013A43F /* ETCharGroupAndFriendNoticeCell.m */; };
+		044B7D8D23C2D2370013A43F /* ETCharGroupAndFriendNoticeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044B7D8B23C2D2370013A43F /* ETCharGroupAndFriendNoticeCell.xib */; };
+		044B7D9023C2D3740013A43F /* ETCharGroupAndFriendNoticeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B7D8F23C2D3740013A43F /* ETCharGroupAndFriendNoticeModel.m */; };
+		044B7D9823C302E00013A43F /* ETChatDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B7D9623C302E00013A43F /* ETChatDetailsViewController.m */; };
+		044B7D9923C302E00013A43F /* ETChatDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044B7D9723C302E00013A43F /* ETChatDetailsViewController.xib */; };
+		044B7D9E23C305E80013A43F /* OtherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B7D9B23C305E70013A43F /* OtherTableViewCell.m */; };
+		044B7D9F23C305E80013A43F /* MeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B7D9C23C305E70013A43F /* MeTableViewCell.m */; };
+		044B7DA223C3090B0013A43F /* ETSocketHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B7DA123C3090B0013A43F /* ETSocketHelper.m */; };
+		044B7DA523C3096E0013A43F /* ETSocketHelperSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B7DA423C3096E0013A43F /* ETSocketHelperSwift.swift */; };
+		044B7DAA23C326E20013A43F /* ETChatDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B7DA923C326E20013A43F /* ETChatDetailsModel.m */; };
+		044B7DAE23C41DD90013A43F /* ETChatGroupDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B7DAC23C41DD90013A43F /* ETChatGroupDetailsViewController.m */; };
+		044B7DAF23C41DD90013A43F /* ETChatGroupDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044B7DAD23C41DD90013A43F /* ETChatGroupDetailsViewController.xib */; };
 		04733DF5239DDD9A006FE3F3 /* ETTopupCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04733DF3239DDD9A006FE3F3 /* ETTopupCenterViewController.m */; };
 		04733DF6239DDD9A006FE3F3 /* ETTopupCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04733DF4239DDD9A006FE3F3 /* ETTopupCenterViewController.xib */; };
 		04733DF9239DE779006FE3F3 /* ETTopUpCenterBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04733DF8239DE779006FE3F3 /* ETTopUpCenterBgView.m */; };
 		04733E01239E43C4006FE3F3 /* ETTopupCenterRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04733DFF239E43C4006FE3F3 /* ETTopupCenterRecordViewController.m */; };
 		04733E02239E43C4006FE3F3 /* ETTopupCenterRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04733E00239E43C4006FE3F3 /* ETTopupCenterRecordViewController.xib */; };
+		04785D8C23BDD3B00025A270 /* ETAddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04785D8A23BDD3AF0025A270 /* ETAddressBookViewController.m */; };
+		04785D8D23BDD3B00025A270 /* ETAddressBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04785D8B23BDD3AF0025A270 /* ETAddressBookViewController.xib */; };
+		04785D9323BDDAF30025A270 /* ETAddGroupInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04785D9123BDDAF30025A270 /* ETAddGroupInformationViewController.m */; };
+		04785D9423BDDAF30025A270 /* ETAddGroupInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04785D9223BDDAF30025A270 /* ETAddGroupInformationViewController.xib */; };
+		04785D9723BDE40B0025A270 /* ETGroupMembersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04785D9623BDE40B0025A270 /* ETGroupMembersModel.m */; };
+		04785D9F23BF18EF0025A270 /* ETAddressBookHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04785D9E23BF18EF0025A270 /* ETAddressBookHeaderView.m */; };
+		04785DA123BF18F70025A270 /* ETAddressBookHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04785DA023BF18F70025A270 /* ETAddressBookHeaderView.xib */; };
+		04785DA523BF1F0E0025A270 /* ETAddressBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04785DA323BF1F0E0025A270 /* ETAddressBookCell.m */; };
+		04785DA623BF1F0E0025A270 /* ETAddressBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04785DA423BF1F0E0025A270 /* ETAddressBookCell.xib */; };
+		04785DA923BF240D0025A270 /* ETAddressBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04785DA823BF240D0025A270 /* ETAddressBookModel.m */; };
 		04998A16238CC736002939F1 /* ETShopSetMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04998A14238CC736002939F1 /* ETShopSetMoneyViewController.m */; };
 		04998A17238CC736002939F1 /* ETShopSetMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04998A15238CC736002939F1 /* ETShopSetMoneyViewController.xib */; };
 		04998A1F238CCE20002939F1 /* ETShopRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04998A1D238CCE20002939F1 /* ETShopRecordViewController.m */; };
@@ -35,6 +130,8 @@
 		04D15FD42396643E00ECA143 /* ETContactsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D15FD32396643E00ECA143 /* ETContactsTableView.m */; };
 		04D82B8223A7304F0051808B /* ETTopUpExplainviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D82B8023A7304F0051808B /* ETTopUpExplainviewController.m */; };
 		04D82B8323A7304F0051808B /* ETTopUpExplainviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D82B8123A7304F0051808B /* ETTopUpExplainviewController.xib */; };
+		04D82B8723A77E760051808B /* ETInviteFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D82B8523A77E760051808B /* ETInviteFriendsViewController.m */; };
+		04D82B8823A77E760051808B /* ETInviteFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D82B8623A77E760051808B /* ETInviteFriendsViewController.xib */; };
 		04DB9ED6237BE69B002796C3 /* ETNewAlertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9ED4237BE69B002796C3 /* ETNewAlertsViewController.m */; };
 		04DB9ED7237BE69B002796C3 /* ETNewAlertsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DB9ED5237BE69B002796C3 /* ETNewAlertsViewController.xib */; };
 		04DB9EDB237BE6C4002796C3 /* ETNewInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DB9ED9237BE6C4002796C3 /* ETNewInformationViewController.m */; };
@@ -77,6 +174,27 @@
 		04F4274523A225CD009587CE /* ETCoinInstructionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F4274323A225CD009587CE /* ETCoinInstructionsViewController.xib */; };
 		04F4274923A22EE5009587CE /* ETCoinInstructionsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F4274823A22EE5009587CE /* ETCoinInstructionsModel.m */; };
 		04F4278D23A38CEF009587CE /* CustomGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F4278C23A38CEF009587CE /* CustomGifHeader.m */; };
+		04F7F1C523B995B8002FF50E /* ETChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7F1C323B995B8002FF50E /* ETChatCell.m */; };
+		04F7F1C623B995B8002FF50E /* ETChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7F1C423B995B8002FF50E /* ETChatCell.xib */; };
+		04F7F1CD23B99A5C002FF50E /* ETAddFriendsPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7F1CC23B99A5C002FF50E /* ETAddFriendsPopView.m */; };
+		04F7F1CF23B99A68002FF50E /* ETAddFriendsPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7F1CE23B99A68002FF50E /* ETAddFriendsPopView.xib */; };
+		04F7F1D723B9A53F002FF50E /* ETAddFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7F1D523B9A53F002FF50E /* ETAddFriendsViewController.m */; };
+		04F7F1D823B9A53F002FF50E /* ETAddFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7F1D623B9A53F002FF50E /* ETAddFriendsViewController.xib */; };
+		04F7F1E023B9A99F002FF50E /* ETAddFriendInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7F1DE23B9A99F002FF50E /* ETAddFriendInformationViewController.m */; };
+		04F7F1E123B9A99F002FF50E /* ETAddFriendInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7F1DF23B9A99F002FF50E /* ETAddFriendInformationViewController.xib */; };
+		04F7F1E923B9CB96002FF50E /* ETCreateGroupChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7F1E723B9CB96002FF50E /* ETCreateGroupChatViewController.m */; };
+		04F7F1EA23B9CB96002FF50E /* ETCreateGroupChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7F1E823B9CB96002FF50E /* ETCreateGroupChatViewController.xib */; };
+		04F7F1EE23B9CD34002FF50E /* XXTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7F1ED23B9CD34002FF50E /* XXTextView.m */; };
+		04F7F1F423B9D09E002FF50E /* ETGroupChatInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7F1F223B9D09E002FF50E /* ETGroupChatInformationViewController.m */; };
+		04F7F1F523B9D09E002FF50E /* ETGroupChatInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7F1F323B9D09E002FF50E /* ETGroupChatInformationViewController.xib */; };
+		04F7F1FB23B9D6FC002FF50E /* ETGroupOfShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7F1F923B9D6FC002FF50E /* ETGroupOfShareViewController.m */; };
+		04F7F1FC23B9D6FC002FF50E /* ETGroupOfShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7F1FA23B9D6FC002FF50E /* ETGroupOfShareViewController.xib */; };
+		04F7F20423B9D904002FF50E /* ETGroupMembersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7F20223B9D904002FF50E /* ETGroupMembersViewController.m */; };
+		04F7F20523B9D904002FF50E /* ETGroupMembersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7F20323B9D904002FF50E /* ETGroupMembersViewController.xib */; };
+		04F7F20923B9DA09002FF50E /* ETGroupMembersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7F20723B9DA09002FF50E /* ETGroupMembersCell.m */; };
+		04F7F20A23B9DA09002FF50E /* ETGroupMembersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7F20823B9DA09002FF50E /* ETGroupMembersCell.xib */; };
+		04F7F21023B9DC35002FF50E /* ETGroupTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7F20E23B9DC35002FF50E /* ETGroupTransferViewController.m */; };
+		04F7F21123B9DC35002FF50E /* ETGroupTransferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F7F20F23B9DC35002FF50E /* ETGroupTransferViewController.xib */; };
 		4F0E4D8D2373B3FC00E83618 /* ETHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */; };
 		4F0E4D932373EFF000E83618 /* ETTransferDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D922373EFF000E83618 /* ETTransferDetailViewController.m */; };
 		4F0E4D992373F5BB00E83618 /* ETTransferDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0E4D982373F5BB00E83618 /* ETTransferDetailCell.m */; };
@@ -269,9 +387,143 @@
 		04018F5B2382A1A200C45B63 /* ETFoundHTMLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFoundHTMLViewController.h; sourceTree = "<group>"; };
 		04018F5C2382A1A200C45B63 /* ETFoundHTMLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFoundHTMLViewController.m; sourceTree = "<group>"; };
 		04018F5D2382A1A200C45B63 /* ETFoundHTMLViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETFoundHTMLViewController.xib; sourceTree = "<group>"; };
+		040776E923CC40DE00B36FFB /* ETNewChatChangeNameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatChangeNameViewController.h; sourceTree = "<group>"; };
+		040776EA23CC40DE00B36FFB /* ETNewChatChangeNameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatChangeNameViewController.m; sourceTree = "<group>"; };
+		040776EB23CC40DE00B36FFB /* ETNewChatChangeNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatChangeNameViewController.xib; sourceTree = "<group>"; };
+		040776F023CC435100B36FFB /* ETNewChatMineCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatMineCodeViewController.h; sourceTree = "<group>"; };
+		040776F123CC435100B36FFB /* ETNewChatMineCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatMineCodeViewController.m; sourceTree = "<group>"; };
+		040776F223CC435100B36FFB /* ETNewChatMineCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatMineCodeViewController.xib; sourceTree = "<group>"; };
+		040776F523CC4F8000B36FFB /* ETNewChatAddressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatAddressCell.h; sourceTree = "<group>"; };
+		040776F623CC4F8000B36FFB /* ETNewChatAddressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatAddressCell.m; sourceTree = "<group>"; };
+		040776F723CC4F8000B36FFB /* ETNewChatAddressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatAddressCell.xib; sourceTree = "<group>"; };
+		040776FA23CC56B500B36FFB /* ETNewChatAddressBookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatAddressBookModel.h; sourceTree = "<group>"; };
+		040776FB23CC56B500B36FFB /* ETNewChatAddressBookModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatAddressBookModel.m; sourceTree = "<group>"; };
+		0407770123CC61F100B36FFB /* ETNewChatNewFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatNewFriendViewController.h; sourceTree = "<group>"; };
+		0407770223CC61F100B36FFB /* ETNewChatNewFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatNewFriendViewController.m; sourceTree = "<group>"; };
+		0407770323CC61F100B36FFB /* ETNewChatNewFriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatNewFriendViewController.xib; sourceTree = "<group>"; };
+		0407770623CC626C00B36FFB /* ETNewChatNewFriendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatNewFriendCell.h; sourceTree = "<group>"; };
+		0407770723CC626C00B36FFB /* ETNewChatNewFriendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatNewFriendCell.m; sourceTree = "<group>"; };
+		0407770823CC626C00B36FFB /* ETNewChatNewFriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatNewFriendCell.xib; sourceTree = "<group>"; };
+		0407770F23CC657D00B36FFB /* ETNewChatAddressFriendMsgViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatAddressFriendMsgViewController.h; sourceTree = "<group>"; };
+		0407771023CC657D00B36FFB /* ETNewChatAddressFriendMsgViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatAddressFriendMsgViewController.m; sourceTree = "<group>"; };
+		0407771123CC657D00B36FFB /* ETNewChatAddressFriendMsgViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatAddressFriendMsgViewController.xib; sourceTree = "<group>"; };
+		0407771623CC6A5100B36FFB /* ETNewChatAddressFriendSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatAddressFriendSetViewController.h; sourceTree = "<group>"; };
+		0407771723CC6A5100B36FFB /* ETNewChatAddressFriendSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatAddressFriendSetViewController.m; sourceTree = "<group>"; };
+		0407771823CC6A5100B36FFB /* ETNewChatAddressFriendSetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatAddressFriendSetViewController.xib; sourceTree = "<group>"; };
+		0407772123CC892B00B36FFB /* ETNewChatFristViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatFristViewController.h; sourceTree = "<group>"; };
+		0407772223CC892B00B36FFB /* ETNewChatFristViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatFristViewController.m; sourceTree = "<group>"; };
+		0407772323CC892B00B36FFB /* ETNewChatFristViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatFristViewController.xib; sourceTree = "<group>"; };
+		0407772A23CD5BE200B36FFB /* ETNewChatCreateGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatCreateGroupViewController.h; sourceTree = "<group>"; };
+		0407772B23CD5BE200B36FFB /* ETNewChatCreateGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatCreateGroupViewController.m; sourceTree = "<group>"; };
+		0407772C23CD5BE200B36FFB /* ETNewChatCreateGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatCreateGroupViewController.xib; sourceTree = "<group>"; };
+		0407772F23CD5FA300B36FFB /* ETNewChatCreateGroupCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatCreateGroupCell.h; sourceTree = "<group>"; };
+		0407773023CD5FA300B36FFB /* ETNewChatCreateGroupCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatCreateGroupCell.m; sourceTree = "<group>"; };
+		0407773123CD5FA300B36FFB /* ETNewChatCreateGroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatCreateGroupCell.xib; sourceTree = "<group>"; };
+		0407773623CD9B1200B36FFB /* ETNewChatConfirmGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatConfirmGroupViewController.h; sourceTree = "<group>"; };
+		0407773723CD9B1200B36FFB /* ETNewChatConfirmGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatConfirmGroupViewController.m; sourceTree = "<group>"; };
+		0407773823CD9B1200B36FFB /* ETNewChatConfirmGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatConfirmGroupViewController.xib; sourceTree = "<group>"; };
+		0407773D23CDA82100B36FFB /* ETNewChatMineGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatMineGroupViewController.h; sourceTree = "<group>"; };
+		0407773E23CDA82100B36FFB /* ETNewChatMineGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatMineGroupViewController.m; sourceTree = "<group>"; };
+		0407773F23CDA82100B36FFB /* ETNewChatMineGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatMineGroupViewController.xib; sourceTree = "<group>"; };
+		0407774423CDA89500B36FFB /* ETNewChatMineGroupCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatMineGroupCell.h; sourceTree = "<group>"; };
+		0407774523CDA89500B36FFB /* ETNewChatMineGroupCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatMineGroupCell.m; sourceTree = "<group>"; };
+		0407774623CDA89500B36FFB /* ETNewChatMineGroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatMineGroupCell.xib; sourceTree = "<group>"; };
+		0407774923CDA93400B36FFB /* ETNewChatMineGroupModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatMineGroupModel.h; sourceTree = "<group>"; };
+		0407774A23CDA93400B36FFB /* ETNewChatMineGroupModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatMineGroupModel.m; sourceTree = "<group>"; };
+		0407774C23CDACC100B36FFB /* ETNewChatNewFriendModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatNewFriendModel.h; sourceTree = "<group>"; };
+		0407774D23CDACC100B36FFB /* ETNewChatNewFriendModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatNewFriendModel.m; sourceTree = "<group>"; };
+		0407775123CDE36600B36FFB /* ETNewChatFriendRemarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatFriendRemarkViewController.h; sourceTree = "<group>"; };
+		0407775223CDE36600B36FFB /* ETNewChatFriendRemarkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatFriendRemarkViewController.m; sourceTree = "<group>"; };
+		0407775323CDE36600B36FFB /* ETNewChatFriendRemarkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatFriendRemarkViewController.xib; sourceTree = "<group>"; };
+		0407775A23CEA6DE00B36FFB /* ETNewChatGroupDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatGroupDetailsViewController.h; sourceTree = "<group>"; };
+		0407775B23CEA6DE00B36FFB /* ETNewChatGroupDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatGroupDetailsViewController.m; sourceTree = "<group>"; };
+		0407775C23CEA6DE00B36FFB /* ETNewChatGroupDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatGroupDetailsViewController.xib; sourceTree = "<group>"; };
+		0407775F23CEE57500B36FFB /* ETNewChatGroupDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatGroupDetailsModel.h; sourceTree = "<group>"; };
+		0407776023CEE57500B36FFB /* ETNewChatGroupDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatGroupDetailsModel.m; sourceTree = "<group>"; };
+		0407776223CEE62300B36FFB /* ETNewChatGroupDetailsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatGroupDetailsCell.h; sourceTree = "<group>"; };
+		0407776323CEE62300B36FFB /* ETNewChatGroupDetailsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatGroupDetailsCell.m; sourceTree = "<group>"; };
+		0407776423CEE62300B36FFB /* ETNewChatGroupDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatGroupDetailsCell.xib; sourceTree = "<group>"; };
+		0407776923CEF21800B36FFB /* ETNewChatChangeGroupNameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatChangeGroupNameViewController.h; sourceTree = "<group>"; };
+		0407776A23CEF21800B36FFB /* ETNewChatChangeGroupNameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatChangeGroupNameViewController.m; sourceTree = "<group>"; };
+		0407776B23CEF21800B36FFB /* ETNewChatChangeGroupNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatChangeGroupNameViewController.xib; sourceTree = "<group>"; };
+		0407777023CEFC9300B36FFB /* ETNewChatGroupRemarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatGroupRemarkViewController.h; sourceTree = "<group>"; };
+		0407777123CEFC9300B36FFB /* ETNewChatGroupRemarkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatGroupRemarkViewController.m; sourceTree = "<group>"; };
+		0407777223CEFC9300B36FFB /* ETNewChatGroupRemarkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatGroupRemarkViewController.xib; sourceTree = "<group>"; };
+		0407777523CEFE6200B36FFB /* ETNewChatGroupChangeRemarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatGroupChangeRemarkViewController.h; sourceTree = "<group>"; };
+		0407777623CEFE6200B36FFB /* ETNewChatGroupChangeRemarkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatGroupChangeRemarkViewController.m; sourceTree = "<group>"; };
+		0407777723CEFE6200B36FFB /* ETNewChatGroupChangeRemarkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatGroupChangeRemarkViewController.xib; sourceTree = "<group>"; };
+		0407777C23CF01B100B36FFB /* ETNewChatGroupCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatGroupCodeViewController.h; sourceTree = "<group>"; };
+		0407777D23CF01B100B36FFB /* ETNewChatGroupCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatGroupCodeViewController.m; sourceTree = "<group>"; };
+		0407777E23CF01B100B36FFB /* ETNewChatGroupCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatGroupCodeViewController.xib; sourceTree = "<group>"; };
+		0407778323CF20D400B36FFB /* ETNewChatGroupUserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatGroupUserViewController.h; sourceTree = "<group>"; };
+		0407778423CF20D400B36FFB /* ETNewChatGroupUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatGroupUserViewController.m; sourceTree = "<group>"; };
+		0407778523CF20D400B36FFB /* ETNewChatGroupUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatGroupUserViewController.xib; sourceTree = "<group>"; };
+		0407778923CFFC4200B36FFB /* CTRongManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTRongManager.h; sourceTree = "<group>"; };
+		0407778A23CFFC4200B36FFB /* CTRongManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTRongManager.m; sourceTree = "<group>"; };
+		040777B123D1939800B36FFB /* ETAdvertisingH5ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAdvertisingH5ViewController.h; sourceTree = "<group>"; };
+		040777B223D1939800B36FFB /* ETAdvertisingH5ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAdvertisingH5ViewController.m; sourceTree = "<group>"; };
+		040777B323D1939800B36FFB /* ETAdvertisingH5ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETAdvertisingH5ViewController.xib; sourceTree = "<group>"; };
+		040777B623D19CC000B36FFB /* ETNewChatDelGroupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatDelGroupView.h; sourceTree = "<group>"; };
+		040777B723D19CC000B36FFB /* ETNewChatDelGroupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatDelGroupView.m; sourceTree = "<group>"; };
+		040777B923D19CDA00B36FFB /* ETNewChatDelGroupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatDelGroupView.xib; sourceTree = "<group>"; };
+		040B25C523C45DC8007647DE /* ETFriendAndGroupCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETFriendAndGroupCodeViewController.h; sourceTree = "<group>"; };
+		040B25C623C45DC8007647DE /* ETFriendAndGroupCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETFriendAndGroupCodeViewController.m; sourceTree = "<group>"; };
+		040B25C723C45DC8007647DE /* ETFriendAndGroupCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETFriendAndGroupCodeViewController.xib; sourceTree = "<group>"; };
+		040B25E023C81E92007647DE /* ETNewChatDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatDetailsViewController.h; sourceTree = "<group>"; };
+		040B25E123C81E92007647DE /* ETNewChatDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatDetailsViewController.m; sourceTree = "<group>"; };
+		040B25EB23C9AD17007647DE /* ETNewChatHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatHeaderView.h; sourceTree = "<group>"; };
+		040B25EC23C9AD17007647DE /* ETNewChatHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatHeaderView.m; sourceTree = "<group>"; };
+		040B25EE23C9AD3E007647DE /* ETNewChatHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatHeaderView.xib; sourceTree = "<group>"; };
+		040B25F023CBFE8A007647DE /* ETNewBaseChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewBaseChatViewController.h; sourceTree = "<group>"; };
+		040B25F123CBFE8A007647DE /* ETNewBaseChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewBaseChatViewController.m; sourceTree = "<group>"; };
+		040B25F223CBFE8A007647DE /* ETNewBaseChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewBaseChatViewController.xib; sourceTree = "<group>"; };
+		040B25FD23CC0150007647DE /* ETNewChatAddressBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatAddressBookViewController.h; sourceTree = "<group>"; };
+		040B25FE23CC0150007647DE /* ETNewChatAddressBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatAddressBookViewController.m; sourceTree = "<group>"; };
+		040B25FF23CC0150007647DE /* ETNewChatAddressBookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatAddressBookViewController.xib; sourceTree = "<group>"; };
+		040B260223CC016E007647DE /* ETNewChatMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatMineViewController.h; sourceTree = "<group>"; };
+		040B260323CC016E007647DE /* ETNewChatMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatMineViewController.m; sourceTree = "<group>"; };
+		040B260423CC016E007647DE /* ETNewChatMineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatMineViewController.xib; sourceTree = "<group>"; };
+		040B260723CC071B007647DE /* ETNewChatToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatToolView.h; sourceTree = "<group>"; };
+		040B260823CC071B007647DE /* ETNewChatToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatToolView.m; sourceTree = "<group>"; };
+		040B260A23CC072A007647DE /* ETNewChatToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatToolView.xib; sourceTree = "<group>"; };
+		040B260E23CC0AD8007647DE /* ETNewChatAddFriendAndGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatAddFriendAndGroupViewController.h; sourceTree = "<group>"; };
+		040B260F23CC0AD8007647DE /* ETNewChatAddFriendAndGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatAddFriendAndGroupViewController.m; sourceTree = "<group>"; };
+		040B261023CC0AD8007647DE /* ETNewChatAddFriendAndGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatAddFriendAndGroupViewController.xib; sourceTree = "<group>"; };
+		040B261523CC1285007647DE /* ETNewChatAddFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatAddFriendViewController.h; sourceTree = "<group>"; };
+		040B261623CC1285007647DE /* ETNewChatAddFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatAddFriendViewController.m; sourceTree = "<group>"; };
+		040B261723CC1285007647DE /* ETNewChatAddFriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatAddFriendViewController.xib; sourceTree = "<group>"; };
+		040B261C23CC165B007647DE /* ETNewChatFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewChatFriendViewController.h; sourceTree = "<group>"; };
+		040B261D23CC165B007647DE /* ETNewChatFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewChatFriendViewController.m; sourceTree = "<group>"; };
+		040B261E23CC165B007647DE /* ETNewChatFriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewChatFriendViewController.xib; sourceTree = "<group>"; };
 		0411CA24239F7170003420AE /* ETTopupCenterRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTopupCenterRecordCell.h; sourceTree = "<group>"; };
 		0411CA25239F7170003420AE /* ETTopupCenterRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTopupCenterRecordCell.m; sourceTree = "<group>"; };
 		0411CA26239F7170003420AE /* ETTopupCenterRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETTopupCenterRecordCell.xib; sourceTree = "<group>"; };
+		044B7D7D23C2C67D0013A43F /* ETChatLishModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETChatLishModel.h; sourceTree = "<group>"; };
+		044B7D7E23C2C67D0013A43F /* ETChatLishModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETChatLishModel.m; sourceTree = "<group>"; };
+		044B7D8423C2D0C60013A43F /* ETCharGroupAndFriendNoticeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCharGroupAndFriendNoticeViewController.h; sourceTree = "<group>"; };
+		044B7D8523C2D0C60013A43F /* ETCharGroupAndFriendNoticeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCharGroupAndFriendNoticeViewController.m; sourceTree = "<group>"; };
+		044B7D8623C2D0C60013A43F /* ETCharGroupAndFriendNoticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETCharGroupAndFriendNoticeViewController.xib; sourceTree = "<group>"; };
+		044B7D8923C2D2370013A43F /* ETCharGroupAndFriendNoticeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCharGroupAndFriendNoticeCell.h; sourceTree = "<group>"; };
+		044B7D8A23C2D2370013A43F /* ETCharGroupAndFriendNoticeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCharGroupAndFriendNoticeCell.m; sourceTree = "<group>"; };
+		044B7D8B23C2D2370013A43F /* ETCharGroupAndFriendNoticeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETCharGroupAndFriendNoticeCell.xib; sourceTree = "<group>"; };
+		044B7D8E23C2D3740013A43F /* ETCharGroupAndFriendNoticeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCharGroupAndFriendNoticeModel.h; sourceTree = "<group>"; };
+		044B7D8F23C2D3740013A43F /* ETCharGroupAndFriendNoticeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCharGroupAndFriendNoticeModel.m; sourceTree = "<group>"; };
+		044B7D9523C302E00013A43F /* ETChatDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETChatDetailsViewController.h; sourceTree = "<group>"; };
+		044B7D9623C302E00013A43F /* ETChatDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETChatDetailsViewController.m; sourceTree = "<group>"; };
+		044B7D9723C302E00013A43F /* ETChatDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETChatDetailsViewController.xib; sourceTree = "<group>"; };
+		044B7D9A23C305E70013A43F /* MeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTableViewCell.h; sourceTree = "<group>"; };
+		044B7D9B23C305E70013A43F /* OtherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherTableViewCell.m; sourceTree = "<group>"; };
+		044B7D9C23C305E70013A43F /* MeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeTableViewCell.m; sourceTree = "<group>"; };
+		044B7D9D23C305E80013A43F /* OtherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherTableViewCell.h; sourceTree = "<group>"; };
+		044B7DA023C3090B0013A43F /* ETSocketHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSocketHelper.h; sourceTree = "<group>"; };
+		044B7DA123C3090B0013A43F /* ETSocketHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSocketHelper.m; sourceTree = "<group>"; };
+		044B7DA323C3096E0013A43F /* ProjectET-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectET-Bridging-Header.h"; sourceTree = "<group>"; };
+		044B7DA423C3096E0013A43F /* ETSocketHelperSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETSocketHelperSwift.swift; sourceTree = "<group>"; };
+		044B7DA823C326E20013A43F /* ETChatDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETChatDetailsModel.h; sourceTree = "<group>"; };
+		044B7DA923C326E20013A43F /* ETChatDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETChatDetailsModel.m; sourceTree = "<group>"; };
+		044B7DAB23C41DD90013A43F /* ETChatGroupDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETChatGroupDetailsViewController.h; sourceTree = "<group>"; };
+		044B7DAC23C41DD90013A43F /* ETChatGroupDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETChatGroupDetailsViewController.m; sourceTree = "<group>"; };
+		044B7DAD23C41DD90013A43F /* ETChatGroupDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETChatGroupDetailsViewController.xib; sourceTree = "<group>"; };
 		04733DF2239DDD9A006FE3F3 /* ETTopupCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTopupCenterViewController.h; sourceTree = "<group>"; };
 		04733DF3239DDD9A006FE3F3 /* ETTopupCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTopupCenterViewController.m; sourceTree = "<group>"; };
 		04733DF4239DDD9A006FE3F3 /* ETTopupCenterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETTopupCenterViewController.xib; sourceTree = "<group>"; };
@@ -280,6 +532,22 @@
 		04733DFE239E43C4006FE3F3 /* ETTopupCenterRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTopupCenterRecordViewController.h; sourceTree = "<group>"; };
 		04733DFF239E43C4006FE3F3 /* ETTopupCenterRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTopupCenterRecordViewController.m; sourceTree = "<group>"; };
 		04733E00239E43C4006FE3F3 /* ETTopupCenterRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETTopupCenterRecordViewController.xib; sourceTree = "<group>"; };
+		04785D8923BDD3AF0025A270 /* ETAddressBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAddressBookViewController.h; sourceTree = "<group>"; };
+		04785D8A23BDD3AF0025A270 /* ETAddressBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAddressBookViewController.m; sourceTree = "<group>"; };
+		04785D8B23BDD3AF0025A270 /* ETAddressBookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETAddressBookViewController.xib; sourceTree = "<group>"; };
+		04785D9023BDDAF30025A270 /* ETAddGroupInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAddGroupInformationViewController.h; sourceTree = "<group>"; };
+		04785D9123BDDAF30025A270 /* ETAddGroupInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAddGroupInformationViewController.m; sourceTree = "<group>"; };
+		04785D9223BDDAF30025A270 /* ETAddGroupInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETAddGroupInformationViewController.xib; sourceTree = "<group>"; };
+		04785D9523BDE40B0025A270 /* ETGroupMembersModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETGroupMembersModel.h; sourceTree = "<group>"; };
+		04785D9623BDE40B0025A270 /* ETGroupMembersModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETGroupMembersModel.m; sourceTree = "<group>"; };
+		04785D9D23BF18EF0025A270 /* ETAddressBookHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAddressBookHeaderView.h; sourceTree = "<group>"; };
+		04785D9E23BF18EF0025A270 /* ETAddressBookHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAddressBookHeaderView.m; sourceTree = "<group>"; };
+		04785DA023BF18F70025A270 /* ETAddressBookHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETAddressBookHeaderView.xib; sourceTree = "<group>"; };
+		04785DA223BF1F0E0025A270 /* ETAddressBookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAddressBookCell.h; sourceTree = "<group>"; };
+		04785DA323BF1F0E0025A270 /* ETAddressBookCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAddressBookCell.m; sourceTree = "<group>"; };
+		04785DA423BF1F0E0025A270 /* ETAddressBookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETAddressBookCell.xib; sourceTree = "<group>"; };
+		04785DA723BF240D0025A270 /* ETAddressBookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAddressBookModel.h; sourceTree = "<group>"; };
+		04785DA823BF240D0025A270 /* ETAddressBookModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAddressBookModel.m; sourceTree = "<group>"; };
 		04998A13238CC736002939F1 /* ETShopSetMoneyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETShopSetMoneyViewController.h; sourceTree = "<group>"; };
 		04998A14238CC736002939F1 /* ETShopSetMoneyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETShopSetMoneyViewController.m; sourceTree = "<group>"; };
 		04998A15238CC736002939F1 /* ETShopSetMoneyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETShopSetMoneyViewController.xib; sourceTree = "<group>"; };
@@ -307,6 +575,9 @@
 		04D82B7F23A7304F0051808B /* ETTopUpExplainviewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETTopUpExplainviewController.h; sourceTree = "<group>"; };
 		04D82B8023A7304F0051808B /* ETTopUpExplainviewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETTopUpExplainviewController.m; sourceTree = "<group>"; };
 		04D82B8123A7304F0051808B /* ETTopUpExplainviewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETTopUpExplainviewController.xib; sourceTree = "<group>"; };
+		04D82B8423A77E760051808B /* ETInviteFriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETInviteFriendsViewController.h; sourceTree = "<group>"; };
+		04D82B8523A77E760051808B /* ETInviteFriendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETInviteFriendsViewController.m; sourceTree = "<group>"; };
+		04D82B8623A77E760051808B /* ETInviteFriendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETInviteFriendsViewController.xib; sourceTree = "<group>"; };
 		04DB9ED3237BE69B002796C3 /* ETNewAlertsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETNewAlertsViewController.h; sourceTree = "<group>"; };
 		04DB9ED4237BE69B002796C3 /* ETNewAlertsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETNewAlertsViewController.m; sourceTree = "<group>"; };
 		04DB9ED5237BE69B002796C3 /* ETNewAlertsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETNewAlertsViewController.xib; sourceTree = "<group>"; };
@@ -378,6 +649,38 @@
 		04F4274823A22EE5009587CE /* ETCoinInstructionsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCoinInstructionsModel.m; sourceTree = "<group>"; };
 		04F4278B23A38CEF009587CE /* CustomGifHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomGifHeader.h; sourceTree = "<group>"; };
 		04F4278C23A38CEF009587CE /* CustomGifHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomGifHeader.m; sourceTree = "<group>"; };
+		04F7F1C223B995B8002FF50E /* ETChatCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETChatCell.h; sourceTree = "<group>"; };
+		04F7F1C323B995B8002FF50E /* ETChatCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETChatCell.m; sourceTree = "<group>"; };
+		04F7F1C423B995B8002FF50E /* ETChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETChatCell.xib; sourceTree = "<group>"; };
+		04F7F1CB23B99A5C002FF50E /* ETAddFriendsPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAddFriendsPopView.h; sourceTree = "<group>"; };
+		04F7F1CC23B99A5C002FF50E /* ETAddFriendsPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAddFriendsPopView.m; sourceTree = "<group>"; };
+		04F7F1CE23B99A68002FF50E /* ETAddFriendsPopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETAddFriendsPopView.xib; sourceTree = "<group>"; };
+		04F7F1D423B9A53F002FF50E /* ETAddFriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAddFriendsViewController.h; sourceTree = "<group>"; };
+		04F7F1D523B9A53F002FF50E /* ETAddFriendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAddFriendsViewController.m; sourceTree = "<group>"; };
+		04F7F1D623B9A53F002FF50E /* ETAddFriendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETAddFriendsViewController.xib; sourceTree = "<group>"; };
+		04F7F1DD23B9A99F002FF50E /* ETAddFriendInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETAddFriendInformationViewController.h; sourceTree = "<group>"; };
+		04F7F1DE23B9A99F002FF50E /* ETAddFriendInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETAddFriendInformationViewController.m; sourceTree = "<group>"; };
+		04F7F1DF23B9A99F002FF50E /* ETAddFriendInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETAddFriendInformationViewController.xib; sourceTree = "<group>"; };
+		04F7F1E623B9CB96002FF50E /* ETCreateGroupChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCreateGroupChatViewController.h; sourceTree = "<group>"; };
+		04F7F1E723B9CB96002FF50E /* ETCreateGroupChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCreateGroupChatViewController.m; sourceTree = "<group>"; };
+		04F7F1E823B9CB96002FF50E /* ETCreateGroupChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETCreateGroupChatViewController.xib; sourceTree = "<group>"; };
+		04F7F1EC23B9CD34002FF50E /* XXTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXTextView.h; sourceTree = "<group>"; };
+		04F7F1ED23B9CD34002FF50E /* XXTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTextView.m; sourceTree = "<group>"; };
+		04F7F1F123B9D09E002FF50E /* ETGroupChatInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETGroupChatInformationViewController.h; sourceTree = "<group>"; };
+		04F7F1F223B9D09E002FF50E /* ETGroupChatInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETGroupChatInformationViewController.m; sourceTree = "<group>"; };
+		04F7F1F323B9D09E002FF50E /* ETGroupChatInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETGroupChatInformationViewController.xib; sourceTree = "<group>"; };
+		04F7F1F823B9D6FC002FF50E /* ETGroupOfShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETGroupOfShareViewController.h; sourceTree = "<group>"; };
+		04F7F1F923B9D6FC002FF50E /* ETGroupOfShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETGroupOfShareViewController.m; sourceTree = "<group>"; };
+		04F7F1FA23B9D6FC002FF50E /* ETGroupOfShareViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETGroupOfShareViewController.xib; sourceTree = "<group>"; };
+		04F7F20123B9D904002FF50E /* ETGroupMembersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETGroupMembersViewController.h; sourceTree = "<group>"; };
+		04F7F20223B9D904002FF50E /* ETGroupMembersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETGroupMembersViewController.m; sourceTree = "<group>"; };
+		04F7F20323B9D904002FF50E /* ETGroupMembersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETGroupMembersViewController.xib; sourceTree = "<group>"; };
+		04F7F20623B9DA09002FF50E /* ETGroupMembersCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETGroupMembersCell.h; sourceTree = "<group>"; };
+		04F7F20723B9DA09002FF50E /* ETGroupMembersCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETGroupMembersCell.m; sourceTree = "<group>"; };
+		04F7F20823B9DA09002FF50E /* ETGroupMembersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETGroupMembersCell.xib; sourceTree = "<group>"; };
+		04F7F20D23B9DC35002FF50E /* ETGroupTransferViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETGroupTransferViewController.h; sourceTree = "<group>"; };
+		04F7F20E23B9DC35002FF50E /* ETGroupTransferViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETGroupTransferViewController.m; sourceTree = "<group>"; };
+		04F7F20F23B9DC35002FF50E /* ETGroupTransferViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETGroupTransferViewController.xib; sourceTree = "<group>"; };
 		172FA16F06F30E4F663C3530 /* Pods-ProjectET.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectET.debug.xcconfig"; path = "Target Support Files/Pods-ProjectET/Pods-ProjectET.debug.xcconfig"; sourceTree = "<group>"; };
 		4F0E4D8B2373B3FC00E83618 /* ETHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETHomeModel.h; sourceTree = "<group>"; };
 		4F0E4D8C2373B3FC00E83618 /* ETHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETHomeModel.m; sourceTree = "<group>"; };
@@ -739,6 +1042,698 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040776E723CC40CA00B36FFB /* 修改用户名字 */ = {
+			isa = PBXGroup;
+			children = (
+				040776E823CC40CA00B36FFB /* Controller */,
+			);
+			path = "修改用户名字";
+			sourceTree = "<group>";
+		};
+		040776E823CC40CA00B36FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040776E923CC40DE00B36FFB /* ETNewChatChangeNameViewController.h */,
+				040776EA23CC40DE00B36FFB /* ETNewChatChangeNameViewController.m */,
+				040776EB23CC40DE00B36FFB /* ETNewChatChangeNameViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040776EE23CC434100B36FFB /* 聊天我的二维码 */ = {
+			isa = PBXGroup;
+			children = (
+				040776EF23CC434100B36FFB /* Controller */,
+			);
+			path = "聊天我的二维码";
+			sourceTree = "<group>";
+		};
+		040776EF23CC434100B36FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040776F023CC435100B36FFB /* ETNewChatMineCodeViewController.h */,
+				040776F123CC435100B36FFB /* ETNewChatMineCodeViewController.m */,
+				040776F223CC435100B36FFB /* ETNewChatMineCodeViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040776FD23CC61B500B36FFB /* 新朋友 */ = {
+			isa = PBXGroup;
+			children = (
+				040776FE23CC61B500B36FFB /* Controller */,
+				040776FF23CC61B500B36FFB /* Model */,
+				0407770023CC61B500B36FFB /* View */,
+			);
+			path = "新朋友";
+			sourceTree = "<group>";
+		};
+		040776FE23CC61B500B36FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0407770123CC61F100B36FFB /* ETNewChatNewFriendViewController.h */,
+				0407770223CC61F100B36FFB /* ETNewChatNewFriendViewController.m */,
+				0407770323CC61F100B36FFB /* ETNewChatNewFriendViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040776FF23CC61B500B36FFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0407774C23CDACC100B36FFB /* ETNewChatNewFriendModel.h */,
+				0407774D23CDACC100B36FFB /* ETNewChatNewFriendModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0407770023CC61B500B36FFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0407770623CC626C00B36FFB /* ETNewChatNewFriendCell.h */,
+				0407770723CC626C00B36FFB /* ETNewChatNewFriendCell.m */,
+				0407770823CC626C00B36FFB /* ETNewChatNewFriendCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0407770B23CC656600B36FFB /* 通讯录好友信息 */ = {
+			isa = PBXGroup;
+			children = (
+				0407771423CC6A2A00B36FFB /* 通讯录好友信息设置 */,
+				0407770C23CC656600B36FFB /* Controller */,
+				0407770D23CC656600B36FFB /* Model */,
+				0407770E23CC656600B36FFB /* View */,
+			);
+			path = "通讯录好友信息";
+			sourceTree = "<group>";
+		};
+		0407770C23CC656600B36FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0407770F23CC657D00B36FFB /* ETNewChatAddressFriendMsgViewController.h */,
+				0407771023CC657D00B36FFB /* ETNewChatAddressFriendMsgViewController.m */,
+				0407771123CC657D00B36FFB /* ETNewChatAddressFriendMsgViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0407770D23CC656600B36FFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0407770E23CC656600B36FFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0407771423CC6A2A00B36FFB /* 通讯录好友信息设置 */ = {
+			isa = PBXGroup;
+			children = (
+				0407774F23CDE34800B36FFB /* 设置备注 */,
+				0407771523CC6A2A00B36FFB /* Controller */,
+			);
+			name = "通讯录好友信息设置";
+			path = "ProjectET/Class/新聊天/通讯录/通讯录好友信息/通讯录好友信息设置";
+			sourceTree = SOURCE_ROOT;
+		};
+		0407771523CC6A2A00B36FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0407771623CC6A5100B36FFB /* ETNewChatAddressFriendSetViewController.h */,
+				0407771723CC6A5100B36FFB /* ETNewChatAddressFriendSetViewController.m */,
+				0407771823CC6A5100B36FFB /* ETNewChatAddressFriendSetViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0407772623CD5B9300B36FFB /* 新群聊 */ = {
+			isa = PBXGroup;
+			children = (
+				0407778123CF20B800B36FFB /* 群成员 */,
+				0407775623CEA65B00B36FFB /* 群详情 */,
+				0407773B23CDA80E00B36FFB /* 我的群聊 */,
+				0407773423CD9AEF00B36FFB /* 创建群聊 */,
+				0407772723CD5B9300B36FFB /* Controller */,
+				0407772823CD5B9300B36FFB /* Model */,
+				0407772923CD5B9300B36FFB /* View */,
+			);
+			path = "新群聊";
+			sourceTree = "<group>";
+		};
+		0407772723CD5B9300B36FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0407772A23CD5BE200B36FFB /* ETNewChatCreateGroupViewController.h */,
+				0407772B23CD5BE200B36FFB /* ETNewChatCreateGroupViewController.m */,
+				0407772C23CD5BE200B36FFB /* ETNewChatCreateGroupViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0407772823CD5B9300B36FFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0407772923CD5B9300B36FFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0407772F23CD5FA300B36FFB /* ETNewChatCreateGroupCell.h */,
+				0407773023CD5FA300B36FFB /* ETNewChatCreateGroupCell.m */,
+				0407773123CD5FA300B36FFB /* ETNewChatCreateGroupCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0407773423CD9AEF00B36FFB /* 创建群聊 */ = {
+			isa = PBXGroup;
+			children = (
+				0407773523CD9AEF00B36FFB /* Controller */,
+			);
+			path = "创建群聊";
+			sourceTree = "<group>";
+		};
+		0407773523CD9AEF00B36FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0407773623CD9B1200B36FFB /* ETNewChatConfirmGroupViewController.h */,
+				0407773723CD9B1200B36FFB /* ETNewChatConfirmGroupViewController.m */,
+				0407773823CD9B1200B36FFB /* ETNewChatConfirmGroupViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0407773B23CDA80E00B36FFB /* 我的群聊 */ = {
+			isa = PBXGroup;
+			children = (
+				0407773C23CDA80E00B36FFB /* Controller */,
+				0407774223CDA85800B36FFB /* Model */,
+				0407774323CDA85800B36FFB /* View */,
+			);
+			path = "我的群聊";
+			sourceTree = "<group>";
+		};
+		0407773C23CDA80E00B36FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0407773D23CDA82100B36FFB /* ETNewChatMineGroupViewController.h */,
+				0407773E23CDA82100B36FFB /* ETNewChatMineGroupViewController.m */,
+				0407773F23CDA82100B36FFB /* ETNewChatMineGroupViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0407774223CDA85800B36FFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0407774923CDA93400B36FFB /* ETNewChatMineGroupModel.h */,
+				0407774A23CDA93400B36FFB /* ETNewChatMineGroupModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0407774323CDA85800B36FFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0407774423CDA89500B36FFB /* ETNewChatMineGroupCell.h */,
+				0407774523CDA89500B36FFB /* ETNewChatMineGroupCell.m */,
+				0407774623CDA89500B36FFB /* ETNewChatMineGroupCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0407774F23CDE34800B36FFB /* 设置备注 */ = {
+			isa = PBXGroup;
+			children = (
+				0407775023CDE34800B36FFB /* Controller */,
+			);
+			path = "设置备注";
+			sourceTree = "<group>";
+		};
+		0407775023CDE34800B36FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0407775123CDE36600B36FFB /* ETNewChatFriendRemarkViewController.h */,
+				0407775223CDE36600B36FFB /* ETNewChatFriendRemarkViewController.m */,
+				0407775323CDE36600B36FFB /* ETNewChatFriendRemarkViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0407775623CEA65B00B36FFB /* 群详情 */ = {
+			isa = PBXGroup;
+			children = (
+				0407777A23CF019400B36FFB /* 群二维码 */,
+				0407776E23CEFC3400B36FFB /* 修改群简介 */,
+				0407776723CEF1F900B36FFB /* 修改群名称 */,
+				0407775723CEA65B00B36FFB /* Controller */,
+				0407775823CEA65B00B36FFB /* Model */,
+				0407775923CEA65B00B36FFB /* View */,
+			);
+			path = "群详情";
+			sourceTree = "<group>";
+		};
+		0407775723CEA65B00B36FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0407775A23CEA6DE00B36FFB /* ETNewChatGroupDetailsViewController.h */,
+				0407775B23CEA6DE00B36FFB /* ETNewChatGroupDetailsViewController.m */,
+				0407775C23CEA6DE00B36FFB /* ETNewChatGroupDetailsViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0407775823CEA65B00B36FFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0407775F23CEE57500B36FFB /* ETNewChatGroupDetailsModel.h */,
+				0407776023CEE57500B36FFB /* ETNewChatGroupDetailsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0407775923CEA65B00B36FFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0407776223CEE62300B36FFB /* ETNewChatGroupDetailsCell.h */,
+				0407776323CEE62300B36FFB /* ETNewChatGroupDetailsCell.m */,
+				0407776423CEE62300B36FFB /* ETNewChatGroupDetailsCell.xib */,
+				040777B623D19CC000B36FFB /* ETNewChatDelGroupView.h */,
+				040777B723D19CC000B36FFB /* ETNewChatDelGroupView.m */,
+				040777B923D19CDA00B36FFB /* ETNewChatDelGroupView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0407776723CEF1F900B36FFB /* 修改群名称 */ = {
+			isa = PBXGroup;
+			children = (
+				0407776823CEF1F900B36FFB /* Controller */,
+			);
+			path = "修改群名称";
+			sourceTree = "<group>";
+		};
+		0407776823CEF1F900B36FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0407776923CEF21800B36FFB /* ETNewChatChangeGroupNameViewController.h */,
+				0407776A23CEF21800B36FFB /* ETNewChatChangeGroupNameViewController.m */,
+				0407776B23CEF21800B36FFB /* ETNewChatChangeGroupNameViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0407776E23CEFC3400B36FFB /* 修改群简介 */ = {
+			isa = PBXGroup;
+			children = (
+				0407776F23CEFC3400B36FFB /* Controller */,
+			);
+			path = "修改群简介";
+			sourceTree = "<group>";
+		};
+		0407776F23CEFC3400B36FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0407777023CEFC9300B36FFB /* ETNewChatGroupRemarkViewController.h */,
+				0407777123CEFC9300B36FFB /* ETNewChatGroupRemarkViewController.m */,
+				0407777223CEFC9300B36FFB /* ETNewChatGroupRemarkViewController.xib */,
+				0407777523CEFE6200B36FFB /* ETNewChatGroupChangeRemarkViewController.h */,
+				0407777623CEFE6200B36FFB /* ETNewChatGroupChangeRemarkViewController.m */,
+				0407777723CEFE6200B36FFB /* ETNewChatGroupChangeRemarkViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0407777A23CF019400B36FFB /* 群二维码 */ = {
+			isa = PBXGroup;
+			children = (
+				0407777B23CF019400B36FFB /* Controller */,
+			);
+			path = "群二维码";
+			sourceTree = "<group>";
+		};
+		0407777B23CF019400B36FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0407777C23CF01B100B36FFB /* ETNewChatGroupCodeViewController.h */,
+				0407777D23CF01B100B36FFB /* ETNewChatGroupCodeViewController.m */,
+				0407777E23CF01B100B36FFB /* ETNewChatGroupCodeViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0407778123CF20B800B36FFB /* 群成员 */ = {
+			isa = PBXGroup;
+			children = (
+				0407778223CF20B800B36FFB /* Controller */,
+			);
+			path = "群成员";
+			sourceTree = "<group>";
+		};
+		0407778223CF20B800B36FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0407778323CF20D400B36FFB /* ETNewChatGroupUserViewController.h */,
+				0407778423CF20D400B36FFB /* ETNewChatGroupUserViewController.m */,
+				0407778523CF20D400B36FFB /* ETNewChatGroupUserViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040777B023D1937100B36FFB /* 广告页 */ = {
+			isa = PBXGroup;
+			children = (
+				040777B123D1939800B36FFB /* ETAdvertisingH5ViewController.h */,
+				040777B223D1939800B36FFB /* ETAdvertisingH5ViewController.m */,
+				040777B323D1939800B36FFB /* ETAdvertisingH5ViewController.xib */,
+			);
+			path = "广告页";
+			sourceTree = "<group>";
+		};
+		040B25C323C45DAB007647DE /* 好友和群二维码 */ = {
+			isa = PBXGroup;
+			children = (
+				040B25C423C45DAB007647DE /* Controller */,
+			);
+			path = "好友和群二维码";
+			sourceTree = "<group>";
+		};
+		040B25C423C45DAB007647DE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040B25C523C45DC8007647DE /* ETFriendAndGroupCodeViewController.h */,
+				040B25C623C45DC8007647DE /* ETFriendAndGroupCodeViewController.m */,
+				040B25C723C45DC8007647DE /* ETFriendAndGroupCodeViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040B25CF23C812B3007647DE /* 新聊天 */ = {
+			isa = PBXGroup;
+			children = (
+				0407772623CD5B9300B36FFB /* 新群聊 */,
+				040B260C23CC0ABE007647DE /* 添加好友或群 */,
+				040B25F923CC0116007647DE /* 聊天我的 */,
+				040B25F523CC00ED007647DE /* 通讯录 */,
+				040B25DC23C81E75007647DE /* 新聊天详情 */,
+				040B25D023C812B3007647DE /* Controller */,
+				040B25D123C812B3007647DE /* Model */,
+				040B25D223C812B3007647DE /* View */,
+			);
+			path = "新聊天";
+			sourceTree = "<group>";
+		};
+		040B25D023C812B3007647DE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040B25F023CBFE8A007647DE /* ETNewBaseChatViewController.h */,
+				040B25F123CBFE8A007647DE /* ETNewBaseChatViewController.m */,
+				040B25F223CBFE8A007647DE /* ETNewBaseChatViewController.xib */,
+				0407772123CC892B00B36FFB /* ETNewChatFristViewController.h */,
+				0407772223CC892B00B36FFB /* ETNewChatFristViewController.m */,
+				0407772323CC892B00B36FFB /* ETNewChatFristViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040B25D123C812B3007647DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0407778923CFFC4200B36FFB /* CTRongManager.h */,
+				0407778A23CFFC4200B36FFB /* CTRongManager.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		040B25D223C812B3007647DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				040B260723CC071B007647DE /* ETNewChatToolView.h */,
+				040B260823CC071B007647DE /* ETNewChatToolView.m */,
+				040B260A23CC072A007647DE /* ETNewChatToolView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		040B25DC23C81E75007647DE /* 新聊天详情 */ = {
+			isa = PBXGroup;
+			children = (
+				040B25DD23C81E75007647DE /* Controller */,
+				040B25DE23C81E75007647DE /* Model */,
+				040B25DF23C81E75007647DE /* View */,
+			);
+			path = "新聊天详情";
+			sourceTree = "<group>";
+		};
+		040B25DD23C81E75007647DE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040B25E023C81E92007647DE /* ETNewChatDetailsViewController.h */,
+				040B25E123C81E92007647DE /* ETNewChatDetailsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040B25DE23C81E75007647DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		040B25DF23C81E75007647DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		040B25F523CC00ED007647DE /* 通讯录 */ = {
+			isa = PBXGroup;
+			children = (
+				0407770B23CC656600B36FFB /* 通讯录好友信息 */,
+				040776FD23CC61B500B36FFB /* 新朋友 */,
+				040B25F623CC00ED007647DE /* Controller */,
+				040B25F723CC00ED007647DE /* Model */,
+				040B25F823CC00ED007647DE /* View */,
+			);
+			path = "通讯录";
+			sourceTree = "<group>";
+		};
+		040B25F623CC00ED007647DE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040B25FD23CC0150007647DE /* ETNewChatAddressBookViewController.h */,
+				040B25FE23CC0150007647DE /* ETNewChatAddressBookViewController.m */,
+				040B25FF23CC0150007647DE /* ETNewChatAddressBookViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040B25F723CC00ED007647DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				040776FA23CC56B500B36FFB /* ETNewChatAddressBookModel.h */,
+				040776FB23CC56B500B36FFB /* ETNewChatAddressBookModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		040B25F823CC00ED007647DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				040B25EB23C9AD17007647DE /* ETNewChatHeaderView.h */,
+				040B25EC23C9AD17007647DE /* ETNewChatHeaderView.m */,
+				040B25EE23C9AD3E007647DE /* ETNewChatHeaderView.xib */,
+				040776F523CC4F8000B36FFB /* ETNewChatAddressCell.h */,
+				040776F623CC4F8000B36FFB /* ETNewChatAddressCell.m */,
+				040776F723CC4F8000B36FFB /* ETNewChatAddressCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		040B25F923CC0116007647DE /* 聊天我的 */ = {
+			isa = PBXGroup;
+			children = (
+				040776EE23CC434100B36FFB /* 聊天我的二维码 */,
+				040776E723CC40CA00B36FFB /* 修改用户名字 */,
+				040B25FA23CC0116007647DE /* Controller */,
+				040B25FB23CC0116007647DE /* Model */,
+				040B25FC23CC0116007647DE /* View */,
+			);
+			path = "聊天我的";
+			sourceTree = "<group>";
+		};
+		040B25FA23CC0116007647DE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040B260223CC016E007647DE /* ETNewChatMineViewController.h */,
+				040B260323CC016E007647DE /* ETNewChatMineViewController.m */,
+				040B260423CC016E007647DE /* ETNewChatMineViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040B25FB23CC0116007647DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		040B25FC23CC0116007647DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		040B260C23CC0ABE007647DE /* 添加好友或群 */ = {
+			isa = PBXGroup;
+			children = (
+				040B261323CC11A2007647DE /* 添加好友信息 */,
+				040B260D23CC0ABE007647DE /* Controller */,
+			);
+			path = "添加好友或群";
+			sourceTree = "<group>";
+		};
+		040B260D23CC0ABE007647DE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040B260E23CC0AD8007647DE /* ETNewChatAddFriendAndGroupViewController.h */,
+				040B260F23CC0AD8007647DE /* ETNewChatAddFriendAndGroupViewController.m */,
+				040B261023CC0AD8007647DE /* ETNewChatAddFriendAndGroupViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040B261323CC11A2007647DE /* 添加好友信息 */ = {
+			isa = PBXGroup;
+			children = (
+				040B261A23CC15DF007647DE /* 添加好友验证 */,
+				040B261423CC11A2007647DE /* Controller */,
+			);
+			path = "添加好友信息";
+			sourceTree = "<group>";
+		};
+		040B261423CC11A2007647DE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040B261523CC1285007647DE /* ETNewChatAddFriendViewController.h */,
+				040B261623CC1285007647DE /* ETNewChatAddFriendViewController.m */,
+				040B261723CC1285007647DE /* ETNewChatAddFriendViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		040B261A23CC15DF007647DE /* 添加好友验证 */ = {
+			isa = PBXGroup;
+			children = (
+				040B261B23CC15DF007647DE /* Controller */,
+			);
+			path = "添加好友验证";
+			sourceTree = "<group>";
+		};
+		040B261B23CC15DF007647DE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				040B261C23CC165B007647DE /* ETNewChatFriendViewController.h */,
+				040B261D23CC165B007647DE /* ETNewChatFriendViewController.m */,
+				040B261E23CC165B007647DE /* ETNewChatFriendViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		044B7D8023C2D0A10013A43F /* 好友组群通知 */ = {
+			isa = PBXGroup;
+			children = (
+				044B7D8123C2D0A10013A43F /* Controller */,
+				044B7D8223C2D0A10013A43F /* Model */,
+				044B7D8323C2D0A10013A43F /* View */,
+			);
+			path = "好友组群通知";
+			sourceTree = "<group>";
+		};
+		044B7D8123C2D0A10013A43F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				044B7D8423C2D0C60013A43F /* ETCharGroupAndFriendNoticeViewController.h */,
+				044B7D8523C2D0C60013A43F /* ETCharGroupAndFriendNoticeViewController.m */,
+				044B7D8623C2D0C60013A43F /* ETCharGroupAndFriendNoticeViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		044B7D8223C2D0A10013A43F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				044B7D8E23C2D3740013A43F /* ETCharGroupAndFriendNoticeModel.h */,
+				044B7D8F23C2D3740013A43F /* ETCharGroupAndFriendNoticeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		044B7D8323C2D0A10013A43F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				044B7D8923C2D2370013A43F /* ETCharGroupAndFriendNoticeCell.h */,
+				044B7D8A23C2D2370013A43F /* ETCharGroupAndFriendNoticeCell.m */,
+				044B7D8B23C2D2370013A43F /* ETCharGroupAndFriendNoticeCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		044B7D9123C302C00013A43F /* 聊天详情 */ = {
+			isa = PBXGroup;
+			children = (
+				044B7D9223C302C00013A43F /* Controller */,
+				044B7D9323C302C00013A43F /* Model */,
+				044B7D9423C302C00013A43F /* View */,
+			);
+			path = "聊天详情";
+			sourceTree = "<group>";
+		};
+		044B7D9223C302C00013A43F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				044B7D9523C302E00013A43F /* ETChatDetailsViewController.h */,
+				044B7D9623C302E00013A43F /* ETChatDetailsViewController.m */,
+				044B7D9723C302E00013A43F /* ETChatDetailsViewController.xib */,
+				044B7DAB23C41DD90013A43F /* ETChatGroupDetailsViewController.h */,
+				044B7DAC23C41DD90013A43F /* ETChatGroupDetailsViewController.m */,
+				044B7DAD23C41DD90013A43F /* ETChatGroupDetailsViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		044B7D9323C302C00013A43F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				044B7DA823C326E20013A43F /* ETChatDetailsModel.h */,
+				044B7DA923C326E20013A43F /* ETChatDetailsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		044B7D9423C302C00013A43F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				044B7D9A23C305E70013A43F /* MeTableViewCell.h */,
+				044B7D9C23C305E70013A43F /* MeTableViewCell.m */,
+				044B7D9D23C305E80013A43F /* OtherTableViewCell.h */,
+				044B7D9B23C305E70013A43F /* OtherTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04733DEE239DDD90006FE3F3 /* 充值中心 */ = {
 			isa = PBXGroup;
 			children = (
@@ -819,6 +1814,24 @@
 				0411CA26239F7170003420AE /* ETTopupCenterRecordCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		04785D8E23BDDA9A0025A270 /* 添加群组信息 */ = {
+			isa = PBXGroup;
+			children = (
+				04785D8F23BDDA9A0025A270 /* Controller */,
+			);
+			path = "添加群组信息";
+			sourceTree = "<group>";
+		};
+		04785D8F23BDDA9A0025A270 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04785D9023BDDAF30025A270 /* ETAddGroupInformationViewController.h */,
+				04785D9123BDDAF30025A270 /* ETAddGroupInformationViewController.m */,
+				04785D9223BDDAF30025A270 /* ETAddGroupInformationViewController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		04998A11238CC724002939F1 /* 设置金额 */ = {
@@ -1204,6 +2217,281 @@
 				04F4274823A22EE5009587CE /* ETCoinInstructionsModel.m */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		04F7F1C023B99592002FF50E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				044B7D7D23C2C67D0013A43F /* ETChatLishModel.h */,
+				044B7D7E23C2C67D0013A43F /* ETChatLishModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04F7F1C123B99592002FF50E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F1C223B995B8002FF50E /* ETChatCell.h */,
+				04F7F1C323B995B8002FF50E /* ETChatCell.m */,
+				04F7F1C423B995B8002FF50E /* ETChatCell.xib */,
+				04F7F1CB23B99A5C002FF50E /* ETAddFriendsPopView.h */,
+				04F7F1CC23B99A5C002FF50E /* ETAddFriendsPopView.m */,
+				04F7F1CE23B99A68002FF50E /* ETAddFriendsPopView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04F7F1C723B9991F002FF50E /* 通讯录 */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F1C823B9991F002FF50E /* Controller */,
+				04F7F1C923B9991F002FF50E /* Model */,
+				04F7F1CA23B9991F002FF50E /* View */,
+			);
+			path = "通讯录";
+			sourceTree = "<group>";
+		};
+		04F7F1C823B9991F002FF50E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04785D8923BDD3AF0025A270 /* ETAddressBookViewController.h */,
+				04785D8A23BDD3AF0025A270 /* ETAddressBookViewController.m */,
+				04785D8B23BDD3AF0025A270 /* ETAddressBookViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04F7F1C923B9991F002FF50E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04785DA723BF240D0025A270 /* ETAddressBookModel.h */,
+				04785DA823BF240D0025A270 /* ETAddressBookModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04F7F1CA23B9991F002FF50E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04785D9D23BF18EF0025A270 /* ETAddressBookHeaderView.h */,
+				04785D9E23BF18EF0025A270 /* ETAddressBookHeaderView.m */,
+				04785DA023BF18F70025A270 /* ETAddressBookHeaderView.xib */,
+				04785DA223BF1F0E0025A270 /* ETAddressBookCell.h */,
+				04785DA323BF1F0E0025A270 /* ETAddressBookCell.m */,
+				04785DA423BF1F0E0025A270 /* ETAddressBookCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04F7F1D023B9A4D3002FF50E /* 添加好友 */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F1D123B9A4D3002FF50E /* Controller */,
+				04F7F1D223B9A4D3002FF50E /* Model */,
+				04F7F1D323B9A4D3002FF50E /* View */,
+				04F7F1D923B9A986002FF50E /* 好友信息 */,
+				04785D8E23BDDA9A0025A270 /* 添加群组信息 */,
+			);
+			path = "添加好友";
+			sourceTree = "<group>";
+		};
+		04F7F1D123B9A4D3002FF50E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F1D423B9A53F002FF50E /* ETAddFriendsViewController.h */,
+				04F7F1D523B9A53F002FF50E /* ETAddFriendsViewController.m */,
+				04F7F1D623B9A53F002FF50E /* ETAddFriendsViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04F7F1D223B9A4D3002FF50E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04F7F1D323B9A4D3002FF50E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04F7F1D923B9A986002FF50E /* 好友信息 */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F1DA23B9A986002FF50E /* Controller */,
+				04F7F1DB23B9A986002FF50E /* Model */,
+				04F7F1DC23B9A986002FF50E /* View */,
+			);
+			path = "好友信息";
+			sourceTree = "<group>";
+		};
+		04F7F1DA23B9A986002FF50E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F1DD23B9A99F002FF50E /* ETAddFriendInformationViewController.h */,
+				04F7F1DE23B9A99F002FF50E /* ETAddFriendInformationViewController.m */,
+				04F7F1DF23B9A99F002FF50E /* ETAddFriendInformationViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04F7F1DB23B9A986002FF50E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04F7F1DC23B9A986002FF50E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04F7F1E223B9CB75002FF50E /* 创建群聊 */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F1E323B9CB75002FF50E /* Controller */,
+				04F7F1E423B9CB75002FF50E /* Model */,
+				04F7F1E523B9CB75002FF50E /* View */,
+				04F7F1EF23B9D07E002FF50E /* 群聊信息 */,
+				04F7F1F623B9D6CA002FF50E /* 群分享 */,
+				04F7F1FD23B9D8F0002FF50E /* 群成员 */,
+				04F7F20B23B9DC19002FF50E /* 转让群 */,
+			);
+			path = "创建群聊";
+			sourceTree = "<group>";
+		};
+		04F7F1E323B9CB75002FF50E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F1E623B9CB96002FF50E /* ETCreateGroupChatViewController.h */,
+				04F7F1E723B9CB96002FF50E /* ETCreateGroupChatViewController.m */,
+				04F7F1E823B9CB96002FF50E /* ETCreateGroupChatViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04F7F1E423B9CB75002FF50E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04F7F1E523B9CB75002FF50E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04F7F1EB23B9CD34002FF50E /* XXTextView */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F1EC23B9CD34002FF50E /* XXTextView.h */,
+				04F7F1ED23B9CD34002FF50E /* XXTextView.m */,
+			);
+			path = XXTextView;
+			sourceTree = "<group>";
+		};
+		04F7F1EF23B9D07E002FF50E /* 群聊信息 */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F1F023B9D07E002FF50E /* Controller */,
+			);
+			path = "群聊信息";
+			sourceTree = "<group>";
+		};
+		04F7F1F023B9D07E002FF50E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F1F123B9D09E002FF50E /* ETGroupChatInformationViewController.h */,
+				04F7F1F223B9D09E002FF50E /* ETGroupChatInformationViewController.m */,
+				04F7F1F323B9D09E002FF50E /* ETGroupChatInformationViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04F7F1F623B9D6CA002FF50E /* 群分享 */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F1F723B9D6CA002FF50E /* Controller */,
+			);
+			name = "群分享";
+			path = "ProjectET/Class/聊天/创建群聊/群分享";
+			sourceTree = SOURCE_ROOT;
+		};
+		04F7F1F723B9D6CA002FF50E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F1F823B9D6FC002FF50E /* ETGroupOfShareViewController.h */,
+				04F7F1F923B9D6FC002FF50E /* ETGroupOfShareViewController.m */,
+				04F7F1FA23B9D6FC002FF50E /* ETGroupOfShareViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04F7F1FD23B9D8F0002FF50E /* 群成员 */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F1FE23B9D8F0002FF50E /* Controller */,
+				04F7F1FF23B9D8F0002FF50E /* Model */,
+				04F7F20023B9D8F0002FF50E /* View */,
+			);
+			path = "群成员";
+			sourceTree = "<group>";
+		};
+		04F7F1FE23B9D8F0002FF50E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F20123B9D904002FF50E /* ETGroupMembersViewController.h */,
+				04F7F20223B9D904002FF50E /* ETGroupMembersViewController.m */,
+				04F7F20323B9D904002FF50E /* ETGroupMembersViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04F7F1FF23B9D8F0002FF50E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04785D9523BDE40B0025A270 /* ETGroupMembersModel.h */,
+				04785D9623BDE40B0025A270 /* ETGroupMembersModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04F7F20023B9D8F0002FF50E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F20623B9DA09002FF50E /* ETGroupMembersCell.h */,
+				04F7F20723B9DA09002FF50E /* ETGroupMembersCell.m */,
+				04F7F20823B9DA09002FF50E /* ETGroupMembersCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04F7F20B23B9DC19002FF50E /* 转让群 */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F20C23B9DC19002FF50E /* Controller */,
+			);
+			path = "转让群";
+			sourceTree = "<group>";
+		};
+		04F7F20C23B9DC19002FF50E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04F7F20D23B9DC35002FF50E /* ETGroupTransferViewController.h */,
+				04F7F20E23B9DC35002FF50E /* ETGroupTransferViewController.m */,
+				04F7F20F23B9DC35002FF50E /* ETGroupTransferViewController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		2E2D92EDFC2E29D9F702BA5B /* Frameworks */ = {
@@ -1609,6 +2897,10 @@
 				4F1A22482372CF8100FDD5D9 /* HTTPTool+KMP_DOTNETRequest.m */,
 				4F1A22472372CF8100FDD5D9 /* KMP_DOTNETModel.h */,
 				4F1A22492372CF8100FDD5D9 /* KMP_DOTNETModel.m */,
+				044B7DA023C3090B0013A43F /* ETSocketHelper.h */,
+				044B7DA123C3090B0013A43F /* ETSocketHelper.m */,
+				044B7DA423C3096E0013A43F /* ETSocketHelperSwift.swift */,
+				044B7DA323C3096E0013A43F /* ProjectET-Bridging-Header.h */,
 			);
 			path = DOTNET;
 			sourceTree = "<group>";
@@ -1717,12 +3009,13 @@
 		4F2306FE2366EA9A0046A136 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				040777B023D1937100B36FFB /* 广告页 */,
 				4FF7FF13237FA8C900C38456 /* 发现搜索 */,
+				040B25CF23C812B3007647DE /* 新聊天 */,
 				4FF7FF0E237F8D3D00C38456 /* 聊天 */,
 				04DB9EC3237BE5D8002796C3 /* 资讯 */,
 				8855DAD423780DA100F25DA4 /* Found */,
 				88A5D6862376BEBE0012EE0B /* Mine */,
-				4FA0A31F23717A0D0038F880 /* ScanController */,
 				4F128C7523681FF60004284D /* CreatWallet(创建钱包) */,
 				4F2306FF2366EAB30046A136 /* Home(资产) */,
 				4F2307002366EAF70046A136 /* RootViewController */,
@@ -1768,6 +3061,7 @@
 		4F23070B2366EC8C0046A136 /* Expand */ = {
 			isa = PBXGroup;
 			children = (
+				04F7F1EB23B9CD34002FF50E /* XXTextView */,
 				04E9DB15237E8F3100CDB9EE /* ETHLib */,
 				4F1A22442372CF7100FDD5D9 /* NetExpand */,
 				4FA0A311236FFF270038F880 /* ETManger */,
@@ -1914,7 +3208,15 @@
 		4FF7FF0E237F8D3D00C38456 /* 聊天 */ = {
 			isa = PBXGroup;
 			children = (
+				040B25C323C45DAB007647DE /* 好友和群二维码 */,
+				044B7D9123C302C00013A43F /* 聊天详情 */,
+				044B7D8023C2D0A10013A43F /* 好友组群通知 */,
+				04F7F1E223B9CB75002FF50E /* 创建群聊 */,
+				04F7F1D023B9A4D3002FF50E /* 添加好友 */,
+				04F7F1C723B9991F002FF50E /* 通讯录 */,
 				4FF7FF12237F8D5800C38456 /* Controller */,
+				04F7F1C023B99592002FF50E /* Model */,
+				04F7F1C123B99592002FF50E /* View */,
 			);
 			path = "聊天";
 			sourceTree = "<group>";
@@ -2043,6 +3345,7 @@
 		88A5D6862376BEBE0012EE0B /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				4FA0A31F23717A0D0038F880 /* ScanController */,
 				04E9DAFD237D4BA700CDB9EE /* MineModel */,
 				8855DA9E2377ACA300F25DA4 /* MineView */,
 				88A5D6892376BEE50012EE0B /* MineViewController */,
@@ -2078,6 +3381,9 @@
 				04018F572382A17100C45B63 /* ETHTMLViewController.h */,
 				04018F582382A17100C45B63 /* ETHTMLViewController.m */,
 				04018F562382A17000C45B63 /* ETHTMLViewController.xib */,
+				04D82B8423A77E760051808B /* ETInviteFriendsViewController.h */,
+				04D82B8523A77E760051808B /* ETInviteFriendsViewController.m */,
+				04D82B8623A77E760051808B /* ETInviteFriendsViewController.xib */,
 			);
 			path = MineViewController;
 			sourceTree = "<group>";
@@ -2094,6 +3400,7 @@
 				4F2306BF2366DE9D0046A136 /* Frameworks */,
 				4F2306C02366DE9D0046A136 /* Resources */,
 				C3BC53C8913E9B28B4564BD0 /* [CP] Embed Pods Frameworks */,
+				E647853179D6BAA3E13A8359 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2152,6 +3459,7 @@
 				TargetAttributes = {
 					4F2306C12366DE9D0046A136 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1120;
 					};
 					4F2306D92366DE9F0046A136 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -2188,48 +3496,99 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D82B8823A77E760051808B /* ETInviteFriendsViewController.xib in Resources */,
 				04DB9EE6237BEAFB002796C3 /* ETNewArticleViewController.xib in Resources */,
 				4F14FB23236966E10008C50A /* ETMyWalletDetailCell.xib in Resources */,
 				04998A34238CD938002939F1 /* ETShopChooseCoinCell.xib in Resources */,
+				0407776623CEE62300B36FFB /* ETNewChatGroupDetailsCell.xib in Resources */,
 				04D82B8323A7304F0051808B /* ETTopUpExplainviewController.xib in Resources */,
 				04F4274523A225CD009587CE /* ETCoinInstructionsViewController.xib in Resources */,
 				4F2306D22366DE9F0046A136 /* LaunchScreen.storyboard in Resources */,
+				040B25C923C45DC8007647DE /* ETFriendAndGroupCodeViewController.xib in Resources */,
 				4F14FB0223692CF30008C50A /* ETAddContactsCell.xib in Resources */,
 				04DB9EFC237C0CC7002796C3 /* ETNewArticleDetailsViewController.xib in Resources */,
 				4F24C373238284DE00BB6E00 /* ET_New.gif in Resources */,
+				044B7DAF23C41DD90013A43F /* ETChatGroupDetailsViewController.xib in Resources */,
 				04DB9F17237CF233002796C3 /* ETNewMarketCell.xib in Resources */,
 				04018F592382A17100C45B63 /* ETHTMLViewController.xib in Resources */,
+				04785DA623BF1F0E0025A270 /* ETAddressBookCell.xib in Resources */,
 				04998A37238D0171002939F1 /* ETShopChooseCoinView.xib in Resources */,
+				044B7D9923C302E00013A43F /* ETChatDetailsViewController.xib in Resources */,
 				04F4273C23A0D9A7009587CE /* ETNewTwoMarketCell.xib in Resources */,
 				4F128CA523683BF70004284D /* ETDirectCountCell.xib in Resources */,
 				4F14FAFA236924B30008C50A /* ETMyContactsCell.xib in Resources */,
+				0407771323CC657D00B36FFB /* ETNewChatAddressFriendMsgViewController.xib in Resources */,
+				040777BA23D19CDA00B36FFB /* ETNewChatDelGroupView.xib in Resources */,
 				04E9DAFB237D23D300CDB9EE /* ETNewAlertsDetailsViewController.xib in Resources */,
+				0407778723CF20D400B36FFB /* ETNewChatGroupUserViewController.xib in Resources */,
+				0407778023CF01B100B36FFB /* ETNewChatGroupCodeViewController.xib in Resources */,
 				4FF7FF21237FD3E300C38456 /* ETFoundSectionView.xib in Resources */,
+				0407777923CEFE6200B36FFB /* ETNewChatGroupChangeRemarkViewController.xib in Resources */,
 				04998A20238CCE20002939F1 /* ETShopRecordViewController.xib in Resources */,
+				040776ED23CC40DE00B36FFB /* ETNewChatChangeNameViewController.xib in Resources */,
 				04018F5F2382A1A200C45B63 /* ETFoundHTMLViewController.xib in Resources */,
+				04785D9423BDDAF30025A270 /* ETAddGroupInformationViewController.xib in Resources */,
 				4F128CAA23683EE70004284D /* ETDirectLeftCell.xib in Resources */,
 				04998A28238CCEDD002939F1 /* ETShopRecordCell.xib in Resources */,
+				044B7D8D23C2D2370013A43F /* ETCharGroupAndFriendNoticeCell.xib in Resources */,
+				04F7F20523B9D904002FF50E /* ETGroupMembersViewController.xib in Resources */,
 				04998A17238CC736002939F1 /* ETShopSetMoneyViewController.xib in Resources */,
+				0407770523CC61F100B36FFB /* ETNewChatNewFriendViewController.xib in Resources */,
+				0407770A23CC626C00B36FFB /* ETNewChatNewFriendCell.xib in Resources */,
 				4F2306CF2366DE9F0046A136 /* Assets.xcassets in Resources */,
+				040B262023CC165B007647DE /* ETNewChatFriendViewController.xib in Resources */,
+				04785DA123BF18F70025A270 /* ETAddressBookHeaderView.xib in Resources */,
+				04F7F1E123B9A99F002FF50E /* ETAddFriendInformationViewController.xib in Resources */,
 				4F128CAF236840120004284D /* ETDirectNormalCell.xib in Resources */,
 				0411CA28239F7170003420AE /* ETTopupCenterRecordCell.xib in Resources */,
+				0407774123CDA82100B36FFB /* ETNewChatMineGroupViewController.xib in Resources */,
 				4F2306CD2366DE9D0046A136 /* Main.storyboard in Resources */,
+				040B261923CC1285007647DE /* ETNewChatAddFriendViewController.xib in Resources */,
+				0407771A23CC6A5100B36FFB /* ETNewChatAddressFriendSetViewController.xib in Resources */,
+				04F7F1CF23B99A68002FF50E /* ETAddFriendsPopView.xib in Resources */,
+				040776F923CC4F8000B36FFB /* ETNewChatAddressCell.xib in Resources */,
+				04F7F21123B9DC35002FF50E /* ETGroupTransferViewController.xib in Resources */,
+				04F7F20A23B9DA09002FF50E /* ETGroupMembersCell.xib in Resources */,
+				04F7F1EA23B9CB96002FF50E /* ETCreateGroupChatViewController.xib in Resources */,
 				04998A41238D29E8002939F1 /* ETShopPaymentViewController.xib in Resources */,
 				4F128C7F236820320004284D /* backUpMoneyViewController.xib in Resources */,
 				04733E02239E43C4006FE3F3 /* ETTopupCenterRecordViewController.xib in Resources */,
+				0407773323CD5FA300B36FFB /* ETNewChatCreateGroupCell.xib in Resources */,
+				04785D8D23BDD3B00025A270 /* ETAddressBookViewController.xib in Resources */,
 				04DB9EDC237BE6C4002796C3 /* ETNewInformationViewController.xib in Resources */,
 				04733DF6239DDD9A006FE3F3 /* ETTopupCenterViewController.xib in Resources */,
+				040B260B23CC072A007647DE /* ETNewChatToolView.xib in Resources */,
 				4F1942D2236D22E900AD907E /* ETWalletDetailCell.xib in Resources */,
+				040B25EF23C9AD3E007647DE /* ETNewChatHeaderView.xib in Resources */,
+				04F7F1C623B995B8002FF50E /* ETChatCell.xib in Resources */,
+				0407774823CDA89500B36FFB /* ETNewChatMineGroupCell.xib in Resources */,
+				0407775E23CEA6DE00B36FFB /* ETNewChatGroupDetailsViewController.xib in Resources */,
+				0407772E23CD5BE200B36FFB /* ETNewChatCreateGroupViewController.xib in Resources */,
+				040B261223CC0AD8007647DE /* ETNewChatAddFriendAndGroupViewController.xib in Resources */,
 				4FF7FF29237FE5CC00C38456 /* ETFoundSearchDetailCell.xib in Resources */,
 				04DB9EE1237BEAE4002796C3 /* ETNewMarketViewController.xib in Resources */,
+				0407773A23CD9B1200B36FFB /* ETNewChatConfirmGroupViewController.xib in Resources */,
+				044B7D8823C2D0C60013A43F /* ETCharGroupAndFriendNoticeViewController.xib in Resources */,
+				040B25F423CBFE8A007647DE /* ETNewBaseChatViewController.xib in Resources */,
 				04DB9ED7237BE69B002796C3 /* ETNewAlertsViewController.xib in Resources */,
 				04DCAA2E238CB47700B9F2A3 /* ETShopCodeViewController.xib in Resources */,
 				4F3F9036236A7F04009AAA24 /* ETCreatWalletInputCell.xib in Resources */,
 				4F1942E0236D306800AD907E /* ETWalletImportCell.xib in Resources */,
+				0407777423CEFC9300B36FFB /* ETNewChatGroupRemarkViewController.xib in Resources */,
+				04F7F1D823B9A53F002FF50E /* ETAddFriendsViewController.xib in Resources */,
 				4F128CA0236839610004284D /* ETDirectTranAddressCell.xib in Resources */,
+				0407772523CC892B00B36FFB /* ETNewChatFristViewController.xib in Resources */,
 				4FFFB041237E42EF00A87E50 /* ET.gif in Resources */,
+				040B260123CC0150007647DE /* ETNewChatAddressBookViewController.xib in Resources */,
+				04F7F1FC23B9D6FC002FF50E /* ETGroupOfShareViewController.xib in Resources */,
 				04DB9EEB237BF68B002796C3 /* ETNewAlertsCell.xib in Resources */,
+				040777B523D1939800B36FFB /* ETAdvertisingH5ViewController.xib in Resources */,
+				0407776D23CEF21800B36FFB /* ETNewChatChangeGroupNameViewController.xib in Resources */,
 				04DB9EF3237C067A002796C3 /* ETNewArticleCell.xib in Resources */,
+				040B260623CC016E007647DE /* ETNewChatMineViewController.xib in Resources */,
+				0407775523CDE36600B36FFB /* ETNewChatFriendRemarkViewController.xib in Resources */,
+				04F7F1F523B9D09E002FF50E /* ETGroupChatInformationViewController.xib in Resources */,
+				040776F423CC435100B36FFB /* ETNewChatMineCodeViewController.xib in Resources */,
 				4F3F9031236A7E83009AAA24 /* ETCreatWalletInfoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2268,6 +3627,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectET/Pods-ProjectET-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E647853179D6BAA3E13A8359 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectET/Pods-ProjectET-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectET/Pods-ProjectET-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectET/Pods-ProjectET-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F3385358CCB0B1B2A3448D4D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2301,18 +3677,26 @@
 				4F128C73236813580004284D /* ETConiCell.m in Sources */,
 				4F3F903D236A8415009AAA24 /* ETSecretImportController.m in Sources */,
 				04F4274423A225CD009587CE /* ETCoinInstructionsViewController.m in Sources */,
+				044B7DAE23C41DD90013A43F /* ETChatGroupDetailsViewController.m in Sources */,
 				4F10A7B52376B35C00EBF377 /* ETPlatformGlodModel.m in Sources */,
 				4FA0A32B23717ACF0038F880 /* ET_ScaningView.m in Sources */,
+				04F7F1E023B9A99F002FF50E /* ETAddFriendInformationViewController.m in Sources */,
 				4F1A080F237A8BC200C7F7D0 /* ETNewsDetailController.m in Sources */,
 				4F1A0808237A81CF00C7F7D0 /* ETProclamListCell.m in Sources */,
 				4FA0A30F236FD0690038F880 /* HoverPageViewController.m in Sources */,
 				04E9DB19237E8F3100CDB9EE /* HSEther.m in Sources */,
+				0407776123CEE57500B36FFB /* ETNewChatGroupDetailsModel.m in Sources */,
 				4F1A22372372BF5500FDD5D9 /* XMRequest.m in Sources */,
 				4F128C90236826FC0004284D /* ETTransferView.m in Sources */,
+				040B25C823C45DC8007647DE /* ETFriendAndGroupCodeViewController.m in Sources */,
+				0407770423CC61F100B36FFB /* ETNewChatNewFriendViewController.m in Sources */,
 				4FF7FF11237F8D5500C38456 /* ETChatViewcontroller.m in Sources */,
+				04F7F1FB23B9D6FC002FF50E /* ETGroupOfShareViewController.m in Sources */,
 				4F128C9F236839610004284D /* ETDirectTranAddressCell.m in Sources */,
+				040B260923CC071B007647DE /* ETNewChatToolView.m in Sources */,
 				4F14FB1623695F0C0008C50A /* Tools.m in Sources */,
 				8855DAC42377EAC800F25DA4 /* MineCurrencyViewController.m in Sources */,
+				0407772D23CD5BE200B36FFB /* ETNewChatCreateGroupViewController.m in Sources */,
 				04018F5E2382A1A200C45B63 /* ETFoundHTMLViewController.m in Sources */,
 				4F14FB0F23693CE40008C50A /* UIImage+Color.m in Sources */,
 				4F1942CD236D21DD00AD907E /* ETWalletDetailController.m in Sources */,
@@ -2336,24 +3720,37 @@
 				4FA0A30B236FCA270038F880 /* WMZPageScroller.m in Sources */,
 				4FA0A30A236FCA270038F880 /* WMZPageController.m in Sources */,
 				04DB9F11237C15B5002796C3 /* ETFoundCell.m in Sources */,
+				0407777823CEFE6200B36FFB /* ETNewChatGroupChangeRemarkViewController.m in Sources */,
 				4F24C37623828D2A00BB6E00 /* ETFoundSegmetnController.m in Sources */,
+				0407772423CC892B00B36FFB /* ETNewChatFristViewController.m in Sources */,
+				04F7F21023B9DC35002FF50E /* ETGroupTransferViewController.m in Sources */,
+				044B7D8723C2D0C60013A43F /* ETCharGroupAndFriendNoticeViewController.m in Sources */,
 				4F128C86236820580004284D /* EqualSpaceFlowLayoutEvolve.m in Sources */,
 				04998A16238CC736002939F1 /* ETShopSetMoneyViewController.m in Sources */,
 				4F3F9043236AB22B009AAA24 /* ETColdWalletViewController.m in Sources */,
+				0407777F23CF01B100B36FFB /* ETNewChatGroupCodeViewController.m in Sources */,
+				044B7D9023C2D3740013A43F /* ETCharGroupAndFriendNoticeModel.m in Sources */,
+				0407771923CC6A5100B36FFB /* ETNewChatAddressFriendSetViewController.m in Sources */,
 				8855DAB92377E86700F25DA4 /* LanguageViewController.m in Sources */,
 				4F14FAF9236924B30008C50A /* ETMyContactsCell.m in Sources */,
+				04F7F20423B9D904002FF50E /* ETGroupMembersViewController.m in Sources */,
 				4FFFB04D237EA47E00A87E50 /* ETFoundBannerModel.m in Sources */,
 				4FA0A305236FCA270038F880 /* WMZPageLoopView.m in Sources */,
+				040B25ED23C9AD17007647DE /* ETNewChatHeaderView.m in Sources */,
 				4F14FB0D23693CE40008C50A /* UIImage+Watermark.m in Sources */,
 				04CAF00E238D3FD4001FEE2F /* ETShopRecordModel.m in Sources */,
 				4F0E4DA523740AA900E83618 /* ETWalletSearchCell.m in Sources */,
+				044B7DA223C3090B0013A43F /* ETSocketHelper.m in Sources */,
+				044B7D9E23C305E80013A43F /* OtherTableViewCell.m in Sources */,
 				4FFFAFEC237CFAF600A87E50 /* ETFoundDappModel.m in Sources */,
 				04DB9EEA237BF68B002796C3 /* ETNewAlertsCell.m in Sources */,
 				4F1942EC236D5E6900AD907E /* ETKeystoreQcodeView.m in Sources */,
+				04F7F1F423B9D09E002FF50E /* ETGroupChatInformationViewController.m in Sources */,
 				88A5D68C2376BEF10012EE0B /* MineViewController.m in Sources */,
 				4FFFAFF5237D480900A87E50 /* ETTransferGasModel.m in Sources */,
 				4FA0A319237013D10038F880 /* ETWalletModel.m in Sources */,
 				4F128C6F23680D120004284D /* ETTableHeaderSelectView.m in Sources */,
+				04785DA523BF1F0E0025A270 /* ETAddressBookCell.m in Sources */,
 				4F128C83236820320004284D /* backUpMoneyViewController.m in Sources */,
 				04E9DB11237E47AF00CDB9EE /* ETNodeModel.m in Sources */,
 				4FF7FF19237FAAB600C38456 /* ETFoundSearchController.m in Sources */,
@@ -2369,38 +3766,57 @@
 				4FFFAFEF237D250D00A87E50 /* ETTransferGasView.m in Sources */,
 				4F1942F2236D69E100AD907E /* ETVerifyPassWrodView.m in Sources */,
 				4F2307062366EB600046A136 /* ETAssetsViewController.m in Sources */,
+				040B25F323CBFE8A007647DE /* ETNewBaseChatViewController.m in Sources */,
 				4F1A22342372BF5500FDD5D9 /* HTTPTool.m in Sources */,
 				04F4273B23A0D9A7009587CE /* ETNewTwoMarketCell.m in Sources */,
 				4F5D107F237AC0D500B13D00 /* UUID.m in Sources */,
+				04785D9F23BF18EF0025A270 /* ETAddressBookHeaderView.m in Sources */,
 				4F24C379238298F100BB6E00 /* ETFoundClassificationController.m in Sources */,
 				4F3F904F236AE073009AAA24 /* ETCoinMainViewController.m in Sources */,
 				8855DACE2378037500F25DA4 /* MineRecordViewController.m in Sources */,
 				4F3F9055236AE62A009AAA24 /* ETCoinListViewController.m in Sources */,
 				4FA0A306236FCA270038F880 /* WMZPageNaviBtn.m in Sources */,
 				4F128CAE236840120004284D /* ETDirectNormalCell.m in Sources */,
+				04785D9323BDDAF30025A270 /* ETAddGroupInformationViewController.m in Sources */,
+				0407774E23CDACC100B36FFB /* ETNewChatNewFriendModel.m in Sources */,
 				04018F5A2382A17100C45B63 /* ETHTMLViewController.m in Sources */,
 				4F3F9039236A804B009AAA24 /* ETCreatYYViewCell.m in Sources */,
+				044B7D8C23C2D2370013A43F /* ETCharGroupAndFriendNoticeCell.m in Sources */,
+				040B260023CC0150007647DE /* ETNewChatAddressBookViewController.m in Sources */,
 				4F0E4D8D2373B3FC00E83618 /* ETHomeModel.m in Sources */,
+				04785DA923BF240D0025A270 /* ETAddressBookModel.m in Sources */,
+				040B25E323C81E92007647DE /* ETNewChatDetailsViewController.m in Sources */,
 				4FFFAFF9237D5B5C00A87E50 /* ETTotalModel.m in Sources */,
 				04F4274923A22EE5009587CE /* ETCoinInstructionsModel.m in Sources */,
 				8855DAB22377E4ED00F25DA4 /* HelpViewController.m in Sources */,
 				4F117509236C267E0042CDFD /* ETRecordSegmentController.m in Sources */,
 				04733DF5239DDD9A006FE3F3 /* ETTopupCenterViewController.m in Sources */,
+				0407776523CEE62300B36FFB /* ETNewChatGroupDetailsCell.m in Sources */,
+				0407778623CF20D400B36FFB /* ETNewChatGroupUserViewController.m in Sources */,
 				4F0E4D932373EFF000E83618 /* ETTransferDetailViewController.m in Sources */,
 				4F1A080C237A854100C7F7D0 /* ETNewsListModel.m in Sources */,
 				88A5D0422372CFBC0012EE0B /* ClassBaseTools.m in Sources */,
 				8855DB3A2379469400F25DA4 /* TotalAssViewController.m in Sources */,
 				4F128C622367D83B0004284D /* HomeHeaderView.m in Sources */,
+				0407770923CC626C00B36FFB /* ETNewChatNewFriendCell.m in Sources */,
+				0407775423CDE36600B36FFB /* ETNewChatFriendRemarkViewController.m in Sources */,
+				0407774023CDA82100B36FFB /* ETNewChatMineGroupViewController.m in Sources */,
 				4F3F9030236A7E83009AAA24 /* ETCreatWalletInfoCell.m in Sources */,
+				040777B423D1939800B36FFB /* ETAdvertisingH5ViewController.m in Sources */,
 				04E9DB02237D4BC000CDB9EE /* ETMineHelpModel.m in Sources */,
 				4F3F9060236BD9F3009AAA24 /* KMPQRCodeManager.m in Sources */,
+				0407777323CEFC9300B36FFB /* ETNewChatGroupRemarkViewController.m in Sources */,
+				040776F323CC435100B36FFB /* ETNewChatMineCodeViewController.m in Sources */,
 				04DB9EE5237BEAFB002796C3 /* ETNewArticleViewController.m in Sources */,
 				8855DABF2377EAB600F25DA4 /* MineNodeViewController.m in Sources */,
 				04733E01239E43C4006FE3F3 /* ETTopupCenterRecordViewController.m in Sources */,
 				8855DACA2377EB7E00F25DA4 /* MineNodeCell.m in Sources */,
 				8855DAAD2377E3AF00F25DA4 /* InvationViewController.m in Sources */,
+				04785D8C23BDD3B00025A270 /* ETAddressBookViewController.m in Sources */,
 				8855DADD23780DF900F25DA4 /* FoundViewController.m in Sources */,
+				04F7F1CD23B99A5C002FF50E /* ETAddFriendsPopView.m in Sources */,
 				4F1942E6236D5E1A00AD907E /* ETKeystoreImportController.m in Sources */,
+				044B7D9823C302E00013A43F /* ETChatDetailsViewController.m in Sources */,
 				4F1A22332372BF5500FDD5D9 /* MJExtensionConfig.m in Sources */,
 				4F1942D5236D2A0800AD907E /* ETWalletDetailView.m in Sources */,
 				4F14FB1D236966C10008C50A /* ETMyWalletIconCell.m in Sources */,
@@ -2410,17 +3826,23 @@
 				4F1A0812237A8C3F00C7F7D0 /* ETAlertsModel.m in Sources */,
 				04DB9EDB237BE6C4002796C3 /* ETNewInformationViewController.m in Sources */,
 				4F0E4DB0237502EC00E83618 /* ETWalletMangerView.m in Sources */,
+				0407771223CC657D00B36FFB /* ETNewChatAddressFriendMsgViewController.m in Sources */,
+				04F7F1E923B9CB96002FF50E /* ETCreateGroupChatViewController.m in Sources */,
 				4F1A0803237A815800C7F7D0 /* ETProclamationListController.m in Sources */,
 				04DB9EF2237C067A002796C3 /* ETNewArticleCell.m in Sources */,
 				4F1942F5236D69FB00AD907E /* ETBackUpWalletView.m in Sources */,
 				4F1A224B2372CF8100FDD5D9 /* KMP_DOTNETModel.m in Sources */,
+				04785D9723BDE40B0025A270 /* ETGroupMembersModel.m in Sources */,
 				04DB9F08237C156E002796C3 /* ETHashSearchModel.m in Sources */,
+				0407774723CDA89500B36FFB /* ETNewChatMineGroupCell.m in Sources */,
 				04DB9EFF237C14E2002796C3 /* Tools+DeviceCategory.m in Sources */,
 				04998A33238CD938002939F1 /* ETShopChooseCoinCell.m in Sources */,
 				4F1942DB236D2F7000AD907E /* ETQcodeImportView.m in Sources */,
 				4F128C80236820320004284D /* ViewController.m in Sources */,
 				4F3F9049236ABAD9009AAA24 /* ETSecertCreatView.m in Sources */,
 				04733DF9239DE779006FE3F3 /* ETTopUpCenterBgView.m in Sources */,
+				0407773923CD9B1200B36FFB /* ETNewChatConfirmGroupViewController.m in Sources */,
+				04F7F1EE23B9CD34002FF50E /* XXTextView.m in Sources */,
 				04D15FD42396643E00ECA143 /* ETContactsTableView.m in Sources */,
 				4F14FB19236960A20008C50A /* ETMyWalletView.m in Sources */,
 				04DB9EEE237BFA3A002796C3 /* ETNewAlertsModel.m in Sources */,
@@ -2429,24 +3851,35 @@
 				4F4D3DC12380F49A00BBFB5D /* ETFoundDetailModel.m in Sources */,
 				4F4D3DBE2380F28200BBFB5D /* ETFoundHotModel.m in Sources */,
 				4FA0A314236FFF440038F880 /* ETWalletManger.m in Sources */,
+				040777B823D19CC000B36FFB /* ETNewChatDelGroupView.m in Sources */,
 				4FFFB9122379264500AE9BFF /* ETMycontactListModel.m in Sources */,
 				4F3F9058236AEB93009AAA24 /* Tools+Image.m in Sources */,
+				044B7D9F23C305E80013A43F /* MeTableViewCell.m in Sources */,
+				044B7DA523C3096E0013A43F /* ETSocketHelperSwift.swift in Sources */,
+				044B7DAA23C326E20013A43F /* ETChatDetailsModel.m in Sources */,
+				040B260523CC016E007647DE /* ETNewChatMineViewController.m in Sources */,
+				040776F823CC4F8000B36FFB /* ETNewChatAddressCell.m in Sources */,
 				04F4278D23A38CEF009587CE /* CustomGifHeader.m in Sources */,
 				4FA0A309236FCA270038F880 /* WMZPageParam.m in Sources */,
 				4F24C37C23829BCB00BB6E00 /* ETFoundCategoryModel.m in Sources */,
 				4F128C592367D1CE0004284D /* UIViewController+NaviBarButton.m in Sources */,
 				04DB9EF6237C081B002796C3 /* ETNewArticleModel.m in Sources */,
+				0407774B23CDA93400B36FFB /* ETNewChatMineGroupModel.m in Sources */,
 				04F4273723A0D38C009587CE /* ETTopupCenterRecordModel.m in Sources */,
 				4F0E4DB423751F6700E83618 /* AppDelegate+SVPSetting.m in Sources */,
+				040B261F23CC165B007647DE /* ETNewChatFriendViewController.m in Sources */,
 				4F3F9040236A9535009AAA24 /* ETRememberCardController.m in Sources */,
 				4F3F9035236A7F04009AAA24 /* ETCreatWalletInputCell.m in Sources */,
+				0407773223CD5FA300B36FFB /* ETNewChatCreateGroupCell.m in Sources */,
 				4F14FB0E23693CE40008C50A /* UIImage+Zoom.m in Sources */,
 				4F1942D1236D22E900AD907E /* ETWalletDetailCell.m in Sources */,
+				040776EC23CC40DE00B36FFB /* ETNewChatChangeNameViewController.m in Sources */,
 				4F3F9052236AE241009AAA24 /* ETChooseWalletcell.m in Sources */,
 				8855DAA32377ACC700F25DA4 /* MineHeadView.m in Sources */,
 				04DB9ED6237BE69B002796C3 /* ETNewAlertsViewController.m in Sources */,
 				4FF7FF28237FE5CC00C38456 /* ETFoundSearchDetailCell.m in Sources */,
 				4F14FB0123692CF30008C50A /* ETAddContactsCell.m in Sources */,
+				0407778B23CFFC4200B36FFB /* CTRongManager.m in Sources */,
 				04D82B8223A7304F0051808B /* ETTopUpExplainviewController.m in Sources */,
 				4F1A22502372D04500FDD5D9 /* HTTPTool+DomainAPI.m in Sources */,
 				8855DAA72377C4E800F25DA4 /* AboutUsViewController.m in Sources */,
@@ -2456,15 +3889,20 @@
 				4F128C662367D96F0004284D /* UIButton+ImageTitleSpacing.m in Sources */,
 				4F1A22352372BF5500FDD5D9 /* XMEngine.m in Sources */,
 				8855DAB52377E50500F25DA4 /* SetViewController.m in Sources */,
+				040B261123CC0AD8007647DE /* ETNewChatAddFriendAndGroupViewController.m in Sources */,
 				4F1942E9236D5E5800AD907E /* ETKeystoreImporView.m in Sources */,
+				04D82B8723A77E760051808B /* ETInviteFriendsViewController.m in Sources */,
 				4F128C8C236826710004284D /* ETTransferCell.m in Sources */,
+				0407775D23CEA6DE00B36FFB /* ETNewChatGroupDetailsViewController.m in Sources */,
 				4F3F9046236AB672009AAA24 /* ETKeyStoreController.m in Sources */,
 				4F128C692367E1A00004284D /* ETHomeTableHeaderView.m in Sources */,
+				04F7F1D723B9A53F002FF50E /* ETAddFriendsViewController.m in Sources */,
 				4FA0A32723717A8A0038F880 /* ETScanViewController.m in Sources */,
 				04998A3A238D06C8002939F1 /* ETShopChooseModel.m in Sources */,
 				4F5D1084237AC12E00B13D00 /* KeyChainStore.m in Sources */,
 				4F2306C72366DE9D0046A136 /* AppDelegate.m in Sources */,
 				4F1A224A2372CF8100FDD5D9 /* HTTPTool+KMP_DOTNETRequest.m in Sources */,
+				040B261823CC1285007647DE /* ETNewChatAddFriendViewController.m in Sources */,
 				4F1942EF236D61EC00AD907E /* ETChangePassWordController.m in Sources */,
 				04DB9F0B237C1593002796C3 /* ETNewFoundController.m in Sources */,
 				4F3F9066236C1046009AAA24 /* ETRecordCell.m in Sources */,
@@ -2472,15 +3910,20 @@
 				4F1A22362372BF5500FDD5D9 /* XMCenter.m in Sources */,
 				04F4273F23A1DFA5009587CE /* ETTopUpVerifyPassWrodView.m in Sources */,
 				4F1942D8236D2F4600AD907E /* ETSyoImportView.m in Sources */,
+				04F7F20923B9DA09002FF50E /* ETGroupMembersCell.m in Sources */,
 				4FF7FF1F237FD3D700C38456 /* ETFoundSectionView.m in Sources */,
 				4F128C9B236836040004284D /* ETDirectTransferController.m in Sources */,
 				4F14FAFD23692BB70008C50A /* ETAddContactsController.m in Sources */,
 				4F14FB29236985420008C50A /* ETCreatWalletViewController.m in Sources */,
+				040776FC23CC56B500B36FFB /* ETNewChatAddressBookModel.m in Sources */,
 				4F128C81236820320004284D /* titleCell.m in Sources */,
 				04998A1F238CCE20002939F1 /* ETShopRecordViewController.m in Sources */,
+				044B7D7F23C2C67D0013A43F /* ETChatLishModel.m in Sources */,
 				04998A40238D29E8002939F1 /* ETShopPaymentViewController.m in Sources */,
 				4F0E4DAB237502B600E83618 /* ETWalletMangerController.m in Sources */,
 				4F1942DF236D306800AD907E /* ETWalletImportCell.m in Sources */,
+				04F7F1C523B995B8002FF50E /* ETChatCell.m in Sources */,
+				0407776C23CEF21800B36FFB /* ETNewChatChangeGroupNameViewController.m in Sources */,
 				4F128C89236822610004284D /* ETTransferViewController.m in Sources */,
 				04DB9EE0237BEAE4002796C3 /* ETNewMarketViewController.m in Sources */,
 				4F128C94236834EB0004284D /* AppDelegate+ET_VCSetting.m in Sources */,
@@ -2657,9 +4100,10 @@
 			baseConfigurationReference = 172FA16F06F30E4F663C3530 /* Pods-ProjectET.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2019121316;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 2LML59W777;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2672,10 +4116,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectET1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProjectET/Expand/NetExpand/DOTNET/ProjectET-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2686,9 +4132,10 @@
 			baseConfigurationReference = AE00EDB48D338D590FABFDDB /* Pods-ProjectET.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2019121316;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 2LML59W777;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2706,10 +4153,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.LightCould.ProjectET1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProjectET/Expand/NetExpand/DOTNET/ProjectET-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2718,6 +4166,7 @@
 		4F2306F22366DE9F0046A136 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ProjectETTests/Info.plist;
@@ -2736,6 +4185,7 @@
 		4F2306F32366DE9F0046A136 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ProjectETTests/Info.plist;
@@ -2754,6 +4204,7 @@
 		4F2306F52366DE9F0046A136 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ProjectETUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2771,6 +4222,7 @@
 		4F2306F62366DE9F0046A136 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ProjectETUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

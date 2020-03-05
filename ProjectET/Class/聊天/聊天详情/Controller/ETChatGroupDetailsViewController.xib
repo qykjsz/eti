@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETChatGroupDetailsViewController">
+            <connections>
+                <outlet property="btn_send" destination="dlp-rQ-SRr" id="sUO-yo-OkI"/>
+                <outlet property="tableView" destination="B3n-lD-xqf" id="xhh-Uc-2nR"/>
+                <outlet property="tf_msg" destination="a4p-TS-5zp" id="bdD-c6-vfP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="B3n-lD-xqf">
+                    <rect key="frame" x="0.0" y="44" width="414" height="768"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="6eR-VB-4ei"/>
+                        <outlet property="delegate" destination="-1" id="LBB-jt-eT2"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdq-lO-DXl">
+                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlp-rQ-SRr">
+                            <rect key="frame" x="349" y="10" width="50" height="30"/>
+                            <color key="backgroundColor" red="0.1137254902" green="0.3411764706" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Piw-xX-fYY"/>
+                                <constraint firstAttribute="width" constant="50" id="Xxc-PN-CwA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="发送"/>
+                            <connections>
+                                <action selector="actionOfSend:" destination="-1" eventType="touchUpInside" id="2Xh-ES-Fkw"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amf-aD-O7e">
+                            <rect key="frame" x="15" y="10" width="319" height="30"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a4p-TS-5zp">
+                                    <rect key="frame" x="5" y="0.0" width="309" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="a4p-TS-5zp" firstAttribute="top" secondItem="Amf-aD-O7e" secondAttribute="top" id="2Tx-LU-Sy2"/>
+                                <constraint firstAttribute="height" constant="30" id="Ad9-tX-tzn"/>
+                                <constraint firstAttribute="trailing" secondItem="a4p-TS-5zp" secondAttribute="trailing" constant="5" id="GSZ-o3-g20"/>
+                                <constraint firstItem="a4p-TS-5zp" firstAttribute="leading" secondItem="Amf-aD-O7e" secondAttribute="leading" constant="5" id="Xyk-bn-Vb0"/>
+                                <constraint firstAttribute="bottom" secondItem="a4p-TS-5zp" secondAttribute="bottom" id="enI-cT-hUJ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.95686274510000002" green="0.95294117649999999" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Amf-aD-O7e" firstAttribute="centerY" secondItem="wdq-lO-DXl" secondAttribute="centerY" id="4R2-Ga-tQc"/>
+                        <constraint firstItem="dlp-rQ-SRr" firstAttribute="centerY" secondItem="wdq-lO-DXl" secondAttribute="centerY" id="MjI-Y4-Pri"/>
+                        <constraint firstItem="Amf-aD-O7e" firstAttribute="leading" secondItem="wdq-lO-DXl" secondAttribute="leading" constant="15" id="O7q-K5-hZK"/>
+                        <constraint firstAttribute="height" constant="50" id="gCt-bV-llX"/>
+                        <constraint firstItem="dlp-rQ-SRr" firstAttribute="leading" secondItem="Amf-aD-O7e" secondAttribute="trailing" constant="15" id="riY-tt-ZPV"/>
+                        <constraint firstAttribute="trailing" secondItem="dlp-rQ-SRr" secondAttribute="trailing" constant="15" id="yMv-Vx-JJN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wdq-lO-DXl" firstAttribute="top" secondItem="B3n-lD-xqf" secondAttribute="bottom" id="05u-TB-4ZS"/>
+                <constraint firstItem="B3n-lD-xqf" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="FuD-Rz-bAO"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="wdq-lO-DXl" secondAttribute="bottom" id="MXe-Ly-ORn"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="wdq-lO-DXl" secondAttribute="trailing" id="Q6K-3j-GtW"/>
+                <constraint firstItem="B3n-lD-xqf" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="dnQ-Na-57l"/>
+                <constraint firstItem="B3n-lD-xqf" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="mT8-3P-dhH"/>
+                <constraint firstItem="wdq-lO-DXl" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="vJe-IW-iWR"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="137.68115942028987" y="107.8125"/>
+        </view>
+    </objects>
+</document>

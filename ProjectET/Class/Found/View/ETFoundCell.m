@@ -32,6 +32,8 @@
 //        self.iconImage.layer.cornerRadius = 10;
 //        self.iconImage.layer.borderWidth = 1;
         self.iconImage.layer.borderColor = UIColorFromHEX(0xE0E0E0, 1).CGColor;
+        self.iconImage.layer.masksToBounds = YES;
+        self.iconImage.layer.cornerRadius = 10;
         [backImage addSubview:self.iconImage];
         [self.iconImage mas_makeConstraints:^(MASConstraintMaker *make) {
             

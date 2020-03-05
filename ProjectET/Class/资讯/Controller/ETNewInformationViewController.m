@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIView *view_background;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) ETNewAlertsViewController *aleVC;
-@property (nonatomic, strong) ETNewArticleViewController *artVC;
+//@property (nonatomic, strong) ETNewArticleViewController *artVC;
 @property (nonatomic, strong) ETNewMarketViewController *markVC;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrain_top;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrain_titleTop;
@@ -59,23 +59,23 @@
 - (void)layoutUI {
     [self.view_background addSubview:self.scrollView];
     self.aleVC = [[ETNewAlertsViewController alloc]init];
-    self.artVC = [[ETNewArticleViewController alloc]init];
+//    self.artVC = [[ETNewArticleViewController alloc]init];
     self.markVC = [[ETNewMarketViewController alloc]init];
     
     self.aleVC.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, self.scrollView.frame.size.height);
-    self.artVC.view.frame = CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, self.scrollView.frame.size.height);
-    self.markVC.view.frame = CGRectMake(SCREEN_WIDTH *2, 0, SCREEN_WIDTH, self.scrollView.frame.size.height);
+//    self.artVC.view.frame = CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, self.scrollView.frame.size.height);
+    self.markVC.view.frame = CGRectMake(SCREEN_WIDTH , 0, SCREEN_WIDTH, self.scrollView.frame.size.height);
     
     [self addChildViewController:self.aleVC];
-    [self addChildViewController:self.artVC];
+//    [self addChildViewController:self.artVC];
     [self addChildViewController:self.markVC];
     
     [self.scrollView addSubview:self.aleVC.view];
-    [self.scrollView addSubview:self.artVC.view];
+//    [self.scrollView addSubview:self.artVC.view];
     [self.scrollView addSubview:self.markVC.view];
     
     [self.aleVC didMoveToParentViewController:self];
-    [self.artVC didMoveToParentViewController:self];
+//    [self.artVC didMoveToParentViewController:self];
     [self.markVC didMoveToParentViewController:self];
     [self actionOfBtn:self.btn_select];
 }

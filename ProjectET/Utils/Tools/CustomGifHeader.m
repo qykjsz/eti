@@ -20,6 +20,7 @@
     //普通状态
 //    [self setImages:idleImages duration:idleImages.count * 0.05 forState:MJRefreshStateIdle];
     [self setImages:refreshingImages duration:refreshingImages.count * 0.05 forState:MJRefreshStatePulling];
+    self.gifView.contentMode = UIViewContentModeScaleAspectFill;
 //    [self setImages:refreshingImages duration:refreshingImages.count * 0.05 forState:MJRefreshStateRefreshing];
 //    [self setImages:idleImages forState:MJRefreshStateIdle];
     //即将刷新状态

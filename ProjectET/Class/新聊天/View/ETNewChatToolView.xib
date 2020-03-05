@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ETNewChatToolView"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TG-Xb-dAU">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <action selector="actionOfCancle:" destination="-1" eventType="touchUpInside" id="6P2-6g-0Yt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="501" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKu-TM-bbE">
+                    <rect key="frame" x="278" y="728" width="52" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="F2l-ew-ikR"/>
+                        <constraint firstAttribute="width" constant="52" id="ke7-Qr-2rA"/>
+                    </constraints>
+                    <state key="normal" image="lt_tjhy_icon"/>
+                    <connections>
+                        <action selector="actionOfTag:" destination="-1" eventType="touchUpInside" id="EuG-kI-Y04"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="500" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vuj-SF-m2N">
+                    <rect key="frame" x="347" y="716" width="52" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="Mdf-bW-Ouh"/>
+                        <constraint firstAttribute="width" constant="52" id="Wbo-8C-NVv"/>
+                    </constraints>
+                    <state key="normal" image="lt_cjql_icon"/>
+                    <connections>
+                        <action selector="actionOfTag:" destination="-1" eventType="touchUpInside" id="UYe-du-aYN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="502" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5az-hs-7nA">
+                    <rect key="frame" x="266" y="796" width="52" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="AIk-T3-fNe"/>
+                        <constraint firstAttribute="width" constant="52" id="I5d-yh-a53"/>
+                    </constraints>
+                    <state key="normal" image="lt_sys_icon"/>
+                    <connections>
+                        <action selector="actionOfTag:" destination="-1" eventType="touchUpInside" id="Gcw-z5-89Z"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Vuj-SF-m2N" secondAttribute="trailing" constant="15" id="5Kt-Ph-8Wk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jKu-TM-bbE" secondAttribute="trailing" constant="84" id="6B3-Jx-WPe"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="5az-hs-7nA" secondAttribute="bottom" constant="14" id="CQW-Ce-JPS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4TG-Xb-dAU" secondAttribute="bottom" id="Ccw-zx-u5k"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Vuj-SF-m2N" secondAttribute="bottom" constant="94" id="NqX-Dx-bla"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="jKu-TM-bbE" secondAttribute="bottom" constant="82" id="T5t-3r-m7k"/>
+                <constraint firstItem="4TG-Xb-dAU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Te9-nU-9Ve"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5az-hs-7nA" secondAttribute="trailing" constant="96" id="cy6-jj-RNw"/>
+                <constraint firstItem="4TG-Xb-dAU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="nZE-VR-YPD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4TG-Xb-dAU" secondAttribute="trailing" id="vqM-AI-54r"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="134"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="lt_cjql_icon" width="52" height="52"/>
+        <image name="lt_sys_icon" width="52" height="52"/>
+        <image name="lt_tjhy_icon" width="52" height="52"/>
+    </resources>
+</document>
