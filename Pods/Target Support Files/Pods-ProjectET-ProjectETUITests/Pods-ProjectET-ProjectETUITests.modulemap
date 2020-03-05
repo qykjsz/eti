@@ -1,6 +1,0 @@
-framework module Pods_ProjectET_ProjectETUITests {
-  umbrella header "Pods-ProjectET-ProjectETUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
